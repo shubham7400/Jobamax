@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24sp"
+        android:background="@drawable/bg_card_top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/label"
+                style="@style/regular_label"
+                android:layout_margin="32dp"
+                android:maxLines="5"
+                android:text="Do you confirm you found your ideal candidate?"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                style="@style/primary_button"
+                android:layout_width="256dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/grad_round_button"
+                android:paddingLeft="48dp"
+                android:paddingRight="48dp"
+                android:text="Confirm" />
+
+
+            <Button
+                android:id="@+id/cancelButton"
+                style="@style/primary_button"
+                android:layout_width="230dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/grad_round_button"
+                android:paddingLeft="48dp"
+                android:paddingRight="48dp"
+                android:text="Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

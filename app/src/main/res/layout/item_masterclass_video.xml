@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClassVideo" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item_master_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/video_cover"
+            loadImageFromDrawableWithCorners="@{item.image}"
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/play_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic__play_white"
+            app:layout_constraintBottom_toBottomOf="@+id/video_cover"
+            app:layout_constraintEnd_toEndOf="@+id/video_cover"
+            app:layout_constraintStart_toStartOf="@+id/video_cover"
+            app:layout_constraintTop_toTopOf="@+id/video_cover" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/video_details_title"
+            text="@{item.title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/duration"
+            app:layout_constraintStart_toEndOf="@+id/video_cover"
+            app:layout_constraintTop_toTopOf="@+id/video_cover"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="1. Title name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/duration"
+            style="@style/video_details_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{item.duration}"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/video_cover"
+            app:layout_constraintStart_toEndOf="@+id/video_cover"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:text="45min" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{item.description}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/video_cover"
+            tools:text="@string/master_class_dummy_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_download"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/video_cover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/video_cover" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

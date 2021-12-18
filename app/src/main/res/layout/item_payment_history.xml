@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="01/01"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:text="2000"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/plan_name"
+            style="@style/regular_label"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:text="Professional Experience"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/regular_label"
+            android:text="$0"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/v_divider"
+        android:layout_below="@+id/data"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+</RelativeLayout>

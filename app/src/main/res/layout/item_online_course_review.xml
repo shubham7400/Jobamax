@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.findajob.jobamax.dashboard.home.training.online.courses.model.review.Review" />
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_home_cv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_home_cl_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_online_courses_tv_title"
+                style="@style/regular_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:maxLines="2"
+                android:text="@{item.user.display_name}"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Lorem Ipsum"
+                tools:textColor="@android:color/black" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/item_online_courses_rv_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="5"
+                android:progressTint="@color/colorYellow"
+                android:rating="@{item.rating}"
+                app:layout_constraintStart_toStartOf="@+id/item_online_courses_tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/item_online_courses_tv_title"
+                tools:rating="4" />
+
+            <TextView
+                android:id="@+id/online_course_review_content"
+                style="@style/regular_multiline_label"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{item.content}"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/item_online_courses_tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/item_online_courses_rv_rating"
+                tools:text="Good Product"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/item_online_course_rv_number"
+                style="@style/regular_label"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{String.valueOf(item.rating)}"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/item_online_courses_rv_rating"
+                app:layout_constraintStart_toEndOf="@+id/item_online_courses_rv_rating"
+                app:layout_constraintTop_toTopOf="@+id/item_online_courses_rv_rating"
+                tools:text="4.3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

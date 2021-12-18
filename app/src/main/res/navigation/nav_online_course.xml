@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_online_course"
+    app:startDestination="@id/onlineCoursesListFragment2">
+
+    <fragment
+        android:id="@+id/onlineCoursesListFragment2"
+        android:name="com.findajob.jobamax.dashboard.home.training.online.courses.OnlineCoursesListFragment"
+        android:label="OnlineCoursesListFragment" />
+</navigation>

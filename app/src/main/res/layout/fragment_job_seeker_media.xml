@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<data>
+		
+		<variable
+			name="handler"
+			type="com.findajob.jobamax.jobseeker.profile.media.JobSeekerMediaInterface" />
+		
+		<variable
+			name="jobSeeker"
+			type="com.findajob.jobamax.model.JobSeeker" />
+	</data>
+	
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/screen_background"
+		android:orientation="vertical"
+		android:paddingBottom="32dp">
+		
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:overScrollMode="never">
+			
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+				
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="288dp"
+					android:background="@drawable/img_bottom_curve_background" />
+				
+				<RelativeLayout
+					android:id="@+id/customToolbar"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="24dp">
+					
+					<ImageView
+						android:layout_width="48dp"
+						android:layout_height="48dp"
+						android:onClick="@{() -> handler.onBackButtonClicked()}"
+						android:padding="4dp"
+						android:src="@drawable/ic_arrow_left"
+						app:tint="@color/white" />
+					
+					<TextView
+						style="@style/regular_label"
+						android:layout_centerHorizontal="true"
+						android:layout_centerVertical="true"
+						android:text="@string/job_seeker"
+						android:textColor="@color/white"
+						android:textSize="24sp"
+						android:textStyle="bold" />
+				
+				</RelativeLayout>
+				
+				<androidx.cardview.widget.CardView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/customToolbar"
+					android:layout_marginStart="16dp"
+					android:layout_marginTop="24dp"
+					android:layout_marginEnd="16dp"
+					android:layout_marginBottom="24dp"
+					app:cardCornerRadius="12dp"
+					app:cardElevation="0dp">
+					
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical">
+						
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="start">
+							
+							<TextView
+								style="@style/regular_label"
+								android:layout_marginStart="24dp"
+								android:layout_marginTop="32dp"
+								android:layout_marginEnd="24dp"
+								android:layout_marginBottom="10dp"
+								android:text="@string/media"
+								android:textColor="@color/colorPrimary"
+								android:textSize="22sp"
+								android:textStyle="bold" />
+						
+						</LinearLayout>
+						
+						<RelativeLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="8dp"
+							android:onClick="@{() -> handler.onProfilePictureClicked()}">
+							
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:paddingTop="20dp"
+								android:paddingBottom="20dp">
+								
+								<TextView
+									style="@style/regular_label"
+									android:layout_marginStart="24dp"
+									android:layout_marginTop="4dp"
+									android:text="@string/profile_picture"
+									android:textSize="22sp"
+									android:textStyle="bold" />
+								
+								<TextView
+									android:id="@+id/profilePictureLabel"
+									style="@style/regular_label"
+									android:layout_marginStart="24dp"
+									android:layout_marginTop="8dp"
+									android:text="@string/upload_profile_picture"
+									android:textColor="@color/secondary_text" />
+							
+							</LinearLayout>
+							
+							<ImageView
+								android:id="@+id/profilePicIcon"
+								android:layout_width="24dp"
+								android:layout_height="24dp"
+								android:layout_alignParentEnd="true"
+								android:layout_centerVertical="true"
+								android:layout_marginEnd="24dp"
+								android:src="@{jobSeeker.profilePicUrl.empty ? @drawable/ic_upload_job_presentation : @drawable/ic_done}"
+								app:tint="@color/colorPrimary" />
+						</RelativeLayout>
+						
+						<View
+							style="@style/v_divider"
+							android:layout_marginStart="16dp"
+							android:layout_marginEnd="16dp" />
+						
+						<RelativeLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:onClick="@{() -> handler.onPersonalPresentationClicked()}">
+							
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginEnd="8dp"
+								android:layout_toStartOf="@+id/personalPresentationIcon"
+								android:orientation="vertical"
+								android:paddingTop="20dp"
+								android:paddingBottom="20dp">
+								
+								<TextView
+									style="@style/regular_label"
+									android:layout_marginStart="24dp"
+									android:text="@string/personal_presentation"
+									android:textSize="22sp"
+									android:textStyle="bold" />
+								
+								<TextView
+									android:id="@+id/personalPresentationLabel"
+									style="@style/regular_label"
+									android:layout_marginStart="24dp"
+									android:layout_marginTop="8dp"
+									android:maxLines="2"
+									android:text="@string/introduce_yourself_to_recruiters"
+									android:textColor="@color/secondary_text" />
+							
+							</LinearLayout>
+							
+							<ImageView
+								android:id="@+id/personalPresentationIcon"
+								android:layout_width="24dp"
+								android:layout_height="24dp"
+								android:layout_alignParentEnd="true"
+								android:layout_centerVertical="true"
+								android:layout_marginEnd="24dp"
+								android:src="@{jobSeeker.personalPresentationLink.empty ? @drawable/ic_video_presentation : @drawable/ic_done}"
+								app:tint="@color/colorPrimary" />
+						</RelativeLayout>
+						
+						<View
+							style="@style/v_divider"
+							android:layout_marginStart="16dp"
+							android:layout_marginEnd="16dp" />
+						
+						<RelativeLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:onClick="@{() -> handler.onAttachmentClicked()}">
+							
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginEnd="8dp"
+								android:layout_toStartOf="@+id/attachmentIcon"
+								android:orientation="vertical"
+								android:paddingTop="20dp"
+								android:paddingBottom="20dp">
+								
+								<TextView
+									style="@style/regular_label"
+									android:layout_marginStart="24dp"
+									android:text="@string/attachments"
+									android:textSize="22sp"
+									android:textStyle="bold" />
+								
+								<TextView
+									android:id="@+id/attachmentLabel"
+									style="@style/regular_label"
+									android:layout_marginStart="24dp"
+									android:layout_marginTop="8dp"
+									android:maxLines="2"
+									android:text="@string/upload_cover_letter_c_v_recommendation_letter"
+									android:textColor="@color/secondary_text" />
+							
+							</LinearLayout>
+							
+							<ImageView
+								android:id="@+id/attachmentIcon"
+								android:layout_width="24dp"
+								android:layout_height="24dp"
+								android:layout_alignParentEnd="true"
+								android:layout_centerVertical="true"
+								android:layout_marginEnd="24dp"
+								android:src="@{jobSeeker.attachmentCVLink.empty ? @drawable/ic_upload_job_presentation : @drawable/ic_done}"
+								app:tint="@color/colorPrimary" />
+						</RelativeLayout>
+						
+						<View
+							style="@style/v_divider"
+							android:layout_marginStart="16dp"
+							android:layout_marginEnd="16dp" />
+						
+						<Button
+							style="@style/primary_button"
+							android:layout_marginStart="40dp"
+							android:layout_marginTop="64dp"
+							android:layout_marginEnd="40dp"
+							android:layout_marginBottom="32dp"
+							android:onClick="@{() -> handler.onSubmitButtonClicked()}"
+							android:text="@string/submit" />
+					
+					</LinearLayout>
+				
+				</androidx.cardview.widget.CardView>
+			
+			</RelativeLayout>
+		
+		</ScrollView>
+	</LinearLayout>
+
+</layout>

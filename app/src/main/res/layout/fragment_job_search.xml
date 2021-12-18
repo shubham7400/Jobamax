@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchInterface" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="state"
+            type="com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchState" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/screen_background"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="288dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/img_bottom_curve_background" />
+
+                <RelativeLayout
+                    android:id="@+id/customToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="@{() -> handler.onBackButtonClicked()}"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_arrow_left"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        style="@style/regular_label"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/job_seeker"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customToolbar"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="24dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/heading_background"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                style="@style/regular_label"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/job_search"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View style="@style/v_divider" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/account_label"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:text="@string/enter" />
+
+                            <EditText
+                                android:id="@+id/jobField"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:background="@drawable/round_24"
+                                android:backgroundTint="#EEEEEE"
+                                android:gravity="center_vertical"
+                                android:hint="@string/what_job_are_you_looking_for"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="12dp"
+                                android:textSize="15sp"
+                                app:drawableEndCompat="@drawable/ic_search"
+                                app:drawableTint="@color/secondary_text" />
+
+                            <RelativeLayout
+                                android:id="@+id/rl_location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{()->handler.onLocationClicked()}"
+                                android:layout_marginTop="12dp">
+
+                                <TextView
+                                    android:id="@+id/locationTextLabel"
+                                    style="@style/account_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:text="@string/location" />
+
+                                <TextView
+                                    android:id="@+id/locationLabel"
+                                    style="@style/account_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_toEndOf="@+id/locationTextLabel"
+                                    android:gravity="end|center_vertical"
+                                    android:hint="@string/current_location"
+                                    android:text="@{state.location}" />
+                            </RelativeLayout>
+
+                            <View
+                                style="@style/v_divider"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    style="@style/account_label"
+                                    android:text="@string/distance"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <TextView
+                                    android:id="@+id/distanceLabel"
+                                    style="@style/account_label"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="end|center_vertical"
+                                    android:text="100 KM" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:src="@drawable/seek" />
+
+                                <SeekBar
+                                    android:id="@+id/seekBar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:maxHeight="6dp"
+                                    android:progress="100"
+                                    android:progressDrawable="@drawable/seek_style"
+                                    android:thumb="@drawable/seek" />
+
+                            </RelativeLayout>
+
+                            <View
+                                style="@style/v_divider"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="16dp" />
+
+                            <TextView
+                                style="@style/job_offer_heading"
+                                android:text="@string/type_of_work" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="20dp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/job_offer_label"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/full_time" />
+
+                                    <androidx.appcompat.widget.AppCompatCheckBox
+                                        android:id="@+id/fullTimeCheck"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:backgroundTintMode="src_over" />
+                                </RelativeLayout>
+
+                                <Space
+                                    android:layout_width="48dp"
+                                    android:layout_height="wrap_content" />
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/job_offer_label"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/part_time" />
+
+                                    <androidx.appcompat.widget.AppCompatCheckBox
+                                        android:id="@+id/partTimeCheck"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/job_offer_heading"
+                                android:text="@string/job_category" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            style="@style/job_offer_label"
+                                            android:layout_centerVertical="true"
+                                            android:text="@string/job" />
+
+                                        <androidx.appcompat.widget.AppCompatCheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:backgroundTintMode="src_over"
+                                            android:checked="@={state.jobSelectedFlag}" />
+                                    </RelativeLayout>
+
+                                    <Space
+                                        android:layout_width="48dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <RelativeLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            style="@style/job_offer_label"
+                                            android:layout_centerVertical="true"
+                                            android:text="@string/work_study" />
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:checked="@={state.workStudySelectedFlag}" />
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            style="@style/job_offer_label"
+                                            android:layout_centerVertical="true"
+                                            android:text="@string/internship" />
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:checked="@={state.internshipSelectedFlag}" />
+                                    </RelativeLayout>
+
+                                    <Space
+                                        android:layout_width="48dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <RelativeLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            style="@style/job_offer_label"
+                                            android:layout_centerVertical="true"
+                                            android:text="@string/other" />
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:backgroundTint="@color/divider"
+                                            android:checked="@={state.otherSelectedFlag}" />
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="@color/divider" />
+
+                            <TextView
+                                style="@style/job_offer_heading"
+                                android:text="@string/experience" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="16dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|center_horizontal">
+
+                                    <TextView
+                                        style="@style/job_offer_label"
+                                        android:layout_width="wrap_content"
+                                        android:text="&lt;1" />
+
+                                    <CheckBox
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:checked="@={state.underOneWorkExSelectedFlag}" />
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="48dp"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|center_horizontal">
+
+                                    <TextView
+                                        style="@style/job_offer_label"
+                                        android:layout_width="wrap_content"
+                                        android:text="1-2" />
+
+                                    <CheckBox
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:checked="@={state.oneToTwoWorkExSelectedFlag}" />
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="48dp"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|center_horizontal">
+
+                                    <TextView
+                                        style="@style/job_offer_label"
+                                        android:layout_width="wrap_content"
+                                        android:text="&gt;2" />
+
+                                    <CheckBox
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:checked="@={state.twoPlusWorkExSelectedFlag}" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <Button
+                            android:id="@+id/submitButton"
+                            style="@style/primary_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginTop="48dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginBottom="32dp"
+                            android:background="@drawable/grad_round_button"
+                            android:onClick="@{() -> handler.onSubmitButtonClicked()}"
+                            android:text="@string/start" />
+
+                        <TextView
+                            android:id="@+id/resetButton"
+                            style="@style/regular_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginBottom="24dp"
+                            android:gravity="center_horizontal"
+                            android:onClick="@{() -> handler.onResetClicked()}"
+                            android:padding="8dp"
+                            android:text="@string/reset"
+                            android:textColor="@color/colorPrimary" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

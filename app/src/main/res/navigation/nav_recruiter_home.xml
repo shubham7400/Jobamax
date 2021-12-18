@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_recruiter_home"
+    app:startDestination="@id/recruiterRecruitFragment">
+
+    <fragment
+        android:id="@+id/recruiterRecruitFragment"
+        android:name="com.findajob.jobamax.recruiter.track.RecruiterRecruitFragment"
+        android:label="RecruiterTrackFragment"
+        tools:layout="@layout/fragment_recruiter_recruit">
+        <action
+            android:id="@+id/action_recruiterTrackFragment_to_playVideoFragment"
+            app:destination="@id/playVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterRecruitFragment_to_createJobOfferFragment"
+            app:destination="@id/createJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruiterCourseFragment"
+        android:name="com.findajob.jobamax.recruiter.course.RecruiterCourseFragment"
+        android:label="RecruiterCourseFragment"
+        tools:layout="@layout/fragment_recruiter_course" />
+    <fragment
+        android:id="@+id/recruiterProfileFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.RecruiterProfileFragment"
+        android:label="RecruiterProfileFragment"
+        tools:layout="@layout/fragment_profile_recruiter">
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_showAllJobOfferFragment"
+            app:destination="@id/showAllJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_recruiterAccountFragment"
+            app:destination="@id/recruiterAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_recruiterMediaFragment"
+            app:destination="@id/recruiterMediaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_companyInformationFragment"
+            app:destination="@id/companyInformationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_recruiterCurrentSubscriptionFragment"
+            app:destination="@id/recruiterCurrentSubscriptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recruiterCurrentSubscriptionFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.currentSubscription.CurrentSubscriptionFragment"
+        android:label="CurrentSubscriptionFragment"
+        tools:layout="@layout/fragment_recruiter_current_subscription">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recruiterMessagesFragment"
+        android:name="com.findajob.jobamax.dashboard.messages.MessagesFragment"
+        android:label="RecruiterMessagesFragment"
+        tools:layout="@layout/fragment_messages" />
+    <fragment
+        android:id="@+id/recruiterSourceFragment"
+        android:name="com.findajob.jobamax.recruiter.track.RecruiterSourceFragment"
+        android:label="RecruiterSourceFragment"
+        tools:layout="@layout/fragment_recruiter_source">
+        <action
+            android:id="@+id/action_recruiterSourceFragment_to_playVideoFragment"
+            app:destination="@id/playVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterSourceFragment_to_createJobOfferFragment"
+            app:destination="@id/createJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/playVideoFragment"
+        android:name="com.findajob.jobamax.recruiter.track.PlayVideoFragment"
+        android:label="playVideoFragment"
+        tools:layout="@layout/fragment_play_video">
+        <argument
+            android:name="arg_video_url"
+            android:defaultValue="" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/showAllJobOfferFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.jobOffer.show.JobListingFragment"
+        android:label="ShowAllJobOfferFragment"
+        tools:layout="@layout/fragment_job_listing">
+        <action
+            android:id="@+id/action_showAllJobOfferFragment_to_createJobOfferFragment"
+            app:destination="@id/createJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_show_all_job_offer_to_view_job_offer"
+            app:destination="@id/viewJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_show_all_job_offer_to_recruiter_personal_info"
+            app:destination="@id/recruiterPersonalInformationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_showAllJobOfferFragment_to_createJobOfferFragment2"
+            app:destination="@id/createJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewJobOfferFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.jobOffer.view.ViewJobOfferFragment"
+        android:label="ViewJobOfferFragment"
+        tools:layout="@layout/fragment_view_job_offer">
+        <action
+            android:id="@+id/action_viewJobOfferFragment_to_createJobOfferFragment"
+            app:destination="@id/createJobOfferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createJobOfferFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.jobOffer.create.JobOfferDetailsFragment"
+        android:label="CreateJobOfferFragment"
+        tools:layout="@layout/fragment_job_offer_details">
+        <action
+            android:id="@+id/action_create_job_offer_to_view_job_offer"
+            app:destination="@id/viewJobOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/showAllJobOfferFragment"
+            app:popUpToInclusive="false" />
+
+        <argument
+            android:name="arg_location"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recruiterAccountFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountFragment"
+        android:label="RecruiterAccountFragment"
+        tools:layout="@layout/fragment_recruiter_account">
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_recruiterPersonalInformationFragment"
+            app:destination="@id/recruiterPersonalInformationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_manageReadReceiptsFragment"
+            app:destination="@id/manageReadReceiptsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_newsletterFragment"
+            app:destination="@id/newsletterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_recruiterPushNotificationFragment"
+            app:destination="@id/recruiterPushNotificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_recruiterPaymentMethodsFragment"
+            app:destination="@id/recruiterPaymentMethodsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_recruiterInvoicesFragment"
+            app:destination="@id/recruiterInvoicesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_companyInformationFragment"
+            app:destination="@id/companyInformationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_recruiterSocialAccountFragment"
+            app:destination="@id/recruiterSocialAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recruiterAccountFragment_to_recruiterDeleteAccountFragment"
+            app:destination="@id/recruiterDeleteAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruiterPersonalInformationFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInformationFragment"
+        android:label="RecruiterPersonalInformationFragment"
+        tools:layout="@layout/fragment_recruiter_personal_information" />
+    <fragment
+        android:id="@+id/manageReadReceiptsFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.readReceipts.RecruiterManageReadReceiptsFragment"
+        android:label="ManageReadReceiptsFragment"
+        tools:layout="@layout/fragment_recruiter_manage_read_receipts" />
+    <fragment
+        android:id="@+id/newsletterFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.newsletter.RecruiterNewsletterFragment"
+        android:label="NewsletterFragment"
+        tools:layout="@layout/fragment_recruiter_newsletter" />
+    <fragment
+        android:id="@+id/recruiterPushNotificationFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.pushNotification.RecruiterPushNotificationFragment"
+        android:label="RecruiterPushNotificationFragment"
+        tools:layout="@layout/fragment_recruiter_push_notification" />
+    <fragment
+        android:id="@+id/recruiterPaymentMethodsFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.paymentMethods.RecruiterPaymentMethodsFragment"
+        android:label="RecruiterPaymentMethodsFragment"
+        tools:layout="@layout/fragment_recruiter_payment_methods" />
+    <fragment
+        android:id="@+id/recruiterInvoicesFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.invoices.RecruiterInvoicesFragment"
+        android:label="RecruiterInvoicesFragment"
+        tools:layout="@layout/fragment_recruiter_invoices" />
+
+    <fragment
+        android:id="@+id/companyInformationFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.company.CompanyInformationFragment"
+        android:label="CompanyInformationFragment"
+        tools:layout="@layout/fragment_company_information" />
+    <fragment
+        android:id="@+id/jobSourceFragment"
+        android:name="com.findajob.jobamax.jobseeker.source.JobSourceFragment"
+        android:label="JobSourceFragment"
+        tools:layout="@layout/fragment_job_source" />
+    <fragment
+        android:id="@+id/recruiterMediaFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.media.RecruiterMediaFragment"
+        android:label="RecruiterMediaFragment"
+        tools:layout="@layout/fragment_recruiter_media" />
+    <fragment
+        android:id="@+id/recruiterSocialAccountFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.social.RecruiterSocialAccountFragment"
+        android:label="RecruiterSocialAccountFragment"
+        tools:layout="@layout/fragment_job_seeker_social_links" />
+    <fragment
+        android:id="@+id/recruiterDeleteAccountFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.deleteAccount.RecruiterDeleteAccountFragment"
+        android:label="RecruiterDeleteAccountFragment">
+        <action
+            android:id="@+id/action_recruiterDeleteAccountFragment_to_recruiterDeleteAccountFinalFragment"
+            app:destination="@id/recruiterDeleteAccountFinalFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruiterDeleteAccountFinalFragment"
+        android:name="com.findajob.jobamax.recruiter.profile.account.deleteAccount.RecruiterDeleteAccountFinalFragment"
+        android:label="RecruiterDeleteAccountFinalFragment" />
+
+
+</navigation>

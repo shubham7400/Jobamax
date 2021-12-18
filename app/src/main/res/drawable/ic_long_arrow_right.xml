@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24sp"
+    android:height="14sp"
+    android:viewportWidth="28"
+    android:viewportHeight="17">
+    <path
+        android:fillColor="@color/com_facebook_messenger_blue"
+        android:pathData="M25.8702,10.134H1.9642C1.1382,10.134 0.4702,9.466 0.4702,8.64C0.4702,7.814 1.1382,7.146 1.9642,7.146H25.8702C26.6962,7.146 27.3642,7.814 27.3642,8.64C27.3642,9.465 26.6962,10.134 25.8702,10.134Z" />
+    <path
+        android:fillColor="@color/com_facebook_messenger_blue"
+        android:pathData="M25.8701,10.134C25.4881,10.134 25.1051,9.988 24.8141,9.696L18.2461,3.128C17.6621,2.544 17.6621,1.599 18.2461,1.015C18.8301,0.431 19.7751,0.431 20.3591,1.015L26.9271,7.583C27.5111,8.167 27.5111,9.112 26.9271,9.696C26.6351,9.988 26.2521,10.134 25.8701,10.134Z" />
+    <path
+        android:fillColor="@color/com_facebook_messenger_blue"
+        android:pathData="M19.3021,16.703C18.9201,16.703 18.5371,16.557 18.2461,16.265C17.6621,15.681 17.6621,14.736 18.2461,14.152L24.8141,7.583C25.3981,6.999 26.3431,6.999 26.9271,7.583C27.5111,8.167 27.5111,9.112 26.9271,9.696L20.3591,16.265C20.0671,16.557 19.6851,16.703 19.3021,16.703Z" />
+</vector>

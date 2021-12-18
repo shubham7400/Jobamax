@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+	
+	<data>
+	
+	</data>
+	
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+		
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:backgroundTint="@color/colorWhite"
+			tools:context=".jobseeker.course.JobSeekerCourseFragment">
+			
+			<ImageView
+				android:id="@+id/messages_iv_bg"
+				android:layout_width="match_parent"
+				android:layout_height="320dp"
+				android:background="@drawable/img_bottom_curve_background"
+				android:contentDescription="@string/label_none"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+			
+			<!--            TODO - transfer code to styles-->
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/messages_til_search"
+				style="@style/Rounded"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginEnd="32dp"
+				app:boxCornerRadiusBottomEnd="30dp"
+				app:boxCornerRadiusBottomStart="30dp"
+				app:boxCornerRadiusTopEnd="30dp"
+				app:boxCornerRadiusTopStart="30dp"
+				app:boxStrokeWidth="0dp"
+				app:boxStrokeWidthFocused="0dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:startIconDrawable="@drawable/ic_search">
+				
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/messages_et_search"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_gravity="center"
+					android:backgroundTint="@color/white"
+					android:hint="@string/hint_search"
+					android:inputType="text"
+					android:maxLength="30"
+					android:singleLine="true" />
+			
+			</com.google.android.material.textfield.TextInputLayout>
+			
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/messages_til_header_matches"
+				style="@style/Base.TextAppearance.MaterialComponents.Headline6"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="30dp"
+				android:layout_marginTop="15dp"
+				android:text="@string/label_matches"
+				android:textColor="@android:color/white"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/messages_til_search" />
+			
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/messages_rv_online"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginStart="30dp"
+				android:layout_marginEnd="30dp"
+				android:orientation="horizontal"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/messages_til_header_matches"
+				tools:listitem="@layout/item_current_online"/>
+			
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/messages_til_header_messages"
+				style="@style/Base.TextAppearance.MaterialComponents.Headline6"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="30dp"
+				android:layout_marginTop="15dp"
+				android:text="@string/label_matches"
+				android:textColor="@color/colorAccent"
+				tools:textColor="@color/colorAccent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/messages_iv_bg" />
+			
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/messages_rv_messages"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="30dp"
+				android:layout_marginTop="6dp"
+				android:layout_marginEnd="30dp"
+				android:orientation="vertical"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/messages_til_header_messages" />
+			
+			<androidx.constraintlayout.widget.Guideline
+				android:id="@+id/guideline_one"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				app:layout_constraintGuide_percent=".19" />
+			<androidx.constraintlayout.widget.Guideline
+				
+				android:id="@+id/guideline_two"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				app:layout_constraintGuide_percent=".5" />
+		
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	
+	</androidx.core.widget.NestedScrollView>
+
+</layout>

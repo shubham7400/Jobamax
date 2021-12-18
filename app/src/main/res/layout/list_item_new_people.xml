@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.findajob.jobamax.data.pojo.NewPeople" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clNewPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4sp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImage"
+            android:layout_width="54sp"
+            android:layout_height="54sp"
+            app:cardBackgroundColor="@{item.isActive ? @color/greyishWhite : @color/transparent}"
+            app:cardCornerRadius="40sp"
+            app:cardElevation="0sp"
+            app:layout_constraintBottom_toTopOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="50sp">
+
+
+                <ImageView
+                    android:id="@+id/ivUserImage"
+                    loadImageFromUrlCircular="@{item.profilePicUrl}"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7sp"
+            android:ellipsize="end"
+            android:text="@{item.name}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

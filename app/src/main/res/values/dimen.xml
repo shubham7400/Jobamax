@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="home_icon_20dp">20dp</dimen>
+    <dimen name="home_icon_24dp">24dp</dimen>
+    <dimen name="home_icon_32dp">32dp</dimen>
+    <dimen name="home_icon_40dp">40dp</dimen>
+    <dimen name="home_icon_48dp">48dp</dimen>
+    <dimen name="social_icon_40dp">40dp</dimen>
+</resources>

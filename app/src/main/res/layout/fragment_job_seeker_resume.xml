@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeHandler" />
+
+        <variable
+            name="documentFlag"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!-- App bar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            android:elevation="4dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="18sp"
+                android:layout_margin="8sp"
+                android:contentDescription="@string/go_back"
+                android:onClick="@{()-> handler.onBackButtonClicked()}"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/lite_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resume"
+                android:textColor="#0975FE"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Main body -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main_body"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_action_bar">
+
+            <ScrollView
+                android:id="@+id/sv_main_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F7"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/tv_educations_label"
+                                    style="@style/default_heading_style"
+                                    android:layout_centerVertical="true"
+                                    android:text="@string/educations"
+                                    android:textSize="18sp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:onClick="@{() -> handler.onAddEducationClicked()}"
+                                    android:src="@drawable/ic_add_skill"
+                                    app:tint="@color/lite_blue" />
+                            </RelativeLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/educationRecycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:overScrollMode="never"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/item_education" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/tv_experiences_label"
+                                    style="@style/default_heading_style"
+                                    android:layout_centerVertical="true"
+                                    android:text="@string/experiences"
+                                    android:textSize="18sp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:onClick="@{() -> handler.onAddExperienceClicked()}"
+                                    android:src="@drawable/ic_add_skill"
+                                    app:tint="@color/lite_blue" />
+
+                            </RelativeLayout>
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/experienceRecycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:overScrollMode="never"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/item_experience" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_skills_label"
+                                style="@style/default_heading_style"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/skills"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/skillsField"
+                                style="@style/job_offer_field"
+                                android:layout_marginHorizontal="24dp"
+                                android:background="@drawable/bg_sligthly_rounded_edit_text"
+                                android:backgroundTint="@color/heading_background"
+                                android:hint="@string/enter_skills"
+                                android:inputType="textCapWords" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="center_vertical"
+                                android:onClick="@{() -> handler.onAddSkillsClicked()}"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_add_skill" />
+
+                                <TextView
+                                    style="@style/job_offer_sub_heading"
+                                    android:text="@string/add_skills"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/skillChipGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginBottom="8dp"
+                                app:chipSpacing="8dp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_activities_label"
+                                style="@style/default_heading_style"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/activities"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/activityField"
+                                style="@style/job_offer_field"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/round_4"
+                                android:backgroundTint="@color/heading_background"
+                                android:hint="@string/enter_activity"
+                                android:inputType="textCapWords" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical"
+                                android:onClick="@{() -> handler.onAddActivityClicked()}"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_add_skill" />
+
+                                <TextView
+                                    style="@style/job_offer_sub_heading"
+                                    android:text="@string/add_activities"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/activityChipGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:chipSpacing="8dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_about_me_label"
+                                style="@style/default_heading_style"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/about_me"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/aboutMeField"
+                                style="@style/job_offer_field"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="24dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:backgroundTint="@color/heading_background"
+                                android:gravity="top"
+                                android:hint="@string/tell_us_about_yourself"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:maxLines="100"
+                                android:minHeight="112dp"
+                                android:padding="12dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp" />
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

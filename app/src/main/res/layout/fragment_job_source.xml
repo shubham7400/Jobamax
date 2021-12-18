@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.findajob.jobamax.jobseeker.source.JobSourceInterface" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="state"
+            type="com.findajob.jobamax.model.JobSource" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/screen_background"
+        android:orientation="vertical">
+
+        <!-- App bar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/sv_main_body">
+
+            <ImageView
+                android:id="@+id/iv_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:onClick="@{()-> handler.onBackButtonClicked()}"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/source"
+                android:textColor="#0975FE"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- Main body -->
+        <ScrollView
+            android:id="@+id/sv_main_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    style="@style/job_offer_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/source" />
+
+                <EditText
+                    android:id="@+id/et_source_field"
+                    style="@style/job_offer_field"
+                    android:hint="@string/what_are_you_looking_for"
+                    app:drawableEndCompat="@drawable/ic_search"
+                    app:drawableTint="@color/secondary_text" />
+
+                <TextView
+                    style="@style/job_offer_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/location" />
+
+                <EditText
+                    android:id="@+id/locationField"
+                    style="@style/job_offer_field"
+                    android:hint="@string/enter_city_or_country"
+                    android:onClick="@{() -> handler.onCityClicked()}"
+                    app:drawableEndCompat="@drawable/ic_search"
+                    app:drawableTint="@color/secondary_text" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_distance_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/rl_seek_bar_layout"
+                    app:layout_constraintTop_toBottomOf="@id/rl_location_layout">
+
+                    <TextView
+                        style="@style/job_offer_heading"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/distance" />
+
+                    <TextView
+                        android:id="@+id/distanceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="16sp"
+                        tools:text="50 KM" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_seek_bar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:maxHeight="4.76dp"
+                        android:progress="@{state.distance}"
+                        android:progressDrawable="@drawable/seek_style"
+                        android:thumb="@drawable/seek"
+                        tools:progress="50" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    style="@style/job_offer_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/experiences" />
+
+                <EditText
+                    android:id="@+id/experienceField"
+                    style="@style/job_offer_field"
+                    android:hint="@string/enter_experiences" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onAddExperienceClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add_skill" />
+
+                    <TextView
+                        style="@style/job_source_sub_heading"
+                        android:text="@string/add_experiences"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/expChipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    app:chipSpacing="8dp" />
+
+                <TextView
+                    style="@style/job_offer_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/educations" />
+
+                <EditText
+                    android:id="@+id/educationField"
+                    style="@style/job_offer_field"
+                    android:hint="@string/enter_education" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="@{() -> handler.onAddEducationClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add_skill" />
+
+                    <TextView
+                        style="@style/job_source_sub_heading"
+                        android:text="@string/add_education"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/educationChipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    app:chipSpacing="8dp" />
+
+
+                <TextView
+                    style="@style/job_offer_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/key_skills" />
+
+                <EditText
+                    android:id="@+id/skillField"
+                    style="@style/job_offer_field"
+                    android:hint="@string/enter_skills" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onAddKeySkillClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add_skill" />
+
+                    <TextView
+                        style="@style/job_source_sub_heading"
+                        android:text="@string/add_skills"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/skillChipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:chipSpacing="4dp" />
+
+                <TextView
+                    style="@style/job_offer_heading"
+                    android:text="@string/work_experience" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/heading_background"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="0sp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.33"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <TextView
+                                style="@style/job_offer_label"
+                                android:layout_width="wrap_content"
+                                android:text="@string/zero_to_one" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="24dp"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.33"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <TextView
+                                style="@style/job_offer_label"
+                                android:layout_width="wrap_content"
+                                android:text="@string/two_to_three" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="24dp"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.33"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <TextView
+                                style="@style/job_offer_label"
+                                android:layout_width="wrap_content"
+                                android:text="@string/three_plus" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/primary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="48dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_round_button_blue"
+                    android:onClick="@{() -> handler.onSubmitButtonClicked()}"
+                    android:text="@string/save" />
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/resetButton"-->
+                <!--                    style="@style/regular_heading"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="48dp"-->
+                <!--                    android:layout_marginBottom="24dp"-->
+                <!--                    android:gravity="center_horizontal"-->
+                <!--                    android:onClick="@{() -> handler.onResetClicked()}"-->
+                <!--                    android:padding="8dp"-->
+                <!--                    android:text="@string/reset"-->
+                <!--                    android:textColor="@color/colorPrimary" />-->
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

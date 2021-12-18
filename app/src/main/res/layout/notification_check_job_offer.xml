@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:paddingStart="12dp"
+	android:paddingTop="8dp"
+	android:paddingEnd="12dp"
+	android:paddingBottom="8dp">
+	
+	<RelativeLayout
+		android:id="@+id/notification_main"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		
+		<ImageView
+			android:id="@+id/big_icon"
+			android:layout_width="44dp"
+			android:layout_height="44dp"
+			android:src="@mipmap/ic_launcher" />
+		
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginTop="3dp"
+			android:layout_toEndOf="@+id/big_icon"
+			android:orientation="vertical"
+			android:paddingStart="16dp">
+			
+			<TextView
+				android:id="@+id/content_title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ellipsize="end"
+				android:maxLines="1"
+				android:text="Checking on Android Developer Job"
+				android:textAppearance="@style/TextAppearance.Compat.Notification.Title" />
+			
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ellipsize="end"
+				android:maxLines="2"
+				android:text="Hey, did you found the candidate you were looking for?"
+				android:textAppearance="@style/TextAppearance.Compat.Notification.Info" />
+		</LinearLayout>
+	</RelativeLayout>
+	
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/notification_main"
+		android:layout_marginTop="8dp"
+		android:orientation="horizontal">
+		
+		<TextView
+			android:id="@+id/yesButton"
+			style="@style/flat_button"
+			android:paddingLeft="12dp"
+			android:paddingTop="8dp"
+			android:paddingRight="12dp"
+			android:paddingBottom="8dp"
+			android:text="Yes"
+			android:textColor="@color/primary_text"
+			android:textSize="14sp"
+			android:textStyle="bold" />
+		
+		<TextView
+			android:id="@+id/noButton"
+			style="@style/flat_button"
+			android:paddingLeft="12dp"
+			android:paddingTop="8dp"
+			android:paddingRight="12dp"
+			android:paddingBottom="8dp"
+			android:text="No"
+			android:textColor="@color/primary_text"
+			android:textSize="14sp"
+			android:textStyle="bold" />
+	</LinearLayout>
+
+</RelativeLayout>

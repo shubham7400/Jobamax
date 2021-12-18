@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "693848443803",
+    "project_id": "jobamax-daf51",
+    "storage_bucket": "jobamax-daf51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693848443803:android:af4c62c1838ae04d57af3e",
+        "android_client_info": {
+          "package_name": "com.findajob.jobamax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693848443803-k9maqhkf7uv6ar92a2en3n1h2h452329.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findajob.jobamax",
+            "certificate_hash": "6b8678c81374ceb27dffac754f385309773ced71"
+          }
+        },
+        {
+          "client_id": "693848443803-ur2sj50a6jlcsonbc6dun38tjd053nuf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbfdFvd1i8BEEuFY3pXilDfgFRUrIADEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693848443803-ur2sj50a6jlcsonbc6dun38tjd053nuf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

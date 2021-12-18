@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="company_sizes">
+        <item>1–10</item>
+        <item>11–50</item>
+        <item>51–199</item>
+        <item>200–500</item>
+        <item>500+</item>
+    </string-array>
+</resources>

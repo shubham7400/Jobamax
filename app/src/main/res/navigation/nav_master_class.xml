@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_master_class"
+    app:startDestination="@id/masterClassFragment">
+
+    <fragment
+        android:id="@+id/masterClassFragment"
+        android:name="com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassFragment"
+        android:label="MasterClassFragment"
+        tools:layout="@layout/fragment_master_class">
+        <action
+            android:id="@+id/action_masterClassFragment_to_masterClassDetailsFragment"
+            app:destination="@id/masterClassDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/masterClassDetailsFragment"
+        android:name="com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsFragment"
+        android:label="MasterClassDetailsFragment"
+        tools:layout="@layout/fragment_masterclass_details" />
+</navigation>

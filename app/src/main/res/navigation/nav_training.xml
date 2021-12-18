@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/trainingFragment">
+
+    <fragment
+        android:id="@+id/trainingFragment"
+        android:name="com.findajob.jobamax.dashboard.home.training.JobamaxClubFragment"
+        android:label="TrainingFragment"
+        tools:layout="@layout/fragment_jobamax_club">
+        <action
+            android:id="@+id/trainingFragment_to_coursesFragment"
+            app:destination="@id/coursesFragment" />
+        <action
+            android:id="@+id/action_trainingFragment_to_onlineCoursesListFragment"
+            app:destination="@id/onlineCoursesListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/coursesFragment"
+        android:name="com.findajob.jobamax.dashboard.home.CoursesFragment"
+        android:label="fragment_courses"
+        tools:layout="@layout/fragment_courses" >
+        <action
+            android:id="@+id/action_coursesFragment_to_trainingFragment"
+            app:destination="@id/trainingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onlineCoursesListFragment"
+        android:name="com.findajob.jobamax.dashboard.home.training.online.courses.OnlineCoursesListFragment"
+        android:label="OnlineCoursesListFragment" />
+
+</navigation>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:backgroundTint="@color/colorWhite"
+            tools:context=".jobseeker.course.JobSeekerCourseFragment">
+
+            <ImageView
+                android:id="@+id/profile_iv_top_bg"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="@drawable/img_bottom_curve_background"
+                android:contentDescription="@string/label_none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/profile_iv_company_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="45dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/profile_tv_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/profile_iv_company_icon"
+                app:layout_constraintStart_toStartOf="@+id/profile_iv_company_icon"
+                app:layout_constraintTop_toBottomOf="@+id/profile_iv_company_icon"
+                tools:text="Company Name" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_rv_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:overScrollMode="never"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_iv_top_bg" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/profile_b_reach"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                app:iconPadding="14dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/label_get_jobamax_reach"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_messages"
+                app:iconTint="@color/colorPink"
+                app:iconSize="18dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                app:cornerRadius="20dp"
+                app:elevation="2dp"
+                android:translationZ="2dp"
+                app:iconGravity="start"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="@id/profile_rv_info"
+                app:layout_constraintStart_toStartOf="@id/profile_rv_info"
+                app:layout_constraintTop_toBottomOf="@id/profile_rv_info" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0975FE</color>
+    <!--<color name="colorPrimaryDark">#3700B3</color>-->
+    <color name="colorAccent">#0975FE</color>
+    <color name="transBlue">#aa0975FE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="greyishWhite">#e2e2f2</color>
+    <color name="transparent">#00000000</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#303030</color>
+    <color name="sub_text">#757575</color>
+    <color name="grey">#aaaaaa</color>
+    <color name="greyLiter">#cccccc</color>
+    <color name="divider">#DDDDDD</color>
+    <color name="dark_divider">#BDBDBD</color>
+    <color name="heading_background">#F3F2F8</color>
+    <color name="screen_background">#F7F7F7</color>
+    <color name="white_text">#D6D6D6</color>
+    <color name="purple">#FF7800EF</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPink">#d214ff</color>
+    <color name="colorGray">#D6D6D6</color>
+    <color name="colorGray_2">#CCCCCC</color>
+    <color name="colorLightGray">#C3ECECEC</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colorYellow">#FFD700</color>
+    <color name="colorDividerLight">#D6D6D6</color>
+    <color name="trans_red">#77D32F2F</color>
+    <color name="trans_green">#77388E3C</color>
+    <color name="trans_yellow">#77FFA000</color>
+    <color name="trans_purple">#77673AB7</color>
+
+
+    <color name="colorHypeLink">#1073C0</color>
+    <color name="colorHypeLinkFaded">#551073C0</color>
+    <color name="black">#000000</color>
+    <color name="red">#FE4C4C</color>
+    <color name="yellow">#FDCB19</color>
+    <color name="green">#05A94D</color>
+    <color name="deep_blue">#2e336a</color>
+    <color name="transGrey">#aaaaaaaa</color>
+    <color name="trans_black_25">#40000000</color>
+    <color name="orange">#F7931E</color>
+    <color name="blue">#03168A</color>
+    <color name="blue_2">#3361FE</color>
+    <color name="lite_blue">#1491FF</color>
+    <color name="gray">#B9B9B9</color>
+    <color name="colorGray_3">#B9B9B9</color>
+    <color name="blue_1">#1491FF</color>
+
+</resources>

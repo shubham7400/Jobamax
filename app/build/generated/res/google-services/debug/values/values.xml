@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">693848443803-ur2sj50a6jlcsonbc6dun38tjd053nuf.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">693848443803</string>
+    <string name="google_api_key" translatable="false">AIzaSyDbfdFvd1i8BEEuFY3pXilDfgFRUrIADEc</string>
+    <string name="google_app_id" translatable="false">1:693848443803:android:af4c62c1838ae04d57af3e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDbfdFvd1i8BEEuFY3pXilDfgFRUrIADEc</string>
+    <string name="google_storage_bucket" translatable="false">jobamax-daf51.appspot.com</string>
+    <string name="project_id" translatable="false">jobamax-daf51</string>
+</resources>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="forSubscription"
+            type="Boolean" />
+
+        <variable
+            name="handler"
+            type="com.findajob.jobamax.recruiter.profile.RecruiterProfileInterface" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/headerLayout"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_bottom_curve_background" />
+
+                <LinearLayout
+                    android:id="@+id/headerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="32dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivCompanyIcon"
+                            android:layout_width="128dp"
+                            android:layout_height="128dp"
+                            android:background="@drawable/round_64"
+                            android:onClick="@{() -> handler.onProfilePictureClicked()}"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/round_48"
+                            android:padding="6dp"
+                            android:src="@drawable/ic_baseline_edit_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@android:color/black" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <TextView
+                        android:id="@+id/companyName"
+                        style="@style/regular_label"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="24dp"
+                        android:gravity="center_horizontal"
+                        android:maxLines="2"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        tools:text="Dummy" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="@{() -> handler.onAccountClicked()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:layout_width="32sp"
+                    android:layout_height="24sp"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    style="@style/regular_label"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/account"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/divider" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="@{() -> handler.onCompanyClick()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="32sp"
+                    android:layout_height="24sp"
+                    android:src="@drawable/ic_company"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    style="@style/regular_label"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/company"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="@{() -> handler.onJobOfferClicked()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:layout_width="32sp"
+                    android:layout_height="24sp"
+                    android:src="@drawable/ic_job_offer" />
+
+                <TextView
+                    style="@style/regular_label"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/job_listing"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="@{() -> handler.onMediaClicked()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:layout_width="32sp"
+                    android:layout_height="24sp"
+                    android:src="@drawable/ic_media" />
+
+                <TextView
+                    style="@style/regular_label"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/show_case_your"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/divider" />
+
+            <TextView
+                style="@style/regular_label"
+                showView="@{forSubscription}"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_button_bg"
+                android:gravity="center"
+                android:onClick="@{() -> handler.onSubscriptionClicked()}"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="6dp"
+                android:text="@string/subscription"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/regular_label"
+                showView="@{!forSubscription}"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_button_bg"
+                android:gravity="center"
+                android:onClick="@{() -> handler.onUpgradeClicked()}"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="6dp"
+                android:text="@string/upgrade"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:visibility="gone" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="64dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                app:tabBackground="@drawable/tab_background"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp" />
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="20dp"
+                android:onClick="@{() -> handler.onGetJombaxAnalytics()}"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_analytics" />
+
+                    <TextView
+                        style="@style/regular_label"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/get_jobomax_analytics" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/regular_label"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/analysis_for_data" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

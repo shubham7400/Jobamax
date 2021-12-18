@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = "1.5.30"
+        rx_android_version = "2.1.1"
+        rx_java_version = "2.2.19"
+        rx_kotlin_version = "2.4.0"
+        version_retrofit = "2.9.0"
+        version_gson = "2.8.8"
+        version_gson_converter = "2.9.0"
+        nav_version = "2.3.1"
+    }
+
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "https://maven.google.com"
+        }
+
+    }
+    dependencies {
+
+        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.0'
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://jitpack.io" }
+
+        maven {
+            url "https://maven.google.com"
+        }
+
+        maven { url 'https://sdk.uxcam.com/android/' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_job_seeker_home"
+    app:startDestination="@id/jobSeekerApplyFragment">
+
+    <fragment
+        android:id="@+id/jobSeekerProfileFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment"
+        android:label="JobSeekerProfileFragment"
+        tools:layout="@layout/fragment_job_seeker_profile">
+        <action
+            android:id="@+id/action_jobSeekerProfileFragment_to_jobSeekerAccountFragment"
+            app:destination="@id/jobSeekerAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_jobSeekerProfileFragment_to_jobSearchFragment2"
+            app:destination="@id/jobSearchFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_jobSeekerProfileFragment_to_jobSeekerMediaFragment"
+            app:destination="@id/jobSeekerMediaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_jobSeekerProfileFragment_to_jobSeekerCvFragment"
+            app:destination="@id/jobSeekerCvFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobSeekerCourseFragment"
+        android:name="com.findajob.jobamax.jobseeker.course.JobSeekerCourseFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_job_seeker_course" />
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.findajob.jobamax.dashboard.messages.MessagesFragment"
+        android:label="MessagesFragment"
+        tools:layout="@layout/fragment_messages" />
+    <fragment
+        android:id="@+id/jobSeekerApplyFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment"
+        android:label="fragment_job_seeker_apply"
+        tools:layout="@layout/fragment_job_seeker_apply">
+        <action
+            android:id="@+id/action_jobSeekerApplyFragment_to_jobSearchFragment2"
+            app:destination="@id/jobSearchFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerApplyFragment_to_jobOfferCardInfoFragment"
+            app:destination="@id/jobOfferCardInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobSeekerTrackFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.JobSeekerTrackFragment"
+        android:label="fragment_job_seeker_track"
+        tools:layout="@layout/fragment_job_seeker_track" />
+    <fragment
+        android:id="@+id/jobSearchFragment2"
+        android:name="com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchFragment"
+        android:label="JobSearchFragment"
+        tools:layout="@layout/fragment_job_search" />
+
+    <fragment
+        android:id="@+id/jobSeekerAccountFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment"
+        android:label="JobSeekerAccountFragment"
+        tools:layout="@layout/fragment_job_seeker_account">
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerPersonalInformationFragment"
+            app:destination="@id/jobSeekerPersonalInformationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerPushNotificationFragment"
+            app:destination="@id/jobSeekerPushNotificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment"
+            app:destination="@id/jobSeekerManageReadReceiptsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerNewsletterFragment"
+            app:destination="@id/jobSeekerNewsletterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerPaymentMethodsFragment"
+            app:destination="@id/jobSeekerPaymentMethodsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerSocialAccountFragment"
+            app:destination="@id/jobSeekerSocialAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2"
+            app:destination="@id/seekerDeleteAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobSeekerPersonalInformationFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment"
+        android:label="JobSeekerPersonalInformationFragment"
+        tools:layout="@layout/fragment_job_seeker_personal_information" />
+    <fragment
+        android:id="@+id/jobSeekerPushNotificationFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment"
+        android:label="JobSeekerPushNotificationFragment"
+        tools:layout="@layout/fragment_job_seeker_push_notification" />
+    <fragment
+        android:id="@+id/jobSeekerPaymentMethodsFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.paymentMethods.JobSeekerPaymentMethodsFragment"
+        android:label="JobSeekerPaymentMethodsFragment"
+        tools:layout="@layout/fragment_job_seeker_payment_methods" />
+    <fragment
+        android:id="@+id/jobSeekerManageReadReceiptsFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment"
+        android:label="JobSeekerManageReadReceiptsFragment"
+        tools:layout="@layout/fragment_job_seeker_manage_read_receipts" />
+    <fragment
+        android:id="@+id/jobSeekerNewsletterFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment"
+        android:label="JobSeekerNewsletterFragment"
+        tools:layout="@layout/fragment_job_seeker_newsletter" />
+    <fragment
+        android:id="@+id/playVideoFragment2"
+        android:name="com.findajob.jobamax.recruiter.track.PlayVideoFragment"
+        android:label="fragment_play_video"
+        tools:layout="@layout/fragment_play_video" />
+    <fragment
+        android:id="@+id/jobOfferCardInfoFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.JobOfferCardInfoFragment"
+        android:label="fragment_job_offer_card_info"
+        tools:layout="@layout/fragment_job_offer_card_info">
+        <action
+            android:id="@+id/action_jobOfferCardInfoFragment_to_playVideoFragment2"
+            app:destination="@id/playVideoFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobSeekerMediaFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.media.JobSeekerMediaFragment"
+        android:label="JobSeekerMediaFragment"
+        tools:layout="@layout/fragment_job_seeker_media" />
+    <fragment
+        android:id="@+id/jobSeekerCvFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeFragment"
+        android:label="JobSeekerCvFragment"
+        tools:layout="@layout/fragment_job_seeker_resume">
+        <action
+            android:id="@+id/action_jobSeekerCvFragment_to_createEducationFragment"
+            app:destination="@id/createEducationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerCvFragment_to_createExperienceFragment2"
+            app:destination="@id/createExperienceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"  />
+    </fragment>
+    <fragment
+        android:id="@+id/createEducationFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.cv.education.CreateEducationFragment"
+        android:label="CreateExperienceFragment"
+        tools:layout="@layout/fragment_create_education">
+
+        <argument
+            android:name="arg_education"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/createExperienceFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceFragment"
+        android:label="CreateExperienceFragment"
+        tools:layout="@layout/fragment_create_experience">
+
+        <argument
+            android:name="arg_experience"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobSeekerSocialAccountFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.social.JobSeekerSocialAccountFragment"
+        android:label="JobSeekerSocialAccountFragment"
+        tools:layout="@layout/fragment_job_seeker_social_links" />
+    <fragment
+        android:id="@+id/seekerDeleteAccountFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFragment"
+        android:label="SeekerDeleteAccountFragment">
+        <action
+            android:id="@+id/action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment"
+            app:destination="@id/seekerDeleteAccountFinalFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerDeleteAccountFinalFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFinalFragment"
+        android:label="SeekerDeleteAccountFinalFragment" />
+</navigation>
