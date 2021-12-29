@@ -10,8 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MasterClassActivity : BaseActivityMain<ActivityMasterClassBinding>() {
 
-    override val layoutRes: Int
-        get() = R.layout.activity_master_class
+    override val layoutRes: Int get() = R.layout.activity_master_class
 
     override fun getViewModel(): ViewModel? {
         return null

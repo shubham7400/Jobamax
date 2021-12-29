@@ -17,8 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class JobSeekerCourseFragment : BaseFragmentMain<FragmentJobSeekerCourseBinding>() {
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_job_seeker_course
+    override val layoutRes: Int get() = R.layout.fragment_job_seeker_course
 
     override fun onCreated(savedInstance: Bundle?) {
         log("Created")

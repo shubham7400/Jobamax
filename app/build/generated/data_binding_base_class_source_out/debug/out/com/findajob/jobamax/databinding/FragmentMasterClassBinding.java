@@ -4,8 +4,10 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -21,16 +23,64 @@ public abstract class FragmentMasterClassBinding extends ViewDataBinding {
   public final ConstraintLayout appbar;
 
   @NonNull
-  public final RecyclerView rvClassCategories;
+  public final RecyclerView rvComingSoonList;
+
+  @NonNull
+  public final RecyclerView rvMyList;
+
+  @NonNull
+  public final RecyclerView rvNewList;
+
+  @NonNull
+  public final RecyclerView rvTrendingList;
+
+  @NonNull
+  public final TextView tvHintComingSoonList;
+
+  @NonNull
+  public final TextView tvHintMyList;
+
+  @NonNull
+  public final TextView tvHintNewList;
+
+  @NonNull
+  public final TextView tvHintTrendingList;
+
+  @NonNull
+  public final AppCompatTextView tvLabelComingSoonList;
+
+  @NonNull
+  public final AppCompatTextView tvLabelMyList;
+
+  @NonNull
+  public final AppCompatTextView tvLabelNewList;
+
+  @NonNull
+  public final AppCompatTextView tvLabelTrendingList;
 
   @Bindable
   protected MasterClassInterface mHandler;
 
   protected FragmentMasterClassBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ConstraintLayout appbar, RecyclerView rvClassCategories) {
+      ConstraintLayout appbar, RecyclerView rvComingSoonList, RecyclerView rvMyList,
+      RecyclerView rvNewList, RecyclerView rvTrendingList, TextView tvHintComingSoonList,
+      TextView tvHintMyList, TextView tvHintNewList, TextView tvHintTrendingList,
+      AppCompatTextView tvLabelComingSoonList, AppCompatTextView tvLabelMyList,
+      AppCompatTextView tvLabelNewList, AppCompatTextView tvLabelTrendingList) {
     super(_bindingComponent, _root, _localFieldCount);
     this.appbar = appbar;
-    this.rvClassCategories = rvClassCategories;
+    this.rvComingSoonList = rvComingSoonList;
+    this.rvMyList = rvMyList;
+    this.rvNewList = rvNewList;
+    this.rvTrendingList = rvTrendingList;
+    this.tvHintComingSoonList = tvHintComingSoonList;
+    this.tvHintMyList = tvHintMyList;
+    this.tvHintNewList = tvHintNewList;
+    this.tvHintTrendingList = tvHintTrendingList;
+    this.tvLabelComingSoonList = tvLabelComingSoonList;
+    this.tvLabelMyList = tvLabelMyList;
+    this.tvLabelNewList = tvLabelNewList;
+    this.tvLabelTrendingList = tvLabelTrendingList;
   }
 
   public abstract void setHandler(@Nullable MasterClassInterface handler);

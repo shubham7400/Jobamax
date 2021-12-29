@@ -1,22 +1,40 @@
 package com.findajob.jobamax.recruiter.profile.account.companyInfo
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import com.findajob.jobamax.MainActivity
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.databinding.ActivityCompanyIntroInfoBinding
 import com.findajob.jobamax.dialog.RegistrationSuccessfulDialog
+import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.enums.LoginType
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.model.Company
+import com.findajob.jobamax.model.Recruiter
+import com.findajob.jobamax.preference.getEmail
+import com.findajob.jobamax.preference.getPassword
+import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.recruiter.home.RecruiterHomeViewModel
-import com.findajob.jobamax.repo.SaveParseObjectCallback
+import com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInfoIntroActivity
+import com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInformationModel
 import com.findajob.jobamax.util.errorToast
 import com.findajob.jobamax.util.toast
+import com.google.firebase.dynamiclinks.ktx.androidParameters
+import com.google.firebase.dynamiclinks.ktx.dynamicLink
+import com.google.firebase.dynamiclinks.ktx.dynamicLinks
+import com.google.firebase.ktx.Firebase
+import com.parse.ParseCloud
+import com.parse.ParseObject
+import com.parse.ParseQuery
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBinding>(),
@@ -25,8 +43,9 @@ class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBindin
     val viewModel: RecruiterHomeViewModel by viewModels()
     lateinit var company: Company
 
-    override val layoutRes: Int
-        get() = R.layout.activity_company_intro_info
+    private lateinit var personalInfoModel: RecruiterPersonalInformationModel
+
+    override val layoutRes: Int get() = R.layout.activity_company_intro_info
 
     override fun getViewModel(): ViewModel = viewModel
 
@@ -72,6 +91,15 @@ class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBindin
 
     private fun initViews() {
         binding.handler = this
+        personalInfoModel = RecruiterPersonalInformationModel()
+        personalInfoModel.firstName = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_FIRST_NAME).toString()
+        personalInfoModel.lastName = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_LAST_NAME).toString()
+        personalInfoModel.gender = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_GENDER).toString()
+        personalInfoModel.email = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_EMAIL).toString()
+        personalInfoModel.dob = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_DOB).toString()
+        personalInfoModel.postCode = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_ZIP_CODE).toString()
+        personalInfoModel.phoneNumber = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_PHONE_NUMBER).toString()
+        personalInfoModel.postCode = intent.getStringExtra(RecruiterPersonalInfoIntroActivity.RECRUITER_PROMO_CODE).toString()
     }
 
     private fun configureViewModel() {
@@ -85,7 +113,14 @@ class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBindin
             binding.etCompanyNameField.error = "Specify the name of your company"
             return false
         }
-
+        if (binding.etPositionField.text.isNullOrEmpty()) {
+            binding.etPositionField.error = "Specify the position"
+            return false
+        }
+        if (binding.etHeadquartersField.text.isNullOrEmpty()) {
+            binding.etHeadquartersField.error = "Specify the headquarter of your company"
+            return false
+        }
         return true
     }
 
@@ -114,9 +149,93 @@ class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBindin
 
         if (validateFields()) {
             progressHud.show()
-            saveCompanyData()
-            viewModel.saveCompanyData(company)
+            val recruiter = Recruiter()
+            recruiter.recruiterId = UUID.randomUUID().toString()
+            recruiter.firstName = personalInfoModel.firstName
+            recruiter.lastName = personalInfoModel.lastName
+            recruiter.gender = personalInfoModel.gender
+            recruiter.dob = personalInfoModel.dob
+            recruiter.postCode = personalInfoModel.postCode
+            recruiter.email = personalInfoModel.email
+            recruiter.phoneNumber = personalInfoModel.phoneNumber
+            recruiter.password = getPassword()
+            recruiter.toParseObject().saveInBackground { it ->
+                when{
+                    it != null -> {
+                        toast(it.message.toString())
+                    }
+                    else -> {
+                        saveCompanyData()
+                        val companyParseObject = company.toParseObject()
+                        companyParseObject.put("recruiterId",  getUserId())
+                        companyParseObject.saveInBackground { exception ->
+                            when{
+                                exception != null ->{
+                                    toast(exception.message.toString())
+                                }
+                                else -> {
+                                    val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
+                                    query.whereEqualTo("recruiterId", recruiter.recruiterId)
+                                    query.getFirstInBackground { result, e ->
+                                        when{
+                                            e != null -> {
+                                                toast(e.message.toString())
+                                            }
+                                            result == null -> {
+                                                toast("result not found")
+                                            }
+                                            result != null -> {
+                                                result.put("company", companyParseObject)
+                                                result.saveInBackground {
+                                                    if (it == null){
+                                                        sendEmailVerificationLink(recruiter)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        viewModel.saveCompanyData(company)
+                    }
+                }
+            }
         } else errorToast()
+    }
+
+    private fun sendEmailVerificationLink(recruiter: Recruiter) {
+        progressHud.show()
+        val builder = Uri.Builder()
+        builder.scheme("https")
+            .authority("jobamax.page.link")
+            .appendPath("verifyemail")
+            .appendQueryParameter("userType", getUserType().toString())
+            .appendQueryParameter("LoginType", LoginType.email.toString())
+            .appendQueryParameter("recruiterId", recruiter.recruiterId)
+        val myUrl: String = builder.build().toString()
+        val dynamicLink = Firebase.dynamicLinks.dynamicLink {
+            link = Uri.parse(myUrl)
+            domainUriPrefix = "https://jobamax.page.link"
+            androidParameters("com.findajob.jobamax") {
+            }
+        }
+        val param = HashMap<String, String>()
+        param["toEmail"] = getEmail()
+        param["link"] = dynamicLink.uri.toString()
+        ParseCloud.callFunctionInBackground<Any>("sendgridEmail", param) { obj, e ->
+            progressHud.dismiss()
+            if (e != null && obj == null) {
+                toast("Something Went Wrong.")
+            } else {
+                BasicDialog(this, "An email with verification link is sent to:\n ${getEmail()}", true) {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }.also {
+                    it.setCancelable(false)
+                }.show()
+            }
+        }
     }
 
     private fun showSuccessDialog() {

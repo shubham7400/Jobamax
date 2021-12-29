@@ -4,13 +4,13 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.dashboard.home.training.masterclass.adapter.VideoDetailsAdapter
+import com.findajob.jobamax.dashboard.home.training.masterclass.adapter.VideoEpisodeAdapter
 import com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClass
 import com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClassVideo
 import com.findajob.jobamax.databinding.FragmentMasterclassDetailsBinding
 
 class MasterClassDetailsFragment : BaseFragmentMain<FragmentMasterclassDetailsBinding>(){
-    lateinit var adapter: VideoDetailsAdapter
+    lateinit var adapter: VideoEpisodeAdapter
     lateinit var masterClass : MasterClass
 
     override val layoutRes: Int
@@ -26,7 +26,7 @@ class MasterClassDetailsFragment : BaseFragmentMain<FragmentMasterclassDetailsBi
     }
 
     private fun initMockData() {
-        adapter.collection = MasterClassVideo.generateMockData()
+      /*  adapter.collection = MasterClassVideo.generateMockData()*/
         val a = 10;
     }
 
@@ -36,7 +36,7 @@ class MasterClassDetailsFragment : BaseFragmentMain<FragmentMasterclassDetailsBi
 
     private fun initViews() {
         binding.apply {
-            adapter = VideoDetailsAdapter()
+            adapter = VideoEpisodeAdapter()
             rvMasterclassVideos.adapter = adapter
         }
 

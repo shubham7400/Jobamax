@@ -2,11 +2,7 @@ package com.findajob.jobamax.data.pojo
 
 import com.findajob.jobamax.R
 
-data class Courses(
-    val id: Int,
-    val courseName: String,
-    val image: Int
-) {
+data class Courses(val id: Int, val courseName: String, val image: Int) {
     companion object {
         fun generateMockCourses(): List<Courses> {
             return listOf(

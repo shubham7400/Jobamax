@@ -13,14 +13,12 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.databinding.ActivityJobSeekerPersonalIntroInfoBinding
  import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
  import com.findajob.jobamax.model.JobSeeker
- import com.findajob.jobamax.preference.getEmail
-import com.findajob.jobamax.preference.getLoginType
-import com.findajob.jobamax.preference.getPassword
-import com.findajob.jobamax.preference.getUserType
+import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
   import com.google.firebase.dynamiclinks.ktx.androidParameters
 import com.google.firebase.dynamiclinks.ktx.dynamicLink
@@ -54,7 +52,21 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
     private fun initViews() {
         binding.handler = this
 
-        binding.etEmailField.setText(getEmail())
+        when(getLoginType()){
+            LoginType.email.toString() -> {
+                binding.etEmailField.setText(getEmail())
+            }
+            LoginType.facebook.toString() -> {
+                binding.etEmailField.isClickable = true
+            }
+            LoginType.linkedin.toString() -> {
+                binding.etEmailField.isClickable = true
+            }
+            LoginType.google.toString() -> {
+
+            }
+        }
+
        /* progressHud.show()*/
     }
 
@@ -98,6 +110,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
     override fun onSubmitClicked() {
         addPhoneNumber()
+
         if (validateFields()) {
             progressHud.show()
             storeUserInParse()
@@ -159,10 +172,15 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
             validateFlag = false
         }
 
-        /*if (binding.etLastName.text.isEmpty()) {
-            binding.etLastName.error = getString(R.string.enter_last_name)
+        if (binding.etEmailField.text.isEmpty()) {
+            binding.etEmailField.error = getString(R.string.enter_email)
             validateFlag = false
-        }*/
+        }
+        if (!binding.etEmailField.text.toString().isValidEmail()){
+            setEmail(binding.etEmailField.text.toString())
+            toast("Enter valid email!")
+            validateFlag = false
+        }
 
         if (binding.tvDateOfBirthField.text.isEmpty()) {
             binding.tvDateOfBirthField.error = getString(R.string.enter_date_of_birth)
@@ -207,7 +225,11 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         progressHud.show()
         val jobSeeker = JobSeeker()
         val id = UUID.randomUUID().toString()
-        jobSeeker.jobSeekerId = id
+        if (getLoginType() == LoginType.email.toString()){
+            jobSeeker.jobSeekerId = id
+        }else{
+            jobSeeker.jobSeekerId = getUserId()
+        }
         jobSeeker.email = getEmail()
         jobSeeker.loginType = getLoginType()
         jobSeeker.firstName = binding.etFirstName.text.toString()
@@ -233,7 +255,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                 val builder = Uri.Builder()
                 builder.scheme("https")
                     .authority("jobamax.page.link")
-                    .appendPath("verifyemail")
+                    .appendPath(FirebaseDynamicLinkPath.verifyemail.toString())
                     .appendQueryParameter("userType", getUserType().toString())
                     .appendQueryParameter("LoginType", LoginType.email.toString())
                     .appendQueryParameter("recruiterId", id)

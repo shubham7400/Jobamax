@@ -40,7 +40,7 @@ object ViewModelModule {
     }
 
     @Provides
-    fun provideMessageRepository() = MessageRepository()
+    fun provideMessageRepository(@ApplicationContext context: Context) = MessageRepository(context)
 
     @Provides
     fun provideLiveRoomRepo(context: Application): LiveRoomRepo {

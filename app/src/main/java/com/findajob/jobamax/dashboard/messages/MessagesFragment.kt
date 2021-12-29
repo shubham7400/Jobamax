@@ -8,6 +8,7 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.base.BaseViewModel
 import com.findajob.jobamax.databinding.FragmentMessagesBinding
 import com.findajob.jobamax.preference.getRole
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.util.*
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,8 +22,7 @@ class MessagesFragment : BaseFragmentMain<FragmentMessagesBinding>() {
     override fun getViewModel(): BaseViewModel = viewModel
 
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_messages
+    override val layoutRes: Int get() = R.layout.fragment_messages
 
     override fun onCreated(savedInstance: Bundle?) {
         setUpNavigation()
@@ -32,7 +32,7 @@ class MessagesFragment : BaseFragmentMain<FragmentMessagesBinding>() {
     private fun setUpNavigation() {
 
         val tabFragmentAdapter = MessageTabFragmentAdapter(childFragmentManager).apply {
-            if(requireActivity().getRole() == ROLE_RECRUITER)
+            if(requireActivity().getUserType() == 1)
                 addFragment(RecruiterChatsFragment.newInstance(), RECRUITMENT_PAGE_LABEL)
             else
                 addFragment(JobSeekerChatsFragment.newInstance(), JOB_HUNT_PAGE_LABEL)

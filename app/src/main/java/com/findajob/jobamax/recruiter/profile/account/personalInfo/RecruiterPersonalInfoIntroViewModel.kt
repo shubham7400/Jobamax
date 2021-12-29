@@ -42,8 +42,7 @@ class RecruiterPersonalInfoIntroViewModel @Inject constructor(
                 {
                     val parseObject = it
                     recruiterParseObject = parseObject
-                    companyParseObject =
-                        (parseObject["company"] as? ParseObject?) ?: Company().toParseObject()
+                    companyParseObject = (parseObject["company"] as? ParseObject?) ?: Company().toParseObject()
                     company = Company(companyParseObject!!)
                     recruiterLiveData.value = Recruiter(recruiterParseObject!!)
                 },
@@ -54,10 +53,7 @@ class RecruiterPersonalInfoIntroViewModel @Inject constructor(
             .addTo(disposeBag)
     }
 
-    fun submitData(
-        personalInfoModel: RecruiterPersonalInformationModel,
-        callback: (it: ParseException?) -> Unit
-    ) {
+    fun submitData(personalInfoModel: RecruiterPersonalInformationModel, callback: (it: ParseException?) -> Unit) {
         viewModelScope.launch(Dispatchers.IO) {
             personalInfoModel.update(recruiterParseObject!!)
             companyParseObject?.put("name", personalInfoModel.companyName)

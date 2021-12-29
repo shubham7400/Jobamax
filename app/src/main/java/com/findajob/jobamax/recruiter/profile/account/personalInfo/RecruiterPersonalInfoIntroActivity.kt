@@ -25,9 +25,7 @@ import org.jetbrains.anko.longToast
 import java.util.*
 
 @AndroidEntryPoint
-class RecruiterPersonalInfoIntroActivity :
-    BaseActivityMain<ActivityRecruiterPersonalInfoIntroBinding>(),
-    RecruiterPersonalInfoIntroInterface {
+class RecruiterPersonalInfoIntroActivity : BaseActivityMain<ActivityRecruiterPersonalInfoIntroBinding>(), RecruiterPersonalInfoIntroInterface {
 
     val viewModel: RecruiterPersonalInfoIntroViewModel by viewModels()
     private lateinit var personalInfoModel: RecruiterPersonalInformationModel
@@ -118,7 +116,17 @@ class RecruiterPersonalInfoIntroActivity :
     override fun onSubmitClicked() {
         addPhoneNumber()
         if (validateFields()) {
-            progressHud.show()
+           startActivity(Intent(this, CompanyIntroInfoActivity::class.java).also {
+               it.putExtra(RECRUITER_FIRST_NAME, if (binding.etFirstName.text.isBlank())  "" else binding.etFirstName.text.toString() )
+               it.putExtra(RECRUITER_LAST_NAME, if (binding.etLastName.text.isBlank())  "" else binding.etLastName.text.toString())
+               it.putExtra(RECRUITER_GENDER, if (binding.tvGenderHint.text.isBlank())  "" else binding.tvGenderHint.text.toString())
+               it.putExtra(RECRUITER_DOB, if (binding.tvDateOfBirthField.text.isBlank())  "" else binding.tvDateOfBirthField.text.toString())
+               it.putExtra(RECRUITER_ZIP_CODE, if (binding.etPostalCode.text.isBlank())  "" else binding.etPostalCode.text.toString())
+               it.putExtra(RECRUITER_EMAIL, if (binding.etEmailField.text.isBlank())  "" else binding.etEmailField.text.toString())
+               it.putExtra(RECRUITER_PHONE_NUMBER, if (binding.etPhoneNumber.text.isBlank())  "" else binding.etPhoneNumber.text.toString())
+               it.putExtra(RECRUITER_PROMO_CODE, if (binding.etInvitationCode.text.isBlank())  "" else binding.etInvitationCode.text.toString())
+           })
+           /* progressHud.show()
             viewModel.submitData(personalInfoModel) {
                 progressHud.dismiss()
                 if (it != null)
@@ -126,7 +134,7 @@ class RecruiterPersonalInfoIntroActivity :
                 else {
                     goToActivity(CompanyIntroInfoActivity::class.java, false)
                 }
-            }
+            }*/
         }
     }
 
@@ -197,26 +205,35 @@ class RecruiterPersonalInfoIntroActivity :
         }
 
         if (binding.etInvitationCode.text.isNotEmpty()){
-            validatePromoCode()
+            progressHud.show()
+            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SalesPerson.toString())
+            query.whereContains("promoCode", binding.etInvitationCode.toString())
+            query.getFirstInBackground { result, e ->
+                progressHud.dismiss()
+                if (result == null){
+                    validateFlag = false
+                    BasicDialog(this, "Invalid Promo Code!"){}.show()
+                }
+            }
         }
 
         return validateFlag
     }
 
-    private fun validatePromoCode() {
-        progressHud.show()
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SalesPerson.toString())
-        query.whereContains("promoCode", binding.etInvitationCode.toString())
-        val result = query.find().firstOrNull()
-        progressHud.dismiss()
-        if (result == null){
-            BasicDialog(this, "Invalid Promo Code!"){}.show()
-        }else{
-            /*storeUserInParse()*/
-        }
-    }
 
     override fun onBackClicked() = super.onBackPressed()
+
+
+    companion object {
+        val RECRUITER_FIRST_NAME = "recruiter_first_name"
+        val RECRUITER_LAST_NAME = "recruiter_last_name"
+        val RECRUITER_GENDER = "recruiter_gender"
+        val RECRUITER_DOB = "recruiter_dob"
+        val RECRUITER_ZIP_CODE = "recruiter_zip_code"
+        val RECRUITER_EMAIL = "recruiter_email"
+        val RECRUITER_PHONE_NUMBER = "recruiter_phone_number"
+        val RECRUITER_PROMO_CODE = "recruiter_promo_code"
+    }
 
 
 }

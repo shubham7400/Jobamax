@@ -1,2 +1,0 @@
-com/findajob/jobamax/test/BuildConfig.java
- com.findajob.jobamax.test.BuildConfig

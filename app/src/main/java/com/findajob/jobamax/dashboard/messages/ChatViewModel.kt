@@ -66,7 +66,7 @@ class ChatViewModel @Inject constructor(
         ).addTo(disposeBag)
     }
 
-    fun getCurrentUserInstant(): ParseObject {
+    fun getCurrentUserInstant(): ParseObject? {
         return repo.currentUser
     }
 

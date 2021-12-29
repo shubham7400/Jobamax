@@ -34,7 +34,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".dashboard.home.training.masterclass.MasterClassGuestDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -54,7 +56,6 @@
             android:name=".LicenseActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".PrivacyPreferenceActivity"
@@ -76,7 +77,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/MasterClassTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".PaymentActivity"
             android:exported="false"
@@ -102,7 +102,6 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".MapsActivity"
             android:exported="false"
@@ -129,9 +128,8 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
-            android:name="com.findajob.jobamax.dashboard.home.training.online.courses.onlinecourse.OnlineCourseDetailsActivity"
+            android:name=".dashboard.home.training.online.courses.onlinecourse.OnlineCourseDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
@@ -156,9 +154,8 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
-            android:name="com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsActivity"
+            android:name=".dashboard.home.training.masterclass.MasterClassDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
@@ -188,7 +185,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/RecruiterHomeTheme"
             android:windowSoftInputMode="adjustPan">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -197,24 +196,26 @@
                 <data android:host="www.jobamax.com" />
                 <data android:scheme="https" />
                 <data android:scheme="http" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="jobamax.page.link"
-                    android:scheme="https"
-                    android:path="/verifyemail"/>
+                    android:path="/verifyemail"
+                    android:scheme="https" />
                 <data android:scheme="http" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".cropper.CropImageActivity"
             android:exported="false"
@@ -231,7 +232,6 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
-
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -293,9 +293,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
-        </provider>
-
-        <!-- FB Dev -->
+        </provider> <!-- FB Dev -->
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider304727217812972"
@@ -303,8 +301,6 @@
         <!-- android:name="com.facebook.FacebookContentProvider" -->
         <!-- android:authorities="com.facebook.app.FacebookContentProvider329366911842680" -->
         <!-- android:exported="true" /> -->
-
-
         <service
             android:name="com.parse.fcm.ParseFirebaseMessagingService"
             android:exported="false">
@@ -331,8 +327,6 @@
         <receiver
             android:name=".util.JobOfferAlarmReceiver"
             android:exported="false" />
-
-
     </application>
 
 </manifest>

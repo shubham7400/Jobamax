@@ -10,6 +10,7 @@ import com.findajob.jobamax.data.remote.AuthRepository
 import com.findajob.jobamax.domain.CheckExistingJobSeekerUseCase
 import com.findajob.jobamax.domain.CheckExistingRecruiterUseCase
 import com.findajob.jobamax.model.*
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.repo.JobSeekerRepo
 import com.findajob.jobamax.repo.RecruiterRepo
 import com.findajob.jobamax.util.ROLE_JOB_SEEKER
@@ -51,7 +52,7 @@ class LoginViewModel constructor(private val context: Application) : AndroidView
      */
     fun getCurrentUser(user: User, onSuccess: (ParseObject) -> Unit, onError: (Throwable) -> Unit) {
         logThis("${roleType == ROLE_JOB_SEEKER}")
-        if (roleType == ROLE_JOB_SEEKER)
+        if (context.getUserType() == 2)
             getCurrentJobSeeker(user, onSuccess, onError)
         else getCurrentRecruiter(user, onSuccess, onError)
     }
@@ -67,9 +68,7 @@ class LoginViewModel constructor(private val context: Application) : AndroidView
     // Check if job seeker has existing profile or not
     private fun getCurrentJobSeeker(user: User, onSuccess: (ParseObject) -> Unit, onError: (Throwable) -> Unit) {
         // Using UseCase: Rx Implementation removed
-        CheckExistingJobSeekerUseCase.execute(
-            checkExistingJobSeekerUseCase,
-            user,
+        CheckExistingJobSeekerUseCase.execute(checkExistingJobSeekerUseCase, user,
             { onSuccess.invoke(it) },
             { onError.invoke(it) }
         )

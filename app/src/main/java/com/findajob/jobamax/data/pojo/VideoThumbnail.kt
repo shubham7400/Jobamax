@@ -1,8 +1,6 @@
 package com.findajob.jobamax.data.pojo
 
-data class VideoThumbnail(
-    val thumbNail: String,
-) {
+data class VideoThumbnail(val thumbNail: String, ) {
     companion object {
         fun generateMockUpData(): List<VideoThumbnail> {
             return listOf(

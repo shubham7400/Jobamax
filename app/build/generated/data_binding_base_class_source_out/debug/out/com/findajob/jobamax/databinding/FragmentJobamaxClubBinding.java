@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.google.android.material.textview.MaterialTextView;
 import java.lang.Deprecated;
@@ -18,25 +18,43 @@ import java.lang.Object;
 
 public abstract class FragmentJobamaxClubBinding extends ViewDataBinding {
   @NonNull
-  public final RecyclerView homeRvData;
-
-  @NonNull
   public final MaterialTextView homeTvHeader;
 
   @NonNull
   public final AppCompatImageView imageBg;
 
   @NonNull
+  public final MaterialTextView itemCompanyIvCourseName;
+
+  @NonNull
   public final ConstraintLayout itemHomeClBg;
 
+  @NonNull
+  public final AppCompatImageView itemImage;
+
+  @NonNull
+  public final CardView itemMasterClass;
+
+  @NonNull
+  public final ConstraintLayout itemNetworking;
+
+  @NonNull
+  public final CardView itemOnlineCourses;
+
   protected FragmentJobamaxClubBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView homeRvData, MaterialTextView homeTvHeader, AppCompatImageView imageBg,
-      ConstraintLayout itemHomeClBg) {
+      MaterialTextView homeTvHeader, AppCompatImageView imageBg,
+      MaterialTextView itemCompanyIvCourseName, ConstraintLayout itemHomeClBg,
+      AppCompatImageView itemImage, CardView itemMasterClass, ConstraintLayout itemNetworking,
+      CardView itemOnlineCourses) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.homeRvData = homeRvData;
     this.homeTvHeader = homeTvHeader;
     this.imageBg = imageBg;
+    this.itemCompanyIvCourseName = itemCompanyIvCourseName;
     this.itemHomeClBg = itemHomeClBg;
+    this.itemImage = itemImage;
+    this.itemMasterClass = itemMasterClass;
+    this.itemNetworking = itemNetworking;
+    this.itemOnlineCourses = itemOnlineCourses;
   }
 
   @NonNull

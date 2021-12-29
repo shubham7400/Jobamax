@@ -10,8 +10,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class TrainingViewModel @Inject constructor(val context: Application) :
-    BaseAndroidViewModel(context) {
+class TrainingViewModel @Inject constructor(val context: Application) : BaseAndroidViewModel(context) {
 
     private val _coursesLiveData: MutableLiveData<List<Courses>> by lazy {
         MutableLiveData()

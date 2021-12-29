@@ -15,7 +15,18 @@ public class FragmentMasterClassBindingImpl extends FragmentMasterClassBinding i
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.appbar, 2);
-        sViewsWithIds.put(R.id.rv_class_categories, 3);
+        sViewsWithIds.put(R.id.tv_label_trending_list, 3);
+        sViewsWithIds.put(R.id.rv_trending_list, 4);
+        sViewsWithIds.put(R.id.tv_hint_trending_list, 5);
+        sViewsWithIds.put(R.id.tv_label_coming_soon_list, 6);
+        sViewsWithIds.put(R.id.rv_coming_soon_list, 7);
+        sViewsWithIds.put(R.id.tv_hint_coming_soon_list, 8);
+        sViewsWithIds.put(R.id.tv_label_my_list, 9);
+        sViewsWithIds.put(R.id.rv_my_list, 10);
+        sViewsWithIds.put(R.id.tv_hint_my_list, 11);
+        sViewsWithIds.put(R.id.tv_label_new_list, 12);
+        sViewsWithIds.put(R.id.rv_new_list, 13);
+        sViewsWithIds.put(R.id.tv_hint_new_list, 14);
     }
     // views
     @NonNull
@@ -30,12 +41,23 @@ public class FragmentMasterClassBindingImpl extends FragmentMasterClassBinding i
     // Inverse Binding Event Handlers
 
     public FragmentMasterClassBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
     }
     private FragmentMasterClassBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[3]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[7]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[10]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[13]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[4]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[11]
+            , (android.widget.TextView) bindings[14]
+            , (android.widget.TextView) bindings[5]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[6]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[9]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[12]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[3]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

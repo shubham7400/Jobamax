@@ -60,7 +60,7 @@ public class ItemVideoThumbnailBindingImpl extends ItemVideoThumbnailBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.item == variableId) {
-            setItem((com.findajob.jobamax.data.pojo.VideoThumbnail) variable);
+            setItem((com.findajob.jobamax.data.pojo.Category) variable);
         }
         else {
             variableSet = false;
@@ -68,7 +68,7 @@ public class ItemVideoThumbnailBindingImpl extends ItemVideoThumbnailBinding  {
             return variableSet;
     }
 
-    public void setItem(@Nullable com.findajob.jobamax.data.pojo.VideoThumbnail Item) {
+    public void setItem(@Nullable com.findajob.jobamax.data.pojo.Category Item) {
         this.mItem = Item;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -91,23 +91,23 @@ public class ItemVideoThumbnailBindingImpl extends ItemVideoThumbnailBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.findajob.jobamax.data.pojo.VideoThumbnail item = mItem;
-        java.lang.String itemThumbNail = null;
+        com.findajob.jobamax.data.pojo.Category item = mItem;
+        java.lang.String itemTopicThumbnail = null;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
 
 
                 if (item != null) {
-                    // read item.thumbNail
-                    itemThumbNail = item.getThumbNail();
+                    // read item.topicThumbnail
+                    itemTopicThumbnail = item.getTopicThumbnail();
                 }
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.itemOurCategoriesIvThumbnail, itemThumbNail);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.itemOurCategoriesIvThumbnail, itemTopicThumbnail);
         }
     }
     // Listener Stub Implementations

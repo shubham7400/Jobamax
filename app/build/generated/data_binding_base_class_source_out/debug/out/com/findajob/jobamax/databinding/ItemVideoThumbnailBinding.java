@@ -11,7 +11,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import com.findajob.jobamax.data.pojo.VideoThumbnail;
+import com.findajob.jobamax.data.pojo.Category;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -20,7 +20,7 @@ public abstract class ItemVideoThumbnailBinding extends ViewDataBinding {
   public final AppCompatImageView itemOurCategoriesIvThumbnail;
 
   @Bindable
-  protected VideoThumbnail mItem;
+  protected Category mItem;
 
   protected ItemVideoThumbnailBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatImageView itemOurCategoriesIvThumbnail) {
@@ -28,10 +28,10 @@ public abstract class ItemVideoThumbnailBinding extends ViewDataBinding {
     this.itemOurCategoriesIvThumbnail = itemOurCategoriesIvThumbnail;
   }
 
-  public abstract void setItem(@Nullable VideoThumbnail item);
+  public abstract void setItem(@Nullable Category item);
 
   @Nullable
-  public VideoThumbnail getItem() {
+  public Category getItem() {
     return mItem;
   }
 

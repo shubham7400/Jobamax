@@ -15,6 +15,7 @@ public class ItemMasterclassVideoBindingImpl extends ItemMasterclassVideoBinding
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.play_btn, 5);
+        sViewsWithIds.put(R.id.appCompatTextView, 6);
     }
     // views
     // variables
@@ -23,10 +24,11 @@ public class ItemMasterclassVideoBindingImpl extends ItemMasterclassVideoBinding
     // Inverse Binding Event Handlers
 
     public ItemMasterclassVideoBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private ItemMasterclassVideoBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (androidx.appcompat.widget.AppCompatTextView) bindings[4]
             , (androidx.appcompat.widget.AppCompatTextView) bindings[3]
@@ -66,7 +68,7 @@ public class ItemMasterclassVideoBindingImpl extends ItemMasterclassVideoBinding
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.item == variableId) {
-            setItem((com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClassVideo) variable);
+            setItem((com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode) variable);
         }
         else {
             variableSet = false;
@@ -74,7 +76,7 @@ public class ItemMasterclassVideoBindingImpl extends ItemMasterclassVideoBinding
             return variableSet;
     }
 
-    public void setItem(@Nullable com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClassVideo Item) {
+    public void setItem(@Nullable com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode Item) {
         this.mItem = Item;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -97,25 +99,25 @@ public class ItemMasterclassVideoBindingImpl extends ItemMasterclassVideoBinding
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClassVideo item = mItem;
-        java.lang.String itemTitle = null;
-        int itemImage = 0;
+        com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode item = mItem;
+        java.lang.String itemVideoThumbnail = null;
         java.lang.String itemDescription = null;
         java.lang.String itemDuration = null;
+        java.lang.String itemSubTitle = null;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
 
 
                 if (item != null) {
-                    // read item.title
-                    itemTitle = item.getTitle();
-                    // read item.image
-                    itemImage = item.getImage();
+                    // read item.videoThumbnail
+                    itemVideoThumbnail = item.getVideoThumbnail();
                     // read item.description
                     itemDescription = item.getDescription();
                     // read item.duration
                     itemDuration = item.getDuration();
+                    // read item.subTitle
+                    itemSubTitle = item.getSubTitle();
                 }
         }
         // batch finished
@@ -124,8 +126,8 @@ public class ItemMasterclassVideoBindingImpl extends ItemMasterclassVideoBinding
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.description, itemDescription);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.duration, itemDuration);
-            this.title.setText(itemTitle);
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromDrawableWithCorners(this.videoCover, itemImage);
+            this.title.setText(itemSubTitle);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.videoCover, itemVideoThumbnail);
         }
     }
     // Listener Stub Implementations

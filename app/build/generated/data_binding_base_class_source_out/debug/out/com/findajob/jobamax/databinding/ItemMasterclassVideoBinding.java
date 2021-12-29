@@ -14,11 +14,14 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import com.findajob.jobamax.dashboard.home.training.masterclass.model.MasterClassVideo;
+import com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ItemMasterclassVideoBinding extends ViewDataBinding {
+  @NonNull
+  public final AppCompatTextView appCompatTextView;
+
   @NonNull
   public final ConstraintLayout clItemMasterVideo;
 
@@ -38,12 +41,14 @@ public abstract class ItemMasterclassVideoBinding extends ViewDataBinding {
   public final AppCompatImageView videoCover;
 
   @Bindable
-  protected MasterClassVideo mItem;
+  protected Episode mItem;
 
   protected ItemMasterclassVideoBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ConstraintLayout clItemMasterVideo, AppCompatTextView description, AppCompatTextView duration,
-      AppCompatImageView playBtn, TextView title, AppCompatImageView videoCover) {
+      AppCompatTextView appCompatTextView, ConstraintLayout clItemMasterVideo,
+      AppCompatTextView description, AppCompatTextView duration, AppCompatImageView playBtn,
+      TextView title, AppCompatImageView videoCover) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.appCompatTextView = appCompatTextView;
     this.clItemMasterVideo = clItemMasterVideo;
     this.description = description;
     this.duration = duration;
@@ -52,10 +57,10 @@ public abstract class ItemMasterclassVideoBinding extends ViewDataBinding {
     this.videoCover = videoCover;
   }
 
-  public abstract void setItem(@Nullable MasterClassVideo item);
+  public abstract void setItem(@Nullable Episode item);
 
   @Nullable
-  public MasterClassVideo getItem() {
+  public Episode getItem() {
     return mItem;
   }
 

@@ -1,9 +1,18 @@
 package com.findajob.jobamax.data.pojo
 
-data class Category(
-    val name: String,
-    val thumbNail: List<VideoThumbnail>,
-) {
+import java.io.Serializable
+
+
+class Category() : Serializable {
+    val topicThumbnail: String = ""
+    val topicId: String = ""
+    val description: String = ""
+    val title: String = ""
+    val topicType: Int? = null
+}
+
+/*
+data class Category(val name: String, val thumbNail: List<VideoThumbnail>, ) {
     companion object {
         fun generateMockUpData(): List<Category> {
             return listOf(
@@ -34,4 +43,4 @@ data class Category(
             )
         }
     }
-}
+}*/

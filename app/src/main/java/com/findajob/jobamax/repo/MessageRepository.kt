@@ -1,5 +1,6 @@
 package com.findajob.jobamax.repo
 
+import android.content.Context
 import com.findajob.jobamax.dashboard.messages.ChatForm
 import com.findajob.jobamax.dashboard.messages.MessageType
 import com.findajob.jobamax.data.pojo.Chat
@@ -7,7 +8,10 @@ import com.findajob.jobamax.data.pojo.CurrentOnline
 import com.findajob.jobamax.data.pojo.Message
 import com.findajob.jobamax.data.pojo.Message.Companion.SHORT_LISTED_BY
 import com.findajob.jobamax.data.pojo.NewPeople
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.model.*
+import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.*
 import com.parse.ParseACL
 import com.parse.ParseObject
@@ -15,30 +19,47 @@ import com.parse.ParseObject.createWithoutData
 import com.parse.ParseQuery
 import com.parse.ParseUser
 import io.reactivex.Single
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-class MessageRepository @Inject constructor() {
+class MessageRepository @Inject constructor(val context: Context) {
+    var jobSeeker: JobSeeker? = null
+    var currentUser: ParseObject? = null
 
-
-    private val parseCurrentUser: ParseUser by lazy {
-        ParseUser.getCurrentUser()
+    init {
+        getUser{
+            jobSeeker = it
+        }
     }
+
+    private fun getUser(listen: (JobSeeker) -> Unit) {
+         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context.getUserId())
+        query.getFirstInBackground { result, e ->
+            if (result != null){
+                currentUser = result
+                listen(JobSeeker(result))
+            }
+        }
+    }
+
+    /*private val parseCurrentUser: ParseUser by lazy {
+        ParseUser.getCurrentUser()
+    }*/
 
     // so that the current user id is queried only once,
     // not every time, wasting resources and taking time
     val currentUserId: String by lazy {
-        parseCurrentUser.objectId
+        jobSeeker!!.jobSeekerId
     }
 
     val currentUserEmail: String by lazy {
-        parseCurrentUser.email
+        jobSeeker!!.email
     }
 
-    val currentUser: ParseObject by lazy {
+   /* val currentUser: ParseObject by lazy {
         getUserById(currentUserId) ?: createWithoutData(User.CLASS_NAME, currentUserId)
-    }
+    }*/
 
     fun getCurrentUser() = Single.create<ParseObject> { emitter ->
         try {
@@ -190,7 +211,7 @@ class MessageRepository @Inject constructor() {
     }
 
     fun getCurrentUsersProfilePicUrl(): String {
-        return currentUser.getString("profilePicUrl") ?: ""
+        return currentUser?.getString("profilePicUrl") ?: ""
     }
 
 
@@ -202,14 +223,14 @@ class MessageRepository @Inject constructor() {
      * @return Recruiter [ParseObject]
      */
     private fun getRecruiterById(userId: String): ParseObject? {
-        try {
+        return try {
             val parseRecruiterQuery = _parseRecruiterQuery
             parseRecruiterQuery.whereEqualTo("userId", userId)
 
             val foundRecruiterList = parseRecruiterQuery.find()
-            return foundRecruiterList[0]
+            foundRecruiterList[0]
         } catch (e: Exception) {
-            return null
+            null
         }
     }
 
@@ -241,7 +262,7 @@ class MessageRepository @Inject constructor() {
     fun getUserById(userId: String): ParseObject? = try {
         val receiverParseQuery = _userQuery
 
-        receiverParseQuery.whereEqualTo("objectId", userId)
+        receiverParseQuery.whereEqualTo(ParseTableFields.jobSeekerId.toString(), userId)
 
         val foundReceiverList = receiverParseQuery.find()
 
@@ -770,7 +791,7 @@ class MessageRepository @Inject constructor() {
                 chatToSend.apply {
                     message = chatForm.message.get().toString()
 
-                    senderId = currentUser
+                    senderId = currentUser!!
                     receiverId = getUserById(chat.third!!)!!
 
                     // file = chat.first.file.get().toString()
@@ -802,7 +823,7 @@ class MessageRepository @Inject constructor() {
 
                         this.message = chatToSend
 
-                        senderId = currentUser
+                        senderId = currentUser!!
                         receiverId = getUserById(chat.third!!) ?: createWithoutData(
                             User.CLASS_NAME,
                             chat.third
@@ -1067,18 +1088,11 @@ class MessageRepository @Inject constructor() {
 
     }
 
-    fun getMessages(source: String) = Single.create<List<Message>> { emitter ->
+    fun getMessages(source: String, ) = Single.create<List<Message>> { emitter ->
 
-        val parseSender = ParseQuery.getQuery(Message::class.java)
-            .whereEqualTo(
-                CHAT_SENDER_ID, currentUser
-            )
+        val parseSender = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_SENDER_ID, currentUser)
 
-        val parseReceiver = ParseQuery.getQuery(Message::class.java)
-            .whereEqualTo(
-                CHAT_RECEIVER_ID, currentUser
-            )
-
+        val parseReceiver = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_RECEIVER_ID, currentUser)
 
         val messageParseQuery =
             ParseQuery.or(listOf<ParseQuery<Message>>(parseSender, parseReceiver))
@@ -1105,6 +1119,8 @@ class MessageRepository @Inject constructor() {
         }
 
     }
+
+
 
     suspend fun makeMessageSeen(message: Message) {
         val currentSeenList = try {

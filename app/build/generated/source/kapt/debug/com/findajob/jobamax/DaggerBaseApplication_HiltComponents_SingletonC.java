@@ -121,6 +121,7 @@ import com.findajob.jobamax.repo.JobSeekerRepo;
 import com.findajob.jobamax.repo.JobSeekerResumeRepo;
 import com.findajob.jobamax.repo.LiveRoomRepo;
 import com.findajob.jobamax.repo.LocationRepo;
+import com.findajob.jobamax.repo.MessageRepository;
 import com.findajob.jobamax.repo.RecruiterRepo;
 import com.findajob.jobamax.repo.UdemyRepo;
 import com.findajob.jobamax.training.ui.LiveRoomFragment;
@@ -128,8 +129,6 @@ import com.findajob.jobamax.training.ui.LiveRoomInterestFragment;
 import com.findajob.jobamax.training.ui.ManageRoomActivity;
 import com.findajob.jobamax.training.ui.ManageRoomViewModel;
 import com.findajob.jobamax.training.ui.ManageRoomViewModel_HiltModules_KeyModule_ProvideFactory;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
@@ -146,7 +145,9 @@ import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideAppl
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.DoubleCheck;
+import dagger.internal.MapBuilder;
 import dagger.internal.Preconditions;
+import dagger.internal.SetBuilder;
 import java.util.Map;
 import java.util.Set;
 import javax.inject.Provider;
@@ -466,186 +467,197 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectJobamaxClubFragment(JobamaxClubFragment arg0) {
+    public void injectJobamaxClubFragment(JobamaxClubFragment jobamaxClubFragment) {
     }
 
     @Override
-    public void injectMasterClassFragment(MasterClassFragment arg0) {
+    public void injectMasterClassFragment(MasterClassFragment masterClassFragment) {
     }
 
     @Override
-    public void injectOnlineCoursesListFragment(OnlineCoursesListFragment arg0) {
+    public void injectOnlineCoursesListFragment(
+        OnlineCoursesListFragment onlineCoursesListFragment) {
     }
 
     @Override
-    public void injectInstructorsFragment(InstructorsFragment arg0) {
+    public void injectInstructorsFragment(InstructorsFragment instructorsFragment) {
     }
 
     @Override
-    public void injectReviewsFragment(ReviewsFragment arg0) {
+    public void injectReviewsFragment(ReviewsFragment reviewsFragment) {
     }
 
     @Override
-    public void injectSyllabusFragment(SyllabusFragment arg0) {
+    public void injectSyllabusFragment(SyllabusFragment syllabusFragment) {
     }
 
     @Override
-    public void injectJobSeekerChatsFragment(JobSeekerChatsFragment arg0) {
-      injectJobSeekerChatsFragment2(arg0);
+    public void injectJobSeekerChatsFragment(JobSeekerChatsFragment jobSeekerChatsFragment) {
+      injectJobSeekerChatsFragment2(jobSeekerChatsFragment);
     }
 
     @Override
-    public void injectMessagesFragment(MessagesFragment arg0) {
+    public void injectMessagesFragment(MessagesFragment messagesFragment) {
     }
 
     @Override
-    public void injectRecruiterChatsFragment(RecruiterChatsFragment arg0) {
+    public void injectRecruiterChatsFragment(RecruiterChatsFragment recruiterChatsFragment) {
     }
 
     @Override
-    public void injectJobSeekerCourseFragment(JobSeekerCourseFragment arg0) {
+    public void injectJobSeekerCourseFragment(JobSeekerCourseFragment jobSeekerCourseFragment) {
     }
 
     @Override
-    public void injectJobSeekerProfileFragment(JobSeekerProfileFragment arg0) {
+    public void injectJobSeekerProfileFragment(JobSeekerProfileFragment jobSeekerProfileFragment) {
     }
 
     @Override
-    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment arg0) {
+    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment jobSeekerAccountFragment) {
     }
 
     @Override
-    public void injectJobSeekerNewsletterFragment(JobSeekerNewsletterFragment arg0) {
+    public void injectJobSeekerNewsletterFragment(
+        JobSeekerNewsletterFragment jobSeekerNewsletterFragment) {
     }
 
     @Override
-    public void injectJobSeekerPaymentMethodsFragment(JobSeekerPaymentMethodsFragment arg0) {
+    public void injectJobSeekerPaymentMethodsFragment(
+        JobSeekerPaymentMethodsFragment jobSeekerPaymentMethodsFragment) {
     }
 
     @Override
     public void injectJobSeekerPersonalInformationFragment(
-        JobSeekerPersonalInformationFragment arg0) {
+        JobSeekerPersonalInformationFragment jobSeekerPersonalInformationFragment) {
     }
 
     @Override
-    public void injectJobSeekerPushNotificationFragment(JobSeekerPushNotificationFragment arg0) {
+    public void injectJobSeekerPushNotificationFragment(
+        JobSeekerPushNotificationFragment jobSeekerPushNotificationFragment) {
     }
 
     @Override
     public void injectJobSeekerManageReadReceiptsFragment(
-        JobSeekerManageReadReceiptsFragment arg0) {
+        JobSeekerManageReadReceiptsFragment jobSeekerManageReadReceiptsFragment) {
     }
 
     @Override
-    public void injectJobSeekerSocialAccountFragment(JobSeekerSocialAccountFragment arg0) {
+    public void injectJobSeekerSocialAccountFragment(
+        JobSeekerSocialAccountFragment jobSeekerSocialAccountFragment) {
     }
 
     @Override
-    public void injectJobSeekerResumeFragment(JobSeekerResumeFragment arg0) {
-      injectJobSeekerResumeFragment2(arg0);
+    public void injectJobSeekerResumeFragment(JobSeekerResumeFragment jobSeekerResumeFragment) {
+      injectJobSeekerResumeFragment2(jobSeekerResumeFragment);
     }
 
     @Override
-    public void injectCreateEducationFragment(CreateEducationFragment arg0) {
-      injectCreateEducationFragment2(arg0);
+    public void injectCreateEducationFragment(CreateEducationFragment createEducationFragment) {
+      injectCreateEducationFragment2(createEducationFragment);
     }
 
     @Override
-    public void injectCreateExperienceFragment(CreateExperienceFragment arg0) {
+    public void injectCreateExperienceFragment(CreateExperienceFragment createExperienceFragment) {
     }
 
     @Override
-    public void injectJobSearchFragment(JobSearchFragment arg0) {
+    public void injectJobSearchFragment(JobSearchFragment jobSearchFragment) {
     }
 
     @Override
-    public void injectJobSourceFragment(JobSourceFragment arg0) {
+    public void injectJobSourceFragment(JobSourceFragment jobSourceFragment) {
     }
 
     @Override
-    public void injectJobOfferCardInfoFragment(JobOfferCardInfoFragment arg0) {
+    public void injectJobOfferCardInfoFragment(JobOfferCardInfoFragment jobOfferCardInfoFragment) {
     }
 
     @Override
-    public void injectJobSeekerApplyFragment(JobSeekerApplyFragment arg0) {
+    public void injectJobSeekerApplyFragment(JobSeekerApplyFragment jobSeekerApplyFragment) {
     }
 
     @Override
-    public void injectJobSeekerTrackFragment(JobSeekerTrackFragment arg0) {
+    public void injectJobSeekerTrackFragment(JobSeekerTrackFragment jobSeekerTrackFragment) {
     }
 
     @Override
-    public void injectRecruiterCourseFragment(RecruiterCourseFragment arg0) {
+    public void injectRecruiterCourseFragment(RecruiterCourseFragment recruiterCourseFragment) {
     }
 
     @Override
-    public void injectRecruiterProfileFragment(RecruiterProfileFragment arg0) {
+    public void injectRecruiterProfileFragment(RecruiterProfileFragment recruiterProfileFragment) {
     }
 
     @Override
-    public void injectRecruiterDeleteAccountFragment(RecruiterDeleteAccountFragment arg0) {
+    public void injectRecruiterDeleteAccountFragment(
+        RecruiterDeleteAccountFragment recruiterDeleteAccountFragment) {
     }
 
     @Override
-    public void injectRecruiterAccountFragment(RecruiterAccountFragment arg0) {
+    public void injectRecruiterAccountFragment(RecruiterAccountFragment recruiterAccountFragment) {
     }
 
     @Override
-    public void injectRecruiterInvoicesFragment(RecruiterInvoicesFragment arg0) {
+    public void injectRecruiterInvoicesFragment(
+        RecruiterInvoicesFragment recruiterInvoicesFragment) {
     }
 
     @Override
-    public void injectRecruiterPaymentMethodsFragment(RecruiterPaymentMethodsFragment arg0) {
+    public void injectRecruiterPaymentMethodsFragment(
+        RecruiterPaymentMethodsFragment recruiterPaymentMethodsFragment) {
     }
 
     @Override
     public void injectRecruiterPersonalInformationFragment(
-        RecruiterPersonalInformationFragment arg0) {
+        RecruiterPersonalInformationFragment recruiterPersonalInformationFragment) {
     }
 
     @Override
-    public void injectRecruiterPushNotificationFragment(RecruiterPushNotificationFragment arg0) {
+    public void injectRecruiterPushNotificationFragment(
+        RecruiterPushNotificationFragment recruiterPushNotificationFragment) {
     }
 
     @Override
     public void injectRecruiterManageReadReceiptsFragment(
-        RecruiterManageReadReceiptsFragment arg0) {
+        RecruiterManageReadReceiptsFragment recruiterManageReadReceiptsFragment) {
     }
 
     @Override
-    public void injectRecruiterSocialAccountFragment(RecruiterSocialAccountFragment arg0) {
+    public void injectRecruiterSocialAccountFragment(
+        RecruiterSocialAccountFragment recruiterSocialAccountFragment) {
     }
 
     @Override
-    public void injectCurrentSubscriptionFragment(CurrentSubscriptionFragment arg0) {
+    public void injectCurrentSubscriptionFragment(
+        CurrentSubscriptionFragment currentSubscriptionFragment) {
     }
 
     @Override
-    public void injectJobOfferDetailsFragment(JobOfferDetailsFragment arg0) {
+    public void injectJobOfferDetailsFragment(JobOfferDetailsFragment jobOfferDetailsFragment) {
     }
 
     @Override
-    public void injectJobListingFragment(JobListingFragment arg0) {
+    public void injectJobListingFragment(JobListingFragment jobListingFragment) {
     }
 
     @Override
-    public void injectRecruiterMediaFragment(RecruiterMediaFragment arg0) {
+    public void injectRecruiterMediaFragment(RecruiterMediaFragment recruiterMediaFragment) {
     }
 
     @Override
-    public void injectRecruiterRecruitFragment(RecruiterRecruitFragment arg0) {
+    public void injectRecruiterRecruitFragment(RecruiterRecruitFragment recruiterRecruitFragment) {
     }
 
     @Override
-    public void injectRecruiterSourceFragment(RecruiterSourceFragment arg0) {
+    public void injectRecruiterSourceFragment(RecruiterSourceFragment recruiterSourceFragment) {
     }
 
     @Override
-    public void injectLiveRoomFragment(LiveRoomFragment arg0) {
+    public void injectLiveRoomFragment(LiveRoomFragment liveRoomFragment) {
     }
 
     @Override
-    public void injectLiveRoomInterestFragment(LiveRoomInterestFragment arg0) {
+    public void injectLiveRoomInterestFragment(LiveRoomInterestFragment liveRoomInterestFragment) {
     }
 
     @Override
@@ -711,64 +723,66 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectMainActivity(MainActivity arg0) {
+    public void injectMainActivity(MainActivity mainActivity) {
     }
 
     @Override
-    public void injectSplashActivity(SplashActivity arg0) {
+    public void injectSplashActivity(SplashActivity splashActivity) {
     }
 
     @Override
-    public void injectHomeActivity(HomeActivity arg0) {
+    public void injectHomeActivity(HomeActivity homeActivity) {
     }
 
     @Override
-    public void injectMasterClassActivity(MasterClassActivity arg0) {
+    public void injectMasterClassActivity(MasterClassActivity masterClassActivity) {
     }
 
     @Override
-    public void injectMasterClassDetailsActivity(MasterClassDetailsActivity arg0) {
+    public void injectMasterClassDetailsActivity(
+        MasterClassDetailsActivity masterClassDetailsActivity) {
     }
 
     @Override
-    public void injectOnlineCourseActivity(OnlineCourseActivity arg0) {
+    public void injectOnlineCourseActivity(OnlineCourseActivity onlineCourseActivity) {
     }
 
     @Override
-    public void injectOnlineCourseDetailsActivity(OnlineCourseDetailsActivity arg0) {
+    public void injectOnlineCourseDetailsActivity(
+        OnlineCourseDetailsActivity onlineCourseDetailsActivity) {
     }
 
     @Override
-    public void injectChatActivity(ChatActivity arg0) {
-      injectChatActivity2(arg0);
+    public void injectChatActivity(ChatActivity chatActivity) {
+      injectChatActivity2(chatActivity);
     }
 
     @Override
-    public void injectPreviewImageActivity(PreviewImageActivity arg0) {
+    public void injectPreviewImageActivity(PreviewImageActivity previewImageActivity) {
     }
 
     @Override
-    public void injectPreviewJobSeekerActivity(PreviewJobSeekerActivity arg0) {
+    public void injectPreviewJobSeekerActivity(PreviewJobSeekerActivity previewJobSeekerActivity) {
     }
 
     @Override
-    public void injectPreviewRecruiterActivity(PreviewRecruiterActivity arg0) {
+    public void injectPreviewRecruiterActivity(PreviewRecruiterActivity previewRecruiterActivity) {
     }
 
     @Override
-    public void injectJobSeekerHomeActivity(JobSeekerHomeActivity arg0) {
+    public void injectJobSeekerHomeActivity(JobSeekerHomeActivity jobSeekerHomeActivity) {
     }
 
     @Override
-    public void injectSelectLocationActivity(SelectLocationActivity arg0) {
+    public void injectSelectLocationActivity(SelectLocationActivity selectLocationActivity) {
     }
 
     @Override
-    public void injectRecruiterHomeActivity(RecruiterHomeActivity arg0) {
+    public void injectRecruiterHomeActivity(RecruiterHomeActivity recruiterHomeActivity) {
     }
 
     @Override
-    public void injectCompanyIntroInfoActivity(CompanyIntroInfoActivity arg0) {
+    public void injectCompanyIntroInfoActivity(CompanyIntroInfoActivity companyIntroInfoActivity) {
     }
 
     @Override
@@ -777,7 +791,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectManageRoomActivity(ManageRoomActivity arg0) {
+    public void injectManageRoomActivity(ManageRoomActivity manageRoomActivity) {
     }
 
     @Override
@@ -787,7 +801,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public Set<String> getViewModelKeys() {
-      return ImmutableSet.<String>of(ChatViewModel_HiltModules_KeyModule_ProvideFactory.provide(), JobSeekerApplyViewModel_HiltModules_KeyModule_ProvideFactory.provide(), JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory.provide(), JobSeekerResumeViewModel_HiltModules_KeyModule_ProvideFactory.provide(), LocationViewModel_HiltModules_KeyModule_ProvideFactory.provide(), ManageRoomViewModel_HiltModules_KeyModule_ProvideFactory.provide(), MessagesViewModel_HiltModules_KeyModule_ProvideFactory.provide(), OnlineCourseViewModel_HiltModules_KeyModule_ProvideFactory.provide(), OnlineCoursesListViewModel_HiltModules_KeyModule_ProvideFactory.provide(), PreviewImageViewModel_HiltModules_KeyModule_ProvideFactory.provide(), PreviewJobSeekerViewModel_HiltModules_KeyModule_ProvideFactory.provide(), PreviewRecruiterViewModel_HiltModules_KeyModule_ProvideFactory.provide(), RecruiterHomeViewModel_HiltModules_KeyModule_ProvideFactory.provide(), RecruiterMediaViewModel_HiltModules_KeyModule_ProvideFactory.provide(), RecruiterPersonalInfoIntroViewModel_HiltModules_KeyModule_ProvideFactory.provide(), SubscriptionViewModel_HiltModules_KeyModule_ProvideFactory.provide(), TrainingViewModel_HiltModules_KeyModule_ProvideFactory.provide());
+      return SetBuilder.<String>newSetBuilder(17).add(ChatViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(JobSeekerApplyViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(JobSeekerResumeViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(LocationViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(ManageRoomViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(MessagesViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(OnlineCourseViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(OnlineCoursesListViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PreviewImageViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PreviewJobSeekerViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PreviewRecruiterViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(RecruiterHomeViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(RecruiterMediaViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(RecruiterPersonalInfoIntroViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SubscriptionViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(TrainingViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
     }
 
     @Override
@@ -863,8 +877,12 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     }
 
+    private MessageRepository messageRepository() {
+      return ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository(ApplicationContextModule_ProvideContextFactory.provideContext(singletonC.applicationContextModule));
+    }
+
     private ChatViewModel chatViewModel() {
-      return new ChatViewModel(ApplicationContextModule_ProvideApplicationFactory.provideApplication(singletonC.applicationContextModule), ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository());
+      return new ChatViewModel(ApplicationContextModule_ProvideApplicationFactory.provideApplication(singletonC.applicationContextModule), messageRepository());
     }
 
     private FCMRepo fCMRepo() {
@@ -872,7 +890,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     private JobSeekerApplyViewModel jobSeekerApplyViewModel() {
-      return new JobSeekerApplyViewModel(ApplicationContextModule_ProvideApplicationFactory.provideApplication(singletonC.applicationContextModule), ViewModelModule_ProvideJobOfferRepoFactory.provideJobOfferRepo(), fCMRepo(), ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository());
+      return new JobSeekerApplyViewModel(ApplicationContextModule_ProvideApplicationFactory.provideApplication(singletonC.applicationContextModule), ViewModelModule_ProvideJobOfferRepoFactory.provideJobOfferRepo(), fCMRepo(), messageRepository());
     }
 
     private JobSeekerRepo jobSeekerRepo() {
@@ -908,7 +926,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     private MessagesViewModel messagesViewModel() {
-      return new MessagesViewModel(ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository());
+      return new MessagesViewModel(messageRepository());
     }
 
     private OnlineCourseViewModel onlineCourseViewModel() {
@@ -920,15 +938,15 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     private PreviewImageViewModel previewImageViewModel() {
-      return new PreviewImageViewModel(ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository());
+      return new PreviewImageViewModel(messageRepository());
     }
 
     private PreviewJobSeekerViewModel previewJobSeekerViewModel() {
-      return new PreviewJobSeekerViewModel(ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository());
+      return new PreviewJobSeekerViewModel(messageRepository());
     }
 
     private PreviewRecruiterViewModel previewRecruiterViewModel() {
-      return new PreviewRecruiterViewModel(ViewModelModule_ProvideMessageRepositoryFactory.provideMessageRepository());
+      return new PreviewRecruiterViewModel(messageRepository());
     }
 
     private RecruiterRepo recruiterRepo() {
@@ -974,7 +992,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-      return ImmutableMap.<String, Provider<ViewModel>>builderWithExpectedSize(17).put("com.findajob.jobamax.dashboard.messages.ChatViewModel", (Provider) chatViewModelProvider).put("com.findajob.jobamax.jobseeker.track.JobSeekerApplyViewModel", (Provider) jobSeekerApplyViewModelProvider).put("com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel", (Provider) jobSeekerHomeViewModelProvider).put("com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeViewModel", (Provider) jobSeekerResumeViewModelProvider).put("com.findajob.jobamax.location.LocationViewModel", (Provider) locationViewModelProvider).put("com.findajob.jobamax.training.ui.ManageRoomViewModel", (Provider) manageRoomViewModelProvider).put("com.findajob.jobamax.dashboard.messages.MessagesViewModel", (Provider) messagesViewModelProvider).put("com.findajob.jobamax.dashboard.home.training.online.courses.onlinecourse.OnlineCourseViewModel", (Provider) onlineCourseViewModelProvider).put("com.findajob.jobamax.dashboard.home.training.online.courses.OnlineCoursesListViewModel", (Provider) onlineCoursesListViewModelProvider).put("com.findajob.jobamax.dashboard.messages.PreviewImageViewModel", (Provider) previewImageViewModelProvider).put("com.findajob.jobamax.dashboard.messages.PreviewJobSeekerViewModel", (Provider) previewJobSeekerViewModelProvider).put("com.findajob.jobamax.dashboard.messages.PreviewRecruiterViewModel", (Provider) previewRecruiterViewModelProvider).put("com.findajob.jobamax.recruiter.home.RecruiterHomeViewModel", (Provider) recruiterHomeViewModelProvider).put("com.findajob.jobamax.recruiter.profile.media.RecruiterMediaViewModel", (Provider) recruiterMediaViewModelProvider).put("com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInfoIntroViewModel", (Provider) recruiterPersonalInfoIntroViewModelProvider).put("com.findajob.jobamax.recruiter.profile.subscription.SubscriptionViewModel", (Provider) subscriptionViewModelProvider).put("com.findajob.jobamax.dashboard.home.training.TrainingViewModel", (Provider) trainingViewModelProvider).build();
+      return MapBuilder.<String, Provider<ViewModel>>newMapBuilder(17).put("com.findajob.jobamax.dashboard.messages.ChatViewModel", (Provider) chatViewModelProvider).put("com.findajob.jobamax.jobseeker.track.JobSeekerApplyViewModel", (Provider) jobSeekerApplyViewModelProvider).put("com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel", (Provider) jobSeekerHomeViewModelProvider).put("com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeViewModel", (Provider) jobSeekerResumeViewModelProvider).put("com.findajob.jobamax.location.LocationViewModel", (Provider) locationViewModelProvider).put("com.findajob.jobamax.training.ui.ManageRoomViewModel", (Provider) manageRoomViewModelProvider).put("com.findajob.jobamax.dashboard.messages.MessagesViewModel", (Provider) messagesViewModelProvider).put("com.findajob.jobamax.dashboard.home.training.online.courses.onlinecourse.OnlineCourseViewModel", (Provider) onlineCourseViewModelProvider).put("com.findajob.jobamax.dashboard.home.training.online.courses.OnlineCoursesListViewModel", (Provider) onlineCoursesListViewModelProvider).put("com.findajob.jobamax.dashboard.messages.PreviewImageViewModel", (Provider) previewImageViewModelProvider).put("com.findajob.jobamax.dashboard.messages.PreviewJobSeekerViewModel", (Provider) previewJobSeekerViewModelProvider).put("com.findajob.jobamax.dashboard.messages.PreviewRecruiterViewModel", (Provider) previewRecruiterViewModelProvider).put("com.findajob.jobamax.recruiter.home.RecruiterHomeViewModel", (Provider) recruiterHomeViewModelProvider).put("com.findajob.jobamax.recruiter.profile.media.RecruiterMediaViewModel", (Provider) recruiterMediaViewModelProvider).put("com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInfoIntroViewModel", (Provider) recruiterPersonalInfoIntroViewModelProvider).put("com.findajob.jobamax.recruiter.profile.subscription.SubscriptionViewModel", (Provider) subscriptionViewModelProvider).put("com.findajob.jobamax.dashboard.home.training.TrainingViewModel", (Provider) trainingViewModelProvider).build();
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

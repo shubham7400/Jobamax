@@ -45,8 +45,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
     lateinit var currentUserId: String
 
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_chats
+    override val layoutRes: Int get() = R.layout.fragment_chats
 
     override fun onCreated(savedInstance: Bundle?) {
         initViews()
@@ -88,8 +87,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
 
             messagesRvMessages.adapter = messagesAdapter
 
-            val horizontalLayoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            val horizontalLayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
             messagesRvNewPeople.layoutManager = horizontalLayoutManager
 
@@ -138,8 +136,8 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-                    messagesAdapter?.filter?.filter(newText)
-                    newPeopleAdapter?.filter?.filter(newText)
+                    messagesAdapter.filter.filter(newText)
+                    newPeopleAdapter.filter.filter(newText)
                     return true
                 }
 
@@ -193,11 +191,11 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
             "Cancel",
             true,
         ) { buttonClicked ->
-            if (buttonClicked == ConfirmationDialog.CallConfirmationButton.POSITIVE) {
+            isDeleted = if (buttonClicked == ConfirmationDialog.CallConfirmationButton.POSITIVE) {
                 deleteConversation(message)
-                isDeleted = true
+                true
             } else {
-                isDeleted = false
+                false
             }
         }.show()
 
@@ -215,11 +213,11 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
                 "Cancel",
                 true,
             ) { buttonClicked ->
-                if (buttonClicked == ConfirmationDialog.CallConfirmationButton.POSITIVE) {
+                isShortListed = if (buttonClicked == ConfirmationDialog.CallConfirmationButton.POSITIVE) {
                     shortListConversation(message)
-                    isShortListed = true
+                    true
                 } else {
-                    isShortListed = false
+                    false
                 }
             }.show()
         } else {
@@ -230,11 +228,11 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
                 "Cancel",
                 true,
             ) { buttonClicked ->
-                if (buttonClicked == ConfirmationDialog.CallConfirmationButton.POSITIVE) {
+                isShortListed = if (buttonClicked == ConfirmationDialog.CallConfirmationButton.POSITIVE) {
                     removeFromShortlist(message)
-                    isShortListed = false
+                    false
                 } else {
-                    isShortListed = true
+                    true
                 }
             }.show()
 
@@ -290,8 +288,8 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
                 binding.loading.visibility = View.INVISIBLE
                 log("messages $it")
                 it?.let {
-                    messagesAdapter.submitList(it!!)
-                    messagesAdapter.filterCollection = it!!
+                    messagesAdapter.submitList(it)
+                    messagesAdapter.filterCollection = it
                 }
             }
         }
@@ -301,7 +299,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
             observe(newUsers) {
                 it?.let {
                     newPeopleAdapter.submitList(it)
-                    newPeopleAdapter.filterCollection = it!!
+                    newPeopleAdapter.filterCollection = it
                     newPeopleAdapter.notifyDataSetChanged()
                 }
             }

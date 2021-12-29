@@ -93,7 +93,7 @@ public class ItemOurCategoriesBindingImpl extends ItemOurCategoriesBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String itemName = null;
+        java.lang.String itemTitle = null;
         com.findajob.jobamax.data.pojo.Category item = mItem;
 
         if ((dirtyFlags & 0x3L) != 0) {
@@ -101,15 +101,15 @@ public class ItemOurCategoriesBindingImpl extends ItemOurCategoriesBinding  {
 
 
                 if (item != null) {
-                    // read item.name
-                    itemName = item.getName();
+                    // read item.title
+                    itemTitle = item.getTitle();
                 }
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvLabel, itemName);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvLabel, itemTitle);
         }
     }
     // Listener Stub Implementations

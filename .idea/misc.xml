@@ -5,20 +5,30 @@
       <map>
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable-xxhdpi/logo_jobamax_blue.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/bg_bordered_button.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/bg_bordered_rounded_button.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/bg_button_white.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/bg_gradient.xml" value="0.1" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/bg_gradient_curve.xml" value="0.2046875" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/bg_sligthly_rounded_edit_text.xml" value="0.8645833333333334" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/btn_gradient_rounded.xml" value="0.2046875" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ic_add.xml" value="0.2203125" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ic_arrow_down.xml" value="0.2203125" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ic_back_arrow_black.xml" value="0.2203125" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ic_done.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ic_message_icon.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ic_play.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/img_top_curve_background.xml" value="0.1" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/login_background.xml" value="0.2203125" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/ripple.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/round_4.xml" value="0.2203125" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/rounded_white_border.xml" value="0.190625" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/seek.xml" value="0.190625" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/slightly_rounded_edittext.xml" value="0.8645833333333334" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/slightly_rounded_focused.xml" value="0.8645833333333334" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/slitly_rounded_black_background.xml" value="0.1527777777777778" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout-v23/dialog_basic.xml" value="0.1" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout-v23/fragment_select_role.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_company_intro_info.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_job_seeker_home.xml" value="0.20416666666666666" />
@@ -28,6 +38,8 @@
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_manage_location.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_master_class.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_master_class_details.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_master_class_guest_details.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_payment.xml" value="0.1" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_recruiter_personal_info_intro.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/activity_select_location.xml" value="0.1" />
@@ -65,10 +77,12 @@
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_jobamax_club.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_keep_me_posted.xml" value="0.1" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_keynotes.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_like_dislike_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_live_room_welcome.xml" value="0.1" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_location_permission.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_master_class.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_master_class_guest_details.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_masterclass_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_meet_nearby_people.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/fragment_messages.xml" value="0.20416666666666666" />
@@ -91,7 +105,13 @@
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_job_offer_card.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_job_seeker_track_offer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_master_class.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_master_class_session_guest.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_masterclass_video.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_messages.xml" value="0.15" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_our_categories.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_training_courses.xml" value="0.11197916666666667" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_video_thumbnail.xml" value="0.171875" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/list_item_new_people.xml" value="0.12" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/online_course_load_state_footer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/menu/menu_gender.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />

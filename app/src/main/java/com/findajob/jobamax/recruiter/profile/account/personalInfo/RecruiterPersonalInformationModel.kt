@@ -14,6 +14,7 @@ class RecruiterPersonalInformationModel {
 	var phoneNumber: String = ""
 	var companyName: String = ""
 	var dob: String = ""
+	var password: String = ""
 	
 	constructor() {}
 	

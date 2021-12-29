@@ -4,9 +4,12 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -14,39 +17,94 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsInterface;
-import com.findajob.jobamax.data.pojo.VideoDetails;
+import com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode;
+import com.findajob.jobamax.dashboard.home.training.masterclass.model.Topic;
+import com.google.android.exoplayer2.ui.PlayerView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityMasterClassDetailsBinding extends ViewDataBinding {
   @NonNull
+  public final LinearLayout appBarPlusVideo;
+
+  @NonNull
   public final ConstraintLayout appbar;
 
   @NonNull
-  public final RecyclerView rvVideos;
+  public final AppCompatImageView ivAddMyList;
 
   @NonNull
-  public final AppCompatImageView video;
+  public final AppCompatImageView ivLikeDislike;
+
+  @NonNull
+  public final AppCompatImageView ivShare;
+
+  @NonNull
+  public final RecyclerView rvEpisodes;
+
+  @NonNull
+  public final RecyclerView rvGuest;
+
+  @NonNull
+  public final LinearLayoutCompat tvPlayBtn;
+
+  @NonNull
+  public final AppCompatTextView tvSession;
+
+  @NonNull
+  public final AppCompatTextView tvSessionYear;
+
+  @NonNull
+  public final AppCompatTextView tvVideoDescription;
+
+  @NonNull
+  public final AppCompatTextView tvVideoTitle;
+
+  @NonNull
+  public final PlayerView videoView;
 
   @Bindable
-  protected VideoDetails mItem;
+  protected Episode mEpisode;
+
+  @Bindable
+  protected Topic mItem;
 
   @Bindable
   protected MasterClassDetailsInterface mHandler;
 
   protected ActivityMasterClassDetailsBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ConstraintLayout appbar, RecyclerView rvVideos,
-      AppCompatImageView video) {
+      int _localFieldCount, LinearLayout appBarPlusVideo, ConstraintLayout appbar,
+      AppCompatImageView ivAddMyList, AppCompatImageView ivLikeDislike, AppCompatImageView ivShare,
+      RecyclerView rvEpisodes, RecyclerView rvGuest, LinearLayoutCompat tvPlayBtn,
+      AppCompatTextView tvSession, AppCompatTextView tvSessionYear,
+      AppCompatTextView tvVideoDescription, AppCompatTextView tvVideoTitle, PlayerView videoView) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.appBarPlusVideo = appBarPlusVideo;
     this.appbar = appbar;
-    this.rvVideos = rvVideos;
-    this.video = video;
+    this.ivAddMyList = ivAddMyList;
+    this.ivLikeDislike = ivLikeDislike;
+    this.ivShare = ivShare;
+    this.rvEpisodes = rvEpisodes;
+    this.rvGuest = rvGuest;
+    this.tvPlayBtn = tvPlayBtn;
+    this.tvSession = tvSession;
+    this.tvSessionYear = tvSessionYear;
+    this.tvVideoDescription = tvVideoDescription;
+    this.tvVideoTitle = tvVideoTitle;
+    this.videoView = videoView;
   }
 
-  public abstract void setItem(@Nullable VideoDetails item);
+  public abstract void setEpisode(@Nullable Episode episode);
 
   @Nullable
-  public VideoDetails getItem() {
+  public Episode getEpisode() {
+    return mEpisode;
+  }
+
+  public abstract void setItem(@Nullable Topic item);
+
+  @Nullable
+  public Topic getItem() {
     return mItem;
   }
 

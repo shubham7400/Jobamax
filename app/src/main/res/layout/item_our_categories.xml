@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:text="@{item.name}"
+            android:text="@{item.title}"
             android:textColor="@color/blue_1"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"

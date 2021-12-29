@@ -31,12 +31,7 @@ import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
-class RecruiterHomeViewModel @Inject constructor(
-    var jobSeekerRepo: JobSeekerRepo,
-    var jobOfferRepo: JobOfferRepository,
-    var recruiterRepo: RecruiterRepo,
-    var context: Application,
-) :
+class RecruiterHomeViewModel @Inject constructor(var jobSeekerRepo: JobSeekerRepo, var jobOfferRepo: JobOfferRepository, var recruiterRepo: RecruiterRepo, var context: Application, ) :
     BaseAndroidViewModel(context) {
 
 
@@ -64,11 +59,9 @@ class RecruiterHomeViewModel @Inject constructor(
     var recruiterParseObject: ParseObject? = null
     var companyParseObject: ParseObject? = null
 
-    val recruiter: Recruiter
-        get() = if (recruiterParseObject == null) Recruiter() else Recruiter(recruiterParseObject!!)
+    val recruiter: Recruiter get() = if (recruiterParseObject == null) Recruiter() else Recruiter(recruiterParseObject!!)
 
-    val company: Company
-        get() = if (companyParseObject == null) Company() else Company(companyParseObject!!)
+    val company: Company get() = if (companyParseObject == null) Company() else Company(companyParseObject!!)
 
     private val allJobOffersLiveData = MutableLiveData<List<ParseObject>>()
     private val applicantsLiveData = MutableLiveData<List<ParseObject>>()
@@ -86,7 +79,7 @@ class RecruiterHomeViewModel @Inject constructor(
     var currentJobOffer: ParseObject? = null
     var selectedJobOffer: ParseObject? = null
 
-    private val messageRepo = MessageRepository()
+    private val messageRepo = MessageRepository(context)
 
     private val _selectedJobOfferObservable = MutableLiveData<JobOffer>()
     val selectedJobOfferObservable: LiveData<JobOffer> = _selectedJobOfferObservable

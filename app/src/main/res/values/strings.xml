@@ -7,9 +7,9 @@
 
     <!-- back4app -->
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
-<!--    <string name="back4app_app_id">2dhxDPPrNlxvT4faFZZpA7GX0WVRdhWfT2K7ivBS</string>-->
-<!--    <string name="back4app_client_key">BitojXiteH1Qry78ap3nLZmHyt9fxbeMjKMRGCHn</string>-->
-<!--    <string name="back4app_live_query_url">wss://jobamaxx.b4a.io/</string>-->
+    <!--    <string name="back4app_app_id">2dhxDPPrNlxvT4faFZZpA7GX0WVRdhWfT2K7ivBS</string>-->
+    <!--    <string name="back4app_client_key">BitojXiteH1Qry78ap3nLZmHyt9fxbeMjKMRGCHn</string>-->
+    <!--    <string name="back4app_live_query_url">wss://jobamaxx.b4a.io/</string>-->
     <string name="back4app_app_id">s3gwYWzFlAYgtfSLTNWZVp6wpTQwj5ISs5XgF7lL</string>
     <string name="back4app_client_key">scOjnd7zjtRTrqblPRg6iFcsJTSLS2phmd48OE0E</string>
     <string name="back4app_live_query_url">wss://jobamax.b4a.io/</string>
@@ -165,7 +165,7 @@
     <string name="enter_company_registration">Enter company registration(optional)</string>
     <string name="company_registration">Company Registration</string>
     <string name="company_registration_with_asterisk">Company Registration<font fgcolor='#0975FE'>*</font></string>
-    <string name="headquarter">Headquarter</string>
+    <string name="headquarter">Headquarter *</string>
     <string name="headquarter_with_asterisk">Headquarter<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_headquarter_address">Enter headquarter address(optional)</string>
     <string name="enter_vat_number">Enter VAT number(optional)</string>
@@ -422,7 +422,7 @@
     <string name="we_value_your_privacy">We value your privacy</string>
     <string name="invitation_code">Promo code (optional)</string>
     <string name="postcode">Zip code</string>
-    <string name="position">Position</string>
+    <string name="position">Position *</string>
     <string name="company_position">Company Position</string>
     <string name="company_name">Company Name</string>
     <string name="company_address_demo">example.com</string>
@@ -540,5 +540,16 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="enter_zip_code">Enter zip code</string>
+    <string name="rate">Rate</string>
+    <string name="_7">7+</string>
+    <string name="season_1">Season 1</string>
+    <string name="hd">HD</string>
+    <string name="_new">New</string>
+
+    <string name="media_url_dash"><![CDATA[https://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube?as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,source,id,as&ip=0.0.0.0&ipbits=0&expire=19000000000&signature=51AF5F39AB0CEC3E5497CD9C900EBFEAECCCB5C7.8506521BFC350652163895D4C26DEE124209AA9E&key=ik0]]></string>
+
+    <string name="networking">Networking</string>
+
+
 
 </resources>

@@ -74,8 +74,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassGuestDetailsActivity"
+            android:exported="false" />
         <activity
             android:name="com.findajob.jobamax.SplashActivity"
             android:exported="true"
@@ -332,9 +334,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
-        </provider>
-
-        <!-- FB Dev -->
+        </provider> <!-- FB Dev -->
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider304727217812972"
@@ -342,7 +342,6 @@
         <!-- android:name="com.facebook.FacebookContentProvider" -->
         <!-- android:authorities="com.facebook.app.FacebookContentProvider329366911842680" -->
         <!-- android:exported="true" /> -->
-
         <service
             android:name="com.parse.fcm.ParseFirebaseMessagingService"
             android:exported="false" >

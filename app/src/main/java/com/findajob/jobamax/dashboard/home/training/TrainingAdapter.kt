@@ -14,10 +14,7 @@ class TrainingAdapter : RecyclerView.Adapter<TrainingAdapter.Holder>(), AutoUpda
         autoNotify(old, new) { o, n -> o.id == n.id }
     }
 
-    internal var clickListener: (Courses) -> Unit = { _ -> }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        Holder.from(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = Holder(ItemTrainingCoursesBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun getItemCount() = collection.size
 
@@ -29,17 +26,11 @@ class TrainingAdapter : RecyclerView.Adapter<TrainingAdapter.Holder>(), AutoUpda
         }
     }
 
+    internal var clickListener: (Courses) -> Unit = { _ -> }
+
     override fun getItemViewType(position: Int): Int {
         return position
     }
 
-    class Holder(val binding: ItemTrainingCoursesBinding) : RecyclerView.ViewHolder(binding.root) {
-        companion object {
-            fun from(parent: ViewGroup): Holder {
-                val inflater = LayoutInflater.from(parent.context)
-                val binding = ItemTrainingCoursesBinding.inflate(inflater, parent, false)
-                return Holder(binding)
-            }
-        }
-    }
+    class Holder(val binding: ItemTrainingCoursesBinding) : RecyclerView.ViewHolder(binding.root)
 }

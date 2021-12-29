@@ -15,6 +15,7 @@ import com.findajob.jobamax.databinding.FragmentKeepMePostedBinding
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity
 import com.findajob.jobamax.model.UpdateUserCallback
 import com.findajob.jobamax.preference.getRole
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInfoIntroActivity
 import com.findajob.jobamax.util.ROLE_JOB_SEEKER
 import com.findajob.jobamax.util.errorToast
@@ -60,7 +61,7 @@ class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), Ke
 
 	
 	private fun navHome() {
-		if (requireActivity().getRole() == ROLE_JOB_SEEKER)
+		if (requireActivity().getUserType() == 2)
 			startActivity(Intent(requireContext(), JobSeekerPersonalIntroInfoActivity::class.java))
 		else startActivity(Intent(requireContext(), RecruiterPersonalInfoIntroActivity::class.java))
 		requireActivity().finishAffinity()

@@ -18,74 +18,42 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class JobamaxClubFragment : BaseFragmentMain<FragmentJobamaxClubBinding>() {
+class JobamaxClubFragment : BaseFragmentMain<FragmentJobamaxClubBinding>(), View.OnClickListener {
 
     val viewModel: TrainingViewModel by activityViewModels()
     override fun getViewModel(): ViewModel {
         return viewModel
     }
 
-    val adapter: TrainingAdapter by lazy {
-        TrainingAdapter()
-    }
-
-
-    override val layoutRes: Int
-        get() = R.layout.fragment_jobamax_club
-
+    override val layoutRes: Int get() = R.layout.fragment_jobamax_club
     override fun onCreated(savedInstance: Bundle?) {
         binding.lifecycleOwner = this
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
-        observeLiveData()
-        fetchCourses()
     }
-
     private fun initViews() {
-        initCourseRV()
+      setClickListeners()
     }
 
-
-    private fun observeLiveData() {
-        observerCourses()
+    private fun setClickListeners() {
+        binding.itemMasterClass.setOnClickListener(this)
+        binding.itemNetworking.setOnClickListener(this)
+        binding.itemOnlineCourses.setOnClickListener(this)
     }
 
-    private fun observerCourses() {
-        observe(viewModel.courseLiveData) { data ->
-            data?.let {
-                adapter.collection = it
-            }
-        }
-    }
-
-    private fun fetchCourses() {
-        viewModel.fetchCourses()
-    }
-
-    private fun initCourseRV() {
-        binding.apply {
-            homeRvData.adapter = adapter
-        }
-        adapter.clickListener = { course ->
-            when (course.id) {
-                0 -> {
-                    startActivity(Intent(requireContext(), MasterClassActivity::class.java))
-                }
-                1 -> {
-//                    findNavController().navigate(R.id.action_trainingFragment_to_onlineCoursesListFragment)
-                    startActivity(Intent(requireContext(), OnlineCourseActivity::class.java))
-                }
-                2 -> {
-                    startActivity(Intent(requireContext(), ManageRoomActivity::class.java))
-                }
-                else -> {
-                    val bundle = bundleOf("courseId" to course.id)
-                    findNavController().navigate(R.id.trainingFragment_to_coursesFragment, bundle)
-                }
-            }
-        }
+    override fun onClick(view: View?) {
+         when(view){
+             binding.itemMasterClass -> {
+                 startActivity(Intent(requireContext(), MasterClassActivity::class.java))
+             }
+             binding.itemNetworking -> {
+                 startActivity(Intent(requireContext(), ManageRoomActivity::class.java))
+             }
+             binding.itemOnlineCourses -> {
+                 startActivity(Intent(requireContext(), OnlineCourseActivity::class.java))
+             }
+         }
     }
 }

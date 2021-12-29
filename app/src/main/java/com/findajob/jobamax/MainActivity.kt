@@ -5,7 +5,9 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.base.BaseActivityMain
+import com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsActivity
 import com.findajob.jobamax.databinding.ActivityMainBinding
+import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
@@ -47,16 +49,26 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
                 .getDynamicLink(it)
                 .addOnSuccessListener(this) { pendingDynamicLinkData ->
                     var deepLink: Uri? = null
-                    deepLink = pendingDynamicLinkData?.link
-                    // now you have parameters so you have to update email verified on server and get the obj of user and store it into session and then get user logged in
-                    val userType = deepLink?.getQueryParameter("userType")
-                    val loginType = deepLink?.getQueryParameter("LoginType")
-                    val id = deepLink?.getQueryParameter("recruiterId")
-                    val path = deepLink?.path
-                    if (userType == "2"){
-                        updateIsEmailVerifiedInJobSeeker(id)
-                    }else if (userType == "1"){
-                        updateIsEmailVerifiedInRecruiter(id)
+                    pendingDynamicLinkData?.let {
+                        deepLink = pendingDynamicLinkData.link
+                        // now you have parameters so you have to update email verified on server and get the obj of user and store it into session and then get user logged in
+                        val userType = deepLink?.getQueryParameter("userType")
+                        val loginType = deepLink?.getQueryParameter("LoginType")
+                        val id = deepLink?.getQueryParameter("recruiterId")
+                        val topicId = deepLink?.getQueryParameter("topicId")
+                        val path = deepLink?.path!!.substring(1, deepLink!!.path!!.lastIndex)
+                        when(path){
+                            FirebaseDynamicLinkPath.verifyemail.toString() -> {
+                                if (userType == "2"){
+                                    updateIsEmailVerifiedInJobSeeker(id)
+                                }else if (userType == "1"){
+                                    updateIsEmailVerifiedInRecruiter(id)
+                                }
+                            }
+                            FirebaseDynamicLinkPath.masterclassVideo.toString() -> {
+                                startActivity(Intent(this, MasterClassDetailsActivity::class.java).putExtra("topic_id", topicId))
+                            }
+                        }
                     }
                 }
                 .addOnFailureListener(this) { e ->

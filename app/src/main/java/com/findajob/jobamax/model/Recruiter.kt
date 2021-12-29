@@ -30,6 +30,7 @@ class Recruiter {
     var company: Company? = null
     var roomId = 0
     var roomExpiryDate: Date? = null
+    var password: String = ""
 
     constructor(user: User) {
         recruiterId = user.id

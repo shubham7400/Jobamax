@@ -196,7 +196,6 @@ attr badgeGravity
 attr badgeStyle
 attr badgeTextColor
 attr barLength
-attr bar_gravity
 attr bar_height
 attr barrierAllowsGoneWidgets
 attr barrierDirection
@@ -374,6 +373,10 @@ attr circularflow_defaultAngle
 attr circularflow_defaultRadius
 attr circularflow_radiusInDP
 attr circularflow_viewCenter
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr clearsTag
 attr clickAction
 attr clickToClose
@@ -626,6 +629,7 @@ attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
+attr fastforward_increment
 attr fastscroll__bubbleColor
 attr fastscroll__bubbleTextAppearance
 attr fastscroll__handleColor
@@ -1071,6 +1075,7 @@ attr repeat_toggle_modes
 attr resizeClip
 attr resize_mode
 attr reverseLayout
+attr rewind_increment
 attr rightEdgeSwipeOffset
 attr rippleColor
 attr rotate_icon
@@ -1379,6 +1384,7 @@ attr useMaterialThemeColors
 attr useViewLifecycle
 attr use_artwork
 attr use_controller
+attr use_sensor_rotation
 attr values
 attr verticalOffset
 attr viewInflaterClass
@@ -1580,11 +1586,13 @@ color ef_teal
 color ef_white
 color error_color_material_dark
 color error_color_material_light
-color exo_black_opacity_60
+color exo_black_opacity_30
 color exo_black_opacity_70
 color exo_bottom_bar_background
 color exo_edit_mode_background_color
 color exo_error_message_background_color
+color exo_gray
+color exo_gray_ripple
 color exo_styled_error_message_background
 color exo_white
 color exo_white_opacity_70
@@ -2380,12 +2388,16 @@ dimen ef_spacing
 dimen ef_spacing_double
 dimen ef_spacing_half
 dimen ef_toolbar_elevation
+dimen exo_bottom_bar_height
+dimen exo_custom_progress_margin_bottom
+dimen exo_custom_progress_max_size
+dimen exo_custom_progress_thumb_size
 dimen exo_error_message_height
 dimen exo_error_message_margin_bottom
 dimen exo_error_message_text_padding_horizontal
 dimen exo_error_message_text_padding_vertical
 dimen exo_error_message_text_size
-dimen exo_icon_horizontal_margin
+dimen exo_icon_margin
 dimen exo_icon_padding
 dimen exo_icon_padding_bottom
 dimen exo_icon_size
@@ -2399,22 +2411,12 @@ dimen exo_settings_main_text_size
 dimen exo_settings_offset
 dimen exo_settings_sub_text_size
 dimen exo_settings_text_height
-dimen exo_small_icon_height
-dimen exo_small_icon_horizontal_margin
+dimen exo_small_button_height
+dimen exo_small_button_width
 dimen exo_small_icon_padding_horizontal
 dimen exo_small_icon_padding_vertical
-dimen exo_small_icon_width
-dimen exo_styled_bottom_bar_height
-dimen exo_styled_bottom_bar_margin_top
-dimen exo_styled_bottom_bar_time_padding
-dimen exo_styled_controls_padding
-dimen exo_styled_minimal_controls_margin_bottom
-dimen exo_styled_progress_bar_height
-dimen exo_styled_progress_dragged_thumb_size
-dimen exo_styled_progress_enabled_thumb_size
-dimen exo_styled_progress_layout_height
-dimen exo_styled_progress_margin_bottom
-dimen exo_styled_progress_touch_target_height
+dimen exo_time_view_padding
+dimen exo_time_view_width
 dimen fastscroll__bubble_corner
 dimen fastscroll__bubble_size
 dimen fastscroll__handle_clickable_width
@@ -2804,6 +2806,10 @@ dimen stripe_shipping_widget_horizontal_margin
 dimen stripe_shipping_widget_outer_margin
 dimen stripe_shipping_widget_vertical_margin
 dimen stripe_toolbar_elevation
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen tab_height_online_course
 dimen test_mtrl_calendar_day_cornerSize
 dimen test_navigation_bar_active_item_max_width
@@ -3057,6 +3063,10 @@ drawable exo_notification_previous
 drawable exo_notification_rewind
 drawable exo_notification_small_icon
 drawable exo_notification_stop
+drawable exo_progress
+drawable exo_progress_thumb
+drawable exo_ripple_ffwd
+drawable exo_ripple_rew
 drawable exo_rounded_rectangle
 drawable exo_styled_controls_audiotrack
 drawable exo_styled_controls_check
@@ -3371,6 +3381,7 @@ drawable ic_course
 drawable ic_cv
 drawable ic_delete
 drawable ic_done
+drawable ic_down_arrow
 drawable ic_download
 drawable ic_edit_social_links
 drawable ic_eye
@@ -3444,6 +3455,7 @@ drawable ic_show
 drawable ic_source
 drawable ic_star
 drawable ic_star_delete
+drawable ic_thumb_down
 drawable ic_thumb_up
 drawable ic_top_arrow
 drawable ic_track
@@ -3562,6 +3574,7 @@ drawable round_side_32
 drawable round_side_8
 drawable rounded_edittext
 drawable rounded_focused
+drawable rounded_white_border
 drawable seek
 drawable seek_style
 drawable seeker_icon
@@ -3570,6 +3583,7 @@ drawable slidetoact_ic_arrow
 drawable slidetoact_ic_check
 drawable slightly_rounded_edittext
 drawable slightly_rounded_focused
+drawable slitly_rounded_black_background
 drawable social_link_et_bg
 drawable stripe_3ds2_ic_amex
 drawable stripe_3ds2_ic_cartesbancaires
@@ -3915,6 +3929,8 @@ id animateToStart
 id antiClockwise
 id anticipate
 id appBar
+id appBar_plus_video
+id appCompatTextView
 id appbar
 id arc
 id asConfigured
@@ -4072,6 +4088,7 @@ id chip3
 id chipGroup
 id chip_group
 id chronometer
+id circleImageView
 id circle_center
 id city
 id cityLabel
@@ -4082,6 +4099,7 @@ id clMessageBody
 id clNewPeople
 id cl_action_bar
 id cl_app_bar
+id cl_guest
 id cl_item_master_video
 id cl_main_body
 id classic
@@ -4310,17 +4328,17 @@ id eventCalendarFragment
 id exitUntilCollapsed
 id exo_ad_overlay
 id exo_artwork
-id exo_audio_track
 id exo_basic_controls
 id exo_bottom_bar
 id exo_buffering
-id exo_center_controls
+id exo_center_view
+id exo_center_view_background
 id exo_check
 id exo_content_frame
 id exo_controller
 id exo_controller_placeholder
-id exo_controls_background
 id exo_duration
+id exo_embedded_transport_controls
 id exo_error_message
 id exo_extra_controls
 id exo_extra_controls_scroll_view
@@ -4330,7 +4348,6 @@ id exo_fullscreen
 id exo_icon
 id exo_main_text
 id exo_minimal_controls
-id exo_minimal_fullscreen
 id exo_next
 id exo_overflow_hide
 id exo_overflow_show
@@ -4338,7 +4355,6 @@ id exo_overlay
 id exo_pause
 id exo_play
 id exo_play_pause
-id exo_playback_speed
 id exo_position
 id exo_prev
 id exo_progress
@@ -4355,6 +4371,7 @@ id exo_subtitle
 id exo_subtitles
 id exo_text
 id exo_time
+id exo_time_interpunct
 id exo_track_selection_view
 id exo_vr
 id exoplayer
@@ -4451,7 +4468,6 @@ id holo_dark
 id holo_light
 id home
 id homeAsUp
-id home_rv_data
 id home_tv_header
 id honorRequest
 id horizontal_only
@@ -4472,6 +4488,7 @@ id imageView5
 id imageView6
 id imageView7
 id imageView8
+id imageView9
 id imageView_arrow
 id image_bg
 id image_flag
@@ -4506,10 +4523,13 @@ id item_home_cl_bg
 id item_home_cv_bg
 id item_image
 id item_instructor_cv_bg
+id item_master_class
 id item_messages_iv_avatar
 id item_messages_iv_message
 id item_messages_iv_name
+id item_networking
 id item_online_course_rv_number
+id item_online_courses
 id item_online_courses_iv_image
 id item_online_courses_numberof_rating
 id item_online_courses_rv_rating
@@ -4544,25 +4564,32 @@ id ivUnarchive
 id ivUserImage
 id ivVideoButton
 id iv_add_job_button
+id iv_add_my_list
 id iv_archived_job_offer
 id iv_back
 id iv_back_button
 id iv_background
 id iv_banner
+id iv_cancel
 id iv_delete_button
+id iv_dislike
 id iv_edit_button
 id iv_end_job_button
 id iv_filter_layout
 id iv_go_there
+id iv_guest
 id iv_hide_job_button
 id iv_jobamax_logo
 id iv_left
+id iv_like
+id iv_like_dislike
 id iv_logo
 id iv_message
 id iv_privacy_icon
 id iv_requirement_open_button
 id iv_right
 id iv_seen_indicator
+id iv_share
 id iv_show_confirm_password_button
 id iv_show_password_button
 id iv_toggle_video
@@ -4639,6 +4666,7 @@ id ll_200_to_500
 id ll_500_more
 id ll_51_to_199
 id ll_action_button
+id ll_guest_link
 id ll_linkedin
 id ll_phone_number_field
 id loading
@@ -4694,7 +4722,6 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
-id media_controller_compat_view_tag
 id mediumItem
 id meetPeopleNearbyFragment
 id membership_duration
@@ -5038,17 +5065,21 @@ id rvTodayEvents
 id rvUpcomingEvents
 id rv_active_job_offers
 id rv_check_item
-id rv_class_categories
+id rv_coming_soon_list
 id rv_company_size
+id rv_episodes
+id rv_guest
 id rv_location_list
 id rv_masterclass_videos
 id rv_matched_jobs
+id rv_my_list
+id rv_new_list
 id rv_offer
 id rv_pending_jobs
 id rv_reason
 id rv_refused_jobs
 id rv_subscription_list
-id rv_videos
+id rv_trending_list
 id s_space_bottom
 id sandbox
 id satellite
@@ -5332,8 +5363,15 @@ id tv_first_name_label
 id tv_gender_hint
 id tv_gender_label
 id tv_gpa
+id tv_guest_description
+id tv_guest_name
+id tv_guest_title
 id tv_heading
 id tv_headquarters_label
+id tv_hint_coming_soon_list
+id tv_hint_my_list
+id tv_hint_new_list
+id tv_hint_trending_list
 id tv_industry_label
 id tv_invitation_code
 id tv_job_details_label
@@ -5341,6 +5379,10 @@ id tv_job_name
 id tv_job_offer_label
 id tv_key_skills_label
 id tv_label
+id tv_label_coming_soon_list
+id tv_label_my_list
+id tv_label_new_list
+id tv_label_trending_list
 id tv_last_name_label
 id tv_level_of_hierarchy_hint
 id tv_level_of_hierarchy_label
@@ -5355,6 +5397,7 @@ id tv_notification_body
 id tv_notification_header
 id tv_number
 id tv_phone_number
+id tv_play_btn
 id tv_position_label
 id tv_postal_code
 id tv_program_label
@@ -5363,6 +5406,8 @@ id tv_requirement_name
 id tv_salary_label
 id tv_screening_hint
 id tv_screening_label
+id tv_session
+id tv_session_year
 id tv_skills_label
 id tv_skip
 id tv_skip_button
@@ -5372,6 +5417,8 @@ id tv_title
 id tv_toolbar_title
 id tv_type_of_work
 id tv_vat_number_label
+id tv_video_description
+id tv_video_title
 id tv_work_experience_label
 id typeOfWorkLabel
 id unchecked
@@ -5389,7 +5436,6 @@ id v_horizontal_line
 id valuePrivacyFragment
 id vatField
 id vertical_only
-id video
 id videoLabel
 id videoPresentationIcon
 id videoPresentationLayout
@@ -5397,6 +5443,7 @@ id videoThumbnailIcon
 id videoView
 id video_cover
 id video_decoder_gl_surface_view
+id video_view
 id viewJobOfferFragment
 id viewPager
 id view_alpha
@@ -5524,6 +5571,7 @@ layout activity_manage_room
 layout activity_maps
 layout activity_master_class
 layout activity_master_class_details
+layout activity_master_class_guest_details
 layout activity_online_course
 layout activity_online_course_details
 layout activity_payment
@@ -5614,8 +5662,7 @@ layout ef_imagepikcer_snackbar
 layout exo_list_divider
 layout exo_player_control_view
 layout exo_player_view
-layout exo_styled_player_control_ffwd_button
-layout exo_styled_player_control_rewind_button
+layout exo_styled_embedded_transport_controls
 layout exo_styled_player_control_view
 layout exo_styled_player_view
 layout exo_styled_settings_list
@@ -5653,6 +5700,7 @@ layout fragment_job_source
 layout fragment_jobamax_club
 layout fragment_keep_me_posted
 layout fragment_keynotes
+layout fragment_like_dislike_dialog
 layout fragment_live_room
 layout fragment_live_room_interests
 layout fragment_live_room_participants
@@ -5729,6 +5777,7 @@ layout item_live_room
 layout item_live_room_member
 layout item_location
 layout item_master_class
+layout item_master_class_session_guest
 layout item_masterclass_video
 layout item_messages
 layout item_my_list
@@ -5925,8 +5974,6 @@ navigation nav_online_course
 navigation nav_recruiter_home
 navigation nav_room
 navigation nav_training
-plurals exo_controls_fastforward_by_amount_description
-plurals exo_controls_rewind_by_amount_description
 plurals mtrl_badge_content_description
 raw a_new_lang_template
 raw ccp_afrikaans
@@ -5970,6 +6017,8 @@ raw places_keep
 string _100_km
 string _14_days_trial
 string _50_km
+string _7
+string _new
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -6345,6 +6394,7 @@ string event_name
 string exo_controls_cc_disabled_description
 string exo_controls_cc_enabled_description
 string exo_controls_custom_playback_speed
+string exo_controls_fastforward_by_amount_description
 string exo_controls_fastforward_description
 string exo_controls_fullscreen_enter_description
 string exo_controls_fullscreen_exit_description
@@ -6360,6 +6410,7 @@ string exo_controls_previous_description
 string exo_controls_repeat_all_description
 string exo_controls_repeat_off_description
 string exo_controls_repeat_one_description
+string exo_controls_rewind_by_amount_description
 string exo_controls_rewind_description
 string exo_controls_seek_bar_description
 string exo_controls_settings_description
@@ -6374,9 +6425,6 @@ string exo_download_description
 string exo_download_downloading
 string exo_download_failed
 string exo_download_notification_channel_name
-string exo_download_paused
-string exo_download_paused_for_network
-string exo_download_paused_for_wifi
 string exo_download_removing
 string exo_item_list
 string exo_track_bitrate
@@ -6436,6 +6484,7 @@ string google_maps_key
 string google_pay
 string google_storage_bucket
 string gpa
+string hd
 string headquarter
 string headquarter_with_asterisk
 string headquarters
@@ -6577,6 +6626,7 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string media
+string media_url_dash
 string medium
 string membership_plan
 string menu_top_home
@@ -6639,6 +6689,7 @@ string name_of_job_required
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string navigation_menu
+string networking
 string new_list
 string new_matches
 string new_password
@@ -6727,6 +6778,7 @@ string purpose_of_call
 string purpose_of_calling
 string push_notifications
 string pushwoosh_app_id
+string rate
 string reach
 string read_receipts
 string recent_views
@@ -6759,6 +6811,7 @@ string screening_hint
 string screening_questions
 string search_hint
 string search_menu_title
+string season_1
 string secure_checkout
 string security
 string see_in_details
@@ -7176,12 +7229,10 @@ style ExoMediaButton_VR
 style ExoStyledControls
 style ExoStyledControls_Button
 style ExoStyledControls_Button_Bottom
-style ExoStyledControls_Button_Bottom_AudioTrack
 style ExoStyledControls_Button_Bottom_CC
 style ExoStyledControls_Button_Bottom_FullScreen
 style ExoStyledControls_Button_Bottom_OverflowHide
 style ExoStyledControls_Button_Bottom_OverflowShow
-style ExoStyledControls_Button_Bottom_PlaybackSpeed
 style ExoStyledControls_Button_Bottom_RepeatToggle
 style ExoStyledControls_Button_Bottom_Settings
 style ExoStyledControls_Button_Bottom_Shuffle
@@ -7193,11 +7244,10 @@ style ExoStyledControls_Button_Center_PlayPause
 style ExoStyledControls_Button_Center_Previous
 style ExoStyledControls_Button_Center_RewWithAmount
 style ExoStyledControls_ButtonText
-style ExoStyledControls_TimeBar
 style ExoStyledControls_TimeText
 style ExoStyledControls_TimeText_Duration
+style ExoStyledControls_TimeText_Interpunct
 style ExoStyledControls_TimeText_Position
-style ExoStyledControls_TimeText_Separator
 style MasterClassDetailsTheme
 style MasterClassTheme
 style MaterialAlertDialog_MaterialComponents
@@ -7886,6 +7936,7 @@ styleable ChangeTransform reparent reparentWithOverlay
 styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkMarkTintMode
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize
@@ -7905,7 +7956,7 @@ styleable CountryCodePicker ccpDialog_allowSearch ccpDialog_background ccpDialog
 styleable CropImageView cropAspectRatioX cropAspectRatioY cropAutoZoomEnabled cropBackgroundColor cropBorderCornerColor cropBorderCornerLength cropBorderCornerOffset cropBorderCornerThickness cropBorderLineColor cropBorderLineThickness cropFixAspectRatio cropFlipHorizontally cropFlipVertically cropGuidelines cropGuidelinesColor cropGuidelinesThickness cropInitialCropWindowPaddingRatio cropMaxCropResultHeightPX cropMaxCropResultWidthPX cropMaxZoom cropMinCropResultHeightPX cropMinCropResultWidthPX cropMinCropWindowHeight cropMinCropWindowWidth cropMultiTouchEnabled cropSaveBitmapToInstanceState cropScaleType cropShape cropShowCropOverlay cropShowProgressBar cropSnapRadius cropTouchRadius
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customReference customStringValue methodName
 styleable CustomWalletTheme customThemeStyle toolbarTextColorStyle windowTransitionStyle
-styleable DefaultTimeBar ad_marker_color ad_marker_width bar_gravity bar_height buffered_color played_ad_marker_color played_color scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size touch_target_height unplayed_color
+styleable DefaultTimeBar ad_marker_color ad_marker_width bar_height buffered_color played_ad_marker_color played_color scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size touch_target_height unplayed_color
 styleable DialogFragmentNavigator android_name
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable DrawerLayout elevation
@@ -7984,8 +8035,8 @@ styleable OnSwipe autoCompleteMode dragDirection dragScale dragThreshold limitBo
 styleable OtpView android_itemBackground android_cursorVisible android_textAllCaps OtpCursorColor OtpCursorWidth OtpHideLineWhenFilled OtpItemCount OtpItemHeight OtpItemRadius OtpItemSpacing OtpItemWidth OtpLineColor OtpLineWidth OtpMaskingChar OtpRtlTextDirection OtpState_filled OtpViewType
 styleable OtpViewTheme otpViewStyle
 styleable PatternPathMotion patternPathData
-styleable PlayerControlView ad_marker_color ad_marker_width bar_gravity bar_height buffered_color controller_layout_id played_ad_marker_color played_color repeat_toggle_modes scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_fastforward_button show_next_button show_previous_button show_rewind_button show_shuffle_button show_timeout time_bar_min_update_interval touch_target_height unplayed_color
-styleable PlayerView ad_marker_color ad_marker_width auto_show bar_height buffered_color controller_layout_id default_artwork hide_during_ads hide_on_touch keep_content_on_player_reset played_ad_marker_color played_color player_layout_id repeat_toggle_modes resize_mode scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_buffering show_shuffle_button show_timeout shutter_background_color surface_type time_bar_min_update_interval touch_target_height unplayed_color use_artwork use_controller
+styleable PlayerControlView ad_marker_color ad_marker_width bar_height buffered_color controller_layout_id fastforward_increment played_ad_marker_color played_color repeat_toggle_modes rewind_increment scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_fastforward_button show_next_button show_previous_button show_rewind_button show_shuffle_button show_timeout time_bar_min_update_interval touch_target_height unplayed_color
+styleable PlayerView ad_marker_color ad_marker_width auto_show bar_height buffered_color controller_layout_id default_artwork fastforward_increment hide_during_ads hide_on_touch keep_content_on_player_reset played_ad_marker_color played_color player_layout_id repeat_toggle_modes resize_mode rewind_increment scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_buffering show_shuffle_button show_timeout shutter_background_color surface_type time_bar_min_update_interval touch_target_height unplayed_color use_artwork use_controller use_sensor_rotation
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
@@ -8014,8 +8065,8 @@ styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
 styleable StripeCardFormView backgroundColorStateList cardFormStyle
 styleable StripeCountryAutoCompleteTextInputLayout countryAutoCompleteStyle countryItemLayout
-styleable StyledPlayerControlView ad_marker_color ad_marker_width animation_enabled bar_gravity bar_height buffered_color controller_layout_id played_ad_marker_color played_color repeat_toggle_modes scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_fastforward_button show_next_button show_previous_button show_rewind_button show_shuffle_button show_subtitle_button show_timeout show_vr_button time_bar_min_update_interval touch_target_height unplayed_color
-styleable StyledPlayerView ad_marker_color ad_marker_width animation_enabled auto_show bar_gravity bar_height buffered_color controller_layout_id default_artwork hide_during_ads hide_on_touch keep_content_on_player_reset played_ad_marker_color played_color player_layout_id repeat_toggle_modes resize_mode scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_buffering show_shuffle_button show_subtitle_button show_timeout show_vr_button shutter_background_color surface_type time_bar_min_update_interval touch_target_height unplayed_color use_artwork use_controller
+styleable StyledPlayerControlView ad_marker_color ad_marker_width animation_enabled bar_height buffered_color controller_layout_id fastforward_increment played_ad_marker_color played_color repeat_toggle_modes rewind_increment scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_fastforward_button show_next_button show_previous_button show_rewind_button show_shuffle_button show_subtitle_button show_timeout show_vr_button time_bar_min_update_interval touch_target_height unplayed_color
+styleable StyledPlayerView ad_marker_color ad_marker_width animation_enabled auto_show bar_height buffered_color controller_layout_id default_artwork fastforward_increment hide_during_ads hide_on_touch keep_content_on_player_reset played_ad_marker_color played_color player_layout_id repeat_toggle_modes resize_mode rewind_increment scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_buffering show_shuffle_button show_subtitle_button show_timeout show_vr_button shutter_background_color surface_type time_bar_min_update_interval touch_target_height unplayed_color use_artwork use_controller use_sensor_rotation
 styleable SwipeLayout bottomEdgeSwipeOffset clickToClose drag_edge leftEdgeSwipeOffset rightEdgeSwipeOffset show_mode topEdgeSwipeOffset
 styleable SwitchButton sb_background sb_border_width sb_button_color sb_checked sb_checked_color sb_checkline_color sb_checkline_width sb_effect_duration sb_enable_effect sb_shadow_color sb_shadow_effect sb_shadow_offset sb_shadow_radius sb_show_indicator sb_uncheck_color sb_uncheckcircle_color sb_uncheckcircle_radius sb_uncheckcircle_width
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode

@@ -11,8 +11,7 @@ fun <T> Context.gotoActivity(it: Class<T>, extras: Bundle.() -> Unit = {}) {
     startActivity(intent)
 }
 
-fun Activity.goToActivity(mClass: Class<*>, finishCurrentActivity: Boolean, extras: Bundle? = null,
-                          withResult: Boolean = false, requestCode: Int = -1) {
+fun Activity.goToActivity(mClass: Class<*>, finishCurrentActivity: Boolean, extras: Bundle? = null, withResult: Boolean = false, requestCode: Int = -1) {
     val intent = Intent(this, mClass)
     extras?.apply { intent.putExtras(this) }
     if (!withResult)

@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -21,6 +22,13 @@ import com.findajob.jobamax.util.*
 import com.facebook.AccessToken
 import com.facebook.GraphRequest
 import com.findajob.jobamax.dialog.ChangePasswordDialog
+import com.findajob.jobamax.enums.LoginType
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
+import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
+import com.findajob.jobamax.model.JobSeeker
+import com.findajob.jobamax.preference.*
+import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -32,10 +40,7 @@ import com.google.gson.Gson
 import com.kusu.linkedinlogin.Linkedin
 import com.kusu.linkedinlogin.LinkedinLoginListener
 import com.kusu.linkedinlogin.model.SocialUser
-import com.parse.FunctionCallback
-import com.parse.ParseCloud
-import com.parse.ParseObject
-import com.parse.ParseUser
+import com.parse.*
 import com.parse.facebook.ParseFacebookUtils
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.json.JSONException
@@ -164,7 +169,48 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
     }
 
     override fun onFacebookLoginClicked() {
-        //TODO: provide data deletion link in the facebook dev console
+        val permissions: Collection<String> = listOf("public_profile", "email")
+        progressHud.show()
+        ParseFacebookUtils.logInWithReadPermissionsInBackground(this, permissions) { user, error ->
+            try {
+                val request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken()) { data, response ->
+                    val userId = data.getString("id")
+                    requireContext().setUserId(userId)
+                    requireContext().setLoginType(LoginType.facebook.toString())
+                    requireContext().setUserType(2)
+                    val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+                    query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),userId)
+                    query.getFirstInBackground { result, e ->
+                        when{
+                            result != null -> {
+                                // send user to home screen and save his credential
+                                val jobSeeker = JobSeeker(result)
+                                requireContext().setUserId(jobSeeker.jobSeekerId)
+                                requireContext().setLoginType(jobSeeker.loginType)
+                                requireContext().setUserType(2)
+                                requireContext().setEmail(jobSeeker.email)
+                                requireContext().setLoggedIn(true)
+                                startActivity(Intent(requireContext(),JobSeekerHomeActivity::class.java ))
+                            }
+                            else -> {
+                                // create new user from here
+                                navController.navigate(R.id.valuePrivacyFragment)
+                            }
+                        }
+                    }
+
+                }
+                val parameters = Bundle()
+                parameters.putString("fields", "name, email")
+                request.parameters = parameters
+                request.executeAsync()
+            }catch (e: Exception){
+                toast(e.message.toString())
+            }
+        }
+
+
+        /*//TODO: provide data deletion link in the facebook dev console
         val permissions: Collection<String> = listOf("public_profile", "email")
         progressHud.show()
         ParseFacebookUtils.logInWithReadPermissionsInBackground(this, permissions) { user, error ->
@@ -185,7 +231,9 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
                     log("User signed up and logged in through Facebook!")
                 }
                 // Get user detail from Facebook
-                getUserDetailFromFB(
+
+
+                *//*getUserDetailFromFB(
                     { user1, parseObject ->
                         (requireActivity() as LoginActivity).checkForExistingUser(user1)
                         parseObject.saveInBackground { e ->
@@ -198,12 +246,12 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
                         log("Something went wrong with facebook login", t)
                         toast(t.localizedMessage ?: "")
                     }
-                )
+                )*//*
             } catch (e: Exception) {
                 log("Something went wrong with facebook login", e)
                 progressHud.dismiss()
             }
-        }
+        }*/
     }
 
 
@@ -262,15 +310,41 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
 
                 override fun successLinkedInLogin(socialUser: SocialUser) {
                     try {
-                        progressHud.show()
-                        val user = User()
-                        user.email = socialUser.email ?: ""
-                        user.firstName = socialUser.firstName?.capitalize(Locale.ROOT) ?: ""
-                        user.lastName = socialUser.lastName?.capitalize(Locale.ROOT) ?: ""
-                        user.profilePicUrl = socialUser.profilePicture ?: ""
-                        user.loginType = LINKEDIN_LOGIN_TYPE
-                        progressHud.dismiss()
-                        (requireActivity() as LoginActivity).checkForExistingUser(user)
+                        val userId = socialUser.socialId.toString()
+                        requireContext().setUserId(userId)
+                        requireContext().setLoginType(LoginType.linkedin.toString())
+                        requireContext().setUserType(2)
+                        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+                        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),userId)
+                        query.getFirstInBackground { result, e ->
+                            when{
+                                result != null -> {
+                                    // send user to home screen and save his credential
+                                    val jobSeeker = JobSeeker(result)
+                                    requireContext().setUserId(jobSeeker.jobSeekerId)
+                                    requireContext().setLoginType(jobSeeker.loginType)
+                                    requireContext().setUserType(2)
+                                    requireContext().setEmail(jobSeeker.email)
+                                    requireContext().setLoggedIn(true)
+                                    startActivity(Intent(requireContext(),JobSeekerHomeActivity::class.java ))
+                                }
+                                else -> {
+                                    // create new user from here
+                                    navController.navigate(R.id.valuePrivacyFragment)
+                                }
+                            }
+                        }
+
+                        /* log("sourceial ${socialUser}")
+                         progressHud.show()
+                         val user = User()
+                         user.email = socialUser.email ?: ""
+                         user.firstName = socialUser.firstName?.capitalize(Locale.ROOT) ?: ""
+                         user.lastName = socialUser.lastName?.capitalize(Locale.ROOT) ?: ""
+                         user.profilePicUrl = socialUser.profilePicture ?: ""
+                         user.loginType = LINKEDIN_LOGIN_TYPE
+                         progressHud.dismiss()
+                         (requireActivity() as LoginActivity).checkForExistingUser(user)*/
                     } catch (e: Exception) {
                         e.printStackTrace()
                         progressHud.dismiss()

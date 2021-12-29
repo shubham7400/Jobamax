@@ -16,7 +16,11 @@ public class FragmentJobamaxClubBindingImpl extends FragmentJobamaxClubBinding  
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.image_bg, 1);
         sViewsWithIds.put(R.id.home_tv_header, 2);
-        sViewsWithIds.put(R.id.home_rv_data, 3);
+        sViewsWithIds.put(R.id.item_master_class, 3);
+        sViewsWithIds.put(R.id.item_online_courses, 4);
+        sViewsWithIds.put(R.id.item_image, 5);
+        sViewsWithIds.put(R.id.item_company_iv_course_name, 6);
+        sViewsWithIds.put(R.id.item_networking, 7);
     }
     // views
     // variables
@@ -25,14 +29,18 @@ public class FragmentJobamaxClubBindingImpl extends FragmentJobamaxClubBinding  
     // Inverse Binding Event Handlers
 
     public FragmentJobamaxClubBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentJobamaxClubBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.recyclerview.widget.RecyclerView) bindings[3]
             , (com.google.android.material.textview.MaterialTextView) bindings[2]
             , (androidx.appcompat.widget.AppCompatImageView) bindings[1]
+            , (com.google.android.material.textview.MaterialTextView) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
+            , (androidx.appcompat.widget.AppCompatImageView) bindings[5]
+            , (androidx.cardview.widget.CardView) bindings[3]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
+            , (androidx.cardview.widget.CardView) bindings[4]
             );
         this.itemHomeClBg.setTag(null);
         setRootTag(root);

@@ -111,8 +111,8 @@ fun loadImageFromUriCircular(imageView: ImageView, uri: Uri) {
 }
 
 @BindingAdapter("loadImageFromUrl")
-fun loadImageFromUrl(imageView: ImageView, imgUrl: String) {
-    imgUrl.let {
+fun loadImageFromUrl(imageView: ImageView, imgUrl: String?) {
+    imgUrl?.let {
         Glide.with(imageView.context)
             .load(it)
             .into(imageView)

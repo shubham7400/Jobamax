@@ -14,26 +14,18 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.appbar, 9);
-        sViewsWithIds.put(R.id.rv_videos, 10);
+        sViewsWithIds.put(R.id.appbar, 6);
+        sViewsWithIds.put(R.id.video_view, 7);
+        sViewsWithIds.put(R.id.tv_play_btn, 8);
+        sViewsWithIds.put(R.id.rv_guest, 9);
+        sViewsWithIds.put(R.id.iv_like_dislike, 10);
+        sViewsWithIds.put(R.id.iv_share, 11);
+        sViewsWithIds.put(R.id.tv_session, 12);
+        sViewsWithIds.put(R.id.rv_episodes, 13);
     }
     // views
     @NonNull
-    private final androidx.core.widget.NestedScrollView mboundView0;
-    @NonNull
     private final androidx.appcompat.widget.AppCompatImageView mboundView1;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatTextView mboundView3;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatTextView mboundView4;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatTextView mboundView5;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatTextView mboundView6;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatTextView mboundView7;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatTextView mboundView8;
     // variables
     @Nullable
     private final android.view.View.OnClickListener mCallback71;
@@ -42,31 +34,31 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
     // Inverse Binding Event Handlers
 
     public ActivityMasterClassDetailsBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
     }
     private ActivityMasterClassDetailsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[9]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[10]
-            , (androidx.appcompat.widget.AppCompatImageView) bindings[2]
+            , (android.widget.LinearLayout) bindings[0]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
+            , (androidx.appcompat.widget.AppCompatImageView) bindings[5]
+            , (androidx.appcompat.widget.AppCompatImageView) bindings[10]
+            , (androidx.appcompat.widget.AppCompatImageView) bindings[11]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[13]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[9]
+            , (androidx.appcompat.widget.LinearLayoutCompat) bindings[8]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[12]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[3]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[4]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[2]
+            , (com.google.android.exoplayer2.ui.PlayerView) bindings[7]
             );
-        this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
-        this.mboundView0.setTag(null);
+        this.appBarPlusVideo.setTag(null);
+        this.ivAddMyList.setTag(null);
         this.mboundView1 = (androidx.appcompat.widget.AppCompatImageView) bindings[1];
         this.mboundView1.setTag(null);
-        this.mboundView3 = (androidx.appcompat.widget.AppCompatTextView) bindings[3];
-        this.mboundView3.setTag(null);
-        this.mboundView4 = (androidx.appcompat.widget.AppCompatTextView) bindings[4];
-        this.mboundView4.setTag(null);
-        this.mboundView5 = (androidx.appcompat.widget.AppCompatTextView) bindings[5];
-        this.mboundView5.setTag(null);
-        this.mboundView6 = (androidx.appcompat.widget.AppCompatTextView) bindings[6];
-        this.mboundView6.setTag(null);
-        this.mboundView7 = (androidx.appcompat.widget.AppCompatTextView) bindings[7];
-        this.mboundView7.setTag(null);
-        this.mboundView8 = (androidx.appcompat.widget.AppCompatTextView) bindings[8];
-        this.mboundView8.setTag(null);
-        this.video.setTag(null);
+        this.tvSessionYear.setTag(null);
+        this.tvVideoDescription.setTag(null);
+        this.tvVideoTitle.setTag(null);
         setRootTag(root);
         // listeners
         mCallback71 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
@@ -76,7 +68,7 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x8L;
         }
         requestRebind();
     }
@@ -94,11 +86,14 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.handler == variableId) {
+        if (BR.item == variableId) {
+            setItem((com.findajob.jobamax.dashboard.home.training.masterclass.model.Topic) variable);
+        }
+        else if (BR.handler == variableId) {
             setHandler((com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsInterface) variable);
         }
-        else if (BR.item == variableId) {
-            setItem((com.findajob.jobamax.data.pojo.VideoDetails) variable);
+        else if (BR.episode == variableId) {
+            setEpisode((com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode) variable);
         }
         else {
             variableSet = false;
@@ -106,20 +101,28 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
             return variableSet;
     }
 
+    public void setItem(@Nullable com.findajob.jobamax.dashboard.home.training.masterclass.model.Topic Item) {
+        this.mItem = Item;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.item);
+        super.requestRebind();
+    }
     public void setHandler(@Nullable com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsInterface Handler) {
         this.mHandler = Handler;
         synchronized(this) {
-            mDirtyFlags |= 0x1L;
+            mDirtyFlags |= 0x2L;
         }
         notifyPropertyChanged(BR.handler);
         super.requestRebind();
     }
-    public void setItem(@Nullable com.findajob.jobamax.data.pojo.VideoDetails Item) {
-        this.mItem = Item;
+    public void setEpisode(@Nullable com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode Episode) {
+        this.mEpisode = Episode;
         synchronized(this) {
-            mDirtyFlags |= 0x2L;
+            mDirtyFlags |= 0x4L;
         }
-        notifyPropertyChanged(BR.item);
+        notifyPropertyChanged(BR.episode);
         super.requestRebind();
     }
 
@@ -137,53 +140,66 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        com.findajob.jobamax.dashboard.home.training.masterclass.model.Topic item = mItem;
+        android.graphics.drawable.Drawable itemMylistAddedIvAddMyListAndroidDrawableIcDoneIvAddMyListAndroidDrawableIcAdd = null;
+        java.lang.String itemSeasonYear = null;
+        java.lang.String episodeDescription = null;
         com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsInterface handler = mHandler;
-        com.findajob.jobamax.data.pojo.VideoDetails item = mItem;
-        java.lang.String itemYear = null;
-        java.lang.String itemTitle = null;
-        java.lang.String itemResolution = null;
-        java.lang.String itemSeason = null;
-        java.lang.String itemVideoThumbnail = null;
-        java.lang.String itemDescription = null;
-        java.lang.String itemRating = null;
+        java.lang.String episodeSubTitle = null;
+        com.findajob.jobamax.dashboard.home.training.masterclass.model.Episode episode = mEpisode;
+        boolean itemMylistAdded = false;
 
-        if ((dirtyFlags & 0x6L) != 0) {
+        if ((dirtyFlags & 0x9L) != 0) {
 
 
 
                 if (item != null) {
-                    // read item.year
-                    itemYear = item.getYear();
-                    // read item.title
-                    itemTitle = item.getTitle();
-                    // read item.resolution
-                    itemResolution = item.getResolution();
-                    // read item.season
-                    itemSeason = item.getSeason();
-                    // read item.videoThumbnail
-                    itemVideoThumbnail = item.getVideoThumbnail();
-                    // read item.description
-                    itemDescription = item.getDescription();
-                    // read item.rating
-                    itemRating = item.getRating();
+                    // read item.seasonYear
+                    itemSeasonYear = item.getSeasonYear();
+                    // read item.mylistAdded
+                    itemMylistAdded = item.isMylistAdded();
+                }
+            if((dirtyFlags & 0x9L) != 0) {
+                if(itemMylistAdded) {
+                        dirtyFlags |= 0x20L;
+                }
+                else {
+                        dirtyFlags |= 0x10L;
+                }
+            }
+
+
+                // read item.mylistAdded ? @android:drawable/ic_done : @android:drawable/ic_add
+                itemMylistAddedIvAddMyListAndroidDrawableIcDoneIvAddMyListAndroidDrawableIcAdd = ((itemMylistAdded) ? (androidx.appcompat.content.res.AppCompatResources.getDrawable(ivAddMyList.getContext(), R.drawable.ic_done)) : (androidx.appcompat.content.res.AppCompatResources.getDrawable(ivAddMyList.getContext(), R.drawable.ic_add)));
+        }
+        if ((dirtyFlags & 0xcL) != 0) {
+
+
+
+                if (episode != null) {
+                    // read episode.description
+                    episodeDescription = episode.getDescription();
+                    // read episode.subTitle
+                    episodeSubTitle = episode.getSubTitle();
                 }
         }
         // batch finished
-        if ((dirtyFlags & 0x4L) != 0) {
+        if ((dirtyFlags & 0x9L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.ImageViewBindingAdapter.setImageDrawable(this.ivAddMyList, itemMylistAddedIvAddMyListAndroidDrawableIcDoneIvAddMyListAndroidDrawableIcAdd);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvSessionYear, itemSeasonYear);
+        }
+        if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
             this.mboundView1.setOnClickListener(mCallback71);
         }
-        if ((dirtyFlags & 0x6L) != 0) {
+        if ((dirtyFlags & 0xcL) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView3, itemTitle);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView4, itemYear);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView5, itemRating);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView6, itemSeason);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView7, itemResolution);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView8, itemDescription);
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.video, itemVideoThumbnail);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvVideoDescription, episodeDescription);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvVideoTitle, episodeSubTitle);
         }
     }
     // Listener Stub Implementations
@@ -207,9 +223,12 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): handler
-        flag 1 (0x2L): item
-        flag 2 (0x3L): null
+        flag 0 (0x1L): item
+        flag 1 (0x2L): handler
+        flag 2 (0x3L): episode
+        flag 3 (0x4L): null
+        flag 4 (0x5L): item.mylistAdded ? @android:drawable/ic_done : @android:drawable/ic_add
+        flag 5 (0x6L): item.mylistAdded ? @android:drawable/ic_done : @android:drawable/ic_add
     flag mapping end*/
     //end
 }
