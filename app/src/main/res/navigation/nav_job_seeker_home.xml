@@ -35,9 +35,9 @@
     </fragment>
     <fragment
         android:id="@+id/jobSeekerCourseFragment"
-        android:name="com.findajob.jobamax.jobseeker.course.JobSeekerCourseFragment"
+        android:name="com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_job_seeker_course" />
+        tools:layout="@layout/activity_job_seeker_course" />
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.findajob.jobamax.dashboard.messages.MessagesFragment"

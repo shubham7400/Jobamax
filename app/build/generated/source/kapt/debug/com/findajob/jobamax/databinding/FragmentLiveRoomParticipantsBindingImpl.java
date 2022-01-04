@@ -22,7 +22,7 @@ public class FragmentLiveRoomParticipantsBindingImpl extends FragmentLiveRoomPar
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback213;
+    private final android.view.View.OnClickListener mCallback226;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -41,7 +41,7 @@ public class FragmentLiveRoomParticipantsBindingImpl extends FragmentLiveRoomPar
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback213 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback226 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -103,7 +103,7 @@ public class FragmentLiveRoomParticipantsBindingImpl extends FragmentLiveRoomPar
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.ivBackButton.setOnClickListener(mCallback213);
+            this.ivBackButton.setOnClickListener(mCallback226);
         }
     }
     // Listener Stub Implementations

@@ -24,11 +24,11 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback144;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback74;
     @Nullable
-    private final android.view.View.OnClickListener mCallback142;
+    private final android.view.View.OnClickListener mCallback72;
     @Nullable
-    private final android.view.View.OnClickListener mCallback143;
+    private final android.view.View.OnClickListener mCallback73;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,9 +51,9 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
         this.newsletterCheck.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback144 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
-        mCallback142 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback143 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback74 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
+        mCallback72 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback73 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -115,9 +115,9 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback142);
-            this.mboundView2.setOnClickListener(mCallback143);
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.newsletterCheck, mCallback144, (androidx.databinding.InverseBindingListener)null);
+            this.imageView.setOnClickListener(mCallback72);
+            this.mboundView2.setOnClickListener(mCallback73);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.newsletterCheck, mCallback74, (androidx.databinding.InverseBindingListener)null);
         }
     }
     // Listener Stub Implementations

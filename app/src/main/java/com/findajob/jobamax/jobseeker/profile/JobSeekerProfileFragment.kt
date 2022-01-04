@@ -4,21 +4,24 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.cropper.CropImage
 import com.findajob.jobamax.cropper.CropImageView
+import com.findajob.jobamax.dashboard.messages.ProfileActivity
 import com.findajob.jobamax.databinding.FragmentJobSeekerProfileBinding
 import com.findajob.jobamax.dialog.JobamaxBecomeAmbassadorDialog
 import com.findajob.jobamax.dialog.JobamaxReachDialog
-import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
-import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.info.Info
 import com.findajob.jobamax.jobseeker.profile.info.InfoAdapter
 import com.findajob.jobamax.repo.SaveParseObjectCallback
@@ -31,9 +34,12 @@ import kotlinx.android.synthetic.main.fragment_job_seeker_profile.*
 import java.io.File
 
 
+
+
+
+
 @AndroidEntryPoint
-class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBinding>(),
-    JobSeekerProfileInterface, ImagePicker.GetImage {
+class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBinding>(), JobSeekerProfileInterface, ImagePicker.GetImage {
 
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
 
@@ -87,8 +93,11 @@ class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBindin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+      /*  val navHostFragment = (activity as ProfileActivity).supportFragmentManager.findFragmentById(R.id.nav_job_seeker_home) as NavHostFragment
+        navController = navHostFragment.navController*/
         navController = Navigation.findNavController(view)
     }
+
 
     private fun setupImagePicker() {
         imagePicker = ImagePicker(this)
@@ -117,7 +126,7 @@ class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBindin
     )
 
     override fun onGetJobamaxReachClicked() = JobamaxReachDialog(requireActivity()) {
-        (requireActivity() as JobSeekerHomeActivity).initBilling()
+        /*(requireActivity() as JobSeekerHomeActivity).initBilling()*/
     }.show()
 
     /*override fun onTrainingRoomClicked() {

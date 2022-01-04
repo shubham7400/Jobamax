@@ -25,15 +25,15 @@ public class FragmentCreateExperienceBindingImpl extends FragmentCreateExperienc
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback49;
+    private final android.view.View.OnClickListener mCallback34;
     @Nullable
-    private final android.view.View.OnClickListener mCallback47;
+    private final android.view.View.OnClickListener mCallback32;
     @Nullable
-    private final android.view.View.OnClickListener mCallback48;
+    private final android.view.View.OnClickListener mCallback33;
     @Nullable
-    private final android.view.View.OnClickListener mCallback46;
+    private final android.view.View.OnClickListener mCallback30;
     @Nullable
-    private final android.view.View.OnClickListener mCallback50;
+    private final android.view.View.OnClickListener mCallback31;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -63,11 +63,11 @@ public class FragmentCreateExperienceBindingImpl extends FragmentCreateExperienc
         this.tvLocationField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback49 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback47 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback48 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback46 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback50 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback34 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback32 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback33 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback30 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback31 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -129,18 +129,35 @@ public class FragmentCreateExperienceBindingImpl extends FragmentCreateExperienc
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.button.setOnClickListener(mCallback50);
-            this.experienceEndDateField.setOnClickListener(mCallback49);
-            this.experienceStartDateField.setOnClickListener(mCallback48);
-            this.ivBackButton.setOnClickListener(mCallback46);
-            this.tvLocationField.setOnClickListener(mCallback47);
+            this.button.setOnClickListener(mCallback34);
+            this.experienceEndDateField.setOnClickListener(mCallback33);
+            this.experienceStartDateField.setOnClickListener(mCallback32);
+            this.ivBackButton.setOnClickListener(mCallback30);
+            this.tvLocationField.setOnClickListener(mCallback31);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 4: {
+            case 5: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSaveButtonClicked();
+                }
+                break;
+            }
+            case 3: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceHandler handler = mHandler;
@@ -159,24 +176,7 @@ public class FragmentCreateExperienceBindingImpl extends FragmentCreateExperienc
                 }
                 break;
             }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onLocationClicked();
-                }
-                break;
-            }
-            case 3: {
+            case 4: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceHandler handler = mHandler;
@@ -212,7 +212,7 @@ public class FragmentCreateExperienceBindingImpl extends FragmentCreateExperienc
                 }
                 break;
             }
-            case 5: {
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceHandler handler = mHandler;
@@ -225,7 +225,7 @@ public class FragmentCreateExperienceBindingImpl extends FragmentCreateExperienc
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onSaveButtonClicked();
+                    handler.onLocationClicked();
                 }
                 break;
             }

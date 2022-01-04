@@ -74,7 +74,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.findajob.jobamax.dashboard.messages.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.findajob.jobamax.dashboard.messages.MainChatActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.findajob.jobamax.jobseeker.track.JobSeekerApplyActivity"
+            android:exported="false" />
         <activity
             android:name="com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassGuestDetailsActivity"
             android:exported="false" />
@@ -90,6 +100,11 @@
         </activity>
         <activity
             android:name="com.findajob.jobamax.recruiter.profile.account.companyInfo.CompanyIntroInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
@@ -226,8 +241,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/RecruiterHomeTheme"
             android:windowSoftInputMode="adjustPan" >
-
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -238,7 +251,6 @@
                 <data android:scheme="https" />
                 <data android:scheme="http" />
             </intent-filter>
-            -->
         </activity>
         <activity
             android:name="com.findajob.jobamax.MainActivity"

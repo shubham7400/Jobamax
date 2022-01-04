@@ -20,6 +20,7 @@ import com.findajob.jobamax.dialog.ConfirmationDialog
 import com.findajob.jobamax.extensions.goToActivity
 import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.preference.getRole
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.util.ARG_REFRESH_ACTIVE
 import com.findajob.jobamax.util.log
 import com.google.firebase.messaging.FirebaseMessaging
@@ -55,7 +56,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
     override fun onStart() {
         super.onStart()
         viewModel.getMessages(MessageType.JOB)
-        viewModel.getNewUsers(requireActivity().getRole())
+        viewModel.getNewUsers(requireActivity().getUserType())
         FirebaseMessaging.getInstance()
             .subscribeToTopic("/topics/$ARG_REFRESH_ACTIVE")
         requireActivity().registerReceiver(broadcastReceiver, IntentFilter(ARG_REFRESH_ACTIVE))
@@ -64,7 +65,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
 
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            viewModel.getNewUsers(requireActivity().getRole())
+            viewModel.getNewUsers(requireActivity().getUserType())
         }
     }
 
@@ -283,7 +284,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
         currentUserId = viewModel.currentUserId
 
         viewModel.apply {
-            getMessages(MessageType.JOB)
+            /*getMessages(MessageType.JOB)*/
             observe(jobSeekerMessages) {
                 binding.loading.visibility = View.INVISIBLE
                 log("messages $it")
@@ -295,7 +296,7 @@ class JobSeekerChatsFragment : BaseFragmentMain<FragmentChatsBinding>() {
         }
 
         viewModel.apply {
-            getNewUsers(requireActivity().getRole())
+            getNewUsers(requireActivity().getUserType())
             observe(newUsers) {
                 it?.let {
                     newPeopleAdapter.submitList(it)

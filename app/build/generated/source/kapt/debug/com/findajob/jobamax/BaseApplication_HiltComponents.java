@@ -17,6 +17,7 @@ import com.findajob.jobamax.dashboard.home.training.online.courses.onlinecourse.
 import com.findajob.jobamax.dashboard.messages.ChatActivity_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.ChatViewModel_HiltModules;
 import com.findajob.jobamax.dashboard.messages.JobSeekerChatsFragment_GeneratedInjector;
+import com.findajob.jobamax.dashboard.messages.MainChatActivity_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.MessagesFragment_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.MessagesViewModel_HiltModules;
 import com.findajob.jobamax.dashboard.messages.PreviewImageActivity_GeneratedInjector;
@@ -25,10 +26,11 @@ import com.findajob.jobamax.dashboard.messages.PreviewJobSeekerActivity_Generate
 import com.findajob.jobamax.dashboard.messages.PreviewJobSeekerViewModel_HiltModules;
 import com.findajob.jobamax.dashboard.messages.PreviewRecruiterActivity_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.PreviewRecruiterViewModel_HiltModules;
+import com.findajob.jobamax.dashboard.messages.ProfileActivity_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.RecruiterChatsFragment_GeneratedInjector;
 import com.findajob.jobamax.di.AppModule;
 import com.findajob.jobamax.di.ViewModelModule;
-import com.findajob.jobamax.jobseeker.course.JobSeekerCourseFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment_GeneratedInjector;
@@ -46,6 +48,7 @@ import com.findajob.jobamax.jobseeker.profile.cv.experience.CreateExperienceFrag
 import com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.source.JobSourceFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.track.JobOfferCardInfoFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.track.JobSeekerApplyActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.track.JobSeekerTrackFragment_GeneratedInjector;
@@ -264,10 +267,14 @@ public final class BaseApplication_HiltComponents {
       OnlineCourseActivity_GeneratedInjector,
       OnlineCourseDetailsActivity_GeneratedInjector,
       ChatActivity_GeneratedInjector,
+      MainChatActivity_GeneratedInjector,
       PreviewImageActivity_GeneratedInjector,
       PreviewJobSeekerActivity_GeneratedInjector,
       PreviewRecruiterActivity_GeneratedInjector,
+      ProfileActivity_GeneratedInjector,
+      JobSeekerCourseActivity_GeneratedInjector,
       JobSeekerHomeActivity_GeneratedInjector,
+      JobSeekerApplyActivity_GeneratedInjector,
       SelectLocationActivity_GeneratedInjector,
       RecruiterHomeActivity_GeneratedInjector,
       CompanyIntroInfoActivity_GeneratedInjector,
@@ -338,7 +345,6 @@ public final class BaseApplication_HiltComponents {
       JobSeekerChatsFragment_GeneratedInjector,
       MessagesFragment_GeneratedInjector,
       RecruiterChatsFragment_GeneratedInjector,
-      JobSeekerCourseFragment_GeneratedInjector,
       JobSeekerProfileFragment_GeneratedInjector,
       JobSeekerAccountFragment_GeneratedInjector,
       JobSeekerNewsletterFragment_GeneratedInjector,

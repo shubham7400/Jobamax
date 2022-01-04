@@ -34,15 +34,15 @@ public class FragmentJobSeekerMediaBindingImpl extends FragmentJobSeekerMediaBin
     private final android.widget.Button mboundView8;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback25;
+    private final android.view.View.OnClickListener mCallback17;
     @Nullable
-    private final android.view.View.OnClickListener mCallback23;
+    private final android.view.View.OnClickListener mCallback19;
     @Nullable
-    private final android.view.View.OnClickListener mCallback26;
+    private final android.view.View.OnClickListener mCallback20;
     @Nullable
-    private final android.view.View.OnClickListener mCallback24;
+    private final android.view.View.OnClickListener mCallback16;
     @Nullable
-    private final android.view.View.OnClickListener mCallback22;
+    private final android.view.View.OnClickListener mCallback18;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -77,11 +77,11 @@ public class FragmentJobSeekerMediaBindingImpl extends FragmentJobSeekerMediaBin
         this.profilePicIcon.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback25 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback23 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback26 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback24 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback22 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback17 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback19 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback20 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback16 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback18 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -231,34 +231,17 @@ public class FragmentJobSeekerMediaBindingImpl extends FragmentJobSeekerMediaBin
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback22);
-            this.mboundView2.setOnClickListener(mCallback23);
-            this.mboundView4.setOnClickListener(mCallback24);
-            this.mboundView6.setOnClickListener(mCallback25);
-            this.mboundView8.setOnClickListener(mCallback26);
+            this.mboundView1.setOnClickListener(mCallback16);
+            this.mboundView2.setOnClickListener(mCallback17);
+            this.mboundView4.setOnClickListener(mCallback18);
+            this.mboundView6.setOnClickListener(mCallback19);
+            this.mboundView8.setOnClickListener(mCallback20);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.media.JobSeekerMediaInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onAttachmentClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -273,6 +256,23 @@ public class FragmentJobSeekerMediaBindingImpl extends FragmentJobSeekerMediaBin
 
 
                     handler.onProfilePictureClicked();
+                }
+                break;
+            }
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.media.JobSeekerMediaInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onAttachmentClicked();
                 }
                 break;
             }
@@ -293,23 +293,6 @@ public class FragmentJobSeekerMediaBindingImpl extends FragmentJobSeekerMediaBin
                 }
                 break;
             }
-            case 3: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.media.JobSeekerMediaInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPersonalPresentationClicked();
-                }
-                break;
-            }
             case 1: {
                 // localize variables for thread safety
                 // handler
@@ -324,6 +307,23 @@ public class FragmentJobSeekerMediaBindingImpl extends FragmentJobSeekerMediaBin
 
 
                     handler.onBackButtonClicked();
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.media.JobSeekerMediaInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPersonalPresentationClicked();
                 }
                 break;
             }

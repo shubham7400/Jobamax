@@ -9,7 +9,7 @@ import com.findajob.jobamax.dashboard.messages.MessagesFragment
 import com.findajob.jobamax.dashboard.profile.ProfileFragment
 import com.findajob.jobamax.dashboard.search.SearchFragment
 import com.findajob.jobamax.databinding.ActivityDashboardBinding
-import com.findajob.jobamax.jobseeker.course.JobSeekerCourseFragment
+import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity
 import com.findajob.jobamax.util.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
@@ -51,8 +51,8 @@ class DashboardActivity : AppCompatActivity() {
     private fun setupViewPager() {
         vpa = ViewPagerAdapter(supportFragmentManager)
 
-        vpa.addFragment(JobSeekerCourseFragment(), JobSeekerCourseFragment::class.java.simpleName)
-        binding.dashboardBnv.addTab(binding.dashboardBnv.newTab().setIcon(R.drawable.ic_home))
+       /* vpa.addFragment(JobSeekerCourseActivity(), JobSeekerCourseActivity::class.java.simpleName)
+        binding.dashboardBnv.addTab(binding.dashboardBnv.newTab().setIcon(R.drawable.ic_home))*/
 
         vpa.addFragment(SearchFragment(), SearchFragment::class.java.simpleName)
         binding.dashboardBnv.addTab(binding.dashboardBnv.newTab().setIcon(R.drawable.ic_search))

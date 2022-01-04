@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:descendantFocusability="blocksDescendants"
             android:backgroundTint="@color/colorWhite"
-            tools:context=".jobseeker.course.JobSeekerCourseFragment">
+            tools:context=".jobseeker.course.JobSeekerCourseActivity">
 
             <ImageView
                 android:id="@+id/profile_iv_top_bg"

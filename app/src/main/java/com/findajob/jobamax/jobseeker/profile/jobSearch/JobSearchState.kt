@@ -49,7 +49,6 @@ class JobSearchState {
 
     fun toJobSeeker(): JobSeeker {
         val jobSeeker = JobSeeker()
-
         val jobCategory = arrayListOf<String>()
         if (this.jobSelectedFlag)
             jobCategory.add(CONST_JOB)

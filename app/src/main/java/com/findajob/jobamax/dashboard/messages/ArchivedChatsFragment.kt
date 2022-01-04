@@ -42,7 +42,7 @@ class ArchivedChatsFragment : BaseFragmentMain<FragmentArchivedChatsBinding>() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.getMessages(MessageType.ARCHIVING)
+       /* viewModel.getMessages(MessageType.ARCHIVING)*/
     }
 
     private fun initViews() {
@@ -193,7 +193,7 @@ class ArchivedChatsFragment : BaseFragmentMain<FragmentArchivedChatsBinding>() {
 
         viewModel.apply {
 
-            getMessages(MessageType.ARCHIVING)
+            /*getMessages(MessageType.ARCHIVING)*/
 
             observe(archivedMessages) {
                 binding.loading.visibility = View.INVISIBLE

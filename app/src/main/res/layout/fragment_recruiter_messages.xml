@@ -16,7 +16,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:backgroundTint="@color/colorWhite"
-			tools:context=".jobseeker.course.JobSeekerCourseFragment">
+			tools:context=".jobseeker.course.JobSeekerCourseActivity">
 			
 			<ImageView
 				android:id="@+id/messages_iv_bg"

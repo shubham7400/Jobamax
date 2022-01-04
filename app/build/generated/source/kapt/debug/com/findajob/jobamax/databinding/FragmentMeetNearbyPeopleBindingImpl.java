@@ -25,9 +25,9 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
     private final android.widget.Button mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback102;
+    private final android.view.View.OnClickListener mCallback52;
     @Nullable
-    private final android.view.View.OnClickListener mCallback101;
+    private final android.view.View.OnClickListener mCallback53;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -49,8 +49,8 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback102 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback101 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback52 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback53 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -112,31 +112,14 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView7.setOnClickListener(mCallback101);
-            this.mboundView2.setOnClickListener(mCallback102);
+            this.imageView7.setOnClickListener(mCallback52);
+            this.mboundView2.setOnClickListener(mCallback53);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.MeetPeopleNearbyInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onAllowLocationClicked();
-                }
-                break;
-            }
             case 1: {
                 // localize variables for thread safety
                 // handler
@@ -151,6 +134,23 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
 
 
                     handler.onTopupClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.MeetPeopleNearbyInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onAllowLocationClicked();
                 }
                 break;
             }

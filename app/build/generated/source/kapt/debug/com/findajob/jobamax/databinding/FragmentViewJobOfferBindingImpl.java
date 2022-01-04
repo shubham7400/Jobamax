@@ -67,11 +67,11 @@ public class FragmentViewJobOfferBindingImpl extends FragmentViewJobOfferBinding
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback180;
+    private final android.view.View.OnClickListener mCallback218;
     @Nullable
-    private final android.view.View.OnClickListener mCallback181;
+    private final android.view.View.OnClickListener mCallback219;
     @Nullable
-    private final android.view.View.OnClickListener mCallback179;
+    private final android.view.View.OnClickListener mCallback220;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -159,9 +159,9 @@ public class FragmentViewJobOfferBindingImpl extends FragmentViewJobOfferBinding
         this.tvLocationField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback180 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback181 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback179 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback218 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback219 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback220 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -345,9 +345,9 @@ public class FragmentViewJobOfferBindingImpl extends FragmentViewJobOfferBinding
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.btnSave.setOnClickListener(mCallback181);
-            this.ivBackButton.setOnClickListener(mCallback179);
-            this.ivEndJobButton.setOnClickListener(mCallback180);
+            this.btnSave.setOnClickListener(mCallback220);
+            this.ivBackButton.setOnClickListener(mCallback218);
+            this.ivEndJobButton.setOnClickListener(mCallback219);
         }
         if ((dirtyFlags & 0x5L) != 0) {
             // api target 1
@@ -368,6 +368,23 @@ public class FragmentViewJobOfferBindingImpl extends FragmentViewJobOfferBinding
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.jobOffer.view.ViewJobOfferInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackButtonClicked();
+                }
+                break;
+            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -399,23 +416,6 @@ public class FragmentViewJobOfferBindingImpl extends FragmentViewJobOfferBinding
 
 
                     handler.onSaveClicked();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.jobOffer.view.ViewJobOfferInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
                 }
                 break;
             }

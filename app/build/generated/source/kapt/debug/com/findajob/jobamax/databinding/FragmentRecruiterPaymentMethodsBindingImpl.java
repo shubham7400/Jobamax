@@ -29,9 +29,9 @@ public class FragmentRecruiterPaymentMethodsBindingImpl extends FragmentRecruite
     private final android.widget.LinearLayout mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback63;
+    private final android.view.View.OnClickListener mCallback45;
     @Nullable
-    private final android.view.View.OnClickListener mCallback64;
+    private final android.view.View.OnClickListener mCallback46;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -57,8 +57,8 @@ public class FragmentRecruiterPaymentMethodsBindingImpl extends FragmentRecruite
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback63 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback64 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback45 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback46 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -120,8 +120,8 @@ public class FragmentRecruiterPaymentMethodsBindingImpl extends FragmentRecruite
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.backButton.setOnClickListener(mCallback63);
-            this.mboundView2.setOnClickListener(mCallback64);
+            this.backButton.setOnClickListener(mCallback45);
+            this.mboundView2.setOnClickListener(mCallback46);
         }
     }
     // Listener Stub Implementations

@@ -19,6 +19,7 @@ import com.findajob.jobamax.extensions.goToActivity
 import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.preference.getRole
 import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.recruiter.profile.jobOffer.MessageFilterJobOfferDialog
 import com.findajob.jobamax.repo.MessageRepository
 import com.findajob.jobamax.util.ARG_REFRESH_ACTIVE
@@ -52,8 +53,8 @@ class RecruiterChatsFragment : BaseFragmentMain<FragmentRecruiterChatsBinding>()
 
     override fun onStart() {
         super.onStart()
-        viewModel.getMessages(MessageType.JOB)
-        viewModel.getNewUsers(requireActivity().getRole())
+        /*viewModel.getMessages(MessageType.JOB)*/
+        viewModel.getNewUsers(requireActivity().getUserType())
         FirebaseMessaging.getInstance()
             .subscribeToTopic("/topics/$ARG_REFRESH_ACTIVE")
         requireActivity().registerReceiver(broadcastReceiver, IntentFilter(ARG_REFRESH_ACTIVE))
@@ -66,7 +67,7 @@ class RecruiterChatsFragment : BaseFragmentMain<FragmentRecruiterChatsBinding>()
 
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            viewModel.getNewUsers(requireActivity().getRole())
+            viewModel.getNewUsers(requireActivity().getUserType())
         }
     }
 
@@ -279,7 +280,7 @@ class RecruiterChatsFragment : BaseFragmentMain<FragmentRecruiterChatsBinding>()
         }
 
         viewModel.apply {
-            getMessages(MessageType.JOB)
+            /*getMessages(MessageType.JOB)*/
             observe(jobSeekerMessages) {
                 binding.loading.visibility = View.INVISIBLE
                 log("messages $it")
@@ -291,7 +292,7 @@ class RecruiterChatsFragment : BaseFragmentMain<FragmentRecruiterChatsBinding>()
         }
 
         viewModel.apply {
-            getNewUsers(requireActivity().getRole())
+            getNewUsers(requireActivity().getUserType())
             observe(newUsers) {
                 it?.let {
                     newPeopleAdapter.submitList(it)

@@ -26,13 +26,13 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
     private final android.widget.RelativeLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback209;
+    private final android.view.View.OnClickListener mCallback112;
     @Nullable
-    private final android.view.View.OnClickListener mCallback210;
+    private final android.view.View.OnClickListener mCallback113;
     @Nullable
-    private final android.view.View.OnClickListener mCallback211;
+    private final android.view.View.OnClickListener mCallback110;
     @Nullable
-    private final android.view.View.OnClickListener mCallback212;
+    private final android.view.View.OnClickListener mCallback111;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -71,10 +71,10 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
         this.thirdIconLayout.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback209 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback210 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback211 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback212 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback112 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback113 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback110 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback111 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -309,52 +309,16 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
         if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
-            this.firstIconLayout.setOnClickListener(mCallback209);
-            this.fourthIconLayout.setOnClickListener(mCallback212);
-            this.secondIconLayout.setOnClickListener(mCallback210);
-            this.thirdIconLayout.setOnClickListener(mCallback211);
+            this.firstIconLayout.setOnClickListener(mCallback110);
+            this.fourthIconLayout.setOnClickListener(mCallback113);
+            this.secondIconLayout.setOnClickListener(mCallback111);
+            this.thirdIconLayout.setOnClickListener(mCallback112);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.home.RecruiterHomeInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-
-                    handler.onIconClicked(1);
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.home.RecruiterHomeInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-
-                    handler.onIconClicked(2);
-                }
-                break;
-            }
             case 3: {
                 // localize variables for thread safety
                 // handler
@@ -388,6 +352,42 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
 
 
                     handler.onIconClicked(4);
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.home.RecruiterHomeInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+
+                    handler.onIconClicked(1);
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.home.RecruiterHomeInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+
+                    handler.onIconClicked(2);
                 }
                 break;
             }

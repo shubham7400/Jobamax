@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 @SuppressWarnings("unchecked")
-public class FragmentRecruiterManageReadReceiptsBindingImpl extends FragmentRecruiterManageReadReceiptsBinding implements com.findajob.jobamax.generated.callback.OnCheckedChangeListener.Listener, com.findajob.jobamax.generated.callback.OnClickListener.Listener {
+public class FragmentRecruiterManageReadReceiptsBindingImpl extends FragmentRecruiterManageReadReceiptsBinding implements com.findajob.jobamax.generated.callback.OnClickListener.Listener, com.findajob.jobamax.generated.callback.OnCheckedChangeListener.Listener {
 
     @Nullable
     private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
@@ -24,11 +24,11 @@ public class FragmentRecruiterManageReadReceiptsBindingImpl extends FragmentRecr
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback21;
+    private final android.view.View.OnClickListener mCallback14;
     @Nullable
-    private final android.view.View.OnClickListener mCallback20;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback15;
     @Nullable
-    private final android.view.View.OnClickListener mCallback19;
+    private final android.view.View.OnClickListener mCallback13;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,9 +51,9 @@ public class FragmentRecruiterManageReadReceiptsBindingImpl extends FragmentRecr
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback21 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
-        mCallback20 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback19 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback14 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback15 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
+        mCallback13 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -115,30 +115,13 @@ public class FragmentRecruiterManageReadReceiptsBindingImpl extends FragmentRecr
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback19);
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.manageReadReceiptsCheck, mCallback21, (androidx.databinding.InverseBindingListener)null);
-            this.mboundView2.setOnClickListener(mCallback20);
+            this.imageView.setOnClickListener(mCallback13);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.manageReadReceiptsCheck, mCallback15, (androidx.databinding.InverseBindingListener)null);
+            this.mboundView2.setOnClickListener(mCallback14);
         }
     }
     // Listener Stub Implementations
     // callback impls
-    public final void _internalCallbackOnCheckedChanged(int sourceId , android.widget.CompoundButton callbackArg_0, boolean callbackArg_1) {
-        // localize variables for thread safety
-        // handler
-        com.findajob.jobamax.recruiter.profile.account.readReceipts.RecruiterManageReadReceiptsInterface handler = mHandler;
-        // handler != null
-        boolean handlerJavaLangObjectNull = false;
-
-
-
-        handlerJavaLangObjectNull = (handler) != (null);
-        if (handlerJavaLangObjectNull) {
-
-
-
-            handler.toggleManageReadReceipts(callbackArg_1);
-        }
-    }
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
             case 2: {
@@ -175,6 +158,23 @@ public class FragmentRecruiterManageReadReceiptsBindingImpl extends FragmentRecr
                 }
                 break;
             }
+        }
+    }
+    public final void _internalCallbackOnCheckedChanged(int sourceId , android.widget.CompoundButton callbackArg_0, boolean callbackArg_1) {
+        // localize variables for thread safety
+        // handler
+        com.findajob.jobamax.recruiter.profile.account.readReceipts.RecruiterManageReadReceiptsInterface handler = mHandler;
+        // handler != null
+        boolean handlerJavaLangObjectNull = false;
+
+
+
+        handlerJavaLangObjectNull = (handler) != (null);
+        if (handlerJavaLangObjectNull) {
+
+
+
+            handler.toggleManageReadReceipts(callbackArg_1);
         }
     }
     // dirty flag

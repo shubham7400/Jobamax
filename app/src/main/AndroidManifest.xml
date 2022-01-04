@@ -35,6 +35,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".dashboard.messages.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.messages.MainChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jobseeker.track.JobSeekerApplyActivity"
+            android:exported="false" />
+        <activity
             android:name=".dashboard.home.training.masterclass.MasterClassGuestDetailsActivity"
             android:exported="false" />
         <activity
@@ -49,6 +58,11 @@
         </activity>
         <activity
             android:name=".recruiter.profile.account.companyInfo.CompanyIntroInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".jobseeker.course.JobSeekerCourseActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
@@ -185,8 +199,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/RecruiterHomeTheme"
             android:windowSoftInputMode="adjustPan">
-
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -197,7 +209,6 @@
                 <data android:scheme="https" />
                 <data android:scheme="http" />
             </intent-filter>
-            -->
         </activity>
         <activity
             android:name=".MainActivity"

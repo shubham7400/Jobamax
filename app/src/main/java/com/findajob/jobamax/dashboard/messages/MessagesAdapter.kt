@@ -19,8 +19,7 @@ import com.parse.ParseObject
 import org.jetbrains.anko.imageResource
 import javax.inject.Inject
 
-class MessagesAdapter @Inject constructor() :
-    RecyclerView.Adapter<MessagesAdapter.Holder>(), Filterable {
+class MessagesAdapter @Inject constructor() : RecyclerView.Adapter<MessagesAdapter.Holder>(), Filterable {
 
     var currentUserId: String = ""
 

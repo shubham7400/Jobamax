@@ -24,13 +24,13 @@ public class FragmentCreateEducationBindingImpl extends FragmentCreateEducationB
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback252;
+    private final android.view.View.OnClickListener mCallback128;
     @Nullable
-    private final android.view.View.OnClickListener mCallback253;
+    private final android.view.View.OnClickListener mCallback126;
     @Nullable
-    private final android.view.View.OnClickListener mCallback250;
+    private final android.view.View.OnClickListener mCallback127;
     @Nullable
-    private final android.view.View.OnClickListener mCallback251;
+    private final android.view.View.OnClickListener mCallback125;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -57,10 +57,10 @@ public class FragmentCreateEducationBindingImpl extends FragmentCreateEducationB
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback252 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback253 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback250 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback251 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback128 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback126 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback127 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback125 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -122,35 +122,16 @@ public class FragmentCreateEducationBindingImpl extends FragmentCreateEducationB
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.button.setOnClickListener(mCallback253);
-            this.educationEndDateField.setOnClickListener(mCallback252);
-            this.educationStartDateField.setOnClickListener(mCallback251);
-            this.ivBackButton.setOnClickListener(mCallback250);
+            this.button.setOnClickListener(mCallback128);
+            this.educationEndDateField.setOnClickListener(mCallback127);
+            this.educationStartDateField.setOnClickListener(mCallback126);
+            this.ivBackButton.setOnClickListener(mCallback125);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 3: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.cv.education.CreateEducationHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-
-
-                    handler.onDateClicked(callbackArg_0, 2);
-                }
-                break;
-            }
             case 4: {
                 // localize variables for thread safety
                 // handler
@@ -165,23 +146,6 @@ public class FragmentCreateEducationBindingImpl extends FragmentCreateEducationB
 
 
                     handler.onAddEducationClicked();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.cv.education.CreateEducationHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
                 }
                 break;
             }
@@ -201,6 +165,42 @@ public class FragmentCreateEducationBindingImpl extends FragmentCreateEducationB
 
 
                     handler.onDateClicked(callbackArg_0, 1);
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.cv.education.CreateEducationHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+
+
+                    handler.onDateClicked(callbackArg_0, 2);
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.cv.education.CreateEducationHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackButtonClicked();
                 }
                 break;
             }

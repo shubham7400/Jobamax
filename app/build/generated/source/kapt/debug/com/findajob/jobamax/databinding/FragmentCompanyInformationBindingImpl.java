@@ -24,9 +24,9 @@ public class FragmentCompanyInformationBindingImpl extends FragmentCompanyInform
     private final android.widget.Button mboundView7;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback140;
+    private final android.view.View.OnClickListener mCallback70;
     @Nullable
-    private final android.view.View.OnClickListener mCallback141;
+    private final android.view.View.OnClickListener mCallback71;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -187,8 +187,8 @@ public class FragmentCompanyInformationBindingImpl extends FragmentCompanyInform
         this.vatField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback140 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback141 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback70 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback71 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -298,8 +298,8 @@ public class FragmentCompanyInformationBindingImpl extends FragmentCompanyInform
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.companyRegField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, companyRegFieldandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.companyWebsite, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, companyWebsiteandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.headquarterField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, headquarterFieldandroidTextAttrChanged);
-            this.ivBack.setOnClickListener(mCallback140);
-            this.mboundView7.setOnClickListener(mCallback141);
+            this.ivBack.setOnClickListener(mCallback70);
+            this.mboundView7.setOnClickListener(mCallback71);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.vatField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, vatFieldandroidTextAttrChanged);
         }
     }

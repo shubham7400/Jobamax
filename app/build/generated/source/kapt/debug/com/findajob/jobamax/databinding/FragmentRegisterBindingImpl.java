@@ -29,15 +29,15 @@ public class FragmentRegisterBindingImpl extends FragmentRegisterBinding impleme
     private final android.widget.TextView mboundView5;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback128;
+    private final android.view.View.OnClickListener mCallback190;
     @Nullable
-    private final android.view.View.OnClickListener mCallback129;
+    private final android.view.View.OnClickListener mCallback188;
     @Nullable
-    private final android.view.View.OnClickListener mCallback126;
+    private final android.view.View.OnClickListener mCallback189;
     @Nullable
-    private final android.view.View.OnClickListener mCallback127;
+    private final android.view.View.OnClickListener mCallback186;
     @Nullable
-    private final android.view.View.OnClickListener mCallback125;
+    private final android.view.View.OnClickListener mCallback187;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,11 +65,11 @@ public class FragmentRegisterBindingImpl extends FragmentRegisterBinding impleme
         this.mboundView5.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback128 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback129 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback126 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback127 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback125 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback190 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback188 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback189 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback186 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback187 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -131,17 +131,52 @@ public class FragmentRegisterBindingImpl extends FragmentRegisterBinding impleme
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.ivShowConfirmPasswordButton.setOnClickListener(mCallback127);
-            this.ivShowPasswordButton.setOnClickListener(mCallback126);
-            this.mboundView1.setOnClickListener(mCallback125);
-            this.mboundView4.setOnClickListener(mCallback128);
-            this.mboundView5.setOnClickListener(mCallback129);
+            this.ivShowConfirmPasswordButton.setOnClickListener(mCallback188);
+            this.ivShowPasswordButton.setOnClickListener(mCallback187);
+            this.mboundView1.setOnClickListener(mCallback186);
+            this.mboundView4.setOnClickListener(mCallback189);
+            this.mboundView5.setOnClickListener(mCallback190);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 5: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.RegisterInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onLoginClicked();
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.RegisterInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+
+                    handler.onEyeClicked(2);
+                }
+                break;
+            }
             case 4: {
                 // localize variables for thread safety
                 // handler
@@ -159,7 +194,7 @@ public class FragmentRegisterBindingImpl extends FragmentRegisterBinding impleme
                 }
                 break;
             }
-            case 5: {
+            case 1: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.login.RegisterInterface handler = mHandler;
@@ -191,41 +226,6 @@ public class FragmentRegisterBindingImpl extends FragmentRegisterBinding impleme
 
 
                     handler.onEyeClicked(1);
-                }
-                break;
-            }
-            case 3: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.RegisterInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-
-                    handler.onEyeClicked(2);
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.RegisterInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onLoginClicked();
                 }
                 break;
             }

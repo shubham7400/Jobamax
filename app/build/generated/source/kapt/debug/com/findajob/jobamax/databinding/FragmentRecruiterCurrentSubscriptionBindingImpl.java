@@ -27,11 +27,11 @@ public class FragmentRecruiterCurrentSubscriptionBindingImpl extends FragmentRec
     private final androidx.appcompat.widget.AppCompatButton mboundView5;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback74;
+    private final android.view.View.OnClickListener mCallback49;
     @Nullable
-    private final android.view.View.OnClickListener mCallback72;
+    private final android.view.View.OnClickListener mCallback47;
     @Nullable
-    private final android.view.View.OnClickListener mCallback73;
+    private final android.view.View.OnClickListener mCallback48;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -61,9 +61,9 @@ public class FragmentRecruiterCurrentSubscriptionBindingImpl extends FragmentRec
         this.tvSubscriptionPrice.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback74 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback72 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback73 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback49 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback47 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback48 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -176,9 +176,9 @@ public class FragmentRecruiterCurrentSubscriptionBindingImpl extends FragmentRec
         if ((dirtyFlags & 0x10L) != 0) {
             // api target 1
 
-            this.btnDemo.setOnClickListener(mCallback74);
-            this.ivBack.setOnClickListener(mCallback72);
-            this.mboundView5.setOnClickListener(mCallback73);
+            this.btnDemo.setOnClickListener(mCallback49);
+            this.ivBack.setOnClickListener(mCallback47);
+            this.mboundView5.setOnClickListener(mCallback48);
         }
         if ((dirtyFlags & 0x18L) != 0) {
             // api target 1

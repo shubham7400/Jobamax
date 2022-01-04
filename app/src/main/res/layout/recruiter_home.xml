@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.core.widget.NestedScrollView
+        android:background="#E9F2FB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/jobamax_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Welcome"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/opensans_bold"
+                    android:textFontWeight="@integer/material_motion_duration_medium_1"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="On the road to find your dream job!"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_gradient_rounded"
+                    android:text="Start hiring"
+                    android:textAllCaps="false"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:gravity="left|center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/ic_arrow_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <LinearLayout
+                    android:id="@+id/melafd"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/button3"
+                    tools:layout_editor_absoluteX="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/oooo"
+                            android:background="@drawable/rounded_white_box">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/image_user"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="20dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/default_user_img" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image_user"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="My Profile"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/abcdd"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/oooo"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/rounded_white_box">
+
+                            <ImageView
+                                android:id="@+id/iv_calender"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/calender" />
+
+                            <TextView
+                                android:id="@+id/tv_calender_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/iv_calender"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="My Calender"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50">
+
+                        <RelativeLayout
+                            android:id="@+id/rrrr"
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_message_icon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/message" />
+
+                            <TextView
+                                android:id="@+id/tv_message_count_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/iv_message_icon"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/opensans_regular"
+                                android:text="5 Messages"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_message_count_title"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:fontFamily="@font/opensans_regular"
+                                android:text="0 News"
+                                android:textColor="@color/black" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/kkfff"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rrrr"
+                            android:background="@drawable/rounded_white_box">
+
+                            <ImageView
+                                android:id="@+id/iv_calenderd"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/job_suitcase" />
+
+                            <TextView
+                                android:id="@+id/tv_calender_titled"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/iv_calenderd"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="My Job Offers"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/ccceff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/kkfff"
+                            android:layout_marginTop="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/rounded_white_box">
+
+                            <TextView
+                                android:id="@+id/tv_calender_titledd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="Calender"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:src="@drawable/user_icon" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:background="#C1DCF7"
+                    app:layout_constraintTop_toBottomOf="@+id/melafd">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_abcd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tv_ef"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:gravity="center_vertical"
+                            android:text="Track job applications"
+                            android:textColor="#7800EF"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:id="@+id/iv_right_arrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/right_arrow" />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_abcd"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_master_class" />
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

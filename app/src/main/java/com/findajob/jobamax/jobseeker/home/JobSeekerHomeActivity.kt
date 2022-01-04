@@ -4,8 +4,10 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -15,9 +17,16 @@ import com.android.billingclient.api.*
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.base.BaseViewModel
+import com.findajob.jobamax.dashboard.messages.MainChatActivity
+import com.findajob.jobamax.dashboard.messages.MessagesFragment
+import com.findajob.jobamax.dashboard.messages.ProfileActivity
 import com.findajob.jobamax.databinding.ActivityJobSeekerHomeBinding
+import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity
+import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity
 import com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeViewModel
+import com.findajob.jobamax.jobseeker.track.JobSeekerApplyActivity
+import com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment
 import com.findajob.jobamax.model.UpdateUserCallback
 import com.findajob.jobamax.util.errorToast
 import com.findajob.jobamax.util.log
@@ -30,12 +39,71 @@ import org.jetbrains.anko.longToast
 import java.util.*
 
 @AndroidEntryPoint
-class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), JobSeekerHomeInterface, PurchasesUpdatedListener {
+class JobSeekerHomeActivity : AppCompatActivity(), /*JobSeekerHomeInterface, PurchasesUpdatedListener,*/ View.OnClickListener {
+    lateinit var binding: ActivityJobSeekerHomeBinding
 
-    val viewModel: JobSeekerHomeViewModel by viewModels()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityJobSeekerHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        configureUi()
+    }
+
+    private fun configureUi() {
+         setClickListeners()
+    }
+
+    private fun setClickListeners() {
+        binding.btJobSearch.setOnClickListener(this)
+        binding.btnCoaching.setOnClickListener(this)
+        binding.tvSeekerName.setOnClickListener(this)
+        binding.vProfile.setOnClickListener(this)
+        binding.vCalendar.setOnClickListener(this)
+        binding.vMessage.setOnClickListener(this)
+        binding.vProfile.setOnClickListener(this)
+        binding.vTrack.setOnClickListener(this)
+        binding.vWishlist.setOnClickListener(this)
+        binding.ivSetting.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when(view){
+            binding.ivSetting ->{
+
+            }
+            binding.vProfile ->{
+                startActivity(Intent(this, JobSeekerCourseActivity::class.java))
+            }
+            binding.vCalendar ->{
+
+            }
+            binding.vMessage ->{
+                startActivity(Intent(this, MainChatActivity::class.java))
+            }
+            binding.vTrack ->{
+                startActivity(Intent(this, JobSeekerApplyActivity::class.java))
+            }
+            binding.vWishlist ->{
+                startActivity(Intent(this, ProfileActivity::class.java))
+            }
+            binding.tvSeekerName ->{
+
+            }
+            binding.btJobSearch ->{
+
+            }
+            binding.btnCoaching ->{
+
+            }
+        }
+    }
+
+
+    /*val viewModel: JobSeekerHomeViewModel by viewModels()
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    lateinit var navController: NavController
+  *//*  lateinit var navController: NavController*//*
 
     private var billingClient: BillingClient? = null
 
@@ -44,23 +112,24 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
 
     override fun onCreated(instance: Bundle?) {
         initViews()
-        configureViewModel()
+        *//*configureViewModel()*//*
     }
 
     private fun initViews() {
-        binding.handler = this
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        navController = findNavController(R.id.nav_host_fragment)
-        onIconClicked(2)
+      *//*  binding.handler = this
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)*//*
+        setClickListeners()
+       *//* navController = findNavController(R.id.nav_host_fragment)*//*
+     *//*   onIconClicked(2)*//*
 
-        navController.addOnDestinationChangedListener { _, dest, _ ->
-            if (dest.id == R.id.jobSeekerCourseFragment || dest.id == R.id.messagesFragment || dest.id == R.id.jobSeekerProfileFragment || dest.id == R.id.jobSeekerApplyFragment || dest.id == R.id.jobSeekerTrackFragment) {
+        *//*navController.addOnDestinationChangedListener { _, dest, _ ->
+            *//**//*if (dest.id == R.id.jobSeekerCourseFragment || dest.id == R.id.messagesFragment || dest.id == R.id.jobSeekerProfileFragment || dest.id == R.id.jobSeekerApplyFragment || dest.id == R.id.jobSeekerTrackFragment) {
                 appbar.visibility = View.VISIBLE
-            } else appbar.visibility = View.GONE
-        }
-    }
+            } else appbar.visibility = View.GONE*//**//*
+        }*//*
+    }*/
 
-    private fun configureViewModel() {
+   /* private fun configureViewModel() {
         viewModel.getJobSeeker()
     }
 
@@ -92,25 +161,25 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
     }
 
     override fun onBackPressed() {
-        val currDest = navController.currentDestination?.id
-        if (currDest == R.id.jobSeekerCourseFragment || currDest == R.id.messagesFragment || currDest == R.id.jobSeekerProfileFragment) {
+      *//*  val currDest = navController.currentDestination?.id*//*
+       *//* if (currDest == R.id.jobSeekerCourseFragment || currDest == R.id.messagesFragment || currDest == R.id.jobSeekerProfileFragment) {
             onIconClicked(2)
         } else
-            super.onBackPressed()
+            super.onBackPressed()*//*
     }
 
     override fun onIconClicked(position: Int) {
         if (position == 2 && currentPosition == 2) {
             trackToggleFlag = !trackToggleFlag
-            if (trackToggleFlag) {
-                toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_track_switch))
+          *//*  if (trackToggleFlag) {
+                *//**//*toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_track_switch))*//**//*
                 navController.popBackStack()
                 navController.navigate(R.id.jobSeekerApplyFragment)
             } else {
-                toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_apply_switch))
+                *//**//*toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_apply_switch))*//**//*
                 navController.popBackStack()
                 navController.navigate(R.id.jobSeekerTrackFragment)
-            }
+            }*//*
         } else {
             binding.state = position
             currentPosition = position
@@ -119,19 +188,19 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
     }
 
     private fun setUpAppbar() {
-        if (currentPosition == 2) {
-            toggleIcon.visibility = View.VISIBLE
-            secondIcon.visibility = View.GONE
+        *//*if (currentPosition == 2) {
+            *//**//*toggleIcon.visibility = View.VISIBLE
+            secondIcon.visibility = View.GONE*//**//*
             if (trackToggleFlag)
-                toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_track_switch))
+                *//**//*toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_track_switch))*//**//*
             else
-                toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_apply_switch))
+                *//**//*toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_apply_switch))*//**//*
         } else {
-            toggleIcon.visibility = View.GONE
-            secondIcon.visibility = View.VISIBLE
+            *//**//*toggleIcon.visibility = View.GONE
+            secondIcon.visibility = View.VISIBLE*//**//*
         }
-
-        firstIcon.requestLayout()
+*//*
+        *//*firstIcon.requestLayout()
         firstIcon.layoutParams.height = resources.getDimension(R.dimen.home_icon_24dp).toInt()
         firstIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_24dp).toInt()
         secondIcon.requestLayout()
@@ -142,46 +211,46 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
         thirdIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_24dp).toInt()
         fourthIcon.requestLayout()
         fourthIcon.layoutParams.height = resources.getDimension(R.dimen.home_icon_20dp).toInt()
-        fourthIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_20dp).toInt()
-        when (currentPosition) {
+        fourthIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_20dp).toInt()*//*
+       *//* when (currentPosition) {
             1 -> {
-                firstIcon.requestLayout()
+              *//**//*  firstIcon.requestLayout()
                 firstIcon.layoutParams.height =
                     resources.getDimension(R.dimen.home_icon_48dp).toInt()
                 firstIcon.layoutParams.width =
-                    resources.getDimension(R.dimen.home_icon_48dp).toInt()
+                    resources.getDimension(R.dimen.home_icon_48dp).toInt()*//**//*
                 navController.popBackStack()
                 navController.navigate(R.id.jobSeekerCourseFragment)
             }
             2 -> {
-                secondIcon.requestLayout()
+               *//**//* secondIcon.requestLayout()
                 secondIcon.layoutParams.height = resources.getDimension(R.dimen.home_icon_40dp).toInt()
-                secondIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_40dp).toInt()
+                secondIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_40dp).toInt()*//**//*
                 if (trackToggleFlag) {
                     navController.popBackStack()
-                    toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_track_switch))
+                    *//**//*toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_track_switch))*//**//*
                     navController.navigate(R.id.jobSeekerApplyFragment)
                 } else {
                     navController.popBackStack()
-                    toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_apply_switch))
+                   *//**//* toggleIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_apply_switch))*//**//*
                     navController.navigate(R.id.jobSeekerTrackFragment)
                 }
             }
             3 -> {
-                thirdIcon.requestLayout()
+                *//**//*thirdIcon.requestLayout()
                 thirdIcon.layoutParams.height = resources.getDimension(R.dimen.home_icon_40dp).toInt()
-                thirdIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_40dp).toInt()
+                thirdIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_40dp).toInt()*//**//*
                 navController.popBackStack()
                 navController.navigate(R.id.messagesFragment)
             }
             else -> {
-                fourthIcon.requestLayout()
+                *//**//*fourthIcon.requestLayout()
                 fourthIcon.layoutParams.height = resources.getDimension(R.dimen.home_icon_32dp).toInt()
-                fourthIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_32dp).toInt()
+                fourthIcon.layoutParams.width = resources.getDimension(R.dimen.home_icon_32dp).toInt()*//**//*
                 navController.popBackStack()
                 navController.navigate(R.id.jobSeekerProfileFragment)
             }
-        }
+        }*//*
     }
 
     fun initBilling() {
@@ -280,12 +349,10 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
     override val layoutRes: Int
         get() = R.layout.activity_job_seeker_home
 
-    override fun getViewModel(): ViewModel = viewModel
-
+    override fun getViewModel(): ViewModel = viewModel*/
 
 }
 
 interface JobSeekerHomeInterface {
     fun onIconClicked(position: Int)
-
 }

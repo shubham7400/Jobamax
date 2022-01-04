@@ -28,7 +28,7 @@ public class FragmentEventCalendarBindingImpl extends FragmentEventCalendarBindi
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback75;
+    private final android.view.View.OnClickListener mCallback50;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -53,7 +53,7 @@ public class FragmentEventCalendarBindingImpl extends FragmentEventCalendarBindi
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback75 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback50 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -115,7 +115,7 @@ public class FragmentEventCalendarBindingImpl extends FragmentEventCalendarBindi
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.ivBackButton.setOnClickListener(mCallback75);
+            this.ivBackButton.setOnClickListener(mCallback50);
         }
     }
     // Listener Stub Implementations

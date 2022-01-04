@@ -35,8 +35,7 @@ class JobSeekerApplyViewModel @Inject constructor(
     var jobSeekerObject: ParseObject? = null
     private val externalJobUrlLiveData = MutableLiveData<String>()
     fun getExternalJobObserver(): LiveData<String> = externalJobUrlLiveData
-    val jobSeeker
-        get() = if (jobSeekerObject == null) JobSeeker() else JobSeeker(jobSeekerObject!!)
+    val jobSeeker get() = if (jobSeekerObject == null) JobSeeker() else JobSeeker(jobSeekerObject!!)
 
 
     fun acceptJob(jobOffer: ParseObject) {

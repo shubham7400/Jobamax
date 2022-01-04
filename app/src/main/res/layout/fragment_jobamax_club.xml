@@ -6,8 +6,6 @@
     <data>
 
     </data>
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_home_cl_bg"
         android:layout_width="match_parent"
@@ -156,6 +154,4 @@
             </androidx.cardview.widget.CardView>
          </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

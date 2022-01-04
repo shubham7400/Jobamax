@@ -44,13 +44,13 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
     private final android.widget.CheckBox mboundView9;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback174;
+    private final android.view.View.OnClickListener mCallback217;
     @Nullable
-    private final android.view.View.OnClickListener mCallback172;
+    private final android.view.View.OnClickListener mCallback215;
     @Nullable
-    private final android.view.View.OnClickListener mCallback173;
+    private final android.view.View.OnClickListener mCallback216;
     @Nullable
-    private final android.view.View.OnClickListener mCallback171;
+    private final android.view.View.OnClickListener mCallback214;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -279,10 +279,10 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
         this.submitButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback174 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback172 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback173 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback171 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback217 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback215 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback216 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback214 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -400,7 +400,7 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback171);
+            this.mboundView1.setOnClickListener(mCallback214);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView10, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView10androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView4, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView4androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView5, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView5androidCheckedAttrChanged);
@@ -408,9 +408,9 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView7, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView7androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView8, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView8androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView9, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView9androidCheckedAttrChanged);
-            this.resetButton.setOnClickListener(mCallback174);
-            this.rlLocation.setOnClickListener(mCallback172);
-            this.submitButton.setOnClickListener(mCallback173);
+            this.resetButton.setOnClickListener(mCallback217);
+            this.rlLocation.setOnClickListener(mCallback215);
+            this.submitButton.setOnClickListener(mCallback216);
         }
     }
     // Listener Stub Implementations

@@ -26,15 +26,15 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
     private final android.widget.ImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback234;
+    private final android.view.View.OnClickListener mCallback118;
     @Nullable
-    private final android.view.View.OnClickListener mCallback235;
+    private final android.view.View.OnClickListener mCallback122;
     @Nullable
-    private final android.view.View.OnClickListener mCallback232;
+    private final android.view.View.OnClickListener mCallback120;
     @Nullable
-    private final android.view.View.OnClickListener mCallback233;
+    private final android.view.View.OnClickListener mCallback121;
     @Nullable
-    private final android.view.View.OnClickListener mCallback231;
+    private final android.view.View.OnClickListener mCallback119;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -63,11 +63,11 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
         this.raiseHand.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback234 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback235 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback232 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback233 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback231 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback118 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback122 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback120 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback121 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback119 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -129,18 +129,18 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.bottomActionEndCall.setOnClickListener(mCallback233);
-            this.joinRoom.setOnClickListener(mCallback232);
-            this.mboundView1.setOnClickListener(mCallback231);
-            this.muteLocalSpeakerId.setOnClickListener(mCallback234);
-            this.raiseHand.setOnClickListener(mCallback235);
+            this.bottomActionEndCall.setOnClickListener(mCallback120);
+            this.joinRoom.setOnClickListener(mCallback119);
+            this.mboundView1.setOnClickListener(mCallback118);
+            this.muteLocalSpeakerId.setOnClickListener(mCallback121);
+            this.raiseHand.setOnClickListener(mCallback122);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 4: {
+            case 1: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.training.ui.LiveRoomInterface handler = mHandler;
@@ -153,7 +153,7 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onVoiceMuteClicked();
+                    handler.onBackButtonClicked();
                 }
                 break;
             }
@@ -174,23 +174,6 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
                 }
                 break;
             }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.training.ui.LiveRoomInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.inviteMember();
-                }
-                break;
-            }
             case 3: {
                 // localize variables for thread safety
                 // handler
@@ -208,7 +191,7 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
                 }
                 break;
             }
-            case 1: {
+            case 4: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.training.ui.LiveRoomInterface handler = mHandler;
@@ -221,7 +204,24 @@ public class FragmentLiveRoomBindingImpl extends FragmentLiveRoomBinding impleme
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onBackButtonClicked();
+                    handler.onVoiceMuteClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.training.ui.LiveRoomInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.inviteMember();
                 }
                 break;
             }

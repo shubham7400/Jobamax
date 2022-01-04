@@ -316,6 +316,9 @@ android {
         //circular image view
         implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+        // percente indicator
+        implementation "com.ramijemli.percentagechartview:percentagechartview:0.3.0"
+
     }
 }
 

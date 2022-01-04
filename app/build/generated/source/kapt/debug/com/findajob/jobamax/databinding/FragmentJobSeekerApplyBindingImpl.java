@@ -25,15 +25,15 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
     private final android.widget.RelativeLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback155;
+    private final android.view.View.OnClickListener mCallback78;
     @Nullable
-    private final android.view.View.OnClickListener mCallback156;
+    private final android.view.View.OnClickListener mCallback79;
     @Nullable
-    private final android.view.View.OnClickListener mCallback153;
+    private final android.view.View.OnClickListener mCallback76;
     @Nullable
-    private final android.view.View.OnClickListener mCallback154;
+    private final android.view.View.OnClickListener mCallback77;
     @Nullable
-    private final android.view.View.OnClickListener mCallback152;
+    private final android.view.View.OnClickListener mCallback75;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -63,11 +63,11 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
         this.rewindButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback155 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback156 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback153 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback154 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback152 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback78 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback79 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback76 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback77 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback75 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -129,11 +129,11 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.acceptButton.setOnClickListener(mCallback156);
-            this.chatButton.setOnClickListener(mCallback155);
-            this.filterLayout.setOnClickListener(mCallback152);
-            this.rejectButton.setOnClickListener(mCallback154);
-            this.rewindButton.setOnClickListener(mCallback153);
+            this.acceptButton.setOnClickListener(mCallback79);
+            this.chatButton.setOnClickListener(mCallback78);
+            this.filterLayout.setOnClickListener(mCallback75);
+            this.rejectButton.setOnClickListener(mCallback77);
+            this.rewindButton.setOnClickListener(mCallback76);
         }
     }
     // Listener Stub Implementations

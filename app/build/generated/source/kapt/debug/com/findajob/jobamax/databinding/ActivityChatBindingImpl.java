@@ -33,29 +33,29 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
     private final android.widget.Button mboundView9;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback116;
+    private final android.view.View.OnClickListener mCallback59;
     @Nullable
-    private final android.view.View.OnClickListener mCallback112;
+    private final android.view.View.OnClickListener mCallback55;
     @Nullable
-    private final android.view.View.OnClickListener mCallback108;
+    private final android.view.View.OnClickListener mCallback62;
     @Nullable
-    private final androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged mCallback117;
+    private final android.view.View.OnClickListener mCallback56;
     @Nullable
-    private final android.view.View.OnClickListener mCallback113;
+    private final android.view.View.OnClickListener mCallback63;
     @Nullable
-    private final android.view.View.OnClickListener mCallback109;
+    private final android.view.View.OnClickListener mCallback57;
     @Nullable
-    private final android.view.View.OnClickListener mCallback118;
+    private final android.view.View.OnClickListener mCallback65;
     @Nullable
-    private final android.view.View.OnClickListener mCallback114;
+    private final androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged mCallback64;
     @Nullable
-    private final android.view.View.OnClickListener mCallback110;
+    private final android.view.View.OnClickListener mCallback60;
     @Nullable
-    private final android.view.View.OnClickListener mCallback107;
+    private final android.view.View.OnClickListener mCallback58;
     @Nullable
-    private final android.view.View.OnClickListener mCallback115;
+    private final android.view.View.OnClickListener mCallback54;
     @Nullable
-    private final android.view.View.OnClickListener mCallback111;
+    private final android.view.View.OnClickListener mCallback61;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -107,18 +107,18 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
         this.tvUsername.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback116 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
-        mCallback112 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback108 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback117 = new com.findajob.jobamax.generated.callback.OnTextChanged(this, 11);
-        mCallback113 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
-        mCallback109 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback118 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
-        mCallback114 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 8);
-        mCallback110 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback107 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback115 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
-        mCallback111 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback59 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback55 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback62 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
+        mCallback56 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback63 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
+        mCallback57 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback65 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
+        mCallback64 = new com.findajob.jobamax.generated.callback.OnTextChanged(this, 11);
+        mCallback60 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback58 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback54 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback61 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 8);
         invalidateAll();
     }
 
@@ -357,18 +357,18 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
         if ((dirtyFlags & 0x200L) != 0) {
             // api target 1
 
-            this.chatBCamera.setOnClickListener(mCallback115);
-            this.chatBFile.setOnClickListener(mCallback116);
-            this.chatBImage.setOnClickListener(mCallback114);
-            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.chatEtMessage, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, mCallback117, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, (androidx.databinding.InverseBindingListener)null);
-            this.ivBackButton.setOnClickListener(mCallback107);
-            this.ivCallButton.setOnClickListener(mCallback108);
-            this.ivRequirementOpenButton.setOnClickListener(mCallback110);
-            this.ivVideoButton.setOnClickListener(mCallback109);
-            this.mboundView10.setOnClickListener(mCallback113);
-            this.mboundView16.setOnClickListener(mCallback118);
-            this.mboundView8.setOnClickListener(mCallback111);
-            this.mboundView9.setOnClickListener(mCallback112);
+            this.chatBCamera.setOnClickListener(mCallback62);
+            this.chatBFile.setOnClickListener(mCallback63);
+            this.chatBImage.setOnClickListener(mCallback61);
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.chatEtMessage, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, mCallback64, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, (androidx.databinding.InverseBindingListener)null);
+            this.ivBackButton.setOnClickListener(mCallback54);
+            this.ivCallButton.setOnClickListener(mCallback55);
+            this.ivRequirementOpenButton.setOnClickListener(mCallback57);
+            this.ivVideoButton.setOnClickListener(mCallback56);
+            this.mboundView10.setOnClickListener(mCallback60);
+            this.mboundView16.setOnClickListener(mCallback65);
+            this.mboundView8.setOnClickListener(mCallback58);
+            this.mboundView9.setOnClickListener(mCallback59);
         }
         if ((dirtyFlags & 0x315L) != 0) {
             // api target 1
@@ -406,24 +406,6 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 10: {
-                // localize variables for thread safety
-                // vm != null
-                boolean vmJavaLangObjectNull = false;
-                // vm
-                com.findajob.jobamax.dashboard.messages.ChatViewModel vm = mVm;
-
-
-
-                vmJavaLangObjectNull = (vm) != (null);
-                if (vmJavaLangObjectNull) {
-
-
-
-                    vm.setSelectFiles(true);
-                }
-                break;
-            }
             case 6: {
                 // localize variables for thread safety
                 // vm != null
@@ -459,21 +441,20 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
                 }
                 break;
             }
-            case 7: {
+            case 9: {
                 // localize variables for thread safety
-                // vm != null
-                boolean vmJavaLangObjectNull = false;
-                // vm
-                com.findajob.jobamax.dashboard.messages.ChatViewModel vm = mVm;
+                // handler
+                com.findajob.jobamax.dashboard.messages.ChatHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
 
 
 
-                vmJavaLangObjectNull = (vm) != (null);
-                if (vmJavaLangObjectNull) {
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
 
 
-
-                    vm.setInputTemplate(2);
+                    handler.launchCamera();
                 }
                 break;
             }
@@ -494,24 +475,7 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
                 }
                 break;
             }
-            case 12: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.dashboard.messages.ChatHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSendMessage();
-                }
-                break;
-            }
-            case 8: {
+            case 10: {
                 // localize variables for thread safety
                 // vm != null
                 boolean vmJavaLangObjectNull = false;
@@ -525,7 +489,7 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
 
 
 
-                    vm.setSelectImage(true);
+                    vm.setSelectFiles(true);
                 }
                 break;
             }
@@ -546,7 +510,7 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
                 }
                 break;
             }
-            case 1: {
+            case 12: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.dashboard.messages.ChatHandler handler = mHandler;
@@ -559,24 +523,25 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onBackPress();
+                    handler.onSendMessage();
                 }
                 break;
             }
-            case 9: {
+            case 7: {
                 // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.dashboard.messages.ChatHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
+                // vm != null
+                boolean vmJavaLangObjectNull = false;
+                // vm
+                com.findajob.jobamax.dashboard.messages.ChatViewModel vm = mVm;
 
 
 
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
+                vmJavaLangObjectNull = (vm) != (null);
+                if (vmJavaLangObjectNull) {
 
 
-                    handler.launchCamera();
+
+                    vm.setInputTemplate(2);
                 }
                 break;
             }
@@ -595,6 +560,41 @@ public class ActivityChatBindingImpl extends ActivityChatBinding implements com.
 
 
                     vm.setInputTemplate(0);
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.dashboard.messages.ChatHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackPress();
+                }
+                break;
+            }
+            case 8: {
+                // localize variables for thread safety
+                // vm != null
+                boolean vmJavaLangObjectNull = false;
+                // vm
+                com.findajob.jobamax.dashboard.messages.ChatViewModel vm = mVm;
+
+
+
+                vmJavaLangObjectNull = (vm) != (null);
+                if (vmJavaLangObjectNull) {
+
+
+
+                    vm.setSelectImage(true);
                 }
                 break;
             }

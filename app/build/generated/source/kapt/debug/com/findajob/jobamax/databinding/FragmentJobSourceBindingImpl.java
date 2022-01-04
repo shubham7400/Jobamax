@@ -40,17 +40,17 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
     private final androidx.appcompat.widget.AppCompatButton mboundView7;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback13;
+    private final android.view.View.OnClickListener mCallback136;
     @Nullable
-    private final android.view.View.OnClickListener mCallback11;
+    private final android.view.View.OnClickListener mCallback134;
     @Nullable
-    private final android.view.View.OnClickListener mCallback8;
+    private final android.view.View.OnClickListener mCallback132;
     @Nullable
-    private final android.view.View.OnClickListener mCallback12;
+    private final android.view.View.OnClickListener mCallback135;
     @Nullable
-    private final android.view.View.OnClickListener mCallback10;
+    private final android.view.View.OnClickListener mCallback133;
     @Nullable
-    private final android.view.View.OnClickListener mCallback9;
+    private final android.view.View.OnClickListener mCallback131;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -91,12 +91,12 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
         this.seekBar.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback13 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback11 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback8 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback12 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback10 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback9 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback136 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback134 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback132 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback135 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback133 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback131 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -181,12 +181,12 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.ivBackButton.setOnClickListener(mCallback8);
-            this.locationField.setOnClickListener(mCallback9);
-            this.mboundView4.setOnClickListener(mCallback10);
-            this.mboundView5.setOnClickListener(mCallback11);
-            this.mboundView6.setOnClickListener(mCallback12);
-            this.mboundView7.setOnClickListener(mCallback13);
+            this.ivBackButton.setOnClickListener(mCallback131);
+            this.locationField.setOnClickListener(mCallback132);
+            this.mboundView4.setOnClickListener(mCallback133);
+            this.mboundView5.setOnClickListener(mCallback134);
+            this.mboundView6.setOnClickListener(mCallback135);
+            this.mboundView7.setOnClickListener(mCallback136);
         }
         if ((dirtyFlags & 0x6L) != 0) {
             // api target 1
@@ -232,7 +232,7 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
                 }
                 break;
             }
-            case 1: {
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.source.JobSourceInterface handler = mHandler;
@@ -245,7 +245,7 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onBackButtonClicked();
+                    handler.onCityClicked();
                 }
                 break;
             }
@@ -283,7 +283,7 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
                 }
                 break;
             }
-            case 2: {
+            case 1: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.source.JobSourceInterface handler = mHandler;
@@ -296,7 +296,7 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onCityClicked();
+                    handler.onBackButtonClicked();
                 }
                 break;
             }

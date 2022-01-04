@@ -4,9 +4,11 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -14,54 +16,82 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   @NonNull
-  public final LinearLayout appbar;
+  public final Button btJobSearch;
 
   @NonNull
-  public final View fifthGap;
+  public final Button btnCoaching;
 
   @NonNull
-  public final View firstGap;
+  public final CircleImageView imageUser;
 
   @NonNull
-  public final ImageView firstIcon;
+  public final CircleImageView imageUser2;
 
   @NonNull
-  public final LinearLayout firstIconLayout;
+  public final CircleImageView imageUser3;
 
   @NonNull
-  public final View fourthGap;
+  public final CircleImageView imageUser35;
 
   @NonNull
-  public final ImageView fourthIcon;
+  public final CircleImageView imageUser3w;
 
   @NonNull
-  public final LinearLayout fourthIconLayout;
+  public final ImageView imageView10;
 
   @NonNull
-  public final View secondGap;
+  public final ImageView ivMessageIcon;
 
   @NonNull
-  public final ImageView secondIcon;
+  public final ImageView ivRightArrow;
 
   @NonNull
-  public final RelativeLayout secondIconLayout;
+  public final ImageView ivSetting;
 
   @NonNull
-  public final View thirdGap;
+  public final LinearLayout ll1;
 
   @NonNull
-  public final ImageView thirdIcon;
+  public final LinearLayout ll2;
 
   @NonNull
-  public final LinearLayout thirdIconLayout;
+  public final RelativeLayout rlAbcd;
 
   @NonNull
-  public final ImageView toggleIcon;
+  public final TextView textView6;
+
+  @NonNull
+  public final TextView tvCalenderTitle;
+
+  @NonNull
+  public final TextView tvEf;
+
+  @NonNull
+  public final TextView tvMessageCountTitle;
+
+  @NonNull
+  public final TextView tvSeekerName;
+
+  @NonNull
+  public final RelativeLayout vCalendar;
+
+  @NonNull
+  public final RelativeLayout vMessage;
+
+  @NonNull
+  public final RelativeLayout vProfile;
+
+  @NonNull
+  public final RelativeLayout vTrack;
+
+  @NonNull
+  public final RelativeLayout vWishlist;
 
   @Bindable
   protected Integer mState;
@@ -73,27 +103,38 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   protected JobSeekerHomeInterface mHandler;
 
   protected ActivityJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      LinearLayout appbar, View fifthGap, View firstGap, ImageView firstIcon,
-      LinearLayout firstIconLayout, View fourthGap, ImageView fourthIcon,
-      LinearLayout fourthIconLayout, View secondGap, ImageView secondIcon,
-      RelativeLayout secondIconLayout, View thirdGap, ImageView thirdIcon,
-      LinearLayout thirdIconLayout, ImageView toggleIcon) {
+      Button btJobSearch, Button btnCoaching, CircleImageView imageUser, CircleImageView imageUser2,
+      CircleImageView imageUser3, CircleImageView imageUser35, CircleImageView imageUser3w,
+      ImageView imageView10, ImageView ivMessageIcon, ImageView ivRightArrow, ImageView ivSetting,
+      LinearLayout ll1, LinearLayout ll2, RelativeLayout rlAbcd, TextView textView6,
+      TextView tvCalenderTitle, TextView tvEf, TextView tvMessageCountTitle, TextView tvSeekerName,
+      RelativeLayout vCalendar, RelativeLayout vMessage, RelativeLayout vProfile,
+      RelativeLayout vTrack, RelativeLayout vWishlist) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.appbar = appbar;
-    this.fifthGap = fifthGap;
-    this.firstGap = firstGap;
-    this.firstIcon = firstIcon;
-    this.firstIconLayout = firstIconLayout;
-    this.fourthGap = fourthGap;
-    this.fourthIcon = fourthIcon;
-    this.fourthIconLayout = fourthIconLayout;
-    this.secondGap = secondGap;
-    this.secondIcon = secondIcon;
-    this.secondIconLayout = secondIconLayout;
-    this.thirdGap = thirdGap;
-    this.thirdIcon = thirdIcon;
-    this.thirdIconLayout = thirdIconLayout;
-    this.toggleIcon = toggleIcon;
+    this.btJobSearch = btJobSearch;
+    this.btnCoaching = btnCoaching;
+    this.imageUser = imageUser;
+    this.imageUser2 = imageUser2;
+    this.imageUser3 = imageUser3;
+    this.imageUser35 = imageUser35;
+    this.imageUser3w = imageUser3w;
+    this.imageView10 = imageView10;
+    this.ivMessageIcon = ivMessageIcon;
+    this.ivRightArrow = ivRightArrow;
+    this.ivSetting = ivSetting;
+    this.ll1 = ll1;
+    this.ll2 = ll2;
+    this.rlAbcd = rlAbcd;
+    this.textView6 = textView6;
+    this.tvCalenderTitle = tvCalenderTitle;
+    this.tvEf = tvEf;
+    this.tvMessageCountTitle = tvMessageCountTitle;
+    this.tvSeekerName = tvSeekerName;
+    this.vCalendar = vCalendar;
+    this.vMessage = vMessage;
+    this.vProfile = vProfile;
+    this.vTrack = vTrack;
+    this.vWishlist = vWishlist;
   }
 
   public abstract void setState(@Nullable Integer state);

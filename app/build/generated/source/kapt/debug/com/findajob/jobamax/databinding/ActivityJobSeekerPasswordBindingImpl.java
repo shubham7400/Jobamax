@@ -25,11 +25,11 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback43;
+    private final android.view.View.OnClickListener mCallback146;
     @Nullable
-    private final android.view.View.OnClickListener mCallback41;
+    private final android.view.View.OnClickListener mCallback144;
     @Nullable
-    private final android.view.View.OnClickListener mCallback42;
+    private final android.view.View.OnClickListener mCallback145;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -53,9 +53,9 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
         this.submitButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback43 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback41 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback42 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback146 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback144 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback145 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -117,9 +117,9 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback41);
-            this.mboundView2.setOnClickListener(mCallback42);
-            this.submitButton.setOnClickListener(mCallback43);
+            this.imageView.setOnClickListener(mCallback144);
+            this.mboundView2.setOnClickListener(mCallback145);
+            this.submitButton.setOnClickListener(mCallback146);
         }
     }
     // Listener Stub Implementations

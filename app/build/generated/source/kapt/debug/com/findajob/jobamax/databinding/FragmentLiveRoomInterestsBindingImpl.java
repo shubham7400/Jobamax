@@ -26,9 +26,9 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
     private final android.widget.ImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback236;
+    private final android.view.View.OnClickListener mCallback124;
     @Nullable
-    private final android.view.View.OnClickListener mCallback237;
+    private final android.view.View.OnClickListener mCallback123;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,8 +51,8 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
         this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback236 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback237 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback124 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback123 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,31 +114,14 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.btnContinue.setOnClickListener(mCallback237);
-            this.mboundView1.setOnClickListener(mCallback236);
+            this.btnContinue.setOnClickListener(mCallback124);
+            this.mboundView1.setOnClickListener(mCallback123);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.training.ui.LiveRoomInterestInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -153,6 +136,23 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
 
 
                     handler.onContinuteClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.training.ui.LiveRoomInterestInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackButtonClicked();
                 }
                 break;
             }

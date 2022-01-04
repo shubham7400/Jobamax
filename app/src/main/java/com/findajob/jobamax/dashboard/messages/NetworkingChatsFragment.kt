@@ -36,7 +36,7 @@ class NetworkingChatsFragment : BaseFragmentMain<FragmentNetworkingChatsBinding>
 
     override fun onStart() {
         super.onStart()
-        viewModel.getMessages(MessageType.NETWORKING)
+        /*viewModel.getMessages(MessageType.NETWORKING)*/
     }
 
     private fun initViews() {
@@ -216,7 +216,7 @@ class NetworkingChatsFragment : BaseFragmentMain<FragmentNetworkingChatsBinding>
         currentUserId = viewModel.currentUserId
 
         viewModel.apply {
-            getMessages(MessageType.NETWORKING)
+            /*getMessages(MessageType.NETWORKING)*/
             observe(networkingMessages) {
                 binding.loading.visibility = View.INVISIBLE
                 log("messages $it")

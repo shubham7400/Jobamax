@@ -71,6 +71,7 @@ class JobSeekerApplyFragment : BaseFragmentMain<FragmentJobSeekerApplyBinding>()
         cardStackLayoutManager = CardStackLayoutManager(context, this)
         progressBar.visibility = View.VISIBLE
         navController = findNavController()
+        jobSeekerHomeViewModel.saveJobSearch()
     }
 
     override fun onStart() {
@@ -251,13 +252,13 @@ class JobSeekerApplyFragment : BaseFragmentMain<FragmentJobSeekerApplyBinding>()
                                     Pair(ChatActivity.EXTRA_JOB_OFFER_ID, jobOffer.objectId ?: "")
                                 ),
                             )
-                            (requireActivity() as JobSeekerHomeActivity).onIconClicked(3)
+                            /*(requireActivity() as JobSeekerHomeActivity).onIconClicked(3)*/
                             navController.navigate(R.id.messagesFragment)
                         }
                     }.show()
                 } else {
                     JobamaxReachDialog(requireActivity()) {
-                        (requireActivity() as JobSeekerHomeActivity).initBilling()
+                        /*(requireActivity() as JobSeekerHomeActivity).initBilling()*/
                     }.show()
                     longToast("Reach has exhausted")
                     doAsync {

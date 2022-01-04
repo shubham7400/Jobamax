@@ -11,13 +11,13 @@ import com.findajob.jobamax.data.pojo.NewPeople
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.model.*
+import com.findajob.jobamax.preference.getEmail
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.*
 import com.parse.ParseACL
 import com.parse.ParseObject
 import com.parse.ParseObject.createWithoutData
 import com.parse.ParseQuery
-import com.parse.ParseUser
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -50,11 +50,11 @@ class MessageRepository @Inject constructor(val context: Context) {
     // so that the current user id is queried only once,
     // not every time, wasting resources and taking time
     val currentUserId: String by lazy {
-        jobSeeker!!.jobSeekerId
+        /*jobSeeker!!.jobSeekerId*/ context.getUserId()
     }
 
     val currentUserEmail: String by lazy {
-        jobSeeker!!.email
+        /*jobSeeker!!.email*/ context.getEmail()
     }
 
    /* val currentUser: ParseObject by lazy {
@@ -576,10 +576,10 @@ class MessageRepository @Inject constructor(val context: Context) {
 
     }
 
-    fun getNewMatchedUsers(roleType: String) = Single.create<List<NewPeople>> { emitter ->
+    fun getNewMatchedUsers(roleType: Int) = Single.create<List<NewPeople>> { emitter ->
 
         try {
-            val mainUser: ParseObject? = if (roleType == ROLE_RECRUITER) {
+            val mainUser: ParseObject? = if (roleType == 1) {
                 getRecruiterById(currentUserId)
             } else {
                 getJobSeekerById(currentUserId)
@@ -587,7 +587,7 @@ class MessageRepository @Inject constructor(val context: Context) {
 
             val userList = arrayListOf<ParseObject>()
             val matchedUserList = getRelatedDatabaseData(RELATION_KEY_MATCHED, mainUser!!)
-            val sourcedUserList = getRelatedDatabaseData(RELATION_KEY_SOURCED, mainUser!!)
+            val sourcedUserList = getRelatedDatabaseData(RELATION_KEY_SOURCED, mainUser)
 
             userList.addAll(matchedUserList)
             userList.addAll(sourcedUserList)
@@ -1088,14 +1088,44 @@ class MessageRepository @Inject constructor(val context: Context) {
 
     }
 
-    fun getMessages(source: String, ) = Single.create<List<Message>> { emitter ->
+    fun getMessages(source: String, onSuccess: (List<Message>) -> Unit, onFailure: (String) -> Unit){
+        val parseSender = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_SENDER_ID, currentUser)
+
+        val parseReceiver = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_RECEIVER_ID, currentUser)
+
+        val messageParseQuery = ParseQuery.or(listOf<ParseQuery<Message>>(parseSender, parseReceiver))
+            .whereEqualTo(source, true)
+            .include(CHAT_MESSAGE)
+            .include(CHAT_RECEIVER_ID)
+            .include(CHAT_SENDER_ID)
+            .include(CHAT_FILE)
+            .orderByDescending(SHORT_LISTED_BY)
+            .orderByDescending(SORTING_UPDATED_AT)
+
+        // not including the archived message in the list
+        if (source != MessageType.ARCHIVING.param) messageParseQuery.whereNotEqualTo(MessageType.ARCHIVING.param, true)
+
+        try {
+            messageParseQuery.findInBackground { result, e ->
+                log("esfdsreerf")
+                when{
+                    e != null -> onFailure(e.message.toString())
+                    result != null -> onSuccess(result)
+                }
+            }
+        }catch (e: Exception){
+            log("esfdf ${e.message}")
+        }
+
+    }
+
+    /*fun getMessages(source: String, ) = Single.create<List<Message>> { emitter ->
 
         val parseSender = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_SENDER_ID, currentUser)
 
         val parseReceiver = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_RECEIVER_ID, currentUser)
 
-        val messageParseQuery =
-            ParseQuery.or(listOf<ParseQuery<Message>>(parseSender, parseReceiver))
+        val messageParseQuery = ParseQuery.or(listOf<ParseQuery<Message>>(parseSender, parseReceiver))
                 .whereEqualTo(source, true)
                 .include(CHAT_MESSAGE)
                 .include(CHAT_RECEIVER_ID)
@@ -1105,10 +1135,7 @@ class MessageRepository @Inject constructor(val context: Context) {
                 .orderByDescending(SORTING_UPDATED_AT)
 
         // not including the archived message in the list
-        if (source != MessageType.ARCHIVING.param) messageParseQuery.whereNotEqualTo(
-            MessageType.ARCHIVING.param,
-            true
-        )
+        if (source != MessageType.ARCHIVING.param) messageParseQuery.whereNotEqualTo(MessageType.ARCHIVING.param, true)
 
         val messageList = messageParseQuery.find()
 
@@ -1119,7 +1146,7 @@ class MessageRepository @Inject constructor(val context: Context) {
         }
 
     }
-
+*/
 
 
     suspend fun makeMessageSeen(message: Message) {

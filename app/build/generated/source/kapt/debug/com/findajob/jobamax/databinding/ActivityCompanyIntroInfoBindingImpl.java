@@ -40,9 +40,9 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback255;
+    private final android.view.View.OnClickListener mCallback130;
     @Nullable
-    private final android.view.View.OnClickListener mCallback254;
+    private final android.view.View.OnClickListener mCallback129;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -81,8 +81,8 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback255 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback254 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback130 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback129 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -144,8 +144,8 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.btnSave.setOnClickListener(mCallback255);
-            this.ivBackButton.setOnClickListener(mCallback254);
+            this.btnSave.setOnClickListener(mCallback130);
+            this.ivBackButton.setOnClickListener(mCallback129);
         }
     }
     // Listener Stub Implementations

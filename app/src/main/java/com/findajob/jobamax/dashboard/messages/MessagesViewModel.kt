@@ -1,6 +1,5 @@
 package com.findajob.jobamax.dashboard.messages
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -65,7 +64,7 @@ class MessagesViewModel @Inject constructor(
 
     init {
         getCurrentUserId()
-        getMessages(MessageType.JOB)
+       /* getMessages(MessageType.JOB)*/
     }
 
     private fun getCurrentUserId() {
@@ -93,7 +92,7 @@ class MessagesViewModel @Inject constructor(
     }
 
 
-    fun getNewUsers(roleType: String) {
+    fun getNewUsers(roleType: Int) {
         repo.getNewMatchedUsers(roleType)
             .ioToMain()
             .subscribe({ newPeopleList ->
@@ -137,7 +136,15 @@ class MessagesViewModel @Inject constructor(
 
         log("the message type is ${type.param}")
 
-        repo.getMessages(type.param)
+        repo.getMessages(type.param, {  messageList ->
+                log("result is $messageList")
+            },
+            {
+               log("error is $it")
+            }
+        )
+
+        /*repo.getMessages(type.param)
             .ioToMain()
             .subscribe({
                 when (type.param) {
@@ -156,7 +163,7 @@ class MessagesViewModel @Inject constructor(
                 }
             }, {
                 it.printStackTrace()
-            }).addTo(disposeBag)
+            }).addTo(disposeBag)*/
     }
 
 

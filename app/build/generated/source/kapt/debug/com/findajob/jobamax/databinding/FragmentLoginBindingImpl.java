@@ -41,19 +41,19 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     private final android.widget.TextView mboundView7;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback38;
+    private final android.view.View.OnClickListener mCallback27;
     @Nullable
-    private final android.view.View.OnClickListener mCallback39;
+    private final android.view.View.OnClickListener mCallback25;
     @Nullable
-    private final android.view.View.OnClickListener mCallback36;
+    private final android.view.View.OnClickListener mCallback26;
     @Nullable
-    private final android.view.View.OnClickListener mCallback37;
+    private final android.view.View.OnClickListener mCallback23;
     @Nullable
-    private final android.view.View.OnClickListener mCallback34;
+    private final android.view.View.OnClickListener mCallback24;
     @Nullable
-    private final android.view.View.OnClickListener mCallback35;
+    private final android.view.View.OnClickListener mCallback21;
     @Nullable
-    private final android.view.View.OnClickListener mCallback40;
+    private final android.view.View.OnClickListener mCallback22;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -91,13 +91,13 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
         this.showPasswordButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback38 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback39 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback36 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback37 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback34 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback35 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback40 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback27 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback25 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback26 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback23 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback24 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback21 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback22 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -159,19 +159,36 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView2.setOnClickListener(mCallback35);
-            this.mboundView3.setOnClickListener(mCallback36);
-            this.mboundView4.setOnClickListener(mCallback37);
-            this.mboundView5.setOnClickListener(mCallback38);
-            this.mboundView6.setOnClickListener(mCallback39);
-            this.mboundView7.setOnClickListener(mCallback40);
-            this.showPasswordButton.setOnClickListener(mCallback34);
+            this.mboundView2.setOnClickListener(mCallback22);
+            this.mboundView3.setOnClickListener(mCallback23);
+            this.mboundView4.setOnClickListener(mCallback24);
+            this.mboundView5.setOnClickListener(mCallback25);
+            this.mboundView6.setOnClickListener(mCallback26);
+            this.mboundView7.setOnClickListener(mCallback27);
+            this.showPasswordButton.setOnClickListener(mCallback21);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 7: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.LoginInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onRegisterClicked();
+                }
+                break;
+            }
             case 5: {
                 // localize variables for thread safety
                 // handler
@@ -271,23 +288,6 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
 
 
                     handler.onForgotPasswordClicked();
-                }
-                break;
-            }
-            case 7: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.LoginInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onRegisterClicked();
                 }
                 break;
             }

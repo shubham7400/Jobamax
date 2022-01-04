@@ -63,17 +63,17 @@ public class FragmentJobOfferDetailsBindingImpl extends FragmentJobOfferDetailsB
     private final androidx.appcompat.widget.AppCompatButton mboundView21;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback132;
+    private final android.view.View.OnClickListener mCallback196;
     @Nullable
-    private final android.view.View.OnClickListener mCallback133;
+    private final android.view.View.OnClickListener mCallback192;
     @Nullable
-    private final android.view.View.OnClickListener mCallback134;
+    private final android.view.View.OnClickListener mCallback193;
     @Nullable
-    private final android.view.View.OnClickListener mCallback130;
+    private final android.view.View.OnClickListener mCallback194;
     @Nullable
-    private final android.view.View.OnClickListener mCallback135;
+    private final android.view.View.OnClickListener mCallback195;
     @Nullable
-    private final android.view.View.OnClickListener mCallback131;
+    private final android.view.View.OnClickListener mCallback191;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -391,12 +391,12 @@ public class FragmentJobOfferDetailsBindingImpl extends FragmentJobOfferDetailsB
         this.seekBar.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback132 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback133 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback134 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback130 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback135 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback131 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback196 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback192 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback193 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback194 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback195 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback191 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -618,23 +618,57 @@ public class FragmentJobOfferDetailsBindingImpl extends FragmentJobOfferDetailsB
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.companyWebsiteField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, companyWebsiteFieldandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.descriptionField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, descriptionFieldandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.industryField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, industryFieldandroidTextAttrChanged);
-            this.ivBackButton.setOnClickListener(mCallback130);
-            this.ivHideJobButton.setOnClickListener(mCallback131);
-            this.mboundView13.setOnClickListener(mCallback133);
-            this.mboundView15.setOnClickListener(mCallback134);
+            this.ivBackButton.setOnClickListener(mCallback191);
+            this.ivHideJobButton.setOnClickListener(mCallback192);
+            this.mboundView13.setOnClickListener(mCallback194);
+            this.mboundView15.setOnClickListener(mCallback195);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView16, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView16androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView17, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView17androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView18, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView18androidCheckedAttrChanged);
-            this.mboundView21.setOnClickListener(mCallback135);
+            this.mboundView21.setOnClickListener(mCallback196);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.monthlySalaryField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, monthlySalaryFieldandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.nameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, nameFieldandroidTextAttrChanged);
-            this.rlLocationLayout.setOnClickListener(mCallback132);
+            this.rlLocationLayout.setOnClickListener(mCallback193);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 6: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.jobOffer.create.JobOfferDetailsHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSubmitButtonClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.jobOffer.create.JobOfferDetailsHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onHideJobClicked();
+                }
+                break;
+            }
             case 3: {
                 // localize variables for thread safety
                 // handler
@@ -701,40 +735,6 @@ public class FragmentJobOfferDetailsBindingImpl extends FragmentJobOfferDetailsB
 
 
                     handler.onBackButtonClicked();
-                }
-                break;
-            }
-            case 6: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.jobOffer.create.JobOfferDetailsHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSubmitButtonClicked();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.jobOffer.create.JobOfferDetailsHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onHideJobClicked();
                 }
                 break;
             }
