@@ -17,14 +17,12 @@ import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.model.Company
 import com.findajob.jobamax.model.Recruiter
-import com.findajob.jobamax.preference.getEmail
-import com.findajob.jobamax.preference.getPassword
-import com.findajob.jobamax.preference.getUserId
-import com.findajob.jobamax.preference.getUserType
+import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.recruiter.home.RecruiterHomeViewModel
 import com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInfoIntroActivity
 import com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInformationModel
 import com.findajob.jobamax.util.errorToast
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.firebase.dynamiclinks.ktx.androidParameters
 import com.google.firebase.dynamiclinks.ktx.dynamicLink
@@ -159,45 +157,41 @@ class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBindin
             recruiter.email = personalInfoModel.email
             recruiter.phoneNumber = personalInfoModel.phoneNumber
             recruiter.password = getPassword()
-            recruiter.toParseObject().saveInBackground { it ->
-                when{
-                    it != null -> {
-                        toast(it.message.toString())
-                    }
-                    else -> {
-                        saveCompanyData()
-                        val companyParseObject = company.toParseObject()
-                        companyParseObject.put("recruiterId",  getUserId())
-                        companyParseObject.saveInBackground { exception ->
-                            when{
-                                exception != null ->{
-                                    toast(exception.message.toString())
-                                }
-                                else -> {
-                                    val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
-                                    query.whereEqualTo("recruiterId", recruiter.recruiterId)
-                                    query.getFirstInBackground { result, e ->
-                                        when{
-                                            e != null -> {
-                                                toast(e.message.toString())
-                                            }
-                                            result == null -> {
-                                                toast("result not found")
-                                            }
-                                            result != null -> {
-                                                result.put("company", companyParseObject)
-                                                result.saveInBackground {
-                                                    if (it == null){
-                                                        sendEmailVerificationLink(recruiter)
-                                                    }
-                                                }
+            recruiter.loginType = getLoginType()
+            recruiter.toParseObject().saveInBackground { parseException ->
+                if (parseException != null){
+                    toast(parseException.message.toString())
+                }else{
+                    saveCompanyData()
+                    val companyParseObject = company.toParseObject()
+                    companyParseObject.put("recruiterId",  getUserId())
+                    companyParseObject.saveInBackground { exception ->
+                        if (exception != null){
+                            toast(exception.message.toString())
+                        }else{
+                            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
+                            query.whereEqualTo("recruiterId", recruiter.recruiterId)
+                            query.getFirstInBackground { result, e ->
+                                when{
+                                    e != null -> {
+                                        toast(e.message.toString())
+                                    }
+                                    /* result == null -> {
+                                         toast("result not found")
+                                     }*/
+                                    result != null -> {
+                                        result.put("company", companyParseObject)
+                                        result.saveInBackground { exception ->
+                                            if (exception == null) {
+                                                sendEmailVerificationLink(recruiter)
+                                            } else {
+                                                toast("Something Went Wrong")
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        viewModel.saveCompanyData(company)
                     }
                 }
             }
@@ -230,7 +224,7 @@ class CompanyIntroInfoActivity : BaseActivityMain<ActivityCompanyIntroInfoBindin
             } else {
                 BasicDialog(this, "An email with verification link is sent to:\n ${getEmail()}", true) {
                     startActivity(Intent(this, MainActivity::class.java))
-                    finish()
+                    finishAffinity()
                 }.also {
                     it.setCancelable(false)
                 }.show()

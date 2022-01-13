@@ -151,9 +151,7 @@ class JobSeekerPersonalInformationFragment : BaseFragmentMain<FragmentJobSeekerP
         if (phoneField.text.isEmpty()) {
             phoneField.error = getString(R.string.enter_phone_number)
             validateFlag = false
-        } else if ((phoneField.text.toString()
-                .trim().length + ccp.selectedCountryCodeWithPlus.length) <= 10
-        ) {
+        } else if ((phoneField.text.toString().trim().length + ccp.selectedCountryCodeWithPlus.length) <= 10) {
             toast(getString(R.string.enter_valid_phone_number))
             phoneField.error = getString(R.string.enter_valid_phone_number)
             validateFlag = false

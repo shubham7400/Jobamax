@@ -366,13 +366,11 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
         else if (password.length < 7) {
             toast("Password should have at least 7 characters")
         } else {
-//			if (viewModel.roleType == ROLE_JOB_SEEKER) {
-//				if (!email.endsWith(".edu")) {
-//					toast("Only email address with .edu extension are allowed!")
-//					return
-//				}
-//			}
-            (requireActivity() as LoginActivity).login(email, password)
+            if (requireContext().getUserType() == 2){
+                (requireActivity() as LoginActivity).loginSeeker(email, password)
+            }else if (requireContext().getUserType() == 1){
+                (requireActivity() as LoginActivity).loginRecruiter(email, password)
+            }
         }
 
     }

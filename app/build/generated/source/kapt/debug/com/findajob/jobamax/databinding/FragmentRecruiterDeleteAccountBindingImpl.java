@@ -27,11 +27,11 @@ public class FragmentRecruiterDeleteAccountBindingImpl extends FragmentRecruiter
     private final androidx.appcompat.widget.AppCompatButton mboundView3;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback153;
+    private final android.view.View.OnClickListener mCallback155;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback156;
     @Nullable
     private final android.view.View.OnClickListener mCallback154;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback152;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -55,9 +55,9 @@ public class FragmentRecruiterDeleteAccountBindingImpl extends FragmentRecruiter
         this.mboundView3.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback153 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback154 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback152 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback155 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback156 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback154 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -119,9 +119,9 @@ public class FragmentRecruiterDeleteAccountBindingImpl extends FragmentRecruiter
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback152);
-            this.mboundView2.setOnClickListener(mCallback153);
-            this.mboundView3.setOnClickListener(mCallback154);
+            this.imageView.setOnClickListener(mCallback154);
+            this.mboundView2.setOnClickListener(mCallback155);
+            this.mboundView3.setOnClickListener(mCallback156);
         }
     }
     // Listener Stub Implementations

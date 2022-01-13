@@ -23,20 +23,19 @@ import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBinding>(),
-    JobSeekerAccountInterface {
+class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBinding>(), JobSeekerAccountInterface {
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
     override fun getViewModel(): ViewModel = viewModel
 
     lateinit var navController: NavController
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_job_seeker_account
+    override val layoutRes: Int get() = R.layout.fragment_job_seeker_account
 
     override fun onCreated(savedInstance: Bundle?) {
         navController = findNavController()
         binding.hideMeFlag.isChecked = viewModel.jobSeeker.hideMeFlag
         binding.handler = this
+        viewModel.getJobSeeker()
     }
 
     override fun onManageReadReceiptsClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment)
@@ -53,24 +52,16 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
     override fun onBackButtonClicked() = requireActivity().onBackPressed()
 
 
-    override fun onPaymentMethodsClicked() {
-        navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerPaymentMethodsFragment)
-    }
+    override fun onPaymentMethodsClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerPaymentMethodsFragment)
 
-    override fun onRestorePurchaseClicked() {
-        WorkInProgressDialog(requireActivity()).show()
-    }
 
-    override fun onShareJobamaxClicked() {
-        ShareJobamaxDialog(requireActivity()).show()
-    }
+    override fun onRestorePurchaseClicked() = WorkInProgressDialog(requireActivity()).show()
 
-    override fun onHelpAndSupportClicked() = startActivity(
-        Intent(requireContext(), WebViewActivity::class.java).putExtra(
-            ARG_WEB_URL,
-            "https://www.jobamax.com/en/support"
-        )
-    )
+
+    override fun onShareJobamaxClicked() = ShareJobamaxDialog(requireActivity()).show()
+
+
+    override fun onHelpAndSupportClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/support"))
 
     override fun onEmailUsClicked() {
         val selectorIntent = Intent(Intent.ACTION_SENDTO)
@@ -84,39 +75,17 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
         startActivity(Intent.createChooser(emailIntent, "Send email..."))
     }
 
-    override fun onCommunityGuidelinesClicked() = startActivity(
-        Intent(requireContext(), WebViewActivity::class.java).putExtra(
-            ARG_WEB_URL,
-            "https://www.jobamax.com/en/community-guidelines"
-        )
-    )
+    override fun onCommunityGuidelinesClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/community-guidelines"))
 
-    override fun onSafetyTipsClicked() = startActivity(
-        Intent(requireContext(), WebViewActivity::class.java).putExtra(
-            ARG_WEB_URL,
-            "https://www.jobamax.com/en/safety-tips"
-        )
-    )
+    override fun onSafetyTipsClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/safety-tips"))
 
-    override fun onPrivacyPolicyClicked() = startActivity(
-        Intent(requireContext(), WebViewActivity::class.java).putExtra(
-            ARG_WEB_URL,
-            "https://www.jobamax.com/en/privacy"
-        )
-    )
+    override fun onPrivacyPolicyClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/privacy"))
 
-    override fun onTermsOfServiceClicked() = startActivity(
-        Intent(requireContext(), WebViewActivity::class.java).putExtra(
-            ARG_WEB_URL,
-            "https://www.jobamax.com/en/terms"
-        )
-    )
+    override fun onTermsOfServiceClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/terms"))
 
-    override fun onLicensesClicked() =
-        startActivity(Intent(requireContext(), LicenseActivity::class.java))
+    override fun onLicensesClicked() = startActivity(Intent(requireContext(), LicenseActivity::class.java))
 
-    override fun onPrivacyPreferencesClicked() =
-        startActivity(Intent(requireContext(), PrivacyPreferenceActivity::class.java))
+    override fun onPrivacyPreferencesClicked() = startActivity(Intent(requireContext(), PrivacyPreferenceActivity::class.java))
 
     override fun onLogoutClicked() {
         requireActivity().showDialog(message = getString(R.string.do_you_want_to_logout)) {
@@ -145,13 +114,11 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
         }
     }
 
-    override fun onDeleteAccountClicked() {
-        navController.navigate(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2)
-    }
+    override fun onDeleteAccountClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2)
 
-    override fun onPasswordClicked() {
-        startActivity(Intent(requireContext(), JobSeekerPasswordActivity::class.java))
-    }
+
+    override fun onPasswordClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_seekerChangePasswordFragment)
+
 
     override fun toggleHideMe(flag: Boolean) {
         binding.hideMeFlag.isEnabled = false

@@ -26,9 +26,9 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback243;
+    private final android.view.View.OnClickListener mCallback245;
     @Nullable
-    private final android.view.View.OnClickListener mCallback242;
+    private final android.view.View.OnClickListener mCallback244;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,8 +51,8 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback243 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback242 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback245 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback244 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,8 +114,8 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback242);
-            this.mboundView2.setOnClickListener(mCallback243);
+            this.imageView.setOnClickListener(mCallback244);
+            this.mboundView2.setOnClickListener(mCallback245);
         }
     }
     // Listener Stub Implementations

@@ -16,6 +16,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface;
+import com.findajob.jobamax.model.JobSeeker;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -102,6 +103,9 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   @Bindable
   protected JobSeekerHomeInterface mHandler;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected ActivityJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button btJobSearch, Button btnCoaching, CircleImageView imageUser, CircleImageView imageUser2,
       CircleImageView imageUser3, CircleImageView imageUser35, CircleImageView imageUser3w,
@@ -156,6 +160,13 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   @Nullable
   public JobSeekerHomeInterface getHandler() {
     return mHandler;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

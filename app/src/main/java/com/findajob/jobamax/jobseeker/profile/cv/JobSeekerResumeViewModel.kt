@@ -39,8 +39,7 @@ class JobSeekerResumeViewModel @Inject constructor(
     }
 
 
-    private val _educationsObservable: MutableLiveData<ArrayList<Education>> =
-        MutableLiveData<ArrayList<Education>>()
+    private val _educationsObservable: MutableLiveData<ArrayList<Education>> = MutableLiveData<ArrayList<Education>>()
     val educationObservable: LiveData<java.util.ArrayList<Education>> = _educationsObservable
 
     fun addEducation(education: Education) = viewModelScope.launch(Dispatchers.IO) {
@@ -158,33 +157,18 @@ class JobSeekerResumeViewModel @Inject constructor(
     }
 
     fun loadResume() = viewModelScope.launch(Dispatchers.IO) {
-
         if (jobSeekerParseObject == null) return@launch
 
-        val experiences = ArrayList(
-            gsonConverter.fromJson(jobSeeker.experiences, ExperienceGroup::class.java)?.list
-                ?: listOf()
-        )
-
+        val experiences = ArrayList(gsonConverter.fromJson(jobSeeker.experiences, ExperienceGroup::class.java)?.list ?: listOf())
         _experiencesObservable.postValue(experiences)
 
-        val educations = ArrayList(
-            gsonConverter.fromJson(jobSeeker.educations, EducationGroup::class.java)?.list
-                ?: listOf()
-        )
-
+        val educations = ArrayList(gsonConverter.fromJson(jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf())
         _educationsObservable.postValue(educations)
 
-        val skills =
-            ArrayList(Gson().fromJson(jobSeeker.skills, SKillGroup::class.java)?.list ?: listOf())
-
+        val skills = ArrayList(Gson().fromJson(jobSeeker.skills, SKillGroup::class.java)?.list ?: listOf())
         _skillsObservable.postValue(skills)
 
-        val activities = ArrayList(
-            gsonConverter.fromJson(jobSeeker.activities, ActivityGroup::class.java)?.list
-                ?: listOf()
-        )
-
+        val activities = ArrayList(gsonConverter.fromJson(jobSeeker.activities, ActivityGroup::class.java)?.list ?: listOf())
         _activitiesObservable.postValue(activities)
 
         val aboutMe = jobSeeker.aboutMe

@@ -43,7 +43,7 @@ class RegisterFragment : BaseFragmentMain<FragmentRegisterBinding>(), RegisterIn
 			toast("Enter Email")
 		} else if (!email.isValidEmail()) {
 			toast("Enter Valid Email")
-		} else if (password.length < 7) {
+		} else if (password.length < 7 || password.isEmpty()) {
 			toast("Password should have at least 7 characters")
 		} else if(password != confirmPassword){
 			toast("Password and Confirm password does not match")

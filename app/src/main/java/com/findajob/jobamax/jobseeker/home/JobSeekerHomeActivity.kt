@@ -23,6 +23,8 @@ import com.findajob.jobamax.dashboard.messages.ProfileActivity
 import com.findajob.jobamax.databinding.ActivityJobSeekerHomeBinding
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment
+import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity
+import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity
 import com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeViewModel
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyActivity
@@ -39,8 +41,11 @@ import org.jetbrains.anko.longToast
 import java.util.*
 
 @AndroidEntryPoint
-class JobSeekerHomeActivity : AppCompatActivity(), /*JobSeekerHomeInterface, PurchasesUpdatedListener,*/ View.OnClickListener {
-    lateinit var binding: ActivityJobSeekerHomeBinding
+class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), /*JobSeekerHomeInterface, PurchasesUpdatedListener,*/ View.OnClickListener {
+
+    override val layoutRes: Int get() = R.layout.activity_job_seeker_home
+    val viewModel: JobSeekerHomeViewModel by viewModels()
+    override fun getViewModel(): ViewModel = viewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +55,21 @@ class JobSeekerHomeActivity : AppCompatActivity(), /*JobSeekerHomeInterface, Pur
         configureUi()
     }
 
+    override fun onCreated(instance: Bundle?) {
+        viewModel.getJobSeeker()
+    }
+
     private fun configureUi() {
          setClickListeners()
+        viewModelObserver()
+    }
+
+    private fun viewModelObserver() {
+         viewModel.isJobSeekerUpdated.observe(this, androidx.lifecycle.Observer {
+             if (it){
+                 binding.jobSeeker = viewModel.jobSeeker
+             }
+         })
     }
 
     private fun setClickListeners() {
@@ -65,18 +83,19 @@ class JobSeekerHomeActivity : AppCompatActivity(), /*JobSeekerHomeInterface, Pur
         binding.vTrack.setOnClickListener(this)
         binding.vWishlist.setOnClickListener(this)
         binding.ivSetting.setOnClickListener(this)
+        binding.ivSetting.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when(view){
             binding.ivSetting ->{
-
+                startActivity(Intent(this, JobSeekerAccountActivity::class.java))
             }
             binding.vProfile ->{
-                startActivity(Intent(this, JobSeekerCourseActivity::class.java))
+                startActivity(Intent(this, SeekerProfileActivity::class.java))
             }
             binding.vCalendar ->{
-
+                startActivity(Intent(this, JobSeekerCourseActivity::class.java))
             }
             binding.vMessage ->{
                 startActivity(Intent(this, MainChatActivity::class.java))
@@ -98,6 +117,7 @@ class JobSeekerHomeActivity : AppCompatActivity(), /*JobSeekerHomeInterface, Pur
             }
         }
     }
+
 
 
     /*val viewModel: JobSeekerHomeViewModel by viewModels()

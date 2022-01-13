@@ -64,7 +64,7 @@ class MessagesViewModel @Inject constructor(
 
     init {
         getCurrentUserId()
-       /* getMessages(MessageType.JOB)*/
+        getMessages(MessageType.JOB)
     }
 
     private fun getCurrentUserId() {
@@ -136,15 +136,7 @@ class MessagesViewModel @Inject constructor(
 
         log("the message type is ${type.param}")
 
-        repo.getMessages(type.param, {  messageList ->
-                log("result is $messageList")
-            },
-            {
-               log("error is $it")
-            }
-        )
-
-        /*repo.getMessages(type.param)
+        repo.getMessages(type.param)
             .ioToMain()
             .subscribe({
                 when (type.param) {
@@ -163,7 +155,7 @@ class MessagesViewModel @Inject constructor(
                 }
             }, {
                 it.printStackTrace()
-            }).addTo(disposeBag)*/
+            }).addTo(disposeBag)
     }
 
 

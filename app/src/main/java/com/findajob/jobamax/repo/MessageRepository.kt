@@ -1088,38 +1088,8 @@ class MessageRepository @Inject constructor(val context: Context) {
 
     }
 
-    fun getMessages(source: String, onSuccess: (List<Message>) -> Unit, onFailure: (String) -> Unit){
-        val parseSender = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_SENDER_ID, currentUser)
 
-        val parseReceiver = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_RECEIVER_ID, currentUser)
-
-        val messageParseQuery = ParseQuery.or(listOf<ParseQuery<Message>>(parseSender, parseReceiver))
-            .whereEqualTo(source, true)
-            .include(CHAT_MESSAGE)
-            .include(CHAT_RECEIVER_ID)
-            .include(CHAT_SENDER_ID)
-            .include(CHAT_FILE)
-            .orderByDescending(SHORT_LISTED_BY)
-            .orderByDescending(SORTING_UPDATED_AT)
-
-        // not including the archived message in the list
-        if (source != MessageType.ARCHIVING.param) messageParseQuery.whereNotEqualTo(MessageType.ARCHIVING.param, true)
-
-        try {
-            messageParseQuery.findInBackground { result, e ->
-                log("esfdsreerf")
-                when{
-                    e != null -> onFailure(e.message.toString())
-                    result != null -> onSuccess(result)
-                }
-            }
-        }catch (e: Exception){
-            log("esfdf ${e.message}")
-        }
-
-    }
-
-    /*fun getMessages(source: String, ) = Single.create<List<Message>> { emitter ->
+    fun getMessages(source: String, ) = Single.create<List<Message>> { emitter ->
 
         val parseSender = ParseQuery.getQuery(Message::class.java).whereEqualTo(CHAT_SENDER_ID, currentUser)
 
@@ -1146,7 +1116,6 @@ class MessageRepository @Inject constructor(val context: Context) {
         }
 
     }
-*/
 
 
     suspend fun makeMessageSeen(message: Message) {

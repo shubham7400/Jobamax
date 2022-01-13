@@ -25,9 +25,9 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
     private final android.widget.ImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback238;
+    private final android.view.View.OnClickListener mCallback241;
     @Nullable
-    private final android.view.View.OnClickListener mCallback239;
+    private final android.view.View.OnClickListener mCallback240;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -49,8 +49,8 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
         this.sendButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback238 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback239 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback241 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback240 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -112,31 +112,14 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback238);
-            this.sendButton.setOnClickListener(mCallback239);
+            this.mboundView1.setOnClickListener(mCallback240);
+            this.sendButton.setOnClickListener(mCallback241);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.VerificationCodeInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -151,6 +134,23 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
 
 
                     handler.onSendClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.VerificationCodeInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackButtonClicked();
                 }
                 break;
             }

@@ -40,17 +40,17 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
     private final androidx.appcompat.widget.AppCompatButton mboundView7;
     // variables
     @Nullable
+    private final android.view.View.OnClickListener mCallback138;
+    @Nullable
     private final android.view.View.OnClickListener mCallback136;
     @Nullable
     private final android.view.View.OnClickListener mCallback134;
     @Nullable
-    private final android.view.View.OnClickListener mCallback132;
+    private final android.view.View.OnClickListener mCallback137;
     @Nullable
     private final android.view.View.OnClickListener mCallback135;
     @Nullable
     private final android.view.View.OnClickListener mCallback133;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback131;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -91,12 +91,12 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
         this.seekBar.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback136 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback134 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback132 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback135 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback133 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback131 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback138 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback136 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback134 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback137 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback135 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback133 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -181,12 +181,12 @@ public class FragmentJobSourceBindingImpl extends FragmentJobSourceBinding imple
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.ivBackButton.setOnClickListener(mCallback131);
-            this.locationField.setOnClickListener(mCallback132);
-            this.mboundView4.setOnClickListener(mCallback133);
-            this.mboundView5.setOnClickListener(mCallback134);
-            this.mboundView6.setOnClickListener(mCallback135);
-            this.mboundView7.setOnClickListener(mCallback136);
+            this.ivBackButton.setOnClickListener(mCallback133);
+            this.locationField.setOnClickListener(mCallback134);
+            this.mboundView4.setOnClickListener(mCallback135);
+            this.mboundView5.setOnClickListener(mCallback136);
+            this.mboundView6.setOnClickListener(mCallback137);
+            this.mboundView7.setOnClickListener(mCallback138);
         }
         if ((dirtyFlags & 0x6L) != 0) {
             // api target 1

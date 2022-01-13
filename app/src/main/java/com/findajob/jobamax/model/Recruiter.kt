@@ -55,6 +55,7 @@ class Recruiter {
         recruiter.put("loginType", loginType)
         recruiter.put("postCode", postCode)
         recruiter.put("email", email)
+        recruiter.put("password", password)
         recruiter.put("phoneNumber", phoneNumber)
         recruiter.put("companyId", companyId)
         recruiter.put("hideMeFlag", hideMeFlag)

@@ -45,4 +45,9 @@ public class JobSeekerAccountFragmentDirections {
   public static NavDirections actionJobSeekerAccountFragmentToSeekerDeleteAccountFragment2() {
     return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2);
   }
+
+  @NonNull
+  public static NavDirections actionJobSeekerAccountFragmentToSeekerChangePasswordFragment() {
+    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_seekerChangePasswordFragment);
+  }
 }

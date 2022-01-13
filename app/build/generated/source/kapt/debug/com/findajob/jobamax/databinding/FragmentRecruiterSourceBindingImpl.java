@@ -27,15 +27,15 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
     private final android.widget.ImageView mboundView2;
     // variables
     @Nullable
+    private final android.view.View.OnClickListener mCallback227;
+    @Nullable
     private final android.view.View.OnClickListener mCallback225;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback226;
     @Nullable
     private final android.view.View.OnClickListener mCallback223;
     @Nullable
     private final android.view.View.OnClickListener mCallback224;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback221;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback222;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,11 +65,11 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
         this.sourceButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback225 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback223 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback224 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback221 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback222 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback227 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback225 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback226 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback223 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback224 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -131,11 +131,11 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.filterLayout.setOnClickListener(mCallback221);
-            this.mboundView2.setOnClickListener(mCallback222);
-            this.refuseButton.setOnClickListener(mCallback224);
-            this.rewindButton.setOnClickListener(mCallback223);
-            this.sourceButton.setOnClickListener(mCallback225);
+            this.filterLayout.setOnClickListener(mCallback223);
+            this.mboundView2.setOnClickListener(mCallback224);
+            this.refuseButton.setOnClickListener(mCallback226);
+            this.rewindButton.setOnClickListener(mCallback225);
+            this.sourceButton.setOnClickListener(mCallback227);
         }
     }
     // Listener Stub Implementations

@@ -4,21 +4,21 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.fragment.app.FragmentContainerView;
 import com.findajob.jobamax.R;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityMainChatBinding extends ViewDataBinding {
   @NonNull
-  public final FrameLayout fragmentContainer;
+  public final FragmentContainerView fragmentContainer;
 
   protected ActivityMainChatBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      FrameLayout fragmentContainer) {
+      FragmentContainerView fragmentContainer) {
     super(_bindingComponent, _root, _localFieldCount);
     this.fragmentContainer = fragmentContainer;
   }

@@ -14,10 +14,7 @@ import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.base.BaseViewModel
 import com.findajob.jobamax.databinding.ItemJobSeekerSourceCardBinding
 import com.findajob.jobamax.databinding.ItemTextChipBinding
-import com.findajob.jobamax.jobseeker.profile.cv.model.ActivityGroup
-import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
-import com.findajob.jobamax.jobseeker.profile.cv.model.ExperienceGroup
-import com.findajob.jobamax.jobseeker.profile.cv.model.SKillGroup
+import com.findajob.jobamax.jobseeker.profile.cv.model.*
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.recruiter.track.JobSeekerActivityAdapter
 import com.findajob.jobamax.recruiter.track.JobSeekerEducationAdapter
@@ -74,7 +71,7 @@ class PreviewJobSeekerActivity : BaseActivityMain<ItemJobSeekerSourceCardBinding
         binding.experienceRecycler.adapter = JobSeekerExperienceAdapter(experiences)
         binding.experienceRecycler.isNestedScrollingEnabled = false
 
-        val schools = Gson().fromJson(jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf()
+        val schools = Gson().fromJson(jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf<Education>()
         binding.schoolLayout.visibility = if (schools.isEmpty()) View.GONE else View.VISIBLE
         binding.schoolRecycler.layoutManager = LinearLayoutManager(context)
         binding.schoolRecycler.adapter = JobSeekerEducationAdapter(schools)

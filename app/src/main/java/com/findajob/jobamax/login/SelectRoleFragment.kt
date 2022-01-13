@@ -47,7 +47,7 @@ class SelectRoleFragment : Fragment(), SelectRoleInterface {
 		doAsync {
 			Thread.sleep(100)
 			uiThread {
-				navController.navigate(R.id.action_selectRoleFragment_to_jobSeekerLoginFragment)
+				/*navController.navigate(R.id.action_selectRoleFragment_to_jobSeekerLoginFragment)*/
 			}
 		}
 	}
@@ -59,7 +59,7 @@ class SelectRoleFragment : Fragment(), SelectRoleInterface {
 		doAsync {
 			Thread.sleep(100)
 			uiThread {
-				navController.navigate(R.id.action_selectRoleFragment_to_jobSeekerLoginFragment)
+				/*navController.navigate(R.id.action_selectRoleFragment_to_jobSeekerLoginFragment)*/
 			}
 		}
 	}

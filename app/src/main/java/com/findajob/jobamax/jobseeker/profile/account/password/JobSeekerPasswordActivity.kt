@@ -71,7 +71,8 @@ class JobSeekerPasswordActivity : BaseActivity(), JobSeekerPasswordInterface {
     }
 }
 
+/*
 interface JobSeekerPasswordInterface {
     fun onSubmitClicked()
     fun onBackPress()
-}
+}*/

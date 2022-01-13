@@ -77,6 +77,12 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity"
+            android:exported="false" />
+        <activity
             android:name="com.findajob.jobamax.dashboard.messages.ProfileActivity"
             android:exported="false" />
         <activity

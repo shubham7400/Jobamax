@@ -100,7 +100,7 @@
                     android:text="@string/manage_read_receipts" />
 
 
-                <TextView
+                <!--<TextView
                     style="@style/account_subheading_seeker"
                     android:text="@string/social_networks" />
 
@@ -136,7 +136,7 @@
                         android:layout_margin="4dp"
                         android:src="@drawable/twitter_circle" />
 
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <TextView
                     style="@style/account_subheading_seeker"

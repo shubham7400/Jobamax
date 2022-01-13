@@ -69,11 +69,9 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
     @Nullable
     private final android.view.View.OnClickListener mCallback168;
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback158;
+    private final android.view.View.OnClickListener mCallback158;
     @Nullable
     private final android.view.View.OnClickListener mCallback166;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback156;
     @Nullable
     private final android.view.View.OnClickListener mCallback178;
     @Nullable
@@ -85,15 +83,15 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
     @Nullable
     private final android.view.View.OnClickListener mCallback174;
     @Nullable
-    private final android.view.View.OnClickListener mCallback160;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback160;
     @Nullable
     private final android.view.View.OnClickListener mCallback172;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback180;
     @Nullable
     private final android.view.View.OnClickListener mCallback170;
     @Nullable
     private final android.view.View.OnClickListener mCallback159;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback157;
     @Nullable
     private final android.view.View.OnClickListener mCallback179;
     @Nullable
@@ -114,6 +112,8 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
     private final android.view.View.OnClickListener mCallback171;
     @Nullable
     private final android.view.View.OnClickListener mCallback161;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback181;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -177,30 +177,30 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
         this.mboundView9.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback168 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 13);
-        mCallback158 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
-        mCallback166 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 11);
-        mCallback156 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback178 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 23);
-        mCallback164 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
-        mCallback176 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 21);
-        mCallback162 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
-        mCallback174 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 19);
-        mCallback160 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback172 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 17);
-        mCallback170 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 15);
-        mCallback159 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback157 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback179 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 24);
-        mCallback169 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 14);
-        mCallback177 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 22);
-        mCallback167 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
-        mCallback175 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 20);
-        mCallback165 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
-        mCallback173 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 18);
-        mCallback163 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 8);
-        mCallback171 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 16);
-        mCallback161 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback168 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 11);
+        mCallback158 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback166 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
+        mCallback178 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 21);
+        mCallback164 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback176 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 19);
+        mCallback162 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback174 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 17);
+        mCallback160 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
+        mCallback172 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 15);
+        mCallback180 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 23);
+        mCallback170 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 13);
+        mCallback159 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback179 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 22);
+        mCallback169 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
+        mCallback177 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 20);
+        mCallback167 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
+        mCallback175 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 18);
+        mCallback165 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 8);
+        mCallback173 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 16);
+        mCallback163 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback171 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 14);
+        mCallback161 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback181 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 24);
         invalidateAll();
     }
 
@@ -262,53 +262,36 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.hideMeFlag, mCallback158, (androidx.databinding.InverseBindingListener)null);
-            this.mboundView1.setOnClickListener(mCallback156);
-            this.mboundView10.setOnClickListener(mCallback165);
-            this.mboundView11.setOnClickListener(mCallback166);
-            this.mboundView12.setOnClickListener(mCallback167);
-            this.mboundView13.setOnClickListener(mCallback168);
-            this.mboundView14.setOnClickListener(mCallback169);
-            this.mboundView15.setOnClickListener(mCallback170);
-            this.mboundView16.setOnClickListener(mCallback171);
-            this.mboundView17.setOnClickListener(mCallback172);
-            this.mboundView18.setOnClickListener(mCallback173);
-            this.mboundView19.setOnClickListener(mCallback174);
-            this.mboundView2.setOnClickListener(mCallback157);
-            this.mboundView20.setOnClickListener(mCallback175);
-            this.mboundView21.setOnClickListener(mCallback176);
-            this.mboundView22.setOnClickListener(mCallback177);
-            this.mboundView23.setOnClickListener(mCallback178);
-            this.mboundView24.setOnClickListener(mCallback179);
-            this.mboundView4.setOnClickListener(mCallback159);
-            this.mboundView5.setOnClickListener(mCallback160);
-            this.mboundView6.setOnClickListener(mCallback161);
-            this.mboundView7.setOnClickListener(mCallback162);
-            this.mboundView8.setOnClickListener(mCallback163);
-            this.mboundView9.setOnClickListener(mCallback164);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.hideMeFlag, mCallback160, (androidx.databinding.InverseBindingListener)null);
+            this.mboundView1.setOnClickListener(mCallback158);
+            this.mboundView10.setOnClickListener(mCallback167);
+            this.mboundView11.setOnClickListener(mCallback168);
+            this.mboundView12.setOnClickListener(mCallback169);
+            this.mboundView13.setOnClickListener(mCallback170);
+            this.mboundView14.setOnClickListener(mCallback171);
+            this.mboundView15.setOnClickListener(mCallback172);
+            this.mboundView16.setOnClickListener(mCallback173);
+            this.mboundView17.setOnClickListener(mCallback174);
+            this.mboundView18.setOnClickListener(mCallback175);
+            this.mboundView19.setOnClickListener(mCallback176);
+            this.mboundView2.setOnClickListener(mCallback159);
+            this.mboundView20.setOnClickListener(mCallback177);
+            this.mboundView21.setOnClickListener(mCallback178);
+            this.mboundView22.setOnClickListener(mCallback179);
+            this.mboundView23.setOnClickListener(mCallback180);
+            this.mboundView24.setOnClickListener(mCallback181);
+            this.mboundView4.setOnClickListener(mCallback161);
+            this.mboundView5.setOnClickListener(mCallback162);
+            this.mboundView6.setOnClickListener(mCallback163);
+            this.mboundView7.setOnClickListener(mCallback164);
+            this.mboundView8.setOnClickListener(mCallback165);
+            this.mboundView9.setOnClickListener(mCallback166);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 13: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onShareJobamaxClicked();
-                }
-                break;
-            }
             case 11: {
                 // localize variables for thread safety
                 // handler
@@ -340,23 +323,6 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
 
 
                     handler.onBackButtonClicked();
-                }
-                break;
-            }
-            case 23: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onTemporaryDisableAccountClicked();
                 }
                 break;
             }
@@ -479,7 +445,7 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
                 }
                 break;
             }
-            case 4: {
+            case 23: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
@@ -492,7 +458,24 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onManageReadReceiptsClicked();
+                    handler.onTemporaryDisableAccountClicked();
+                }
+                break;
+            }
+            case 13: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onShareJobamaxClicked();
                 }
                 break;
             }
@@ -510,40 +493,6 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
 
 
                     handler.onPersonalInformationClicked();
-                }
-                break;
-            }
-            case 24: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onDeleteAccountClicked();
-                }
-                break;
-            }
-            case 14: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onHelpAndSupportClicked();
                 }
                 break;
             }
@@ -680,6 +629,57 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
 
 
                     handler.onPasswordClicked();
+                }
+                break;
+            }
+            case 14: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onHelpAndSupportClicked();
+                }
+                break;
+            }
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onManageReadReceiptsClicked();
+                }
+                break;
+            }
+            case 24: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onDeleteAccountClicked();
                 }
                 break;
             }

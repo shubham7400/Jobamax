@@ -14,9 +14,8 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.imageView10, 1);
-        sViewsWithIds.put(R.id.iv_setting, 2);
-        sViewsWithIds.put(R.id.tv_seeker_name, 3);
+        sViewsWithIds.put(R.id.imageView10, 2);
+        sViewsWithIds.put(R.id.iv_setting, 3);
         sViewsWithIds.put(R.id.textView6, 4);
         sViewsWithIds.put(R.id.ll1, 5);
         sViewsWithIds.put(R.id.v_profile, 6);
@@ -59,10 +58,10 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[21]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[22]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[23]
-            , (android.widget.ImageView) bindings[1]
+            , (android.widget.ImageView) bindings[2]
             , (android.widget.ImageView) bindings[9]
             , (android.widget.ImageView) bindings[20]
-            , (android.widget.ImageView) bindings[2]
+            , (android.widget.ImageView) bindings[3]
             , (android.widget.LinearLayout) bindings[5]
             , (android.widget.LinearLayout) bindings[14]
             , (android.widget.RelativeLayout) bindings[18]
@@ -70,7 +69,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[1]
             , (android.widget.RelativeLayout) bindings[11]
             , (android.widget.RelativeLayout) bindings[8]
             , (android.widget.RelativeLayout) bindings[6]
@@ -79,6 +78,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             );
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
+        this.tvSeekerName.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -87,7 +87,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x8L;
+                mDirtyFlags = 0x10L;
         }
         requestRebind();
     }
@@ -105,7 +105,10 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.handler == variableId) {
+        if (BR.jobSeeker == variableId) {
+            setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
+        }
+        else if (BR.handler == variableId) {
             setHandler((com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface) variable);
         }
         else if (BR.state == variableId) {
@@ -120,6 +123,14 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             return variableSet;
     }
 
+    public void setJobSeeker(@Nullable com.findajob.jobamax.model.JobSeeker JobSeeker) {
+        this.mJobSeeker = JobSeeker;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.jobSeeker);
+        super.requestRebind();
+    }
     public void setHandler(@Nullable com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface Handler) {
         this.mHandler = Handler;
     }
@@ -144,17 +155,40 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String javaLangStringHelloJobSeekerFirstName = null;
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+        java.lang.String jobSeekerFirstName = null;
+
+        if ((dirtyFlags & 0x11L) != 0) {
+
+
+
+                if (jobSeeker != null) {
+                    // read jobSeeker.firstName
+                    jobSeekerFirstName = jobSeeker.getFirstName();
+                }
+
+
+                // read ("Hello ") + (jobSeeker.firstName)
+                javaLangStringHelloJobSeekerFirstName = ("Hello ") + (jobSeekerFirstName);
+        }
         // batch finished
+        if ((dirtyFlags & 0x11L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvSeekerName, javaLangStringHelloJobSeekerFirstName);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): handler
-        flag 1 (0x2L): state
-        flag 2 (0x3L): trackToggleFlag
-        flag 3 (0x4L): null
+        flag 0 (0x1L): jobSeeker
+        flag 1 (0x2L): handler
+        flag 2 (0x3L): state
+        flag 3 (0x4L): trackToggleFlag
+        flag 4 (0x5L): null
     flag mapping end*/
     //end
 }

@@ -28,13 +28,13 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
+    private final android.view.View.OnClickListener mCallback256;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback257;
+    @Nullable
     private final android.view.View.OnClickListener mCallback254;
     @Nullable
     private final android.view.View.OnClickListener mCallback255;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback252;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback253;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,10 +65,10 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback254 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback255 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback252 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback253 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback256 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback257 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback254 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback255 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -136,10 +136,10 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.btn.setOnClickListener(mCallback255);
-            this.imageView.setOnClickListener(mCallback252);
-            this.ivLeft.setOnClickListener(mCallback253);
-            this.ivRight.setOnClickListener(mCallback254);
+            this.btn.setOnClickListener(mCallback257);
+            this.imageView.setOnClickListener(mCallback254);
+            this.ivLeft.setOnClickListener(mCallback255);
+            this.ivRight.setOnClickListener(mCallback256);
         }
     }
     // Listener Stub Implementations

@@ -115,26 +115,35 @@ class RecruiterPersonalInfoIntroActivity : BaseActivityMain<ActivityRecruiterPer
 
     override fun onSubmitClicked() {
         addPhoneNumber()
-        if (validateFields()) {
-           startActivity(Intent(this, CompanyIntroInfoActivity::class.java).also {
-               it.putExtra(RECRUITER_FIRST_NAME, if (binding.etFirstName.text.isBlank())  "" else binding.etFirstName.text.toString() )
-               it.putExtra(RECRUITER_LAST_NAME, if (binding.etLastName.text.isBlank())  "" else binding.etLastName.text.toString())
-               it.putExtra(RECRUITER_GENDER, if (binding.tvGenderHint.text.isBlank())  "" else binding.tvGenderHint.text.toString())
-               it.putExtra(RECRUITER_DOB, if (binding.tvDateOfBirthField.text.isBlank())  "" else binding.tvDateOfBirthField.text.toString())
-               it.putExtra(RECRUITER_ZIP_CODE, if (binding.etPostalCode.text.isBlank())  "" else binding.etPostalCode.text.toString())
-               it.putExtra(RECRUITER_EMAIL, if (binding.etEmailField.text.isBlank())  "" else binding.etEmailField.text.toString())
-               it.putExtra(RECRUITER_PHONE_NUMBER, if (binding.etPhoneNumber.text.isBlank())  "" else binding.etPhoneNumber.text.toString())
-               it.putExtra(RECRUITER_PROMO_CODE, if (binding.etInvitationCode.text.isBlank())  "" else binding.etInvitationCode.text.toString())
-           })
-           /* progressHud.show()
-            viewModel.submitData(personalInfoModel) {
+        if (binding.etInvitationCode.text.isNotEmpty()){
+            progressHud.show()
+            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SalesPerson.toString())
+            query.whereContains("promoCode", binding.etInvitationCode.toString())
+            query.getFirstInBackground { result, e ->
                 progressHud.dismiss()
-                if (it != null)
-                    errorToast(it)
-                else {
-                    goToActivity(CompanyIntroInfoActivity::class.java, false)
+                if (result == null){
+                    BasicDialog(this, "Invalid Promo Code!"){}.show()
+                }else{
+                    takeToCompanyInfoActivity()
                 }
-            }*/
+            }
+        }else{
+            takeToCompanyInfoActivity()
+        }
+    }
+
+    private fun takeToCompanyInfoActivity() {
+        if (validateFields()) {
+            startActivity(Intent(this, CompanyIntroInfoActivity::class.java).also {
+                it.putExtra(RECRUITER_FIRST_NAME, if (binding.etFirstName.text.isBlank())  "" else binding.etFirstName.text.toString() )
+                it.putExtra(RECRUITER_LAST_NAME, if (binding.etLastName.text.isBlank())  "" else binding.etLastName.text.toString())
+                it.putExtra(RECRUITER_GENDER, if (binding.tvGenderHint.text.isBlank())  "" else binding.tvGenderHint.text.toString())
+                it.putExtra(RECRUITER_DOB, if (binding.tvDateOfBirthField.text.isBlank())  "" else binding.tvDateOfBirthField.text.toString())
+                it.putExtra(RECRUITER_ZIP_CODE, if (binding.etPostalCode.text.isBlank())  "" else binding.etPostalCode.text.toString())
+                it.putExtra(RECRUITER_EMAIL, if (binding.etEmailField.text.isBlank())  "" else binding.etEmailField.text.toString())
+                it.putExtra(RECRUITER_PHONE_NUMBER, if (binding.etPhoneNumber.text.isBlank())  "" else binding.etPhoneNumber.text.toString())
+                it.putExtra(RECRUITER_PROMO_CODE, if (binding.etInvitationCode.text.isBlank())  "" else binding.etInvitationCode.text.toString())
+            })
         }
     }
 
@@ -204,18 +213,6 @@ class RecruiterPersonalInfoIntroActivity : BaseActivityMain<ActivityRecruiterPer
             validateFlag = false
         }
 
-        if (binding.etInvitationCode.text.isNotEmpty()){
-            progressHud.show()
-            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SalesPerson.toString())
-            query.whereContains("promoCode", binding.etInvitationCode.toString())
-            query.getFirstInBackground { result, e ->
-                progressHud.dismiss()
-                if (result == null){
-                    validateFlag = false
-                    BasicDialog(this, "Invalid Promo Code!"){}.show()
-                }
-            }
-        }
 
         return validateFlag
     }

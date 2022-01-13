@@ -14,6 +14,7 @@ import com.findajob.jobamax.databinding.FragmentLocationPermissionBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.preference.getRole
+import com.findajob.jobamax.preference.getUserType
 import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
 import com.findajob.jobamax.util.*
 
@@ -52,7 +53,7 @@ class LocationPermissionFragment : Fragment(), LocationPermissionInterface {
                         startActivity(
                             Intent(
                                 requireActivity(),
-                                if (requireActivity().getRole() == ROLE_JOB_SEEKER) JobSeekerHomeActivity::class.java else RecruiterHomeActivity::class.java
+                                if (requireActivity().getUserType() == 2) JobSeekerHomeActivity::class.java else RecruiterHomeActivity::class.java
                             )
                         )
                         requireActivity().finishAffinity()

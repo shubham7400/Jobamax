@@ -26,7 +26,7 @@ public class ActivityMainChatBindingImpl extends ActivityMainChatBinding  {
     }
     private ActivityMainChatBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.FrameLayout) bindings[0]
+            , (androidx.fragment.app.FragmentContainerView) bindings[0]
             );
         this.fragmentContainer.setTag(null);
         setRootTag(root);

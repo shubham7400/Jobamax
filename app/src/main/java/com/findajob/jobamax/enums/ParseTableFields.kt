@@ -2,6 +2,7 @@ package com.findajob.jobamax.enums
 
 
 enum class ParseTableFields() {
+    recruiterId,
     objectId,
     email,
     masterClassNotification,
@@ -89,5 +90,9 @@ enum class ParseTableFields() {
     lat,
     googleUserId,
     joinedRoomId,
-    mergedRoomId
+    mergedRoomId,
+    volunteerings,
+    workspaces,
+    softSkills,
+    hardSkills
 }

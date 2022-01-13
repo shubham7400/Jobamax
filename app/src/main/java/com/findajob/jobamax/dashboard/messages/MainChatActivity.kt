@@ -2,21 +2,34 @@ package com.findajob.jobamax.dashboard.messages
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
+import com.findajob.jobamax.databinding.ActivityMainChatBinding
+import com.findajob.jobamax.databinding.ActivityMainChatBindingImpl
+import com.findajob.jobamax.databinding.ItemChatUserHorizontalBinding
+import com.findajob.jobamax.databinding.ItemChatUserVerticalBinding
 import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.internal.userAgent
 
-
-@AndroidEntryPoint
 class MainChatActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainChatBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_chat)
+        binding = ActivityMainChatBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        val messagesFragment = MessagesFragment()
-        fragmentTransaction.add(R.id.fragment_container, messagesFragment, "HELLO")
-        fragmentTransaction.commit()
+       configureUi()
+    }
+
+    private fun configureUi() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, ChatUserListFragment())
+            .commit()
     }
 }
+

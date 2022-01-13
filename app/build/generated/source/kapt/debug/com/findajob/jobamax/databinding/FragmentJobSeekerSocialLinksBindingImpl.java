@@ -30,19 +30,19 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
     private final android.widget.LinearLayout mboundView9;
     // variables
     @Nullable
+    private final android.view.View.OnClickListener mCallback237;
+    @Nullable
     private final android.view.View.OnClickListener mCallback235;
     @Nullable
     private final android.view.View.OnClickListener mCallback233;
     @Nullable
-    private final android.view.View.OnClickListener mCallback231;
+    private final android.view.View.OnClickListener mCallback238;
     @Nullable
     private final android.view.View.OnClickListener mCallback236;
     @Nullable
     private final android.view.View.OnClickListener mCallback234;
     @Nullable
     private final android.view.View.OnClickListener mCallback232;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback230;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -183,13 +183,13 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
         this.mboundView9.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback235 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback233 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback231 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback236 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
-        mCallback234 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback232 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback230 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback237 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback235 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback233 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback238 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback236 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback234 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback232 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -283,17 +283,17 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.btnEdit.setOnClickListener(mCallback231);
-            this.btnSave.setOnClickListener(mCallback236);
+            this.btnEdit.setOnClickListener(mCallback233);
+            this.btnSave.setOnClickListener(mCallback238);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etFacebook, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etFacebookandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etInstagram, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etInstagramandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etLinkedin, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etLinkedinandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etTwitter, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etTwitterandroidTextAttrChanged);
-            this.mboundView1.setOnClickListener(mCallback230);
-            this.mboundView3.setOnClickListener(mCallback232);
-            this.mboundView5.setOnClickListener(mCallback233);
-            this.mboundView7.setOnClickListener(mCallback234);
-            this.mboundView9.setOnClickListener(mCallback235);
+            this.mboundView1.setOnClickListener(mCallback232);
+            this.mboundView3.setOnClickListener(mCallback234);
+            this.mboundView5.setOnClickListener(mCallback235);
+            this.mboundView7.setOnClickListener(mCallback236);
+            this.mboundView9.setOnClickListener(mCallback237);
         }
         if ((dirtyFlags & 0x5L) != 0) {
             // api target 1

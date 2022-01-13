@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_seeker_profile"
+    app:startDestination="@id/seekerProfileFragment">
+
+    <fragment
+        android:id="@+id/seekerProfileFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment"
+        android:label="fragment_seeker_profile"
+        tools:layout="@layout/fragment_seeker_profile" >
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerAboutMeFragment"
+            app:destination="@id/seekerAboutMeFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerEducationFragment"
+            app:destination="@id/seekerEducationFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerMySkillFragment"
+            app:destination="@id/seekerMySkillFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_volunteeringAndActivitiesFragment"
+            app:destination="@id/volunteeringAndActivitiesFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerExperienceListFragment"
+            app:destination="@id/seekerExperienceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerAboutMeFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment"
+        android:label="fragment_seeker_about_me"
+        tools:layout="@layout/fragment_seeker_about_me" />
+    <fragment
+        android:id="@+id/seekerEducationFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerEducationFragment"
+        android:label="fragment_seeker_education"
+        tools:layout="@layout/fragment_seeker_education" >
+        <action
+            android:id="@+id/action_seekerEducationFragment_to_seekerNewEducationFragment"
+            app:destination="@id/seekerNewEducationFragment" />
+        <action
+            android:id="@+id/action_seekerEducationFragment_to_seekerProfileFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerMySkillFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerMySkillFragment"
+        android:label="fragment_seeker_my_skill"
+        tools:layout="@layout/fragment_seeker_my_skill" />
+    <fragment
+        android:id="@+id/seekerNewEducationFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerNewEducationFragment"
+        android:label="fragment_seeker_new_education"
+        tools:layout="@layout/fragment_seeker_new_education" >
+        <argument
+            android:name="education"
+            app:argType="com.findajob.jobamax.jobseeker.profile.cv.model.Education" />
+    </fragment>
+    <fragment
+        android:id="@+id/volunteeringAndActivitiesFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringAndActivitiesFragment"
+        android:label="fragment_volunteering_and_activities"
+        tools:layout="@layout/fragment_seeker_volunteering_and_activities" />
+    <fragment
+        android:id="@+id/seekerExperienceListFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerExperienceListFragment"
+        android:label="fragment_seeker_experience_list"
+        tools:layout="@layout/fragment_seeker_experience_list" >
+        <action
+            android:id="@+id/action_seekerExperienceListFragment_to_seekerAddExperienceFragment"
+            app:destination="@id/seekerAddExperienceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerAddExperienceFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerAddExperienceFragment"
+        android:label="fragment_seeker_add_experience"
+        tools:layout="@layout/fragment_seeker_add_experience" />
+</navigation>

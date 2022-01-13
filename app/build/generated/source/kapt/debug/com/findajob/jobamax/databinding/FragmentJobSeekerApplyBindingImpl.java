@@ -29,11 +29,11 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
     @Nullable
     private final android.view.View.OnClickListener mCallback79;
     @Nullable
-    private final android.view.View.OnClickListener mCallback76;
+    private final android.view.View.OnClickListener mCallback81;
     @Nullable
-    private final android.view.View.OnClickListener mCallback77;
+    private final android.view.View.OnClickListener mCallback82;
     @Nullable
-    private final android.view.View.OnClickListener mCallback75;
+    private final android.view.View.OnClickListener mCallback80;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -63,11 +63,11 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
         this.rewindButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback78 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback79 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback76 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback77 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback75 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback78 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback79 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback81 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback82 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback80 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -129,17 +129,51 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.acceptButton.setOnClickListener(mCallback79);
-            this.chatButton.setOnClickListener(mCallback78);
-            this.filterLayout.setOnClickListener(mCallback75);
-            this.rejectButton.setOnClickListener(mCallback77);
-            this.rewindButton.setOnClickListener(mCallback76);
+            this.acceptButton.setOnClickListener(mCallback82);
+            this.chatButton.setOnClickListener(mCallback81);
+            this.filterLayout.setOnClickListener(mCallback78);
+            this.rejectButton.setOnClickListener(mCallback80);
+            this.rewindButton.setOnClickListener(mCallback79);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.track.JobSeekerApplyInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSearchClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.track.JobSeekerApplyInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onRewindClicked();
+                }
+                break;
+            }
             case 4: {
                 // localize variables for thread safety
                 // handler
@@ -174,23 +208,6 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
                 }
                 break;
             }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.track.JobSeekerApplyInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onRewindClicked();
-                }
-                break;
-            }
             case 3: {
                 // localize variables for thread safety
                 // handler
@@ -205,23 +222,6 @@ public class FragmentJobSeekerApplyBindingImpl extends FragmentJobSeekerApplyBin
 
 
                     handler.onCancelClicked();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.track.JobSeekerApplyInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSearchClicked();
                 }
                 break;
             }

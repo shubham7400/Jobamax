@@ -26,7 +26,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     }
     // views
     @NonNull
-    private final android.widget.RelativeLayout mboundView0;
+    private final android.widget.ScrollView mboundView0;
     @NonNull
     private final android.widget.TextView mboundView2;
     @NonNull
@@ -74,7 +74,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
             , (android.widget.ImageView) bindings[1]
             , (android.widget.LinearLayout) bindings[16]
             );
-        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);

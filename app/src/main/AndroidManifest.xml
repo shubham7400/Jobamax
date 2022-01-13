@@ -35,6 +35,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".jobseeker.profile.account.JobSeekerAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jobseeker.profile.SeekerProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".dashboard.messages.ProfileActivity"
             android:exported="false" />
         <activity

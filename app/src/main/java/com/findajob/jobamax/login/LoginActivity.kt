@@ -25,6 +25,7 @@ import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.location.SelectLocationActivity
 import com.findajob.jobamax.model.JobSeeker
+import com.findajob.jobamax.model.Recruiter
 import com.findajob.jobamax.model.User
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
@@ -193,38 +194,35 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
         }
     }
 
-    fun login(email: String, password: String) {
+    fun loginSeeker(email: String, password: String) {
         progressHud.show()
-        var query: ParseQuery<ParseObject>? = null
-        if (getUserType() == 1){
-            query = ParseQuery.getQuery(ParseTableName.Recruiter.toString())
-        }else if(getUserType() == 2){
-            query = ParseQuery.getQuery(ParseTableName.JobSeeker.toString())
-        }
-        query!!.whereEqualTo(ParseTableFields.email.toString(), email)
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.email.toString(), email)
         query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.email.toString())
         query.whereEqualTo(ParseTableFields.password.toString(), password)
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
             if (e == null && result != null){
-                val jobSeeker = JobSeeker(result)
-                setUserId(jobSeeker.jobSeekerId)
-                setPhoneNumber(jobSeeker.phoneNumber)
-                setLoginType(jobSeeker.loginType)
-                setLoggedIn(true)
-                if (checkLocationPermission()) {
-                    startActivity(Intent(this, if (getUserType() == 2) JobSeekerHomeActivity::class.java else RecruiterHomeActivity::class.java))
-                    finishAffinity()
-                } else navController.navigate(
-                    R.id.locationPermissionFragment,
-                    bundleOf(ARG_ACTION to ACTION_LOGIN)
-                )
+                if(result.getBoolean("emailVerified")){
+                    val jobSeeker = JobSeeker(result)
+                    setUserId(jobSeeker.jobSeekerId)
+                    setPhoneNumber(jobSeeker.phoneNumber)
+                    setLoginType(jobSeeker.loginType)
+                    setLoggedIn(true)
+                    if (checkLocationPermission()) {
+                        startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                        finishAffinity()
+                    } else navController.navigate(
+                        R.id.locationPermissionFragment,
+                        bundleOf(ARG_ACTION to ACTION_LOGIN)
+                    )
+                }else{
+                    toast("Please verify account clicking on sent email at the time of registration.")
+                }
             }else{
                 toast("error: ${e.message.toString()}")
             }
         }
-
 
      /*   progressHud.show()
         val parseUser = ParseUser()
@@ -247,6 +245,37 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
                 checkForExistingUser(user)
             } else errorToast(e)
         }*/
+    }
+
+    fun loginRecruiter(email: String, password: String) {
+        progressHud.show()
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
+        query.whereEqualTo(ParseTableFields.email.toString(), email)
+        query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.email.toString())
+        query.whereEqualTo(ParseTableFields.password.toString(), password)
+        query.getFirstInBackground { result, e ->
+            progressHud.dismiss()
+            if (e == null && result != null) {
+                if (result.getBoolean("emailVerified")) {
+                    val recruiter = Recruiter(result)
+                    setUserId(recruiter.recruiterId)
+                    setPhoneNumber(recruiter.phoneNumber)
+                    setLoginType(recruiter.loginType)
+                    setLoggedIn(true)
+                    if (checkLocationPermission()) {
+                        startActivity(Intent(this, RecruiterHomeActivity::class.java))
+                        finishAffinity()
+                    } else navController.navigate(
+                        R.id.locationPermissionFragment,
+                        bundleOf(ARG_ACTION to ACTION_LOGIN)
+                    )
+                } else {
+                    toast("Please verify account clicking on sent email at the time of registration.")
+                }
+            } else {
+                toast("error: ${e.message.toString()}")
+            }
+        }
     }
 
     private fun saveDetails(user: User) {
@@ -290,6 +319,8 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
 //            finish()
         }
     }
+
+
 
 
 }

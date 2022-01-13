@@ -17,7 +17,6 @@ import com.findajob.jobamax.dashboard.home.training.online.courses.onlinecourse.
 import com.findajob.jobamax.dashboard.messages.ChatActivity_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.ChatViewModel_HiltModules;
 import com.findajob.jobamax.dashboard.messages.JobSeekerChatsFragment_GeneratedInjector;
-import com.findajob.jobamax.dashboard.messages.MainChatActivity_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.MessagesFragment_GeneratedInjector;
 import com.findajob.jobamax.dashboard.messages.MessagesViewModel_HiltModules;
 import com.findajob.jobamax.dashboard.messages.PreviewImageActivity_GeneratedInjector;
@@ -34,6 +33,10 @@ import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity_GeneratedIn
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.paymentMethods.JobSeekerPaymentMethodsFragment_GeneratedInjector;
@@ -267,13 +270,14 @@ public final class BaseApplication_HiltComponents {
       OnlineCourseActivity_GeneratedInjector,
       OnlineCourseDetailsActivity_GeneratedInjector,
       ChatActivity_GeneratedInjector,
-      MainChatActivity_GeneratedInjector,
       PreviewImageActivity_GeneratedInjector,
       PreviewJobSeekerActivity_GeneratedInjector,
       PreviewRecruiterActivity_GeneratedInjector,
       ProfileActivity_GeneratedInjector,
       JobSeekerCourseActivity_GeneratedInjector,
       JobSeekerHomeActivity_GeneratedInjector,
+      SeekerProfileActivity_GeneratedInjector,
+      JobSeekerAccountActivity_GeneratedInjector,
       JobSeekerApplyActivity_GeneratedInjector,
       SelectLocationActivity_GeneratedInjector,
       RecruiterHomeActivity_GeneratedInjector,
@@ -346,6 +350,8 @@ public final class BaseApplication_HiltComponents {
       MessagesFragment_GeneratedInjector,
       RecruiterChatsFragment_GeneratedInjector,
       JobSeekerProfileFragment_GeneratedInjector,
+      SeekerAboutMeFragment_GeneratedInjector,
+      SeekerProfileFragment_GeneratedInjector,
       JobSeekerAccountFragment_GeneratedInjector,
       JobSeekerNewsletterFragment_GeneratedInjector,
       JobSeekerPaymentMethodsFragment_GeneratedInjector,

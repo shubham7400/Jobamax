@@ -28,13 +28,13 @@ public class FragmentRecruiterPersonalInformationBindingImpl extends FragmentRec
     private final android.widget.RelativeLayout mboundView4;
     // variables
     @Nullable
+    private final android.view.View.OnClickListener mCallback184;
+    @Nullable
     private final android.view.View.OnClickListener mCallback182;
     @Nullable
-    private final android.view.View.OnClickListener mCallback180;
+    private final android.view.View.OnClickListener mCallback185;
     @Nullable
     private final android.view.View.OnClickListener mCallback183;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback181;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -177,10 +177,10 @@ public class FragmentRecruiterPersonalInformationBindingImpl extends FragmentRec
         this.postCodeField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback182 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback180 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback183 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback181 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback184 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback182 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback185 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback183 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -314,12 +314,12 @@ public class FragmentRecruiterPersonalInformationBindingImpl extends FragmentRec
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.companyNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, companyNameFieldandroidTextAttrChanged);
-            this.dobField.setOnClickListener(mCallback182);
+            this.dobField.setOnClickListener(mCallback184);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.firstNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, firstNameFieldandroidTextAttrChanged);
-            this.imageView8.setOnClickListener(mCallback180);
+            this.imageView8.setOnClickListener(mCallback182);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.lastNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, lastNameFieldandroidTextAttrChanged);
-            this.mboundView10.setOnClickListener(mCallback183);
-            this.mboundView4.setOnClickListener(mCallback181);
+            this.mboundView10.setOnClickListener(mCallback185);
+            this.mboundView4.setOnClickListener(mCallback183);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.postCodeField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, postCodeFieldandroidTextAttrChanged);
         }
     }

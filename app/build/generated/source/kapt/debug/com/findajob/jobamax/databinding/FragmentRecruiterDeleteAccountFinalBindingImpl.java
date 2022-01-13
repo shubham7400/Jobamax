@@ -24,9 +24,9 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
     private final androidx.appcompat.widget.AppCompatButton mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback184;
+    private final android.view.View.OnClickListener mCallback186;
     @Nullable
-    private final android.view.View.OnClickListener mCallback185;
+    private final android.view.View.OnClickListener mCallback187;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -47,8 +47,8 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback184 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback185 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback186 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback187 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -110,8 +110,8 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback184);
-            this.mboundView2.setOnClickListener(mCallback185);
+            this.imageView.setOnClickListener(mCallback186);
+            this.mboundView2.setOnClickListener(mCallback187);
         }
     }
     // Listener Stub Implementations

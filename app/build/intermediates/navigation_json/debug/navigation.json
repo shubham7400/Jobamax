@@ -25,6 +25,11 @@
     "deepLinks": []
   },
   {
+    "name": "nav_new_login",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
     "name": "nav_online_course",
     "navigationXmlIds": [],
     "deepLinks": []
@@ -36,6 +41,16 @@
   },
   {
     "name": "nav_room",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_account",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_profile",
     "navigationXmlIds": [],
     "deepLinks": []
   },

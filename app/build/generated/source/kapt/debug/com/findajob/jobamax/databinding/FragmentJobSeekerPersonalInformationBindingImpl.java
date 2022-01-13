@@ -30,11 +30,11 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
     private final android.widget.Button mboundView9;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback249;
+    private final android.view.View.OnClickListener mCallback253;
     @Nullable
     private final android.view.View.OnClickListener mCallback251;
     @Nullable
-    private final android.view.View.OnClickListener mCallback248;
+    private final android.view.View.OnClickListener mCallback252;
     @Nullable
     private final android.view.View.OnClickListener mCallback250;
     // values
@@ -151,10 +151,10 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
         this.postCodeField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback249 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback251 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback248 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback250 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback253 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback251 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback252 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback250 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -273,12 +273,12 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.dobField.setOnClickListener(mCallback250);
+            this.dobField.setOnClickListener(mCallback252);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.firstNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, firstNameFieldandroidTextAttrChanged);
-            this.imageView8.setOnClickListener(mCallback248);
+            this.imageView8.setOnClickListener(mCallback250);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.lastNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, lastNameFieldandroidTextAttrChanged);
-            this.mboundView4.setOnClickListener(mCallback249);
-            this.mboundView9.setOnClickListener(mCallback251);
+            this.mboundView4.setOnClickListener(mCallback251);
+            this.mboundView9.setOnClickListener(mCallback253);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.postCodeField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, postCodeFieldandroidTextAttrChanged);
         }
         if ((dirtyFlags & 0x5L) != 0) {
@@ -296,6 +296,23 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSubmitClicked();
+                }
+                break;
+            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -314,7 +331,7 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
                 }
                 break;
             }
-            case 4: {
+            case 3: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
@@ -327,7 +344,7 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onSubmitClicked();
+                    handler.onDobClicked();
                 }
                 break;
             }
@@ -345,23 +362,6 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
 
 
                     handler.onBackPress();
-                }
-                break;
-            }
-            case 3: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onDobClicked();
                 }
                 break;
             }

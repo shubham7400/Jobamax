@@ -13,17 +13,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_job_seeker_manage_read_receipts.*
 
 @AndroidEntryPoint
-class JobSeekerManageReadReceiptsFragment :
-    BaseFragmentMain<FragmentJobSeekerManageReadReceiptsBinding>(),
-    JobSeekerManageReadReceiptsInterface {
+class JobSeekerManageReadReceiptsFragment : BaseFragmentMain<FragmentJobSeekerManageReadReceiptsBinding>(), JobSeekerManageReadReceiptsInterface {
 
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
     override fun getViewModel(): ViewModel {
         return viewModel
     }
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_job_seeker_manage_read_receipts
+    override val layoutRes: Int get() = R.layout.fragment_job_seeker_manage_read_receipts
 
     override fun onCreated(savedInstance: Bundle?) {
         setHasOptionsMenu(true)

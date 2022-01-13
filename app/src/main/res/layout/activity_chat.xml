@@ -232,11 +232,11 @@
                     android:contentDescription="@string/send"
                     android:onClick="@{() -> vm.setSelectImage(true)}"
                     android:src="@drawable/ic_image"
-                    android:tint="@color/colorAccent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/chat_et_message"
                     app:layout_constraintStart_toEndOf="@+id/chat_b_camera"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:tint="@color/colorAccent" />
 
 
                 <ImageView
@@ -248,11 +248,11 @@
                     android:contentDescription="@string/send"
                     android:onClick="@{() -> handler.launchCamera()}"
                     android:src="@drawable/ic_camera"
-                    android:tint="@color/colorAccent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/chat_b_image"
                     app:layout_constraintStart_toEndOf="@+id/chat_b_file"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:tint="@color/colorAccent" />
 
                 <ImageView
                     android:id="@+id/chat_b_file"
@@ -262,11 +262,11 @@
                     android:contentDescription="@string/send"
                     android:onClick="@{() -> vm.setSelectFiles(true)}"
                     android:src="@drawable/ic_add_file"
-                    android:tint="@color/colorAccent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/chat_b_camera"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:tint="@color/colorAccent" />
 
                 <EditText
                     android:id="@+id/chat_et_message"
@@ -324,11 +324,11 @@
                             android:onClick="@{() -> handler.onSendMessage()}"
                             android:scaleType="centerInside"
                             android:src="@drawable/ic_send"
-                            android:tint="@{vm.form.messageValid? @color/com_facebook_messenger_blue : @color/grey}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:tint="@{vm.form.messageValid? @color/com_facebook_messenger_blue : @color/grey}" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>

@@ -22,8 +22,7 @@ import kotlinx.coroutines.launch
 import org.jetbrains.anko.image
 
 @AndroidEntryPoint
-class JobSeekerPaymentMethodsFragment : BaseFragmentMain<FragmentJobSeekerPaymentMethodsBinding>(),
-    JobSeekerPaymentMethodsInterface {
+class JobSeekerPaymentMethodsFragment : BaseFragmentMain<FragmentJobSeekerPaymentMethodsBinding>(), JobSeekerPaymentMethodsInterface {
 
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
     override fun getViewModel(): ViewModel {
@@ -40,22 +39,15 @@ class JobSeekerPaymentMethodsFragment : BaseFragmentMain<FragmentJobSeekerPaymen
             val cardInputWidget = binding.cardInputWidget
             val params = cardInputWidget.paymentMethodCreateParams ?: return
 
-            stripe = Stripe(
-                requireContext(),
-                PaymentConfiguration.getInstance(requireContext()).publishableKey
-            )
+            stripe = Stripe(requireContext(), PaymentConfiguration.getInstance(requireContext()).publishableKey)
             lifecycleScope.launch {
                 runCatching {
                     stripe.createPaymentMethod(params).id
-                }.fold(
-                    onSuccess = { paymentMethodId ->
-                        viewModel.savePaymentMethod(
-                            paymentMethodId!!,
-                            object : SaveCardDetailsCallback {
+                }.fold(onSuccess = { paymentMethodId ->
+                        viewModel.savePaymentMethod(paymentMethodId!!, object : SaveCardDetailsCallback {
                                 override fun onSuccess(response: Any?) {
                                     showPaymentMethod()
                                 }
-
                                 override fun onFailure(e: Exception?) {
                                 }
                             })

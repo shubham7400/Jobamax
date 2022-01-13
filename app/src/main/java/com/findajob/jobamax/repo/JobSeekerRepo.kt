@@ -1,6 +1,8 @@
 package com.findajob.jobamax.repo
 
 import android.content.Context
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.model.GetUserCallback
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.JobSource
@@ -20,8 +22,8 @@ import javax.inject.Inject
 class JobSeekerRepo @Inject constructor(var context: Context) {
 
     fun getCurrent(callback: GetUserCallback) {
-        val query = ParseQuery.getQuery<ParseObject>("JobSeeker")
-        query.whereEqualTo("jobSeekerId", context.getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context.getUserId())
         query.findInBackground { it, e ->
             val jobSeeker = it?.firstOrNull()
             when {

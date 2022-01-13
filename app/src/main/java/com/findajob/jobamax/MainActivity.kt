@@ -13,9 +13,8 @@ import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.model.JobSeeker
-import com.findajob.jobamax.preference.getRole
-import com.findajob.jobamax.preference.getUserType
-import com.findajob.jobamax.preference.isLoggedIn
+import com.findajob.jobamax.model.Recruiter
+import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
 import com.findajob.jobamax.util.ROLE_JOB_SEEKER
 import com.findajob.jobamax.util.ROLE_RECRUITER
@@ -44,7 +43,6 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
     }
 
     private fun handleDeepLink(it: Intent) {
-
             Firebase.dynamicLinks
                 .getDynamicLink(it)
                 .addOnSuccessListener(this) { pendingDynamicLinkData ->
@@ -56,7 +54,7 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
                         val loginType = deepLink?.getQueryParameter("LoginType")
                         val id = deepLink?.getQueryParameter("recruiterId")
                         val topicId = deepLink?.getQueryParameter("topicId")
-                        val path = deepLink?.path!!.substring(1, deepLink!!.path!!.lastIndex)
+                        val path = deepLink?.path!!.substring(1, deepLink!!.path!!.length)
                         when(path){
                             FirebaseDynamicLinkPath.verifyemail.toString() -> {
                                 if (userType == "2"){
@@ -74,19 +72,35 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
                 .addOnFailureListener(this) { e ->
                     log("getDynamicLink:onFailure ${e.message.toString()}")
                 }
-
     }
 
-    private fun updateIsEmailVerifiedInRecruiter(id: String?) {
-      /*   val query = ParseQuery.getQuery<ParseObject>(ROLE_RECRUITER)
-        query.whereEqualTo(ParseTableFields.r.toString(), id)
-        val result = query.findInBackground()
-        if (result == null){
-            log("ssssererer $result")
-        }else{
-            log("sererer $result")
-        }*/
+    private fun updateIsEmailVerifiedInRecruiter(recruiterId: String?) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
+        query.whereEqualTo(ParseTableFields.recruiterId.toString(), recruiterId)
+        query.getFirstInBackground { obj, e ->
+            if (e != null){
+                toast("error "+e.message.toString())
+            }else{
+                obj.put(ParseTableFields.emailVerified.toString(),true)
+                obj.saveInBackground {
+                    if (it == null){
+                        toast("Email has been verified successfully.")
+                        val recruiter = Recruiter(obj)
+                        setUserId(recruiterId!!)
+                        setPhoneNumber(recruiter.phoneNumber)
+                        setLoginType(recruiter.loginType)
+                        setLoggedIn(true)
+                        startActivity(Intent(this,  RecruiterHomeActivity::class.java))
+                        finishAffinity()
+                    }else{
+                        toast(it.message.toString())
+                    }
+                }
+            }
+        }
     }
+
+
 
     private fun updateIsEmailVerifiedInJobSeeker(jobSeekerId: String?) {
             val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
@@ -99,7 +113,13 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
                     obj.saveInBackground {
                         if (it == null){
                             toast("Email has been verified successfully.")
-                            getJobSeekerLoggedIn()
+                            val jobSeeker = JobSeeker(obj)
+                            setUserId(jobSeekerId!!)
+                            setPhoneNumber(jobSeeker.phoneNumber)
+                            setLoginType(jobSeeker.loginType)
+                            setLoggedIn(true)
+                            startActivity(Intent(this,  JobSeekerHomeActivity::class.java))
+                            finishAffinity()
                         }else{
                             toast(it.message.toString())
                         }
@@ -108,9 +128,6 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
             }
     }
 
-    private fun getJobSeekerLoggedIn() {
-
-    }
 
     override fun onCreated(instance: Bundle?) {
         configureNavigation()

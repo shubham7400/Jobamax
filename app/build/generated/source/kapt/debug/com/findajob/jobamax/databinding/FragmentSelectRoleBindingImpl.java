@@ -27,11 +27,11 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
     @Nullable
     private final android.view.View.OnClickListener mCallback117;
     @Nullable
-    private final android.view.View.OnClickListener mCallback115;
+    private final android.view.View.OnClickListener mCallback118;
     @Nullable
     private final android.view.View.OnClickListener mCallback116;
     @Nullable
-    private final android.view.View.OnClickListener mCallback114;
+    private final android.view.View.OnClickListener mCallback119;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -57,10 +57,10 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
         this.seekerIcon.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback117 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback115 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback116 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback114 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback117 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback118 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback116 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback119 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
         invalidateAll();
     }
 
@@ -122,33 +122,16 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.jobSeekerLabel.setOnClickListener(mCallback115);
-            this.mboundView4.setOnClickListener(mCallback117);
-            this.recruiterIcon.setOnClickListener(mCallback116);
-            this.seekerIcon.setOnClickListener(mCallback114);
+            this.jobSeekerLabel.setOnClickListener(mCallback117);
+            this.mboundView4.setOnClickListener(mCallback119);
+            this.recruiterIcon.setOnClickListener(mCallback118);
+            this.seekerIcon.setOnClickListener(mCallback116);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.SelectRoleInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onRecruiterClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -197,6 +180,23 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
 
 
                     handler.onJobSeekerClicked();
+                }
+                break;
+            }
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.SelectRoleInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onRecruiterClicked();
                 }
                 break;
             }

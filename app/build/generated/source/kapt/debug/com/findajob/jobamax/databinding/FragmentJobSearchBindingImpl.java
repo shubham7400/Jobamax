@@ -46,11 +46,11 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
     @Nullable
     private final android.view.View.OnClickListener mCallback217;
     @Nullable
-    private final android.view.View.OnClickListener mCallback215;
+    private final android.view.View.OnClickListener mCallback219;
     @Nullable
     private final android.view.View.OnClickListener mCallback216;
     @Nullable
-    private final android.view.View.OnClickListener mCallback214;
+    private final android.view.View.OnClickListener mCallback218;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -279,10 +279,10 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
         this.submitButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback217 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback215 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback216 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback214 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback217 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback219 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback216 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback218 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -400,7 +400,7 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback214);
+            this.mboundView1.setOnClickListener(mCallback216);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView10, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView10androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView4, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView4androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView5, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView5androidCheckedAttrChanged);
@@ -408,32 +408,15 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView7, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView7androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView8, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView8androidCheckedAttrChanged);
             androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.mboundView9, (android.widget.CompoundButton.OnCheckedChangeListener)null, mboundView9androidCheckedAttrChanged);
-            this.resetButton.setOnClickListener(mCallback217);
-            this.rlLocation.setOnClickListener(mCallback215);
-            this.submitButton.setOnClickListener(mCallback216);
+            this.resetButton.setOnClickListener(mCallback219);
+            this.rlLocation.setOnClickListener(mCallback217);
+            this.submitButton.setOnClickListener(mCallback218);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onResetClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -451,7 +434,7 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
                 }
                 break;
             }
-            case 3: {
+            case 4: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchInterface handler = mHandler;
@@ -464,7 +447,7 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onSubmitButtonClicked();
+                    handler.onResetClicked();
                 }
                 break;
             }
@@ -482,6 +465,23 @@ public class FragmentJobSearchBindingImpl extends FragmentJobSearchBinding imple
 
 
                     handler.onBackButtonClicked();
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSubmitButtonClicked();
                 }
                 break;
             }

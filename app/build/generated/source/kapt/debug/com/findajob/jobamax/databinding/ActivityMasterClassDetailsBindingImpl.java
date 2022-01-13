@@ -28,7 +28,7 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
     private final androidx.appcompat.widget.AppCompatImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback155;
+    private final android.view.View.OnClickListener mCallback157;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -61,7 +61,7 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
         this.tvVideoTitle.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback155 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback157 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -193,7 +193,7 @@ public class ActivityMasterClassDetailsBindingImpl extends ActivityMasterClassDe
         if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback155);
+            this.mboundView1.setOnClickListener(mCallback157);
         }
         if ((dirtyFlags & 0xcL) != 0) {
             // api target 1

@@ -17,14 +17,11 @@ import com.suke.widget.SwitchButton
 
 
 @AndroidEntryPoint
-class JobSeekerPushNotificationFragment :
-    BaseFragmentMain<FragmentJobSeekerPushNotificationBinding>(),
-    JobSeekerPushNotificationInterface {
+class JobSeekerPushNotificationFragment : BaseFragmentMain<FragmentJobSeekerPushNotificationBinding>(), JobSeekerPushNotificationInterface {
 
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_job_seeker_push_notification
+    override val layoutRes: Int get() = R.layout.fragment_job_seeker_push_notification
 
     override fun onCreated(savedInstance: Bundle?) {
         binding.handler = this

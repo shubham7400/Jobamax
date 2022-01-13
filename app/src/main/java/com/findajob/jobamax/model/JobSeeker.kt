@@ -43,6 +43,10 @@ class JobSeeker {
     var educations: String = ""
     var experiences: String = ""
     var skills: String = ""
+    var hardSkills: String = ""
+    var softSkills: String = ""
+    var workspaces: String = ""
+    var volunteerings: String = ""
     var activities: String = ""
     var aboutMe: String = ""
 
@@ -99,6 +103,10 @@ class JobSeeker {
         jobSeeker.put("educations", educations)
         jobSeeker.put("experiences", experiences)
         jobSeeker.put("skills", skills)
+        jobSeeker.put("hardSkills", hardSkills)
+        jobSeeker.put("softSkills", softSkills)
+        jobSeeker.put("workspaces", workspaces)
+        jobSeeker.put("volunteerings", volunteerings)
         jobSeeker.put("activities", activities)
         jobSeeker.put("aboutMe", aboutMe)
 
@@ -165,6 +173,10 @@ class JobSeeker {
         this.educations = obj["educations"]?.toString() ?: ""
         this.experiences = obj["experiences"]?.toString() ?: ""
         this.skills = obj["skills"]?.toString() ?: ""
+        this.hardSkills = obj["hardSkills"]?.toString() ?: ""
+        this.softSkills = obj["softSkills"]?.toString() ?: ""
+        this.workspaces = obj["workspaces"]?.toString() ?: ""
+        this.volunteerings = obj["volunteerings"]?.toString() ?: ""
         this.activities = obj["activities"]?.toString() ?: ""
         this.aboutMe = obj["aboutMe"]?.toString() ?: ""
 

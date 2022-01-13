@@ -16,142 +16,12 @@
 		<variable
 			name="handler"
 			type="com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface" />
+		<variable
+			name="jobSeeker"
+			type="com.findajob.jobamax.model.JobSeeker" />
 		
 		<import type="android.view.View" />
 	</data>
-	
-	<!--<RelativeLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:background="@color/white">
-		
-		<LinearLayout
-			android:id="@+id/appbar"
-			android:layout_width="match_parent"
-			android:layout_height="80dp"
-			android:orientation="horizontal">
-			
-			<View
-				android:id="@+id/firstGap"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_weight="@{state == 1 ? 6 : 0}"
-				android:visibility="@{state == 1 ? View.VISIBLE : View.GONE}" />
-			
-			<LinearLayout
-				android:id="@+id/firstIconLayout"
-				android:onClick="@{() -> handler.onIconClicked(1)}"
-				android:layout_width="0dp"
-				android:layout_height="match_parent"
-				android:layout_weight="2"
-				android:gravity="center">
-				
-				<ImageView
-					android:id="@+id/firstIcon"
-					android:layout_width="32dp"
-					android:layout_height="32dp"
-					android:adjustViewBounds="true"
-					android:scaleType="fitCenter"
-					android:src="@drawable/ic_course" />
-			
-			</LinearLayout>
-			
-			<View
-				android:id="@+id/secondGap"
-				android:layout_width="0dp"
-				android:layout_weight="@{state == 2 ? 3 : 0}"
-				android:layout_height="wrap_content"
-				android:visibility="@{state == 2 ? View.VISIBLE : View.GONE}" />
-			
-			<RelativeLayout
-				android:id="@+id/secondIconLayout"
-				android:onClick="@{() -> handler.onIconClicked(2)}"
-				android:layout_width="0dp"
-				android:layout_height="match_parent"
-				android:layout_weight="@{state == 2 ? 4 : 2}"
-				android:gravity="center">
-				
-				<ImageView
-					android:id="@+id/secondIcon"
-					android:layout_width="match_parent"
-					android:layout_height="32dp"
-					android:adjustViewBounds="true"
-					android:src="@drawable/ic_track" />
-				
-				<ImageView
-					android:id="@+id/toggleIcon"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:adjustViewBounds="true"
-					android:src="@drawable/ic_apply_switch"
-					android:visibility="gone" />
-			
-			</RelativeLayout>
-			
-			<View
-				android:id="@+id/thirdGap"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_weight="@{state == 3 ? 2 : (state == 2 ? 1 : 0)}"
-				android:visibility="@{(state == 2 || state == 3) ? View.VISIBLE : View.GONE}" />
-			
-			<LinearLayout
-				android:id="@+id/thirdIconLayout"
-				android:onClick="@{() -> handler.onIconClicked(3)}"
-				android:layout_width="0dp"
-				android:layout_height="match_parent"
-				android:layout_weight="2"
-				android:gravity="center">
-				
-				<ImageView
-					android:id="@+id/thirdIcon"
-					android:layout_width="32dp"
-					android:layout_height="32dp"
-					android:src="@drawable/ic_chat" />
-			
-			</LinearLayout>
-			
-			<View
-				android:id="@+id/fourthGap"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_weight="@{state == 3 ? 4 : 0}"
-				android:visibility="@{state == 3 ? View.VISIBLE : View.GONE}" />
-			
-			<LinearLayout
-				android:id="@+id/fourthIconLayout"
-				android:onClick="@{() -> handler.onIconClicked(4)}"
-				android:layout_width="0dp"
-				android:layout_height="match_parent"
-				android:layout_weight="2"
-				android:gravity="center">
-				
-				<ImageView
-					android:id="@+id/fourthIcon"
-					android:layout_width="24dp"
-					android:layout_height="24dp"
-					android:src="@drawable/ic_profile" />
-			
-			</LinearLayout>
-			
-			<View
-				android:id="@+id/fifthGap"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_weight="@{state == 4 ? 6 : 0}"
-				android:visibility="@{state == 4 ? View.VISIBLE : View.GONE}" />
-		</LinearLayout>
-
-		<fragment
-			android:id="@+id/nav_host_fragment"
-			android:name="androidx.navigation.fragment.NavHostFragment"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_below="@id/appbar"
-			app:defaultNavHost="true"
-			app:navGraph="@navigation/nav_job_seeker_home" />
-	
-	</RelativeLayout>-->
 
 	<androidx.core.widget.NestedScrollView
 		android:background="#E9F2FB"
@@ -185,7 +55,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="30dp"
-					android:text="Hello Shubham,"
+					android:text="@{`Hello `+ jobSeeker.firstName}"
 					android:textColor="@color/black"
 					android:fontFamily="@font/opensans_bold"
 					android:textFontWeight="@integer/material_motion_duration_medium_1"
@@ -356,7 +226,7 @@
 					<RelativeLayout
 						android:id="@+id/v_track"
 						android:layout_weight="0.50"
-						android:background="#C1DCF7"
+						android:background="@drawable/rounded_multi_color_box"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content">
 
@@ -381,7 +251,7 @@
 							android:fontFamily="@font/opensans_bold"
 							android:gravity="center_horizontal"
 							android:text="Track my applications"
-							android:textColor="#7800EF"
+							android:textColor="@color/white"
 							android:textSize="18dp" />
 					</RelativeLayout>
 
@@ -472,7 +342,7 @@
 					</RelativeLayout>
 				</LinearLayout>
 
- 				<Button
+				<Button
 					android:id="@+id/btn_coaching"
 					android:layout_width="match_parent"
 					android:layout_height="50dp"
@@ -488,5 +358,139 @@
 			</androidx.constraintlayout.widget.ConstraintLayout>
 		</LinearLayout>
 	</androidx.core.widget.NestedScrollView>
+
+	<!--<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/white">
+		
+		<LinearLayout
+			android:id="@+id/appbar"
+			android:layout_width="match_parent"
+			android:layout_height="80dp"
+			android:orientation="horizontal">
+			
+			<View
+				android:id="@+id/firstGap"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="@{state == 1 ? 6 : 0}"
+				android:visibility="@{state == 1 ? View.VISIBLE : View.GONE}" />
+			
+			<LinearLayout
+				android:id="@+id/firstIconLayout"
+				android:onClick="@{() -> handler.onIconClicked(1)}"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="2"
+				android:gravity="center">
+				
+				<ImageView
+					android:id="@+id/firstIcon"
+					android:layout_width="32dp"
+					android:layout_height="32dp"
+					android:adjustViewBounds="true"
+					android:scaleType="fitCenter"
+					android:src="@drawable/ic_course" />
+			
+			</LinearLayout>
+			
+			<View
+				android:id="@+id/secondGap"
+				android:layout_width="0dp"
+				android:layout_weight="@{state == 2 ? 3 : 0}"
+				android:layout_height="wrap_content"
+				android:visibility="@{state == 2 ? View.VISIBLE : View.GONE}" />
+			
+			<RelativeLayout
+				android:id="@+id/secondIconLayout"
+				android:onClick="@{() -> handler.onIconClicked(2)}"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="@{state == 2 ? 4 : 2}"
+				android:gravity="center">
+				
+				<ImageView
+					android:id="@+id/secondIcon"
+					android:layout_width="match_parent"
+					android:layout_height="32dp"
+					android:adjustViewBounds="true"
+					android:src="@drawable/ic_track" />
+				
+				<ImageView
+					android:id="@+id/toggleIcon"
+					android:layout_width="match_parent"
+					android:layout_height="40dp"
+					android:adjustViewBounds="true"
+					android:src="@drawable/ic_apply_switch"
+					android:visibility="gone" />
+			
+			</RelativeLayout>
+			
+			<View
+				android:id="@+id/thirdGap"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="@{state == 3 ? 2 : (state == 2 ? 1 : 0)}"
+				android:visibility="@{(state == 2 || state == 3) ? View.VISIBLE : View.GONE}" />
+			
+			<LinearLayout
+				android:id="@+id/thirdIconLayout"
+				android:onClick="@{() -> handler.onIconClicked(3)}"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="2"
+				android:gravity="center">
+				
+				<ImageView
+					android:id="@+id/thirdIcon"
+					android:layout_width="32dp"
+					android:layout_height="32dp"
+					android:src="@drawable/ic_chat" />
+			
+			</LinearLayout>
+			
+			<View
+				android:id="@+id/fourthGap"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="@{state == 3 ? 4 : 0}"
+				android:visibility="@{state == 3 ? View.VISIBLE : View.GONE}" />
+			
+			<LinearLayout
+				android:id="@+id/fourthIconLayout"
+				android:onClick="@{() -> handler.onIconClicked(4)}"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="2"
+				android:gravity="center">
+				
+				<ImageView
+					android:id="@+id/fourthIcon"
+					android:layout_width="24dp"
+					android:layout_height="24dp"
+					android:src="@drawable/ic_profile" />
+			
+			</LinearLayout>
+			
+			<View
+				android:id="@+id/fifthGap"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="@{state == 4 ? 6 : 0}"
+				android:visibility="@{state == 4 ? View.VISIBLE : View.GONE}" />
+		</LinearLayout>
+
+		<fragment
+			android:id="@+id/nav_host_fragment"
+			android:name="androidx.navigation.fragment.NavHostFragment"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/appbar"
+			app:defaultNavHost="true"
+			app:navGraph="@navigation/nav_job_seeker_home" />
+	
+	</RelativeLayout>-->
+
 
 </layout>

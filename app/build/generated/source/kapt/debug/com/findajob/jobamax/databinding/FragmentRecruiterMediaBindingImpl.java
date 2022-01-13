@@ -31,13 +31,13 @@ public class FragmentRecruiterMediaBindingImpl extends FragmentRecruiterMediaBin
     private final androidx.appcompat.widget.AppCompatButton mboundView6;
     // variables
     @Nullable
+    private final android.view.View.OnClickListener mCallback89;
+    @Nullable
     private final android.view.View.OnClickListener mCallback87;
     @Nullable
-    private final android.view.View.OnClickListener mCallback85;
+    private final android.view.View.OnClickListener mCallback88;
     @Nullable
-    private final android.view.View.OnClickListener mCallback86;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback84;
+    private final android.view.View.OnClickListener mCallback90;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -67,10 +67,10 @@ public class FragmentRecruiterMediaBindingImpl extends FragmentRecruiterMediaBin
         this.videoPresentationIcon.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback87 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback85 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback86 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback84 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback89 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback87 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback88 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback90 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
         invalidateAll();
     }
 
@@ -200,50 +200,16 @@ public class FragmentRecruiterMediaBindingImpl extends FragmentRecruiterMediaBin
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback84);
-            this.mboundView2.setOnClickListener(mCallback85);
-            this.mboundView4.setOnClickListener(mCallback86);
-            this.mboundView6.setOnClickListener(mCallback87);
+            this.mboundView1.setOnClickListener(mCallback87);
+            this.mboundView2.setOnClickListener(mCallback88);
+            this.mboundView4.setOnClickListener(mCallback89);
+            this.mboundView6.setOnClickListener(mCallback90);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.media.RecruiterMediaInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSubmitButtonClicked();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.media.RecruiterMediaInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onCompanyLogoClicked();
-                }
-                break;
-            }
             case 3: {
                 // localize variables for thread safety
                 // handler
@@ -275,6 +241,40 @@ public class FragmentRecruiterMediaBindingImpl extends FragmentRecruiterMediaBin
 
 
                     handler.onBackButtonClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.media.RecruiterMediaInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onCompanyLogoClicked();
+                }
+                break;
+            }
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.media.RecruiterMediaInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSubmitButtonClicked();
                 }
                 break;
             }

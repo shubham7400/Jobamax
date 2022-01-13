@@ -26,9 +26,9 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
     private final android.widget.ImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback124;
+    private final android.view.View.OnClickListener mCallback126;
     @Nullable
-    private final android.view.View.OnClickListener mCallback123;
+    private final android.view.View.OnClickListener mCallback125;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,8 +51,8 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
         this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback124 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback123 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback126 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback125 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,8 +114,8 @@ public class FragmentLiveRoomInterestsBindingImpl extends FragmentLiveRoomIntere
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.btnContinue.setOnClickListener(mCallback124);
-            this.mboundView1.setOnClickListener(mCallback123);
+            this.btnContinue.setOnClickListener(mCallback126);
+            this.mboundView1.setOnClickListener(mCallback125);
         }
     }
     // Listener Stub Implementations
