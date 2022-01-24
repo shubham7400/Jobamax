@@ -93,8 +93,6 @@ class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBindin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-      /*  val navHostFragment = (activity as ProfileActivity).supportFragmentManager.findFragmentById(R.id.nav_job_seeker_home) as NavHostFragment
-        navController = navHostFragment.navController*/
         navController = Navigation.findNavController(view)
     }
 
@@ -106,8 +104,7 @@ class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBindin
 
     private fun initFields() {
         if (viewModel.jobSeeker.profilePicUrl.isNotEmpty())
-            Picasso.get().load(viewModel.jobSeeker.profilePicUrl)
-                .transform(CropCircleTransformation()).into(profilePicIcon)
+            Picasso.get().load(viewModel.jobSeeker.profilePicUrl).transform(CropCircleTransformation()).into(profilePicIcon)
         userNameLabel.text = viewModel.jobSeeker.firstName
     }
 
@@ -154,8 +151,7 @@ class JobSeekerProfileFragment : BaseFragmentMain<FragmentJobSeekerProfileBindin
                 val profilePicUri = result.uri
                 if (profilePicUri != null) {
                     progressHud.show()
-                    Picasso.get().load(profilePicUri).transform(CropCircleTransformation())
-                        .into(profilePicIcon)
+                    Picasso.get().load(profilePicUri).transform(CropCircleTransformation()).into(profilePicIcon)
                     viewModel.uploadProfilePicUri(profilePicUri, object : SaveParseObjectCallback {
                         override fun onFinish(isSuccessful: Boolean) {
                             progressHud.dismiss()

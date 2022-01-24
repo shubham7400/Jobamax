@@ -27,6 +27,7 @@ class ChatUserListFragment : Fragment() {
     }
 
     private fun configureUi() {
+        setClickListeners()
         val chatUserHorizontalAdapter = ChatUserHorizontalAdapter(userListHorizontal)
         binding.rvChatUserHorizontal.adapter = chatUserHorizontalAdapter
         chatUserHorizontalAdapter.clickListener = {
@@ -44,6 +45,12 @@ class ChatUserListFragment : Fragment() {
                 .replace(R.id.fragment_container, ChatMessageBoardFragment())
                 .addToBackStack("backStackStateName")
                 .commit()
+        }
+    }
+
+    private fun setClickListeners() {
+        binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 }

@@ -33,4 +33,9 @@ public class SeekerProfileFragmentDirections {
   public static NavDirections actionSeekerProfileFragmentToSeekerExperienceListFragment() {
     return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerExperienceListFragment);
   }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToSeekerPortfolioFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerPortfolioFragment);
+  }
 }

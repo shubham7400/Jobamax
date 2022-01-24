@@ -14,80 +14,90 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.imageView11, 2);
-        sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.textView6, 4);
-        sViewsWithIds.put(R.id.constraintLayout3, 5);
-        sViewsWithIds.put(R.id.tv_aaa, 6);
-        sViewsWithIds.put(R.id.tv_about_me_btn, 7);
-        sViewsWithIds.put(R.id.tv_ddd, 8);
-        sViewsWithIds.put(R.id.tv_calender_title, 9);
-        sViewsWithIds.put(R.id.iv_calender, 10);
-        sViewsWithIds.put(R.id.tv_calender_titlef, 11);
-        sViewsWithIds.put(R.id.iv_calvender, 12);
-        sViewsWithIds.put(R.id.tv_calender_titlex, 13);
-        sViewsWithIds.put(R.id.iv_calendxer, 14);
-        sViewsWithIds.put(R.id.cl_education, 15);
-        sViewsWithIds.put(R.id.textView7, 16);
-        sViewsWithIds.put(R.id.textView8, 17);
-        sViewsWithIds.put(R.id.cl_jobs, 18);
-        sViewsWithIds.put(R.id.textView77, 19);
-        sViewsWithIds.put(R.id.textView88, 20);
-        sViewsWithIds.put(R.id.cl_volunteering_activities, 21);
-        sViewsWithIds.put(R.id.textView76, 22);
-        sViewsWithIds.put(R.id.textView86, 23);
-        sViewsWithIds.put(R.id.cl_skills, 24);
-        sViewsWithIds.put(R.id.textView73, 25);
-        sViewsWithIds.put(R.id.textView83, 26);
-        sViewsWithIds.put(R.id.iv_add_ideal_workspace_btn, 27);
-        sViewsWithIds.put(R.id.et_ideal_workspace, 28);
-        sViewsWithIds.put(R.id.cg_ideal_workspace, 29);
+        sViewsWithIds.put(R.id.imageView11, 3);
+        sViewsWithIds.put(R.id.iv_back_button, 4);
+        sViewsWithIds.put(R.id.imageView17, 5);
+        sViewsWithIds.put(R.id.textView6, 6);
+        sViewsWithIds.put(R.id.constraintLayout3, 7);
+        sViewsWithIds.put(R.id.tv_aaa, 8);
+        sViewsWithIds.put(R.id.tv_about_me_btn, 9);
+        sViewsWithIds.put(R.id.tv_ddd, 10);
+        sViewsWithIds.put(R.id.iv_info, 11);
+        sViewsWithIds.put(R.id.rl_portfolio, 12);
+        sViewsWithIds.put(R.id.tv_calender_title, 13);
+        sViewsWithIds.put(R.id.iv_calender, 14);
+        sViewsWithIds.put(R.id.tv_calender_titlef, 15);
+        sViewsWithIds.put(R.id.iv_calvender, 16);
+        sViewsWithIds.put(R.id.tv_calender_titlex, 17);
+        sViewsWithIds.put(R.id.iv_calendxer, 18);
+        sViewsWithIds.put(R.id.cl_education, 19);
+        sViewsWithIds.put(R.id.textView7, 20);
+        sViewsWithIds.put(R.id.textView8, 21);
+        sViewsWithIds.put(R.id.cl_jobs, 22);
+        sViewsWithIds.put(R.id.textView77, 23);
+        sViewsWithIds.put(R.id.textView88, 24);
+        sViewsWithIds.put(R.id.cl_volunteering_activities, 25);
+        sViewsWithIds.put(R.id.textView76, 26);
+        sViewsWithIds.put(R.id.textView86, 27);
+        sViewsWithIds.put(R.id.cl_skills, 28);
+        sViewsWithIds.put(R.id.textView73, 29);
+        sViewsWithIds.put(R.id.textView83, 30);
+        sViewsWithIds.put(R.id.iv_add_ideal_workspace_btn, 31);
+        sViewsWithIds.put(R.id.et_ideal_workspace, 32);
+        sViewsWithIds.put(R.id.cg_ideal_workspace, 33);
     }
     // views
     @NonNull
     private final androidx.core.widget.NestedScrollView mboundView0;
+    @NonNull
+    private final de.hdodenhof.circleimageview.CircleImageView mboundView2;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerProfileBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 30, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 34, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerProfileBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.chip.ChipGroup) bindings[29]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[15]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[18]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[24]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[21]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
-            , (android.widget.AutoCompleteTextView) bindings[28]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.ImageView) bindings[27]
+            , (com.google.android.material.chip.ChipGroup) bindings[33]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[19]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[22]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[28]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[25]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
+            , (android.widget.AutoCompleteTextView) bindings[32]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[10]
+            , (android.widget.ImageView) bindings[5]
+            , (android.widget.ImageView) bindings[31]
+            , (android.widget.ImageView) bindings[4]
             , (android.widget.ImageView) bindings[14]
-            , (android.widget.ImageView) bindings[12]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[16]
-            , (android.widget.TextView) bindings[25]
-            , (android.widget.TextView) bindings[22]
-            , (android.widget.TextView) bindings[19]
-            , (android.widget.ImageView) bindings[17]
-            , (android.widget.ImageView) bindings[26]
-            , (android.widget.ImageView) bindings[23]
-            , (android.widget.ImageView) bindings[20]
+            , (android.widget.ImageView) bindings[18]
+            , (android.widget.ImageView) bindings[16]
+            , (android.widget.ImageView) bindings[11]
+            , (android.widget.RelativeLayout) bindings[12]
             , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[11]
-            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[20]
+            , (android.widget.TextView) bindings[29]
+            , (android.widget.TextView) bindings[26]
+            , (android.widget.TextView) bindings[23]
+            , (android.widget.ImageView) bindings[21]
+            , (android.widget.ImageView) bindings[30]
+            , (android.widget.ImageView) bindings[27]
+            , (android.widget.ImageView) bindings[24]
             , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[9]
+            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[10]
             , (android.widget.TextView) bindings[1]
             );
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
+        this.mboundView2 = (de.hdodenhof.circleimageview.CircleImageView) bindings[2];
+        this.mboundView2.setTag(null);
         this.tvSeekerName.setTag(null);
         setRootTag(root);
         // listeners
@@ -148,6 +158,7 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
             mDirtyFlags = 0;
         }
         java.lang.String javaLangStringHelloJobSeekerFirstName = null;
+        java.lang.String jobSeekerProfilePicUrl = null;
         com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
         java.lang.String jobSeekerFirstName = null;
 
@@ -156,6 +167,8 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
 
 
                 if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
                     // read jobSeeker.firstName
                     jobSeekerFirstName = jobSeeker.getFirstName();
                 }
@@ -168,6 +181,7 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView2, jobSeekerProfilePicUrl);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvSeekerName, javaLangStringHelloJobSeekerFirstName);
         }
     }

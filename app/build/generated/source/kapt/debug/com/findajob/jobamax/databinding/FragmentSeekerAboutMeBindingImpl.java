@@ -14,44 +14,56 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.imageView12, 3);
-        sViewsWithIds.put(R.id.relativeLayout, 4);
-        sViewsWithIds.put(R.id.iv_back_button, 5);
-        sViewsWithIds.put(R.id.circleImageView2, 6);
-        sViewsWithIds.put(R.id.textView9, 7);
-        sViewsWithIds.put(R.id.textView10, 8);
-        sViewsWithIds.put(R.id.textView11, 9);
-        sViewsWithIds.put(R.id.et_description, 10);
-        sViewsWithIds.put(R.id.btn_save_info, 11);
+        sViewsWithIds.put(R.id.imageView12, 5);
+        sViewsWithIds.put(R.id.relativeLayout, 6);
+        sViewsWithIds.put(R.id.iv_back_button, 7);
+        sViewsWithIds.put(R.id.ll_social_media, 8);
+        sViewsWithIds.put(R.id.iv_insta, 9);
+        sViewsWithIds.put(R.id.iv_linkedin, 10);
+        sViewsWithIds.put(R.id.iv_tiktok, 11);
+        sViewsWithIds.put(R.id.iv_edit, 12);
+        sViewsWithIds.put(R.id.textView9, 13);
+        sViewsWithIds.put(R.id.textView10, 14);
+        sViewsWithIds.put(R.id.textView11, 15);
+        sViewsWithIds.put(R.id.et_description, 16);
+        sViewsWithIds.put(R.id.btn_save_info, 17);
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    private final androidx.core.widget.NestedScrollView mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAboutMeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAboutMeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[11]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
-            , (android.widget.EditText) bindings[10]
-            , (android.widget.EditText) bindings[1]
-            , (android.widget.EditText) bindings[2]
-            , (android.widget.ImageView) bindings[3]
+            , (android.widget.Button) bindings[17]
+            , (android.widget.EditText) bindings[16]
+            , (android.widget.EditText) bindings[3]
+            , (android.widget.EditText) bindings[4]
             , (android.widget.ImageView) bindings[5]
-            , (android.widget.RelativeLayout) bindings[4]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[7]
+            , (android.widget.ImageView) bindings[7]
+            , (android.widget.ImageView) bindings[12]
+            , (android.widget.ImageView) bindings[9]
+            , (android.widget.ImageView) bindings[10]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.ImageView) bindings[11]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
+            , (android.widget.LinearLayout) bindings[8]
+            , (android.widget.RelativeLayout) bindings[6]
+            , (android.widget.TextView) bindings[14]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[13]
             );
         this.etFirstName.setTag(null);
         this.etLastName.setTag(null);
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        this.ivProfileUser.setTag(null);
+        this.ivUserProfilePic.setTag(null);
+        this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
@@ -111,6 +123,7 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String jobSeekerProfilePicUrl = null;
         com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
         java.lang.String jobSeekerFirstName = null;
         java.lang.String jobSeekerLastName = null;
@@ -120,6 +133,8 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
 
 
                 if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
                     // read jobSeeker.firstName
                     jobSeekerFirstName = jobSeeker.getFirstName();
                     // read jobSeeker.lastName
@@ -132,6 +147,8 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etFirstName, jobSeekerFirstName);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etLastName, jobSeekerLastName);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivProfileUser, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivUserProfilePic, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

@@ -25,12 +25,19 @@
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerExperienceListFragment"
             app:destination="@id/seekerExperienceListFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerPortfolioFragment"
+            app:destination="@id/seekerPortfolioFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekerAboutMeFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment"
         android:label="fragment_seeker_about_me"
-        tools:layout="@layout/fragment_seeker_about_me" />
+        tools:layout="@layout/fragment_seeker_about_me" >
+        <action
+            android:id="@+id/action_seekerAboutMeFragment_to_seekerSocialMediaIdsFragment"
+            app:destination="@id/seekerSocialMediaIdsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seekerEducationFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerEducationFragment"
@@ -76,4 +83,14 @@
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerAddExperienceFragment"
         android:label="fragment_seeker_add_experience"
         tools:layout="@layout/fragment_seeker_add_experience" />
+    <fragment
+        android:id="@+id/seekerSocialMediaIdsFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerSocialMediaIdsFragment"
+        android:label="fragment_seeker_social_media_ids"
+        tools:layout="@layout/fragment_seeker_social_media_ids" />
+    <fragment
+        android:id="@+id/seekerPortfolioFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerPortfolioFragment"
+        android:label="fragment_seeker_portfolio"
+        tools:layout="@layout/fragment_seeker_portfolio" />
 </navigation>

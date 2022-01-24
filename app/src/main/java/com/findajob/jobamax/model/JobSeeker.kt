@@ -48,6 +48,9 @@ class JobSeeker {
     var workspaces: String = ""
     var volunteerings: String = ""
     var activities: String = ""
+    var instagramLink: String = ""
+    var linkedInLink: String = ""
+    var tikTokLink: String = ""
     var aboutMe: String = ""
 
     var documentName: String = ""
@@ -108,6 +111,9 @@ class JobSeeker {
         jobSeeker.put("workspaces", workspaces)
         jobSeeker.put("volunteerings", volunteerings)
         jobSeeker.put("activities", activities)
+        jobSeeker.put("instagramLink", instagramLink)
+        jobSeeker.put("linkedInLink", linkedInLink)
+        jobSeeker.put("tikTokLink", tikTokLink)
         jobSeeker.put("aboutMe", aboutMe)
 
         jobSeeker.put("documentName", documentName)
@@ -178,6 +184,9 @@ class JobSeeker {
         this.workspaces = obj["workspaces"]?.toString() ?: ""
         this.volunteerings = obj["volunteerings"]?.toString() ?: ""
         this.activities = obj["activities"]?.toString() ?: ""
+        this.instagramLink = obj["instagramLink"]?.toString() ?: ""
+        this.linkedInLink = obj["linkedInLink"]?.toString() ?: ""
+        this.tikTokLink = obj["tikTokLink"]?.toString() ?: ""
         this.aboutMe = obj["aboutMe"]?.toString() ?: ""
 
         this.documentName = obj["documentName"]?.toString() ?: ""

@@ -26,6 +26,7 @@ class JobSeekerPersonalIntroInfoViewModel(val context: Application) : AndroidVie
 				jobSeekerObject = parseObject
 				jobSeekerLiveData.value = jobSeeker
 			}
+
 			override fun onFailure(e: Exception?) {
 			}
 		})

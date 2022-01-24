@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,6 +46,9 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ImageView imageView11;
 
   @NonNull
+  public final ImageView imageView17;
+
+  @NonNull
   public final ImageView ivAddIdealWorkspaceBtn;
 
   @NonNull
@@ -58,6 +62,12 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
 
   @NonNull
   public final ImageView ivCalvender;
+
+  @NonNull
+  public final ImageView ivInfo;
+
+  @NonNull
+  public final RelativeLayout rlPortfolio;
 
   @NonNull
   public final TextView textView6;
@@ -114,11 +124,12 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
       ChipGroup cgIdealWorkspace, ConstraintLayout clEducation, ConstraintLayout clJobs,
       ConstraintLayout clSkills, ConstraintLayout clVolunteeringActivities,
       ConstraintLayout constraintLayout3, AutoCompleteTextView etIdealWorkspace,
-      ImageView imageView11, ImageView ivAddIdealWorkspaceBtn, ImageView ivBackButton,
-      ImageView ivCalender, ImageView ivCalendxer, ImageView ivCalvender, TextView textView6,
-      TextView textView7, TextView textView73, TextView textView76, TextView textView77,
-      ImageView textView8, ImageView textView83, ImageView textView86, ImageView textView88,
-      TextView tvAaa, TextView tvAboutMeBtn, TextView tvCalenderTitle, TextView tvCalenderTitlef,
+      ImageView imageView11, ImageView imageView17, ImageView ivAddIdealWorkspaceBtn,
+      ImageView ivBackButton, ImageView ivCalender, ImageView ivCalendxer, ImageView ivCalvender,
+      ImageView ivInfo, RelativeLayout rlPortfolio, TextView textView6, TextView textView7,
+      TextView textView73, TextView textView76, TextView textView77, ImageView textView8,
+      ImageView textView83, ImageView textView86, ImageView textView88, TextView tvAaa,
+      TextView tvAboutMeBtn, TextView tvCalenderTitle, TextView tvCalenderTitlef,
       TextView tvCalenderTitlex, TextView tvDdd, TextView tvSeekerName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cgIdealWorkspace = cgIdealWorkspace;
@@ -129,11 +140,14 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     this.constraintLayout3 = constraintLayout3;
     this.etIdealWorkspace = etIdealWorkspace;
     this.imageView11 = imageView11;
+    this.imageView17 = imageView17;
     this.ivAddIdealWorkspaceBtn = ivAddIdealWorkspaceBtn;
     this.ivBackButton = ivBackButton;
     this.ivCalender = ivCalender;
     this.ivCalendxer = ivCalendxer;
     this.ivCalvender = ivCalvender;
+    this.ivInfo = ivInfo;
+    this.rlPortfolio = rlPortfolio;
     this.textView6 = textView6;
     this.textView7 = textView7;
     this.textView73 = textView73;

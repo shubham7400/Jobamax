@@ -12,6 +12,7 @@ class Education : Serializable {
     var program: String = ""
     var startDate: String = ""
     var endDate: String = ""
+    var logo: String = ""
     var gpa: Double = 0.0
 }
 

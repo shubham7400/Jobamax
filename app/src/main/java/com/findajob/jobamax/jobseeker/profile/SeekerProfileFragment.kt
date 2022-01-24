@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
@@ -19,6 +20,7 @@ import com.findajob.jobamax.util.toast
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipDrawable
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.coroutineScope
 import org.json.JSONArray
 
 @AndroidEntryPoint
@@ -37,7 +39,10 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
     }
 
     override fun onCreated(savedInstance: Bundle?) {
-        viewModel.getJobSeeker()
+        progressHud.show()
+        lifecycleScope.launchWhenStarted {
+            viewModel.getJobSeeker()
+        }
         binding.jobSeeker = viewModel.jobSeeker
     }
 
@@ -48,10 +53,10 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
 
     private fun viewModelObserver() {
          viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
+             progressHud.dismiss()
              if (it){
                  binding.jobSeeker = viewModel.jobSeeker
-
-
+                 ownedWorkSpaces.clear()
                  if (viewModel.jobSeeker.workspaces != ""){
                      val workSpaces =  JSONArray(viewModel.jobSeeker.workspaces)
                      var i = 0
@@ -85,6 +90,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
     }
 
     private fun setClickListeners() {
+        binding.ivInfo.setOnClickListener(this)
         binding.ivBackButton.setOnClickListener(this)
         binding.ivAddIdealWorkspaceBtn.setOnClickListener(this)
         binding.tvAboutMeBtn.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerAboutMeFragment, null))
@@ -92,11 +98,15 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
         binding.clSkills.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerMySkillFragment, null))
         binding.clVolunteeringActivities.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_volunteeringAndActivitiesFragment, null))
         binding.clJobs.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerExperienceListFragment, null))
+        binding.rlPortfolio.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerPortfolioFragment, null))
     }
 
 
     override fun onClick(view: View?) {
         when(view){
+            binding.ivInfo -> {
+                binding.ivInfo.performLongClick()
+            }
             binding.ivBackButton -> {
                 (activity as SeekerProfileActivity).onBackPressed()
             }

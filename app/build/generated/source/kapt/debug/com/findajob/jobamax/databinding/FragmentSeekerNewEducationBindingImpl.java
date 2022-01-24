@@ -14,51 +14,59 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 1);
-        sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.textView9, 3);
-        sViewsWithIds.put(R.id.et_school, 4);
-        sViewsWithIds.put(R.id.textView10, 5);
-        sViewsWithIds.put(R.id.et_program, 6);
-        sViewsWithIds.put(R.id.textView11, 7);
-        sViewsWithIds.put(R.id.et_gpa, 8);
-        sViewsWithIds.put(R.id.btn_save_info, 9);
-        sViewsWithIds.put(R.id.linearLayout, 10);
-        sViewsWithIds.put(R.id.textView15, 11);
-        sViewsWithIds.put(R.id.tv_Start_date, 12);
-        sViewsWithIds.put(R.id.textView144, 13);
-        sViewsWithIds.put(R.id.tv_end_date, 14);
+        sViewsWithIds.put(R.id.relativeLayout, 2);
+        sViewsWithIds.put(R.id.iv_back_button, 3);
+        sViewsWithIds.put(R.id.textView9, 4);
+        sViewsWithIds.put(R.id.tv_school, 5);
+        sViewsWithIds.put(R.id.textView10, 6);
+        sViewsWithIds.put(R.id.et_program, 7);
+        sViewsWithIds.put(R.id.textView11, 8);
+        sViewsWithIds.put(R.id.et_gpa, 9);
+        sViewsWithIds.put(R.id.btn_save_info, 10);
+        sViewsWithIds.put(R.id.cb_current_student, 11);
+        sViewsWithIds.put(R.id.linearLayout, 12);
+        sViewsWithIds.put(R.id.textView15, 13);
+        sViewsWithIds.put(R.id.tv_Start_date, 14);
+        sViewsWithIds.put(R.id.cl_end_date, 15);
+        sViewsWithIds.put(R.id.textView144, 16);
+        sViewsWithIds.put(R.id.tv_end_date, 17);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    @NonNull
+    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerNewEducationBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerNewEducationBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[9]
-            , (android.widget.EditText) bindings[8]
-            , (android.widget.EditText) bindings[6]
-            , (android.widget.EditText) bindings[4]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.LinearLayout) bindings[10]
-            , (android.widget.RelativeLayout) bindings[1]
-            , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[7]
+            , (android.widget.Button) bindings[10]
+            , (android.widget.CheckBox) bindings[11]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[15]
+            , (android.widget.EditText) bindings[9]
+            , (android.widget.EditText) bindings[7]
+            , (android.widget.ImageView) bindings[3]
+            , (android.widget.LinearLayout) bindings[12]
+            , (android.widget.RelativeLayout) bindings[2]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[16]
             , (android.widget.TextView) bindings[13]
-            , (android.widget.TextView) bindings[11]
-            , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[14]
-            , (android.widget.TextView) bindings[12]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
+        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -67,7 +75,7 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -85,7 +93,22 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.jobSeeker == variableId) {
+            setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setJobSeeker(@Nullable com.findajob.jobamax.model.JobSeeker JobSeeker) {
+        this.mJobSeeker = JobSeeker;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.jobSeeker);
+        super.requestRebind();
     }
 
     @Override
@@ -102,14 +125,32 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String jobSeekerProfilePicUrl = null;
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): jobSeeker
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

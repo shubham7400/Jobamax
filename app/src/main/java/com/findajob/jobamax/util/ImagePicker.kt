@@ -27,11 +27,7 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     private val CAMERA_REQUEST_CODE: Int = 1021
     private val GALARY_REQUEST_CODE: Int = 1056
 
-    public override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    public override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view: View = inflater.inflate(R.layout.layout_image_picker, container, false)
 
         view.findViewById<View>(R.id.camera).setOnClickListener {
@@ -69,8 +65,7 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     }
 
     private fun startGallery() {
-        val cameraIntent: Intent =
-            Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        val cameraIntent: Intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         cameraIntent.type = "image/*"
         if (cameraIntent.resolveActivity(requireActivity().packageManager) != null) {
             startActivityForResult(cameraIntent, GALARY_REQUEST_CODE)
@@ -82,16 +77,9 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     private fun createImageFile(): File {
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName: String = "JPEG_" + timeStamp + "_"
-        val storageDir: File = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),
-            "Camera"
-        )
-        val image: File = File.createTempFile(
-            imageFileName,  /* prefix */
-            ".jpg",  /* suffix */
-            storageDir /* directory */
-        )
-        cameraFilePath = "file://" + image.getAbsolutePath()
+        val storageDir: File = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_DCIM), "Camera")
+        val image: File = File.createTempFile(imageFileName,  /* prefix */".jpg",  /* suffix */storageDir /* directory */)
+        cameraFilePath = "file://" + image.absolutePath
         cameraImage = image
         return image
     }
@@ -99,14 +87,7 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     private fun captureFromCamera() {
         try {
             val intent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            intent.putExtra(
-                MediaStore.EXTRA_OUTPUT,
-                FileProvider.getUriForFile(
-                    (getContext())!!,
-                    BuildConfig.APPLICATION_ID + ".provider",
-                    createImageFile()
-                )
-            )
+              intent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile((context)!!, BuildConfig.APPLICATION_ID + ".provider", createImageFile()))
             startActivityForResult(intent, CAMERA_REQUEST_CODE)
         } catch (ex: IOException) {
             ex.printStackTrace()

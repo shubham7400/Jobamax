@@ -55,6 +55,10 @@ import com.findajob.jobamax.jobseeker.track.JobSeekerApplyActivity_GeneratedInje
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.track.JobSeekerTrackFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment_GeneratedInjector;
 import com.findajob.jobamax.location.LocationViewModel_HiltModules;
 import com.findajob.jobamax.location.SelectLocationActivity_GeneratedInjector;
 import com.findajob.jobamax.recruiter.course.RecruiterCourseFragment_GeneratedInjector;
@@ -279,6 +283,8 @@ public final class BaseApplication_HiltComponents {
       SeekerProfileActivity_GeneratedInjector,
       JobSeekerAccountActivity_GeneratedInjector,
       JobSeekerApplyActivity_GeneratedInjector,
+      SeekerJobTrackingActivity_GeneratedInjector,
+      SeekerWishListActivity_GeneratedInjector,
       SelectLocationActivity_GeneratedInjector,
       RecruiterHomeActivity_GeneratedInjector,
       CompanyIntroInfoActivity_GeneratedInjector,
@@ -367,6 +373,8 @@ public final class BaseApplication_HiltComponents {
       JobOfferCardInfoFragment_GeneratedInjector,
       JobSeekerApplyFragment_GeneratedInjector,
       JobSeekerTrackFragment_GeneratedInjector,
+      SeekerTrackingJobFragment_GeneratedInjector,
+      SeekerWishListFragment_GeneratedInjector,
       RecruiterCourseFragment_GeneratedInjector,
       RecruiterProfileFragment_GeneratedInjector,
       RecruiterDeleteAccountFragment_GeneratedInjector,

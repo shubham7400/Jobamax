@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,9 +13,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -23,13 +27,16 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   public final Button btnSaveInfo;
 
   @NonNull
+  public final CheckBox cbCurrentStudent;
+
+  @NonNull
+  public final ConstraintLayout clEndDate;
+
+  @NonNull
   public final EditText etGpa;
 
   @NonNull
   public final EditText etProgram;
-
-  @NonNull
-  public final EditText etSchool;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -59,18 +66,26 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   public final TextView tvEndDate;
 
   @NonNull
+  public final TextView tvSchool;
+
+  @NonNull
   public final TextView tvStartDate;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerNewEducationBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, Button btnSaveInfo, EditText etGpa, EditText etProgram,
-      EditText etSchool, ImageView ivBackButton, LinearLayout linearLayout,
-      RelativeLayout relativeLayout, TextView textView10, TextView textView11, TextView textView144,
-      TextView textView15, TextView textView9, TextView tvEndDate, TextView tvStartDate) {
+      int _localFieldCount, Button btnSaveInfo, CheckBox cbCurrentStudent,
+      ConstraintLayout clEndDate, EditText etGpa, EditText etProgram, ImageView ivBackButton,
+      LinearLayout linearLayout, RelativeLayout relativeLayout, TextView textView10,
+      TextView textView11, TextView textView144, TextView textView15, TextView textView9,
+      TextView tvEndDate, TextView tvSchool, TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
+    this.cbCurrentStudent = cbCurrentStudent;
+    this.clEndDate = clEndDate;
     this.etGpa = etGpa;
     this.etProgram = etProgram;
-    this.etSchool = etSchool;
     this.ivBackButton = ivBackButton;
     this.linearLayout = linearLayout;
     this.relativeLayout = relativeLayout;
@@ -80,7 +95,15 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
     this.textView15 = textView15;
     this.textView9 = textView9;
     this.tvEndDate = tvEndDate;
+    this.tvSchool = tvSchool;
     this.tvStartDate = tvStartDate;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

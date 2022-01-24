@@ -30,7 +30,8 @@ interface GetUserCallback {
 }
 
 interface GetAllUserCallback {
-    fun onFinish(parseObject: List<ParseObject>)
+    fun onSuccess(parseObject: List<ParseObject>)
+    fun onFailure(e: Exception?)
 }
 
 interface UpdateUserCallback {

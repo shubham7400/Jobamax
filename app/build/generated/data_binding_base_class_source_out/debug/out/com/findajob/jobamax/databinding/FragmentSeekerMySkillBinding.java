@@ -11,26 +11,28 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.chip.ChipGroup;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
   @NonNull
+  public final AutoCompleteTextView actvHardSkill;
+
+  @NonNull
+  public final AutoCompleteTextView actvSoftSkill;
+
+  @NonNull
   public final Button btnSaveInfo;
 
   @NonNull
   public final ChipGroup cgSoftSkill;
-
-  @NonNull
-  public final AutoCompleteTextView etHardSkill;
-
-  @NonNull
-  public final AutoCompleteTextView etSoftSkill;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -53,16 +55,19 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvDddd;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerMySkillBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnSaveInfo, ChipGroup cgSoftSkill, AutoCompleteTextView etHardSkill,
-      AutoCompleteTextView etSoftSkill, ImageView ivBackButton, ImageView ivHardSkillAddBtn,
+      AutoCompleteTextView actvHardSkill, AutoCompleteTextView actvSoftSkill, Button btnSaveInfo,
+      ChipGroup cgSoftSkill, ImageView ivBackButton, ImageView ivHardSkillAddBtn,
       ImageView ivSoftSkillAddBtn, RelativeLayout relativeLayout, RecyclerView rvHardSkill,
       TextView tvDdd, TextView tvDddd) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.actvHardSkill = actvHardSkill;
+    this.actvSoftSkill = actvSoftSkill;
     this.btnSaveInfo = btnSaveInfo;
     this.cgSoftSkill = cgSoftSkill;
-    this.etHardSkill = etHardSkill;
-    this.etSoftSkill = etSoftSkill;
     this.ivBackButton = ivBackButton;
     this.ivHardSkillAddBtn = ivHardSkillAddBtn;
     this.ivSoftSkillAddBtn = ivSoftSkillAddBtn;
@@ -70,6 +75,13 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
     this.rvHardSkill = rvHardSkill;
     this.tvDdd = tvDdd;
     this.tvDddd = tvDddd;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

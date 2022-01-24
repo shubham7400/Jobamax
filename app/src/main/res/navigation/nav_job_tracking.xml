@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_job_tracking"
+    app:startDestination="@id/seekerTrackingJobFragment">
+
+    <fragment
+        android:id="@+id/seekerTrackingJobFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFragment"
+        android:label="fragment_seeker_tracking_job"
+        tools:layout="@layout/fragment_seeker_tracking_job" >
+        <action
+            android:id="@+id/action_seekerTrackingJobFragment_to_seekerTrackingJobDetailsFragment"
+            app:destination="@id/seekerTrackingJobDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerTrackingJobDetailsFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobDetailsFragment"
+        android:label="fragment_seeker_tracking_job_details"
+        tools:layout="@layout/fragment_seeker_tracking_job_details" />
+</navigation>

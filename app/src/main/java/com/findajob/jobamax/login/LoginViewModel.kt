@@ -21,7 +21,6 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 class LoginViewModel constructor(private val context: Application) : AndroidViewModel(context) {
@@ -84,7 +83,6 @@ class LoginViewModel constructor(private val context: Application) : AndroidView
                     log("keep me posted error: $it")
                 }
             }
-
             override fun onFailure(e: Exception?) {
                 callback.onFinish(false)
             }

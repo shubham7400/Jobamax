@@ -72,7 +72,7 @@ class JobOffer() {
     }
 
     constructor(obj: ParseObject) : this() {
-        this.jobOfferId = obj["jobOfferId"].toString()
+        this.jobOfferId = obj.getString("jobOfferId") ?: ""
         this.recruiterId = obj["recruiterId"].toString()
         this.name = obj["name"].toString()
         this.geoLocation = (obj["geoLocation"] as ParseGeoPoint?) ?: ParseGeoPoint()

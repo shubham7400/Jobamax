@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,9 +26,6 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
   public final Button btnSaveInfo;
 
   @NonNull
-  public final CircleImageView circleImageView2;
-
-  @NonNull
   public final EditText etDescription;
 
   @NonNull
@@ -41,6 +39,27 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
 
   @NonNull
   public final ImageView ivBackButton;
+
+  @NonNull
+  public final ImageView ivEdit;
+
+  @NonNull
+  public final ImageView ivInsta;
+
+  @NonNull
+  public final ImageView ivLinkedin;
+
+  @NonNull
+  public final CircleImageView ivProfileUser;
+
+  @NonNull
+  public final ImageView ivTiktok;
+
+  @NonNull
+  public final CircleImageView ivUserProfilePic;
+
+  @NonNull
+  public final LinearLayout llSocialMedia;
 
   @NonNull
   public final RelativeLayout relativeLayout;
@@ -58,17 +77,25 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerAboutMeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnSaveInfo, CircleImageView circleImageView2, EditText etDescription,
-      EditText etFirstName, EditText etLastName, ImageView imageView12, ImageView ivBackButton,
-      RelativeLayout relativeLayout, TextView textView10, TextView textView11, TextView textView9) {
+      Button btnSaveInfo, EditText etDescription, EditText etFirstName, EditText etLastName,
+      ImageView imageView12, ImageView ivBackButton, ImageView ivEdit, ImageView ivInsta,
+      ImageView ivLinkedin, CircleImageView ivProfileUser, ImageView ivTiktok,
+      CircleImageView ivUserProfilePic, LinearLayout llSocialMedia, RelativeLayout relativeLayout,
+      TextView textView10, TextView textView11, TextView textView9) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
-    this.circleImageView2 = circleImageView2;
     this.etDescription = etDescription;
     this.etFirstName = etFirstName;
     this.etLastName = etLastName;
     this.imageView12 = imageView12;
     this.ivBackButton = ivBackButton;
+    this.ivEdit = ivEdit;
+    this.ivInsta = ivInsta;
+    this.ivLinkedin = ivLinkedin;
+    this.ivProfileUser = ivProfileUser;
+    this.ivTiktok = ivTiktok;
+    this.ivUserProfilePic = ivUserProfilePic;
+    this.llSocialMedia = llSocialMedia;
     this.relativeLayout = relativeLayout;
     this.textView10 = textView10;
     this.textView11 = textView11;

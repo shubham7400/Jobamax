@@ -9,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -32,6 +34,9 @@ public abstract class FragmentSeekerEducationBinding extends ViewDataBinding {
   @NonNull
   public final RecyclerView rvEducationList;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerEducationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, Button btnAddEducation, Button btnGoToProfile, ImageView ivBackButton,
       RelativeLayout relativeLayout, RecyclerView rvEducationList) {
@@ -41,6 +46,13 @@ public abstract class FragmentSeekerEducationBinding extends ViewDataBinding {
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.rvEducationList = rvEducationList;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

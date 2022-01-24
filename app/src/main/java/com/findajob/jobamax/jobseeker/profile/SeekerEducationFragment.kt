@@ -15,6 +15,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerEducationBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Education
 import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
+import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
@@ -48,7 +49,9 @@ class SeekerEducationFragment : BaseFragmentMain<FragmentSeekerEducationBinding>
         binding.rvEducationList.adapter = adapter
         adapter.clickListener = { education ->
             educations.remove(education)
+            progressHud.show()
             viewModel.saveNewEducationList(educations){
+                progressHud.dismiss()
                 if(it == null){
                     toast("Item deleted.")
                 }
@@ -59,6 +62,7 @@ class SeekerEducationFragment : BaseFragmentMain<FragmentSeekerEducationBinding>
     private fun viewModelObserver() {
           viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
               if (it){
+                  binding.jobSeeker = viewModel.jobSeeker
                   educations = ArrayList(Gson().fromJson(viewModel.jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf())
                   adapter.submitList(educations)
                   adapter.notifyDataSetChanged()

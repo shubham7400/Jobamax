@@ -1,8 +1,9 @@
 package com.findajob.jobamax.jobseeker.profile.cv.model
 
+import java.io.Serializable
 import java.util.*
 
-class Experience {
+class Experience : Serializable {
 
     var id: String = UUID.randomUUID().toString()
     var job: String = ""
@@ -14,7 +15,7 @@ class Experience {
 
 }
 
-class ExperienceGroup(val list: List<Experience> = listOf())
+class ExperienceGroup(val list: List<Experience> = listOf()) : Serializable
 
 class ActivityGroup(val list: List<String> = listOf())
 

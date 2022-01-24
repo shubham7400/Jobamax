@@ -21,7 +21,7 @@ public abstract class ItemSeekerEducationBinding extends ViewDataBinding {
   public final ImageView ivDeleteItem;
 
   @NonNull
-  public final CircleImageView ivSsss;
+  public final CircleImageView ivUser;
 
   @NonNull
   public final RelativeLayout rlParent;
@@ -36,11 +36,11 @@ public abstract class ItemSeekerEducationBinding extends ViewDataBinding {
   public final TextView tvProgramName;
 
   protected ItemSeekerEducationBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView ivDeleteItem, CircleImageView ivSsss, RelativeLayout rlParent,
+      ImageView ivDeleteItem, CircleImageView ivUser, RelativeLayout rlParent,
       TextView tvDateDuration, TextView tvInstituteName, TextView tvProgramName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.ivDeleteItem = ivDeleteItem;
-    this.ivSsss = ivSsss;
+    this.ivUser = ivUser;
     this.rlParent = rlParent;
     this.tvDateDuration = tvDateDuration;
     this.tvInstituteName = tvInstituteName;

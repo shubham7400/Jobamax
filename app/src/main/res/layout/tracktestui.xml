@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView
+        android:background="#E9F2FB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_bottom_curved_white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:paddingHorizontal="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/iv_back_button"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/back_arrow_img" />
+
+                            <TextView
+                                android:id="@+id/tv_page_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_toRightOf="@+id/iv_back_button"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="Macdonals"
+                                android:textColor="#7800EF"
+                                android:textSize="20dp" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@+id/tv_page_title"
+                                android:src="@drawable/menu" />
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/iv_user_profile"
+                                 android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/default_user_img" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circleImageView2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/default_user_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:text="Product\n Assistant Manager"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:gravity="center"
+                        android:text="Macdonalds Product\n London"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/appCompatButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/round_32"
+                        android:backgroundTint="@color/new_purple"
+                        android:paddingHorizontal="20dp"
+                        android:text="See job offers"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/appCompatButton">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/close_background_red" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/close_background_green" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="10dp"
+                        android:layout_height="150dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_white_box"
+                        android:padding="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/view3"
+                        app:layout_constraintStart_toEndOf="@+id/view3"
+                        app:layout_constraintTop_toTopOf="@+id/view3">
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="12th Dec"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="added to wishlist"
+                            android:textColor="@color/new_purple"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView19"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/edit"
+                        app:layout_constraintBottom_toBottomOf="@+id/view"
+                        app:layout_constraintEnd_toStartOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="@+id/view" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="-8dp"
+                        android:background="@drawable/round_32"
+
+                        android:backgroundTint="@color/new_purple"
+                        app:layout_constraintBottom_toBottomOf="@+id/view"
+                        app:layout_constraintStart_toStartOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="@+id/view" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="20dp"
+                        android:layout_height="5dp"
+                        android:background="@color/new_purple"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/view2"
+
+                        app:layout_constraintStart_toEndOf="@+id/view2"
+                        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
+
+                    <View
+                        android:id="@+id/view11"
+                        android:layout_width="10dp"
+                        android:layout_height="150dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_white_box"
+                        android:padding="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/vieww3"
+                        app:layout_constraintStart_toEndOf="@+id/vieww3"
+                        app:layout_constraintTop_toTopOf="@+id/vieww3">
+
+                        <TextView
+                            android:id="@+id/textView233"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="12th Dec"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="added to wishlist"
+                            android:textColor="@color/new_purple"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView233" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView139"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/edit"
+                        app:layout_constraintBottom_toBottomOf="@+id/view11"
+                        app:layout_constraintEnd_toStartOf="@+id/view11"
+                        app:layout_constraintTop_toTopOf="@+id/view11" />
+
+                    <View
+                        android:id="@+id/view2e"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="-8dp"
+                        android:background="@drawable/round_32"
+
+                        android:backgroundTint="@color/new_purple"
+                        app:layout_constraintBottom_toBottomOf="@+id/view11"
+                        app:layout_constraintStart_toStartOf="@+id/view11"
+                        app:layout_constraintTop_toTopOf="@+id/view11" />
+
+                    <View
+                        android:id="@+id/vieww3"
+                        android:layout_width="20dp"
+                        android:layout_height="5dp"
+                        android:background="@color/new_purple"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/view2e"
+
+                        app:layout_constraintStart_toEndOf="@+id/view2e"
+                        app:layout_constraintTop_toTopOf="@+id/view2e" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+ </layout>

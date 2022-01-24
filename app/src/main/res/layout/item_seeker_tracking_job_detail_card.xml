@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8"
+       >
+
+        <View
+            android:id="@+id/view11"
+            android:layout_width="10dp"
+            android:layout_height="150dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_white_box"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/view11"
+            app:layout_constraintStart_toStartOf="@+id/view11"
+            app:layout_constraintTop_toBottomOf="@+id/view2e">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="12th Dec"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="added to wishlist"
+                android:textColor="@color/new_purple"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view2e"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="-8dp"
+            android:background="@drawable/round_32"
+
+            android:backgroundTint="@color/new_purple"
+            app:layout_constraintBottom_toBottomOf="@+id/view11"
+            app:layout_constraintStart_toStartOf="@+id/view11"
+            app:layout_constraintTop_toTopOf="@+id/view11" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

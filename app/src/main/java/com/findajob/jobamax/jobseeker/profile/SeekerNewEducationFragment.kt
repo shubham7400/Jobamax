@@ -1,6 +1,7 @@
 package com.findajob.jobamax.jobseeker.profile
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
+import com.findajob.jobamax.dashboard.home.training.masterclass.LikeDislikeDialogFragment
+import com.findajob.jobamax.data.pojo.University
 import com.findajob.jobamax.databinding.FragmentSeekerNewEducationBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.profile.account.SeekerSearchUniversityDialogFragment
 import com.findajob.jobamax.jobseeker.profile.cv.model.Education
 import com.findajob.jobamax.util.mm_yy_disp
 import com.findajob.jobamax.util.toast
@@ -25,6 +29,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
     override fun getViewModel(): ViewModel = viewModel
 
     var educationOld: Education? = null
+    var university: University? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerNewEducationBinding.inflate(inflater, container, false)
@@ -33,7 +38,23 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
     }
 
     private fun configureUi() {
+        binding.tvSchool.setOnClickListener {
+            val seekerSearchUniversityDialogFragment = SeekerSearchUniversityDialogFragment.newInstance()
+            seekerSearchUniversityDialogFragment.show(childFragmentManager,"dialog")
+            seekerSearchUniversityDialogFragment.clickedItemListener = {
+                university  = it
+                university?.let {
+                    binding.tvSchool.text = it.name
+                }
+            }
+        }
+        binding.jobSeeker = viewModel.jobSeeker
         setClickListeners()
+        if (binding.cbCurrentStudent.isChecked){
+            binding.clEndDate.visibility = View.GONE
+        }else{
+            binding.clEndDate.visibility = View.VISIBLE
+        }
     }
 
     override fun onCreated(savedInstance: Bundle?) {
@@ -41,7 +62,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
             educationOld = arguments?.getSerializable("education") as Education
         }
         educationOld?.let {
-            binding.etSchool.setText(educationOld!!.name)
+            binding.tvSchool.text = educationOld!!.name
             binding.etProgram.setText(educationOld!!.program)
             binding.etGpa.setText(educationOld!!.gpa.toString())
             binding.tvStartDate.text = educationOld!!.startDate
@@ -55,6 +76,13 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
     }
 
     private fun setClickListeners() {
+        binding.cbCurrentStudent.setOnClickListener {
+            if (binding.cbCurrentStudent.isChecked){
+                binding.clEndDate.visibility = View.GONE
+            }else{
+                binding.clEndDate.visibility = View.VISIBLE
+            }
+        }
         binding.ivBackButton.setOnClickListener {
             (activity as SeekerProfileActivity).onBackPressed()
         }
@@ -66,7 +94,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         }
         binding.btnSaveInfo.setOnClickListener {
             when {
-                binding.etSchool.text.isNullOrEmpty() -> {
+                binding.tvSchool.text.isNullOrEmpty() -> {
                     toast("Enter school name.")
                 }
                 binding.etProgram.text.isNullOrEmpty() -> {
@@ -78,17 +106,21 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
                 binding.tvStartDate.text.isNullOrEmpty() -> {
                     toast("Select start date.")
                 }
+                !binding.cbCurrentStudent.isChecked && binding.tvEndDate.text.isNullOrEmpty() -> {
+                    toast("Select end date.")
+                }
                 else -> {
                    val education = if (educationOld != null){
                        educationOld
                    }else{
                        Education()
                    }
-                    education!!.name = binding.etSchool.text.toString()
+                    education!!.name = binding.tvSchool.text.toString()
                     education.program = binding.etProgram.text.toString()
                     education.gpa = binding.etGpa.text.toString().toDouble()
                     education.startDate = binding.tvStartDate.text.toString()
-                    if (binding.tvEndDate.text.isNullOrEmpty()){
+                    education.logo = university?.logo ?: ""
+                    if (binding.cbCurrentStudent.isChecked){
                         education.endDate =  ""
                     }else{
                         education.endDate =  binding.tvEndDate.text.toString()

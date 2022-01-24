@@ -14,7 +14,7 @@ public class ItemSeekerEducationBindingImpl extends ItemSeekerEducationBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.iv_ssss, 1);
+        sViewsWithIds.put(R.id.iv_user, 1);
         sViewsWithIds.put(R.id.tv_institute_name, 2);
         sViewsWithIds.put(R.id.iv_delete_item, 3);
         sViewsWithIds.put(R.id.tv_program_name, 4);

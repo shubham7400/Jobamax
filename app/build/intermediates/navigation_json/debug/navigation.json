@@ -10,6 +10,11 @@
     "deepLinks": []
   },
   {
+    "name": "nav_job_tracking",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
     "name": "nav_location",
     "navigationXmlIds": [],
     "deepLinks": []
@@ -51,6 +56,11 @@
   },
   {
     "name": "nav_seeker_profile",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_wishlist",
     "navigationXmlIds": [],
     "deepLinks": []
   },

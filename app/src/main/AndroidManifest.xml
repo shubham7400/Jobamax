@@ -35,6 +35,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".jobseeker.profile.SeekerPortfolioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jobseeker.wishlist.SeekerWishListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jobseeker.track.newtrack.SeekerJobTrackingActivity"
+            android:exported="false" />
+        <activity
             android:name=".jobseeker.profile.account.JobSeekerAccountActivity"
             android:exported="false" />
         <activity

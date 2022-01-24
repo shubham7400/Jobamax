@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".jobseeker.profile.SeekerExperienceListFragment">
 
+    <data>
+        <variable
+            name="jobSeeker"
+            type="com.findajob.jobamax.model.JobSeeker" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="#E9F2FB"
         android:layout_width="match_parent"
@@ -47,6 +53,7 @@
                     android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentEnd="true"
@@ -58,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_add_education"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add_experience"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
             <LinearLayout
@@ -67,7 +74,7 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_education_list"
+                    android:id="@+id/rv_experience_list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="20dp"

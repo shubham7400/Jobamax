@@ -10,15 +10,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.chip.ChipGroup;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerVolunteeringAndActivitiesBinding extends ViewDataBinding {
+  @NonNull
+  public final AutoCompleteTextView actvActivities;
+
+  @NonNull
+  public final AutoCompleteTextView actvVolunteering;
+
   @NonNull
   public final ChipGroup cgActivities;
 
@@ -27,12 +35,6 @@ public abstract class FragmentSeekerVolunteeringAndActivitiesBinding extends Vie
 
   @NonNull
   public final CircleImageView civUser;
-
-  @NonNull
-  public final AutoCompleteTextView etActivities;
-
-  @NonNull
-  public final AutoCompleteTextView etVolunteering;
 
   @NonNull
   public final ImageView ivActivities;
@@ -52,24 +54,34 @@ public abstract class FragmentSeekerVolunteeringAndActivitiesBinding extends Vie
   @NonNull
   public final TextView tvVolunteering;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerVolunteeringAndActivitiesBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ChipGroup cgActivities, ChipGroup cgVolunteering,
-      CircleImageView civUser, AutoCompleteTextView etActivities,
-      AutoCompleteTextView etVolunteering, ImageView ivActivities, ImageView ivBackButton,
+      int _localFieldCount, AutoCompleteTextView actvActivities,
+      AutoCompleteTextView actvVolunteering, ChipGroup cgActivities, ChipGroup cgVolunteering,
+      CircleImageView civUser, ImageView ivActivities, ImageView ivBackButton,
       ImageView ivVolunteering, RelativeLayout relativeLayout, TextView tvActivities,
       TextView tvVolunteering) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.actvActivities = actvActivities;
+    this.actvVolunteering = actvVolunteering;
     this.cgActivities = cgActivities;
     this.cgVolunteering = cgVolunteering;
     this.civUser = civUser;
-    this.etActivities = etActivities;
-    this.etVolunteering = etVolunteering;
     this.ivActivities = ivActivities;
     this.ivBackButton = ivBackButton;
     this.ivVolunteering = ivVolunteering;
     this.relativeLayout = relativeLayout;
     this.tvActivities = tvActivities;
     this.tvVolunteering = tvVolunteering;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

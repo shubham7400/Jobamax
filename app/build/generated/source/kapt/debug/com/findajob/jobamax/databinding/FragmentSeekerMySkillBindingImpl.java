@@ -14,45 +14,49 @@ public class FragmentSeekerMySkillBindingImpl extends FragmentSeekerMySkillBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 1);
-        sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.tv_ddd, 3);
-        sViewsWithIds.put(R.id.et_hard_skill, 4);
-        sViewsWithIds.put(R.id.iv_hard_skill_add_btn, 5);
-        sViewsWithIds.put(R.id.rv_hard_skill, 6);
-        sViewsWithIds.put(R.id.tv_dddd, 7);
-        sViewsWithIds.put(R.id.et_soft_skill, 8);
-        sViewsWithIds.put(R.id.iv_soft_skill_add_btn, 9);
-        sViewsWithIds.put(R.id.cg_soft_skill, 10);
-        sViewsWithIds.put(R.id.btn_save_info, 11);
+        sViewsWithIds.put(R.id.relativeLayout, 2);
+        sViewsWithIds.put(R.id.iv_back_button, 3);
+        sViewsWithIds.put(R.id.tv_ddd, 4);
+        sViewsWithIds.put(R.id.actv_hard_skill, 5);
+        sViewsWithIds.put(R.id.iv_hard_skill_add_btn, 6);
+        sViewsWithIds.put(R.id.rv_hard_skill, 7);
+        sViewsWithIds.put(R.id.tv_dddd, 8);
+        sViewsWithIds.put(R.id.actv_soft_skill, 9);
+        sViewsWithIds.put(R.id.iv_soft_skill_add_btn, 10);
+        sViewsWithIds.put(R.id.cg_soft_skill, 11);
+        sViewsWithIds.put(R.id.btn_save_info, 12);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    @NonNull
+    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerMySkillBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerMySkillBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[11]
-            , (com.google.android.material.chip.ChipGroup) bindings[10]
-            , (android.widget.AutoCompleteTextView) bindings[4]
-            , (android.widget.AutoCompleteTextView) bindings[8]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.ImageView) bindings[5]
-            , (android.widget.ImageView) bindings[9]
-            , (android.widget.RelativeLayout) bindings[1]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[6]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[7]
+            , (android.widget.AutoCompleteTextView) bindings[5]
+            , (android.widget.AutoCompleteTextView) bindings[9]
+            , (android.widget.Button) bindings[12]
+            , (com.google.android.material.chip.ChipGroup) bindings[11]
+            , (android.widget.ImageView) bindings[3]
+            , (android.widget.ImageView) bindings[6]
+            , (android.widget.ImageView) bindings[10]
+            , (android.widget.RelativeLayout) bindings[2]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[7]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[8]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
+        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -61,7 +65,7 @@ public class FragmentSeekerMySkillBindingImpl extends FragmentSeekerMySkillBindi
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -79,7 +83,22 @@ public class FragmentSeekerMySkillBindingImpl extends FragmentSeekerMySkillBindi
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.jobSeeker == variableId) {
+            setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setJobSeeker(@Nullable com.findajob.jobamax.model.JobSeeker JobSeeker) {
+        this.mJobSeeker = JobSeeker;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.jobSeeker);
+        super.requestRebind();
     }
 
     @Override
@@ -96,14 +115,32 @@ public class FragmentSeekerMySkillBindingImpl extends FragmentSeekerMySkillBindi
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String jobSeekerProfilePicUrl = null;
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): jobSeeker
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

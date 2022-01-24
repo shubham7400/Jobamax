@@ -71,5 +71,11 @@ enum class ParseTableName {
     SubscriptionDetails,
     VideoChannels,
     cardDetails,
+    HardSkill,
+    SoftSkill,
+    Volunteering,
+    University,
+    WishlistedJob,
+    TrackingJob
 
 }

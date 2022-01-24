@@ -14,12 +14,11 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.imageView10, 2);
-        sViewsWithIds.put(R.id.iv_setting, 3);
-        sViewsWithIds.put(R.id.textView6, 4);
-        sViewsWithIds.put(R.id.ll1, 5);
-        sViewsWithIds.put(R.id.v_profile, 6);
-        sViewsWithIds.put(R.id.image_user, 7);
+        sViewsWithIds.put(R.id.imageView10, 3);
+        sViewsWithIds.put(R.id.iv_setting, 4);
+        sViewsWithIds.put(R.id.textView6, 5);
+        sViewsWithIds.put(R.id.ll1, 6);
+        sViewsWithIds.put(R.id.v_profile, 7);
         sViewsWithIds.put(R.id.v_message, 8);
         sViewsWithIds.put(R.id.iv_message_icon, 9);
         sViewsWithIds.put(R.id.tv_message_count_title, 10);
@@ -53,29 +52,30 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[13]
             , (android.widget.Button) bindings[24]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[7]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[16]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[21]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[22]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[23]
-            , (android.widget.ImageView) bindings[2]
+            , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[9]
             , (android.widget.ImageView) bindings[20]
-            , (android.widget.ImageView) bindings[3]
-            , (android.widget.LinearLayout) bindings[5]
+            , (android.widget.ImageView) bindings[4]
+            , (android.widget.LinearLayout) bindings[6]
             , (android.widget.LinearLayout) bindings[14]
             , (android.widget.RelativeLayout) bindings[18]
-            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[10]
             , (android.widget.TextView) bindings[1]
             , (android.widget.RelativeLayout) bindings[11]
             , (android.widget.RelativeLayout) bindings[8]
-            , (android.widget.RelativeLayout) bindings[6]
+            , (android.widget.RelativeLayout) bindings[7]
             , (android.widget.RelativeLayout) bindings[15]
             , (android.widget.RelativeLayout) bindings[17]
             );
+        this.imageUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.tvSeekerName.setTag(null);
@@ -156,6 +156,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             mDirtyFlags = 0;
         }
         java.lang.String javaLangStringHelloJobSeekerFirstName = null;
+        java.lang.String jobSeekerProfilePicUrl = null;
         com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
         java.lang.String jobSeekerFirstName = null;
 
@@ -164,6 +165,8 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
 
 
                 if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
                     // read jobSeeker.firstName
                     jobSeekerFirstName = jobSeeker.getFirstName();
                 }
@@ -176,6 +179,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         if ((dirtyFlags & 0x11L) != 0) {
             // api target 1
 
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.imageUser, jobSeekerProfilePicUrl);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvSeekerName, javaLangStringHelloJobSeekerFirstName);
         }
     }

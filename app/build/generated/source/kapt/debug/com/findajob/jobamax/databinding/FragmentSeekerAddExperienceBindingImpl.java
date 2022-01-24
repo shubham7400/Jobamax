@@ -14,57 +14,67 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 1);
-        sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.textView16, 3);
-        sViewsWithIds.put(R.id.efdk, 4);
-        sViewsWithIds.put(R.id.textView19, 5);
-        sViewsWithIds.put(R.id.editText4, 6);
-        sViewsWithIds.put(R.id.relativeLayout4, 7);
-        sViewsWithIds.put(R.id.textView139, 8);
-        sViewsWithIds.put(R.id.textView1349, 9);
-        sViewsWithIds.put(R.id.linearLayout4, 10);
-        sViewsWithIds.put(R.id.textView13r49, 11);
-        sViewsWithIds.put(R.id.textView134s9, 12);
-        sViewsWithIds.put(R.id.textView13rdd49, 13);
-        sViewsWithIds.put(R.id.textView1f34s9, 14);
-        sViewsWithIds.put(R.id.textViewdd19, 15);
-        sViewsWithIds.put(R.id.editTexdt4, 16);
-        sViewsWithIds.put(R.id.btn_add_education, 17);
+        sViewsWithIds.put(R.id.relativeLayout, 2);
+        sViewsWithIds.put(R.id.iv_back_button, 3);
+        sViewsWithIds.put(R.id.textView16, 4);
+        sViewsWithIds.put(R.id.et_job, 5);
+        sViewsWithIds.put(R.id.textView19, 6);
+        sViewsWithIds.put(R.id.et_company_name, 7);
+        sViewsWithIds.put(R.id.relativeLayout4, 8);
+        sViewsWithIds.put(R.id.textView139, 9);
+        sViewsWithIds.put(R.id.autocomplete_fragment, 10);
+        sViewsWithIds.put(R.id.tv_select_location, 11);
+        sViewsWithIds.put(R.id.linearLayout4, 12);
+        sViewsWithIds.put(R.id.textView13r49, 13);
+        sViewsWithIds.put(R.id.tv_select_start_date, 14);
+        sViewsWithIds.put(R.id.iv_clear_start_date, 15);
+        sViewsWithIds.put(R.id.textView13rdd49, 16);
+        sViewsWithIds.put(R.id.tv_select_end_date, 17);
+        sViewsWithIds.put(R.id.iv_clear_end_date, 18);
+        sViewsWithIds.put(R.id.textViewdd19, 19);
+        sViewsWithIds.put(R.id.et_description, 20);
+        sViewsWithIds.put(R.id.btn_add_experience, 21);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    @NonNull
+    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAddExperienceBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAddExperienceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[17]
-            , (android.widget.EditText) bindings[16]
-            , (android.widget.EditText) bindings[6]
-            , (android.widget.EditText) bindings[4]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.LinearLayout) bindings[10]
-            , (android.widget.RelativeLayout) bindings[1]
-            , (android.widget.RelativeLayout) bindings[7]
+            , (androidx.fragment.app.FragmentContainerView) bindings[10]
+            , (android.widget.Button) bindings[21]
+            , (android.widget.EditText) bindings[7]
+            , (android.widget.EditText) bindings[20]
+            , (android.widget.EditText) bindings[5]
+            , (android.widget.ImageView) bindings[3]
+            , (android.widget.ImageView) bindings[18]
+            , (android.widget.ImageView) bindings[15]
+            , (android.widget.LinearLayout) bindings[12]
+            , (android.widget.RelativeLayout) bindings[2]
+            , (android.widget.RelativeLayout) bindings[8]
             , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[13]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[16]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[19]
+            , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[14]
-            , (android.widget.TextView) bindings[15]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
+        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -73,7 +83,7 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -91,7 +101,22 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.jobSeeker == variableId) {
+            setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setJobSeeker(@Nullable com.findajob.jobamax.model.JobSeeker JobSeeker) {
+        this.mJobSeeker = JobSeeker;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.jobSeeker);
+        super.requestRebind();
     }
 
     @Override
@@ -108,14 +133,32 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String jobSeekerProfilePicUrl = null;
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): jobSeeker
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

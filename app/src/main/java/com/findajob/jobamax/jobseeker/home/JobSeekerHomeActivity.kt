@@ -29,6 +29,8 @@ import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPers
 import com.findajob.jobamax.jobseeker.profile.cv.JobSeekerResumeViewModel
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyActivity
 import com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment
+import com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity
+import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity
 import com.findajob.jobamax.model.UpdateUserCallback
 import com.findajob.jobamax.util.errorToast
 import com.findajob.jobamax.util.log
@@ -56,6 +58,7 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
     }
 
     override fun onCreated(instance: Bundle?) {
+        progressHud.show()
         viewModel.getJobSeeker()
     }
 
@@ -66,6 +69,7 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
 
     private fun viewModelObserver() {
          viewModel.isJobSeekerUpdated.observe(this, androidx.lifecycle.Observer {
+             progressHud.dismiss()
              if (it){
                  binding.jobSeeker = viewModel.jobSeeker
              }
@@ -104,16 +108,16 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
                 startActivity(Intent(this, JobSeekerApplyActivity::class.java))
             }
             binding.vWishlist ->{
-                startActivity(Intent(this, ProfileActivity::class.java))
+                startActivity(Intent(this, SeekerWishListActivity::class.java))
             }
             binding.tvSeekerName ->{
 
             }
             binding.btJobSearch ->{
-
+                startActivity(Intent(this, ProfileActivity::class.java))
             }
             binding.btnCoaching ->{
-
+                startActivity(Intent(this, SeekerJobTrackingActivity::class.java))
             }
         }
     }

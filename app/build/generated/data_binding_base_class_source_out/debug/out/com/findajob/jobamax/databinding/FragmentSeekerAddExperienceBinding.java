@@ -12,27 +12,39 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.fragment.app.FragmentContainerView;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding {
   @NonNull
-  public final Button btnAddEducation;
+  public final FragmentContainerView autocompleteFragment;
 
   @NonNull
-  public final EditText editTexdt4;
+  public final Button btnAddExperience;
 
   @NonNull
-  public final EditText editText4;
+  public final EditText etCompanyName;
 
   @NonNull
-  public final EditText efdk;
+  public final EditText etDescription;
+
+  @NonNull
+  public final EditText etJob;
 
   @NonNull
   public final ImageView ivBackButton;
+
+  @NonNull
+  public final ImageView ivClearEndDate;
+
+  @NonNull
+  public final ImageView ivClearStartDate;
 
   @NonNull
   public final LinearLayout linearLayout4;
@@ -42,12 +54,6 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
 
   @NonNull
   public final RelativeLayout relativeLayout4;
-
-  @NonNull
-  public final TextView textView1349;
-
-  @NonNull
-  public final TextView textView134s9;
 
   @NonNull
   public final TextView textView139;
@@ -65,36 +71,56 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
   public final TextView textView19;
 
   @NonNull
-  public final TextView textView1f34s9;
-
-  @NonNull
   public final TextView textViewdd19;
 
+  @NonNull
+  public final TextView tvSelectEndDate;
+
+  @NonNull
+  public final TextView tvSelectLocation;
+
+  @NonNull
+  public final TextView tvSelectStartDate;
+
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerAddExperienceBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, Button btnAddEducation, EditText editTexdt4, EditText editText4,
-      EditText efdk, ImageView ivBackButton, LinearLayout linearLayout4,
-      RelativeLayout relativeLayout, RelativeLayout relativeLayout4, TextView textView1349,
-      TextView textView134s9, TextView textView139, TextView textView13r49,
-      TextView textView13rdd49, TextView textView16, TextView textView19, TextView textView1f34s9,
-      TextView textViewdd19) {
+      int _localFieldCount, FragmentContainerView autocompleteFragment, Button btnAddExperience,
+      EditText etCompanyName, EditText etDescription, EditText etJob, ImageView ivBackButton,
+      ImageView ivClearEndDate, ImageView ivClearStartDate, LinearLayout linearLayout4,
+      RelativeLayout relativeLayout, RelativeLayout relativeLayout4, TextView textView139,
+      TextView textView13r49, TextView textView13rdd49, TextView textView16, TextView textView19,
+      TextView textViewdd19, TextView tvSelectEndDate, TextView tvSelectLocation,
+      TextView tvSelectStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnAddEducation = btnAddEducation;
-    this.editTexdt4 = editTexdt4;
-    this.editText4 = editText4;
-    this.efdk = efdk;
+    this.autocompleteFragment = autocompleteFragment;
+    this.btnAddExperience = btnAddExperience;
+    this.etCompanyName = etCompanyName;
+    this.etDescription = etDescription;
+    this.etJob = etJob;
     this.ivBackButton = ivBackButton;
+    this.ivClearEndDate = ivClearEndDate;
+    this.ivClearStartDate = ivClearStartDate;
     this.linearLayout4 = linearLayout4;
     this.relativeLayout = relativeLayout;
     this.relativeLayout4 = relativeLayout4;
-    this.textView1349 = textView1349;
-    this.textView134s9 = textView134s9;
     this.textView139 = textView139;
     this.textView13r49 = textView13r49;
     this.textView13rdd49 = textView13rdd49;
     this.textView16 = textView16;
     this.textView19 = textView19;
-    this.textView1f34s9 = textView1f34s9;
     this.textViewdd19 = textViewdd19;
+    this.tvSelectEndDate = tvSelectEndDate;
+    this.tvSelectLocation = tvSelectLocation;
+    this.tvSelectStartDate = tvSelectStartDate;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

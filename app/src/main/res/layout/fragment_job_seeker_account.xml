@@ -64,6 +64,12 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/logo_jobamax_blue"/>
+
                 <TextView
                     style="@style/seeker_account_menu.arrow_right"
                     android:onClick="@{() -> handler.onPersonalInformationClicked()}"

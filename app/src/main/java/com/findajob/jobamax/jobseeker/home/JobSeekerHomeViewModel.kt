@@ -8,11 +8,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.findajob.jobamax.base.BaseAndroidViewModel
 import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
+import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.extensions.ioToMain
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel
 import com.findajob.jobamax.jobseeker.profile.account.social.JobSeekerSocialAccountModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Education
 import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
+import com.findajob.jobamax.jobseeker.profile.cv.model.Experience
+import com.findajob.jobamax.jobseeker.profile.cv.model.ExperienceGroup
 import com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchState
 import com.findajob.jobamax.jobseeker.track.JobSeekerTrackState
 import com.findajob.jobamax.model.*
@@ -36,6 +40,7 @@ import java.io.InputStream
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
+
 
 @HiltViewModel
 class JobSeekerHomeViewModel @Inject constructor(val context: Application, val jobSeekerRepo: JobSeekerRepo, val jobOfferRepo: JobOfferRepository) : BaseAndroidViewModel(context) {
@@ -96,6 +101,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
                 loadAppliedJobs()
                 isJobSeekerUpdated.value = true
             }
+
 
             override fun onFailure(e: Exception?) {}
         })
@@ -476,6 +482,232 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
          jobSeekerObject?.put(ParseTableFields.activities.toString(), activitiesTagsJsonArray.toString())
         jobSeekerObject?.saveInBackground {
             callback(it)
+        }
+    }
+
+    fun addAndUpdateExperience(experience: Experience, callback: (it: ParseException?) -> Unit) {
+        val experiences = ArrayList(Gson().fromJson(jobSeekerObject?.get(ParseTableFields.experiences.toString()).toString(), ExperienceGroup::class.java)?.list ?: listOf())
+        var isExperienceExist = false
+        for (edu in experiences.iterator()){
+            if (edu.id == experience.id){
+                isExperienceExist = true
+                experiences[experiences.indexOf(edu)].apply {
+                    this.job = experience.job
+                    this.company = experience.company
+                    this.description = experience.description
+                    this.location = experience.location
+                    this.startDate  = experience.endDate
+                }
+            }
+        }
+        if (!isExperienceExist){
+            experiences.add(experience)
+        }
+        val experienceGroup = ExperienceGroup(experiences)
+        jobSeekerObject?.put(ParseTableFields.experiences.toString(), Gson().toJson(experienceGroup))
+        jobSeekerObject!!.saveInBackground {
+            callback(it)
+            getJobSeeker()
+        }
+    }
+
+    fun saveNewExperienceList(experiences: ArrayList<Experience>, callback: (ParseException?) -> Unit) {
+        val experienceGroup = ExperienceGroup(experiences)
+        jobSeekerObject?.put(ParseTableFields.experiences.toString(), Gson().toJson(experienceGroup))
+        jobSeekerObject!!.saveInBackground {
+            callback(it)
+            getJobSeeker()
+        }
+    }
+
+    fun getExistingHardSkillTags(callback: GetAllUserCallback) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.HardSkill.toString())
+        query.findInBackground { it, e ->
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    callback.onFailure(e)
+                }
+                jobSeeker == null -> {
+                    callback.onFailure(java.lang.Exception("User Not Found"))
+                }
+                else -> {
+                    callback.onSuccess(it)
+                }
+            }
+        }
+    }
+
+    fun saveHardSkillTag(tag: String) {
+        val hardSkillParseObject = ParseObject(ParseTableName.HardSkill.toString())
+        hardSkillParseObject.put("name", tag)
+        hardSkillParseObject.saveInBackground {
+        }
+    }
+
+    fun getExistingSoftSkillTags(callback: GetAllUserCallback) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SoftSkill.toString())
+        query.findInBackground { it, e ->
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    callback.onFailure(e)
+                }
+                jobSeeker == null -> {
+                    callback.onFailure(java.lang.Exception("User Not Found"))
+                }
+                else -> {
+                    callback.onSuccess(it)
+                }
+            }
+        }
+    }
+
+    fun saveSoftSkillTag(tag: String) {
+        val hardSkillParseObject = ParseObject(ParseTableName.SoftSkill.toString())
+        hardSkillParseObject.put("name", tag)
+        hardSkillParseObject.saveInBackground {
+        }
+    }
+
+    fun getExistingVolunteeringTags(callback: GetAllUserCallback) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Volunteering.toString())
+        query.findInBackground { it, e ->
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    callback.onFailure(e)
+                }
+                jobSeeker == null -> {
+                    callback.onFailure(java.lang.Exception("User Not Found"))
+                }
+                else -> {
+                    callback.onSuccess(it)
+                }
+            }
+        }
+    }
+
+    fun getExistingActivitiesTags(callback: GetAllUserCallback) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Activities.toString())
+        query.findInBackground { it, e ->
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    callback.onFailure(e)
+                }
+                jobSeeker == null -> {
+                    callback.onFailure(java.lang.Exception("User Not Found"))
+                }
+                else -> {
+                    callback.onSuccess(it)
+                }
+            }
+        }
+    }
+
+    fun saveVolunteeringTag(tag: String) {
+        val volunteeringParseObject = ParseObject(ParseTableName.Volunteering.toString())
+        volunteeringParseObject.put("name", tag)
+        volunteeringParseObject.saveInBackground {
+        }
+    }
+
+    fun saveActivitiesTag(tag: String) {
+        val activitiesParseObject = ParseObject(ParseTableName.Activities.toString())
+        activitiesParseObject.put("name", tag)
+        activitiesParseObject.saveInBackground {
+        }
+    }
+
+    fun saveSocialMediaLinks(instagramLink: String, linkedInLink: String, tikTokLink: String, callback: (ParseException?) -> Unit) {
+        jobSeekerObject?.let { parseObject ->
+            parseObject.put("instagramLink", instagramLink)
+            parseObject.put("linkedInLink", linkedInLink)
+            parseObject.put("tikTokLink", tikTokLink)
+            parseObject.saveInBackground {
+               callback(it)
+                getJobSeeker()
+            }
+        }
+    }
+
+    fun getWishList(callback: GetAllUserCallback, filteredJobTypes: ArrayList<String>) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
+        if (filteredJobTypes.contains(SeekerWishlistJobFilter.FAVORITE.name)){
+            query.whereEqualTo("favroite", true)
+        }
+        query.include("job")
+        query.include("jobSeeker")
+        query.findInBackground { it, e ->
+            when {
+                e != null -> {
+                    callback.onFailure(e)
+                }
+                it == null -> {
+                    callback.onFailure(java.lang.Exception("User Not Found"))
+                }
+                else -> {
+                    callback.onSuccess(it)
+                }
+            }
+        }
+    }
+
+    fun updateWishlistJob(parseObject: ParseObject, callback: (ParseException?) -> Unit) {
+        parseObject.saveInBackground {
+            callback(it)
+        }
+    }
+
+    fun addJobToTack(trackingJob: ParseObject?, callback: (ParseException?) -> Unit) {
+        trackingJob?.saveInBackground {
+            callback(it)
+        }
+    }
+
+    fun uploadUserAudio(bytes: ByteArray?, onFailure: (ParseException?) -> Unit, onSuccess: (String?) -> Unit) {
+        val parseFile = ParseFile("portfolioAudio", bytes)
+       parseFile.saveInBackground(SaveCallback {
+           if (it != null){
+               onFailure(it)
+           }else{
+               onSuccess(parseFile.url)
+           }
+       })
+    }
+
+    fun uploadImage(uri: Uri, onFailure: (ParseException?) -> Unit, onSuccess: (String?) -> Unit) {
+        val inputStream: InputStream? = context.contentResolver.openInputStream(uri)
+        var fileName = context.getFileName(uri)
+        if (fileName.isEmpty())
+            fileName = Date().yyyyMMddHHmmss()
+        val parseFile = ParseFile(fileName, inputStream?.readBytes())
+        parseFile.saveInBackground(SaveCallback {
+            if (it != null){
+                onFailure(it)
+            }else{
+                onSuccess(parseFile.url)
+            }
+        })
+    }
+
+    fun loadTrackingJob(callback: GetAllUserCallback) {
+         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
+        query.include("job")
+        query.include("jobSeeker")
+        query.findInBackground { list, e ->
+            when {
+                e != null -> {
+                    callback.onFailure(e)
+                }
+                list == null -> {
+                    log("No result found")
+                }
+                else -> {
+                    callback.onSuccess(list)
+                }
+            }
         }
     }
 }
