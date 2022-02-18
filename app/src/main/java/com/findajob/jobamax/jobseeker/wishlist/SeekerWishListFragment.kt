@@ -42,7 +42,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
 
     lateinit var adapter: SeekerWishListAdapter
     var wishlistJobs = ArrayList<WishlistedJob>()
-    var filteredJobTypes = arrayListOf(SeekerWishlistJobFilter.ALL.name)
+    var filteredJob = SeekerWishlistJobFilter.ALL.name
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerWishListBinding.inflate(inflater, container, false)
@@ -60,47 +60,90 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         adapter = SeekerWishListAdapter(wishlistJobs)
         binding.rvWishlistJob.adapter = adapter
         adapter.clickListener = { wishlistJob: WishlistedJob, action: Int ->
-            if (action == 1){
-                updateFavorite(wishlistJob)
-            }else{
-                val trackingJob = TrackingJob()
-                trackingJob.jobSeekerId = wishlistJob.jobSeeker?.let { JobSeeker(it).jobSeekerId }.toString()
-                trackingJob.job = wishlistJob.job
-                trackingJob.jobSeeker = wishlistJob.jobSeeker
-                val phase = Phase()
-                phase.name = "Added to wishlist"
-                phase.no = "1"
-                phase.date = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(wishlistJob.pfObject?.createdAt)
-                trackingJob.phases = Gson().toJson(PhaseGroup(arrayListOf(phase)))
-                val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
-                query.whereEqualTo("job", trackingJob.job)
-                query.whereEqualTo("jobSeeker", trackingJob.jobSeeker)
-                query.countInBackground { count, e ->
-                    if (count == 0){
-                        viewModel.addJobToTack(trackingJob.toParseObject() ){
-                            if (it != null){
-                                toast("${it.message.toString()} Something Went Wrong")
-                            }else{
-                                fetchWishlist(filteredJobTypes)
-                            }
-                        }
-                    }else{
-                        toast("This job is already in tracking.")
+            when(action){
+                1 -> {
+                    updateFavorite(wishlistJob)
+                }
+                2 -> {
+                    addToTrackingJobList(wishlistJob)
+                }
+                else -> {
+                   addToArchived(wishlistJob)
+                }
+            }
+        }
+    }
+
+    private fun addToArchived(wishlistJob: WishlistedJob) {
+        wishlistJob.pfObject?.put("isArchived", !wishlistJob.isArchived)
+        wishlistJob.pfObject?.let { it ->
+            progressHud.show()
+            viewModel.updateWishlistJob(it) { exception ->
+                progressHud.dismiss()
+                if (exception != null) {
+                    toast("${exception.message.toString()} Something Went Wrong")
+                } else {
+                    fetchWishlist(filteredJob)
+                }
+            }
+        }
+    }
+
+    private fun addToTrackingJobList(wishlistJob: WishlistedJob) {
+        val trackingJob = TrackingJob()
+        trackingJob.jobSeekerId =
+            wishlistJob.jobSeeker?.let { JobSeeker(it).jobSeekerId }.toString()
+        trackingJob.job = wishlistJob.job
+        trackingJob.jobSeeker = wishlistJob.jobSeeker
+        val phase = Phase()
+        phase.name = "Added to wishlist"
+        phase.no = "1"
+        phase.date = SimpleDateFormat(
+            "MMM dd, yyyy",
+            Locale.getDefault()
+        ).format(wishlistJob.pfObject?.createdAt)
+        trackingJob.phases = Gson().toJson(PhaseGroup(arrayListOf(phase)))
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
+        query.whereEqualTo("job", trackingJob.job)
+        query.whereEqualTo("jobSeeker", trackingJob.jobSeeker)
+        progressHud.show()
+        query.countInBackground { count, e ->
+            progressHud.dismiss()
+            if (count == 0) {
+                viewModel.addJobToTack(trackingJob.toParseObject()) {
+                    if (it != null) {
+                        toast("${it.message.toString()} Something Went Wrong")
+                    } else {
+                        deleteWishlistJob(wishlistJob)
                     }
                 }
+            } else {
+                deleteWishlistJob(wishlistJob)
+                toast("This job is already in tracking.")
+            }
+        }
+    }
 
+    private fun deleteWishlistJob(wishlistJob: WishlistedJob) {
+        wishlistJob.pfObject?.deleteInBackground { exception ->
+            if (exception != null) {
+                toast("${exception.message.toString()}")
+            } else {
+                fetchWishlist(filteredJob)
             }
         }
     }
 
     private fun updateFavorite(wishlistJob: WishlistedJob) {
         wishlistJob.pfObject?.put("isFavroite", !wishlistJob.isFavroite)
-        wishlistJob.pfObject?.let {
-            viewModel.updateWishlistJob(it) {
-                if (it != null) {
-                    toast("${it.message.toString()} Something Went Wrong")
+        wishlistJob.pfObject?.let { it ->
+            progressHud.show()
+            viewModel.updateWishlistJob(it) { exception ->
+                progressHud.dismiss()
+                if (exception != null) {
+                    toast("${exception.message.toString()} Something Went Wrong")
                 } else {
-                    fetchWishlist(filteredJobTypes)
+                    fetchWishlist(filteredJob)
                 }
             }
         }
@@ -119,28 +162,30 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
             val seekerFilterJobFragment = SeekerFilterJobFragment.newInstance()
             seekerFilterJobFragment.show(childFragmentManager,"dialog")
             seekerFilterJobFragment.onGoClickListener = {
-                filteredJobTypes = it
-                fetchWishlist(filteredJobTypes)
+                filteredJob = it
+                fetchWishlist(filteredJob)
             }
+        }
+
+        binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 
     override fun onCreated(savedInstance: Bundle?) {
         viewModel.getJobSeeker()
-        fetchWishlist(filteredJobTypes)
+        fetchWishlist(filteredJob)
     }
 
-    private fun fetchWishlist(filteredJobTypes: ArrayList<String> ) {
+    private fun fetchWishlist(filteredJob : String ) {
         viewModel.getWishList(object : GetAllUserCallback {
             override fun onSuccess(list: List<ParseObject>) {
                 wishlistJobs.clear()
                 list.forEach {
                     wishlistJobs.add(WishlistedJob(it))
                 }
-
                 adapter.submitList(wishlistJobs)
                 adapter.notifyDataSetChanged()
-
             }
 
             override fun onFailure(e: Exception?) {
@@ -148,7 +193,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                     toast("${e.message.toString()}")
                 }
             }
-        }, filteredJobTypes)
+        }, filteredJob)
     }
 
 }
@@ -166,13 +211,16 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
             if (wishlistJob.isFavroite){
                 this.ivFavorite.setImageResource(R.drawable.heart)
             }else{
-                this.ivFavorite.setImageResource(R.drawable.unfill_favorite_perpule)
+                this.ivFavorite.setImageResource(R.drawable.heart_holo)
             }
             this.ivFavorite.setOnClickListener {
                 clickListener(wishlistJob, 1)
             }
             this.ivAdd.setOnClickListener {
                 clickListener(wishlistJob, 2)
+            }
+            this.ivArchive.setOnClickListener {
+                clickListener(wishlistJob, 3)
             }
         }
     }

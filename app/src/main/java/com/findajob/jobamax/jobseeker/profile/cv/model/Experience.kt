@@ -11,6 +11,7 @@ class Experience : Serializable {
     var startDate: String = ""
     var endDate: String = ""
     var description: String = ""
+    var logo: String = ""
     var location: String = ""
 
 }

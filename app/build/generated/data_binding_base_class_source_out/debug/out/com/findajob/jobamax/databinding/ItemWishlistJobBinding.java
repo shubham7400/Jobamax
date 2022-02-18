@@ -28,6 +28,9 @@ public abstract class ItemWishlistJobBinding extends ViewDataBinding {
   public final ImageView ivAdd;
 
   @NonNull
+  public final ImageView ivArchive;
+
+  @NonNull
   public final CircleImageView ivCompany;
 
   @NonNull
@@ -41,12 +44,13 @@ public abstract class ItemWishlistJobBinding extends ViewDataBinding {
 
   protected ItemWishlistJobBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton acbtnApply, ConstraintLayout constraintLayout10, ImageView ivAdd,
-      CircleImageView ivCompany, ImageView ivFavorite, TextView tvCompanyName,
+      ImageView ivArchive, CircleImageView ivCompany, ImageView ivFavorite, TextView tvCompanyName,
       TextView tvProductName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.acbtnApply = acbtnApply;
     this.constraintLayout10 = constraintLayout10;
     this.ivAdd = ivAdd;
+    this.ivArchive = ivArchive;
     this.ivCompany = ivCompany;
     this.ivFavorite = ivFavorite;
     this.tvCompanyName = tvCompanyName;

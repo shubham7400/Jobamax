@@ -8,6 +8,7 @@ import java.util.*
 class Phase : Serializable {
 
     var name: String = ""
+    var jobTitle: String = ""
     var date: String = ""
     var no: String = ""
 }

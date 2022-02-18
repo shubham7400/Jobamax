@@ -24,6 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
                 android:gravity="center_vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
                 <ImageView
                     android:id="@+id/iv_back_button"
                     android:layout_width="24dp"
@@ -51,9 +53,9 @@
                     android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/default_user_img" />
             </RelativeLayout>

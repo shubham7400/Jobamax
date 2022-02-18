@@ -358,8 +358,8 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
     }
 
     override fun onEmailLoginClicked() {
-        val email = emailField.text.toString()
-        val password = passwordField.text.toString()
+        val email = emailField.text.toString().trim()
+        val password = passwordField.text.toString().trim()
 
         if (!email.isValidEmail())
             toast("Enter valid email!")

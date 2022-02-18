@@ -20,7 +20,7 @@ public class FragmentWelcomeAsSeekerBindingImpl extends FragmentWelcomeAsSeekerB
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    private final androidx.core.widget.NestedScrollView mboundView0;
     // variables
     // values
     // listeners
@@ -35,7 +35,7 @@ public class FragmentWelcomeAsSeekerBindingImpl extends FragmentWelcomeAsSeekerB
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
             , (android.widget.TextView) bindings[2]
             );
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

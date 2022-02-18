@@ -3,8 +3,10 @@ package com.findajob.jobamax.jobseeker.profile
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.NavHostFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.ActivitySeekerProfileBinding
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,5 +33,16 @@ class SeekerProfileActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    override fun onBackPressed() {
+        val fragment = this.supportFragmentManager.findFragmentById(R.id.nav_seeker_profile_fragment) as? NavHostFragment
+        val currentFragment = fragment?.childFragmentManager?.fragments?.get(0) as? IOnBackPressed
+        if (currentFragment != null) {
+            currentFragment.onBackPressed {
+                super.onBackPressed()
+            }
+        } else {
+                super.onBackPressed()
+        }
+    }
 
 }

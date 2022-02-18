@@ -19,8 +19,9 @@ public class ItemWishlistJobBindingImpl extends ItemWishlistJobBinding  {
         sViewsWithIds.put(R.id.tv_product_name, 3);
         sViewsWithIds.put(R.id.tv_company_name, 4);
         sViewsWithIds.put(R.id.acbtn_apply, 5);
-        sViewsWithIds.put(R.id.iv_favorite, 6);
-        sViewsWithIds.put(R.id.iv_add, 7);
+        sViewsWithIds.put(R.id.iv_archive, 6);
+        sViewsWithIds.put(R.id.iv_favorite, 7);
+        sViewsWithIds.put(R.id.iv_add, 8);
     }
     // views
     @NonNull
@@ -31,15 +32,16 @@ public class ItemWishlistJobBindingImpl extends ItemWishlistJobBinding  {
     // Inverse Binding Event Handlers
 
     public ItemWishlistJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private ItemWishlistJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.appcompat.widget.AppCompatButton) bindings[5]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
-            , (android.widget.ImageView) bindings[7]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[6]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.ImageView) bindings[7]
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[3]
             );

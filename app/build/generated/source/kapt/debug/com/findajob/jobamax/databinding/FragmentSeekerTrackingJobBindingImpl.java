@@ -17,15 +17,17 @@ public class FragmentSeekerTrackingJobBindingImpl extends FragmentSeekerTracking
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
         sViewsWithIds.put(R.id.linearLayout5, 4);
-        sViewsWithIds.put(R.id.textView17, 5);
-        sViewsWithIds.put(R.id.textView133, 6);
-        sViewsWithIds.put(R.id.constraintLayout4, 7);
-        sViewsWithIds.put(R.id.imageView18, 8);
-        sViewsWithIds.put(R.id.constraintLayout5, 9);
-        sViewsWithIds.put(R.id.textView18, 10);
-        sViewsWithIds.put(R.id.iv_menu, 11);
-        sViewsWithIds.put(R.id.iv_filter, 12);
-        sViewsWithIds.put(R.id.rv_tracked_job, 13);
+        sViewsWithIds.put(R.id.tv_deadline_title, 5);
+        sViewsWithIds.put(R.id.tv_next_deadline, 6);
+        sViewsWithIds.put(R.id.tv_next_interview_title, 7);
+        sViewsWithIds.put(R.id.tv_next_interview, 8);
+        sViewsWithIds.put(R.id.constraintLayout4, 9);
+        sViewsWithIds.put(R.id.iv_calendar, 10);
+        sViewsWithIds.put(R.id.constraintLayout5, 11);
+        sViewsWithIds.put(R.id.textView18, 12);
+        sViewsWithIds.put(R.id.iv_menu, 13);
+        sViewsWithIds.put(R.id.iv_filter, 14);
+        sViewsWithIds.put(R.id.rv_tracked_job, 15);
     }
     // views
     @NonNull
@@ -38,22 +40,24 @@ public class FragmentSeekerTrackingJobBindingImpl extends FragmentSeekerTracking
     // Inverse Binding Event Handlers
 
     public FragmentSeekerTrackingJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 16, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerTrackingJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[9]
-            , (android.widget.ImageView) bindings[8]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[11]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[12]
-            , (android.widget.ImageView) bindings[11]
+            , (android.widget.ImageView) bindings[10]
+            , (android.widget.ImageView) bindings[14]
+            , (android.widget.ImageView) bindings[13]
             , (android.widget.LinearLayout) bindings[4]
             , (android.widget.RelativeLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[13]
-            , (android.widget.TextView) bindings[6]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[15]
+            , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[7]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

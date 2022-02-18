@@ -28,10 +28,10 @@ public abstract class FragmentSeekerTrackingJobBinding extends ViewDataBinding {
   public final ConstraintLayout constraintLayout5;
 
   @NonNull
-  public final ImageView imageView18;
+  public final ImageView ivBackButton;
 
   @NonNull
-  public final ImageView ivBackButton;
+  public final ImageView ivCalendar;
 
   @NonNull
   public final ImageView ivFilter;
@@ -49,35 +49,44 @@ public abstract class FragmentSeekerTrackingJobBinding extends ViewDataBinding {
   public final RecyclerView rvTrackedJob;
 
   @NonNull
-  public final TextView textView133;
-
-  @NonNull
-  public final TextView textView17;
-
-  @NonNull
   public final TextView textView18;
+
+  @NonNull
+  public final TextView tvDeadlineTitle;
+
+  @NonNull
+  public final TextView tvNextDeadline;
+
+  @NonNull
+  public final TextView tvNextInterview;
+
+  @NonNull
+  public final TextView tvNextInterviewTitle;
 
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerTrackingJobBinding(Object _bindingComponent, View _root,
       int _localFieldCount, ConstraintLayout constraintLayout4, ConstraintLayout constraintLayout5,
-      ImageView imageView18, ImageView ivBackButton, ImageView ivFilter, ImageView ivMenu,
+      ImageView ivBackButton, ImageView ivCalendar, ImageView ivFilter, ImageView ivMenu,
       LinearLayout linearLayout5, RelativeLayout relativeLayout, RecyclerView rvTrackedJob,
-      TextView textView133, TextView textView17, TextView textView18) {
+      TextView textView18, TextView tvDeadlineTitle, TextView tvNextDeadline,
+      TextView tvNextInterview, TextView tvNextInterviewTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.constraintLayout4 = constraintLayout4;
     this.constraintLayout5 = constraintLayout5;
-    this.imageView18 = imageView18;
     this.ivBackButton = ivBackButton;
+    this.ivCalendar = ivCalendar;
     this.ivFilter = ivFilter;
     this.ivMenu = ivMenu;
     this.linearLayout5 = linearLayout5;
     this.relativeLayout = relativeLayout;
     this.rvTrackedJob = rvTrackedJob;
-    this.textView133 = textView133;
-    this.textView17 = textView17;
     this.textView18 = textView18;
+    this.tvDeadlineTitle = tvDeadlineTitle;
+    this.tvNextDeadline = tvNextDeadline;
+    this.tvNextInterview = tvNextInterview;
+    this.tvNextInterviewTitle = tvNextInterviewTitle;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

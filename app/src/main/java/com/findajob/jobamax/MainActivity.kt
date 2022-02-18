@@ -11,6 +11,7 @@ import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity
 import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.Recruiter
@@ -54,6 +55,8 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
                         val loginType = deepLink?.getQueryParameter("LoginType")
                         val id = deepLink?.getQueryParameter("recruiterId")
                         val topicId = deepLink?.getQueryParameter("topicId")
+                        val jobOfferId = deepLink?.getQueryParameter("jobOfferId")
+                        val jobSeekerId = deepLink?.getQueryParameter("jobSeekerId")
                         val path = deepLink?.path!!.substring(1, deepLink!!.path!!.length)
                         when(path){
                             FirebaseDynamicLinkPath.verifyemail.toString() -> {
@@ -65,6 +68,12 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
                             }
                             FirebaseDynamicLinkPath.masterclassVideo.toString() -> {
                                 startActivity(Intent(this, MasterClassDetailsActivity::class.java).putExtra("topic_id", topicId))
+                            }
+                            FirebaseDynamicLinkPath.shareJobOffer.toString() -> {
+                                startActivity(Intent(this, SeekerJobSearchActivity::class.java).also {
+                                    it.putExtra("jobOfferId", jobOfferId)
+                                    it.putExtra("jobSeekerId", jobSeekerId)
+                                })
                             }
                         }
                     }

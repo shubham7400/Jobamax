@@ -4,6 +4,7 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,9 @@ public abstract class ItemSeekerTrackingJobDetailCardBinding extends ViewDataBin
   public final ConstraintLayout constraintLayout11;
 
   @NonNull
+  public final ImageView ivDeletePhase;
+
+  @NonNull
   public final TextView tvDate;
 
   @NonNull
@@ -35,10 +39,11 @@ public abstract class ItemSeekerTrackingJobDetailCardBinding extends ViewDataBin
 
   protected ItemSeekerTrackingJobDetailCardBinding(Object _bindingComponent, View _root,
       int _localFieldCount, ConstraintLayout cardView24, ConstraintLayout constraintLayout11,
-      TextView tvDate, TextView tvName, View view11, View view2e) {
+      ImageView ivDeletePhase, TextView tvDate, TextView tvName, View view11, View view2e) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cardView24 = cardView24;
     this.constraintLayout11 = constraintLayout11;
+    this.ivDeletePhase = ivDeletePhase;
     this.tvDate = tvDate;
     this.tvName = tvName;
     this.view11 = view11;

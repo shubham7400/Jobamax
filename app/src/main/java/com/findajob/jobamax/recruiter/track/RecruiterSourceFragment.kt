@@ -162,8 +162,7 @@ class RecruiterSourceFragment : BaseFragmentMain<FragmentRecruiterSourceBinding>
         log("onAcceptClicked()")
         if (viewModel.jobSeekers.size == viewModel.sourceIndex)
             return
-        val overlayLayout =
-            cardStackLayoutManager.topView.findViewById<RelativeLayout>(R.id.overlayLayout)
+        val overlayLayout = cardStackLayoutManager.topView.findViewById<RelativeLayout>(R.id.overlayLayout)
         val overlayLabel = cardStackLayoutManager.topView.findViewById<TextView>(R.id.overlayLabel)
         overlayLayout.visibility = View.VISIBLE
         overlayLabel.text = getString(R.string.reach)
@@ -259,7 +258,6 @@ class RecruiterSourceFragment : BaseFragmentMain<FragmentRecruiterSourceBinding>
                             onRewindClicked()
                         }
                     }
-
                 } else {
                     val jobSeeker: ParseObject = viewModel.jobSeekers[viewModel.sourceIndex]
                     showMessagePopUp(jobSeeker)

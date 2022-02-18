@@ -37,7 +37,7 @@
             android:background="@drawable/rounded_white_box_sad_white_strok"
             android:elevation="3dp"
             android:layout_marginTop="20dp"
-            android:hint="Select Date"
+            android:hint="Select Deadline"
             android:textColorHint="@color/black"
             android:textSize="18sp"
             android:fontFamily="@font/opensans_bold"

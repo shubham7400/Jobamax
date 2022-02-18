@@ -5,6 +5,7 @@
     tools:context=".login.newloginflow.NoReactionFragment">
 
     <androidx.core.widget.NestedScrollView
+        android:background="#EAF2FB"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -12,7 +13,7 @@
             android:orientation="vertical"
             android:layout_height="match_parent">
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:background="#EAF2FB"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

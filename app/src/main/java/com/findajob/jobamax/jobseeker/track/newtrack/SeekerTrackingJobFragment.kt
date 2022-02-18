@@ -1,5 +1,6 @@
 package com.findajob.jobamax.jobseeker.track.newtrack
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +14,13 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobBinding
 import com.findajob.jobamax.databinding.ItemSeekerTrackBinding
+import com.findajob.jobamax.enums.JobPhase
+import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.wishlist.SeekerFilterJobFragment
 import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.model.TrackingJob
+import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,10 +42,36 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
     }
 
     private fun configureUi() {
+        getNextDeadline()
+        getNextInterview()
         setAdapter()
          setClickListeners()
         viewModelObserver()
         viewModel.getJobSeeker()
+    }
+
+    private fun getNextInterview() {
+        viewModel.getNextInterview(JobPhase.INTERVIEW.phase, requireContext().getUserId(), {
+            toast("${it.message.toString()}")
+        }, {
+            if (it == "" || it == null){
+                binding.tvNextInterview.text = "No Interview"
+            }else{
+                binding.tvNextInterview.text = it
+            }
+        })
+    }
+
+    private fun getNextDeadline() {
+        viewModel.getNextDeadline(JobPhase.DEADLINE.phase, requireContext().getUserId(), {
+            toast("${it.message.toString()}")
+        }, {
+            if (it == "" || it == null){
+                binding.tvNextDeadline.text = "No Deadline"
+            }else{
+                binding.tvNextDeadline.text = it
+            }
+        })
     }
 
     private fun setAdapter() {
@@ -59,6 +90,17 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
     private fun setClickListeners() {
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.ivCalendar.setOnClickListener {
+            requireContext().startActivity(Intent(requireContext(), SeekerCalenderActivity::class.java))
+        }
+        binding.ivFilter.setOnClickListener {
+            val seekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment.newInstance()
+            seekerTrackingJobFilterDialogFragment.show(childFragmentManager,"dialog")
+            seekerTrackingJobFilterDialogFragment.onGoClickListener = {
+             /*   filteredJob = it
+                fetchWishlist(filteredJob)*/
+            }
         }
     }
 
@@ -93,6 +135,7 @@ class SeekerTrackingJobAdapter(var list: ArrayList<TrackingJob>) : RecyclerView.
             val bundle = Bundle()
             bundle.putSerializable("trackingJob", job)
             this.clParent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerTrackingJobDetailsFragment, bundle))
+            this.acbtnApply.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerTrackingJobDetailsFragment, bundle))
         }
     }
     override fun getItemCount(): Int = list.size

@@ -14,7 +14,7 @@ public class ItemSeekerExperienceBindingImpl extends ItemSeekerExperienceBinding
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.iv_ssss, 1);
+        sViewsWithIds.put(R.id.iv_company, 1);
         sViewsWithIds.put(R.id.tv_job_name, 2);
         sViewsWithIds.put(R.id.iv_delete_item, 3);
         sViewsWithIds.put(R.id.tv_company_name, 4);
@@ -32,8 +32,8 @@ public class ItemSeekerExperienceBindingImpl extends ItemSeekerExperienceBinding
     }
     private ItemSeekerExperienceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[3]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[0]
             , (android.widget.TextView) bindings[6]
             , (android.widget.TextView) bindings[4]

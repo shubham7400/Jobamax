@@ -73,6 +73,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/acbtn_apply">
+            <ImageView
+                android:id="@+id/iv_archive"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_archive" />
 
             <ImageView
                 android:id="@+id/iv_favorite"

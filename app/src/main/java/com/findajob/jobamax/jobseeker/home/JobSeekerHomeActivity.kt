@@ -1,13 +1,16 @@
 package com.findajob.jobamax.jobseeker.home
 
 import android.Manifest
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -21,7 +24,9 @@ import com.findajob.jobamax.dashboard.messages.MainChatActivity
 import com.findajob.jobamax.dashboard.messages.MessagesFragment
 import com.findajob.jobamax.dashboard.messages.ProfileActivity
 import com.findajob.jobamax.databinding.ActivityJobSeekerHomeBinding
+import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity
 import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity
@@ -32,11 +37,13 @@ import com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment
 import com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity
 import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity
 import com.findajob.jobamax.model.UpdateUserCallback
+import com.findajob.jobamax.util.AESCrypt
 import com.findajob.jobamax.util.errorToast
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.location.*
 import com.parse.ParseGeoPoint
+import com.pushwoosh.Pushwoosh
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_job_seeker_home.*
 import org.jetbrains.anko.longToast
@@ -82,16 +89,20 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
         binding.tvSeekerName.setOnClickListener(this)
         binding.vProfile.setOnClickListener(this)
         binding.vCalendar.setOnClickListener(this)
-        binding.vMessage.setOnClickListener(this)
+       /* binding.vMessage.setOnClickListener(this)*/
         binding.vProfile.setOnClickListener(this)
         binding.vTrack.setOnClickListener(this)
         binding.vWishlist.setOnClickListener(this)
         binding.ivSetting.setOnClickListener(this)
         binding.ivSetting.setOnClickListener(this)
+        binding.textView6.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when(view){
+            binding.textView6 -> {
+                startActivity(Intent(this, SeekerJobSearchActivity::class.java))
+            }
             binding.ivSetting ->{
                 startActivity(Intent(this, JobSeekerAccountActivity::class.java))
             }
@@ -99,13 +110,15 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
                 startActivity(Intent(this, SeekerProfileActivity::class.java))
             }
             binding.vCalendar ->{
-                startActivity(Intent(this, JobSeekerCourseActivity::class.java))
+                /*startActivity(Intent(this, JobSeekerCourseActivity::class.java))*/
+                startActivity(Intent(this, SeekerCalenderActivity::class.java))
             }
-            binding.vMessage ->{
+           /* binding.vMessage ->{
                 startActivity(Intent(this, MainChatActivity::class.java))
-            }
+            }*/
             binding.vTrack ->{
-                startActivity(Intent(this, JobSeekerApplyActivity::class.java))
+                startActivity(Intent(this, SeekerJobTrackingActivity::class.java))
+                /*startActivity(Intent(this, JobSeekerApplyActivity::class.java))*/
             }
             binding.vWishlist ->{
                 startActivity(Intent(this, SeekerWishListActivity::class.java))
@@ -117,7 +130,14 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
                 startActivity(Intent(this, ProfileActivity::class.java))
             }
             binding.btnCoaching ->{
-                startActivity(Intent(this, SeekerJobTrackingActivity::class.java))
+                val i = Intent(Intent.ACTION_SEND)
+                i.type = "message/rfc822"
+                i.putExtra(Intent.EXTRA_EMAIL, arrayOf("dev.jobamax@gmail.com"))
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."))
+                } catch (ex: ActivityNotFoundException) {
+                    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

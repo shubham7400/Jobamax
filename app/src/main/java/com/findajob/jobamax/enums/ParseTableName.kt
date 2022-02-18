@@ -76,6 +76,8 @@ enum class ParseTableName {
     Volunteering,
     University,
     WishlistedJob,
-    TrackingJob
+    TrackingJob,
+    Portfolio,
+    IdealJob
 
 }

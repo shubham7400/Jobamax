@@ -19,6 +19,7 @@ public class ItemSeekerTrackingJobDetailCardBindingImpl extends ItemSeekerTracki
         sViewsWithIds.put(R.id.tv_date, 3);
         sViewsWithIds.put(R.id.tv_name, 4);
         sViewsWithIds.put(R.id.view2e, 5);
+        sViewsWithIds.put(R.id.iv_delete_phase, 6);
     }
     // views
     // variables
@@ -27,12 +28,13 @@ public class ItemSeekerTrackingJobDetailCardBindingImpl extends ItemSeekerTracki
     // Inverse Binding Event Handlers
 
     public ItemSeekerTrackingJobDetailCardBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private ItemSeekerTrackingJobDetailCardBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
+            , (android.widget.ImageView) bindings[6]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[4]
             , (android.view.View) bindings[1]

@@ -135,7 +135,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="@{jobSeeker.firstName}"
+                    android:text='@{jobSeeker.firstName.equals("") ?  ("anonymous") : jobSeeker.firstName}'
                     android:layout_marginHorizontal="20dp"
                     android:paddingStart="10dp"
                     android:background="@drawable/rounded_white_box"
@@ -162,11 +162,37 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginHorizontal="20dp"
-                    android:text="@{jobSeeker.lastName}"
+                    android:text='@{jobSeeker.lastName.equals("") ?  ("anonymous") : jobSeeker.lastName}'
                     android:paddingStart="10dp"
                     android:background="@drawable/rounded_white_box"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <TextView
+                    android:id="@+id/textView140"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/opensans_bold"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Your Profession"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
+
+                <EditText
+                    android:id="@+id/et_profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:text='@{jobSeeker.profession.equals("") ?  ("") : jobSeeker.profession}'
+                    android:paddingStart="10dp"
+                    android:background="@drawable/rounded_white_box"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView140" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -180,16 +206,19 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_profession" />
 
                 <EditText
                     android:id="@+id/et_description"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="20dp"
                     android:layout_height="150dp"
-                    android:gravity="top"
                     android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/rounded_white_box"
+                    android:gravity="top"
+                    android:padding="10dp"
+                    android:text='@{jobSeeker.elevatorPitch.equals("") ?  ("") : jobSeeker.elevatorPitch}'
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView11" />
 

@@ -42,7 +42,7 @@
                         android:id="@+id/iv_back_button"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/back_arrow_img" />
+                        android:src="@drawable/back_arrow_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
                         android:layout_toRightOf="@+id/iv_back_button"
                         android:fontFamily="@font/opensans_bold"
                         android:text="My Profile"
-                        android:textColor="#7800EF"
+                        android:textColor="@color/blue_2"
                         android:textSize="20dp" />
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
@@ -64,12 +64,12 @@
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/ic_recruiter_track"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/imageView17"
+                            app:layout_constraintEnd_toStartOf="@+id/iv_preview"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
-                            android:id="@+id/imageView17"
+                            android:id="@+id/iv_preview"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:src="@drawable/eye"
@@ -115,8 +115,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_white_box"
-                        android:backgroundTint="#C1B5FA"
+                        android:background="@drawable/bg_gradient_rounded"
                         android:paddingStart="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -138,14 +137,14 @@
                             android:layout_below="@+id/tv_aaa"
                             android:layout_marginBottom="20dp"
                             android:background="@drawable/rounded_white_box"
-                            android:backgroundTint="#7800EF"
                             android:fontFamily="@font/opensans_regular"
                             android:padding="10dp"
                             android:text="About me"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/blue_2" />
                     </RelativeLayout>
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_user"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginEnd="-30dp"
@@ -178,7 +177,7 @@
                             android:layout_centerVertical="true"
                             android:fontFamily="@font/opensans_bold"
                             android:text="My ideal job"
-                            android:textColor="#7800EF"
+                            android:textColor="@color/blue_2"
                             android:textSize="20dp" />
 
                         <ImageView
@@ -188,8 +187,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginStart="10dp"
                             android:layout_toRightOf="@+id/tv_ddd"
-                            android:tooltipText="test test test test test test test test test test test "
-                            android:src="@drawable/info_icon" />
+                            android:src="@drawable/info_blue" />
                     </RelativeLayout>
 
                     <TextView
@@ -207,13 +205,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <RelativeLayout
-                            android:id="@+id/rl_portfolio"
+                            android:id="@+id/rl_ideal_job_video"
                             android:layout_weight="0.33"
                             android:background="@drawable/rounded_white_box"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
+
                             <TextView
-                                android:id="@+id/tv_calender_title"
+                                android:id="@+id/tv_ideal_job_video_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
@@ -226,8 +225,9 @@
                                 android:text="Video 0/1"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
+
                             <ImageView
-                                android:id="@+id/iv_calender"
+                                android:id="@+id/iv_ideal_job_video"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_alignParentBottom="true"
@@ -242,13 +242,14 @@
                             android:layout_width="10dp"
                             android:layout_height="match_parent"/>
                         <RelativeLayout
+                            android:id="@+id/rl_ideal_job_message"
                             android:layout_weight="0.33"
                             android:background="@drawable/rounded_white_box"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/tv_calender_titlef"
+                                android:id="@+id/tv_ideal_job_message_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
@@ -263,7 +264,7 @@
                                 android:textSize="18dp" />
 
                             <ImageView
-                                android:id="@+id/iv_calvender"
+                                android:id="@+id/iv_ideal_job_message"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_alignParentBottom="true"
@@ -278,12 +279,14 @@
                             android:layout_width="10dp"
                             android:layout_height="match_parent"/>
                         <RelativeLayout
+                            android:id="@+id/rl_ideal_job_image"
                             android:layout_weight="0.33"
                             android:background="@drawable/rounded_white_box"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:id="@+id/tv_calender_titlex"
+                                android:id="@+id/tv_ideal_job_image_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
@@ -298,10 +301,10 @@
                                 android:textSize="18dp" />
 
                             <ImageView
-                                android:id="@+id/iv_calendxer"
+                                android:id="@+id/iv_ideal_job_image"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:layout_below="@+id/tv_calender_titlex"
+                                android:layout_below="@+id/tv_ideal_job_image_title"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="10dp"
@@ -310,6 +313,62 @@
                                 android:src="@drawable/camera_icon_black" />
                         </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:id="@+id/rl_ideal_job_audio"
+                            android:layout_weight="0.33"
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_ideal_job_audio_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="center"
+                                android:text="Audio"
+                                android:textColor="@color/gray"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:id="@+id/iv_ideal_job_audio"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/tv_ideal_job_audio_title"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:src="@drawable/video_icon_black" />
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.33"
+                            android:layout_height="match_parent"/>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.33"
+                            android:layout_height="match_parent"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
                     <RelativeLayout
                         android:layout_marginTop="20dp"
@@ -323,20 +382,20 @@
                             android:layout_centerVertical="true"
                             android:fontFamily="@font/opensans_bold"
                             android:text="My Resume"
-                            android:textColor="#7800EF"
+                            android:textColor="@color/blue_2"
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/tv_import_resume_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:layout_marginBottom="20dp"
-                            android:background="@drawable/rounded_white_box"
-                            android:backgroundTint="#7800EF"
+                            android:background="@drawable/bg_gradient_rounded"
                             android:fontFamily="@font/opensans_regular"
-                            android:padding="10dp"
                             android:gravity="center"
+                            android:padding="10dp"
                             android:text="Import my\nLinkedin Profile"
                             android:textColor="@color/white" />
                     </RelativeLayout>
@@ -397,7 +456,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Jobs"
+                                android:text="Experience"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -430,7 +489,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cl_volunteering_activities"
+                            android:id="@+id/cl_volunteering"
                             android:layout_weight="0.50"
                             android:background="@drawable/rounded_white_box"
                             android:layout_width="match_parent"
@@ -441,7 +500,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Voluntering &amp; activities"
+                                android:text="Volunteering"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -510,13 +569,67 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_interest"
+                            android:layout_weight="0.50"
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/textViedw76"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="Intrests"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:layout_width="33dp"
+                                android:layout_height="33dp"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="30dp"
+                                android:src="@drawable/eye_scanner"
+                                app:layout_constraintBottom_toTopOf="@+id/textView86d"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textViedw76" />
+                            <ImageView
+                                android:id="@+id/textView86d"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:src="@drawable/edit"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.50"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
                     <TextView
                         android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:text="My Portfolio"
-                        android:textColor="#7800EF"
+                        android:textColor="@color/blue_2"
                         android:textSize="20dp" />
 
                     <TextView
@@ -528,13 +641,128 @@
                         android:textColor="@color/gray"
                         android:textSize="18sp" />
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:id="@+id/rl_portfolio_video"
+                            android:layout_weight="0.33"
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_calender_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="center"
+                                android:text="Video 0/1"
+                                android:textColor="@color/gray"
+                                android:textSize="18dp" />
+                            <ImageView
+                                android:id="@+id/iv_calender"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:src="@drawable/video_icon_black" />
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <RelativeLayout
+                            android:id="@+id/rl_portfolio_message"
+                            android:layout_weight="0.33"
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_calender_titlef"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="center"
+                                android:text="Text 240 Characters"
+                                android:textColor="@color/gray"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:id="@+id/iv_calvender"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:src="@drawable/message_icon_black" />
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <RelativeLayout
+                            android:id="@+id/rl_portfolio_image"
+                            android:layout_weight="0.33"
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_calender_titlex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="center"
+                                android:text="Pictures 1/5"
+                                android:textColor="@color/gray"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:id="@+id/iv_calendxer"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/tv_calender_titlex"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:src="@drawable/camera_icon_black" />
+                        </RelativeLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
                     <TextView
                         android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:text="My ideal workspace"
-                        android:textColor="#7800EF"
+                        android:textColor="@color/blue_2"
                         android:textSize="20dp" />
 
                     <RelativeLayout
@@ -551,7 +779,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/add_icon" />
+                            android:src="@drawable/add_blue" />
 
                         <AutoCompleteTextView
                             android:id="@+id/et_ideal_workspace"

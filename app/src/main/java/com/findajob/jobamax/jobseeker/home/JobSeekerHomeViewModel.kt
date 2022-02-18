@@ -7,16 +7,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.findajob.jobamax.base.BaseAndroidViewModel
+import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.extensions.ioToMain
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel
 import com.findajob.jobamax.jobseeker.profile.account.social.JobSeekerSocialAccountModel
-import com.findajob.jobamax.jobseeker.profile.cv.model.Education
-import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
-import com.findajob.jobamax.jobseeker.profile.cv.model.Experience
-import com.findajob.jobamax.jobseeker.profile.cv.model.ExperienceGroup
+import com.findajob.jobamax.jobseeker.profile.cv.model.*
 import com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchState
 import com.findajob.jobamax.jobseeker.track.JobSeekerTrackState
 import com.findajob.jobamax.model.*
@@ -76,35 +74,35 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
     val jobSeekerTrackStateLiveData = _jobSeekerTrackStateLiveData
 
     fun getJobSeeker() {
-        jobSeekerRepo.getCurrent(object : GetUserCallback {
-            override fun onSuccess(parseObject: ParseObject) {
-                jobSeekerObject = parseObject
+        viewModelScope.launch {
+            jobSeekerRepo.getCurrent(object : GetUserCallback {
+                override fun onSuccess(parseObject: ParseObject) {
+                    jobSeekerObject = parseObject
 
-                if (jobSeeker.disableAccountFlag) {
-                    jobSeekerObject?.put("disableAccountFlag", false)
-                    jobSeekerObject?.saveInBackground()
+                    if (jobSeeker.disableAccountFlag) {
+                        jobSeekerObject?.put("disableAccountFlag", false)
+                        jobSeekerObject?.saveInBackground()
+                    }
+
+                    context.setNewMatchPNFlag(jobSeeker.newMatchPNFlag)
+                    currentIndex = 0
+                    jobOfferPageIndex = 0
+                    isJobOfferExhausted = false
+                    jobOffers = arrayListOf()
+
+                    if (jobSeeker.lastTodayReachUpdatedAt < Date().toText()) {
+                        jobSeekerObject?.put("lastTodayReachUpdatedAt", Date().toText())
+                        jobSeekerObject?.put("todayReach", 3)
+                        jobSeekerObject?.saveInBackground()
+                    }
+
+                    loadJobOffers()
+                    loadAppliedJobs()
+                    isJobSeekerUpdated.value = true
                 }
-
-                context.setNewMatchPNFlag(jobSeeker.newMatchPNFlag)
-                currentIndex = 0
-                jobOfferPageIndex = 0
-                isJobOfferExhausted = false
-                jobOffers = arrayListOf()
-
-                if (jobSeeker.lastTodayReachUpdatedAt < Date().toText()) {
-                    jobSeekerObject?.put("lastTodayReachUpdatedAt", Date().toText())
-                    jobSeekerObject?.put("todayReach", 3)
-                    jobSeekerObject?.saveInBackground()
-                }
-
-                loadJobOffers()
-                loadAppliedJobs()
-                isJobSeekerUpdated.value = true
-            }
-
-
-            override fun onFailure(e: Exception?) {}
-        })
+                override fun onFailure(e: Exception?) {}
+            })
+        }
     }
 
     fun loadAppliedJobs() {
@@ -399,16 +397,23 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun updateJobSeeker(firstName: String, lastName: String, callback: (it: ParseException?) -> Unit) {
+    fun updateJobSeeker(firstName: String, lastName: String, profession: String, description: String, callback: (it: ParseException?) -> Unit) {
         jobSeekerObject!!.put(ParseTableFields.firstName.toString(), firstName)
         jobSeekerObject!!.put(ParseTableFields.lastName.toString(), lastName)
+        jobSeekerObject!!.put(ParseTableFields.profession.toString(), profession)
+        jobSeekerObject!!.put(ParseTableFields.elevatorPitch.toString(), description)
         jobSeekerObject!!.saveInBackground {
             callback(it)
         }
     }
 
     fun addNewOrUpdateEducation(education: Education, callback: (it: ParseException?) -> Unit) {
-        val educations = ArrayList(Gson().fromJson(jobSeekerObject?.get("educations").toString(), EducationGroup::class.java)?.list ?: listOf())
+        val educations = try {
+            ArrayList(Gson().fromJson(jobSeekerObject?.get("educations").toString(), EducationGroup::class.java)?.list ?: listOf())
+        }catch (e: java.lang.Exception){
+            log("${e.message.toString()}")
+            arrayListOf()
+        }
         var isEducationExist = false
         for (edu in educations.iterator()){
             if (edu.id == education.id){
@@ -419,6 +424,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
                     gpa = education.gpa
                     startDate = education.startDate
                     endDate = education.endDate
+                    logo = education.logo
                 }
             }
         }
@@ -463,16 +469,6 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun addVolunteeringTags(volunteeringTags: ArrayList<String>, callback: (it: ParseException?) -> Unit) {
-        val volunteeringTagsJsonArray = JSONArray()
-        volunteeringTags.forEach {
-            volunteeringTagsJsonArray.put(it)
-        }
-         jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), volunteeringTagsJsonArray.toString())
-        jobSeekerObject?.saveInBackground {
-            callback(it)
-        }
-    }
 
     fun addActivitiesTags(activitiesTags: ArrayList<String>, callback: (it: ParseException?) -> Unit) {
         val activitiesTagsJsonArray = JSONArray()
@@ -570,23 +566,6 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun getExistingVolunteeringTags(callback: GetAllUserCallback) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Volunteering.toString())
-        query.findInBackground { it, e ->
-            val jobSeeker = it?.firstOrNull()
-            when {
-                e != null -> {
-                    callback.onFailure(e)
-                }
-                jobSeeker == null -> {
-                    callback.onFailure(java.lang.Exception("User Not Found"))
-                }
-                else -> {
-                    callback.onSuccess(it)
-                }
-            }
-        }
-    }
 
     fun getExistingActivitiesTags(callback: GetAllUserCallback) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Activities.toString())
@@ -632,10 +611,16 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun getWishList(callback: GetAllUserCallback, filteredJobTypes: ArrayList<String>) {
+    fun getWishList(callback: GetAllUserCallback, filteredJob : String) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
-        if (filteredJobTypes.contains(SeekerWishlistJobFilter.FAVORITE.name)){
-            query.whereEqualTo("favroite", true)
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),context.getUserId())
+        if (filteredJob == SeekerWishlistJobFilter.ARCHIVE.name){
+            query.whereEqualTo("isArchived", true)
+        }else{
+            query.whereEqualTo("isArchived", false)
+        }
+        if (filteredJob == SeekerWishlistJobFilter.FAVORITE.name){
+            query.whereEqualTo("isFavroite", true)
         }
         query.include("job")
         query.include("jobSeeker")
@@ -694,6 +679,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
 
     fun loadTrackingJob(callback: GetAllUserCallback) {
          val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),context.getUserId())
         query.include("job")
         query.include("jobSeeker")
         query.findInBackground { list, e ->
@@ -708,6 +694,94 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
                     callback.onSuccess(list)
                 }
             }
+        }
+    }
+
+    fun getNextInterview(phase: String, jobSeekerId: String, onFailure: (ParseException) -> Unit, onSuccess: (String?) -> Unit) {
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), mapOf("name" to phase , "jobSeekerId" to jobSeekerId ), FunctionCallback<String>() { result, e ->
+            when {
+                e != null -> {
+                    onFailure(e)
+                }
+                else -> {
+                    onSuccess(result)
+                }
+            }
+        })
+    }
+
+    fun getNextDeadline(phase: String, jobSeekerId: String, onFailure: (ParseException) -> Unit, onSuccess: (String?) -> Unit) {
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), mapOf("name" to phase , "jobSeekerId" to jobSeekerId ), FunctionCallback<String>() { result, e ->
+            when {
+                e != null -> {
+                    onFailure(e)
+                }
+                else -> {
+                    onSuccess(result)
+                }
+            }
+        })
+    }
+
+    fun addOrUpdateVolunteering(volunteering: Volunteering, callback: (it: ParseException?) -> Unit) {
+        val volunteerings = ArrayList(Gson().fromJson(jobSeekerObject?.get("volunteerings").toString(), VolunteeringGroup::class.java)?.list ?: listOf())
+        var isVolunteeringExist = false
+        for (volunt in volunteerings.iterator()){
+            if (volunt.id == volunteering.id){
+                isVolunteeringExist = true
+                volunteerings[volunteerings.indexOf(volunt)].apply {
+                    job = volunteering.job
+                    company = volunteering.company
+                    location = volunteering.location
+                    startDate = volunteering.startDate
+                    endDate = volunteering.endDate
+                }
+            }
+        }
+        if (!isVolunteeringExist){
+            volunteerings.add(volunteering)
+        }
+        val volunteeringGroup = VolunteeringGroup(volunteerings)
+        jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), Gson().toJson(volunteeringGroup))
+        jobSeekerObject!!.saveInBackground {
+            callback(it)
+            getJobSeeker()
+        }
+    }
+
+    fun saveNewVolunteeringList(volunteerings: ArrayList<Volunteering>, callback: (ParseException?) -> Unit) {
+        val volunteeringGroup = VolunteeringGroup(volunteerings)
+        jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), Gson().toJson(volunteeringGroup))
+        jobSeekerObject!!.saveInBackground {
+            callback(it)
+            getJobSeeker()
+        }
+    }
+
+    fun addNewOrUpdateVolunteering(volunteering: Volunteering, callback: (ParseException?) -> Unit) {
+        val volunteerings = ArrayList(Gson().fromJson(jobSeekerObject?.get("volunteerings").toString(), VolunteeringGroup::class.java)?.list ?: listOf())
+        var isVolunteeringExist = false
+        for (edu in volunteerings.iterator()){
+            if (edu.id == volunteering.id){
+                isVolunteeringExist = true
+                volunteerings[volunteerings.indexOf(edu)].apply {
+                    job = volunteering.job
+                    company = volunteering.company
+                    description = volunteering.description
+                    location = volunteering.location
+                    startDate = volunteering.startDate
+                    endDate = volunteering.endDate
+                }
+            }
+        }
+        if (!isVolunteeringExist){
+            volunteerings.add(volunteering)
+        }
+        val volunteeringGroup = VolunteeringGroup(volunteerings)
+        jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), Gson().toJson(volunteeringGroup))
+        jobSeekerObject!!.saveInBackground {
+            callback(it)
+            getJobSeeker()
         }
     }
 }

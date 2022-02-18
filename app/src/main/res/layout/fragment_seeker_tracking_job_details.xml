@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".jobseeker.track.newtrack.SeekerTrackingJobDetailsFragment">
 
+    <data>
+        <variable
+            name="jobSeeker"
+            type="com.findajob.jobamax.model.JobSeeker" />
+    </data>
+
     <androidx.core.widget.NestedScrollView
         android:background="#E9F2FB"
         android:layout_width="match_parent"
@@ -85,6 +91,7 @@
                             <de.hdodenhof.circleimageview.CircleImageView
                                 android:id="@+id/iv_user_profile"
                                 android:layout_width="50dp"
+                                loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                                 android:layout_height="50dp"
                                 android:layout_alignParentEnd="true"
                                 android:src="@drawable/default_user_img" />
@@ -95,6 +102,7 @@
                         android:id="@+id/circleImageView2"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
+                        loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/default_user_img"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -102,11 +110,12 @@
                         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/tv_job_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/opensans_bold"
+                        android:paddingHorizontal="20dp"
                         android:gravity="center"
                         android:text="Product\n Assistant Manager"
                         android:textColor="@color/black"
@@ -116,10 +125,11 @@
                         app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
 
                     <TextView
-                        android:id="@+id/textView22"
+                        android:id="@+id/tv_company_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:paddingHorizontal="20dp"
                         android:fontFamily="@font/opensans_regular"
                         android:gravity="center"
                         android:text="Macdonalds Product\n London"
@@ -127,7 +137,7 @@
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_job_title" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/appCompatButton"
@@ -141,7 +151,7 @@
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -153,14 +163,16 @@
                         app:layout_constraintTop_toBottomOf="@+id/appCompatButton">
 
                         <ImageView
+                            android:id="@+id/iv_remove_job"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:layout_marginEnd="20dp"
                             android:src="@drawable/close_background_red" />
 
                         <ImageView
+                            android:id="@+id/iv_final"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
+                            android:layout_marginStart="20dp"
                             android:src="@drawable/close_background_green" />
                     </LinearLayout>
 

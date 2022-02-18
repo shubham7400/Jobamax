@@ -29,13 +29,20 @@
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
+        android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".jobseeker.profile.SeekerPortfolioActivity"
+            android:name=".jobseeker.jobsearch.SeekerJobSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jobseeker.profile.VideoPlayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jobseeker.calender.SeekerCalenderActivity"
             android:exported="false" />
         <activity
             android:name=".jobseeker.wishlist.SeekerWishListActivity"
@@ -293,12 +300,6 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@mipmap/ic_launcher" />
         <meta-data
-            android:name="com.pushwoosh.appid"
-            android:value="@string/pushwoosh_app_id" />
-        <meta-data
-            android:name="com.pushwoosh.senderid"
-            android:value="@string/fcm_sender_id" />
-        <meta-data
             android:name="com.parse.push.gcm_sender_id"
             android:value="id:916226274147" />
 
@@ -329,6 +330,21 @@
         <!-- android:exported="true" /> -->
         <service
             android:name="com.parse.fcm.ParseFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.pushwoosh.appid"
+            android:value="@string/pushwoosh_app_id" />
+        <meta-data
+            android:name="com.pushwoosh.senderid"
+            android:value="@string/fcm_sender_id" />
+
+        <service
+            android:name=".jobseeker.profile.FirebaseMessageService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

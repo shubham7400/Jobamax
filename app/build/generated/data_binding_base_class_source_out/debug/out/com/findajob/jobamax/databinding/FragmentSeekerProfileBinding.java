@@ -17,6 +17,7 @@ import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.chip.ChipGroup;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -28,13 +29,16 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ConstraintLayout clEducation;
 
   @NonNull
+  public final ConstraintLayout clInterest;
+
+  @NonNull
   public final ConstraintLayout clJobs;
 
   @NonNull
   public final ConstraintLayout clSkills;
 
   @NonNull
-  public final ConstraintLayout clVolunteeringActivities;
+  public final ConstraintLayout clVolunteering;
 
   @NonNull
   public final ConstraintLayout constraintLayout3;
@@ -44,9 +48,6 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
 
   @NonNull
   public final ImageView imageView11;
-
-  @NonNull
-  public final ImageView imageView17;
 
   @NonNull
   public final ImageView ivAddIdealWorkspaceBtn;
@@ -64,10 +65,49 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ImageView ivCalvender;
 
   @NonNull
+  public final ImageView ivIdealJobAudio;
+
+  @NonNull
+  public final ImageView ivIdealJobImage;
+
+  @NonNull
+  public final ImageView ivIdealJobMessage;
+
+  @NonNull
+  public final ImageView ivIdealJobVideo;
+
+  @NonNull
   public final ImageView ivInfo;
 
   @NonNull
-  public final RelativeLayout rlPortfolio;
+  public final ImageView ivPreview;
+
+  @NonNull
+  public final CircleImageView ivUser;
+
+  @NonNull
+  public final RelativeLayout rlIdealJobAudio;
+
+  @NonNull
+  public final RelativeLayout rlIdealJobImage;
+
+  @NonNull
+  public final RelativeLayout rlIdealJobMessage;
+
+  @NonNull
+  public final RelativeLayout rlIdealJobVideo;
+
+  @NonNull
+  public final RelativeLayout rlPortfolioImage;
+
+  @NonNull
+  public final RelativeLayout rlPortfolioMessage;
+
+  @NonNull
+  public final RelativeLayout rlPortfolioVideo;
+
+  @NonNull
+  public final TextView textViedw76;
 
   @NonNull
   public final TextView textView6;
@@ -94,6 +134,9 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ImageView textView86;
 
   @NonNull
+  public final ImageView textView86d;
+
+  @NonNull
   public final ImageView textView88;
 
   @NonNull
@@ -115,39 +158,74 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final TextView tvDdd;
 
   @NonNull
+  public final TextView tvIdealJobAudioTitle;
+
+  @NonNull
+  public final TextView tvIdealJobImageTitle;
+
+  @NonNull
+  public final TextView tvIdealJobMessageTitle;
+
+  @NonNull
+  public final TextView tvIdealJobVideoTitle;
+
+  @NonNull
+  public final TextView tvImportResumeBtn;
+
+  @NonNull
   public final TextView tvSeekerName;
 
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerProfileBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ChipGroup cgIdealWorkspace, ConstraintLayout clEducation, ConstraintLayout clJobs,
-      ConstraintLayout clSkills, ConstraintLayout clVolunteeringActivities,
+      ChipGroup cgIdealWorkspace, ConstraintLayout clEducation, ConstraintLayout clInterest,
+      ConstraintLayout clJobs, ConstraintLayout clSkills, ConstraintLayout clVolunteering,
       ConstraintLayout constraintLayout3, AutoCompleteTextView etIdealWorkspace,
-      ImageView imageView11, ImageView imageView17, ImageView ivAddIdealWorkspaceBtn,
-      ImageView ivBackButton, ImageView ivCalender, ImageView ivCalendxer, ImageView ivCalvender,
-      ImageView ivInfo, RelativeLayout rlPortfolio, TextView textView6, TextView textView7,
-      TextView textView73, TextView textView76, TextView textView77, ImageView textView8,
-      ImageView textView83, ImageView textView86, ImageView textView88, TextView tvAaa,
-      TextView tvAboutMeBtn, TextView tvCalenderTitle, TextView tvCalenderTitlef,
-      TextView tvCalenderTitlex, TextView tvDdd, TextView tvSeekerName) {
+      ImageView imageView11, ImageView ivAddIdealWorkspaceBtn, ImageView ivBackButton,
+      ImageView ivCalender, ImageView ivCalendxer, ImageView ivCalvender, ImageView ivIdealJobAudio,
+      ImageView ivIdealJobImage, ImageView ivIdealJobMessage, ImageView ivIdealJobVideo,
+      ImageView ivInfo, ImageView ivPreview, CircleImageView ivUser, RelativeLayout rlIdealJobAudio,
+      RelativeLayout rlIdealJobImage, RelativeLayout rlIdealJobMessage,
+      RelativeLayout rlIdealJobVideo, RelativeLayout rlPortfolioImage,
+      RelativeLayout rlPortfolioMessage, RelativeLayout rlPortfolioVideo, TextView textViedw76,
+      TextView textView6, TextView textView7, TextView textView73, TextView textView76,
+      TextView textView77, ImageView textView8, ImageView textView83, ImageView textView86,
+      ImageView textView86d, ImageView textView88, TextView tvAaa, TextView tvAboutMeBtn,
+      TextView tvCalenderTitle, TextView tvCalenderTitlef, TextView tvCalenderTitlex,
+      TextView tvDdd, TextView tvIdealJobAudioTitle, TextView tvIdealJobImageTitle,
+      TextView tvIdealJobMessageTitle, TextView tvIdealJobVideoTitle, TextView tvImportResumeBtn,
+      TextView tvSeekerName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cgIdealWorkspace = cgIdealWorkspace;
     this.clEducation = clEducation;
+    this.clInterest = clInterest;
     this.clJobs = clJobs;
     this.clSkills = clSkills;
-    this.clVolunteeringActivities = clVolunteeringActivities;
+    this.clVolunteering = clVolunteering;
     this.constraintLayout3 = constraintLayout3;
     this.etIdealWorkspace = etIdealWorkspace;
     this.imageView11 = imageView11;
-    this.imageView17 = imageView17;
     this.ivAddIdealWorkspaceBtn = ivAddIdealWorkspaceBtn;
     this.ivBackButton = ivBackButton;
     this.ivCalender = ivCalender;
     this.ivCalendxer = ivCalendxer;
     this.ivCalvender = ivCalvender;
+    this.ivIdealJobAudio = ivIdealJobAudio;
+    this.ivIdealJobImage = ivIdealJobImage;
+    this.ivIdealJobMessage = ivIdealJobMessage;
+    this.ivIdealJobVideo = ivIdealJobVideo;
     this.ivInfo = ivInfo;
-    this.rlPortfolio = rlPortfolio;
+    this.ivPreview = ivPreview;
+    this.ivUser = ivUser;
+    this.rlIdealJobAudio = rlIdealJobAudio;
+    this.rlIdealJobImage = rlIdealJobImage;
+    this.rlIdealJobMessage = rlIdealJobMessage;
+    this.rlIdealJobVideo = rlIdealJobVideo;
+    this.rlPortfolioImage = rlPortfolioImage;
+    this.rlPortfolioMessage = rlPortfolioMessage;
+    this.rlPortfolioVideo = rlPortfolioVideo;
+    this.textViedw76 = textViedw76;
     this.textView6 = textView6;
     this.textView7 = textView7;
     this.textView73 = textView73;
@@ -156,6 +234,7 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     this.textView8 = textView8;
     this.textView83 = textView83;
     this.textView86 = textView86;
+    this.textView86d = textView86d;
     this.textView88 = textView88;
     this.tvAaa = tvAaa;
     this.tvAboutMeBtn = tvAboutMeBtn;
@@ -163,6 +242,11 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     this.tvCalenderTitlef = tvCalenderTitlef;
     this.tvCalenderTitlex = tvCalenderTitlex;
     this.tvDdd = tvDdd;
+    this.tvIdealJobAudioTitle = tvIdealJobAudioTitle;
+    this.tvIdealJobImageTitle = tvIdealJobImageTitle;
+    this.tvIdealJobMessageTitle = tvIdealJobMessageTitle;
+    this.tvIdealJobVideoTitle = tvIdealJobVideoTitle;
+    this.tvImportResumeBtn = tvImportResumeBtn;
     this.tvSeekerName = tvSeekerName;
   }
 

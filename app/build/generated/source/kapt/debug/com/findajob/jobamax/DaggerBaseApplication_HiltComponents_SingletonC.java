@@ -61,14 +61,20 @@ import com.findajob.jobamax.di.ViewModelModule_ProvideJobSeekerResumeRepoFactory
 import com.findajob.jobamax.di.ViewModelModule_ProvideLiveRoomRepoFactory;
 import com.findajob.jobamax.di.ViewModelModule_ProvideMessageRepositoryFactory;
 import com.findajob.jobamax.di.ViewModelModule_ProvideRecruiterRepoFactory;
+import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity;
+import com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment;
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment;
+import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment;
+import com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment;
+import com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment;
+import com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment;
 import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment;
@@ -477,198 +483,233 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectJobamaxClubFragment(JobamaxClubFragment arg0) {
+    public void injectJobamaxClubFragment(JobamaxClubFragment jobamaxClubFragment) {
     }
 
     @Override
-    public void injectMasterClassFragment(MasterClassFragment arg0) {
+    public void injectMasterClassFragment(MasterClassFragment masterClassFragment) {
     }
 
     @Override
-    public void injectOnlineCoursesListFragment(OnlineCoursesListFragment arg0) {
+    public void injectOnlineCoursesListFragment(
+        OnlineCoursesListFragment onlineCoursesListFragment) {
     }
 
     @Override
-    public void injectInstructorsFragment(InstructorsFragment arg0) {
+    public void injectInstructorsFragment(InstructorsFragment instructorsFragment) {
     }
 
     @Override
-    public void injectReviewsFragment(ReviewsFragment arg0) {
+    public void injectReviewsFragment(ReviewsFragment reviewsFragment) {
     }
 
     @Override
-    public void injectSyllabusFragment(SyllabusFragment arg0) {
+    public void injectSyllabusFragment(SyllabusFragment syllabusFragment) {
     }
 
     @Override
-    public void injectJobSeekerChatsFragment(JobSeekerChatsFragment arg0) {
-      injectJobSeekerChatsFragment2(arg0);
+    public void injectJobSeekerChatsFragment(JobSeekerChatsFragment jobSeekerChatsFragment) {
+      injectJobSeekerChatsFragment2(jobSeekerChatsFragment);
     }
 
     @Override
-    public void injectMessagesFragment(MessagesFragment arg0) {
+    public void injectMessagesFragment(MessagesFragment messagesFragment) {
     }
 
     @Override
-    public void injectRecruiterChatsFragment(RecruiterChatsFragment arg0) {
+    public void injectRecruiterChatsFragment(RecruiterChatsFragment recruiterChatsFragment) {
     }
 
     @Override
-    public void injectJobSeekerProfileFragment(JobSeekerProfileFragment arg0) {
+    public void injectSeekerCalenderFragment(SeekerCalenderFragment seekerCalenderFragment) {
     }
 
     @Override
-    public void injectSeekerAboutMeFragment(SeekerAboutMeFragment arg0) {
+    public void injectJobSeekerProfileFragment(JobSeekerProfileFragment jobSeekerProfileFragment) {
     }
 
     @Override
-    public void injectSeekerProfileFragment(SeekerProfileFragment arg0) {
+    public void injectSeekerAboutMeFragment(SeekerAboutMeFragment seekerAboutMeFragment) {
     }
 
     @Override
-    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment arg0) {
+    public void injectSeekerAddVolunteeringFragment(
+        SeekerAddVolunteeringFragment seekerAddVolunteeringFragment) {
     }
 
     @Override
-    public void injectJobSeekerNewsletterFragment(JobSeekerNewsletterFragment arg0) {
+    public void injectSeekerImportResumeFragment(
+        SeekerImportResumeFragment seekerImportResumeFragment) {
     }
 
     @Override
-    public void injectJobSeekerPaymentMethodsFragment(JobSeekerPaymentMethodsFragment arg0) {
+    public void injectSeekerPreviewFragment(SeekerPreviewFragment seekerPreviewFragment) {
+    }
+
+    @Override
+    public void injectSeekerProfileFragment(SeekerProfileFragment seekerProfileFragment) {
+    }
+
+    @Override
+    public void injectSeekerVolunteeringListFragment(
+        SeekerVolunteeringListFragment seekerVolunteeringListFragment) {
+    }
+
+    @Override
+    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment jobSeekerAccountFragment) {
+    }
+
+    @Override
+    public void injectJobSeekerNewsletterFragment(
+        JobSeekerNewsletterFragment jobSeekerNewsletterFragment) {
+    }
+
+    @Override
+    public void injectJobSeekerPaymentMethodsFragment(
+        JobSeekerPaymentMethodsFragment jobSeekerPaymentMethodsFragment) {
     }
 
     @Override
     public void injectJobSeekerPersonalInformationFragment(
-        JobSeekerPersonalInformationFragment arg0) {
+        JobSeekerPersonalInformationFragment jobSeekerPersonalInformationFragment) {
     }
 
     @Override
-    public void injectJobSeekerPushNotificationFragment(JobSeekerPushNotificationFragment arg0) {
+    public void injectJobSeekerPushNotificationFragment(
+        JobSeekerPushNotificationFragment jobSeekerPushNotificationFragment) {
     }
 
     @Override
     public void injectJobSeekerManageReadReceiptsFragment(
-        JobSeekerManageReadReceiptsFragment arg0) {
+        JobSeekerManageReadReceiptsFragment jobSeekerManageReadReceiptsFragment) {
     }
 
     @Override
-    public void injectJobSeekerSocialAccountFragment(JobSeekerSocialAccountFragment arg0) {
+    public void injectJobSeekerSocialAccountFragment(
+        JobSeekerSocialAccountFragment jobSeekerSocialAccountFragment) {
     }
 
     @Override
-    public void injectJobSeekerResumeFragment(JobSeekerResumeFragment arg0) {
-      injectJobSeekerResumeFragment2(arg0);
+    public void injectJobSeekerResumeFragment(JobSeekerResumeFragment jobSeekerResumeFragment) {
+      injectJobSeekerResumeFragment2(jobSeekerResumeFragment);
     }
 
     @Override
-    public void injectCreateEducationFragment(CreateEducationFragment arg0) {
-      injectCreateEducationFragment2(arg0);
+    public void injectCreateEducationFragment(CreateEducationFragment createEducationFragment) {
+      injectCreateEducationFragment2(createEducationFragment);
     }
 
     @Override
-    public void injectCreateExperienceFragment(CreateExperienceFragment arg0) {
+    public void injectCreateExperienceFragment(CreateExperienceFragment createExperienceFragment) {
     }
 
     @Override
-    public void injectJobSearchFragment(JobSearchFragment arg0) {
+    public void injectJobSearchFragment(JobSearchFragment jobSearchFragment) {
     }
 
     @Override
-    public void injectJobSourceFragment(JobSourceFragment arg0) {
+    public void injectJobSourceFragment(JobSourceFragment jobSourceFragment) {
     }
 
     @Override
-    public void injectJobOfferCardInfoFragment(JobOfferCardInfoFragment arg0) {
+    public void injectJobOfferCardInfoFragment(JobOfferCardInfoFragment jobOfferCardInfoFragment) {
     }
 
     @Override
-    public void injectJobSeekerApplyFragment(JobSeekerApplyFragment arg0) {
+    public void injectJobSeekerApplyFragment(JobSeekerApplyFragment jobSeekerApplyFragment) {
     }
 
     @Override
-    public void injectJobSeekerTrackFragment(JobSeekerTrackFragment arg0) {
+    public void injectJobSeekerTrackFragment(JobSeekerTrackFragment jobSeekerTrackFragment) {
     }
 
     @Override
-    public void injectSeekerTrackingJobFragment(SeekerTrackingJobFragment arg0) {
+    public void injectSeekerTrackingJobFragment(
+        SeekerTrackingJobFragment seekerTrackingJobFragment) {
     }
 
     @Override
-    public void injectSeekerWishListFragment(SeekerWishListFragment arg0) {
+    public void injectSeekerWishListFragment(SeekerWishListFragment seekerWishListFragment) {
     }
 
     @Override
-    public void injectRecruiterCourseFragment(RecruiterCourseFragment arg0) {
+    public void injectRecruiterCourseFragment(RecruiterCourseFragment recruiterCourseFragment) {
     }
 
     @Override
-    public void injectRecruiterProfileFragment(RecruiterProfileFragment arg0) {
+    public void injectRecruiterProfileFragment(RecruiterProfileFragment recruiterProfileFragment) {
     }
 
     @Override
-    public void injectRecruiterDeleteAccountFragment(RecruiterDeleteAccountFragment arg0) {
+    public void injectRecruiterDeleteAccountFragment(
+        RecruiterDeleteAccountFragment recruiterDeleteAccountFragment) {
     }
 
     @Override
-    public void injectRecruiterAccountFragment(RecruiterAccountFragment arg0) {
+    public void injectRecruiterAccountFragment(RecruiterAccountFragment recruiterAccountFragment) {
     }
 
     @Override
-    public void injectRecruiterInvoicesFragment(RecruiterInvoicesFragment arg0) {
+    public void injectRecruiterInvoicesFragment(
+        RecruiterInvoicesFragment recruiterInvoicesFragment) {
     }
 
     @Override
-    public void injectRecruiterPaymentMethodsFragment(RecruiterPaymentMethodsFragment arg0) {
+    public void injectRecruiterPaymentMethodsFragment(
+        RecruiterPaymentMethodsFragment recruiterPaymentMethodsFragment) {
     }
 
     @Override
     public void injectRecruiterPersonalInformationFragment(
-        RecruiterPersonalInformationFragment arg0) {
+        RecruiterPersonalInformationFragment recruiterPersonalInformationFragment) {
     }
 
     @Override
-    public void injectRecruiterPushNotificationFragment(RecruiterPushNotificationFragment arg0) {
+    public void injectRecruiterPushNotificationFragment(
+        RecruiterPushNotificationFragment recruiterPushNotificationFragment) {
     }
 
     @Override
     public void injectRecruiterManageReadReceiptsFragment(
-        RecruiterManageReadReceiptsFragment arg0) {
+        RecruiterManageReadReceiptsFragment recruiterManageReadReceiptsFragment) {
     }
 
     @Override
-    public void injectRecruiterSocialAccountFragment(RecruiterSocialAccountFragment arg0) {
+    public void injectRecruiterSocialAccountFragment(
+        RecruiterSocialAccountFragment recruiterSocialAccountFragment) {
     }
 
     @Override
-    public void injectCurrentSubscriptionFragment(CurrentSubscriptionFragment arg0) {
+    public void injectCurrentSubscriptionFragment(
+        CurrentSubscriptionFragment currentSubscriptionFragment) {
     }
 
     @Override
-    public void injectJobOfferDetailsFragment(JobOfferDetailsFragment arg0) {
+    public void injectJobOfferDetailsFragment(JobOfferDetailsFragment jobOfferDetailsFragment) {
     }
 
     @Override
-    public void injectJobListingFragment(JobListingFragment arg0) {
+    public void injectJobListingFragment(JobListingFragment jobListingFragment) {
     }
 
     @Override
-    public void injectRecruiterMediaFragment(RecruiterMediaFragment arg0) {
+    public void injectRecruiterMediaFragment(RecruiterMediaFragment recruiterMediaFragment) {
     }
 
     @Override
-    public void injectRecruiterRecruitFragment(RecruiterRecruitFragment arg0) {
+    public void injectRecruiterRecruitFragment(RecruiterRecruitFragment recruiterRecruitFragment) {
     }
 
     @Override
-    public void injectRecruiterSourceFragment(RecruiterSourceFragment arg0) {
+    public void injectRecruiterSourceFragment(RecruiterSourceFragment recruiterSourceFragment) {
     }
 
     @Override
-    public void injectLiveRoomFragment(LiveRoomFragment arg0) {
+    public void injectLiveRoomFragment(LiveRoomFragment liveRoomFragment) {
     }
 
     @Override
-    public void injectLiveRoomInterestFragment(LiveRoomInterestFragment arg0) {
+    public void injectLiveRoomInterestFragment(LiveRoomInterestFragment liveRoomInterestFragment) {
     }
 
     @Override
@@ -734,100 +775,108 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectMainActivity(MainActivity arg0) {
+    public void injectMainActivity(MainActivity mainActivity) {
     }
 
     @Override
-    public void injectSplashActivity(SplashActivity arg0) {
+    public void injectSplashActivity(SplashActivity splashActivity) {
     }
 
     @Override
-    public void injectHomeActivity(HomeActivity arg0) {
+    public void injectHomeActivity(HomeActivity homeActivity) {
     }
 
     @Override
-    public void injectMasterClassActivity(MasterClassActivity arg0) {
+    public void injectMasterClassActivity(MasterClassActivity masterClassActivity) {
     }
 
     @Override
-    public void injectMasterClassDetailsActivity(MasterClassDetailsActivity arg0) {
+    public void injectMasterClassDetailsActivity(
+        MasterClassDetailsActivity masterClassDetailsActivity) {
     }
 
     @Override
-    public void injectOnlineCourseActivity(OnlineCourseActivity arg0) {
+    public void injectOnlineCourseActivity(OnlineCourseActivity onlineCourseActivity) {
     }
 
     @Override
-    public void injectOnlineCourseDetailsActivity(OnlineCourseDetailsActivity arg0) {
+    public void injectOnlineCourseDetailsActivity(
+        OnlineCourseDetailsActivity onlineCourseDetailsActivity) {
     }
 
     @Override
-    public void injectChatActivity(ChatActivity arg0) {
-      injectChatActivity2(arg0);
+    public void injectChatActivity(ChatActivity chatActivity) {
+      injectChatActivity2(chatActivity);
     }
 
     @Override
-    public void injectPreviewImageActivity(PreviewImageActivity arg0) {
+    public void injectPreviewImageActivity(PreviewImageActivity previewImageActivity) {
     }
 
     @Override
-    public void injectPreviewJobSeekerActivity(PreviewJobSeekerActivity arg0) {
+    public void injectPreviewJobSeekerActivity(PreviewJobSeekerActivity previewJobSeekerActivity) {
     }
 
     @Override
-    public void injectPreviewRecruiterActivity(PreviewRecruiterActivity arg0) {
+    public void injectPreviewRecruiterActivity(PreviewRecruiterActivity previewRecruiterActivity) {
     }
 
     @Override
-    public void injectProfileActivity(ProfileActivity arg0) {
+    public void injectProfileActivity(ProfileActivity profileActivity) {
     }
 
     @Override
-    public void injectJobSeekerCourseActivity(JobSeekerCourseActivity arg0) {
+    public void injectSeekerCalenderActivity(SeekerCalenderActivity seekerCalenderActivity) {
     }
 
     @Override
-    public void injectJobSeekerHomeActivity(JobSeekerHomeActivity arg0) {
+    public void injectJobSeekerCourseActivity(JobSeekerCourseActivity jobSeekerCourseActivity) {
     }
 
     @Override
-    public void injectSeekerProfileActivity(SeekerProfileActivity arg0) {
+    public void injectJobSeekerHomeActivity(JobSeekerHomeActivity jobSeekerHomeActivity) {
     }
 
     @Override
-    public void injectJobSeekerAccountActivity(JobSeekerAccountActivity arg0) {
+    public void injectSeekerProfileActivity(SeekerProfileActivity seekerProfileActivity) {
     }
 
     @Override
-    public void injectJobSeekerApplyActivity(JobSeekerApplyActivity arg0) {
+    public void injectJobSeekerAccountActivity(JobSeekerAccountActivity jobSeekerAccountActivity) {
     }
 
     @Override
-    public void injectSeekerJobTrackingActivity(SeekerJobTrackingActivity arg0) {
+    public void injectJobSeekerApplyActivity(JobSeekerApplyActivity jobSeekerApplyActivity) {
     }
 
     @Override
-    public void injectSeekerWishListActivity(SeekerWishListActivity arg0) {
+    public void injectSeekerJobTrackingActivity(
+        SeekerJobTrackingActivity seekerJobTrackingActivity) {
     }
 
     @Override
-    public void injectSelectLocationActivity(SelectLocationActivity arg0) {
+    public void injectSeekerWishListActivity(SeekerWishListActivity seekerWishListActivity) {
     }
 
     @Override
-    public void injectRecruiterHomeActivity(RecruiterHomeActivity arg0) {
+    public void injectSelectLocationActivity(SelectLocationActivity selectLocationActivity) {
     }
 
     @Override
-    public void injectCompanyIntroInfoActivity(CompanyIntroInfoActivity arg0) {
+    public void injectRecruiterHomeActivity(RecruiterHomeActivity recruiterHomeActivity) {
     }
 
     @Override
-    public void injectRecruiterPersonalInfoIntroActivity(RecruiterPersonalInfoIntroActivity arg0) {
+    public void injectCompanyIntroInfoActivity(CompanyIntroInfoActivity companyIntroInfoActivity) {
     }
 
     @Override
-    public void injectManageRoomActivity(ManageRoomActivity arg0) {
+    public void injectRecruiterPersonalInfoIntroActivity(
+        RecruiterPersonalInfoIntroActivity recruiterPersonalInfoIntroActivity) {
+    }
+
+    @Override
+    public void injectManageRoomActivity(ManageRoomActivity manageRoomActivity) {
     }
 
     @Override

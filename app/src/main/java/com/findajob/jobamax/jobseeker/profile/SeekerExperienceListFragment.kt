@@ -24,6 +24,7 @@ import com.findajob.jobamax.jobseeker.profile.cv.model.ExperienceGroup
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -100,6 +101,9 @@ class SeekerExperienceListAdapter(var list: ArrayList<Experience>) : RecyclerVie
             this.tvJobName.text = experience.job
             this.tvCompanyName.text = experience.company
             this.tvAddress.text = experience.location
+            if (experience.logo != ""){
+                Picasso.get().load(experience.logo).into(this.ivCompany)
+            }
             if (experience.endDate == ""){
                 val calendar = Calendar.getInstance(TimeZone.getDefault());
                 val endDate = "${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"

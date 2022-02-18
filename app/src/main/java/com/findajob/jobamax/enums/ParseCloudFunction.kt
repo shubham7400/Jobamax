@@ -4,5 +4,10 @@ enum class ParseCloudFunction {
     getTopics,
     getSeasonsById,
     saveInMyList,
-    saveLikeAndDislike
+    saveLikeAndDislike,
+    getTrackingStatus,
+    getJobSearch,
+    dropoutActions,
+    addJobToWishlist,
+    removeFromWishlist
 }

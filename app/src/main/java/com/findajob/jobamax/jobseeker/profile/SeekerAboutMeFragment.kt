@@ -67,7 +67,7 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
         binding.ivEdit.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerSocialMediaIdsFragment, null))
 
         binding.ivProfileUser.setOnClickListener {
-            requireActivity().onBackPressed()
+           requireActivity().finish()
         }
         binding.ivUserProfilePic.setOnClickListener {
             if (requireActivity().checkForPermissions()) {
@@ -78,24 +78,27 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
              (activity as SeekerProfileActivity).onBackPressed()
          }
         binding.btnSaveInfo.setOnClickListener {
-            when {
-                binding.etFirstName.text.isNullOrEmpty() -> {
-                    toast("First name can not be empty.")
-                }
-                binding.etLastName.text.isNullOrEmpty() -> {
-                    toast("Last name can not be empty.")
-                }
-                else -> {
-                    viewModel.updateJobSeeker(binding.etFirstName.text.toString(), binding.etLastName.text.toString()){
-                        if (it == null){
-                            toast("User Updated.")
-                            viewModel.getJobSeeker()
-                        }else{
-                            toast("${it.message.toString()} Something went wrong")
-                        }
-                    }
+            if(binding.etFirstName.text.isNullOrEmpty()){
+                binding.etFirstName.setText("")
+            }
+            if (binding.etLastName.text.isNullOrEmpty()){
+                binding.etLastName.setText("")
+            }
+            if(binding.etProfession.text.isNullOrEmpty()){
+                binding.etProfession.setText("")
+            }
+            if (binding.etDescription.text.isNullOrEmpty()){
+                binding.etDescription.setText("")
+            }
+            viewModel.updateJobSeeker(binding.etFirstName.text.toString(), binding.etLastName.text.toString(), binding.etProfession.text.toString(), binding.etDescription.text.toString()){
+                if (it == null){
+                    toast("User Updated.")
+                    viewModel.getJobSeeker()
+                }else{
+                    toast("${it.message.toString()} Something went wrong")
                 }
             }
+
         }
     }
 

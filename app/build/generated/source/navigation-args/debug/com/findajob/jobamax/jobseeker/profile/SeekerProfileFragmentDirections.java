@@ -25,8 +25,8 @@ public class SeekerProfileFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerProfileFragmentToVolunteeringAndActivitiesFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_volunteeringAndActivitiesFragment);
+  public static NavDirections actionSeekerProfileFragmentToSeekerInterestFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerInterestFragment);
   }
 
   @NonNull
@@ -35,7 +35,57 @@ public class SeekerProfileFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerProfileFragmentToSeekerPortfolioFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerPortfolioFragment);
+  public static NavDirections actionSeekerProfileFragmentToSeekerPreviewFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerPreviewFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToSeekerImportResumeFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerImportResumeFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToSeekerVolunteeringListFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_seekerVolunteeringListFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToIdealJobAudioFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_idealJobAudioFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToIdealJobImagesFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_idealJobImagesFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToIdealJobDescriptionFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_idealJobDescriptionFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToIdealJobVideoFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_idealJobVideoFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentSelf() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_self);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToPortfolioVideoFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_portfolioVideoFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToPortfolioDescriptionFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_portfolioDescriptionFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerProfileFragmentToPortfolioImageFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerProfileFragment_to_portfolioImageFragment);
   }
 }

@@ -35,6 +35,9 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
   public final EditText etLastName;
 
   @NonNull
+  public final EditText etProfession;
+
+  @NonNull
   public final ImageView imageView12;
 
   @NonNull
@@ -71,6 +74,9 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
   public final TextView textView11;
 
   @NonNull
+  public final TextView textView140;
+
+  @NonNull
   public final TextView textView9;
 
   @Bindable
@@ -78,15 +84,16 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
 
   protected FragmentSeekerAboutMeBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button btnSaveInfo, EditText etDescription, EditText etFirstName, EditText etLastName,
-      ImageView imageView12, ImageView ivBackButton, ImageView ivEdit, ImageView ivInsta,
-      ImageView ivLinkedin, CircleImageView ivProfileUser, ImageView ivTiktok,
+      EditText etProfession, ImageView imageView12, ImageView ivBackButton, ImageView ivEdit,
+      ImageView ivInsta, ImageView ivLinkedin, CircleImageView ivProfileUser, ImageView ivTiktok,
       CircleImageView ivUserProfilePic, LinearLayout llSocialMedia, RelativeLayout relativeLayout,
-      TextView textView10, TextView textView11, TextView textView9) {
+      TextView textView10, TextView textView11, TextView textView140, TextView textView9) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
     this.etDescription = etDescription;
     this.etFirstName = etFirstName;
     this.etLastName = etLastName;
+    this.etProfession = etProfession;
     this.imageView12 = imageView12;
     this.ivBackButton = ivBackButton;
     this.ivEdit = ivEdit;
@@ -99,6 +106,7 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
     this.relativeLayout = relativeLayout;
     this.textView10 = textView10;
     this.textView11 = textView11;
+    this.textView140 = textView140;
     this.textView9 = textView9;
   }
 

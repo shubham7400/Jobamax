@@ -11,10 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -36,6 +38,12 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   public final ImageView ivBackButton;
 
   @NonNull
+  public final ImageView ivFinal;
+
+  @NonNull
+  public final ImageView ivRemoveJob;
+
+  @NonNull
   public final CircleImageView ivUserProfile;
 
   @NonNull
@@ -45,10 +53,10 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   public final RecyclerView rvJobTrackingCard;
 
   @NonNull
-  public final TextView textView21;
+  public final TextView tvCompanyName;
 
   @NonNull
-  public final TextView textView22;
+  public final TextView tvJobTitle;
 
   @NonNull
   public final TextView tvPageTitle;
@@ -56,24 +64,37 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   @NonNull
   public final View view11;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerTrackingJobDetailsBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppCompatButton appCompatButton, CircleImageView circleImageView2,
       ConstraintLayout constraintLayout8, View ivAddPhase, ImageView ivBackButton,
-      CircleImageView ivUserProfile, RelativeLayout relativeLayout, RecyclerView rvJobTrackingCard,
-      TextView textView21, TextView textView22, TextView tvPageTitle, View view11) {
+      ImageView ivFinal, ImageView ivRemoveJob, CircleImageView ivUserProfile,
+      RelativeLayout relativeLayout, RecyclerView rvJobTrackingCard, TextView tvCompanyName,
+      TextView tvJobTitle, TextView tvPageTitle, View view11) {
     super(_bindingComponent, _root, _localFieldCount);
     this.appCompatButton = appCompatButton;
     this.circleImageView2 = circleImageView2;
     this.constraintLayout8 = constraintLayout8;
     this.ivAddPhase = ivAddPhase;
     this.ivBackButton = ivBackButton;
+    this.ivFinal = ivFinal;
+    this.ivRemoveJob = ivRemoveJob;
     this.ivUserProfile = ivUserProfile;
     this.relativeLayout = relativeLayout;
     this.rvJobTrackingCard = rvJobTrackingCard;
-    this.textView21 = textView21;
-    this.textView22 = textView22;
+    this.tvCompanyName = tvCompanyName;
+    this.tvJobTitle = tvJobTitle;
     this.tvPageTitle = tvPageTitle;
     this.view11 = view11;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

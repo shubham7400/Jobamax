@@ -112,10 +112,14 @@ fun loadImageFromUriCircular(imageView: ImageView, uri: Uri) {
 
 @BindingAdapter("loadImageFromUrl")
 fun loadImageFromUrl(imageView: ImageView, imgUrl: String?) {
-    imgUrl?.let {
-        Glide.with(imageView.context)
-            .load(it)
-            .into(imageView)
+    if (imgUrl.isNullOrEmpty()){
+        imageView.setImageResource(R.drawable.default_user_img)
+    }else{
+        imgUrl.let {
+            Glide.with(imageView.context)
+                .load(it)
+                .into(imageView)
+        }
     }
 }
 

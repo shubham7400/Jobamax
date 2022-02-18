@@ -45,17 +45,17 @@ class BaseApplication : Application(), LifecycleObserver {
         subscribeToFirebaseMessagingTopics()
         initialiseParseSdk()
         setUpNotificationChannel()
-        configurePushWoosh()
+      /*  configurePushWoosh()*/
         configurePayment()
         configureRxJava()
         configureUXCam()
 //        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     }
 
-    private fun configurePushWoosh() {
+    /*private fun configurePushWoosh() {
         Pushwoosh.getInstance().registerForPushNotifications()
     }
-
+*/
 
     private fun configureUXCam() {
         UXCam.startWithKey(UX_CAM_API_KEY)

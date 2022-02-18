@@ -94,5 +94,8 @@ enum class ParseTableFields() {
     volunteerings,
     workspaces,
     softSkills,
-    hardSkills
+    hardSkills,
+    jobSeeker,
+    profession,
+    elevatorPitch,
 }

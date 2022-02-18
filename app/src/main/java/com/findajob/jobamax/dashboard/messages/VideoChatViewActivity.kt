@@ -61,7 +61,7 @@ class VideoChatViewActivity : BaseActivityMain<ActivityVideoChatViewBinding>(){
 
         checkExtras()
         if(!isVideoCall) {
-            val ivToggleVideo = findViewById(R.id.iv_toggle_video) as ImageView
+            val ivToggleVideo = findViewById<ImageView>(R.id.iv_toggle_video)
             ivToggleVideo.performClick()
         }
         val tvName = findViewById<TextView>(R.id.tv_receiver_name)
@@ -138,7 +138,7 @@ class VideoChatViewActivity : BaseActivityMain<ActivityVideoChatViewBinding>(){
         // Stops/Resumes sending the local video stream.
         mRtcEngine!!.muteLocalVideoStream(iv.isSelected)
 
-        val container = findViewById(R.id.local_video_view_container) as FrameLayout
+        val container = findViewById<FrameLayout>(R.id.local_video_view_container)
         val surfaceView = container.getChildAt(0) as SurfaceView
         surfaceView.setZOrderMediaOverlay(!iv.isSelected)
         surfaceView.visibility = if (iv.isSelected) View.GONE else View.VISIBLE
@@ -187,7 +187,7 @@ class VideoChatViewActivity : BaseActivityMain<ActivityVideoChatViewBinding>(){
     }
 
     private fun setupLocalVideo() {
-        val container = findViewById(R.id.local_video_view_container) as FrameLayout
+        val container = findViewById<FrameLayout>(R.id.local_video_view_container)
         val surfaceView = RtcEngine.CreateRendererView(baseContext)
         surfaceView.setZOrderMediaOverlay(true)
         container.addView(surfaceView)
@@ -223,12 +223,12 @@ class VideoChatViewActivity : BaseActivityMain<ActivityVideoChatViewBinding>(){
     }
 
     private fun onRemoteUserLeft() {
-        val container = findViewById(R.id.remote_video_view_container) as FrameLayout
+        val container = findViewById<FrameLayout>(R.id.remote_video_view_container)
         container.removeAllViews()
     }
 
     private fun onRemoteUserVideoMuted(uid: Int, muted: Boolean) {
-        val container = findViewById(R.id.remote_video_view_container) as FrameLayout
+        val container = findViewById<FrameLayout>(R.id.remote_video_view_container)
 
         val surfaceView = container.getChildAt(0) as SurfaceView
 

@@ -15,12 +15,12 @@ import java.lang.Object;
 
 public abstract class ActivitySeekerProfileBinding extends ViewDataBinding {
   @NonNull
-  public final FragmentContainerView loginNavHostFragment;
+  public final FragmentContainerView navSeekerProfileFragment;
 
   protected ActivitySeekerProfileBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      FragmentContainerView loginNavHostFragment) {
+      FragmentContainerView navSeekerProfileFragment) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.loginNavHostFragment = loginNavHostFragment;
+    this.navSeekerProfileFragment = navSeekerProfileFragment;
   }
 
   @NonNull

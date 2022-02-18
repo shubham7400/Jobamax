@@ -18,10 +18,10 @@ import java.lang.Object;
 
 public abstract class ItemSeekerExperienceBinding extends ViewDataBinding {
   @NonNull
-  public final ImageView ivDeleteItem;
+  public final CircleImageView ivCompany;
 
   @NonNull
-  public final CircleImageView ivSsss;
+  public final ImageView ivDeleteItem;
 
   @NonNull
   public final RelativeLayout rlParent;
@@ -39,11 +39,11 @@ public abstract class ItemSeekerExperienceBinding extends ViewDataBinding {
   public final TextView tvJobName;
 
   protected ItemSeekerExperienceBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView ivDeleteItem, CircleImageView ivSsss, RelativeLayout rlParent, TextView tvAddress,
-      TextView tvCompanyName, TextView tvDateDuration, TextView tvJobName) {
+      CircleImageView ivCompany, ImageView ivDeleteItem, RelativeLayout rlParent,
+      TextView tvAddress, TextView tvCompanyName, TextView tvDateDuration, TextView tvJobName) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.ivCompany = ivCompany;
     this.ivDeleteItem = ivDeleteItem;
-    this.ivSsss = ivSsss;
     this.rlParent = rlParent;
     this.tvAddress = tvAddress;
     this.tvCompanyName = tvCompanyName;

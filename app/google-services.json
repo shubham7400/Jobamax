@@ -1,42 +1,49 @@
 {
   "project_info": {
-    "project_number": "693848443803",
-    "project_id": "jobamax-daf51",
-    "storage_bucket": "jobamax-daf51.appspot.com"
+    "project_number": "916226274147",
+    "project_id": "jobamax-ec3aa",
+    "storage_bucket": "jobamax-ec3aa.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:693848443803:android:af4c62c1838ae04d57af3e",
+        "mobilesdk_app_id": "1:916226274147:android:5fbafbb40b4d11b0b61956",
         "android_client_info": {
           "package_name": "com.findajob.jobamax"
         }
       },
       "oauth_client": [
         {
-          "client_id": "693848443803-k9maqhkf7uv6ar92a2en3n1h2h452329.apps.googleusercontent.com",
+          "client_id": "916226274147-r3ssg46t0dk81nl08qiv9a20740ikbud.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.findajob.jobamax",
-            "certificate_hash": "6b8678c81374ceb27dffac754f385309773ced71"
+            "certificate_hash": "54e788b7d4f7855d7aece98085641401a900d365"
           }
         },
         {
-          "client_id": "693848443803-ur2sj50a6jlcsonbc6dun38tjd053nuf.apps.googleusercontent.com",
+          "client_id": "916226274147-rj7asibg71hf0vtrjq3tq5594htd082j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDbfdFvd1i8BEEuFY3pXilDfgFRUrIADEc"
+          "current_key": "AIzaSyBn3bLBIOLUOObl7Pp_znKRzEHqeffj1ec"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "693848443803-ur2sj50a6jlcsonbc6dun38tjd053nuf.apps.googleusercontent.com",
+              "client_id": "916226274147-rj7asibg71hf0vtrjq3tq5594htd082j.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "916226274147-2on55n003d9d151chc7jilu7a1l7tl88.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jobamax.jobamaxapp"
+              }
             }
           ]
         }

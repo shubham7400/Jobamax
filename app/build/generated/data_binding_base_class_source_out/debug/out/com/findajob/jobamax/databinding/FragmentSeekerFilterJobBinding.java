@@ -25,31 +25,10 @@ public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
   public final CheckBox cbAll;
 
   @NonNull
-  public final CheckBox cbApplied;
-
-  @NonNull
-  public final CheckBox cbAssessments;
+  public final CheckBox cbArchive;
 
   @NonNull
   public final CheckBox cbFavorite;
-
-  @NonNull
-  public final CheckBox cbHired;
-
-  @NonNull
-  public final CheckBox cbInterview;
-
-  @NonNull
-  public final CheckBox cbMostRecentOne;
-
-  @NonNull
-  public final CheckBox cbOnlineIntervie;
-
-  @NonNull
-  public final CheckBox cbPhoneCall;
-
-  @NonNull
-  public final CheckBox cbRefused;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -61,22 +40,14 @@ public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
   public final TextView textView24;
 
   protected FragmentSeekerFilterJobBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatButton btnGo, CheckBox cbAll, CheckBox cbApplied,
-      CheckBox cbAssessments, CheckBox cbFavorite, CheckBox cbHired, CheckBox cbInterview,
-      CheckBox cbMostRecentOne, CheckBox cbOnlineIntervie, CheckBox cbPhoneCall, CheckBox cbRefused,
-      ImageView ivBackButton, RelativeLayout relativeLayout, TextView textView24) {
+      int _localFieldCount, AppCompatButton btnGo, CheckBox cbAll, CheckBox cbArchive,
+      CheckBox cbFavorite, ImageView ivBackButton, RelativeLayout relativeLayout,
+      TextView textView24) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnGo = btnGo;
     this.cbAll = cbAll;
-    this.cbApplied = cbApplied;
-    this.cbAssessments = cbAssessments;
+    this.cbArchive = cbArchive;
     this.cbFavorite = cbFavorite;
-    this.cbHired = cbHired;
-    this.cbInterview = cbInterview;
-    this.cbMostRecentOne = cbMostRecentOne;
-    this.cbOnlineIntervie = cbOnlineIntervie;
-    this.cbPhoneCall = cbPhoneCall;
-    this.cbRefused = cbRefused;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.textView24 = textView24;

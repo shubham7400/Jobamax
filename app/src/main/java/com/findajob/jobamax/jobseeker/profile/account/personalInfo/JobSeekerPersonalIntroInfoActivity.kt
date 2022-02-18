@@ -243,7 +243,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         jobSeeker.dob = binding.tvDateOfBirthField.text.toString()
         jobSeeker.profilePicUrl = ""
         jobSeeker.emailVerified = false
-        jobSeeker.password = getPassword()
+        jobSeeker.password = AESCrypt.encrypt(getPassword())
         jobSeeker.gotReferralCode = ""
         val parseObject = jobSeeker.toParseObject()
         parseObject.saveInBackground { e ->

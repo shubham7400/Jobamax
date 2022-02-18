@@ -45,13 +45,15 @@ class JobSeeker {
     var skills: String = ""
     var hardSkills: String = ""
     var softSkills: String = ""
-    var workspaces: String = ""
+    var workspaces: List<String> = listOf()
     var volunteerings: String = ""
     var activities: String = ""
     var instagramLink: String = ""
     var linkedInLink: String = ""
     var tikTokLink: String = ""
     var aboutMe: String = ""
+    var profession: String = ""
+    var elevatorPitch: String = ""
 
     var documentName: String = ""
     var videoThumbnailUrl: String = ""
@@ -65,6 +67,7 @@ class JobSeeker {
     var emailVerified = false
     var password = ""
     var gotReferralCode = ""
+    var pfObject: ParseObject? = null
 
 
     fun toParseObject(): ParseObject {
@@ -115,6 +118,8 @@ class JobSeeker {
         jobSeeker.put("linkedInLink", linkedInLink)
         jobSeeker.put("tikTokLink", tikTokLink)
         jobSeeker.put("aboutMe", aboutMe)
+        jobSeeker.put("profession", profession)
+        jobSeeker.put("elevatorPitch", elevatorPitch)
 
         jobSeeker.put("documentName", documentName)
         jobSeeker.put("videoThumbnailUrl", videoThumbnailUrl)
@@ -181,13 +186,15 @@ class JobSeeker {
         this.skills = obj["skills"]?.toString() ?: ""
         this.hardSkills = obj["hardSkills"]?.toString() ?: ""
         this.softSkills = obj["softSkills"]?.toString() ?: ""
-        this.workspaces = obj["workspaces"]?.toString() ?: ""
+        this.workspaces = (obj["workspaces"] as? List<String>) ?: listOf()
         this.volunteerings = obj["volunteerings"]?.toString() ?: ""
         this.activities = obj["activities"]?.toString() ?: ""
         this.instagramLink = obj["instagramLink"]?.toString() ?: ""
         this.linkedInLink = obj["linkedInLink"]?.toString() ?: ""
         this.tikTokLink = obj["tikTokLink"]?.toString() ?: ""
         this.aboutMe = obj["aboutMe"]?.toString() ?: ""
+        this.profession = obj["profession"]?.toString() ?: ""
+        this.elevatorPitch = obj["elevatorPitch"]?.toString() ?: ""
 
         this.documentName = obj["documentName"]?.toString() ?: ""
         this.videoThumbnailUrl = obj["videoThumbnailUrl"]?.toString() ?: ""
@@ -196,6 +203,7 @@ class JobSeeker {
         this.todayReach = obj["todayReach"]?.toString()?.toIntOrNull() ?: 0
         this.lastTodayReachUpdatedAt = obj["lastTodayReachUpdatedAt"]?.toString() ?: ""
         this.roomId = obj["roomId"]?.toString()?.toIntOrNull() ?: 0
+        this.pfObject = obj
     }
 
     constructor()

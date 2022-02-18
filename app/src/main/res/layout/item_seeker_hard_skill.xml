@@ -21,11 +21,11 @@
             android:id="@+id/sb_hard_skill"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-             android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="5dp"
             android:layout_toStartOf="@+id/iv_remove_btn"
             android:layout_toEndOf="@+id/tv_hard_skill"
             android:maxHeight="6dp"
-             android:progress="0"
+            android:progress="0"
             android:progressDrawable="@drawable/seek_style"
             android:thumb="@drawable/seek" />
 

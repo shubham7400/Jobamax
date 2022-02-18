@@ -20,14 +20,44 @@
             android:id="@+id/action_seekerProfileFragment_to_seekerMySkillFragment"
             app:destination="@id/seekerMySkillFragment" />
         <action
-            android:id="@+id/action_seekerProfileFragment_to_volunteeringAndActivitiesFragment"
-            app:destination="@id/volunteeringAndActivitiesFragment" />
+            android:id="@+id/action_seekerProfileFragment_to_seekerInterestFragment"
+            app:destination="@id/seekerInterestFragment" />
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerExperienceListFragment"
             app:destination="@id/seekerExperienceListFragment" />
         <action
-            android:id="@+id/action_seekerProfileFragment_to_seekerPortfolioFragment"
-            app:destination="@id/seekerPortfolioFragment" />
+            android:id="@+id/action_seekerProfileFragment_to_seekerPreviewFragment"
+            app:destination="@id/seekerPreviewFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerImportResumeFragment"
+            app:destination="@id/seekerImportResumeFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerVolunteeringListFragment"
+            app:destination="@id/seekerVolunteeringListFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_idealJobAudioFragment"
+            app:destination="@id/idealJobAudioFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_idealJobImagesFragment"
+            app:destination="@id/idealJobImagesFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_idealJobDescriptionFragment"
+            app:destination="@id/idealJobDescriptionFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_idealJobVideoFragment"
+            app:destination="@id/idealJobVideoFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_self"
+            app:destination="@id/seekerProfileFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_portfolioVideoFragment"
+            app:destination="@id/portfolioVideoFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_portfolioDescriptionFragment"
+            app:destination="@id/portfolioDescriptionFragment" />
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_portfolioImageFragment"
+            app:destination="@id/portfolioImageFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekerAboutMeFragment"
@@ -65,10 +95,10 @@
             app:argType="com.findajob.jobamax.jobseeker.profile.cv.model.Education" />
     </fragment>
     <fragment
-        android:id="@+id/volunteeringAndActivitiesFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringAndActivitiesFragment"
+        android:id="@+id/seekerInterestFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerInterestFragment"
         android:label="fragment_volunteering_and_activities"
-        tools:layout="@layout/fragment_seeker_volunteering_and_activities" />
+        tools:layout="@layout/fragment_seeker_interest" />
     <fragment
         android:id="@+id/seekerExperienceListFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerExperienceListFragment"
@@ -89,8 +119,62 @@
         android:label="fragment_seeker_social_media_ids"
         tools:layout="@layout/fragment_seeker_social_media_ids" />
     <fragment
-        android:id="@+id/seekerPortfolioFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.SeekerPortfolioFragment"
-        android:label="fragment_seeker_portfolio"
-        tools:layout="@layout/fragment_seeker_portfolio" />
+        android:id="@+id/seekerPreviewFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment"
+        android:label="fragment_seeker_preview"
+        tools:layout="@layout/fragment_seeker_preview" />
+    <fragment
+        android:id="@+id/seekerImportResumeFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment"
+        android:label="fragment_seeker_import_resume"
+        tools:layout="@layout/fragment_seeker_import_resume" />
+    <fragment
+        android:id="@+id/seekerVolunteeringListFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment"
+        android:label="fragment_seeker_volunteering_list"
+        tools:layout="@layout/fragment_seeker_volunteering_list" >
+        <action
+            android:id="@+id/action_seekerVolunteeringListFragment_to_seekerAddVolunteeringFragment"
+            app:destination="@id/seekerAddVolunteeringFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerAddVolunteeringFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment"
+        android:label="fragment_seeker_add_volunteering"
+        tools:layout="@layout/fragment_seeker_add_volunteering" />
+    <fragment
+        android:id="@+id/idealJobVideoFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobVideoFragment"
+        android:label="fragment_ideal_job_video"
+        tools:layout="@layout/fragment_ideal_job_video" />
+    <fragment
+        android:id="@+id/idealJobDescriptionFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobDescriptionFragment"
+        android:label="fragment_ideal_job_description"
+        tools:layout="@layout/fragment_ideal_job_description" />
+    <fragment
+        android:id="@+id/idealJobImagesFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobImagesFragment"
+        android:label="fragment_ideal_job_images"
+        tools:layout="@layout/fragment_ideal_job_images" />
+    <fragment
+        android:id="@+id/idealJobAudioFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobAudioFragment"
+        android:label="fragment_ideal_job_audio"
+        tools:layout="@layout/fragment_ideal_job_audio" />
+    <fragment
+        android:id="@+id/portfolioVideoFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioVideoFragment"
+        android:label="fragment_portfolio_video"
+        tools:layout="@layout/fragment_portfolio_video" />
+    <fragment
+        android:id="@+id/portfolioDescriptionFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioDescriptionFragment"
+        android:label="fragment_portfolio_description"
+        tools:layout="@layout/fragment_portfolio_description" />
+    <fragment
+        android:id="@+id/portfolioImageFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioImageFragment"
+        android:label="fragment_portfolio_image"
+        tools:layout="@layout/fragment_portfolio_image" />
 </navigation>

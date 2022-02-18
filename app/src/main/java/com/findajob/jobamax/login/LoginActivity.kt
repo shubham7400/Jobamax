@@ -199,7 +199,7 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.email.toString(), email)
         query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.email.toString())
-        query.whereEqualTo(ParseTableFields.password.toString(), password)
+        query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(password)  )
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
             if (e == null && result != null){
@@ -252,7 +252,7 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
         query.whereEqualTo(ParseTableFields.email.toString(), email)
         query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.email.toString())
-        query.whereEqualTo(ParseTableFields.password.toString(), password)
+        query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(password) )
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
             if (e == null && result != null) {

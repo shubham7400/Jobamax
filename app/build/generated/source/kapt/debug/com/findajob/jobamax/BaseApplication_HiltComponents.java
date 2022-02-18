@@ -29,13 +29,19 @@ import com.findajob.jobamax.dashboard.messages.ProfileActivity_GeneratedInjector
 import com.findajob.jobamax.dashboard.messages.RecruiterChatsFragment_GeneratedInjector;
 import com.findajob.jobamax.di.AppModule;
 import com.findajob.jobamax.di.ViewModelModule;
+import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment_GeneratedInjector;
@@ -278,6 +284,7 @@ public final class BaseApplication_HiltComponents {
       PreviewJobSeekerActivity_GeneratedInjector,
       PreviewRecruiterActivity_GeneratedInjector,
       ProfileActivity_GeneratedInjector,
+      SeekerCalenderActivity_GeneratedInjector,
       JobSeekerCourseActivity_GeneratedInjector,
       JobSeekerHomeActivity_GeneratedInjector,
       SeekerProfileActivity_GeneratedInjector,
@@ -355,9 +362,14 @@ public final class BaseApplication_HiltComponents {
       JobSeekerChatsFragment_GeneratedInjector,
       MessagesFragment_GeneratedInjector,
       RecruiterChatsFragment_GeneratedInjector,
+      SeekerCalenderFragment_GeneratedInjector,
       JobSeekerProfileFragment_GeneratedInjector,
       SeekerAboutMeFragment_GeneratedInjector,
+      SeekerAddVolunteeringFragment_GeneratedInjector,
+      SeekerImportResumeFragment_GeneratedInjector,
+      SeekerPreviewFragment_GeneratedInjector,
       SeekerProfileFragment_GeneratedInjector,
+      SeekerVolunteeringListFragment_GeneratedInjector,
       JobSeekerAccountFragment_GeneratedInjector,
       JobSeekerNewsletterFragment_GeneratedInjector,
       JobSeekerPaymentMethodsFragment_GeneratedInjector,

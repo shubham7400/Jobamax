@@ -19,15 +19,8 @@ public class FragmentSeekerFilterJobBindingImpl extends FragmentSeekerFilterJobB
         sViewsWithIds.put(R.id.textView24, 3);
         sViewsWithIds.put(R.id.cb_all, 4);
         sViewsWithIds.put(R.id.cb_favorite, 5);
-        sViewsWithIds.put(R.id.cb_most_recent_one, 6);
-        sViewsWithIds.put(R.id.cb_applied, 7);
-        sViewsWithIds.put(R.id.cb_refused, 8);
-        sViewsWithIds.put(R.id.cb_online_intervie, 9);
-        sViewsWithIds.put(R.id.cb_assessments, 10);
-        sViewsWithIds.put(R.id.cb_phone_call, 11);
-        sViewsWithIds.put(R.id.cb_interview, 12);
-        sViewsWithIds.put(R.id.cb_hired, 13);
-        sViewsWithIds.put(R.id.btn_go, 14);
+        sViewsWithIds.put(R.id.cb_archive, 6);
+        sViewsWithIds.put(R.id.btn_go, 7);
     }
     // views
     @NonNull
@@ -38,21 +31,14 @@ public class FragmentSeekerFilterJobBindingImpl extends FragmentSeekerFilterJobB
     // Inverse Binding Event Handlers
 
     public FragmentSeekerFilterJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerFilterJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[14]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[7]
             , (android.widget.CheckBox) bindings[4]
-            , (android.widget.CheckBox) bindings[7]
-            , (android.widget.CheckBox) bindings[10]
-            , (android.widget.CheckBox) bindings[5]
-            , (android.widget.CheckBox) bindings[13]
-            , (android.widget.CheckBox) bindings[12]
             , (android.widget.CheckBox) bindings[6]
-            , (android.widget.CheckBox) bindings[9]
-            , (android.widget.CheckBox) bindings[11]
-            , (android.widget.CheckBox) bindings[8]
+            , (android.widget.CheckBox) bindings[5]
             , (android.widget.ImageView) bindings[2]
             , (android.widget.RelativeLayout) bindings[1]
             , (android.widget.TextView) bindings[3]

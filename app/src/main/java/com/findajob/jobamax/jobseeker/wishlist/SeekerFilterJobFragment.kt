@@ -12,12 +12,16 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.FragmentSeekerFilterJobBinding
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.jobseeker.profile.account.SeekerSearchUniversityDialogFragment
+import android.widget.CompoundButton
+
+
+
 
 
 class SeekerFilterJobFragment : DialogFragment() {
     lateinit var binding: FragmentSeekerFilterJobBinding
-    var onGoClickListener: (ArrayList<String>) -> Unit = {}
-    var filteredJobTypes = ArrayList<String>()
+    var onGoClickListener: (String) -> Unit = {}
+    var filteredJob = SeekerWishlistJobFilter.ALL.name
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerFilterJobBinding.inflate(inflater, container, false)
@@ -33,40 +37,30 @@ class SeekerFilterJobFragment : DialogFragment() {
         binding.ivBackButton.setOnClickListener {
             dismiss()
         }
+        binding.cbAll.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbFavorite.isChecked = false
+                binding.cbArchive.isChecked = false
+                filteredJob = SeekerWishlistJobFilter.ALL.name
+            }
+        }
+        binding.cbFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbAll.isChecked = false
+                binding.cbArchive.isChecked = false
+                filteredJob = SeekerWishlistJobFilter.FAVORITE.name
+            }
+        }
+        binding.cbArchive.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbFavorite.isChecked = false
+                binding.cbAll.isChecked = false
+                filteredJob = SeekerWishlistJobFilter.ARCHIVE.name
+            }
+        }
         binding.btnGo.setOnClickListener {
             // call onGoClickListener and create that listener parameter and pass in it whatever you want.
-            filteredJobTypes.clear()
-            if (binding.cbAll.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.ALL.name)
-            }
-            if (binding.cbFavorite.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.FAVORITE.name)
-            }
-            if (binding.cbApplied.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.APPLIED.name)
-            }
-            if (binding.cbAssessments.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.ASSESSMENTS.name)
-            }
-            if (binding.cbHired.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.HIRED.name)
-            }
-            if (binding.cbInterview.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.INTERVIEW.name)
-            }
-            if (binding.cbMostRecentOne.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.MOST_RECENT_ONES.name)
-            }
-            if (binding.cbOnlineIntervie.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.ONLINE_INTERVIEW.name)
-            }
-            if (binding.cbPhoneCall.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.PHONE_CALL.name)
-            }
-            if (binding.cbRefused.isChecked){
-                filteredJobTypes.add(SeekerWishlistJobFilter.REFUSED.name)
-            }
-            onGoClickListener(filteredJobTypes)
+            onGoClickListener(filteredJob)
             dismiss()
         }
     }

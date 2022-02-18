@@ -119,7 +119,6 @@ class MasterClassViewModel(val context: Application) : AndroidViewModel(context)
             if (mainObject.getBoolean("status")){
                 state(mainObject.getInt("likeAction"))
             }
-            log("dfjkdsfj $mainObject")
         })
     }
 }

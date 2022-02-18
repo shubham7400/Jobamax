@@ -19,23 +19,21 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         sViewsWithIds.put(R.id.textView6, 5);
         sViewsWithIds.put(R.id.ll1, 6);
         sViewsWithIds.put(R.id.v_profile, 7);
-        sViewsWithIds.put(R.id.v_message, 8);
-        sViewsWithIds.put(R.id.iv_message_icon, 9);
-        sViewsWithIds.put(R.id.tv_message_count_title, 10);
-        sViewsWithIds.put(R.id.v_calendar, 11);
-        sViewsWithIds.put(R.id.tv_calender_title, 12);
-        sViewsWithIds.put(R.id.bt_job_search, 13);
-        sViewsWithIds.put(R.id.ll2, 14);
-        sViewsWithIds.put(R.id.v_track, 15);
-        sViewsWithIds.put(R.id.image_user2, 16);
-        sViewsWithIds.put(R.id.v_wishlist, 17);
-        sViewsWithIds.put(R.id.rl_abcd, 18);
-        sViewsWithIds.put(R.id.tv_ef, 19);
-        sViewsWithIds.put(R.id.iv_right_arrow, 20);
-        sViewsWithIds.put(R.id.image_user3, 21);
-        sViewsWithIds.put(R.id.image_user35, 22);
-        sViewsWithIds.put(R.id.image_user3w, 23);
-        sViewsWithIds.put(R.id.btn_coaching, 24);
+        sViewsWithIds.put(R.id.v_calendar, 8);
+        sViewsWithIds.put(R.id.iv_calender, 9);
+        sViewsWithIds.put(R.id.tv_calender_title, 10);
+        sViewsWithIds.put(R.id.bt_job_search, 11);
+        sViewsWithIds.put(R.id.ll2, 12);
+        sViewsWithIds.put(R.id.v_track, 13);
+        sViewsWithIds.put(R.id.image_user2, 14);
+        sViewsWithIds.put(R.id.v_wishlist, 15);
+        sViewsWithIds.put(R.id.rl_abcd, 16);
+        sViewsWithIds.put(R.id.tv_ef, 17);
+        sViewsWithIds.put(R.id.iv_right_arrow, 18);
+        sViewsWithIds.put(R.id.image_user3, 19);
+        sViewsWithIds.put(R.id.image_user35, 20);
+        sViewsWithIds.put(R.id.image_user3w, 21);
+        sViewsWithIds.put(R.id.btn_coaching, 22);
     }
     // views
     @NonNull
@@ -46,34 +44,32 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     // Inverse Binding Event Handlers
 
     public ActivityJobSeekerHomeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 25, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
     }
     private ActivityJobSeekerHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[13]
-            , (android.widget.Button) bindings[24]
+            , (android.widget.Button) bindings[11]
+            , (android.widget.Button) bindings[22]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[16]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[14]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[19]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[20]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[21]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[22]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[23]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[9]
-            , (android.widget.ImageView) bindings[20]
+            , (android.widget.ImageView) bindings[18]
             , (android.widget.ImageView) bindings[4]
             , (android.widget.LinearLayout) bindings[6]
-            , (android.widget.LinearLayout) bindings[14]
-            , (android.widget.RelativeLayout) bindings[18]
+            , (android.widget.LinearLayout) bindings[12]
+            , (android.widget.RelativeLayout) bindings[16]
             , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[17]
             , (android.widget.TextView) bindings[1]
-            , (android.widget.RelativeLayout) bindings[11]
             , (android.widget.RelativeLayout) bindings[8]
             , (android.widget.RelativeLayout) bindings[7]
+            , (android.widget.RelativeLayout) bindings[13]
             , (android.widget.RelativeLayout) bindings[15]
-            , (android.widget.RelativeLayout) bindings[17]
             );
         this.imageUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];

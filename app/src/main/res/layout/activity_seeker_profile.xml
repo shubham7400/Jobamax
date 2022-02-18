@@ -5,7 +5,7 @@
     tools:context=".jobseeker.profile.SeekerProfileActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/login_nav_host_fragment"
+        android:id="@+id/nav_seeker_profile_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"

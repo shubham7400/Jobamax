@@ -47,7 +47,7 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   public final ImageView imageView10;
 
   @NonNull
-  public final ImageView ivMessageIcon;
+  public final ImageView ivCalender;
 
   @NonNull
   public final ImageView ivRightArrow;
@@ -74,16 +74,10 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   public final TextView tvEf;
 
   @NonNull
-  public final TextView tvMessageCountTitle;
-
-  @NonNull
   public final TextView tvSeekerName;
 
   @NonNull
   public final RelativeLayout vCalendar;
-
-  @NonNull
-  public final RelativeLayout vMessage;
 
   @NonNull
   public final RelativeLayout vProfile;
@@ -109,11 +103,10 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   protected ActivityJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button btJobSearch, Button btnCoaching, CircleImageView imageUser, CircleImageView imageUser2,
       CircleImageView imageUser3, CircleImageView imageUser35, CircleImageView imageUser3w,
-      ImageView imageView10, ImageView ivMessageIcon, ImageView ivRightArrow, ImageView ivSetting,
+      ImageView imageView10, ImageView ivCalender, ImageView ivRightArrow, ImageView ivSetting,
       LinearLayout ll1, LinearLayout ll2, RelativeLayout rlAbcd, TextView textView6,
-      TextView tvCalenderTitle, TextView tvEf, TextView tvMessageCountTitle, TextView tvSeekerName,
-      RelativeLayout vCalendar, RelativeLayout vMessage, RelativeLayout vProfile,
-      RelativeLayout vTrack, RelativeLayout vWishlist) {
+      TextView tvCalenderTitle, TextView tvEf, TextView tvSeekerName, RelativeLayout vCalendar,
+      RelativeLayout vProfile, RelativeLayout vTrack, RelativeLayout vWishlist) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btJobSearch = btJobSearch;
     this.btnCoaching = btnCoaching;
@@ -123,7 +116,7 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
     this.imageUser35 = imageUser35;
     this.imageUser3w = imageUser3w;
     this.imageView10 = imageView10;
-    this.ivMessageIcon = ivMessageIcon;
+    this.ivCalender = ivCalender;
     this.ivRightArrow = ivRightArrow;
     this.ivSetting = ivSetting;
     this.ll1 = ll1;
@@ -132,10 +125,8 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
     this.textView6 = textView6;
     this.tvCalenderTitle = tvCalenderTitle;
     this.tvEf = tvEf;
-    this.tvMessageCountTitle = tvMessageCountTitle;
     this.tvSeekerName = tvSeekerName;
     this.vCalendar = vCalendar;
-    this.vMessage = vMessage;
     this.vProfile = vProfile;
     this.vTrack = vTrack;
     this.vWishlist = vWishlist;

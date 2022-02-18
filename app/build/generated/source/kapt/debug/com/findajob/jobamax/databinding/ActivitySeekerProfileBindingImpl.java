@@ -28,7 +28,7 @@ public class ActivitySeekerProfileBindingImpl extends ActivitySeekerProfileBindi
         super(bindingComponent, root, 0
             , (androidx.fragment.app.FragmentContainerView) bindings[0]
             );
-        this.loginNavHostFragment.setTag(null);
+        this.navSeekerProfileFragment.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

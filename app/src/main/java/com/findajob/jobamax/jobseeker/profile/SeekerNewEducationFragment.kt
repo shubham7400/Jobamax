@@ -41,8 +41,8 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         binding.tvSchool.setOnClickListener {
             val seekerSearchUniversityDialogFragment = SeekerSearchUniversityDialogFragment.newInstance()
             seekerSearchUniversityDialogFragment.show(childFragmentManager,"dialog")
-            seekerSearchUniversityDialogFragment.clickedItemListener = {
-                university  = it
+            seekerSearchUniversityDialogFragment.clickedItemListener = { uni  ->
+                university  = uni
                 university?.let {
                     binding.tvSchool.text = it.name
                 }

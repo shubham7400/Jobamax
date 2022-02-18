@@ -5,6 +5,11 @@
     "deepLinks": []
   },
   {
+    "name": "nav_job_search",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
     "name": "nav_job_seeker_home",
     "navigationXmlIds": [],
     "deepLinks": []
@@ -51,6 +56,11 @@
   },
   {
     "name": "nav_seeker_account",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_calender",
     "navigationXmlIds": [],
     "deepLinks": []
   },

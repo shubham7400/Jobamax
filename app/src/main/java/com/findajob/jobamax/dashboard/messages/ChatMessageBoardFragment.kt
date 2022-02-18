@@ -62,6 +62,10 @@ class ChatMessageBoardFragment : Fragment() {
                 binding.rvMessages.scrollToPosition(types.size - 1)
             }
         }
+
+        binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     private fun showDialog(viewType: Int, mes: Mes) {

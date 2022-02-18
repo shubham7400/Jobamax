@@ -19,7 +19,9 @@ import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 import org.jetbrains.anko.doAsync
+import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -63,7 +65,12 @@ class SeekerEducationFragment : BaseFragmentMain<FragmentSeekerEducationBinding>
           viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
               if (it){
                   binding.jobSeeker = viewModel.jobSeeker
-                  educations = ArrayList(Gson().fromJson(viewModel.jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf())
+                  educations = try {
+                      ArrayList(Gson().fromJson(viewModel.jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf())
+                  }catch (e: Exception){
+                      log("${e.message.toString()}")
+                      arrayListOf()
+                  }
                   adapter.submitList(educations)
                   adapter.notifyDataSetChanged()
               }
@@ -94,6 +101,7 @@ class SeekerEducationAdapter(var list: ArrayList<Education>) : RecyclerView.Adap
         val education = list[position]
         holder.binding.tvInstituteName.text = education.name
         holder.binding.tvProgramName.text = education.program
+        Picasso.get().load(education.logo).into(holder.binding.ivUser)
         holder.binding.tvDateDuration.text = education.startDate+" to "+education.endDate
         val calendar = Calendar.getInstance(TimeZone.getDefault());
         val endDate = "${calendar.get(Calendar.DAY_OF_MONTH)}/ ${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"

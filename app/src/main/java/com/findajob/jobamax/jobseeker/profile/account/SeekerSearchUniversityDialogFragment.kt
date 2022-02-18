@@ -65,7 +65,7 @@ class SeekerSearchUniversityDialogFragment : DialogFragment() {
 
     private fun getUniversities(result: (List<ParseObject>) -> Unit) {
          val query = ParseQuery<ParseObject>(ParseTableName.University.toString())
-        query.whereMatches("name",  "^.*?((?i)(${binding.etSearchUniversity.text.toString()})).*$")
+        query.whereMatches("name",  "^.*?((?i)(${binding.etSearchUniversity.text})).*$")
         query.findInBackground { res, e ->
             when {
                 e != null -> {

@@ -16,9 +16,9 @@
             android:id="@+id/iv_user"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginVertical="20dp"
             android:layout_alignParentStart="true"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
             android:src="@drawable/default_user_img" />
 
         <LinearLayout
