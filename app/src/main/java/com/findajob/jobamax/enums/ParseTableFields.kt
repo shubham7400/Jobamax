@@ -98,4 +98,8 @@ enum class ParseTableFields() {
     jobSeeker,
     profession,
     elevatorPitch,
+    jobTitle,
+    city,
+    companyName,
+    description
 }

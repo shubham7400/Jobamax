@@ -22,8 +22,6 @@ public class FragmentIdealJobImagesBindingImpl extends FragmentIdealJobImagesBin
     // views
     @NonNull
     private final androidx.core.widget.NestedScrollView mboundView0;
-    @NonNull
-    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
@@ -34,15 +32,15 @@ public class FragmentIdealJobImagesBindingImpl extends FragmentIdealJobImagesBin
     }
     private FragmentIdealJobImagesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[5]
             , (android.widget.TextView) bindings[4]
             );
+        this.civUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
-        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -117,7 +115,7 @@ public class FragmentIdealJobImagesBindingImpl extends FragmentIdealJobImagesBin
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.civUser, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

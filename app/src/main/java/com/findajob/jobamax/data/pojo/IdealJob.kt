@@ -2,31 +2,32 @@ package com.findajob.jobamax.data.pojo
 
 import com.findajob.jobamax.enums.ParseTableName
 import com.parse.ParseObject
+import com.parse.coroutines.read.parse_object.fetchIfNeeded
 
 class IdealJob {
     var text: String = ""
     var arrImages = ArrayList<String>()
     var audioUrl: String = ""
-    var videoUrl: String = ""
+    var videoURL: String = ""
     var jobSeeker: ParseObject? = null
     var pfObject: ParseObject? = null
 
     fun toParseObject(): ParseObject {
-        val portfolio = ParseObject(ParseTableName.Portfolio.toString())
-        portfolio.put("text", text)
-        portfolio.put("arrImages", arrImages)
-        portfolio.put("audioUrl", audioUrl)
-        portfolio.put("videoUrl", videoUrl)
-        jobSeeker?.let { portfolio.put("jobSeeker", it) }
-        return portfolio
+        val idealJob = ParseObject(ParseTableName.IdealJob.toString())
+        idealJob.put("text", text)
+        idealJob.put("arrImages", arrImages)
+        idealJob.put("audioUrl", audioUrl)
+        idealJob.put("videoURL", videoURL)
+        jobSeeker?.let { idealJob.put("jobSeeker", it) }
+        return idealJob
     }
 
 
     constructor(obj: ParseObject) {
-        this.text = obj.getString("text").toString()
+        this.text = obj.fetchIfNeeded<ParseObject>().getString("text") ?: ""
         this.arrImages = (obj["arrImages"] as? ArrayList<String>) ?: ArrayList()
         this.audioUrl = obj.getString("audioUrl") ?: ""
-        this.videoUrl = obj.getString("videoUrl")?: ""
+        this.videoURL = obj.getString("videoURL") ?: ""
         this.jobSeeker = obj.getParseObject("jobSeeker")
         this.pfObject = obj
     }

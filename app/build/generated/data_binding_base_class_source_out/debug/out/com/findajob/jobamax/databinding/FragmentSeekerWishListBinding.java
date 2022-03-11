@@ -16,15 +16,22 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerWishListBinding extends ViewDataBinding {
   @NonNull
+  public final CircleImageView civUser;
+
+  @NonNull
   public final ConstraintLayout constraintLayout6;
 
   @NonNull
   public final ConstraintLayout constraintLayout7;
+
+  @NonNull
+  public final ImageView imageView11;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -41,21 +48,28 @@ public abstract class FragmentSeekerWishListBinding extends ViewDataBinding {
   @NonNull
   public final TextView textView20;
 
+  @NonNull
+  public final TextView tvNoData;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerWishListBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ConstraintLayout constraintLayout6, ConstraintLayout constraintLayout7,
-      ImageView ivBackButton, ImageView ivFilterJob, RelativeLayout relativeLayout,
-      RecyclerView rvWishlistJob, TextView textView20) {
+      int _localFieldCount, CircleImageView civUser, ConstraintLayout constraintLayout6,
+      ConstraintLayout constraintLayout7, ImageView imageView11, ImageView ivBackButton,
+      ImageView ivFilterJob, RelativeLayout relativeLayout, RecyclerView rvWishlistJob,
+      TextView textView20, TextView tvNoData) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
     this.constraintLayout6 = constraintLayout6;
     this.constraintLayout7 = constraintLayout7;
+    this.imageView11 = imageView11;
     this.ivBackButton = ivBackButton;
     this.ivFilterJob = ivFilterJob;
     this.relativeLayout = relativeLayout;
     this.rvWishlistJob = rvWishlistJob;
     this.textView20 = textView20;
+    this.tvNoData = tvNoData;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

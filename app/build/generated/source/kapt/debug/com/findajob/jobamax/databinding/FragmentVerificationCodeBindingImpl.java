@@ -25,9 +25,9 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
     private final android.widget.ImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback241;
+    private final android.view.View.OnClickListener mCallback236;
     @Nullable
-    private final android.view.View.OnClickListener mCallback240;
+    private final android.view.View.OnClickListener mCallback235;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -49,8 +49,8 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
         this.sendButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback241 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback240 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback236 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback235 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -112,8 +112,8 @@ public class FragmentVerificationCodeBindingImpl extends FragmentVerificationCod
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback240);
-            this.sendButton.setOnClickListener(mCallback241);
+            this.mboundView1.setOnClickListener(mCallback235);
+            this.sendButton.setOnClickListener(mCallback236);
         }
     }
     // Listener Stub Implementations

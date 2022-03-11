@@ -4,18 +4,126 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.fragment.app.FragmentContainerView;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerJobsFilterBinding extends ViewDataBinding {
+  @NonNull
+  public final AppCompatCheckBox accbApprenticeship;
+
+  @NonNull
+  public final AppCompatCheckBox accbInternship;
+
+  @NonNull
+  public final CheckBox accbLessThanOne;
+
+  @NonNull
+  public final CheckBox accbMoreThanTwo;
+
+  @NonNull
+  public final CheckBox accbOneToTwo;
+
+  @NonNull
+  public final AppCompatCheckBox accbPartTime;
+
+  @NonNull
+  public final AppCompatCheckBox accbPermanent;
+
+  @NonNull
+  public final FragmentContainerView autocompleteFragment;
+
+  @NonNull
+  public final Button btnSave;
+
+  @NonNull
+  public final CircleImageView civUser;
+
+  @NonNull
+  public final EditText etIndustryName;
+
+  @NonNull
+  public final EditText etJobKeyword;
+
+  @NonNull
+  public final ImageView ivBackButton;
+
+  @NonNull
+  public final RelativeLayout relativeLayout;
+
+  @NonNull
+  public final SeekBar sbDistance;
+
+  @NonNull
+  public final TextView textView29;
+
+  @NonNull
+  public final TextView textView2e9;
+
+  @NonNull
+  public final TextView textView30;
+
+  @NonNull
+  public final TextView tvDistance;
+
+  @NonNull
+  public final TextView tvSelectLocation;
+
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerJobsFilterBinding(Object _bindingComponent, View _root,
-      int _localFieldCount) {
+      int _localFieldCount, AppCompatCheckBox accbApprenticeship, AppCompatCheckBox accbInternship,
+      CheckBox accbLessThanOne, CheckBox accbMoreThanTwo, CheckBox accbOneToTwo,
+      AppCompatCheckBox accbPartTime, AppCompatCheckBox accbPermanent,
+      FragmentContainerView autocompleteFragment, Button btnSave, CircleImageView civUser,
+      EditText etIndustryName, EditText etJobKeyword, ImageView ivBackButton,
+      RelativeLayout relativeLayout, SeekBar sbDistance, TextView textView29, TextView textView2e9,
+      TextView textView30, TextView tvDistance, TextView tvSelectLocation) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.accbApprenticeship = accbApprenticeship;
+    this.accbInternship = accbInternship;
+    this.accbLessThanOne = accbLessThanOne;
+    this.accbMoreThanTwo = accbMoreThanTwo;
+    this.accbOneToTwo = accbOneToTwo;
+    this.accbPartTime = accbPartTime;
+    this.accbPermanent = accbPermanent;
+    this.autocompleteFragment = autocompleteFragment;
+    this.btnSave = btnSave;
+    this.civUser = civUser;
+    this.etIndustryName = etIndustryName;
+    this.etJobKeyword = etJobKeyword;
+    this.ivBackButton = ivBackButton;
+    this.relativeLayout = relativeLayout;
+    this.sbDistance = sbDistance;
+    this.textView29 = textView29;
+    this.textView2e9 = textView2e9;
+    this.textView30 = textView30;
+    this.tvDistance = tvDistance;
+    this.tvSelectLocation = tvSelectLocation;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

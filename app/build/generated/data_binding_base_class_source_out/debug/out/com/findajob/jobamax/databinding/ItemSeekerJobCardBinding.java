@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,13 +13,24 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   @NonNull
+  public final AppCompatButton acbSeeJobDesc;
+
+  @NonNull
   public final AppCompatButton appCompatButton2;
+
+  @NonNull
+  public final ChipGroup cgBenefits;
+
+  @NonNull
+  public final ChipGroup cgSoftSkill;
 
   @NonNull
   public final ConstraintLayout clOverlay;
@@ -33,16 +45,67 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   public final ConstraintLayout constraintLayout14;
 
   @NonNull
-  public final ImageView imageView17;
+  public final ImageView ivCompany;
 
   @NonNull
-  public final ImageView ivCompany;
+  public final ImageView ivReport;
+
+  @NonNull
+  public final LinearLayout llAboutCompany;
+
+  @NonNull
+  public final LinearLayout llAboutJob;
+
+  @NonNull
+  public final LinearLayout llBenefits;
+
+  @NonNull
+  public final LinearLayout llHardSkill;
+
+  @NonNull
+  public final LinearLayout llIndustry;
+
+  @NonNull
+  public final LinearLayout llSalary;
+
+  @NonNull
+  public final LinearLayout llSoftSkill;
+
+  @NonNull
+  public final LinearLayout llWorkspace;
+
+  @NonNull
+  public final RecyclerView rvHardSkill;
+
+  @NonNull
+  public final RecyclerView rvHardSklilsl;
+
+  @NonNull
+  public final TextView tvAboutCompany;
+
+  @NonNull
+  public final TextView tvAboutJob;
+
+  @NonNull
+  public final TextView tvCompanyAddress;
 
   @NonNull
   public final TextView tvCompanyName;
 
   @NonNull
+  public final TextView tvCompanyUrl;
+
+  @NonNull
+  public final TextView tvIndustry;
+
+  @NonNull
   public final TextView tvJobOfferId;
+
+  @NonNull
+  public final TextView tvJobTitle;
+
+  @NonNull
+  public final TextView tvJobType;
 
   @NonNull
   public final TextView tvOverlayLabel;
@@ -51,20 +114,46 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   public final TextView tvTitleAbout;
 
   protected ItemSeekerJobCardBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton appCompatButton2, ConstraintLayout clOverlay, ConstraintLayout clTopParent,
-      ConstraintLayout constraintLayout13, ConstraintLayout constraintLayout14,
-      ImageView imageView17, ImageView ivCompany, TextView tvCompanyName, TextView tvJobOfferId,
+      AppCompatButton acbSeeJobDesc, AppCompatButton appCompatButton2, ChipGroup cgBenefits,
+      ChipGroup cgSoftSkill, ConstraintLayout clOverlay, ConstraintLayout clTopParent,
+      ConstraintLayout constraintLayout13, ConstraintLayout constraintLayout14, ImageView ivCompany,
+      ImageView ivReport, LinearLayout llAboutCompany, LinearLayout llAboutJob,
+      LinearLayout llBenefits, LinearLayout llHardSkill, LinearLayout llIndustry,
+      LinearLayout llSalary, LinearLayout llSoftSkill, LinearLayout llWorkspace,
+      RecyclerView rvHardSkill, RecyclerView rvHardSklilsl, TextView tvAboutCompany,
+      TextView tvAboutJob, TextView tvCompanyAddress, TextView tvCompanyName, TextView tvCompanyUrl,
+      TextView tvIndustry, TextView tvJobOfferId, TextView tvJobTitle, TextView tvJobType,
       TextView tvOverlayLabel, TextView tvTitleAbout) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.acbSeeJobDesc = acbSeeJobDesc;
     this.appCompatButton2 = appCompatButton2;
+    this.cgBenefits = cgBenefits;
+    this.cgSoftSkill = cgSoftSkill;
     this.clOverlay = clOverlay;
     this.clTopParent = clTopParent;
     this.constraintLayout13 = constraintLayout13;
     this.constraintLayout14 = constraintLayout14;
-    this.imageView17 = imageView17;
     this.ivCompany = ivCompany;
+    this.ivReport = ivReport;
+    this.llAboutCompany = llAboutCompany;
+    this.llAboutJob = llAboutJob;
+    this.llBenefits = llBenefits;
+    this.llHardSkill = llHardSkill;
+    this.llIndustry = llIndustry;
+    this.llSalary = llSalary;
+    this.llSoftSkill = llSoftSkill;
+    this.llWorkspace = llWorkspace;
+    this.rvHardSkill = rvHardSkill;
+    this.rvHardSklilsl = rvHardSklilsl;
+    this.tvAboutCompany = tvAboutCompany;
+    this.tvAboutJob = tvAboutJob;
+    this.tvCompanyAddress = tvCompanyAddress;
     this.tvCompanyName = tvCompanyName;
+    this.tvCompanyUrl = tvCompanyUrl;
+    this.tvIndustry = tvIndustry;
     this.tvJobOfferId = tvJobOfferId;
+    this.tvJobTitle = tvJobTitle;
+    this.tvJobType = tvJobType;
     this.tvOverlayLabel = tvOverlayLabel;
     this.tvTitleAbout = tvTitleAbout;
   }

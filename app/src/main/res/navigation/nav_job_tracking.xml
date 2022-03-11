@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_seekerTrackingJobFragment_to_seekerTrackingJobDetailsFragment"
             app:destination="@id/seekerTrackingJobDetailsFragment" />
+        <action
+            android:id="@+id/action_seekerTrackingJobFragment_to_seekerAddPersonalTrackJobFragment"
+            app:destination="@id/seekerAddPersonalTrackJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekerTrackingJobDetailsFragment"
         android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobDetailsFragment"
         android:label="fragment_seeker_tracking_job_details"
         tools:layout="@layout/fragment_seeker_tracking_job_details" />
+    <fragment
+        android:id="@+id/seekerAddPersonalTrackJobFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerAddPersonalTrackJobFragment"
+        android:label="fragment_seeker_add_personal_track_job"
+        tools:layout="@layout/fragment_seeker_add_personal_track_job" />
 </navigation>

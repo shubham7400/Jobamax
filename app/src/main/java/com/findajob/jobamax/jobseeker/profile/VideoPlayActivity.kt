@@ -47,22 +47,24 @@ class VideoPlayActivity : AppCompatActivity() {
             setParameters(buildUponParameters().setMaxVideoSizeSd())
         }
         if (player == null){
-            player = SimpleExoPlayer.Builder(this)
-                .setTrackSelector(trackSelector)
-                .build()
-                .also { exoPlayer ->
-                    binding.videoView.player = exoPlayer
-                }.also { exoPlayer ->
-                    currentVideoUrl?.let {
-                        val mediaItem = MediaItem.fromUri(videoUrl)
-                        exoPlayer.setMediaItem(mediaItem)
-                        exoPlayer.playWhenReady = playWhenReady
-                        exoPlayer.seekTo(currentWindow, playbackPosition)
-                        exoPlayer.addListener(playbackStateListener)
-                        exoPlayer.prepare()
+            try {
+                player = SimpleExoPlayer.Builder(this)
+                    .setTrackSelector(trackSelector)
+                    .build()
+                    .also { exoPlayer ->
+                        binding.videoView.player = exoPlayer
+                    }.also { exoPlayer ->
+                        currentVideoUrl?.let {
+                            val mediaItem = MediaItem.fromUri(videoUrl)
+                            exoPlayer.setMediaItem(mediaItem)
+                            exoPlayer.playWhenReady = playWhenReady
+                            exoPlayer.seekTo(currentWindow, playbackPosition)
+                            exoPlayer.addListener(playbackStateListener)
+                            exoPlayer.prepare()
+                        }
                     }
-                }
-        }
+            }catch (e: Exception){}
+         }
     }
 
     private fun releasePlayer() {

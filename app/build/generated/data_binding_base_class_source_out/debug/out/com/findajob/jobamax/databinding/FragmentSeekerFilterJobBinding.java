@@ -39,10 +39,19 @@ public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
   @NonNull
   public final TextView textView24;
 
+  @NonNull
+  public final TextView tvAll;
+
+  @NonNull
+  public final TextView tvArchive;
+
+  @NonNull
+  public final TextView tvFavorite;
+
   protected FragmentSeekerFilterJobBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppCompatButton btnGo, CheckBox cbAll, CheckBox cbArchive,
       CheckBox cbFavorite, ImageView ivBackButton, RelativeLayout relativeLayout,
-      TextView textView24) {
+      TextView textView24, TextView tvAll, TextView tvArchive, TextView tvFavorite) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnGo = btnGo;
     this.cbAll = cbAll;
@@ -51,6 +60,9 @@ public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.textView24 = textView24;
+    this.tvAll = tvAll;
+    this.tvArchive = tvArchive;
+    this.tvFavorite = tvFavorite;
   }
 
   @NonNull

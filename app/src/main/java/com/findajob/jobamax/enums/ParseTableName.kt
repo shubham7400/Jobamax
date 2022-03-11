@@ -78,6 +78,8 @@ enum class ParseTableName {
     WishlistedJob,
     TrackingJob,
     Portfolio,
-    IdealJob
+    IdealJob,
+    PersonalTrackJob,
+    Notification
 
 }

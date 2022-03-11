@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,15 +38,22 @@ public abstract class ItemWishlistJobBinding extends ViewDataBinding {
   public final ImageView ivFavorite;
 
   @NonNull
+  public final LinearLayout llActionButton;
+
+  @NonNull
   public final TextView tvCompanyName;
 
   @NonNull
-  public final TextView tvProductName;
+  public final TextView tvJobTitle;
+
+  @NonNull
+  public final TextView tvLocation;
 
   protected ItemWishlistJobBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton acbtnApply, ConstraintLayout constraintLayout10, ImageView ivAdd,
-      ImageView ivArchive, CircleImageView ivCompany, ImageView ivFavorite, TextView tvCompanyName,
-      TextView tvProductName) {
+      ImageView ivArchive, CircleImageView ivCompany, ImageView ivFavorite,
+      LinearLayout llActionButton, TextView tvCompanyName, TextView tvJobTitle,
+      TextView tvLocation) {
     super(_bindingComponent, _root, _localFieldCount);
     this.acbtnApply = acbtnApply;
     this.constraintLayout10 = constraintLayout10;
@@ -53,8 +61,10 @@ public abstract class ItemWishlistJobBinding extends ViewDataBinding {
     this.ivArchive = ivArchive;
     this.ivCompany = ivCompany;
     this.ivFavorite = ivFavorite;
+    this.llActionButton = llActionButton;
     this.tvCompanyName = tvCompanyName;
-    this.tvProductName = tvProductName;
+    this.tvJobTitle = tvJobTitle;
+    this.tvLocation = tvLocation;
   }
 
   @NonNull

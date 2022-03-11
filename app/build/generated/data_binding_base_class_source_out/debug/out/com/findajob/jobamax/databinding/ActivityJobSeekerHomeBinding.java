@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -29,22 +30,25 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   public final Button btnCoaching;
 
   @NonNull
+  public final ConstraintLayout constraintLayout15;
+
+  @NonNull
   public final CircleImageView imageUser;
 
   @NonNull
-  public final CircleImageView imageUser2;
-
-  @NonNull
-  public final CircleImageView imageUser3;
-
-  @NonNull
-  public final CircleImageView imageUser35;
-
-  @NonNull
-  public final CircleImageView imageUser3w;
+  public final ImageView imageUser2;
 
   @NonNull
   public final ImageView imageView10;
+
+  @NonNull
+  public final CircleImageView iv1;
+
+  @NonNull
+  public final CircleImageView iv2;
+
+  @NonNull
+  public final CircleImageView iv3;
 
   @NonNull
   public final ImageView ivCalender;
@@ -65,7 +69,13 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   public final RelativeLayout rlAbcd;
 
   @NonNull
+  public final TextView textView28;
+
+  @NonNull
   public final TextView textView6;
+
+  @NonNull
+  public final TextView tvAa;
 
   @NonNull
   public final TextView tvCalenderTitle;
@@ -77,16 +87,16 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   public final TextView tvSeekerName;
 
   @NonNull
-  public final RelativeLayout vCalendar;
+  public final ConstraintLayout vCalendar;
 
   @NonNull
-  public final RelativeLayout vProfile;
+  public final ConstraintLayout vProfile;
 
   @NonNull
-  public final RelativeLayout vTrack;
+  public final ConstraintLayout vTrack;
 
   @NonNull
-  public final RelativeLayout vWishlist;
+  public final ConstraintLayout vWishlist;
 
   @Bindable
   protected Integer mState;
@@ -101,28 +111,32 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected ActivityJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btJobSearch, Button btnCoaching, CircleImageView imageUser, CircleImageView imageUser2,
-      CircleImageView imageUser3, CircleImageView imageUser35, CircleImageView imageUser3w,
-      ImageView imageView10, ImageView ivCalender, ImageView ivRightArrow, ImageView ivSetting,
-      LinearLayout ll1, LinearLayout ll2, RelativeLayout rlAbcd, TextView textView6,
-      TextView tvCalenderTitle, TextView tvEf, TextView tvSeekerName, RelativeLayout vCalendar,
-      RelativeLayout vProfile, RelativeLayout vTrack, RelativeLayout vWishlist) {
+      Button btJobSearch, Button btnCoaching, ConstraintLayout constraintLayout15,
+      CircleImageView imageUser, ImageView imageUser2, ImageView imageView10, CircleImageView iv1,
+      CircleImageView iv2, CircleImageView iv3, ImageView ivCalender, ImageView ivRightArrow,
+      ImageView ivSetting, LinearLayout ll1, LinearLayout ll2, RelativeLayout rlAbcd,
+      TextView textView28, TextView textView6, TextView tvAa, TextView tvCalenderTitle,
+      TextView tvEf, TextView tvSeekerName, ConstraintLayout vCalendar, ConstraintLayout vProfile,
+      ConstraintLayout vTrack, ConstraintLayout vWishlist) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btJobSearch = btJobSearch;
     this.btnCoaching = btnCoaching;
+    this.constraintLayout15 = constraintLayout15;
     this.imageUser = imageUser;
     this.imageUser2 = imageUser2;
-    this.imageUser3 = imageUser3;
-    this.imageUser35 = imageUser35;
-    this.imageUser3w = imageUser3w;
     this.imageView10 = imageView10;
+    this.iv1 = iv1;
+    this.iv2 = iv2;
+    this.iv3 = iv3;
     this.ivCalender = ivCalender;
     this.ivRightArrow = ivRightArrow;
     this.ivSetting = ivSetting;
     this.ll1 = ll1;
     this.ll2 = ll2;
     this.rlAbcd = rlAbcd;
+    this.textView28 = textView28;
     this.textView6 = textView6;
+    this.tvAa = tvAa;
     this.tvCalenderTitle = tvCalenderTitle;
     this.tvEf = tvEf;
     this.tvSeekerName = tvSeekerName;

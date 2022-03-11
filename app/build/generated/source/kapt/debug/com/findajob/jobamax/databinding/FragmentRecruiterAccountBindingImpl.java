@@ -73,9 +73,11 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
     @Nullable
     private final android.view.View.OnClickListener mCallback166;
     @Nullable
-    private final android.view.View.OnClickListener mCallback178;
+    private final android.view.View.OnClickListener mCallback156;
     @Nullable
     private final android.view.View.OnClickListener mCallback164;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback154;
     @Nullable
     private final android.view.View.OnClickListener mCallback176;
     @Nullable
@@ -83,23 +85,23 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
     @Nullable
     private final android.view.View.OnClickListener mCallback174;
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback160;
+    private final android.view.View.OnClickListener mCallback160;
     @Nullable
     private final android.view.View.OnClickListener mCallback172;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback180;
     @Nullable
     private final android.view.View.OnClickListener mCallback170;
     @Nullable
     private final android.view.View.OnClickListener mCallback159;
     @Nullable
-    private final android.view.View.OnClickListener mCallback179;
+    private final android.view.View.OnClickListener mCallback157;
     @Nullable
     private final android.view.View.OnClickListener mCallback169;
     @Nullable
-    private final android.view.View.OnClickListener mCallback177;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback155;
     @Nullable
     private final android.view.View.OnClickListener mCallback167;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback153;
     @Nullable
     private final android.view.View.OnClickListener mCallback175;
     @Nullable
@@ -112,8 +114,6 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
     private final android.view.View.OnClickListener mCallback171;
     @Nullable
     private final android.view.View.OnClickListener mCallback161;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback181;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -177,30 +177,30 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
         this.mboundView9.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback168 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 11);
-        mCallback158 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback166 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
-        mCallback178 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 21);
-        mCallback164 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
-        mCallback176 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 19);
-        mCallback162 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback174 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 17);
-        mCallback160 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
-        mCallback172 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 15);
-        mCallback180 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 23);
-        mCallback170 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 13);
-        mCallback159 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback179 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 22);
-        mCallback169 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
-        mCallback177 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 20);
-        mCallback167 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
-        mCallback175 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 18);
-        mCallback165 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 8);
-        mCallback173 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 16);
-        mCallback163 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback171 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 14);
-        mCallback161 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback181 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 24);
+        mCallback168 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 16);
+        mCallback158 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback166 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 14);
+        mCallback156 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback164 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
+        mCallback154 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback176 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 24);
+        mCallback162 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
+        mCallback174 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 22);
+        mCallback160 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 8);
+        mCallback172 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 20);
+        mCallback170 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 18);
+        mCallback159 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback157 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback169 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 17);
+        mCallback155 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
+        mCallback167 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 15);
+        mCallback153 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback175 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 23);
+        mCallback165 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 13);
+        mCallback173 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 21);
+        mCallback163 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 11);
+        mCallback171 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 19);
+        mCallback161 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
         invalidateAll();
     }
 
@@ -262,342 +262,36 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.hideMeFlag, mCallback160, (androidx.databinding.InverseBindingListener)null);
-            this.mboundView1.setOnClickListener(mCallback158);
-            this.mboundView10.setOnClickListener(mCallback167);
-            this.mboundView11.setOnClickListener(mCallback168);
-            this.mboundView12.setOnClickListener(mCallback169);
-            this.mboundView13.setOnClickListener(mCallback170);
-            this.mboundView14.setOnClickListener(mCallback171);
-            this.mboundView15.setOnClickListener(mCallback172);
-            this.mboundView16.setOnClickListener(mCallback173);
-            this.mboundView17.setOnClickListener(mCallback174);
-            this.mboundView18.setOnClickListener(mCallback175);
-            this.mboundView19.setOnClickListener(mCallback176);
-            this.mboundView2.setOnClickListener(mCallback159);
-            this.mboundView20.setOnClickListener(mCallback177);
-            this.mboundView21.setOnClickListener(mCallback178);
-            this.mboundView22.setOnClickListener(mCallback179);
-            this.mboundView23.setOnClickListener(mCallback180);
-            this.mboundView24.setOnClickListener(mCallback181);
-            this.mboundView4.setOnClickListener(mCallback161);
-            this.mboundView5.setOnClickListener(mCallback162);
-            this.mboundView6.setOnClickListener(mCallback163);
-            this.mboundView7.setOnClickListener(mCallback164);
-            this.mboundView8.setOnClickListener(mCallback165);
-            this.mboundView9.setOnClickListener(mCallback166);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.hideMeFlag, mCallback155, (androidx.databinding.InverseBindingListener)null);
+            this.mboundView1.setOnClickListener(mCallback153);
+            this.mboundView10.setOnClickListener(mCallback162);
+            this.mboundView11.setOnClickListener(mCallback163);
+            this.mboundView12.setOnClickListener(mCallback164);
+            this.mboundView13.setOnClickListener(mCallback165);
+            this.mboundView14.setOnClickListener(mCallback166);
+            this.mboundView15.setOnClickListener(mCallback167);
+            this.mboundView16.setOnClickListener(mCallback168);
+            this.mboundView17.setOnClickListener(mCallback169);
+            this.mboundView18.setOnClickListener(mCallback170);
+            this.mboundView19.setOnClickListener(mCallback171);
+            this.mboundView2.setOnClickListener(mCallback154);
+            this.mboundView20.setOnClickListener(mCallback172);
+            this.mboundView21.setOnClickListener(mCallback173);
+            this.mboundView22.setOnClickListener(mCallback174);
+            this.mboundView23.setOnClickListener(mCallback175);
+            this.mboundView24.setOnClickListener(mCallback176);
+            this.mboundView4.setOnClickListener(mCallback156);
+            this.mboundView5.setOnClickListener(mCallback157);
+            this.mboundView6.setOnClickListener(mCallback158);
+            this.mboundView7.setOnClickListener(mCallback159);
+            this.mboundView8.setOnClickListener(mCallback160);
+            this.mboundView9.setOnClickListener(mCallback161);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 11: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onInvoicesClicked();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
-                }
-                break;
-            }
-            case 9: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPaymentMethodsClicked();
-                }
-                break;
-            }
-            case 21: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPrivacyPreferencesClicked();
-                }
-                break;
-            }
-            case 7: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPushNotificationsClicked();
-                }
-                break;
-            }
-            case 19: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onTermsOfServiceClicked();
-                }
-                break;
-            }
-            case 5: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSocialLayoutClicked();
-                }
-                break;
-            }
-            case 17: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSafetyTipsClicked();
-                }
-                break;
-            }
-            case 15: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onEmailUsClicked();
-                }
-                break;
-            }
-            case 23: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onTemporaryDisableAccountClicked();
-                }
-                break;
-            }
-            case 13: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onShareJobamaxClicked();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPersonalInformationClicked();
-                }
-                break;
-            }
-            case 22: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onLogoutClicked();
-                }
-                break;
-            }
-            case 12: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onRestorePurchaseClicked();
-                }
-                break;
-            }
-            case 20: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onLicensesClicked();
-                }
-                break;
-            }
-            case 10: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onCompanyInformationClicked();
-                }
-                break;
-            }
-            case 18: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPrivacyPolicyClicked();
-                }
-                break;
-            }
-            case 8: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onNewsletterClicked();
-                }
-                break;
-            }
             case 16: {
                 // localize variables for thread safety
                 // handler
@@ -666,6 +360,40 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
                 }
                 break;
             }
+            case 12: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onRestorePurchaseClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPersonalInformationClicked();
+                }
+                break;
+            }
             case 24: {
                 // localize variables for thread safety
                 // handler
@@ -680,6 +408,278 @@ public class FragmentRecruiterAccountBindingImpl extends FragmentRecruiterAccoun
 
 
                     handler.onDeleteAccountClicked();
+                }
+                break;
+            }
+            case 10: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onCompanyInformationClicked();
+                }
+                break;
+            }
+            case 22: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onLogoutClicked();
+                }
+                break;
+            }
+            case 8: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onNewsletterClicked();
+                }
+                break;
+            }
+            case 20: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onLicensesClicked();
+                }
+                break;
+            }
+            case 18: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPrivacyPolicyClicked();
+                }
+                break;
+            }
+            case 7: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPushNotificationsClicked();
+                }
+                break;
+            }
+            case 5: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSocialLayoutClicked();
+                }
+                break;
+            }
+            case 17: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSafetyTipsClicked();
+                }
+                break;
+            }
+            case 15: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onEmailUsClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackButtonClicked();
+                }
+                break;
+            }
+            case 23: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onTemporaryDisableAccountClicked();
+                }
+                break;
+            }
+            case 13: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onShareJobamaxClicked();
+                }
+                break;
+            }
+            case 21: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPrivacyPreferencesClicked();
+                }
+                break;
+            }
+            case 11: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onInvoicesClicked();
+                }
+                break;
+            }
+            case 19: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onTermsOfServiceClicked();
+                }
+                break;
+            }
+            case 9: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.home.RecruiterAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPaymentMethodsClicked();
                 }
                 break;
             }

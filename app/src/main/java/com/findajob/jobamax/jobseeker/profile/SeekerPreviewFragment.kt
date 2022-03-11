@@ -121,13 +121,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
 
     private fun setClickListeners() {
          binding.ivIdealJobVideo.setOnClickListener {
-             if (portfolio!!.videoUrl  != ""){
-                 startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", portfolio!!.videoUrl))
+             if (portfolio!!.videoURL  != ""){
+                 startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", portfolio!!.videoURL))
              }
          }
         binding.ivPortfolioVideo.setOnClickListener {
-            if (idealJob!!.videoUrl  != ""){
-                startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", idealJob!!.videoUrl))
+            if (idealJob!!.videoURL  != ""){
+                startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", idealJob!!.videoURL))
             }
         }
         binding.ivBackButton.setOnClickListener {
@@ -355,8 +355,12 @@ class SeekerPreviewSchoolAdapter(var list : ArrayList<Education>) : RecyclerView
             }else{
                 this.tvDateDuration.text = "${education.startDate} - ${education.endDate}"
             }
-            Picasso.get().load(education.logo).into(holder.binding.ivInstitute)
-        }
+            if (education.logo.isNotEmpty()){
+                Picasso.get().load(education.logo).into(holder.binding.ivInstitute)
+            }else{
+                holder.binding.ivInstitute.setBackgroundResource(R.drawable.ic_company)
+            }
+         }
     }
     override fun getItemCount(): Int = list.size
     fun submitList(educations: ArrayList<Education>) {

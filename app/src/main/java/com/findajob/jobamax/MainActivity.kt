@@ -3,6 +3,7 @@ package com.findajob.jobamax
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.dashboard.home.training.masterclass.MasterClassDetailsActivity
@@ -25,17 +26,22 @@ import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
 import com.parse.ParseObject
 import com.parse.ParseQuery
+import com.pushwoosh.Pushwoosh
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivityMain<ActivityMainBinding>() {
+class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
 
-    override val layoutRes: Int get() = R.layout.activity_main
-    override fun getViewModel(): ViewModel? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setJobSeekerJobFilter("")
+        Pushwoosh.getInstance().registerForPushNotifications( ) // registering pushwoosh notification
         val intent = intent
         intent?.let { handleDeepLink(it) }
+        configureNavigation()
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -138,20 +144,75 @@ class MainActivity : BaseActivityMain<ActivityMainBinding>() {
     }
 
 
-    override fun onCreated(instance: Bundle?) {
-        configureNavigation()
-    }
+
 
     private fun configureNavigation() {
         if (isLoggedIn()) {
-            if (getUserType() == 2)
-                startActivity(Intent(this, JobSeekerHomeActivity::class.java))
-            else startActivity(Intent(this, RecruiterHomeActivity::class.java))
-            finish()
-        }
-        binding.btnGetStartedSlider.setOnClickListener {
+            if (getUserType() == 2){
+                if (getUserId() != ""){
+                    updateAppUsage{
+                        startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                        finish()
+                    }
+                }
+            }else{
+                startActivity(Intent(this, RecruiterHomeActivity::class.java))
+                finish()
+            }
+        }else{
+            setUserType(2)
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
+        }
+    }
+
+    private fun updateAppUsage(callback: () -> Unit) {
+         val query = ParseQuery<ParseObject>(ParseTableName.Notification.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), getUserId())
+        query.getFirstInBackground { result, e ->
+            when{
+                e != null -> {
+                    val notification = ParseObject(ParseTableName.Notification.toString())
+                    getCurrentJobSeeker{
+                        if (it != null) {
+                            notification.put("jobSeeker", it)
+                        }
+                        notification.put("jobSeekerId", getUserId())
+                        notification.put("lastUsageTime", System.currentTimeMillis())
+                        notification.put("appUsageCount", 1)
+                        notification.saveInBackground { exception ->
+                            callback()
+                            if (exception != null){ toast(exception.message.toString())}
+                        }
+                    }
+                }
+                else -> {
+                    result.put("lastUsageTime", System.currentTimeMillis())
+                    result.put("appUsageCount", result.getInt("appUsageCount").plus(1))
+                    result.saveInBackground {
+                        callback()
+                        if (it != null){ toast(it.message.toString())}
+                    }
+                }
+            }
+        }
+    }
+
+    private fun getCurrentJobSeeker(call: (ParseObject?) -> Unit)  {
+        var parseObject: ParseObject? = null
+        val query = ParseQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo("jobSeekerId", getUserId())
+        query.getFirstInBackground { result, e ->
+            when{
+                e != null -> {
+                    call(parseObject)
+                    toast(e.message.toString())
+                }
+                else -> {
+                    parseObject = result
+                    call(parseObject)
+                }
+            }
         }
     }
 

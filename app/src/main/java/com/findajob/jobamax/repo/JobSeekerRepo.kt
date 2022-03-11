@@ -16,12 +16,16 @@ import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.parse.ParseUser
 import io.reactivex.Single
+import java.util.concurrent.Executor
 import javax.inject.Inject
 
 
 class JobSeekerRepo @Inject constructor(var context: Context) {
 
+
+
     fun getCurrent(callback: GetUserCallback) {
+
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context.getUserId())
         query.findInBackground { it, e ->

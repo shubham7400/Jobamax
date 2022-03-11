@@ -101,8 +101,12 @@ class SeekerEducationAdapter(var list: ArrayList<Education>) : RecyclerView.Adap
         val education = list[position]
         holder.binding.tvInstituteName.text = education.name
         holder.binding.tvProgramName.text = education.program
-        Picasso.get().load(education.logo).into(holder.binding.ivUser)
-        holder.binding.tvDateDuration.text = education.startDate+" to "+education.endDate
+        if (education.logo.isNotEmpty()){
+            Picasso.get().load(education.logo).into(holder.binding.ivUser)
+        }else{
+            holder.binding.ivUser.setBackgroundResource(R.drawable.ic_company)
+        }
+         holder.binding.tvDateDuration.text = education.startDate+" to "+education.endDate
         val calendar = Calendar.getInstance(TimeZone.getDefault());
         val endDate = "${calendar.get(Calendar.DAY_OF_MONTH)}/ ${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"
         if (education.endDate == ""){

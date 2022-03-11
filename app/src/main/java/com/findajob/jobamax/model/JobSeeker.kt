@@ -27,6 +27,9 @@ class JobSeeker {
     var personalPresentationLink: String = ""
     var attachmentCVLink: String = ""
 
+    var portfolio: ParseObject? = null
+    var idealJob: ParseObject? = null
+
 
     var hideMeFlag: Boolean = false
     var job: String = ""
@@ -93,6 +96,9 @@ class JobSeeker {
         jobSeeker.put("isNetworkingHandRaised", isNetworkingHandRaised)
         jobSeeker.put("personalPresentationLink", personalPresentationLink)
         jobSeeker.put("attachmentCVLink", attachmentCVLink)
+
+        portfolio?.let { jobSeeker.put("portfolio", it) }
+        idealJob?.let { jobSeeker.put("idealJob", it) }
 
         jobSeeker.put("hideMeFlag", hideMeFlag)
         jobSeeker.put("job", job)
@@ -169,6 +175,9 @@ class JobSeeker {
         this.newsLetterPNFlag = obj["newsLetterPNFlag"].toString().toBoolean()
         this.personalPresentationLink = obj["personalPresentationLink"].toString()
         this.attachmentCVLink = obj["attachmentCVLink"].toString()
+
+        this.portfolio = obj.getParseObject("portfolio")
+        this.idealJob = obj.getParseObject("idealJob")
 
         this.hideMeFlag = obj["hideMeFlag"]?.toString().toBoolean()
         this.job = obj["job"]?.toString() ?: ""

@@ -9,10 +9,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.ramijemli.percentagechartview.PercentageChartView;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
@@ -44,16 +48,32 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final ImageView ivBackButton;
 
   @NonNull
-  public final LinearLayout linearLayout8;
+  public final ImageView ivFilterJob;
+
+  @NonNull
+  public final ItemSeekerJobCardBinding lJob;
+
+  @NonNull
+  public final LinearLayout llFloatButtons;
+
+  @NonNull
+  public final NestedScrollView nsvCard;
+
+  @NonNull
+  public final PercentageChartView pcvMatch;
 
   @NonNull
   public final RelativeLayout relativeLayout;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerJobsBinding(Object _bindingComponent, View _root, int _localFieldCount,
       CircleImageView civUser, CardStackView csvJob, FloatingActionButton fabApply,
       FloatingActionButton fabRefuse, FloatingActionButton fabRewind, FloatingActionButton fabShare,
-      ImageView imageView10, ImageView ivBackButton, LinearLayout linearLayout8,
-      RelativeLayout relativeLayout) {
+      ImageView imageView10, ImageView ivBackButton, ImageView ivFilterJob,
+      ItemSeekerJobCardBinding lJob, LinearLayout llFloatButtons, NestedScrollView nsvCard,
+      PercentageChartView pcvMatch, RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.csvJob = csvJob;
@@ -63,8 +83,19 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
     this.fabShare = fabShare;
     this.imageView10 = imageView10;
     this.ivBackButton = ivBackButton;
-    this.linearLayout8 = linearLayout8;
+    this.ivFilterJob = ivFilterJob;
+    this.lJob = lJob;
+    this.llFloatButtons = llFloatButtons;
+    this.nsvCard = nsvCard;
+    this.pcvMatch = pcvMatch;
     this.relativeLayout = relativeLayout;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

@@ -4,8 +4,6 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -15,17 +13,8 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityMainBinding extends ViewDataBinding {
-  @NonNull
-  public final Button btnGetStartedSlider;
-
-  @NonNull
-  public final ImageView imageView9;
-
-  protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnGetStartedSlider, ImageView imageView9) {
+  protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnGetStartedSlider = btnGetStartedSlider;
-    this.imageView9 = imageView9;
   }
 
   @NonNull

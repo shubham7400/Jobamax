@@ -17,6 +17,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobDetailsBinding
 import com.findajob.jobamax.databinding.ItemSeekerTrackingJobDetailCardBinding
 import com.findajob.jobamax.dialog.SeekerJobTrackingCardDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
@@ -30,6 +31,7 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
 
     lateinit var adapter: SeekerTrackingJobDetailsAdapter
     var trackingJob: TrackingJob? = null
+    var trackingOtherJob: TrackingOtherJob? = null
     var phases = arrayListOf("Select Phase", "Online interviews" , "Assessments" , "Phone call ", "Interview", "Hired" , "Refused")
     var existingPhaseList = ArrayList<Phase>()
 
@@ -43,16 +45,44 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
         setAdapter()
         setClickListeners()
         viewModelObserver()
-        arguments?.getSerializable("trackingJob")?.let {
+        arguments?.getSerializable("trackingJobamaxJob")?.let {
             trackingJob = it as TrackingJob
-            updateView()
+            updateViewForJobamaxJob()
         }
         trackingJob?.let {
-            setData()
+            setJobamaxJobData()
+        }
+
+        arguments?.getSerializable("trackingOtherJob")?.let {
+            trackingOtherJob = it as TrackingOtherJob
+            updateViewForOtherJob()
+        }
+        trackingOtherJob?.let {
+            setOtherJobData()
         }
     }
 
-    private fun updateView() {
+    private fun setOtherJobData() {
+        val mainObject = Gson().fromJson(trackingOtherJob!!.phases, PhaseGroup::class.java)
+        phases = arrayListOf(
+            "Select Phase",
+            "Online interviews",
+            "Assessments",
+            "Phone call ",
+            "Interview",
+            "Hired",
+            "Refused"
+        )
+        existingPhaseList.clear()
+        existingPhaseList = ArrayList(mainObject.phases)
+        existingPhaseList.forEach {
+            phases.remove(it.name)
+        }
+        adapter.submitList(existingPhaseList, trackingOtherJob!!.isSelected)
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun updateViewForJobamaxJob() {
         if (trackingJob!!.isSelected) {
             binding.ivFinal.visibility = View.GONE
             binding.ivAddPhase.visibility = View.GONE
@@ -62,7 +92,17 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
         }
     }
 
-    private fun setData() {
+    private fun updateViewForOtherJob() {
+        if (trackingOtherJob!!.isSelected) {
+            binding.ivFinal.visibility = View.GONE
+            binding.ivAddPhase.visibility = View.GONE
+            binding.view11.visibility = View.GONE
+            adapter.submitList(existingPhaseList, trackingJob!!.isSelected)
+            adapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun setJobamaxJobData() {
         binding.tvJobTitle.text = trackingJob?.job?.getString("jobTitle") ?: ""
         binding.tvCompanyName.text = trackingJob?.job?.getString("companyName") ?: ""
         val mainObject = Gson().fromJson(trackingJob!!.phases, PhaseGroup::class.java)
@@ -114,15 +154,28 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
                 phaseObj.date = date
                 phaseObj.no = (existingPhaseList.size + 1).toString()
                 existingPhaseList.add(phaseObj)
-                trackingJob?.pfObject?.put("phases", Gson().toJson(PhaseGroup(existingPhaseList) ))
-                trackingJob?.pfObject?.saveInBackground {
-                    if (it != null){
-                        toast("${it.message.toString()} Something Went Wrong.")
-                    }else{
-                        updateData()
-                        createGoogleEvent(phaseObj.name)
+                if (trackingJob != null){
+                    trackingJob?.pfObject?.put("phases", Gson().toJson(PhaseGroup(existingPhaseList) ))
+                    trackingJob?.pfObject?.saveInBackground {
+                        if (it != null){
+                            toast("${it.message.toString()} Something Went Wrong.")
+                        }else{
+                            updateData()
+                            createGoogleEvent(phaseObj.name)
+                        }
+                    }
+                }else if (trackingOtherJob != null){
+                    trackingOtherJob?.pfObject?.put("phases", Gson().toJson(PhaseGroup(existingPhaseList) ))
+                    trackingOtherJob?.pfObject?.saveInBackground {
+                        if (it != null){
+                            toast("${it.message.toString()} Something Went Wrong.")
+                        }else{
+                            updateData()
+                            createGoogleEvent(phaseObj.name)
+                        }
                     }
                 }
+
             }.show()
         }
         binding.ivRemoveJob.setOnClickListener {
@@ -138,7 +191,7 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
                 }else{
                      trackingJob!!.pfObject?.let { it1 ->
                          trackingJob = TrackingJob(it1)
-                         updateView()
+                         updateViewForJobamaxJob()
                      }
                 }
             }
@@ -170,11 +223,20 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
             "Hired",
             "Refused"
         )
-        existingPhaseList.forEach {
-            phases.remove(it.name)
+        if (trackingJob != null){
+            existingPhaseList.forEach {
+                phases.remove(it.name)
+            }
+            adapter.submitList(existingPhaseList, trackingJob!!.isSelected)
+            adapter.notifyDataSetChanged()
+        }else if (trackingOtherJob != null){
+            existingPhaseList.forEach {
+                phases.remove(it.name)
+            }
+            adapter.submitList(existingPhaseList, trackingOtherJob!!.isSelected)
+            adapter.notifyDataSetChanged()
         }
-        adapter.submitList(existingPhaseList, trackingJob!!.isSelected)
-        adapter.notifyDataSetChanged()
+
     }
 
     override fun onCreated(savedInstance: Bundle?) {

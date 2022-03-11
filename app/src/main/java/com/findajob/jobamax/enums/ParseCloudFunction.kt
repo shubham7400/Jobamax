@@ -9,5 +9,7 @@ enum class ParseCloudFunction {
     getJobSearch,
     dropoutActions,
     addJobToWishlist,
-    removeFromWishlist
+    removeFromWishlist,
+    getJobsLogo,
+    deleteUser
 }

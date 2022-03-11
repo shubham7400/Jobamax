@@ -59,9 +59,10 @@
                                   android:textSize="20dp" />
 
                               <de.hdodenhof.circleimageview.CircleImageView
+                                  android:id="@+id/civ_user"
+                                  loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                                   android:layout_width="50dp"
                                   android:layout_height="50dp"
-                                  loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                                   android:layout_alignParentEnd="true"
                                   android:src="@drawable/default_user_img" />
                          </RelativeLayout>
@@ -113,6 +114,17 @@
                                   android:background="@color/white"
                                   android:scaleType="center" />
                          </androidx.cardview.widget.CardView>
+                         <ImageView
+                             android:id="@+id/iv_remove_video"
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             android:elevation="2dp"
+                             android:layout_marginBottom="-5dp"
+                             android:layout_marginEnd="-5dp"
+                             android:src="@drawable/close_blue_white_background"
+                             app:layout_constraintBottom_toBottomOf="@+id/iv_image"
+                             app:layout_constraintEnd_toEndOf="@+id/iv_image" />
+
 
                          <ImageView
                              android:id="@+id/iv_add_video"

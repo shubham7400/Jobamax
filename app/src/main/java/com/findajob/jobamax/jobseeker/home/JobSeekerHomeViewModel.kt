@@ -79,6 +79,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
                 override fun onSuccess(parseObject: ParseObject) {
                     jobSeekerObject = parseObject
 
+
                     if (jobSeeker.disableAccountFlag) {
                         jobSeekerObject?.put("disableAccountFlag", false)
                         jobSeekerObject?.saveInBackground()
@@ -397,7 +398,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun updateJobSeeker(firstName: String, lastName: String, profession: String, description: String, callback: (it: ParseException?) -> Unit) {
+   /* fun updateJobSeeker(firstName: String, lastName: String, profession: String, description: String, callback: (it: ParseException?) -> Unit) {
         jobSeekerObject!!.put(ParseTableFields.firstName.toString(), firstName)
         jobSeekerObject!!.put(ParseTableFields.lastName.toString(), lastName)
         jobSeekerObject!!.put(ParseTableFields.profession.toString(), profession)
@@ -405,7 +406,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         jobSeekerObject!!.saveInBackground {
             callback(it)
         }
-    }
+    }*/
 
     fun addNewOrUpdateEducation(education: Education, callback: (it: ParseException?) -> Unit) {
         val educations = try {
@@ -611,17 +612,9 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun getWishList(callback: GetAllUserCallback, filteredJob : String) {
+    fun getWishList(callback: GetAllUserCallback ) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),context.getUserId())
-        if (filteredJob == SeekerWishlistJobFilter.ARCHIVE.name){
-            query.whereEqualTo("isArchived", true)
-        }else{
-            query.whereEqualTo("isArchived", false)
-        }
-        if (filteredJob == SeekerWishlistJobFilter.FAVORITE.name){
-            query.whereEqualTo("isFavroite", true)
-        }
         query.include("job")
         query.include("jobSeeker")
         query.findInBackground { it, e ->
@@ -652,7 +645,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
     }
 
     fun uploadUserAudio(bytes: ByteArray?, onFailure: (ParseException?) -> Unit, onSuccess: (String?) -> Unit) {
-        val parseFile = ParseFile("portfolioAudio", bytes)
+        val parseFile = ParseFile("portfolioAudio.m4a", bytes)
        parseFile.saveInBackground(SaveCallback {
            if (it != null){
                onFailure(it)

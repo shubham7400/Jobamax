@@ -28,13 +28,13 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback256;
+    private final android.view.View.OnClickListener mCallback249;
     @Nullable
-    private final android.view.View.OnClickListener mCallback257;
+    private final android.view.View.OnClickListener mCallback252;
     @Nullable
-    private final android.view.View.OnClickListener mCallback254;
+    private final android.view.View.OnClickListener mCallback250;
     @Nullable
-    private final android.view.View.OnClickListener mCallback255;
+    private final android.view.View.OnClickListener mCallback251;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,10 +65,10 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback256 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback257 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback254 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback255 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback249 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback252 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback250 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback251 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -136,17 +136,17 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.btn.setOnClickListener(mCallback257);
-            this.imageView.setOnClickListener(mCallback254);
-            this.ivLeft.setOnClickListener(mCallback255);
-            this.ivRight.setOnClickListener(mCallback256);
+            this.btn.setOnClickListener(mCallback252);
+            this.imageView.setOnClickListener(mCallback249);
+            this.ivLeft.setOnClickListener(mCallback250);
+            this.ivRight.setOnClickListener(mCallback251);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 3: {
+            case 1: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.recruiter.profile.subscription.RecruiterSubscriptionInterface handler = mHandler;
@@ -159,7 +159,7 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onRightClicked();
+                    handler.onBackButtonClicked();
                 }
                 break;
             }
@@ -180,23 +180,6 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
                 }
                 break;
             }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.subscription.RecruiterSubscriptionInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -211,6 +194,23 @@ public class ActivityRecruiterSubscriptionBindingImpl extends ActivityRecruiterS
 
 
                     handler.onLeftClicked();
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.subscription.RecruiterSubscriptionInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onRightClicked();
                 }
                 break;
             }

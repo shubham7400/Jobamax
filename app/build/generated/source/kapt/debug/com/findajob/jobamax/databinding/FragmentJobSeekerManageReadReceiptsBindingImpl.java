@@ -24,11 +24,11 @@ public class FragmentJobSeekerManageReadReceiptsBindingImpl extends FragmentJobS
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback153;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback148;
     @Nullable
-    private final android.view.View.OnClickListener mCallback151;
+    private final android.view.View.OnClickListener mCallback146;
     @Nullable
-    private final android.view.View.OnClickListener mCallback152;
+    private final android.view.View.OnClickListener mCallback147;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,9 +51,9 @@ public class FragmentJobSeekerManageReadReceiptsBindingImpl extends FragmentJobS
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback153 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
-        mCallback151 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback152 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback148 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
+        mCallback146 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback147 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -115,9 +115,9 @@ public class FragmentJobSeekerManageReadReceiptsBindingImpl extends FragmentJobS
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback151);
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.manageReadReceiptsCheck, mCallback153, (androidx.databinding.InverseBindingListener)null);
-            this.mboundView2.setOnClickListener(mCallback152);
+            this.imageView.setOnClickListener(mCallback146);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.manageReadReceiptsCheck, mCallback148, (androidx.databinding.InverseBindingListener)null);
+            this.mboundView2.setOnClickListener(mCallback147);
         }
     }
     // Listener Stub Implementations

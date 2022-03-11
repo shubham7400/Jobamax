@@ -4,166 +4,225 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".jobseeker.jobsearch.SeekerJobsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <data>
+        <variable
+            name="jobSeeker"
+            type="com.findajob.jobamax.model.JobSeeker" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:background="#E9F2FB"
+        android:fillViewport="true"
         android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:paddingHorizontal="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/iv_back_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/back_arrow_blue" />
-
-                <TextView
-                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_toRightOf="@+id/iv_back_button"
-                    android:fontFamily="@font/opensans_bold"
-                    android:text="Job Search"
-                    android:textColor="@color/blue_2"
-                    android:textSize="20dp" />
-
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="10dp"
-                    android:layout_toStartOf="@+id/civ_user"
-                    android:src="@drawable/filter" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/civ_user"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/default_user_img" />
-            </RelativeLayout>
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:src="@drawable/jobamax_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-
-        <com.yuyakaido.android.cardstackview.CardStackView
-            android:id="@+id/csv_job"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:clipToPadding="false"
-            android:paddingHorizontal="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10"/>
-
         <LinearLayout
-            android:id="@+id/linearLayout8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="#E9F2FB"
+                android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_rewind"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_rewind" />
-            </LinearLayout>
+                    android:background="@color/white"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_refuse"
-                    android:layout_width="wrap_content"
+                        <ImageView
+                            android:id="@+id/iv_back_button"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/back_arrow_blue" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toRightOf="@+id/iv_back_button"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="Job Search"
+                            android:textColor="@color/blue_2"
+                            android:textSize="20dp" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_filter_job"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toStartOf="@+id/civ_user"
+                            android:src="@drawable/filter" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_user"
+                            loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/default_user_img" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:src="@drawable/jobamax_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+
+                <com.yuyakaido.android.cardstackview.CardStackView
+                    android:id="@+id/csv_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_float_buttons"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/nsv_card"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:scrollbars="none"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_float_buttons"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                    android:layout_height="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <include
+                            android:id="@+id/l_job"
+                            android:layout_height="wrap_content"
+                            layout="@layout/item_seeker_job_card"
+                            android:layout_width="match_parent" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_float_buttons"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_reject" />
-            </LinearLayout>
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_share"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_share" />
-            </LinearLayout>
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_rewind"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/ic_rewind" />
+                    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_apply"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_show" />
-            </LinearLayout>
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_refuse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/ic_reject" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/ic_share" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_apply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/ic_show" />
+                    </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/add_icon" />
-            </LinearLayout>
+                        <com.ramijemli.percentagechartview.PercentageChartView
+                            android:id="@+id/pcv_match"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="40dp"
+                            android:textSize="20sp"
+                            app:pcv_animDuration="800"
+                            app:pcv_animInterpolator="anticipate_overshoot"
+                            app:pcv_backgroundBarColor="@color/gray"
+                            app:pcv_backgroundBarThickness="5dp"
+                            app:pcv_backgroundColor="@color/transparent"
+                            app:pcv_mode="ring"
+                            app:pcv_orientation="clockwise"
+                            app:pcv_progress="0"
+                            app:pcv_progressBarThickness="5dp"
+                            app:pcv_progressColor="#7800EF"
+                            app:pcv_startAngle="270"
+                            app:pcv_textColor="@color/black"
+                            app:pcv_textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
 </layout>

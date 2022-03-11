@@ -42,7 +42,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/back_arrow_img" />
+                        android:src="@drawable/back_arrow_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -51,14 +51,15 @@
                         android:layout_marginStart="10dp"
                         android:layout_toRightOf="@+id/iv_back_button"
                         android:fontFamily="@font/opensans_bold"
-                        android:text="Event Calendar"
-                        android:textColor="#7800EF"
+                        android:text="Calendar"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="20dp" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/civ_user"
+                        loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                         android:layout_alignParentEnd="true"
                         android:src="@drawable/default_user_img" />
                 </RelativeLayout>

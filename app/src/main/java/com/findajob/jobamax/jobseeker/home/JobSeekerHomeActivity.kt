@@ -24,7 +24,11 @@ import com.findajob.jobamax.dashboard.messages.MainChatActivity
 import com.findajob.jobamax.dashboard.messages.MessagesFragment
 import com.findajob.jobamax.dashboard.messages.ProfileActivity
 import com.findajob.jobamax.databinding.ActivityJobSeekerHomeBinding
+import com.findajob.jobamax.enums.ParseCloudFunction
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity
+import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment
@@ -37,16 +41,21 @@ import com.findajob.jobamax.jobseeker.track.JobSeekerApplyFragment
 import com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity
 import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity
 import com.findajob.jobamax.model.UpdateUserCallback
+import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.AESCrypt
 import com.findajob.jobamax.util.errorToast
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.location.*
-import com.parse.ParseGeoPoint
+import com.google.gson.Gson
+import com.parse.*
 import com.pushwoosh.Pushwoosh
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_job_seeker_home.*
 import org.jetbrains.anko.longToast
+import org.json.JSONArray
+import org.json.JSONObject
 import java.util.*
 
 @AndroidEntryPoint
@@ -65,14 +74,61 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
     }
 
     override fun onCreated(instance: Bundle?) {
-        progressHud.show()
-        viewModel.getJobSeeker()
+        getCurrent()
     }
+
+    fun getCurrent( ) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),  getUserId())
+        query.include("portfolio")
+        query.include("idealJob")
+        progressHud.show()
+        query.findInBackground { it, e ->
+            progressHud.dismiss()
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    toast(e.message.toString())
+                }
+                jobSeeker == null -> {
+                    toast("User Not Found.")
+                }
+                else -> {
+                    viewModel.jobSeekerObject = jobSeeker
+                    viewModel.isJobSeekerUpdated.value = true
+                }
+            }
+        }
+    }
+
 
     private fun configureUi() {
          setClickListeners()
         viewModelObserver()
+        updateWishlistImages()
     }
+
+    private fun updateWishlistImages() {
+        try {
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobsLogo.toString(), hashMapOf("jobSeekerId" to getUserId()), FunctionCallback<Any> { result, e ->
+                val jsonArray = JSONObject(Gson().toJson(result)).getJSONArray("urls")
+                for (i in 0 until jsonArray.length()){
+                    when(i){
+                        0 -> {
+                            Picasso.get().load(jsonArray[i].toString()).into(binding.iv1)
+                        }
+                        1 -> {
+                            Picasso.get().load(jsonArray[i].toString()).into(binding.iv2)
+                        }
+                        2 -> {
+                            Picasso.get().load(jsonArray[i].toString()).into(binding.iv3)
+                        }
+                    }
+                }
+            })
+
+        }catch (e: Exception){log(e.message.toString())}
+     }
 
     private fun viewModelObserver() {
          viewModel.isJobSeekerUpdated.observe(this, androidx.lifecycle.Observer {
@@ -100,9 +156,7 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
 
     override fun onClick(view: View?) {
         when(view){
-            binding.textView6 -> {
-                startActivity(Intent(this, SeekerJobSearchActivity::class.java))
-            }
+
             binding.ivSetting ->{
                 startActivity(Intent(this, JobSeekerAccountActivity::class.java))
             }
@@ -127,17 +181,20 @@ class JobSeekerHomeActivity : BaseActivityMain<ActivityJobSeekerHomeBinding>(), 
 
             }
             binding.btJobSearch ->{
-                startActivity(Intent(this, ProfileActivity::class.java))
+                /*startActivity(Intent(this, ProfileActivity::class.java))*/
+                startActivity(Intent(this, SeekerJobSearchActivity::class.java))
             }
             binding.btnCoaching ->{
-                val i = Intent(Intent.ACTION_SEND)
+               /* val i = Intent(Intent.ACTION_SEND)
                 i.type = "message/rfc822"
                 i.putExtra(Intent.EXTRA_EMAIL, arrayOf("dev.jobamax@gmail.com"))
                 try {
                     startActivity(Intent.createChooser(i, "Send mail..."))
                 } catch (ex: ActivityNotFoundException) {
                     Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show()
-                }
+                }*/
+
+                startActivity(Intent(this, SeekerCoachingActivity::class.java))
             }
         }
     }

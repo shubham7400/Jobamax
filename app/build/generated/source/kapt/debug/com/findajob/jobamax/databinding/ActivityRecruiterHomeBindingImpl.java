@@ -26,13 +26,13 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
     private final android.widget.RelativeLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback112;
+    private final android.view.View.OnClickListener mCallback108;
     @Nullable
-    private final android.view.View.OnClickListener mCallback113;
+    private final android.view.View.OnClickListener mCallback109;
     @Nullable
-    private final android.view.View.OnClickListener mCallback114;
+    private final android.view.View.OnClickListener mCallback110;
     @Nullable
-    private final android.view.View.OnClickListener mCallback115;
+    private final android.view.View.OnClickListener mCallback107;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -71,10 +71,10 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
         this.thirdIconLayout.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback112 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback113 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback114 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback115 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback108 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback109 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback110 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback107 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -309,34 +309,16 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
         if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
-            this.firstIconLayout.setOnClickListener(mCallback112);
-            this.fourthIconLayout.setOnClickListener(mCallback115);
-            this.secondIconLayout.setOnClickListener(mCallback113);
-            this.thirdIconLayout.setOnClickListener(mCallback114);
+            this.firstIconLayout.setOnClickListener(mCallback107);
+            this.fourthIconLayout.setOnClickListener(mCallback110);
+            this.secondIconLayout.setOnClickListener(mCallback108);
+            this.thirdIconLayout.setOnClickListener(mCallback109);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.home.RecruiterHomeInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-
-                    handler.onIconClicked(1);
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -388,6 +370,24 @@ public class ActivityRecruiterHomeBindingImpl extends ActivityRecruiterHomeBindi
 
 
                     handler.onIconClicked(4);
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.home.RecruiterHomeInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+
+                    handler.onIconClicked(1);
                 }
                 break;
             }

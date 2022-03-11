@@ -24,7 +24,9 @@ import com.findajob.jobamax.jobseeker.profile.idealjob.ADD_NEW_ITEM
 import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.util.ImagePicker
 import com.findajob.jobamax.util.errorToast
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
+import com.parse.Parse
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
@@ -53,62 +55,37 @@ class PortfolioImageFragment : BaseFragmentMain<FragmentPortfolioImageBinding>()
     }
 
     private fun getPortfolioData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Portfolio.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    portfolio = Portfolio(result)
-                    portfolio!!.arrImages.forEach {
-                        portfolioImageUrlList.add(it)
-                    }
-                    if (!portfolioImageUrlList.contains(ADD_NEW_ITEM)){
-                        portfolioImageUrlList.add(ADD_NEW_ITEM)
-                    }
-                    adapter.submitList(portfolioImageUrlList)
-                    adapter.notifyDataSetChanged()
-                }
-            }
+        portfolio = viewModel.jobSeeker.portfolio?.let {
+            Portfolio(it)
         }
+        if (portfolio == null){
+            val parseObject = ParseObject(ParseTableName.Portfolio.toString())
+            portfolio = Portfolio(parseObject)
+            portfolio!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("portfolio", it) }
+            viewModel.jobSeeker.pfObject?.saveInBackground()
+        }
+
+        portfolio?.let {
+            portfolio!!.arrImages.forEach {
+                portfolioImageUrlList.add(it)
+            }
+            if (!portfolioImageUrlList.contains(ADD_NEW_ITEM)){
+                portfolioImageUrlList.add(ADD_NEW_ITEM)
+            }
+            adapter.submitList(portfolioImageUrlList)
+            adapter.notifyDataSetChanged()
+        }
+
     }
 
     private fun saveDataToParse(callback : () -> Unit) {
         portfolioImageUrlList.remove(ADD_NEW_ITEM)
-        portfolio?.let {
-            if (portfolio == null){
-                val portfolioParseObject = ParseObject(ParseTableName.Portfolio.toString())
-                viewModel.jobSeeker.pfObject?.let { it1 ->
-                    portfolioParseObject.put("jobSeeker", it1)
-                }
-                portfolioParseObject.put("arrImages", portfolioImageUrlList)
-                portfolioParseObject.saveInBackground {
-                    if(it != null){
-                        toast("${it.message.toString()}")
-                        callback()
-                    }else{
-                        /*toast("Data saved.")*/
-                        callback()
-                    }
-                }
+        portfolio?.pfObject?.put("arrImages", portfolioImageUrlList)
+        portfolio?.pfObject?.saveInBackground {
+            if (it != null){
+                log(it.message.toString())
             }else{
-                val portfolioParseObject = portfolio!!.pfObject
-                portfolioParseObject?.let {
-                    viewModel.jobSeeker.pfObject?.let { it1 -> it.put("jobSeeker", it1) }
-                     it.put("arrImages", portfolioImageUrlList)
-                }
-                portfolioParseObject?.saveInBackground {
-                    if(it != null){
-                        toast("${it.message.toString()}")
-                        callback()
-                    }else{
-                        /*toast("Data saved.")*/
-                        callback()
-                    }
-                }
+                callback()
             }
         }
     }
@@ -174,6 +151,9 @@ class PortfolioImageFragment : BaseFragmentMain<FragmentPortfolioImageBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun onCreated(savedInstance: Bundle?) {
@@ -230,7 +210,7 @@ class PortfolioImageAdapter(var list : ArrayList<String>) : RecyclerView.Adapter
                 }
                 else -> {
                     this.ivAction.setImageResource(R.drawable.close_blue_white_background)
-                    Picasso.get().load(item).transform(CropCircleTransformation()).into(this.roundedImageView)
+                    Picasso.get().load(item).into(this.roundedImageView)
                     this.ivAction.setOnClickListener {
                         removeImage(item)
                     }
@@ -241,7 +221,11 @@ class PortfolioImageAdapter(var list : ArrayList<String>) : RecyclerView.Adapter
     override fun getItemCount(): Int = list.size
     fun submitList(portfolioImageUrlList: ArrayList<String>) {
         if (portfolioImageUrlList.isNotEmpty() && portfolioImageUrlList.size > 1){
-            Collections.swap(portfolioImageUrlList, portfolioImageUrlList.indexOf(ADD_NEW_ITEM),portfolioImageUrlList.lastIndex)
+            if (portfolioImageUrlList.size > 5){
+                portfolioImageUrlList.remove(ADD_NEW_ITEM)
+            }else{
+                Collections.swap(portfolioImageUrlList, portfolioImageUrlList.indexOf(ADD_NEW_ITEM),portfolioImageUrlList.lastIndex)
+            }
         }
         list = portfolioImageUrlList
     }

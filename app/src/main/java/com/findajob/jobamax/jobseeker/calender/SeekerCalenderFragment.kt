@@ -3,11 +3,9 @@ package com.findajob.jobamax.jobseeker.calender
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
@@ -17,7 +15,6 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.Phase
 import com.findajob.jobamax.databinding.CalendarCellBinding
-import com.findajob.jobamax.databinding.FragmentSeekerAboutMeBinding
 import com.findajob.jobamax.databinding.FragmentSeekerCalenderBinding
 import com.findajob.jobamax.databinding.ItemCalenderEventCardBinding
 import com.findajob.jobamax.enums.ParseTableFields
@@ -30,12 +27,15 @@ import com.parse.FunctionCallback
 import com.parse.ParseCloud
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONObject
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
+
+
 
 @AndroidEntryPoint
 class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>() {
@@ -46,6 +46,7 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
 
      var phases = ArrayList<Phase>()
     private lateinit var calendarAdapter: CalendarAdapter
+
     lateinit var selectedDate: LocalDate
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -81,15 +82,24 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
         val selectedDateEvents = ArrayList<Phase>()
         val monthFormatter = DateTimeFormatter.ofPattern("MMMM")
         val yearFormatter = DateTimeFormatter.ofPattern("yyyy")
-        val sdf = SimpleDateFormat("MMM dd, yyyy")
+        var sdf = SimpleDateFormat("MMM dd, yyyy")
         val clickedDate = sdf.parse(selectedDate.format(monthFormatter)+" $dayOfMonth"+", "+selectedDate.format(yearFormatter))
         phases.forEach {
-            val date = sdf.parse(it.date)
-            if (date.compareTo(clickedDate) == 0){
-                selectedDateEvents.add(it)
+            var date: Date? = null
+            try {
+                sdf = SimpleDateFormat("MMM dd, yyyy")
+                date = sdf.parse(it.date)
+            }catch (e: Exception){
+                sdf = SimpleDateFormat("MMM dd, yyyy", Locale.FRANCE)
+                date = sdf.parse(it.date)
+            }
+            if (date != null) {
+                if (date.compareTo(clickedDate) == 0){
+                    selectedDateEvents.add(it)
+                }
             }
         }
-        binding.rvEvents.adapter = SelectedDateEventAdapter(selectedDateEvents)
+        binding.rvEvents.adapter = SelectedDateEventAdapter(selectedDateEvents, dayOfMonth)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -134,16 +144,19 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
     }
 
     private fun viewModelObserver() {
-        viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
+        viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
             progressHud.dismiss()
-            if (it){
+            if (it) {
                 binding.jobSeeker = viewModel.jobSeeker
             }
-        })
+        }
     }
 
     private fun setClickListeners() {
         binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
     }
@@ -198,15 +211,31 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
             }
             if (item != ""){
                 phases.forEach {
-                    val sdf = SimpleDateFormat("MMM dd, yyyy")
-                    val date1 = sdf.parse(it.date)
+                    var sdf: SimpleDateFormat? = null
+                    var date1: Date? = null
+                    try {
+                        sdf = SimpleDateFormat("MMM dd, yyyy")
+                        date1 = sdf.parse(it.date)
+                    }catch (e: Exception){
+                        sdf = SimpleDateFormat("MMM dd, yyyy", Locale.FRANCE)
+                        date1 = sdf.parse(it.date)
+                    }
                     val monthFormatter = DateTimeFormatter.ofPattern("MMMM")
                     val yearFormatter = DateTimeFormatter.ofPattern("yyyy")
-                    val date2 = sdf.parse(selectedDate.format(monthFormatter)+" $item"+", "+selectedDate.format(yearFormatter))
+                    var date2: Date? = null
+                    try {
+                        sdf = SimpleDateFormat("MMM dd, yyyy")
+                        date2 = sdf.parse(selectedDate.format(monthFormatter)+" $item"+", "+selectedDate.format(yearFormatter))
+                    }catch (e: Exception){
+                        sdf = SimpleDateFormat("MMM dd, yyyy", Locale.FRANCE)
+                        date2 = sdf.parse(selectedDate.format(monthFormatter)+" $item"+", "+selectedDate.format(yearFormatter))
+                    }
                     log("fddkfd $date1,  $date2")
-                    if (date1.compareTo(date2) == 0){
-                        this.cellDayText.setBackgroundResource(R.drawable.bg_gradient_rounded)
-                        this.cellDayText.setTextColor(Color.WHITE)
+                    if (date1 != null) {
+                        if (date1.compareTo(date2) == 0){
+                            this.cellDayText.setBackgroundResource(R.drawable.bg_gradient_rounded)
+                            this.cellDayText.setTextColor(Color.WHITE)
+                        }
                     }
                 }
 
@@ -220,7 +249,7 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
     class CalendarViewHolder(val binding: CalendarCellBinding) : RecyclerView.ViewHolder(binding.root)
 }
 
-class SelectedDateEventAdapter(val list: ArrayList<Phase>) : RecyclerView.Adapter<SelectedDateEventAdapter.ViewHolder>() {
+class SelectedDateEventAdapter(val list: ArrayList<Phase>,val dayOfMonth: String) : RecyclerView.Adapter<SelectedDateEventAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemCalenderEventCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
@@ -228,6 +257,11 @@ class SelectedDateEventAdapter(val list: ArrayList<Phase>) : RecyclerView.Adapte
             this.tvDate.text = item.date
             this.tvName.text = item.name
             this.tvTitle.text = item.jobTitle
+            if (dayOfMonth.length == 1){
+                this.tvDay.text = "0$dayOfMonth"
+            }else{
+                this.tvDay.text = dayOfMonth
+            }
         }
     }
     override fun getItemCount(): Int = list.size

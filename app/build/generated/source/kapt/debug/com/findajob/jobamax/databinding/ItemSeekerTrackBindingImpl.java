@@ -15,9 +15,10 @@ public class ItemSeekerTrackBindingImpl extends ItemSeekerTrackBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.iv_company, 1);
-        sViewsWithIds.put(R.id.tv_product_name, 2);
+        sViewsWithIds.put(R.id.tv_job_title, 2);
         sViewsWithIds.put(R.id.tv_company_name, 3);
-        sViewsWithIds.put(R.id.acbtn_apply, 4);
+        sViewsWithIds.put(R.id.tv_location, 4);
+        sViewsWithIds.put(R.id.acbtn_apply, 5);
     }
     // views
     // variables
@@ -26,15 +27,16 @@ public class ItemSeekerTrackBindingImpl extends ItemSeekerTrackBinding  {
     // Inverse Binding Event Handlers
 
     public ItemSeekerTrackBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ItemSeekerTrackBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[4]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[5]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[4]
             );
         this.clParent.setTag(null);
         setRootTag(root);

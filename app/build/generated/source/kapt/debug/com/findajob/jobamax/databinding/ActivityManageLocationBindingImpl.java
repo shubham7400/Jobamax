@@ -22,9 +22,9 @@ public class ActivityManageLocationBindingImpl extends ActivityManageLocationBin
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback149;
+    private final android.view.View.OnClickListener mCallback144;
     @Nullable
-    private final android.view.View.OnClickListener mCallback150;
+    private final android.view.View.OnClickListener mCallback145;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -43,8 +43,8 @@ public class ActivityManageLocationBindingImpl extends ActivityManageLocationBin
         this.parentLayout.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback149 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback150 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback144 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback145 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -106,8 +106,8 @@ public class ActivityManageLocationBindingImpl extends ActivityManageLocationBin
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback149);
-            this.mboundView2.setOnClickListener(mCallback150);
+            this.mboundView1.setOnClickListener(mCallback144);
+            this.mboundView2.setOnClickListener(mCallback145);
         }
     }
     // Listener Stub Implementations

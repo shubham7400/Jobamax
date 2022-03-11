@@ -140,7 +140,7 @@ class JobOffer() {
     }
 }
 
-class NewJobOffer {
+class   NewJobOffer {
     var recruiterId: String = ""
     var benefits: List<String> = listOf()
     var softSkills: List<String> = listOf()

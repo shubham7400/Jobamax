@@ -120,6 +120,10 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_search_university_dialog.xml"
     },
     {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_seeker_coaching.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_coaching.xml"
+    },
+    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_select_benefits.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_select_benefits.xml"
     },
@@ -166,6 +170,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_archived_chats.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_archived_chats.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_repost_job.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\dialog_repost_job.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
@@ -552,6 +560,10 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_add_experience.xml"
     },
     {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_job_report_dialog.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_job_report_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_chat.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_chat.xml"
     },
@@ -640,6 +652,10 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_training_courses.xml"
     },
     {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_delete_account.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\dialog_delete_account.xml"
+    },
+    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_recruiter_course.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_recruiter_course.xml"
     },
@@ -686,6 +702,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_seeker_tracking_job.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_tracking_job.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_seeker_coaching.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\activity_seeker_coaching.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_seeker_profile.xml",
@@ -802,6 +822,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_ideal_job_video.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_ideal_job_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_seeker_other_job.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_seeker_other_job.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_video_chat_view.xml",
@@ -932,12 +956,12 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_social_media_ids.xml"
     },
     {
-        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_job_seeker_profile.xml",
-        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_job_seeker_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_seeker_jobs.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_jobs.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_job_seeker_profile.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_job_seeker_profile.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_no_reaction_drop_email.xml",
@@ -950,6 +974,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_seeker_preview_hard_skill.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_seeker_preview_hard_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_portfolio_link.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_portfolio_link.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\view_video_player_seekbar.xml",
@@ -1006,6 +1034,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_messages.xml",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_messages.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_seeker_add_personal_track_job.xml",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_add_personal_track_job.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_seeker_calender.xml",

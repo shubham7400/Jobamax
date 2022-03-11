@@ -89,9 +89,9 @@
             android:paddingHorizontal="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+            app:layout_constraintVertical_bias="0.0">
 
             <TextView
                 android:layout_width="match_parent"
@@ -268,6 +268,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
                     app:pcv_animDuration="800"
                     app:pcv_animInterpolator="anticipate_overshoot"
                     app:pcv_backgroundBarColor="@color/gray"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_new_login"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -49,9 +49,9 @@
         android:name="com.findajob.jobamax.login.newloginflow.ConfirmRecruiterFragment"
         android:label="fragment_confirm_recruiter"
         tools:layout="@layout/fragment_confirm_recruiter" >
-        <action
+      <!--  <action
             android:id="@+id/action_confirmRecruiterFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment" />-->
         <action
             android:id="@+id/action_confirmRecruiterFragment_to_confirm3SeekerFragment"
             app:destination="@id/confirm3SeekerFragment" />
@@ -83,9 +83,9 @@
         android:name="com.findajob.jobamax.login.newloginflow.Confirm3SeekerFragment"
         android:label="fragment_confirm3_seeker"
         tools:layout="@layout/fragment_confirm3_seeker" >
-        <action
+      <!--  <action
             android:id="@+id/action_confirm3SeekerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment" />-->
         <action
             android:id="@+id/action_confirm3SeekerFragment_to_noReactionFragment"
             app:destination="@id/noReactionFragment" />
@@ -95,9 +95,9 @@
         android:name="com.findajob.jobamax.login.newloginflow.WelcomeAsSeekerFragment"
         android:label="fragment_welcome_as_seeker"
         tools:layout="@layout/fragment_welcome_as_seeker" >
-        <action
+        <!--<action
             android:id="@+id/action_welcomeAsSeekerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/loginFragment"

@@ -17,10 +17,13 @@ public class FragmentSeekerFilterJobBindingImpl extends FragmentSeekerFilterJobB
         sViewsWithIds.put(R.id.relativeLayout, 1);
         sViewsWithIds.put(R.id.iv_back_button, 2);
         sViewsWithIds.put(R.id.textView24, 3);
-        sViewsWithIds.put(R.id.cb_all, 4);
-        sViewsWithIds.put(R.id.cb_favorite, 5);
-        sViewsWithIds.put(R.id.cb_archive, 6);
-        sViewsWithIds.put(R.id.btn_go, 7);
+        sViewsWithIds.put(R.id.tv_all, 4);
+        sViewsWithIds.put(R.id.cb_all, 5);
+        sViewsWithIds.put(R.id.tv_favorite, 6);
+        sViewsWithIds.put(R.id.cb_favorite, 7);
+        sViewsWithIds.put(R.id.tv_archive, 8);
+        sViewsWithIds.put(R.id.cb_archive, 9);
+        sViewsWithIds.put(R.id.btn_go, 10);
     }
     // views
     @NonNull
@@ -31,17 +34,20 @@ public class FragmentSeekerFilterJobBindingImpl extends FragmentSeekerFilterJobB
     // Inverse Binding Event Handlers
 
     public FragmentSeekerFilterJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerFilterJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[7]
-            , (android.widget.CheckBox) bindings[4]
-            , (android.widget.CheckBox) bindings[6]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[10]
             , (android.widget.CheckBox) bindings[5]
+            , (android.widget.CheckBox) bindings[9]
+            , (android.widget.CheckBox) bindings[7]
             , (android.widget.ImageView) bindings[2]
             , (android.widget.RelativeLayout) bindings[1]
             , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[6]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

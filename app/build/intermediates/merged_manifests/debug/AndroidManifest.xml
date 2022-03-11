@@ -79,6 +79,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity"
+            android:exported="false" />
+        <activity
             android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity"
             android:exported="false" />
         <activity
@@ -115,11 +118,14 @@
             android:name="com.findajob.jobamax.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity
             android:name="com.findajob.jobamax.recruiter.profile.account.companyInfo.CompanyIntroInfoActivity"
@@ -284,6 +290,10 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
 
                 <data
                     android:host="jobamax.page.link"

@@ -15,10 +15,14 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentPortfolioImageBinding extends ViewDataBinding {
+  @NonNull
+  public final CircleImageView civUser;
+
   @NonNull
   public final ImageView ivBackButton;
 
@@ -35,9 +39,10 @@ public abstract class FragmentPortfolioImageBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentPortfolioImageBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ImageView ivBackButton, RelativeLayout relativeLayout,
-      RecyclerView rvImageAndVideo, TextView textView25) {
+      int _localFieldCount, CircleImageView civUser, ImageView ivBackButton,
+      RelativeLayout relativeLayout, RecyclerView rvImageAndVideo, TextView textView25) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.rvImageAndVideo = rvImageAndVideo;

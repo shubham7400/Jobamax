@@ -58,13 +58,17 @@
                             android:textSize="20dp" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_user"
+                            loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                             android:layout_alignParentEnd="true"
                             android:src="@drawable/default_user_img" />
                     </RelativeLayout>
                 </RelativeLayout>
+
+
+
 
 
                 <com.mobstac.circularimageprogress.CircularImageProgressView
@@ -92,45 +96,59 @@
                     app:layout_constraintEnd_toEndOf="@+id/pb_audio_recording"
                     app:layout_constraintStart_toStartOf="@+id/pb_audio_recording" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout6"
-                    android:layout_width="wrap_content"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_audio_player"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pb_audio_recording"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_audio_play_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_play_circle_filled"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <SeekBar
+                        android:id="@+id/sb_audio"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_audio_duration"
+                        app:layout_constraintStart_toEndOf="@+id/iv_audio_play_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_audio_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_record"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/bg_gradient_rounded"
                     android:layout_marginTop="20dp"
-                    android:orientation="horizontal"
+                    android:text="Retake"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/pb_audio_recording">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_play"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
-                        android:textAllCaps="false"
-                        android:background="@drawable/bg_gradient_rounded"
-                        android:text="Play"
-                        android:textColor="@color/white" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_retake"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/round_side_8"
-                        android:text="Retake"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorHypeLink" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_record"
-                        android:layout_width="150dp"
-                        android:visibility="gone"
-                        android:textAllCaps="false"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/round_side_8"
-                        android:text="Record"
-                        android:textColor="@color/colorHypeLink" />
-                </LinearLayout>
+                    app:layout_constraintTop_toBottomOf="@+id/cl_audio_player" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

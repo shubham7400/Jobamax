@@ -14,41 +14,43 @@ public class FragmentSeekerWishListBindingImpl extends FragmentSeekerWishListBin
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 2);
-        sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.constraintLayout7, 4);
-        sViewsWithIds.put(R.id.constraintLayout6, 5);
-        sViewsWithIds.put(R.id.textView20, 6);
-        sViewsWithIds.put(R.id.iv_filter_job, 7);
-        sViewsWithIds.put(R.id.rv_wishlist_job, 8);
+        sViewsWithIds.put(R.id.imageView11, 2);
+        sViewsWithIds.put(R.id.relativeLayout, 3);
+        sViewsWithIds.put(R.id.iv_back_button, 4);
+        sViewsWithIds.put(R.id.constraintLayout7, 5);
+        sViewsWithIds.put(R.id.constraintLayout6, 6);
+        sViewsWithIds.put(R.id.textView20, 7);
+        sViewsWithIds.put(R.id.iv_filter_job, 8);
+        sViewsWithIds.put(R.id.rv_wishlist_job, 9);
+        sViewsWithIds.put(R.id.tv_no_data, 10);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
-    @NonNull
-    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerWishListBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerWishListBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[4]
-            , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[7]
-            , (android.widget.RelativeLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[8]
-            , (android.widget.TextView) bindings[6]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.ImageView) bindings[4]
+            , (android.widget.ImageView) bindings[8]
+            , (android.widget.RelativeLayout) bindings[3]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[9]
+            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[10]
             );
+        this.civUser.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
-        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -107,8 +109,8 @@ public class FragmentSeekerWishListBindingImpl extends FragmentSeekerWishListBin
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
         java.lang.String jobSeekerProfilePicUrl = null;
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
@@ -123,7 +125,7 @@ public class FragmentSeekerWishListBindingImpl extends FragmentSeekerWishListBin
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.civUser, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

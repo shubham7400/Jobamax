@@ -63,10 +63,14 @@ import com.findajob.jobamax.di.ViewModelModule_ProvideMessageRepositoryFactory;
 import com.findajob.jobamax.di.ViewModelModule_ProvideRecruiterRepoFactory;
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity;
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment;
+import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity;
+import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingFragment;
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity;
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment;
@@ -525,6 +529,14 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
+    public void injectSeekerCoachingFragment(SeekerCoachingFragment seekerCoachingFragment) {
+    }
+
+    @Override
+    public void injectSeekerJobsFragment(SeekerJobsFragment seekerJobsFragment) {
+    }
+
+    @Override
     public void injectJobSeekerProfileFragment(JobSeekerProfileFragment jobSeekerProfileFragment) {
     }
 
@@ -830,11 +842,19 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
+    public void injectSeekerCoachingActivity(SeekerCoachingActivity seekerCoachingActivity) {
+    }
+
+    @Override
     public void injectJobSeekerCourseActivity(JobSeekerCourseActivity jobSeekerCourseActivity) {
     }
 
     @Override
     public void injectJobSeekerHomeActivity(JobSeekerHomeActivity jobSeekerHomeActivity) {
+    }
+
+    @Override
+    public void injectSeekerJobSearchActivity(SeekerJobSearchActivity seekerJobSearchActivity) {
     }
 
     @Override

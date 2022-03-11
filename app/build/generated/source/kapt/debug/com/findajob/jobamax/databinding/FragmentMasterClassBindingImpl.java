@@ -35,7 +35,7 @@ public class FragmentMasterClassBindingImpl extends FragmentMasterClassBinding i
     private final androidx.appcompat.widget.AppCompatImageView mboundView1;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback239;
+    private final android.view.View.OnClickListener mCallback234;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,7 +65,7 @@ public class FragmentMasterClassBindingImpl extends FragmentMasterClassBinding i
         this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback239 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback234 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -127,7 +127,7 @@ public class FragmentMasterClassBindingImpl extends FragmentMasterClassBinding i
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback239);
+            this.mboundView1.setOnClickListener(mCallback234);
         }
     }
     // Listener Stub Implementations

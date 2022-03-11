@@ -126,7 +126,7 @@
     <string name="job_category">Category</string>
     <string name="job">Job</string>
     <string name="work_study">Remote</string>
-    <string name="internship">Internship</string>
+    <string name="internship">internship</string>
     <string name="other">Other</string>
     <string name="add_skills">Add Skills</string>
     <string name="about_job">About Job</string>
@@ -134,8 +134,8 @@
     <string name="upload_job_presentation">Upload Job Presentation</string>
     <string name="permanent">Permanent</string>
     <string name="temporary">Temporary</string>
-    <string name="part_time">Part-time</string>
-    <string name="full_time">Full-time</string>
+    <string name="part_time">part-time</string>
+    <string name="full_time">full-time</string>
     <string name="low">Low</string>
     <string name="medium">Medium</string>
     <string name="high">High</string>
@@ -551,5 +551,12 @@
     <string name="media_url_dash"><![CDATA[https://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube?as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,source,id,as&ip=0.0.0.0&ipbits=0&expire=19000000000&signature=51AF5F39AB0CEC3E5497CD9C900EBFEAECCCB5C7.8506521BFC350652163895D4C26DEE124209AA9E&key=ik0]]></string>
 
     <string name="networking">Networking</string>
+
+    <string name="apprenticeship">apprenticeship</string>
+    <string name="under_one">under-one</string>
+    <string name="one_two">one-two</string>
+    <string name="two_more">two-more</string>
+    <string name="wishlist">Wishlist</string>
+
 
 </resources>

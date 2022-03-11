@@ -2,35 +2,39 @@ package com.findajob.jobamax.jobseeker.wishlist
 
 import android.app.Dialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import androidx.fragment.app.DialogFragment
-import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.FragmentSeekerFilterJobBinding
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
-import com.findajob.jobamax.jobseeker.profile.account.SeekerSearchUniversityDialogFragment
-import android.widget.CompoundButton
+import com.findajob.jobamax.util.log
 
 
-
-
-
-class SeekerFilterJobFragment : DialogFragment() {
+class SeekerFilterJobFragment( ) : DialogFragment() {
     lateinit var binding: FragmentSeekerFilterJobBinding
-    var onGoClickListener: (String) -> Unit = {}
-    var filteredJob = SeekerWishlistJobFilter.ALL.name
+    var onGoClickListener: (SeekerWishlistJobFilter) -> Unit = {}
+    var filteredJob = SeekerWishlistJobFilter.ALL
+
+    var all = 0
+    var favorite = 0
+    var archive = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerFilterJobBinding.inflate(inflater, container, false)
+        this.all = arguments?.getInt("all") ?: 0
+        this.favorite = arguments?.getInt("favorite") ?: 0
+        this.archive = arguments?.getInt("archive") ?: 0
         configureUi()
         return binding.root
     }
 
     private fun configureUi() {
         setClickListeners()
+        binding.tvAll.text = binding.tvAll.text.toString()+" ($all)"
+        binding.tvFavorite.text = binding.tvFavorite.text.toString()+" ($favorite)"
+        binding.tvArchive.text = binding.tvArchive.text.toString()+" ($archive)"
     }
 
     private fun setClickListeners() {
@@ -41,21 +45,21 @@ class SeekerFilterJobFragment : DialogFragment() {
             if (isChecked){
                 binding.cbFavorite.isChecked = false
                 binding.cbArchive.isChecked = false
-                filteredJob = SeekerWishlistJobFilter.ALL.name
+                filteredJob = SeekerWishlistJobFilter.ALL
             }
         }
         binding.cbFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
                 binding.cbAll.isChecked = false
                 binding.cbArchive.isChecked = false
-                filteredJob = SeekerWishlistJobFilter.FAVORITE.name
+                filteredJob = SeekerWishlistJobFilter.FAVORITE
             }
         }
         binding.cbArchive.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
                 binding.cbFavorite.isChecked = false
                 binding.cbAll.isChecked = false
-                filteredJob = SeekerWishlistJobFilter.ARCHIVE.name
+                filteredJob = SeekerWishlistJobFilter.ARCHIVE
             }
         }
         binding.btnGo.setOnClickListener {
@@ -79,7 +83,13 @@ class SeekerFilterJobFragment : DialogFragment() {
         }
     }
 
-    companion object {
-        fun newInstance(): SeekerFilterJobFragment = SeekerFilterJobFragment()
+    fun newInstance(all: Int, favorite: Int, archive: Int): SeekerFilterJobFragment {
+        val fragment = SeekerFilterJobFragment()
+        val args = Bundle()
+        args.putInt("all", all)
+        args.putInt("favorite", favorite)
+        args.putInt("archive", archive)
+        fragment.arguments = args
+        return fragment
     }
  }

@@ -4,7 +4,36 @@
             "outputFile": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\edf18ba7cee7c83c692f26f744d3f809\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\bc4e89551f310f101fa1b8543ba96c08\\transformed\\material-1.5.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,5,8,13,17,20,23,26,31,34,38",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,481,801,1038,1245,1452,1655,1987,2189,2454",
+                        "endLines": "4,7,12,16,19,22,25,30,33,37,41",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,476,796,1033,1240,1447,1650,1982,2184,2449,2722"
+                    },
+                    "to": {
+                        "startLines": "55,58,61,66,70,73,76,79,84,87,91",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3803,4019,4229,4549,4786,4993,5200,5403,5735,5937,6202",
+                        "endLines": "57,60,65,69,72,75,78,83,86,90,94",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "4014,4224,4544,4781,4988,5195,5398,5730,5932,6197,6470"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\eccd602242b2e228f6049dfc7605df27\\transformed\\work-runtime-2.7.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\f639269b733178213508e94f59c0c4af\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,17 +52,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\39850ac7ff9c634b2e3b3679435345dd\\transformed\\work-runtime-2.7.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\0a44cab2e46adb95770aa69e268056fe\\transformed\\appcompat-1.4.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\d0d9694fee95fdc671300ca85e4c59fd\\transformed\\appcompat-1.4.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -49,25 +68,6 @@
                         "endLines": "4,5,6,7,21,35,36,37,40,44,45,46,47,51",
                         "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
                         "endOffsets": "314,449,524,611,1495,2391,2510,2637,2859,3083,3198,3305,3418,3648"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\67bf9ce87124b842d8c3724e71384fab\\transformed\\material-1.5.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,5,8,13,17,20,23,26,31,34,38",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,271,481,801,1038,1245,1452,1655,1987,2189,2454",
-                        "endLines": "4,7,12,16,19,22,25,30,33,37,41",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "266,476,796,1033,1240,1447,1650,1982,2184,2449,2722"
-                    },
-                    "to": {
-                        "startLines": "55,58,61,66,70,73,76,79,84,87,91",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3803,4019,4229,4549,4786,4993,5200,5403,5735,5937,6202",
-                        "endLines": "57,60,65,69,72,75,78,83,86,90,94",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "4014,4224,4544,4781,4988,5195,5398,5730,5932,6197,6470"
                     }
                 }
             ]

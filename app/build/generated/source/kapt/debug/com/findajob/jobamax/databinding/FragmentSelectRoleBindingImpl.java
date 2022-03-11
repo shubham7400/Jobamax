@@ -25,13 +25,13 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
     private final android.widget.TextView mboundView4;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback117;
+    private final android.view.View.OnClickListener mCallback113;
     @Nullable
-    private final android.view.View.OnClickListener mCallback118;
+    private final android.view.View.OnClickListener mCallback114;
     @Nullable
-    private final android.view.View.OnClickListener mCallback116;
+    private final android.view.View.OnClickListener mCallback111;
     @Nullable
-    private final android.view.View.OnClickListener mCallback119;
+    private final android.view.View.OnClickListener mCallback112;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -57,10 +57,10 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
         this.seekerIcon.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback117 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback118 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback116 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback119 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback113 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback114 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback111 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback112 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -122,17 +122,17 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.jobSeekerLabel.setOnClickListener(mCallback117);
-            this.mboundView4.setOnClickListener(mCallback119);
-            this.recruiterIcon.setOnClickListener(mCallback118);
-            this.seekerIcon.setOnClickListener(mCallback116);
+            this.jobSeekerLabel.setOnClickListener(mCallback112);
+            this.mboundView4.setOnClickListener(mCallback114);
+            this.recruiterIcon.setOnClickListener(mCallback113);
+            this.seekerIcon.setOnClickListener(mCallback111);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
+            case 3: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.login.SelectRoleInterface handler = mHandler;
@@ -145,11 +145,11 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onJobSeekerClicked();
+                    handler.onRecruiterClicked();
                 }
                 break;
             }
-            case 3: {
+            case 4: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.login.SelectRoleInterface handler = mHandler;
@@ -183,7 +183,7 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
                 }
                 break;
             }
-            case 4: {
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.login.SelectRoleInterface handler = mHandler;
@@ -196,7 +196,7 @@ public class FragmentSelectRoleBindingImpl extends FragmentSelectRoleBinding imp
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onRecruiterClicked();
+                    handler.onJobSeekerClicked();
                 }
                 break;
             }

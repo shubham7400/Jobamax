@@ -55,7 +55,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="30dp"
-					android:text="@{`Hello `+ jobSeeker.firstName}"
+					android:text="@{`Hello `+ jobSeeker.firstName+' '+jobSeeker.lastName}"
 					android:textColor="@color/black"
 					android:fontFamily="@font/opensans_bold"
 					android:textFontWeight="@integer/material_motion_duration_medium_1"
@@ -68,7 +68,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
 					android:fontFamily="@font/opensans_regular"
-					android:text="Let's find your\ndream job together."
+					android:text="Let's find your\nDream job together."
 					android:textColor="@color/black"
 					android:textSize="20dp"
 					app:layout_constraintStart_toStartOf="parent"
@@ -80,9 +80,10 @@
 					android:layout_height="wrap_content"
 					android:orientation="horizontal"
 					android:gravity="bottom"
+					android:layout_marginTop="10dp"
 					app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-					<RelativeLayout
+					<androidx.constraintlayout.widget.ConstraintLayout
 						android:id="@+id/v_profile"
 						android:layout_weight="0.50"
 						android:background="@drawable/rounded_white_box"
@@ -93,111 +94,70 @@
 						<de.hdodenhof.circleimageview.CircleImageView
 							android:id="@+id/image_user"
 							loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-							android:layout_width="100dp"
-							android:layout_height="100dp"
-							android:layout_centerHorizontal="true"
-							android:layout_gravity="center_horizontal"
-							android:layout_marginTop="20dp"
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:layout_above="@+id/tv_aa"
 							android:scaleType="centerCrop"
-							android:src="@drawable/default_user_img" />
+							android:layout_marginVertical="20dp"
+							android:src="@drawable/default_user_img"
+							app:layout_constraintBottom_toTopOf="@+id/tv_aa"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintTop_toTopOf="parent" />
 
 						<TextView
+							android:id="@+id/tv_aa"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:layout_below="@+id/image_user"
-							android:layout_centerHorizontal="true"
 							android:layout_gravity="center_horizontal"
-							android:layout_marginTop="20dp"
-							android:layout_marginBottom="10dp"
 							android:fontFamily="@font/opensans_bold"
 							android:text="My Profile"
 							android:textColor="@color/black"
-							android:textSize="18dp" />
-					</RelativeLayout>
+							android:textSize="18dp"
+							android:layout_marginBottom="20dp"
+							app:layout_constraintBottom_toBottomOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent" />
+					</androidx.constraintlayout.widget.ConstraintLayout>
 
 					<View
 						android:layout_width="10dp"
 						android:layout_height="match_parent"/>
 
-					<RelativeLayout
+					<androidx.constraintlayout.widget.ConstraintLayout
+						android:id="@+id/v_calendar"
 						android:layout_weight="0.50"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content">
+						android:layout_height="match_parent"
+						android:background="@drawable/rounded_white_box">
 
-<!--
-						<RelativeLayout
-							android:id="@+id/v_message"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:background="@drawable/rounded_white_box">
 
-							<ImageView
-								android:id="@+id/iv_message_icon"
-								android:layout_width="30dp"
-								android:layout_height="30dp"
-								android:layout_centerHorizontal="true"
-								android:layout_marginTop="20dp"
-								android:src="@drawable/message" />
+						<ImageView
+							android:id="@+id/iv_calender"
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:layout_above="@+id/tv_calender_title"
+							android:src="@drawable/calender"
+							android:layout_marginVertical="20dp"
+							app:layout_constraintBottom_toTopOf="@+id/tv_calender_title"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintTop_toTopOf="parent" />
 
-							<TextView
-								android:id="@+id/tv_message_count_title"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_below="@+id/iv_message_icon"
-								android:layout_marginHorizontal="20dp"
-								android:layout_marginTop="10dp"
-								android:fontFamily="@font/opensans_regular"
-								android:text="5 Messages"
-								android:textColor="@color/black" />
-
-							<TextView
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_below="@id/tv_message_count_title"
-								android:layout_marginHorizontal="20dp"
-								android:layout_marginTop="10dp"
-								android:layout_marginBottom="20dp"
-								android:fontFamily="@font/opensans_regular"
-								android:text="0 News"
-								android:textColor="@color/black" />
-						</RelativeLayout>
--->
-
-						<RelativeLayout
-							android:id="@+id/v_calendar"
-							android:layout_width="match_parent"
+						<TextView
+							android:id="@+id/tv_calender_title"
+							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="20dp"
-							android:background="@drawable/rounded_white_box">
+							android:fontFamily="@font/opensans_bold"
+							android:text="Calendar"
+							android:textColor="@color/black"
+							android:textSize="18dp"
+							android:layout_marginBottom="20dp"
+							app:layout_constraintBottom_toBottomOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent" />
 
-							<ImageView
-								android:id="@+id/iv_calender"
-								android:layout_width="60dp"
-								android:layout_height="60dp"
-								android:layout_centerHorizontal="true"
-								android:layout_marginStart="10dp"
-								android:layout_marginTop="10dp"
-								android:layout_marginEnd="20dp"
-								android:src="@drawable/calender" />
-
-
-							<TextView
-								android:id="@+id/tv_calender_title"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_below="@id/iv_calender"
- 								android:layout_centerHorizontal="true"
-								android:layout_marginTop="20dp"
-								android:layout_marginBottom="10dp"
-								android:fontFamily="@font/opensans_bold"
-								android:text="Calender"
-								android:textColor="@color/black"
-								android:textSize="18dp" />
-
-						</RelativeLayout>
-
-
-					</RelativeLayout>
+					</androidx.constraintlayout.widget.ConstraintLayout>
 
 				</LinearLayout>
 
@@ -225,57 +185,61 @@
 					android:orientation="horizontal"
 					app:layout_constraintTop_toBottomOf="@+id/bt_job_search">
 
-					<RelativeLayout
+					<androidx.constraintlayout.widget.ConstraintLayout
 						android:id="@+id/v_track"
-						android:layout_weight="0.50"
-						android:background="@drawable/rounded_multi_color_box"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content">
+						android:layout_height="wrap_content"
+						android:layout_weight="0.50"
+						android:background="@drawable/rounded_multi_color_box">
 
-						<de.hdodenhof.circleimageview.CircleImageView
+						<ImageView
 							android:id="@+id/image_user2"
-							android:layout_width="100dp"
-							android:layout_height="100dp"
-							android:layout_centerHorizontal="true"
-							android:layout_gravity="center_horizontal"
-							android:layout_marginTop="20dp"
+							android:layout_width="80dp"
+							android:layout_height="80dp"
 							android:scaleType="centerCrop"
-							android:src="@drawable/captha" />
+							android:src="@drawable/captha"
+							android:layout_marginVertical="20dp"
+							app:layout_constraintBottom_toTopOf="@+id/textView28"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintTop_toTopOf="parent" />
 
 						<TextView
+							android:id="@+id/textView28"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:layout_below="@+id/image_user2"
-							android:layout_centerHorizontal="true"
-							android:layout_gravity="center_horizontal"
-							android:layout_marginTop="20dp"
-							android:layout_marginBottom="10dp"
-							android:fontFamily="@font/opensans_bold"
+ 							android:fontFamily="@font/opensans_bold"
 							android:gravity="center_horizontal"
 							android:text="Track my applications"
 							android:textColor="@color/white"
-							android:textSize="18dp" />
-					</RelativeLayout>
+							android:textSize="18dp"
+							android:layout_marginBottom="20dp"
+							app:layout_constraintBottom_toBottomOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent" />
+					</androidx.constraintlayout.widget.ConstraintLayout>
 
 					<View
 						android:layout_width="10dp"
 						android:layout_height="match_parent"/>
 
-					<RelativeLayout
+					<androidx.constraintlayout.widget.ConstraintLayout
 						android:id="@+id/v_wishlist"
 						android:background="@drawable/rounded_white_box"
 						android:layout_weight="0.50"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content">
+						android:layout_height="match_parent">
 
 						<RelativeLayout
 							android:id="@+id/rl_abcd"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_alignParentTop="true"
-							android:layout_marginHorizontal="20dp"
-							android:layout_marginTop="20dp"
-							android:layout_marginBottom="20dp">
+ 							android:layout_marginHorizontal="20dp"
+							app:layout_constraintBottom_toTopOf="@+id/constraintLayout15"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintTop_toTopOf="parent">
 
 							<TextView
 								android:id="@+id/tv_ef"
@@ -294,54 +258,64 @@
 								android:layout_height="20dp"
 								android:layout_centerVertical="true"
 								android:layout_marginStart="10dp"
-								android:layout_toRightOf="@id/tv_ef"
+								android:layout_toEndOf="@id/tv_ef"
 								android:src="@drawable/right_arrow" />
 						</RelativeLayout>
 
 						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/constraintLayout15"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:layout_below="@id/rl_abcd"
-							android:layout_marginStart="20dp"
-							android:layout_marginBottom="20dp">
+							android:layout_marginBottom="20dp"
+							android:paddingStart="20dp"
+							app:layout_constraintBottom_toBottomOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent">
 
 							<de.hdodenhof.circleimageview.CircleImageView
-								android:id="@+id/image_user3"
+								android:id="@+id/iv_3"
 								android:layout_width="40dp"
 								android:layout_height="40dp"
 								android:layout_centerHorizontal="true"
 								android:layout_gravity="center_horizontal"
 								android:scaleType="centerCrop"
+								app:civ_border_color="@color/black"
+								app:civ_border_width="1dp"
 								android:src="@drawable/whishlist_img1"
 								app:layout_constraintStart_toStartOf="parent"
 								app:layout_constraintTop_toTopOf="parent" />
 
 							<de.hdodenhof.circleimageview.CircleImageView
-								android:id="@+id/image_user35"
+								android:id="@+id/iv_2"
 								android:layout_width="40dp"
 								android:layout_height="40dp"
 								android:layout_centerHorizontal="true"
 								android:layout_gravity="center_horizontal"
 								android:layout_marginTop="-10dp"
 								android:scaleType="centerCrop"
+								app:civ_border_color="@color/black"
+								app:civ_border_width="1dp"
 								android:src="@drawable/whishlist_img2"
-								app:layout_constraintStart_toStartOf="@+id/image_user3"
-								app:layout_constraintTop_toBottomOf="@+id/image_user3" />
+								app:layout_constraintStart_toStartOf="@+id/iv_3"
+								app:layout_constraintTop_toBottomOf="@+id/iv_3" />
 
 							<de.hdodenhof.circleimageview.CircleImageView
-								android:id="@+id/image_user3w"
+								android:id="@+id/iv_1"
 								android:layout_width="40dp"
 								android:layout_height="40dp"
 								android:layout_centerHorizontal="true"
 								android:layout_gravity="center_horizontal"
 								android:layout_marginStart="30dp"
 								android:scaleType="centerCrop"
+								app:civ_border_color="@color/black"
+								app:civ_border_width="1dp"
 								android:src="@drawable/whishlist_img3"
-								app:layout_constraintBottom_toBottomOf="@+id/image_user35"
-								app:layout_constraintStart_toStartOf="@+id/image_user3"
-								app:layout_constraintTop_toTopOf="@+id/image_user3" />
+								app:layout_constraintBottom_toBottomOf="@+id/iv_2"
+								app:layout_constraintStart_toStartOf="@+id/iv_3"
+								app:layout_constraintTop_toTopOf="@+id/iv_3" />
 						</androidx.constraintlayout.widget.ConstraintLayout>
-					</RelativeLayout>
+					</androidx.constraintlayout.widget.ConstraintLayout>
 				</LinearLayout>
 
 				<Button

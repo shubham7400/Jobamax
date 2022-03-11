@@ -31,7 +31,7 @@ class ConfirmRecruiterFragment : Fragment() {
         binding.btnYes.setOnClickListener {
             requireContext().setUserType(1)
             viewModel.roleType = ROLE_RECRUITER
-            Navigation.findNavController(view).navigate(R.id.action_confirmRecruiterFragment_to_loginFragment)
+            /*Navigation.findNavController(view).navigate(R.id.action_confirmRecruiterFragment_to_loginFragment)*/
         }
         binding.btnNo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.confirm3SeekerFragment, null))
     }

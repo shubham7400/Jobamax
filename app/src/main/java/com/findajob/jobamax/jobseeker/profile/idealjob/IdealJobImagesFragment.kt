@@ -22,6 +22,7 @@ import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.util.ImagePicker
 import com.findajob.jobamax.util.errorToast
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
 import com.parse.ParseQuery
@@ -32,7 +33,7 @@ import java.util.*
 
 const val ADD_NEW_ITEM = "new item"
 
-class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>() , ImagePicker.GetImage {
+class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>() , ImagePicker.GetImage, IOnBackPressed {
 
     override val layoutRes: Int get() = R.layout.fragment_ideal_job_images
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -80,6 +81,7 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
     }
 
     private fun setAdapter() {
+        log("lkdfjsd $idealJobImageUrlList")
         adapter = IdealJobImageAdapter(idealJobImageUrlList)
         binding.rvImageAndVideo.adapter = adapter
         adapter.addImage = {
@@ -101,10 +103,13 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
 
-    private fun saveDataToParse() {
+    private fun saveDataToParse(callback : () -> Unit) {
         idealJobImageUrlList.remove(ADD_NEW_ITEM)
         if (idealJob == null){
             val portfolioParseObject = ParseObject(ParseTableName.IdealJob.toString())
@@ -130,6 +135,10 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
                 progressHud.dismiss()
                 if(it != null){
                     toast("${it.message.toString()}")
+                    callback()
+                }else{
+                    /*toast("Data saved.")*/
+                    callback()
                 }
             }
         }
@@ -151,7 +160,6 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
                             idealJobImageUrlList.add(it)
                             adapter.submitList(idealJobImageUrlList)
                             adapter.notifyDataSetChanged()
-                            saveDataToParse()
                         }
                     })
                 }
@@ -190,6 +198,12 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
         binding.jobSeeker = viewModel.jobSeeker
     }
 
+    override fun onBackPressed(callback: () -> Unit) {
+        saveDataToParse {
+            callback()
+        }
+    }
+
 }
 
 class IdealJobImageAdapter(var list : ArrayList<String>) : RecyclerView.Adapter<IdealJobImageAdapter.ViewHolder>() {
@@ -210,7 +224,7 @@ class IdealJobImageAdapter(var list : ArrayList<String>) : RecyclerView.Adapter<
                 }
                 else -> {
                     this.ivAction.setImageResource(R.drawable.close_blue_white_background)
-                    Picasso.get().load(item).transform(CropCircleTransformation()).into(this.roundedImageView)
+                    Picasso.get().load(item).into(this.roundedImageView)
                     this.ivAction.setOnClickListener {
                         removeImage(item)
                     }
@@ -220,6 +234,9 @@ class IdealJobImageAdapter(var list : ArrayList<String>) : RecyclerView.Adapter<
     }
     override fun getItemCount(): Int = list.size
     fun submitList(idealJobImageUrlList: ArrayList<String>) {
+        if (!idealJobImageUrlList.contains(ADD_NEW_ITEM)){
+            idealJobImageUrlList.add(ADD_NEW_ITEM)
+        }
         if (idealJobImageUrlList.isNotEmpty() && idealJobImageUrlList.size > 1){
             Collections.swap(idealJobImageUrlList, idealJobImageUrlList.indexOf(ADD_NEW_ITEM),idealJobImageUrlList.lastIndex)
         }

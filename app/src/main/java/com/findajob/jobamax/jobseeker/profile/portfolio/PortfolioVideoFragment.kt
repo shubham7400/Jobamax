@@ -23,18 +23,15 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
  import com.findajob.jobamax.data.pojo.Portfolio
 import com.findajob.jobamax.databinding.FragmentPortfolioVideoBinding
- import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
  import com.findajob.jobamax.jobseeker.profile.VideoPlayActivity
-import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
- import com.findajob.jobamax.util.log
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.parse.ParseObject
-import com.parse.ParseQuery
 import org.jetbrains.anko.support.v4.runOnUiThread
 import java.io.File
 
@@ -56,52 +53,30 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
     }
 
     private fun getPortfolioData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Portfolio.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    portfolio = Portfolio(result)
-                    videoUrl = portfolio!!.videoUrl
-                    if (videoUrl != ""){
-                        binding.roundedImageView.setImageResource(R.drawable.ic_play_circle_filled)
-                    }else{
-                        binding.roundedImageView.setImageDrawable(null);
-                    }
-                }
-            }
+
+        portfolio = viewModel.jobSeeker.portfolio?.let {
+            Portfolio(it)
         }
+        if (portfolio == null){
+            val parseObject = ParseObject(ParseTableName.Portfolio.toString())
+            portfolio = Portfolio(parseObject)
+            portfolio!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("portfolio", it) }
+            viewModel.jobSeeker.pfObject?.saveInBackground()
+        }
+
+        portfolio?.let {
+            portfolio = portfolio!!.pfObject?.let { it1 -> Portfolio(it1) }
+            videoUrl = portfolio!!.videoURL
+            setVideoImage()
+        }
+
     }
 
     private fun saveDataToParse( ) {
-        portfolio?.let {
-            if (portfolio == null){
-                val portfolioParseObject = ParseObject(ParseTableName.Portfolio.toString())
-                viewModel.jobSeeker.pfObject?.let { it1 ->
-                    portfolioParseObject.put("jobSeeker", it1)
-                }
-                portfolioParseObject.put("videoUrl", videoUrl)
-                portfolioParseObject.saveInBackground {
-                    if(it != null){
-                        toast("${it.message.toString()}")
-                    }
-                }
-            }else{
-
-                val portfolioParseObject = portfolio!!.pfObject
-                portfolioParseObject?.let {
-                    viewModel.jobSeeker.pfObject?.let { it1 -> it.put("jobSeeker", it1) }
-                    it.put("videoUrl", videoUrl)
-                }
-                portfolioParseObject?.saveInBackground {
-                    if(it != null){
-                        toast("${it.message.toString()}")
-                    }
-                }
+        portfolio?.pfObject?.put("videoURL", videoUrl)
+        portfolio?.pfObject?.saveInBackground {
+            if (it != null){
+                log(it.message.toString())
             }
         }
     }
@@ -196,10 +171,14 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
 
 
     private fun setVideoImage() {
-        if (videoUrl != "") {
+        if (videoUrl != ""){
             binding.roundedImageView.setImageResource(R.drawable.ic_play_circle_filled)
-        } else {
-            binding.roundedImageView.setImageDrawable(null);
+            binding.ivAddVideo.visibility = View.GONE
+            binding.ivRemoveVideo.visibility = View.VISIBLE
+        }else{
+            binding.roundedImageView.setImageDrawable(null)
+            binding.ivAddVideo.visibility = View.VISIBLE
+            binding.ivRemoveVideo.visibility = View.GONE
         }
     }
 
@@ -209,6 +188,9 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
 
     private fun setClickListeners() {
         binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
         binding.ivAddVideo.setOnClickListener {
@@ -221,7 +203,31 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
                 toast("Video does not exist.")
             }
         }
+        binding.ivRemoveVideo.setOnClickListener {
+            deleteVideo()
+        }
     }
+
+    private fun deleteVideo() {
+        try {
+            if (videoUrl != ""){
+                val firebaseStorage = FirebaseStorage.getInstance()
+                val storageReference = firebaseStorage.getReferenceFromUrl(videoUrl)
+                progressHud.show()
+                storageReference.delete().addOnSuccessListener {
+                    progressHud.dismiss()
+                    portfolio?.pfObject?.put("videoURL", "")
+                    portfolio?.pfObject?.saveInBackground()
+                    portfolio = portfolio?.pfObject?.let { it1 -> Portfolio(it1) }
+                    videoUrl = portfolio?.videoURL ?: ""
+                    setVideoImage()
+                }.addOnFailureListener {
+                    progressHud.dismiss()
+                    toast(it.message.toString())
+                }
+            }
+        }catch (e: Exception){}
+     }
 
     private fun dispatchTakeVideoIntent() {
         Intent(MediaStore.ACTION_VIDEO_CAPTURE).also { takeVideoIntent ->

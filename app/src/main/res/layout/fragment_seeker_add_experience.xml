@@ -118,9 +118,10 @@
                     <EditText
                         android:id="@+id/et_company_name"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
                         android:hint="Enter Company"
-                        android:paddingStart="10dp"
+                        android:paddingHorizontal="10dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/rounded_white_box"
                         app:layout_constraintTop_toBottomOf="@+id/textView19"

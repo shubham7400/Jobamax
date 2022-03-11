@@ -14,10 +14,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentIdealJobDescriptionBinding extends ViewDataBinding {
+  @NonNull
+  public final CircleImageView civUser;
+
   @NonNull
   public final EditText etIdealJobDescription;
 
@@ -31,9 +35,10 @@ public abstract class FragmentIdealJobDescriptionBinding extends ViewDataBinding
   protected JobSeeker mJobSeeker;
 
   protected FragmentIdealJobDescriptionBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EditText etIdealJobDescription, ImageView ivBackButton,
-      RelativeLayout relativeLayout) {
+      int _localFieldCount, CircleImageView civUser, EditText etIdealJobDescription,
+      ImageView ivBackButton, RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
     this.etIdealJobDescription = etIdealJobDescription;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;

@@ -38,10 +38,11 @@ import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Exception
 import kotlin.collections.ArrayList
 
-
+@AndroidEntryPoint
 class SeekerJobSearchActivity : AppCompatActivity() {
     lateinit var binding: ActivitySeekerJobSearchBinding
 

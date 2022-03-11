@@ -30,19 +30,19 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
     private final android.widget.LinearLayout mboundView9;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback237;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback235;
+    private final android.view.View.OnClickListener mCallback227;
     @Nullable
     private final android.view.View.OnClickListener mCallback233;
     @Nullable
-    private final android.view.View.OnClickListener mCallback238;
+    private final android.view.View.OnClickListener mCallback231;
     @Nullable
-    private final android.view.View.OnClickListener mCallback236;
+    private final android.view.View.OnClickListener mCallback229;
     @Nullable
-    private final android.view.View.OnClickListener mCallback234;
+    private final android.view.View.OnClickListener mCallback228;
     @Nullable
     private final android.view.View.OnClickListener mCallback232;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback230;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -183,13 +183,13 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
         this.mboundView9.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback237 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback235 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback233 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback238 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
-        mCallback236 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback234 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback232 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback227 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback233 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback231 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback229 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback228 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback232 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback230 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
         invalidateAll();
     }
 
@@ -283,17 +283,17 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.btnEdit.setOnClickListener(mCallback233);
-            this.btnSave.setOnClickListener(mCallback238);
+            this.btnEdit.setOnClickListener(mCallback228);
+            this.btnSave.setOnClickListener(mCallback233);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etFacebook, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etFacebookandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etInstagram, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etInstagramandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etLinkedin, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etLinkedinandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.etTwitter, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, etTwitterandroidTextAttrChanged);
-            this.mboundView1.setOnClickListener(mCallback232);
-            this.mboundView3.setOnClickListener(mCallback234);
-            this.mboundView5.setOnClickListener(mCallback235);
-            this.mboundView7.setOnClickListener(mCallback236);
-            this.mboundView9.setOnClickListener(mCallback237);
+            this.mboundView1.setOnClickListener(mCallback227);
+            this.mboundView3.setOnClickListener(mCallback229);
+            this.mboundView5.setOnClickListener(mCallback230);
+            this.mboundView7.setOnClickListener(mCallback231);
+            this.mboundView9.setOnClickListener(mCallback232);
         }
         if ((dirtyFlags & 0x5L) != 0) {
             // api target 1
@@ -308,7 +308,7 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 6: {
+            case 1: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.social.SocialAccountInterface handler = mHandler;
@@ -321,41 +321,7 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onLinkedinIconClicked();
-                }
-                break;
-            }
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.social.SocialAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onTwitterIconClicked();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.social.SocialAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onEditButtonClicked();
+                    handler.onBackButtonClicked();
                 }
                 break;
             }
@@ -410,7 +376,7 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
                 }
                 break;
             }
-            case 1: {
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.social.SocialAccountInterface handler = mHandler;
@@ -423,7 +389,41 @@ public class FragmentJobSeekerSocialLinksBindingImpl extends FragmentJobSeekerSo
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onBackButtonClicked();
+                    handler.onEditButtonClicked();
+                }
+                break;
+            }
+            case 6: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.social.SocialAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onLinkedinIconClicked();
+                }
+                break;
+            }
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.social.SocialAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onTwitterIconClicked();
                 }
                 break;
             }

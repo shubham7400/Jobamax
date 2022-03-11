@@ -24,9 +24,9 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
     private final androidx.appcompat.widget.AppCompatButton mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback186;
+    private final android.view.View.OnClickListener mCallback182;
     @Nullable
-    private final android.view.View.OnClickListener mCallback187;
+    private final android.view.View.OnClickListener mCallback181;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -47,8 +47,8 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback186 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback187 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback182 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback181 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -110,31 +110,14 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback186);
-            this.mboundView2.setOnClickListener(mCallback187);
+            this.imageView.setOnClickListener(mCallback181);
+            this.mboundView2.setOnClickListener(mCallback182);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.deleteAccount.RecruiterDeleteAccountFinalInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackPress();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -149,6 +132,23 @@ public class FragmentRecruiterDeleteAccountFinalBindingImpl extends FragmentRecr
 
 
                     handler.onDeleteAccount();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.deleteAccount.RecruiterDeleteAccountFinalInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackPress();
                 }
                 break;
             }

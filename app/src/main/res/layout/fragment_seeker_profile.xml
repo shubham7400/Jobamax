@@ -59,6 +59,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            android:id="@+id/iv_job_search"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginEnd="10dp"
@@ -83,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="@{`Hello ` + jobSeeker.firstName}"
+                    android:text="@{`Hello ` + jobSeeker.firstName+' '+jobSeeker.lastName}"
                     app:layout_constraintTop_toBottomOf="@+id/imageView11"
                     android:layout_marginTop="20dp"
                     android:layout_marginStart="20dp"
@@ -97,7 +98,7 @@
                     android:fontFamily="@font/opensans_regular"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:text="Let's find your\ndream job together."
+                    android:text="Make your 2.0 CV now."
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -236,7 +237,7 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/video_icon_black" />
+                                android:src="@drawable/video_icon" />
                         </RelativeLayout>
                         <View
                             android:layout_width="10dp"
@@ -273,52 +274,11 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/message_icon_black" />
+                                android:src="@drawable/message_icon_simple" />
                         </RelativeLayout>
                         <View
                             android:layout_width="10dp"
                             android:layout_height="match_parent"/>
-                        <RelativeLayout
-                            android:id="@+id/rl_ideal_job_image"
-                            android:layout_weight="0.33"
-                            android:background="@drawable/rounded_white_box"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:id="@+id/tv_ideal_job_image_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:fontFamily="@font/opensans_regular"
-                                android:gravity="center"
-                                android:text="Pictures 1/5"
-                                android:textColor="@color/gray"
-                                android:textSize="18dp" />
-
-                            <ImageView
-                                android:id="@+id/iv_ideal_job_image"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_below="@+id/tv_ideal_job_image_title"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="20dp"
-                                android:src="@drawable/camera_icon_black" />
-                        </RelativeLayout>
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_marginTop="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
                         <RelativeLayout
                             android:id="@+id/rl_ideal_job_audio"
                             android:layout_weight="0.33"
@@ -351,23 +311,11 @@
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/video_icon_black" />
+                                android:src="@drawable/video_icon" />
                         </RelativeLayout>
-                        <View
-                            android:layout_width="10dp"
-                            android:layout_height="match_parent"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_weight="0.33"
-                            android:layout_height="match_parent"/>
-                        <View
-                            android:layout_width="10dp"
-                            android:layout_height="match_parent"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_weight="0.33"
-                            android:layout_height="match_parent"/>
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                     </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
                     <RelativeLayout
@@ -654,7 +602,7 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/tv_calender_title"
+                                android:id="@+id/tv_portfolio_video_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
@@ -677,7 +625,7 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/video_icon_black" />
+                                android:src="@drawable/video_icon" />
                         </RelativeLayout>
                         <View
                             android:layout_width="10dp"
@@ -700,7 +648,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="center"
-                                android:text="Text 240 Characters"
+                                android:text="Text + Link"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
 
@@ -714,7 +662,7 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/message_icon_black" />
+                                android:src="@drawable/message_icon_simple" />
                         </RelativeLayout>
                         <View
                             android:layout_width="10dp"
@@ -727,7 +675,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:id="@+id/tv_calender_titlex"
+                                android:id="@+id/tv_portfolio_images_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
@@ -745,13 +693,13 @@
                                 android:id="@+id/iv_calendxer"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:layout_below="@+id/tv_calender_titlex"
+                                android:layout_below="@+id/tv_portfolio_images_title"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/camera_icon_black" />
+                                android:src="@drawable/camera_icon" />
                         </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
 

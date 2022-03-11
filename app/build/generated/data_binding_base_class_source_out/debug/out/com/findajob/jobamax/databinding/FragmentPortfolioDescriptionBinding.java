@@ -7,19 +7,31 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBinding {
   @NonNull
+  public final CircleImageView civUser;
+
+  @NonNull
+  public final EditText etLink;
+
+  @NonNull
   public final EditText etPortfolioDescription;
+
+  @NonNull
+  public final ImageView ivAddLink;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -27,16 +39,32 @@ public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBindin
   @NonNull
   public final RelativeLayout relativeLayout;
 
+  @NonNull
+  public final RecyclerView rvLinks;
+
+  @NonNull
+  public final TextView textView31;
+
+  @NonNull
+  public final TextView tvText;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentPortfolioDescriptionBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EditText etPortfolioDescription, ImageView ivBackButton,
-      RelativeLayout relativeLayout) {
+      int _localFieldCount, CircleImageView civUser, EditText etLink,
+      EditText etPortfolioDescription, ImageView ivAddLink, ImageView ivBackButton,
+      RelativeLayout relativeLayout, RecyclerView rvLinks, TextView textView31, TextView tvText) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
+    this.etLink = etLink;
     this.etPortfolioDescription = etPortfolioDescription;
+    this.ivAddLink = ivAddLink;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
+    this.rvLinks = rvLinks;
+    this.textView31 = textView31;
+    this.tvText = tvText;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

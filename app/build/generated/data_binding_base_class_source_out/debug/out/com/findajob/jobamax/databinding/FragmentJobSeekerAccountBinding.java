@@ -4,33 +4,60 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface;
+import com.findajob.jobamax.model.JobSeeker;
+import com.suke.widget.SwitchButton;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   @NonNull
+  public final CircleImageView civUser;
+
+  @NonNull
   public final SwitchCompat hideMeFlag;
 
   @NonNull
-  public final ConstraintLayout toolbar;
+  public final ImageView ivBackButton;
+
+  @NonNull
+  public final RelativeLayout relativeLayout;
+
+  @NonNull
+  public final SwitchButton sbPushNotification;
+
+  @Bindable
+  protected JobSeeker mJobSeeker;
 
   @Bindable
   protected JobSeekerAccountInterface mHandler;
 
   protected FragmentJobSeekerAccountBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, SwitchCompat hideMeFlag, ConstraintLayout toolbar) {
+      int _localFieldCount, CircleImageView civUser, SwitchCompat hideMeFlag,
+      ImageView ivBackButton, RelativeLayout relativeLayout, SwitchButton sbPushNotification) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
     this.hideMeFlag = hideMeFlag;
-    this.toolbar = toolbar;
+    this.ivBackButton = ivBackButton;
+    this.relativeLayout = relativeLayout;
+    this.sbPushNotification = sbPushNotification;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   public abstract void setHandler(@Nullable JobSeekerAccountInterface handler);

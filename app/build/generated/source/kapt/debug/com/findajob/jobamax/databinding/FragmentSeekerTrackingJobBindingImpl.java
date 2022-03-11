@@ -14,55 +14,61 @@ public class FragmentSeekerTrackingJobBindingImpl extends FragmentSeekerTracking
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 2);
-        sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.linearLayout5, 4);
-        sViewsWithIds.put(R.id.tv_deadline_title, 5);
-        sViewsWithIds.put(R.id.tv_next_deadline, 6);
-        sViewsWithIds.put(R.id.tv_next_interview_title, 7);
-        sViewsWithIds.put(R.id.tv_next_interview, 8);
-        sViewsWithIds.put(R.id.constraintLayout4, 9);
-        sViewsWithIds.put(R.id.iv_calendar, 10);
-        sViewsWithIds.put(R.id.constraintLayout5, 11);
-        sViewsWithIds.put(R.id.textView18, 12);
-        sViewsWithIds.put(R.id.iv_menu, 13);
-        sViewsWithIds.put(R.id.iv_filter, 14);
-        sViewsWithIds.put(R.id.rv_tracked_job, 15);
+        sViewsWithIds.put(R.id.imageView11, 2);
+        sViewsWithIds.put(R.id.relativeLayout, 3);
+        sViewsWithIds.put(R.id.iv_back_button, 4);
+        sViewsWithIds.put(R.id.iv_calendar, 5);
+        sViewsWithIds.put(R.id.linearLayout5, 6);
+        sViewsWithIds.put(R.id.tv_deadline_title, 7);
+        sViewsWithIds.put(R.id.tv_next_deadline, 8);
+        sViewsWithIds.put(R.id.tv_next_interview_title, 9);
+        sViewsWithIds.put(R.id.tv_next_interview, 10);
+        sViewsWithIds.put(R.id.constraintLayout4, 11);
+        sViewsWithIds.put(R.id.tv_jobamax_job, 12);
+        sViewsWithIds.put(R.id.tv_other_job, 13);
+        sViewsWithIds.put(R.id.constraintLayout5, 14);
+        sViewsWithIds.put(R.id.textView18, 15);
+        sViewsWithIds.put(R.id.iv_filter, 16);
+        sViewsWithIds.put(R.id.rv_tracked_job, 17);
+        sViewsWithIds.put(R.id.rv_tracked_other_job, 18);
+        sViewsWithIds.put(R.id.iv_add_other_job, 19);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
-    @NonNull
-    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerTrackingJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 16, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 20, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerTrackingJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[9]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[11]
-            , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[10]
-            , (android.widget.ImageView) bindings[14]
-            , (android.widget.ImageView) bindings[13]
-            , (android.widget.LinearLayout) bindings[4]
-            , (android.widget.RelativeLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[15]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[8]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[14]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.ImageView) bindings[19]
+            , (android.widget.ImageView) bindings[4]
+            , (android.widget.ImageView) bindings[5]
+            , (android.widget.ImageView) bindings[16]
+            , (android.widget.LinearLayout) bindings[6]
+            , (android.widget.RelativeLayout) bindings[3]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[17]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[18]
+            , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[12]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[9]
+            , (android.widget.TextView) bindings[13]
             );
+        this.civUser.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
-        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -137,7 +143,7 @@ public class FragmentSeekerTrackingJobBindingImpl extends FragmentSeekerTracking
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.civUser, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

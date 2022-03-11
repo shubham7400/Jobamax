@@ -40,9 +40,9 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback132;
+    private final android.view.View.OnClickListener mCallback126;
     @Nullable
-    private final android.view.View.OnClickListener mCallback131;
+    private final android.view.View.OnClickListener mCallback127;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -81,8 +81,8 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback132 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback131 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback126 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback127 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -144,31 +144,14 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.btnSave.setOnClickListener(mCallback132);
-            this.ivBackButton.setOnClickListener(mCallback131);
+            this.btnSave.setOnClickListener(mCallback127);
+            this.ivBackButton.setOnClickListener(mCallback126);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.account.companyInfo.CompanyIntroInfoHandler handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSubmitClicked();
-                }
-                break;
-            }
             case 1: {
                 // localize variables for thread safety
                 // handler
@@ -183,6 +166,23 @@ public class ActivityCompanyIntroInfoBindingImpl extends ActivityCompanyIntroInf
 
 
                     handler.onBackClicked();
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.profile.account.companyInfo.CompanyIntroInfoHandler handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSubmitClicked();
                 }
                 break;
             }

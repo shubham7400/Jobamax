@@ -1,12 +1,419 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".jobseeker.jobsearch.SeekerJobsFilterFragment">
+
+    <data>
+        <variable
+            name="jobSeeker"
+            type="com.findajob.jobamax.model.JobSeeker" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="#E9F2FB"
         android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back_arrow_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/iv_back_button"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Filters"
+                    android:textColor="@color/blue_2"
+                    android:textSize="20dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/default_user_img" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:paddingHorizontal="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="My dream job"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/et_job_keyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:hint="What job are you looking for"
+                    android:background="@drawable/rounded_white_box"/>
+
+                <LinearLayout
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_white_box"
+                    android:orientation="vertical">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="Location"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/autocomplete_fragment"
+                            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                            android:layout_width="wrap_content"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tv_select_location"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_regular"
+                            android:hint="My current location"
+                            android:textColor="@color/colorHypeLink"
+                            android:textColorHint="@color/colorHypeLink"
+                            android:textSize="20sp"
+                            android:gravity="end"
+                            android:paddingHorizontal="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textView29"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/textView2e9"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="Distance"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_distance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_regular"
+                            android:gravity="end"
+                            android:paddingHorizontal="5dp"
+                            android:text="100"
+                            android:textColor="@color/colorHypeLink"
+                            android:textSize="20sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textView30"
+                             app:layout_constraintStart_toEndOf="@+id/textView2e9"
+                              />
+
+                        <TextView
+                            android:id="@+id/textView30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_regular"
+                            android:gravity="end"
+                            android:paddingHorizontal="5dp"
+                            android:text="km"
+                            android:textColor="@color/colorHypeLink"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <SeekBar
+                        android:id="@+id/sb_distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginVertical="10dp"
+                        android:maxHeight="6dp"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/seek_style"
+                        android:thumb="@drawable/seek" />
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Industry"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/et_industry_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:hint="Which industry?"
+                    android:background="@drawable/rounded_white_box"/>
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Type of work"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_white_box"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_marginBottom="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="end"
+                                android:text="Apprenticeship"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/accb_apprenticeship"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTintMode="src_over" />
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <RelativeLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="end"
+                                android:text="Part-time"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/accb_part_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTintMode="src_over" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="end"
+                                android:text="Internship"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/accb_internship"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTintMode="src_over" />
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+                        <RelativeLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/opensans_regular"
+                                android:gravity="end"
+                                android:text="Permanent"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/accb_permanent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTintMode="src_over" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Work-experience"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_white_box"
+                    android:paddingVertical="10dp"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal">
+                        <TextView
+                            style="@style/job_offer_label"
+                            android:layout_width="wrap_content"
+                            android:text="&lt;1" />
+                        <CheckBox
+                            android:id="@+id/accb_less_than_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="48dp"
+                        android:layout_height="10dp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal">
+                        <TextView
+                            style="@style/job_offer_label"
+                            android:layout_width="wrap_content"
+                            android:text="1-2" />
+                        <CheckBox
+                            android:id="@+id/accb_one_to_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="48dp"
+                        android:layout_height="10dp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal">
+                        <TextView
+                            style="@style/job_offer_label"
+                            android:layout_width="wrap_content"
+                            android:text="&gt;2" />
+                        <CheckBox
+                            android:id="@+id/accb_more_than_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_save"
+                    style="@style/primary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_marginVertical="50dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/grad_round_button"
+                    android:text="@string/start" />
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -20,6 +20,8 @@ import com.ckdroid.dynamicpermissions.PermissionUtils
 import kotlinx.android.synthetic.main.dialog_basic.view.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
+import java.io.ByteArrayOutputStream
+import java.io.FileInputStream
 
 fun Context.errorToast() {
     Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
@@ -151,3 +153,20 @@ fun Activity.showDialog(
     }
 }
 
+fun convertAudioToByteArray(path: String): ByteArray? {
+    val fis = FileInputStream(path)
+    val bos = ByteArrayOutputStream()
+    val b = ByteArray(1024)
+    var readNum: Int
+    while (fis.read(b).also { readNum = it } != -1) {
+        bos.write(b, 0, readNum)
+    }
+    return bos.toByteArray()
+}
+
+fun convertMillisToMinuteAndSecond(millis: Long) : String {
+    val milliseconds: Long = millis
+    val minutes = milliseconds / 1000 / 60
+    val seconds = milliseconds / 1000 % 60
+    return "$minutes min : $seconds sec"
+}

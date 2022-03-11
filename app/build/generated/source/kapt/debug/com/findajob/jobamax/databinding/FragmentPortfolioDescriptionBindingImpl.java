@@ -16,31 +16,39 @@ public class FragmentPortfolioDescriptionBindingImpl extends FragmentPortfolioDe
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.et_portfolio_description, 4);
+        sViewsWithIds.put(R.id.tv_text, 4);
+        sViewsWithIds.put(R.id.et_portfolio_description, 5);
+        sViewsWithIds.put(R.id.textView31, 6);
+        sViewsWithIds.put(R.id.et_link, 7);
+        sViewsWithIds.put(R.id.iv_add_link, 8);
+        sViewsWithIds.put(R.id.rv_links, 9);
     }
     // views
     @NonNull
     private final androidx.core.widget.NestedScrollView mboundView0;
-    @NonNull
-    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentPortfolioDescriptionBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
     }
     private FragmentPortfolioDescriptionBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.EditText) bindings[4]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.EditText) bindings[7]
+            , (android.widget.EditText) bindings[5]
+            , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[2]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[9]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[4]
             );
+        this.civUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
-        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -115,7 +123,7 @@ public class FragmentPortfolioDescriptionBindingImpl extends FragmentPortfolioDe
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.civUser, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

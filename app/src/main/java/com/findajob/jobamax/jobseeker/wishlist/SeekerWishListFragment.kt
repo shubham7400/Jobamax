@@ -14,6 +14,7 @@ import com.findajob.jobamax.data.pojo.Phase
 import com.findajob.jobamax.data.pojo.PhaseGroup
 import com.findajob.jobamax.databinding.FragmentSeekerWishListBinding
 import com.findajob.jobamax.databinding.ItemWishlistJobBinding
+import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
@@ -21,14 +22,14 @@ import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.model.WishlistedJob
+import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
-import com.google.android.exoplayer2.extractor.mp4.Track
 import com.google.gson.Gson
 import com.parse.ParseObject
 import com.parse.ParseQuery
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
-import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -83,7 +84,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                 if (exception != null) {
                     toast("${exception.message.toString()} Something Went Wrong")
                 } else {
-                    fetchWishlist(filteredJob)
+                    fetchWishlist( )
                 }
             }
         }
@@ -129,7 +130,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
             if (exception != null) {
                 toast("${exception.message.toString()}")
             } else {
-                fetchWishlist(filteredJob)
+                fetchWishlist( )
             }
         }
     }
@@ -143,7 +144,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                 if (exception != null) {
                     toast("${exception.message.toString()} Something Went Wrong")
                 } else {
-                    fetchWishlist(filteredJob)
+                    fetchWishlist( )
                 }
             }
         }
@@ -159,46 +160,100 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
 
     private fun setClickListeners() {
         binding.ivFilterJob.setOnClickListener {
-            val seekerFilterJobFragment = SeekerFilterJobFragment.newInstance()
+            var all = 0
+            var favorite = 0
+            var archive = 0
+            wishlistJobs.forEach {
+                if (it.isArchived){
+                    archive++
+                }
+                if (it.isFavroite){
+                    favorite++
+                }
+                all++
+            }
+            val seekerFilterJobFragment = SeekerFilterJobFragment().newInstance(all, favorite, archive)
             seekerFilterJobFragment.show(childFragmentManager,"dialog")
             seekerFilterJobFragment.onGoClickListener = {
-                filteredJob = it
-                fetchWishlist(filteredJob)
+                adapter.submitList(wishlistJobs, it)
+                adapter.notifyDataSetChanged()
             }
         }
 
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun onCreated(savedInstance: Bundle?) {
-        viewModel.getJobSeeker()
-        fetchWishlist(filteredJob)
+
+        if (viewModel.jobSeekerObject == null){
+            getCurrent()
+        }
+        binding.jobSeeker = viewModel.jobSeeker
+        fetchWishlist()
     }
 
-    private fun fetchWishlist(filteredJob : String ) {
-        viewModel.getWishList(object : GetAllUserCallback {
-            override fun onSuccess(list: List<ParseObject>) {
-                wishlistJobs.clear()
-                list.forEach {
-                    wishlistJobs.add(WishlistedJob(it))
+    fun getCurrent( ) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        query.include("portfolio")
+        query.include("idealJob")
+        query.findInBackground { it, e ->
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    toast(e.message.toString())
                 }
-                adapter.submitList(wishlistJobs)
-                adapter.notifyDataSetChanged()
+                jobSeeker == null -> {
+                    toast("User Not Found.")
+                }
+                else -> {
+                    viewModel.jobSeekerObject = jobSeeker
+                    viewModel.isJobSeekerUpdated.value = true
+                }
             }
+        }
+    }
 
-            override fun onFailure(e: Exception?) {
-                if (e != null) {
+
+    private fun fetchWishlist() {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),requireContext().getUserId())
+        query.include("job")
+        query.include("jobSeeker")
+        query.findInBackground { result, e ->
+            when {
+                e != null -> {
                     toast("${e.message.toString()}")
                 }
+                result == null -> {
+                    toast("No Data")
+                }
+                else -> {
+                    wishlistJobs.clear()
+                    result.forEach {
+                        wishlistJobs.add(WishlistedJob(it))
+                    }
+                    adapter.submitList(wishlistJobs)
+                    adapter.notifyDataSetChanged()
+                    if (wishlistJobs.isEmpty()){
+                        binding.tvNoData.visibility  = View.VISIBLE
+                    }else{
+                        binding.tvNoData.visibility  = View.GONE
+                    }
+                }
             }
-        }, filteredJob)
+        }
     }
 
 }
 
 class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.Adapter<SeekerWishListAdapter.ViewHolder>(){
+    var filter = SeekerWishlistJobFilter.ALL
     var clickListener: (WishlistedJob, Int) -> Unit = { wishlistJob: WishlistedJob, i: Int ->
 
     }
@@ -206,28 +261,66 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val wishlistJob = list[position]
         holder.binding.apply {
-            this.tvProductName.text = wishlistJob.job?.getString("name") ?: ""
+            this.tvJobTitle.text = wishlistJob.job?.getString("jobTitle") ?: ""
             this.tvCompanyName.text = wishlistJob.job?.getString("companyName") ?: ""
-            if (wishlistJob.isFavroite){
-                this.ivFavorite.setImageResource(R.drawable.heart)
-            }else{
-                this.ivFavorite.setImageResource(R.drawable.heart_holo)
+            this.tvLocation.text = wishlistJob.job?.getString("location") ?: ""
+            when(filter){
+                SeekerWishlistJobFilter.ALL -> {
+                    this.llActionButton.visibility = View.VISIBLE
+                    if (!wishlistJob.job?.getString("logo").isNullOrEmpty()){
+                        Picasso.get().load(wishlistJob.job?.getString("logo")).into(this.ivCompany)
+                    }else{
+                        this.ivCompany.setBackgroundResource(R.drawable.ic_company)
+                    }
+                    if (wishlistJob.isFavroite){
+                        this.ivFavorite.setImageResource(R.drawable.heart)
+                    }else{
+                        this.ivFavorite.setImageResource(R.drawable.heart_holo)
+                    }
+                    this.ivFavorite.setOnClickListener {
+                        clickListener(wishlistJob, 1)
+                    }
+                    this.ivAdd.setOnClickListener {
+                        clickListener(wishlistJob, 2)
+                    }
+                    this.ivArchive.setOnClickListener {
+                        clickListener(wishlistJob, 3)
+                    }
+                }
+                else -> {
+                    this.llActionButton.visibility = View.GONE
+                }
             }
-            this.ivFavorite.setOnClickListener {
-                clickListener(wishlistJob, 1)
-            }
-            this.ivAdd.setOnClickListener {
-                clickListener(wishlistJob, 2)
-            }
-            this.ivArchive.setOnClickListener {
-                clickListener(wishlistJob, 3)
-            }
+
         }
     }
     override fun getItemCount(): Int = list.size
-    fun submitList(wishlistedJobs: ArrayList<WishlistedJob>) {
-        list = wishlistedJobs
+    fun submitList(wishlistedJobs: ArrayList<WishlistedJob>, f: SeekerWishlistJobFilter = SeekerWishlistJobFilter.ALL) {
+        var jobs = ArrayList<WishlistedJob>()
+        this.filter = f
+        when(filter){
+            SeekerWishlistJobFilter.ARCHIVE -> {
+                wishlistedJobs.forEach {
+                    if (it.isArchived){
+                        jobs.add(it)
+                    }
+                }
+            }
+            SeekerWishlistJobFilter.FAVORITE -> {
+                wishlistedJobs.forEach {
+                    if (it.isFavroite){
+                        jobs.add(it)
+                    }
+                }
+            }
+            else -> {
+                jobs = wishlistedJobs
+            }
+        }
+        list = jobs
     }
+
+
 
     class ViewHolder(val binding: ItemWishlistJobBinding) : RecyclerView.ViewHolder(binding.root)
 }

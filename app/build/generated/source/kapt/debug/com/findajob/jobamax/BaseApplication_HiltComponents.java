@@ -31,9 +31,13 @@ import com.findajob.jobamax.di.AppModule;
 import com.findajob.jobamax.di.ViewModelModule;
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment_GeneratedInjector;
@@ -285,8 +289,10 @@ public final class BaseApplication_HiltComponents {
       PreviewRecruiterActivity_GeneratedInjector,
       ProfileActivity_GeneratedInjector,
       SeekerCalenderActivity_GeneratedInjector,
+      SeekerCoachingActivity_GeneratedInjector,
       JobSeekerCourseActivity_GeneratedInjector,
       JobSeekerHomeActivity_GeneratedInjector,
+      SeekerJobSearchActivity_GeneratedInjector,
       SeekerProfileActivity_GeneratedInjector,
       JobSeekerAccountActivity_GeneratedInjector,
       JobSeekerApplyActivity_GeneratedInjector,
@@ -363,6 +369,8 @@ public final class BaseApplication_HiltComponents {
       MessagesFragment_GeneratedInjector,
       RecruiterChatsFragment_GeneratedInjector,
       SeekerCalenderFragment_GeneratedInjector,
+      SeekerCoachingFragment_GeneratedInjector,
+      SeekerJobsFragment_GeneratedInjector,
       JobSeekerProfileFragment_GeneratedInjector,
       SeekerAboutMeFragment_GeneratedInjector,
       SeekerAddVolunteeringFragment_GeneratedInjector,

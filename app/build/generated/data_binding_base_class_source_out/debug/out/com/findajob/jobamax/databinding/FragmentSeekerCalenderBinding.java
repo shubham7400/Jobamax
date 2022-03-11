@@ -15,6 +15,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -27,6 +28,9 @@ public abstract class FragmentSeekerCalenderBinding extends ViewDataBinding {
 
   @NonNull
   public final RecyclerView calendarRecyclerView;
+
+  @NonNull
+  public final CircleImageView civUser;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -45,12 +49,13 @@ public abstract class FragmentSeekerCalenderBinding extends ViewDataBinding {
 
   protected FragmentSeekerCalenderBinding(Object _bindingComponent, View _root,
       int _localFieldCount, ImageView btnNextMonth, ImageView btnPreviousMonth,
-      RecyclerView calendarRecyclerView, ImageView ivBackButton, TextView monthYearTV,
-      RelativeLayout relativeLayout, RecyclerView rvEvents) {
+      RecyclerView calendarRecyclerView, CircleImageView civUser, ImageView ivBackButton,
+      TextView monthYearTV, RelativeLayout relativeLayout, RecyclerView rvEvents) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnNextMonth = btnNextMonth;
     this.btnPreviousMonth = btnPreviousMonth;
     this.calendarRecyclerView = calendarRecyclerView;
+    this.civUser = civUser;
     this.ivBackButton = ivBackButton;
     this.monthYearTV = monthYearTV;
     this.relativeLayout = relativeLayout;

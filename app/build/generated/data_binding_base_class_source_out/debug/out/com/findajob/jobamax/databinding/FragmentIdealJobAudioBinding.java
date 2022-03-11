@@ -5,36 +5,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import com.mobstac.circularimageprogress.CircularImageProgressView;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
   @NonNull
-  public final AppCompatButton btnPlay;
-
-  @NonNull
   public final AppCompatButton btnRecord;
 
   @NonNull
-  public final AppCompatButton btnRetake;
+  public final CircleImageView civUser;
+
+  @NonNull
+  public final ConstraintLayout clAudioPlayer;
+
+  @NonNull
+  public final ImageView ivAudioPlayBtn;
 
   @NonNull
   public final ImageView ivBackButton;
-
-  @NonNull
-  public final LinearLayout linearLayout6;
 
   @NonNull
   public final CircularImageProgressView pbAudioRecording;
@@ -43,24 +45,32 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
   public final RelativeLayout relativeLayout;
 
   @NonNull
+  public final SeekBar sbAudio;
+
+  @NonNull
+  public final TextView tvAudioDuration;
+
+  @NonNull
   public final TextView tvAudioTime;
 
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentIdealJobAudioBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton btnPlay, AppCompatButton btnRecord, AppCompatButton btnRetake,
-      ImageView ivBackButton, LinearLayout linearLayout6,
-      CircularImageProgressView pbAudioRecording, RelativeLayout relativeLayout,
+      AppCompatButton btnRecord, CircleImageView civUser, ConstraintLayout clAudioPlayer,
+      ImageView ivAudioPlayBtn, ImageView ivBackButton, CircularImageProgressView pbAudioRecording,
+      RelativeLayout relativeLayout, SeekBar sbAudio, TextView tvAudioDuration,
       TextView tvAudioTime) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnPlay = btnPlay;
     this.btnRecord = btnRecord;
-    this.btnRetake = btnRetake;
+    this.civUser = civUser;
+    this.clAudioPlayer = clAudioPlayer;
+    this.ivAudioPlayBtn = ivAudioPlayBtn;
     this.ivBackButton = ivBackButton;
-    this.linearLayout6 = linearLayout6;
     this.pbAudioRecording = pbAudioRecording;
     this.relativeLayout = relativeLayout;
+    this.sbAudio = sbAudio;
+    this.tvAudioDuration = tvAudioDuration;
     this.tvAudioTime = tvAudioTime;
   }
 

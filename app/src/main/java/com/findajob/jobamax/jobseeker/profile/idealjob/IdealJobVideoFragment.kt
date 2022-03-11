@@ -21,10 +21,9 @@ import com.abedelazizshe.lightcompressorlibrary.VideoQuality
 import com.abedelazizshe.lightcompressorlibrary.config.Configuration
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.cropper.CropImage
 import com.findajob.jobamax.data.pojo.IdealJob
+import com.findajob.jobamax.data.pojo.Portfolio
 import com.findajob.jobamax.databinding.FragmentIdealJobVideoBinding
-import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
  import com.findajob.jobamax.jobseeker.profile.VideoPlayActivity
@@ -34,7 +33,6 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.parse.ParseObject
-import com.parse.ParseQuery
 import org.jetbrains.anko.support.v4.runOnUiThread
 import java.io.File
 
@@ -60,57 +58,62 @@ class IdealJobVideoFragment : BaseFragmentMain<FragmentIdealJobVideoBinding>() {
     }
 
     private fun getIdealJobData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IdealJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    idealJob = IdealJob(result)
-                    videoUrl = idealJob!!.videoUrl
-                    setVideoImage()
-                }
-            }
+
+        idealJob = viewModel.jobSeeker.idealJob?.let {
+            IdealJob(it)
+        }
+        log("dkfskd ${idealJob?.videoURL}")
+        if (idealJob == null){
+            val parseObject = ParseObject(ParseTableName.IdealJob.toString())
+            idealJob = IdealJob(parseObject)
+            idealJob!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("idealJob", it) }
+            viewModel.jobSeeker.pfObject?.saveInBackground()
+        }
+
+        idealJob?.let {
+             videoUrl = idealJob!!.videoURL
+            setVideoImage()
         }
     }
 
     private fun saveDataToParse() {
-         if (idealJob == null){
-            val portfolioParseObject = ParseObject(ParseTableName.IdealJob.toString())
-            viewModel.jobSeeker.pfObject?.let { it1 ->
-                portfolioParseObject.put("jobSeeker", it1)
-            }
-            portfolioParseObject.put("videoUrl", videoUrl)
-            progressHud.show()
-            portfolioParseObject.saveInBackground {
-                progressHud.dismiss()
-                if(it != null){
-                    toast("${it.message.toString()}")
-                }
-            }
-        }else{
-            val portfolioParseObject = idealJob!!.pfObject
-            portfolioParseObject?.let {
-                viewModel.jobSeeker.pfObject?.let { it1 -> it.put("jobSeeker", it1) }
-                it.put("videoUrl", videoUrl)
-            }
-            progressHud.show()
-            portfolioParseObject?.saveInBackground {
-                progressHud.dismiss()
-                if(it != null){
-                    toast("${it.message.toString()}")
-                }
+        idealJob?.pfObject?.put("videoURL", videoUrl )
+        idealJob?.pfObject?.saveInBackground {
+            if (it != null){
+                log(it.message.toString())
             }
         }
     }
+
+    private fun deleteVideo() {
+        try {
+            if (videoUrl != ""){
+                val firebaseStorage = FirebaseStorage.getInstance()
+                val storageReference = firebaseStorage.getReferenceFromUrl(videoUrl)
+                progressHud.show()
+                storageReference.delete().addOnSuccessListener {
+                    progressHud.dismiss()
+                    idealJob?.pfObject?.put("videoURL", "")
+                    idealJob?.pfObject?.saveInBackground()
+                    idealJob = idealJob?.pfObject?.let { it1 -> IdealJob(it1) }
+                    videoUrl = idealJob?.videoURL ?: ""
+                    setVideoImage()
+                }.addOnFailureListener {
+                    progressHud.dismiss()
+                    toast(it.message.toString())
+                }
+            }
+        }catch (e: Exception){}
+    }
+
 
 
     private fun setClickListeners() {
         binding.ivAddVideo.setOnClickListener {
             dispatchTakeVideoIntent()
+        }
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
         }
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
@@ -121,6 +124,9 @@ class IdealJobVideoFragment : BaseFragmentMain<FragmentIdealJobVideoBinding>() {
             }else{
                 toast("Video does not exist.")
             }
+        }
+        binding.ivRemoveVideo.setOnClickListener {
+            deleteVideo()
         }
     }
 
@@ -224,8 +230,12 @@ class IdealJobVideoFragment : BaseFragmentMain<FragmentIdealJobVideoBinding>() {
     private fun setVideoImage() {
         if (videoUrl != "") {
             binding.roundedImageView.setImageResource(R.drawable.ic_play_circle_filled)
+            binding.ivAddVideo.visibility = View.GONE
+            binding.ivRemoveVideo.visibility = View.VISIBLE
         } else {
-            binding.roundedImageView.setImageDrawable(null);
+            binding.roundedImageView.setImageDrawable(null)
+            binding.ivAddVideo.visibility = View.VISIBLE
+            binding.ivRemoveVideo.visibility = View.GONE
         }
     }
 

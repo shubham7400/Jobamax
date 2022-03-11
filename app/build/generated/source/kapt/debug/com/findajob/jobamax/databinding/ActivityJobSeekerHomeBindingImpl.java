@@ -19,21 +19,24 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         sViewsWithIds.put(R.id.textView6, 5);
         sViewsWithIds.put(R.id.ll1, 6);
         sViewsWithIds.put(R.id.v_profile, 7);
-        sViewsWithIds.put(R.id.v_calendar, 8);
-        sViewsWithIds.put(R.id.iv_calender, 9);
-        sViewsWithIds.put(R.id.tv_calender_title, 10);
-        sViewsWithIds.put(R.id.bt_job_search, 11);
-        sViewsWithIds.put(R.id.ll2, 12);
-        sViewsWithIds.put(R.id.v_track, 13);
-        sViewsWithIds.put(R.id.image_user2, 14);
-        sViewsWithIds.put(R.id.v_wishlist, 15);
-        sViewsWithIds.put(R.id.rl_abcd, 16);
-        sViewsWithIds.put(R.id.tv_ef, 17);
-        sViewsWithIds.put(R.id.iv_right_arrow, 18);
-        sViewsWithIds.put(R.id.image_user3, 19);
-        sViewsWithIds.put(R.id.image_user35, 20);
-        sViewsWithIds.put(R.id.image_user3w, 21);
-        sViewsWithIds.put(R.id.btn_coaching, 22);
+        sViewsWithIds.put(R.id.tv_aa, 8);
+        sViewsWithIds.put(R.id.v_calendar, 9);
+        sViewsWithIds.put(R.id.iv_calender, 10);
+        sViewsWithIds.put(R.id.tv_calender_title, 11);
+        sViewsWithIds.put(R.id.bt_job_search, 12);
+        sViewsWithIds.put(R.id.ll2, 13);
+        sViewsWithIds.put(R.id.v_track, 14);
+        sViewsWithIds.put(R.id.image_user2, 15);
+        sViewsWithIds.put(R.id.textView28, 16);
+        sViewsWithIds.put(R.id.v_wishlist, 17);
+        sViewsWithIds.put(R.id.rl_abcd, 18);
+        sViewsWithIds.put(R.id.tv_ef, 19);
+        sViewsWithIds.put(R.id.iv_right_arrow, 20);
+        sViewsWithIds.put(R.id.constraintLayout15, 21);
+        sViewsWithIds.put(R.id.iv_3, 22);
+        sViewsWithIds.put(R.id.iv_2, 23);
+        sViewsWithIds.put(R.id.iv_1, 24);
+        sViewsWithIds.put(R.id.btn_coaching, 25);
     }
     // views
     @NonNull
@@ -44,32 +47,35 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     // Inverse Binding Event Handlers
 
     public ActivityJobSeekerHomeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 26, sIncludes, sViewsWithIds));
     }
     private ActivityJobSeekerHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[11]
-            , (android.widget.Button) bindings[22]
+            , (android.widget.Button) bindings[12]
+            , (android.widget.Button) bindings[25]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[21]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[14]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[19]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[20]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[21]
+            , (android.widget.ImageView) bindings[15]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[9]
-            , (android.widget.ImageView) bindings[18]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[24]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[23]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[22]
+            , (android.widget.ImageView) bindings[10]
+            , (android.widget.ImageView) bindings[20]
             , (android.widget.ImageView) bindings[4]
             , (android.widget.LinearLayout) bindings[6]
-            , (android.widget.LinearLayout) bindings[12]
-            , (android.widget.RelativeLayout) bindings[16]
+            , (android.widget.LinearLayout) bindings[13]
+            , (android.widget.RelativeLayout) bindings[18]
+            , (android.widget.TextView) bindings[16]
             , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[11]
+            , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[1]
-            , (android.widget.RelativeLayout) bindings[8]
-            , (android.widget.RelativeLayout) bindings[7]
-            , (android.widget.RelativeLayout) bindings[13]
-            , (android.widget.RelativeLayout) bindings[15]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[9]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[14]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[17]
             );
         this.imageUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
@@ -151,10 +157,13 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String javaLangStringHelloJobSeekerFirstNameChar = null;
         java.lang.String javaLangStringHelloJobSeekerFirstName = null;
         java.lang.String jobSeekerProfilePicUrl = null;
         com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+        java.lang.String javaLangStringHelloJobSeekerFirstNameCharJobSeekerLastName = null;
         java.lang.String jobSeekerFirstName = null;
+        java.lang.String jobSeekerLastName = null;
 
         if ((dirtyFlags & 0x11L) != 0) {
 
@@ -165,18 +174,28 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
                     jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
                     // read jobSeeker.firstName
                     jobSeekerFirstName = jobSeeker.getFirstName();
+                    // read jobSeeker.lastName
+                    jobSeekerLastName = jobSeeker.getLastName();
                 }
 
 
                 // read ("Hello ") + (jobSeeker.firstName)
                 javaLangStringHelloJobSeekerFirstName = ("Hello ") + (jobSeekerFirstName);
+
+
+                // read (("Hello ") + (jobSeeker.firstName)) + (' ')
+                javaLangStringHelloJobSeekerFirstNameChar = (javaLangStringHelloJobSeekerFirstName) + (' ');
+
+
+                // read ((("Hello ") + (jobSeeker.firstName)) + (' ')) + (jobSeeker.lastName)
+                javaLangStringHelloJobSeekerFirstNameCharJobSeekerLastName = (javaLangStringHelloJobSeekerFirstNameChar) + (jobSeekerLastName);
         }
         // batch finished
         if ((dirtyFlags & 0x11L) != 0) {
             // api target 1
 
             com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.imageUser, jobSeekerProfilePicUrl);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvSeekerName, javaLangStringHelloJobSeekerFirstName);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvSeekerName, javaLangStringHelloJobSeekerFirstNameCharJobSeekerLastName);
         }
     }
     // Listener Stub Implementations

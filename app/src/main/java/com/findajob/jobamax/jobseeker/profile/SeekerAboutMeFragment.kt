@@ -15,7 +15,9 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.cropper.CropImage
 import com.findajob.jobamax.cropper.CropImageView
 import com.findajob.jobamax.databinding.FragmentSeekerAboutMeBinding
+import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.repo.SaveParseObjectCallback
 import com.findajob.jobamax.util.*
 import com.google.android.gms.common.api.Status
@@ -33,7 +35,7 @@ import java.io.File
 import java.util.*
 
 @AndroidEntryPoint
-class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() , ImagePicker.GetImage{
+class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() , ImagePicker.GetImage, IOnBackPressed {
 
     override val layoutRes: Int get() = R.layout.fragment_seeker_about_me
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -53,11 +55,11 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
     }
 
     private fun viewModelObserver() {
-         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
-             if (it){
+         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
+             if (it) {
                  binding.jobSeeker = viewModel.jobSeeker
              }
-         })
+         }
     }
 
     private fun setClickListeners() {
@@ -77,29 +79,9 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
          binding.ivBackButton.setOnClickListener {
              (activity as SeekerProfileActivity).onBackPressed()
          }
-        binding.btnSaveInfo.setOnClickListener {
-            if(binding.etFirstName.text.isNullOrEmpty()){
-                binding.etFirstName.setText("")
-            }
-            if (binding.etLastName.text.isNullOrEmpty()){
-                binding.etLastName.setText("")
-            }
-            if(binding.etProfession.text.isNullOrEmpty()){
-                binding.etProfession.setText("")
-            }
-            if (binding.etDescription.text.isNullOrEmpty()){
-                binding.etDescription.setText("")
-            }
-            viewModel.updateJobSeeker(binding.etFirstName.text.toString(), binding.etLastName.text.toString(), binding.etProfession.text.toString(), binding.etDescription.text.toString()){
-                if (it == null){
-                    toast("User Updated.")
-                    viewModel.getJobSeeker()
-                }else{
-                    toast("${it.message.toString()} Something went wrong")
-                }
-            }
+      /*  binding.btnSaveInfo.setOnClickListener {
 
-        }
+        }*/
     }
 
     private fun setupImagePicker() {
@@ -155,5 +137,28 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
             .setAspectRatio(1, 1)
             .setRequestedSize(480, 0, CropImageView.RequestSizeOptions.RESIZE_FIT)
             .start(this)
+    }
+
+    override fun onBackPressed(callback: () -> Unit) {
+        if(binding.etFirstName.text.isNullOrEmpty()){
+            binding.etFirstName.setText("")
+        }
+        if (binding.etLastName.text.isNullOrEmpty()){
+            binding.etLastName.setText("")
+        }
+        if(binding.etProfession.text.isNullOrEmpty()){
+            binding.etProfession.setText("")
+        }
+        if (binding.etDescription.text.isNullOrEmpty()){
+            binding.etDescription.setText("")
+        }
+        viewModel.jobSeekerObject!!.put(ParseTableFields.firstName.toString(), binding.etFirstName.text.toString())
+        viewModel.jobSeekerObject!!.put(ParseTableFields.lastName.toString(), binding.etLastName.text.toString())
+        viewModel.jobSeekerObject!!.put(ParseTableFields.profession.toString(), binding.etProfession.text.toString())
+        viewModel.jobSeekerObject!!.put(ParseTableFields.elevatorPitch.toString(), binding.etDescription.text.toString())
+        viewModel.jobSeekerObject!!.saveInBackground {
+            it?.let { toast(it.message.toString()) }
+            callback()
+        }
     }
 }

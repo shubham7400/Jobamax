@@ -1,6 +1,7 @@
 package com.findajob.jobamax.preference
 
 import android.content.Context
+import com.findajob.jobamax.jobseeker.model.JobSeekerJobFilter
 import com.findajob.jobamax.model.User
 
 
@@ -153,7 +154,6 @@ fun Context.setSocialMediaCheck(flag: Boolean) {
 fun Context.getEmail(): String {
 	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
 	return sharedPreferences.getString("email", "") ?: ""
-
 }
 
 fun Context.setEmail(email: String) {
@@ -184,5 +184,16 @@ fun Context.setUserType(userType: Int) {
 	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
 	val editor = sharedPreferences.edit()
 	editor.putInt("userType", userType).apply()
+}
+
+fun Context.setJobSeekerJobFilter(jobSeekerJobFilter: String) {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	val editor = sharedPreferences.edit()
+	editor.putString("jobFilter", jobSeekerJobFilter).apply()
+}
+
+fun Context.getJobSeekerJobFilter(): String {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	return sharedPreferences.getString("jobFilter", "") ?: ""
 }
 

@@ -16,10 +16,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentIdealJobVideoBinding extends ViewDataBinding {
+  @NonNull
+  public final CircleImageView civUser;
+
   @NonNull
   public final ImageView ivAddVideo;
 
@@ -28,6 +32,9 @@ public abstract class FragmentIdealJobVideoBinding extends ViewDataBinding {
 
   @NonNull
   public final CardView ivImage;
+
+  @NonNull
+  public final ImageView ivRemoveVideo;
 
   @NonNull
   public final RelativeLayout relativeLayout;
@@ -45,12 +52,15 @@ public abstract class FragmentIdealJobVideoBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentIdealJobVideoBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView ivAddVideo, ImageView ivBackButton, CardView ivImage, RelativeLayout relativeLayout,
-      ImageView roundedImageView, ConstraintLayout rvVideo, TextView textView259) {
+      CircleImageView civUser, ImageView ivAddVideo, ImageView ivBackButton, CardView ivImage,
+      ImageView ivRemoveVideo, RelativeLayout relativeLayout, ImageView roundedImageView,
+      ConstraintLayout rvVideo, TextView textView259) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
     this.ivAddVideo = ivAddVideo;
     this.ivBackButton = ivBackButton;
     this.ivImage = ivImage;
+    this.ivRemoveVideo = ivRemoveVideo;
     this.relativeLayout = relativeLayout;
     this.roundedImageView = roundedImageView;
     this.rvVideo = rvVideo;

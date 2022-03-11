@@ -10,11 +10,6 @@ public class ConfirmRecruiterFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionConfirmRecruiterFragmentToLoginFragment() {
-    return new ActionOnlyNavDirections(R.id.action_confirmRecruiterFragment_to_loginFragment);
-  }
-
-  @NonNull
   public static NavDirections actionConfirmRecruiterFragmentToConfirm3SeekerFragment() {
     return new ActionOnlyNavDirections(R.id.action_confirmRecruiterFragment_to_confirm3SeekerFragment);
   }

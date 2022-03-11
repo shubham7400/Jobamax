@@ -13,9 +13,11 @@ import com.findajob.jobamax.databinding.FragmentIdealJobDescriptionBinding
   import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
- import com.findajob.jobamax.util.toast
+import com.findajob.jobamax.util.log
+import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
 import com.parse.ParseQuery
+import kotlinx.android.synthetic.main.fragment_job_search.*
 
 
 class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescriptionBinding>(), IOnBackPressed {
@@ -41,63 +43,38 @@ class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescription
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-    }
-
-    private fun takeBack() {
-
-    }
-
-    private fun getIdealJobData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IdealJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    idealJob = IdealJob(result)
-                    binding.etIdealJobDescription.setText(idealJob!!.text)
-                }
-            }
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 
-    private fun saveDataToParse(callback : () -> Unit) {
+
+
+    private fun getIdealJobData() {
+
+       idealJob = viewModel.jobSeeker.idealJob?.let {
+            IdealJob(it)
+        }
         if (idealJob == null){
-            val idealJobParseObject = ParseObject(ParseTableName.IdealJob.toString())
-            viewModel.jobSeeker.pfObject?.let { it1 ->
-                idealJobParseObject.put("jobSeeker", it1)
-            }
-            idealJobParseObject.put("text", if(binding.etIdealJobDescription.text.isNullOrEmpty()) "" else binding.etIdealJobDescription.text.toString())
-            progressHud.show()
-            idealJobParseObject  .saveInBackground {
-                progressHud.dismiss()
-                if(it != null){
-                    toast("${it.message.toString()}")
-                    callback()
-                }else{
-                    /*toast("Data saved.")*/
-                    callback()
-                }
-            }
-        }else{
-            val portfolioParseObject = idealJob!!.pfObject
-            portfolioParseObject?.let {
-                viewModel.jobSeeker.pfObject?.let { it1 -> it.put("jobSeeker", it1) }
-                it.put("text", if(binding.etIdealJobDescription.text.isNullOrEmpty()) "" else binding.etIdealJobDescription.text.toString())
-            }
-            progressHud.show()
-            portfolioParseObject?.saveInBackground {
-                progressHud.dismiss()
-                if(it != null){
-                    toast("${it.message.toString()}")
-                    callback()
-                }else{
-                    /*toast("Data saved.")*/
-                    callback()
-                }
+            val parseObject = ParseObject(ParseTableName.IdealJob.toString())
+            idealJob = IdealJob(parseObject)
+            idealJob!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("idealJob", it) }
+            viewModel.jobSeeker.pfObject?.saveInBackground()
+        }
+
+        idealJob?.let {
+            binding.etIdealJobDescription.setText(idealJob!!.text)
+        }
+
+    }
+
+    private fun saveDataToParse(callback : () -> Unit) {
+        idealJob?.pfObject?.put("text", binding.etIdealJobDescription.text?.toString() ?: "")
+        idealJob?.pfObject?.saveInBackground {
+            if (it != null){
+                log(it.message.toString())
+            }else{
+                callback()
             }
         }
     }
@@ -106,9 +83,9 @@ class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescription
         binding.jobSeeker = viewModel.jobSeeker
     }
 
-    override fun onBackPressed(call: () -> Unit) {
+    override fun onBackPressed(callback: () -> Unit) {
         saveDataToParse {
-            call()
+            callback()
         }
     }
 

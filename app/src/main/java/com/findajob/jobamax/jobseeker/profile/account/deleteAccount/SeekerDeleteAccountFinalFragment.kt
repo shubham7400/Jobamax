@@ -8,25 +8,29 @@ import com.findajob.jobamax.MainActivity
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerDeleteAccountFinalBinding
+import com.findajob.jobamax.dialog.DeleteAccountDialog
+import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.profile.account.deleteAccount.adapter.LeavingReason
 import com.findajob.jobamax.preference.clearUserPref
+import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.errorToast
+import com.findajob.jobamax.util.log
+import com.parse.FunctionCallback
+import com.parse.ParseCloud
 
 class SeekerDeleteAccountFinalFragment : BaseFragmentMain<FragmentSeekerDeleteAccountFinalBinding>(), SeekerDeleteAccountFinalInterface {
 
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
 
-    override val layoutRes: Int
-        get() = R.layout.fragment_seeker_delete_account_final
+    override val layoutRes: Int get() = R.layout.fragment_seeker_delete_account_final
 
     override fun onCreated(savedInstance: Bundle?) {
         binding.handler = this
         observeLiveData()
     }
 
-    override fun getViewModel(): ViewModel? {
+    override fun getViewModel(): ViewModel {
         return viewModel
     }
 
@@ -48,9 +52,27 @@ class SeekerDeleteAccountFinalFragment : BaseFragmentMain<FragmentSeekerDeleteAc
     }
 
     override fun onDeleteAccount() {
-        val reasons = arguments?.getString(LeavingReason::class.simpleName)
+        val deleteAccountDialog = DeleteAccountDialog(requireActivity()) {
+            progressHud.show()
+            ParseCloud.callFunctionInBackground(
+                ParseCloudFunction.deleteUser.toString(),
+                hashMapOf( "jobSeekerId" to requireActivity().getUserId()),
+                FunctionCallback<Any?> { response, e ->
+                    progressHud.dismiss()
+                    if (e == null) {
+                        requireActivity().clearUserPref()
+                        startActivity(Intent(requireActivity(), MainActivity::class.java))
+                        requireActivity().finishAffinity()
+                    } else {
+                        log("Exception: $e", e)
+                    }
+                })
+        }
+        deleteAccountDialog.show()
+
+        /*val reasons = arguments?.getString(LeavingReason::class.simpleName)
         showLoading(true)
-        viewModel.deleteAccount(reasons)
+        viewModel.deleteAccount(reasons)*/
     }
 
     override fun onBackPress() {

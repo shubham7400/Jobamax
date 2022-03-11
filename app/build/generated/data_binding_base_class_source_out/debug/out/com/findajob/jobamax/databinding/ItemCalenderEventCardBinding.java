@@ -18,15 +18,19 @@ public abstract class ItemCalenderEventCardBinding extends ViewDataBinding {
   public final TextView tvDate;
 
   @NonNull
+  public final TextView tvDay;
+
+  @NonNull
   public final TextView tvName;
 
   @NonNull
   public final TextView tvTitle;
 
   protected ItemCalenderEventCardBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView tvDate, TextView tvName, TextView tvTitle) {
+      TextView tvDate, TextView tvDay, TextView tvName, TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.tvDate = tvDate;
+    this.tvDay = tvDay;
     this.tvName = tvName;
     this.tvTitle = tvTitle;
   }

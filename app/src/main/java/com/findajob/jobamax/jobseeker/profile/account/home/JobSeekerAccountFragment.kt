@@ -3,6 +3,7 @@ package com.findajob.jobamax.jobseeker.profile.account.home
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
@@ -12,15 +13,20 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentJobSeekerAccountBinding
 import com.findajob.jobamax.dialog.ShareJobamaxDialog
 import com.findajob.jobamax.dialog.WorkInProgressDialog
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordActivity
+import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.UpdateUserCallback
 import com.findajob.jobamax.preference.clearUserPref
-import com.findajob.jobamax.util.ARG_WEB_URL
-import com.findajob.jobamax.util.errorToast
-import com.findajob.jobamax.util.showDialog
+import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.util.*
+import com.parse.ParseObject
+import com.parse.ParseQuery
 import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
+import org.jetbrains.anko.sdk27.coroutines.onCapturedPointer
+import org.jetbrains.anko.sdk27.coroutines.onTouch
 
 @AndroidEntryPoint
 class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBinding>(), JobSeekerAccountInterface {
@@ -35,8 +41,53 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
         navController = findNavController()
         binding.hideMeFlag.isChecked = viewModel.jobSeeker.hideMeFlag
         binding.handler = this
-        viewModel.getJobSeeker()
+        if (viewModel.jobSeekerObject == null){
+            getCurrent()
+        }else{
+            binding.jobSeeker = viewModel.jobSeeker
+        }
+        setClickListeners()
     }
+
+
+    private fun setClickListeners() {
+        binding.sbPushNotification.isChecked = NotificationManagerCompat.from(requireContext()).areNotificationsEnabled()
+        binding.sbPushNotification.setOnCheckedChangeListener { _, isChecked ->
+            val intent = Intent()
+            intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.putExtra("app_package",requireContext().packageName)
+            intent.putExtra("app_uid", requireContext().applicationInfo.uid)
+            intent.putExtra("android.provider.extra.APP_PACKAGE", requireContext().packageName)
+            startActivity(intent)
+        }
+    }
+
+    fun getCurrent( ) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        query.include("portfolio")
+        query.include("idealJob")
+        progressHud.show()
+        query.findInBackground { it, e ->
+            progressHud.dismiss()
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    toast(e.message.toString())
+                }
+                jobSeeker == null -> {
+                    toast("User Not Found.")
+                }
+                else -> {
+                    viewModel.jobSeekerObject = jobSeeker
+                    viewModel.isJobSeekerUpdated.value = true
+                    binding.jobSeeker = JobSeeker(jobSeeker)
+                }
+            }
+        }
+    }
+
 
     override fun onManageReadReceiptsClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment)
 

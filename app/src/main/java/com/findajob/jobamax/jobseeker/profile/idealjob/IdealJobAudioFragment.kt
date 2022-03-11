@@ -1,34 +1,35 @@
 package com.findajob.jobamax.jobseeker.profile.idealjob
 
-import android.content.Intent
+import android.Manifest
+import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.IdealJob
 import com.findajob.jobamax.databinding.FragmentIdealJobAudioBinding
-import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.util.convertAudioToByteArray
+import com.findajob.jobamax.util.convertMillisToMinuteAndSecond
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
-import com.parse.ParseQuery
 import java.io.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.io.IOException
 import java.lang.Exception
 
-
+const val RECORD_AUDIO = 5
 class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
 
     override val layoutRes: Int get() = R.layout.fragment_ideal_job_audio
@@ -37,12 +38,15 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
 
     var idealJob: IdealJob? = null
     private var audioUrl = ""
-    private var player: MediaPlayer? = null
     private var mStartRecording = true
-    private var mStartPlaying = true
     private var fileName: String = ""
     private var recorder: MediaRecorder? = null
     var countDownTimer: CountDownTimer? = null
+
+    var player: MediaPlayer? = null
+    private var mStartPlaying = true
+    var mUpdateSeekbar: Runnable? = null
+    private val mSeekbarUpdateHandler: Handler = Handler()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -56,45 +60,39 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
     }
 
     private fun getIdealJobData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IdealJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    idealJob = IdealJob(result)
-                    audioUrl = idealJob!!.audioUrl
-                    setAudioButton()
-                }
-            }
+        idealJob = viewModel.jobSeeker.idealJob?.let {
+            IdealJob(it)
+        }
+        if (idealJob == null){
+            val parseObject = ParseObject(ParseTableName.IdealJob.toString())
+            idealJob = IdealJob(parseObject)
+            idealJob!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("idealJob", it) }
+            viewModel.jobSeeker.pfObject?.saveInBackground()
+        }
+
+        idealJob?.let {
+            audioUrl = idealJob!!.audioUrl
+            setAudioButton()
         }
     }
 
     private fun setAudioButton() {
         if (audioUrl != "") {
-            binding.btnPlay.visibility = View.VISIBLE
-            binding.btnRetake.visibility = View.VISIBLE
-            binding.btnRecord.visibility = View.GONE
-        } else {
-            binding.btnPlay.visibility = View.GONE
-            binding.btnRetake.visibility = View.GONE
-            binding.btnRecord.visibility = View.VISIBLE
-        }
+            binding.btnRecord.text = "Record"
+         } else {
+            binding.btnRecord.text = "Retake"
+         }
     }
 
     private fun setClickListeners() {
-        binding.btnPlay.setOnClickListener {
-            onPlay(mStartPlaying)
-        }
-        binding.btnRetake.setOnClickListener {
-            onRecord(mStartRecording)
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
         }
         binding.btnRecord.setOnClickListener {
             onRecord(mStartRecording)
-            mStartRecording = !mStartRecording
+        }
+        binding.ivAudioPlayBtn.setOnClickListener {
+            onPlay(mStartPlaying)
         }
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
@@ -122,76 +120,75 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
                 }
             }
         }
-
-        player?.setOnCompletionListener {
-            stopPlaying()
-        }
-
     }
 
 
     private fun saveDataToParse() {
-        if (idealJob == null){
-            val portfolioParseObject = ParseObject(ParseTableName.IdealJob.toString())
-            viewModel.jobSeeker.pfObject?.let { it1 ->
-                portfolioParseObject.put("jobSeeker", it1)
-            }
-            portfolioParseObject.put("audioUrl", audioUrl)
-            progressHud.show()
-            portfolioParseObject.saveInBackground {
-                progressHud.dismiss()
-                if(it != null){
-                    toast("${it.message.toString()}")
-                }
-            }
-        }else{
-            val portfolioParseObject = idealJob!!.pfObject
-            portfolioParseObject?.let {
-                viewModel.jobSeeker.pfObject?.let { it1 -> it.put("jobSeeker", it1) }
-                it.put("audioUrl", audioUrl)
-            }
-            progressHud.show()
-            portfolioParseObject?.saveInBackground {
-                progressHud.dismiss()
-                if(it != null){
-                    toast("${it.message.toString()}")
-                }
+        idealJob?.pfObject?.put("audioUrl", audioUrl)
+        idealJob?.pfObject?.saveInBackground {
+            if (it != null){
+                log(it.message.toString())
             }
         }
     }
 
-    private fun onRecord(start: Boolean) = if (start) { startRecording() } else { stopRecording() }
+    private fun onRecord(start: Boolean) {
+        if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(),  arrayOf(Manifest.permission.RECORD_AUDIO) ,  RECORD_AUDIO);
+        } else {
+            if (start) { startRecording() } else { stopRecording() }
+        }
+    }
     private fun onPlay(start: Boolean) = if (start) { startPlaying() } else { stopPlaying() }
+
     private fun startPlaying() {
-        binding.btnPlay.text = "Playing"
-        player = MediaPlayer().apply {
-            try {
-                setDataSource(audioUrl)
-                prepare()
-                start()
-            } catch (e: IOException) {
-                log(  "prepare() failed")
+        if (player != null){
+            player!!.start()
+            mStartPlaying = false
+            binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+        }else{
+            player = MediaPlayer().apply {
+                try {
+                    setDataSource(audioUrl)
+                    prepare()
+                    start()
+                    mStartPlaying = false
+                    binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+                } catch (e: IOException) {
+                    log(  "prepare() failed")
+                }
             }
         }
-        mStartPlaying = false
-        setTimer(player!!.duration)
-        countDownTimer?.start()
+
+        mUpdateSeekbar  = object : Runnable {
+            override fun run() {
+                binding.sbAudio.progress = player!!.currentPosition
+                binding.tvAudioDuration.text = convertMillisToMinuteAndSecond((player!!.duration - binding.sbAudio.progress).toLong())
+                mSeekbarUpdateHandler.postDelayed(this, 0)
+            }
+        }
+
+        binding.sbAudio.max = player!!.duration
+        mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar!!, 0)
+
+        player?.setOnCompletionListener {
+            binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_play_circle_filled)
+            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar!!)
+        }
     }
 
     private fun stopPlaying() {
-        countDownTimer?.cancel()
+        player?.pause()
         mStartPlaying = true
-        binding.btnPlay.text = "Play"
-        player?.release()
-        player = null
+        binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_play_circle_filled)
+        mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar!!)
     }
+
+
+
     private fun startRecording() {
-        binding.btnRetake.text = "Recording"
+        binding.btnRecord.text = "Recording"
         mStartRecording = false
-        setTimer()
-        try {
-            countDownTimer?.start()
-        }catch (e: Exception){}
         recorder = MediaRecorder().apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
@@ -202,19 +199,26 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
             } catch (e: IOException) {
                 log(  "prepare() failed")
             }
-            start()
         }
+        recorder?.let {
+            it.start()
+            setTimer()
+            try {
+                countDownTimer?.start()
+            }catch (e: Exception){}
+        }
+
     }
 
     private fun stopRecording() {
-        binding.btnRetake.text = "Retake"
-        mStartRecording = true
         try {
             countDownTimer?.cancel()
         }catch (e: Exception){}
         recorder?.apply {
             stop()
             release()
+            binding.btnRecord.text = "Record"
+            mStartRecording = true
         }
         recorder = null
         uploadAudio()
@@ -222,7 +226,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
 
     private fun uploadAudio() {
         progressHud.show()
-        viewModel.uploadUserAudio(convert(fileName), {
+        viewModel.uploadUserAudio(convertAudioToByteArray(fileName), {
             progressHud.dismiss()
             if (it != null) {
                 toast("${it.message.toString()}")
@@ -233,28 +237,17 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
                 audioUrl = it
                 setAudioButton()
                 saveDataToParse()
+                binding.btnRecord.text = "Retake"
+                player = null
             }
         })
     }
 
-    @Throws(IOException::class)
-    fun convert(path: String): ByteArray? {
-        val fis = FileInputStream(path)
-        val bos = ByteArrayOutputStream()
-        val b = ByteArray(1024)
-        var readNum: Int
-        while (fis.read(b).also { readNum = it } != -1) {
-            bos.write(b, 0, readNum)
-        }
-        return bos.toByteArray()
-    }
 
     override fun onStop() {
         super.onStop()
         recorder?.release()
         recorder = null
-        player?.release()
-        player = null
     }
 
     override fun onCreated(savedInstance: Bundle?) {

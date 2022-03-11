@@ -27,15 +27,15 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
     private final android.widget.ImageView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback227;
+    private final android.view.View.OnClickListener mCallback221;
     @Nullable
-    private final android.view.View.OnClickListener mCallback225;
+    private final android.view.View.OnClickListener mCallback222;
     @Nullable
-    private final android.view.View.OnClickListener mCallback226;
+    private final android.view.View.OnClickListener mCallback220;
     @Nullable
-    private final android.view.View.OnClickListener mCallback223;
+    private final android.view.View.OnClickListener mCallback218;
     @Nullable
-    private final android.view.View.OnClickListener mCallback224;
+    private final android.view.View.OnClickListener mCallback219;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,11 +65,11 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
         this.sourceButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback227 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback225 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback226 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback223 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback224 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback221 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback222 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback220 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback218 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback219 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -131,17 +131,34 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.filterLayout.setOnClickListener(mCallback223);
-            this.mboundView2.setOnClickListener(mCallback224);
-            this.refuseButton.setOnClickListener(mCallback226);
-            this.rewindButton.setOnClickListener(mCallback225);
-            this.sourceButton.setOnClickListener(mCallback227);
+            this.filterLayout.setOnClickListener(mCallback218);
+            this.mboundView2.setOnClickListener(mCallback219);
+            this.refuseButton.setOnClickListener(mCallback221);
+            this.rewindButton.setOnClickListener(mCallback220);
+            this.sourceButton.setOnClickListener(mCallback222);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.recruiter.track.RecruiterSourceInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onCancelClicked();
+                }
+                break;
+            }
             case 5: {
                 // localize variables for thread safety
                 // handler
@@ -173,23 +190,6 @@ public class FragmentRecruiterSourceBindingImpl extends FragmentRecruiterSourceB
 
 
                     handler.onRewindClicked();
-                }
-                break;
-            }
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.track.RecruiterSourceInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onCancelClicked();
                 }
                 break;
             }

@@ -17,15 +17,25 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerTrackingJobBinding extends ViewDataBinding {
   @NonNull
+  public final CircleImageView civUser;
+
+  @NonNull
   public final ConstraintLayout constraintLayout4;
 
   @NonNull
   public final ConstraintLayout constraintLayout5;
+
+  @NonNull
+  public final ImageView imageView11;
+
+  @NonNull
+  public final ImageView ivAddOtherJob;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -37,9 +47,6 @@ public abstract class FragmentSeekerTrackingJobBinding extends ViewDataBinding {
   public final ImageView ivFilter;
 
   @NonNull
-  public final ImageView ivMenu;
-
-  @NonNull
   public final LinearLayout linearLayout5;
 
   @NonNull
@@ -49,10 +56,16 @@ public abstract class FragmentSeekerTrackingJobBinding extends ViewDataBinding {
   public final RecyclerView rvTrackedJob;
 
   @NonNull
+  public final RecyclerView rvTrackedOtherJob;
+
+  @NonNull
   public final TextView textView18;
 
   @NonNull
   public final TextView tvDeadlineTitle;
+
+  @NonNull
+  public final TextView tvJobamaxJob;
 
   @NonNull
   public final TextView tvNextDeadline;
@@ -63,30 +76,39 @@ public abstract class FragmentSeekerTrackingJobBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvNextInterviewTitle;
 
+  @NonNull
+  public final TextView tvOtherJob;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerTrackingJobBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ConstraintLayout constraintLayout4, ConstraintLayout constraintLayout5,
-      ImageView ivBackButton, ImageView ivCalendar, ImageView ivFilter, ImageView ivMenu,
-      LinearLayout linearLayout5, RelativeLayout relativeLayout, RecyclerView rvTrackedJob,
-      TextView textView18, TextView tvDeadlineTitle, TextView tvNextDeadline,
-      TextView tvNextInterview, TextView tvNextInterviewTitle) {
+      int _localFieldCount, CircleImageView civUser, ConstraintLayout constraintLayout4,
+      ConstraintLayout constraintLayout5, ImageView imageView11, ImageView ivAddOtherJob,
+      ImageView ivBackButton, ImageView ivCalendar, ImageView ivFilter, LinearLayout linearLayout5,
+      RelativeLayout relativeLayout, RecyclerView rvTrackedJob, RecyclerView rvTrackedOtherJob,
+      TextView textView18, TextView tvDeadlineTitle, TextView tvJobamaxJob, TextView tvNextDeadline,
+      TextView tvNextInterview, TextView tvNextInterviewTitle, TextView tvOtherJob) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.civUser = civUser;
     this.constraintLayout4 = constraintLayout4;
     this.constraintLayout5 = constraintLayout5;
+    this.imageView11 = imageView11;
+    this.ivAddOtherJob = ivAddOtherJob;
     this.ivBackButton = ivBackButton;
     this.ivCalendar = ivCalendar;
     this.ivFilter = ivFilter;
-    this.ivMenu = ivMenu;
     this.linearLayout5 = linearLayout5;
     this.relativeLayout = relativeLayout;
     this.rvTrackedJob = rvTrackedJob;
+    this.rvTrackedOtherJob = rvTrackedOtherJob;
     this.textView18 = textView18;
     this.tvDeadlineTitle = tvDeadlineTitle;
+    this.tvJobamaxJob = tvJobamaxJob;
     this.tvNextDeadline = tvNextDeadline;
     this.tvNextInterview = tvNextInterview;
     this.tvNextInterviewTitle = tvNextInterviewTitle;
+    this.tvOtherJob = tvOtherJob;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

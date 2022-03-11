@@ -2,10 +2,12 @@ package com.findajob.jobamax.jobseeker.jobsearch;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 5, 1}, k = 1, d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0003J\u0010\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020\'H\u0002J\b\u0010G\u001a\u00020EH\u0002J\b\u0010H\u001a\u00020EH\u0002J\b\u0010I\u001a\u00020EH\u0002J\b\u0010=\u001a\u00020JH\u0014J$\u0010K\u001a\u00020L2\u0006\u0010M\u001a\u00020N2\b\u0010O\u001a\u0004\u0018\u00010P2\b\u0010Q\u001a\u0004\u0018\u00010RH\u0016J\u0012\u0010S\u001a\u00020E2\b\u0010T\u001a\u0004\u0018\u00010RH\u0014J\u0010\u0010U\u001a\u00020E2\u0006\u0010F\u001a\u00020\'H\u0002J\b\u0010V\u001a\u00020EH\u0002J\b\u0010\u0014\u001a\u00020EH\u0002J\b\u0010W\u001a\u00020EH\u0002J\b\u0010X\u001a\u00020EH\u0002J\b\u0010Y\u001a\u00020EH\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u0011X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001c\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR \u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001e0\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R\u001c\u0010#\u001a\u0004\u0018\u00010\u0017X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u0019\"\u0004\b%\u0010\u001bR\u0014\u0010&\u001a\u00020\'8TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\b(\u0010)R \u0010*\u001a\b\u0012\u0004\u0012\u00020\u00170\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b+\u0010 \"\u0004\b,\u0010\"R\u001c\u0010-\u001a\u0004\u0018\u00010\u001eX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u001c\u00102\u001a\u0004\u0018\u00010\u0017X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b3\u0010\u0019\"\u0004\b4\u0010\u001bR\u001c\u00105\u001a\u0004\u0018\u00010\u001eX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b6\u0010/\"\u0004\b7\u00101R\u001c\u00108\u001a\u0004\u0018\u00010\u0017X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b9\u0010\u0019\"\u0004\b:\u0010\u001bR\u001b\u0010;\u001a\u00020<8FX\u0086\u0084\u0002\u00a2\u0006\f\n\u0004\b?\u0010@\u001a\u0004\b=\u0010>R \u0010A\u001a\b\u0012\u0004\u0012\u00020\u00170\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\bB\u0010 \"\u0004\bC\u0010\"\u00a8\u0006Z"}, d2 = {"Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobsFragment;", "Lcom/findajob/jobamax/base/BaseFragmentMain;", "Lcom/findajob/jobamax/databinding/FragmentSeekerJobsBinding;", "()V", "adapter", "Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobCardStackAdapter;", "getAdapter", "()Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobCardStackAdapter;", "setAdapter", "(Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobCardStackAdapter;)V", "cardStackLayoutManager", "Lcom/yuyakaido/android/cardstackview/CardStackLayoutManager;", "getCardStackLayoutManager", "()Lcom/yuyakaido/android/cardstackview/CardStackLayoutManager;", "setCardStackLayoutManager", "(Lcom/yuyakaido/android/cardstackview/CardStackLayoutManager;)V", "cardStackListener", "Lcom/yuyakaido/android/cardstackview/CardStackListener;", "getCardStackListener", "()Lcom/yuyakaido/android/cardstackview/CardStackListener;", "setCardStackListener", "(Lcom/yuyakaido/android/cardstackview/CardStackListener;)V", "jobOfferId", "", "getJobOfferId", "()Ljava/lang/String;", "setJobOfferId", "(Ljava/lang/String;)V", "jobOfferList", "Ljava/util/ArrayList;", "Lcom/findajob/jobamax/model/NewJobOffer;", "getJobOfferList", "()Ljava/util/ArrayList;", "setJobOfferList", "(Ljava/util/ArrayList;)V", "jobSeekerId", "getJobSeekerId", "setJobSeekerId", "layoutRes", "", "getLayoutRes", "()I", "refuseJobsId", "getRefuseJobsId", "setRefuseJobsId", "rewindJobOffer", "getRewindJobOffer", "()Lcom/findajob/jobamax/model/NewJobOffer;", "setRewindJobOffer", "(Lcom/findajob/jobamax/model/NewJobOffer;)V", "rewindJobOfferId", "getRewindJobOfferId", "setRewindJobOfferId", "swipedJobOffer", "getSwipedJobOffer", "setSwipedJobOffer", "topJobOfferId", "getTopJobOfferId", "setTopJobOfferId", "viewModel", "Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "getViewModel", "()Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "viewModel$delegate", "Lkotlin/Lazy;", "wishlistAddedJobsId", "getWishlistAddedJobsId", "setWishlistAddedJobsId", "addToRefuseJob", "", "type", "addToWishlistJob", "configureUi", "getJobOffers", "Landroidx/lifecycle/ViewModel;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onCreated", "savedInstance", "removeJobFromRefuse", "removeJobFromWishlist", "setCardStackView", "setClickListeners", "shareJob", "app_debug"})
+@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\b\u0007\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0003J\u0010\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020-H\u0002J\b\u0010M\u001a\u00020KH\u0002J\b\u0010N\u001a\u00020KH\u0003J\u0006\u0010O\u001a\u00020KJ\b\u0010P\u001a\u00020KH\u0002J\b\u0010C\u001a\u00020QH\u0014J$\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020U2\b\u0010V\u001a\u0004\u0018\u00010W2\b\u0010X\u001a\u0004\u0018\u00010YH\u0017J\u0012\u0010Z\u001a\u00020K2\b\u0010[\u001a\u0004\u0018\u00010YH\u0014J\u0010\u0010\\\u001a\u00020K2\u0006\u0010L\u001a\u00020-H\u0002J\b\u0010]\u001a\u00020KH\u0002J\b\u0010\u0014\u001a\u00020KH\u0002J\b\u0010^\u001a\u00020KH\u0002J\b\u0010_\u001a\u00020KH\u0003J\b\u0010\u001a\u001a\u00020KH\u0002J\u0010\u0010`\u001a\u00020K2\u0006\u0010a\u001a\u00020$H\u0002J\b\u0010b\u001a\u00020KH\u0002J\b\u0010c\u001a\u00020KH\u0002J\b\u0010d\u001a\u00020KH\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u0011X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0017X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u001c\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R \u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b%\u0010&\"\u0004\b\'\u0010(R\u001c\u0010)\u001a\u0004\u0018\u00010\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b*\u0010\u001f\"\u0004\b+\u0010!R\u0014\u0010,\u001a\u00020-8TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\b.\u0010/R \u00100\u001a\b\u0012\u0004\u0012\u00020\u001d0#X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b1\u0010&\"\u0004\b2\u0010(R\u001c\u00103\u001a\u0004\u0018\u00010$X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b4\u00105\"\u0004\b6\u00107R\u001c\u00108\u001a\u0004\u0018\u00010\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b9\u0010\u001f\"\u0004\b:\u0010!R\u001c\u0010;\u001a\u0004\u0018\u00010$X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b<\u00105\"\u0004\b=\u00107R\u001c\u0010>\u001a\u0004\u0018\u00010\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b?\u0010\u001f\"\u0004\b@\u0010!R\u001b\u0010A\u001a\u00020B8FX\u0086\u0084\u0002\u00a2\u0006\f\n\u0004\bE\u0010F\u001a\u0004\bC\u0010DR \u0010G\u001a\b\u0012\u0004\u0012\u00020\u001d0#X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\bH\u0010&\"\u0004\bI\u0010(\u00a8\u0006e"}, d2 = {"Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobsFragment;", "Lcom/findajob/jobamax/base/BaseFragmentMain;", "Lcom/findajob/jobamax/databinding/FragmentSeekerJobsBinding;", "()V", "adapter", "Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobCardStackAdapter;", "getAdapter", "()Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobCardStackAdapter;", "setAdapter", "(Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobCardStackAdapter;)V", "cardStackLayoutManager", "Lcom/yuyakaido/android/cardstackview/CardStackLayoutManager;", "getCardStackLayoutManager", "()Lcom/yuyakaido/android/cardstackview/CardStackLayoutManager;", "setCardStackLayoutManager", "(Lcom/yuyakaido/android/cardstackview/CardStackLayoutManager;)V", "cardStackListener", "Lcom/yuyakaido/android/cardstackview/CardStackListener;", "getCardStackListener", "()Lcom/yuyakaido/android/cardstackview/CardStackListener;", "setCardStackListener", "(Lcom/yuyakaido/android/cardstackview/CardStackListener;)V", "hardSkillAdapter", "Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobHardSkillAdapter;", "getHardSkillAdapter", "()Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobHardSkillAdapter;", "setHardSkillAdapter", "(Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobHardSkillAdapter;)V", "jobOfferId", "", "getJobOfferId", "()Ljava/lang/String;", "setJobOfferId", "(Ljava/lang/String;)V", "jobOfferList", "Ljava/util/ArrayList;", "Lcom/findajob/jobamax/model/NewJobOffer;", "getJobOfferList", "()Ljava/util/ArrayList;", "setJobOfferList", "(Ljava/util/ArrayList;)V", "jobSeekerId", "getJobSeekerId", "setJobSeekerId", "layoutRes", "", "getLayoutRes", "()I", "refuseJobsId", "getRefuseJobsId", "setRefuseJobsId", "rewindJobOffer", "getRewindJobOffer", "()Lcom/findajob/jobamax/model/NewJobOffer;", "setRewindJobOffer", "(Lcom/findajob/jobamax/model/NewJobOffer;)V", "rewindJobOfferId", "getRewindJobOfferId", "setRewindJobOfferId", "swipedJobOffer", "getSwipedJobOffer", "setSwipedJobOffer", "topJobOfferId", "getTopJobOfferId", "setTopJobOfferId", "viewModel", "Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "getViewModel", "()Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "viewModel$delegate", "Lkotlin/Lazy;", "wishlistAddedJobsId", "getWishlistAddedJobsId", "setWishlistAddedJobsId", "addToRefuseJob", "", "type", "addToWishlistJob", "configureUi", "getCurrent", "getJobOffers", "Landroidx/lifecycle/ViewModel;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onCreated", "savedInstance", "removeJobFromRefuse", "removeJobFromWishlist", "setCardStackView", "setClickListeners", "setJobInfo", "job", "setMatchPercentage", "shareJob", "viewModelObserver", "app_debug"})
+@dagger.hilt.android.AndroidEntryPoint()
 public final class SeekerJobsFragment extends com.findajob.jobamax.base.BaseFragmentMain<com.findajob.jobamax.databinding.FragmentSeekerJobsBinding> {
     @org.jetbrains.annotations.NotNull()
     private final kotlin.Lazy viewModel$delegate = null;
+    public com.findajob.jobamax.jobseeker.jobsearch.SeekerJobHardSkillAdapter hardSkillAdapter;
     public com.findajob.jobamax.jobseeker.jobsearch.SeekerJobCardStackAdapter adapter;
     public com.yuyakaido.android.cardstackview.CardStackLayoutManager cardStackLayoutManager;
     public com.yuyakaido.android.cardstackview.CardStackListener cardStackListener;
@@ -47,6 +49,15 @@ public final class SeekerJobsFragment extends com.findajob.jobamax.base.BaseFrag
     @java.lang.Override()
     protected androidx.lifecycle.ViewModel getViewModel() {
         return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final com.findajob.jobamax.jobseeker.jobsearch.SeekerJobHardSkillAdapter getHardSkillAdapter() {
+        return null;
+    }
+    
+    public final void setHardSkillAdapter(@org.jetbrains.annotations.NotNull()
+    com.findajob.jobamax.jobseeker.jobsearch.SeekerJobHardSkillAdapter p0) {
     }
     
     @org.jetbrains.annotations.NotNull()
@@ -158,6 +169,7 @@ public final class SeekerJobsFragment extends com.findajob.jobamax.base.BaseFrag
     }
     
     @org.jetbrains.annotations.NotNull()
+    @androidx.annotation.RequiresApi(value = android.os.Build.VERSION_CODES.N)
     @java.lang.Override()
     public android.view.View onCreateView(@org.jetbrains.annotations.NotNull()
     android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable()
@@ -166,7 +178,11 @@ public final class SeekerJobsFragment extends com.findajob.jobamax.base.BaseFrag
         return null;
     }
     
+    @androidx.annotation.RequiresApi(value = android.os.Build.VERSION_CODES.N)
     private final void configureUi() {
+    }
+    
+    private final void viewModelObserver() {
     }
     
     @java.lang.Override()
@@ -174,10 +190,22 @@ public final class SeekerJobsFragment extends com.findajob.jobamax.base.BaseFrag
     android.os.Bundle savedInstance) {
     }
     
+    public final void getCurrent() {
+    }
+    
     private final void getJobOffers() {
     }
     
+    private final void setMatchPercentage() {
+    }
+    
     private final void setCardStackView() {
+    }
+    
+    private final void setJobInfo(com.findajob.jobamax.model.NewJobOffer job) {
+    }
+    
+    private final void setHardSkillAdapter() {
     }
     
     private final void setCardStackListener() {
@@ -195,6 +223,7 @@ public final class SeekerJobsFragment extends com.findajob.jobamax.base.BaseFrag
     private final void addToRefuseJob(int type) {
     }
     
+    @androidx.annotation.RequiresApi(value = android.os.Build.VERSION_CODES.N)
     private final void setClickListeners() {
     }
     

@@ -14,9 +14,10 @@ public class ItemCalenderEventCardBindingImpl extends ItemCalenderEventCardBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.tv_title, 1);
-        sViewsWithIds.put(R.id.tv_name, 2);
-        sViewsWithIds.put(R.id.tv_date, 3);
+        sViewsWithIds.put(R.id.tv_day, 1);
+        sViewsWithIds.put(R.id.tv_title, 2);
+        sViewsWithIds.put(R.id.tv_name, 3);
+        sViewsWithIds.put(R.id.tv_date, 4);
     }
     // views
     @NonNull
@@ -27,13 +28,14 @@ public class ItemCalenderEventCardBindingImpl extends ItemCalenderEventCardBindi
     // Inverse Binding Event Handlers
 
     public ItemCalenderEventCardBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private ItemCalenderEventCardBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[1]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[2]
-            , (android.widget.TextView) bindings[1]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

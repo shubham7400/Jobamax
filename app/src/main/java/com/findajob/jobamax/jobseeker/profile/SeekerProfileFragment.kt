@@ -1,27 +1,33 @@
 package com.findajob.jobamax.jobseeker.profile
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.databinding.FragmentJobSeekerAccountBinding
 import com.findajob.jobamax.databinding.FragmentSeekerProfileBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity
 import com.findajob.jobamax.util.toast
 
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipDrawable
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.coroutineScope
 import org.json.JSONArray
+import com.findajob.jobamax.data.pojo.IdealJob
+import com.findajob.jobamax.data.pojo.Portfolio
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
+import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.util.log
+import kotlinx.coroutines.*
+import com.parse.ParseObject
+import com.parse.ParseQuery
+
 
 @AndroidEntryPoint
 class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), View.OnClickListener {
@@ -38,15 +44,40 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
         return binding.root
     }
 
+
     override fun onCreated(savedInstance: Bundle?) {
         if (viewModel.jobSeekerObject == null){
-            progressHud.show()
-            viewModel.getJobSeeker()
+            getCurrent()
         }else{
             setProfile()
         }
         binding.jobSeeker = viewModel.jobSeeker
     }
+
+    fun getCurrent( ) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        query.include("portfolio")
+        query.include("idealJob")
+        progressHud.show()
+        query.findInBackground { it, e ->
+            progressHud.dismiss()
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    toast(e.message.toString())
+                }
+                jobSeeker == null -> {
+                    toast("User Not Found.")
+                }
+                else -> {
+                    viewModel.jobSeekerObject = jobSeeker
+                    viewModel.isJobSeekerUpdated.value = true
+                }
+            }
+        }
+    }
+
 
     private fun configureUi() {
         setClickListeners()
@@ -54,12 +85,12 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
     }
 
     private fun viewModelObserver() {
-         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
+         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
              progressHud.dismiss()
-             if (it){
+             if (it) {
                  setProfile()
              }
-         })
+         }
     }
 
     private fun setProfile() {
@@ -97,6 +128,40 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             chip.isCloseIconVisible = true
             binding.cgIdealWorkspace.addView(chip)
         }
+
+        val idealJob = viewModel.jobSeeker.idealJob?.let {
+            IdealJob(it)
+        }
+
+        idealJob?.let {
+            if (idealJob.videoURL != ""){
+                binding.tvIdealJobVideoTitle.text = "Video 1/1"
+            }else{
+                binding.tvIdealJobVideoTitle.text = "Video 0/1"
+            }
+
+            if (idealJob.audioUrl != ""){
+                binding.tvIdealJobAudioTitle.text = "Audio 1/1"
+            }else{
+                binding.tvIdealJobAudioTitle.text = "Audio 0/1"
+            }
+        }
+
+        val portfolio = viewModel.jobSeeker.portfolio?.let { Portfolio(it) }
+
+        portfolio?.let {
+            if (portfolio.videoURL != ""){
+                binding.tvPortfolioVideoTitle.text = "Video 1/1"
+            }else{
+                binding.tvPortfolioVideoTitle.text = "Video 0/1"
+            }
+
+            if (portfolio.arrImages.isNotEmpty()){
+                binding.tvPortfolioImagesTitle.text = "Images ${portfolio.arrImages.size}/5"
+            }else{
+                binding.tvPortfolioImagesTitle.text = "Images 0/1"
+            }
+        }
     }
 
     private fun setClickListeners() {
@@ -116,11 +181,18 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
 
         binding.rlIdealJobVideo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobVideoFragment, null))
         binding.rlIdealJobMessage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobDescriptionFragment, null))
+/*
         binding.rlIdealJobImage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobImagesFragment, null))
+*/
         binding.rlIdealJobAudio.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobAudioFragment, null))
         binding.rlPortfolioVideo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioVideoFragment, null))
         binding.rlPortfolioMessage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioDescriptionFragment, null))
         binding.rlPortfolioImage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioImageFragment, null))
+
+
+        binding.ivJobSearch.setOnClickListener {
+            startActivity(Intent(requireContext(), SeekerJobSearchActivity::class.java))
+        }
     }
 
 

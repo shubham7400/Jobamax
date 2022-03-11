@@ -5,6 +5,11 @@
     "deepLinks": []
   },
   {
+    "name": "nav_coaching",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
     "name": "nav_job_search",
     "navigationXmlIds": [],
     "deepLinks": []

@@ -16,12 +16,14 @@ public class ItemWishlistJobBindingImpl extends ItemWishlistJobBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.iv_company, 1);
         sViewsWithIds.put(R.id.constraintLayout10, 2);
-        sViewsWithIds.put(R.id.tv_product_name, 3);
+        sViewsWithIds.put(R.id.tv_job_title, 3);
         sViewsWithIds.put(R.id.tv_company_name, 4);
-        sViewsWithIds.put(R.id.acbtn_apply, 5);
-        sViewsWithIds.put(R.id.iv_archive, 6);
-        sViewsWithIds.put(R.id.iv_favorite, 7);
-        sViewsWithIds.put(R.id.iv_add, 8);
+        sViewsWithIds.put(R.id.tv_location, 5);
+        sViewsWithIds.put(R.id.acbtn_apply, 6);
+        sViewsWithIds.put(R.id.ll_action_button, 7);
+        sViewsWithIds.put(R.id.iv_archive, 8);
+        sViewsWithIds.put(R.id.iv_favorite, 9);
+        sViewsWithIds.put(R.id.iv_add, 10);
     }
     // views
     @NonNull
@@ -32,18 +34,20 @@ public class ItemWishlistJobBindingImpl extends ItemWishlistJobBinding  {
     // Inverse Binding Event Handlers
 
     public ItemWishlistJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
     private ItemWishlistJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[5]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
+            , (android.widget.ImageView) bindings[10]
             , (android.widget.ImageView) bindings[8]
-            , (android.widget.ImageView) bindings[6]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.ImageView) bindings[7]
+            , (android.widget.ImageView) bindings[9]
+            , (android.widget.LinearLayout) bindings[7]
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[5]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
