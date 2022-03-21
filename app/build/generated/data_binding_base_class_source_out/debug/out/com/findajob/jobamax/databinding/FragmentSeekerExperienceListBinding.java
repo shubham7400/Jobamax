@@ -15,6 +15,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -29,6 +30,9 @@ public abstract class FragmentSeekerExperienceListBinding extends ViewDataBindin
   public final ImageView ivBackButton;
 
   @NonNull
+  public final CircleImageView ivUserProfile;
+
+  @NonNull
   public final RelativeLayout relativeLayout;
 
   @NonNull
@@ -39,11 +43,12 @@ public abstract class FragmentSeekerExperienceListBinding extends ViewDataBindin
 
   protected FragmentSeekerExperienceListBinding(Object _bindingComponent, View _root,
       int _localFieldCount, Button btnAddExperience, Button btnGoToProfile, ImageView ivBackButton,
-      RelativeLayout relativeLayout, RecyclerView rvExperienceList) {
+      CircleImageView ivUserProfile, RelativeLayout relativeLayout, RecyclerView rvExperienceList) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnAddExperience = btnAddExperience;
     this.btnGoToProfile = btnGoToProfile;
     this.ivBackButton = ivBackButton;
+    this.ivUserProfile = ivUserProfile;
     this.relativeLayout = relativeLayout;
     this.rvExperienceList = rvExperienceList;
   }

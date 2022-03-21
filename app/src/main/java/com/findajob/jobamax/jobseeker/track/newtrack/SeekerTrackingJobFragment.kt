@@ -17,6 +17,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobBinding
 import com.findajob.jobamax.databinding.ItemSeekerOtherJobBinding
 import com.findajob.jobamax.databinding.ItemSeekerTrackBinding
 import com.findajob.jobamax.enums.JobPhase
+import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity
@@ -28,6 +29,8 @@ import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
+import com.parse.FunctionCallback
+import com.parse.ParseCloud
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
@@ -86,27 +89,41 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
 
 
     private fun getNextInterview() {
-        viewModel.getNextInterview(JobPhase.INTERVIEW.phase, requireContext().getUserId(), {
-            toast("${it.message.toString()}")
-        }, {
-            if (it == "" || it == null){
-                binding.tvNextInterview.text = "No Interview"
-            }else{
-                binding.tvNextInterview.text = it
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), mapOf("name" to JobPhase.INTERVIEW.phase , "jobSeekerId" to requireContext().getUserId() ), FunctionCallback<String>() { result, e ->
+            when {
+                e != null -> {
+                    toast("${e.message.toString()}")
+                }
+                else -> {
+                    if (result == "" || result == null){
+                        binding.tvNextInterview.text = "No Interview"
+                    }else{
+                        binding.tvNextInterview.text = result
+                    }
+                }
             }
         })
+        
     }
 
     private fun getNextDeadline() {
-        viewModel.getNextDeadline(JobPhase.DEADLINE.phase, requireContext().getUserId(), {
-            toast("${it.message.toString()}")
-        }, {
-            if (it == "" || it == null){
-                binding.tvNextDeadline.text = "No Deadline"
-            }else{
-                binding.tvNextDeadline.text = it
+        val request = mapOf("name" to JobPhase.DEADLINE.phase , "jobSeekerId" to requireContext().getUserId() )
+        log("dfjksldfj $request")
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), request, FunctionCallback<String>() { result, e ->
+            when {
+                e != null -> {
+                    toast("${e.message.toString()}")
+                }
+                else -> {
+                    if (result == "" || result == null){
+                        binding.tvNextDeadline.text = "No Deadline"
+                    }else{
+                        binding.tvNextDeadline.text = result
+                    }
+                }
             }
         })
+
     }
 
     private fun setAdapter() {

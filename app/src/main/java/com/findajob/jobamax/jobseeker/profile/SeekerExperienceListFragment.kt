@@ -66,14 +66,19 @@ class SeekerExperienceListFragment : BaseFragmentMain<FragmentSeekerExperienceLi
     }
 
     private fun viewModelObserver() {
-        viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
-            if (it){
+        viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
+            if (it) {
                 binding.jobSeeker = viewModel.jobSeeker
-                experiences = ArrayList(Gson().fromJson(viewModel.jobSeeker.experiences, ExperienceGroup::class.java)?.list ?: listOf())
+                experiences = ArrayList(
+                    Gson().fromJson(
+                        viewModel.jobSeeker.experiences,
+                        ExperienceGroup::class.java
+                    )?.list ?: listOf()
+                )
                 adapter.submitList(experiences)
                 adapter.notifyDataSetChanged()
             }
-        })
+        }
     }
 
     private fun setClickListeners() {
@@ -82,6 +87,9 @@ class SeekerExperienceListFragment : BaseFragmentMain<FragmentSeekerExperienceLi
         }
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
         }
         binding.btnAddExperience.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerExperienceListFragment_to_seekerAddExperienceFragment, null))
     }

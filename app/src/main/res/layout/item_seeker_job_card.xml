@@ -7,26 +7,30 @@
         android:id="@+id/cl_top_parent"
         android:layout_width="match_parent"
         android:layout_marginVertical="20dp"
-         android:background="@drawable/rounded_white_box"
+        android:background="@drawable/rounded_white_box"
         android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_company"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5dp"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/default_user_img"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/tv_job_title"
@@ -34,34 +38,69 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:fontFamily="@font/opensans_bold"
-                android:textColor="@color/black"
                 android:text="Job Title"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/iv_report"
                 app:layout_constraintStart_toEndOf="@+id/iv_company"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_job_type_background"
-                android:maxWidth="300dp"
-                android:minWidth="150dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                 app:layout_constraintEnd_toEndOf="@+id/iv_company"
-                app:layout_constraintStart_toStartOf="@+id/iv_company"
-                app:layout_constraintTop_toBottomOf="@+id/iv_company">
+            <!--
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_job_type_background"
+                            android:maxWidth="300dp"
+                            android:minWidth="150dp"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            app:layout_constraintEnd_toEndOf="@+id/iv_company"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/iv_company"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_company">
 
-                <TextView
-                    android:id="@+id/tv_job_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="5dp"
-                    android:fontFamily="@font/opensans_regular"
-                    android:text="Internship"
-                    android:textColor="@color/white" />
-            </LinearLayout>
+                            <TextView
+                                android:id="@+id/tv_job_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:gravity="center"
+                                android:maxWidth="300dp"
+                                android:background="@drawable/ic_job_type_background"
+                                app:layout_constraintEnd_toEndOf="@+id/iv_company"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/iv_company"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_company"
+                                android:fontFamily="@font/opensans_regular"
+                                android:text="Internship"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+            -->
+
+
+            <TextView
+                android:id="@+id/tv_job_type"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxWidth="150dp"
+                android:minWidth="150dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp"
+                android:paddingVertical="5dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_job_type_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_company"
+                app:layout_constraintTop_toBottomOf="@+id/iv_company"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Internship"
+                android:textColor="@color/white" />
+
 
 
             <TextView
@@ -88,38 +127,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout14"
-            android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:padding="5dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout13">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="Starting 7 dec - 7 weeks"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/appCompatButton2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appCompatButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_gradient_rounded"
-                android:paddingHorizontal="10dp"
-                android:text="Profile"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <TextView
             android:id="@+id/tv_company_name"
             android:layout_width="wrap_content"
@@ -128,16 +135,16 @@
             android:textSize="20sp"
             android:padding="5dp"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/opensans_bold"
+            android:fontFamily="@font/opensans_regular"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout14" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout13" />
 
         <LinearLayout
             android:id="@+id/ll_about_job"
             app:layout_constraintTop_toBottomOf="@+id/tv_company_name"
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:padding="5dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -145,7 +152,7 @@
                 android:id="@+id/tv_title_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="About the job"
+                android:text="@string/about_the_job"
                 android:textSize="20sp"
                 android:fontFamily="@font/opensans_bold"
                 android:textColor="@color/black" />
@@ -168,9 +175,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                 android:layout_width="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="About the company"
+                android:text="@string/about_the_company"
                 android:textSize="20sp"
                 android:fontFamily="@font/opensans_bold"
                 android:textColor="@color/black" />
@@ -314,19 +321,24 @@
 
         <LinearLayout
             android:id="@+id/ll_workspace"
-            app:layout_constraintTop_toBottomOf="@+id/ll_benefits"
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
-            android:padding="5dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_benefits">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Workplace Vibes"
-                android:textSize="20sp"
                 android:fontFamily="@font/opensans_bold"
-                android:textColor="@color/black" />
+                android:text="Workplace Vibes"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/cg_benefits"
                 android:layout_width="wrap_content"
@@ -334,6 +346,21 @@
 
             </com.google.android.material.chip.ChipGroup>
         </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/acb_see_less_job_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_gradient_rounded"
+            android:paddingHorizontal="20dp"
+            android:text="@string/see_job_description"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/ll_workspace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
 
 
@@ -344,7 +371,7 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/bg_gradient_rounded"
             android:paddingHorizontal="20dp"
-            android:text="See job description"
+            android:text="@string/see_job_description"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -386,5 +413,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>

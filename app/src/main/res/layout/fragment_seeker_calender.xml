@@ -47,11 +47,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_centerInParent="true"
                         android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/iv_back_button"
-                        android:fontFamily="@font/opensans_bold"
-                        android:text="Calendar"
+                         android:fontFamily="@font/opensans_bold"
+                        android:text="@string/calendar"
                         android:textColor="@color/colorPrimary"
                         android:textSize="20dp" />
 

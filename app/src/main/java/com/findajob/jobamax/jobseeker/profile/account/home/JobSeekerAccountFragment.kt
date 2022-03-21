@@ -61,6 +61,13 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
             intent.putExtra("android.provider.extra.APP_PACKAGE", requireContext().packageName)
             startActivity(intent)
         }
+
+        binding.tvChangeLanguage.setOnClickListener {
+            navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment)
+        }
+        binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     fun getCurrent( ) {

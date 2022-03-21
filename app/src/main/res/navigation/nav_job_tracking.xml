@@ -21,10 +21,19 @@
         android:id="@+id/seekerTrackingJobDetailsFragment"
         android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobDetailsFragment"
         android:label="fragment_seeker_tracking_job_details"
-        tools:layout="@layout/fragment_seeker_tracking_job_details" />
+        tools:layout="@layout/fragment_seeker_tracking_job_details" >
+        <action
+            android:id="@+id/action_seekerTrackingJobDetailsFragment_to_seekerTrackingJobDescriptionFragment"
+            app:destination="@id/seekerTrackingJobDescriptionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seekerAddPersonalTrackJobFragment"
         android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerAddPersonalTrackJobFragment"
         android:label="fragment_seeker_add_personal_track_job"
         tools:layout="@layout/fragment_seeker_add_personal_track_job" />
+    <fragment
+        android:id="@+id/seekerTrackingJobDescriptionFragment"
+        android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobDescriptionFragment"
+        android:label="fragment_seeker_tracking_job_description"
+        tools:layout="@layout/fragment_seeker_tracking_job_description" />
 </navigation>

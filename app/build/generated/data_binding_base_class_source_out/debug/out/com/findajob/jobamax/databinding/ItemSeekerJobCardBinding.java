@@ -16,6 +16,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.google.android.material.chip.ChipGroup;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -24,7 +25,7 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   public final AppCompatButton acbSeeJobDesc;
 
   @NonNull
-  public final AppCompatButton appCompatButton2;
+  public final AppCompatButton acbSeeLessJobDesc;
 
   @NonNull
   public final ChipGroup cgBenefits;
@@ -42,10 +43,7 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   public final ConstraintLayout constraintLayout13;
 
   @NonNull
-  public final ConstraintLayout constraintLayout14;
-
-  @NonNull
-  public final ImageView ivCompany;
+  public final CircleImageView ivCompany;
 
   @NonNull
   public final ImageView ivReport;
@@ -114,25 +112,24 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   public final TextView tvTitleAbout;
 
   protected ItemSeekerJobCardBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton acbSeeJobDesc, AppCompatButton appCompatButton2, ChipGroup cgBenefits,
+      AppCompatButton acbSeeJobDesc, AppCompatButton acbSeeLessJobDesc, ChipGroup cgBenefits,
       ChipGroup cgSoftSkill, ConstraintLayout clOverlay, ConstraintLayout clTopParent,
-      ConstraintLayout constraintLayout13, ConstraintLayout constraintLayout14, ImageView ivCompany,
-      ImageView ivReport, LinearLayout llAboutCompany, LinearLayout llAboutJob,
-      LinearLayout llBenefits, LinearLayout llHardSkill, LinearLayout llIndustry,
-      LinearLayout llSalary, LinearLayout llSoftSkill, LinearLayout llWorkspace,
-      RecyclerView rvHardSkill, RecyclerView rvHardSklilsl, TextView tvAboutCompany,
-      TextView tvAboutJob, TextView tvCompanyAddress, TextView tvCompanyName, TextView tvCompanyUrl,
-      TextView tvIndustry, TextView tvJobOfferId, TextView tvJobTitle, TextView tvJobType,
-      TextView tvOverlayLabel, TextView tvTitleAbout) {
+      ConstraintLayout constraintLayout13, CircleImageView ivCompany, ImageView ivReport,
+      LinearLayout llAboutCompany, LinearLayout llAboutJob, LinearLayout llBenefits,
+      LinearLayout llHardSkill, LinearLayout llIndustry, LinearLayout llSalary,
+      LinearLayout llSoftSkill, LinearLayout llWorkspace, RecyclerView rvHardSkill,
+      RecyclerView rvHardSklilsl, TextView tvAboutCompany, TextView tvAboutJob,
+      TextView tvCompanyAddress, TextView tvCompanyName, TextView tvCompanyUrl, TextView tvIndustry,
+      TextView tvJobOfferId, TextView tvJobTitle, TextView tvJobType, TextView tvOverlayLabel,
+      TextView tvTitleAbout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.acbSeeJobDesc = acbSeeJobDesc;
-    this.appCompatButton2 = appCompatButton2;
+    this.acbSeeLessJobDesc = acbSeeLessJobDesc;
     this.cgBenefits = cgBenefits;
     this.cgSoftSkill = cgSoftSkill;
     this.clOverlay = clOverlay;
     this.clTopParent = clTopParent;
     this.constraintLayout13 = constraintLayout13;
-    this.constraintLayout14 = constraintLayout14;
     this.ivCompany = ivCompany;
     this.ivReport = ivReport;
     this.llAboutCompany = llAboutCompany;

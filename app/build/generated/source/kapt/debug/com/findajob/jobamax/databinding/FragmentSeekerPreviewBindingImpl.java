@@ -36,7 +36,7 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
         sViewsWithIds.put(R.id.rv_hard_skill, 20);
         sViewsWithIds.put(R.id.textViewde2dx6, 21);
         sViewsWithIds.put(R.id.cg_soft_skill, 22);
-        sViewsWithIds.put(R.id.textViewrde2dx6, 23);
+        sViewsWithIds.put(R.id.tv_volunteering_title, 23);
         sViewsWithIds.put(R.id.rv_volunteering, 24);
         sViewsWithIds.put(R.id.textVisewrde2dx6, 25);
         sViewsWithIds.put(R.id.cg_activities, 26);
@@ -96,7 +96,6 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
             , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[21]
-            , (android.widget.TextView) bindings[23]
             , (android.widget.TextView) bindings[35]
             , (android.widget.TextView) bindings[27]
             , (android.widget.TextView) bindings[25]
@@ -106,6 +105,7 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
             , (android.widget.TextView) bindings[14]
             , (android.widget.TextView) bindings[7]
             , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[23]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

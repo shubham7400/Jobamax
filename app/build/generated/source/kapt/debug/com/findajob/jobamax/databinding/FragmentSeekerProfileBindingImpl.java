@@ -49,18 +49,21 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
         sViewsWithIds.put(R.id.cl_interest, 35);
         sViewsWithIds.put(R.id.textViedw76, 36);
         sViewsWithIds.put(R.id.textView86d, 37);
-        sViewsWithIds.put(R.id.rl_portfolio_video, 38);
-        sViewsWithIds.put(R.id.tv_portfolio_video_title, 39);
-        sViewsWithIds.put(R.id.iv_calender, 40);
-        sViewsWithIds.put(R.id.rl_portfolio_message, 41);
-        sViewsWithIds.put(R.id.tv_calender_titlef, 42);
-        sViewsWithIds.put(R.id.iv_calvender, 43);
-        sViewsWithIds.put(R.id.rl_portfolio_image, 44);
-        sViewsWithIds.put(R.id.tv_portfolio_images_title, 45);
-        sViewsWithIds.put(R.id.iv_calendxer, 46);
-        sViewsWithIds.put(R.id.iv_add_ideal_workspace_btn, 47);
-        sViewsWithIds.put(R.id.et_ideal_workspace, 48);
-        sViewsWithIds.put(R.id.cg_ideal_workspace, 49);
+        sViewsWithIds.put(R.id.cl_images, 38);
+        sViewsWithIds.put(R.id.textViedwf76, 39);
+        sViewsWithIds.put(R.id.textViewx86d, 40);
+        sViewsWithIds.put(R.id.rl_portfolio_video, 41);
+        sViewsWithIds.put(R.id.tv_portfolio_video_title, 42);
+        sViewsWithIds.put(R.id.iv_calender, 43);
+        sViewsWithIds.put(R.id.rl_portfolio_message, 44);
+        sViewsWithIds.put(R.id.tv_calender_titlef, 45);
+        sViewsWithIds.put(R.id.iv_calvender, 46);
+        sViewsWithIds.put(R.id.rl_portfolio_image, 47);
+        sViewsWithIds.put(R.id.tv_portfolio_images_title, 48);
+        sViewsWithIds.put(R.id.iv_calendxer, 49);
+        sViewsWithIds.put(R.id.iv_add_ideal_workspace_btn, 50);
+        sViewsWithIds.put(R.id.et_ideal_workspace, 51);
+        sViewsWithIds.put(R.id.cg_ideal_workspace, 52);
     }
     // views
     @NonNull
@@ -71,24 +74,25 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
     // Inverse Binding Event Handlers
 
     public FragmentSeekerProfileBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 50, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 53, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerProfileBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.chip.ChipGroup) bindings[49]
+            , (com.google.android.material.chip.ChipGroup) bindings[52]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[23]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[38]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[35]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[26]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[32]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[29]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[8]
-            , (android.widget.AutoCompleteTextView) bindings[48]
+            , (android.widget.AutoCompleteTextView) bindings[51]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[47]
+            , (android.widget.ImageView) bindings[50]
             , (android.widget.ImageView) bindings[4]
-            , (android.widget.ImageView) bindings[40]
-            , (android.widget.ImageView) bindings[46]
             , (android.widget.ImageView) bindings[43]
+            , (android.widget.ImageView) bindings[49]
+            , (android.widget.ImageView) bindings[46]
             , (android.widget.ImageView) bindings[21]
             , (android.widget.ImageView) bindings[18]
             , (android.widget.ImageView) bindings[15]
@@ -99,10 +103,11 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
             , (android.widget.RelativeLayout) bindings[19]
             , (android.widget.RelativeLayout) bindings[16]
             , (android.widget.RelativeLayout) bindings[13]
+            , (android.widget.RelativeLayout) bindings[47]
             , (android.widget.RelativeLayout) bindings[44]
             , (android.widget.RelativeLayout) bindings[41]
-            , (android.widget.RelativeLayout) bindings[38]
             , (android.widget.TextView) bindings[36]
+            , (android.widget.TextView) bindings[39]
             , (android.widget.TextView) bindings[7]
             , (android.widget.TextView) bindings[24]
             , (android.widget.TextView) bindings[33]
@@ -113,16 +118,17 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
             , (android.widget.ImageView) bindings[31]
             , (android.widget.ImageView) bindings[37]
             , (android.widget.ImageView) bindings[28]
+            , (android.widget.ImageView) bindings[40]
             , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[42]
+            , (android.widget.TextView) bindings[45]
             , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[20]
             , (android.widget.TextView) bindings[17]
             , (android.widget.TextView) bindings[14]
             , (android.widget.TextView) bindings[22]
-            , (android.widget.TextView) bindings[45]
-            , (android.widget.TextView) bindings[39]
+            , (android.widget.TextView) bindings[48]
+            , (android.widget.TextView) bindings[42]
             , (android.widget.TextView) bindings[1]
             );
         this.ivUser.setTag(null);

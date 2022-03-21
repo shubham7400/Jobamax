@@ -19,8 +19,8 @@ public class FragmentSeekerTrackingJobDetailsBindingImpl extends FragmentSeekerT
         sViewsWithIds.put(R.id.iv_back_button, 5);
         sViewsWithIds.put(R.id.tv_page_title, 6);
         sViewsWithIds.put(R.id.tv_job_title, 7);
-        sViewsWithIds.put(R.id.tv_company_name, 8);
-        sViewsWithIds.put(R.id.appCompatButton, 9);
+        sViewsWithIds.put(R.id.tv_about_job, 8);
+        sViewsWithIds.put(R.id.acb_see_job_desc, 9);
         sViewsWithIds.put(R.id.iv_remove_job, 10);
         sViewsWithIds.put(R.id.iv_final, 11);
         sViewsWithIds.put(R.id.rv_job_tracking_card, 12);

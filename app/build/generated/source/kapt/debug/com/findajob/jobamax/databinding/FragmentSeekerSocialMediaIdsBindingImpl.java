@@ -25,8 +25,6 @@ public class FragmentSeekerSocialMediaIdsBindingImpl extends FragmentSeekerSocia
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
-    @NonNull
-    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
@@ -45,16 +43,16 @@ public class FragmentSeekerSocialMediaIdsBindingImpl extends FragmentSeekerSocia
             , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[9]
             , (android.widget.ImageView) bindings[10]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.LinearLayout) bindings[7]
             , (android.widget.RelativeLayout) bindings[5]
             );
         this.etInstagramLink.setTag(null);
         this.etLinkedinLink.setTag(null);
         this.etTiktokLink.setTag(null);
+        this.ivUserProfile.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
-        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -141,7 +139,7 @@ public class FragmentSeekerSocialMediaIdsBindingImpl extends FragmentSeekerSocia
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etInstagramLink, jobSeekerInstagramLink);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etLinkedinLink, jobSeekerLinkedInLink);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etTiktokLink, jobSeekerTikTokLink);
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivUserProfile, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

@@ -191,7 +191,7 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().finish()
         }
         binding.ivAddVideo.setOnClickListener {
             dispatchTakeVideoIntent()

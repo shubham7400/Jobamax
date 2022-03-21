@@ -147,6 +147,9 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
              (activity as SeekerProfileActivity).onBackPressed()
          }
 
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
+        }
         binding.ivHardSkillAddBtn.setOnClickListener {
             if (binding.actvHardSkill.text.isNullOrEmpty()){
                 toast("Please first enter the tag.")

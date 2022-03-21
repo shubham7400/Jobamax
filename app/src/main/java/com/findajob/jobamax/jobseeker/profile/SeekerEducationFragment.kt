@@ -8,6 +8,8 @@ import android.view.ViewGroup
  import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerEducationBinding
@@ -62,24 +64,32 @@ class SeekerEducationFragment : BaseFragmentMain<FragmentSeekerEducationBinding>
     }
 
     private fun viewModelObserver() {
-          viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
-              if (it){
+          viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
+              if (it) {
                   binding.jobSeeker = viewModel.jobSeeker
                   educations = try {
-                      ArrayList(Gson().fromJson(viewModel.jobSeeker.educations, EducationGroup::class.java)?.list ?: listOf())
-                  }catch (e: Exception){
+                      ArrayList(
+                          Gson().fromJson(
+                              viewModel.jobSeeker.educations,
+                              EducationGroup::class.java
+                          )?.list ?: listOf()
+                      )
+                  } catch (e: Exception) {
                       log("${e.message.toString()}")
                       arrayListOf()
                   }
                   adapter.submitList(educations)
                   adapter.notifyDataSetChanged()
               }
-          })
+          }
     }
 
     private fun setClickListeners() {
         binding.ivBackButton.setOnClickListener {
             (activity as SeekerProfileActivity).onBackPressed()
+        }
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
         }
         binding.btnAddEducation.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerNewEducationFragment, null))
         binding.btnGoToProfile.setOnClickListener{
@@ -102,7 +112,7 @@ class SeekerEducationAdapter(var list: ArrayList<Education>) : RecyclerView.Adap
         holder.binding.tvInstituteName.text = education.name
         holder.binding.tvProgramName.text = education.program
         if (education.logo.isNotEmpty()){
-            Picasso.get().load(education.logo).into(holder.binding.ivUser)
+            Glide.with(holder.binding.ivUser.context).applyDefaultRequestOptions( RequestOptions().placeholder(R.drawable.ic_company).error(R.drawable.ic_company)).load(education.logo).into(holder.binding.ivUser)
         }else{
             holder.binding.ivUser.setBackgroundResource(R.drawable.ic_company)
         }

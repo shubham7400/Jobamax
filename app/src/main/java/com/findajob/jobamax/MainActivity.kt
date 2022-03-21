@@ -1,6 +1,8 @@
 package com.findajob.jobamax
 
 import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +30,7 @@ import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.pushwoosh.Pushwoosh
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -42,6 +45,17 @@ class MainActivity : AppCompatActivity() {
         val intent = intent
         intent?.let { handleDeepLink(it) }
         configureNavigation()
+
+        setLocale(getLanguage())
+    }
+
+    private fun setLocale(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+        val resources: Resources =  resources
+        val config: Configuration = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
     }
 
     override fun onNewIntent(intent: Intent?) {

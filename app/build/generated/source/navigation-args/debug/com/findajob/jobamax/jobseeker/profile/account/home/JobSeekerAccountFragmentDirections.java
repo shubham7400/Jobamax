@@ -50,4 +50,9 @@ public class JobSeekerAccountFragmentDirections {
   public static NavDirections actionJobSeekerAccountFragmentToSeekerChangePasswordFragment() {
     return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_seekerChangePasswordFragment);
   }
+
+  @NonNull
+  public static NavDirections actionJobSeekerAccountFragmentToJobSeekerChangeLanguageFragment() {
+    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment);
+  }
 }

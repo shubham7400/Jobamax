@@ -47,7 +47,7 @@ class PortfolioDescriptionFragment : BaseFragmentMain<FragmentPortfolioDescripti
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().finish()
         }
         binding.ivAddLink.setOnClickListener {
             if (binding.etLink.text.isNullOrBlank()){

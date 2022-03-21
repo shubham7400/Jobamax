@@ -37,6 +37,7 @@ import com.findajob.jobamax.jobseeker.course.JobSeekerCourseActivity_GeneratedIn
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobWebFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment_GeneratedInjector;
@@ -370,6 +371,7 @@ public final class BaseApplication_HiltComponents {
       RecruiterChatsFragment_GeneratedInjector,
       SeekerCalenderFragment_GeneratedInjector,
       SeekerCoachingFragment_GeneratedInjector,
+      SeekerJobWebFragment_GeneratedInjector,
       SeekerJobsFragment_GeneratedInjector,
       JobSeekerProfileFragment_GeneratedInjector,
       SeekerAboutMeFragment_GeneratedInjector,

@@ -62,6 +62,9 @@
         <action
             android:id="@+id/action_jobSeekerAccountFragment_to_seekerChangePasswordFragment"
             app:destination="@id/seekerChangePasswordFragment" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment"
+            app:destination="@id/jobSeekerChangeLanguageFragment" />
 
     </fragment>
     <fragment
@@ -115,5 +118,10 @@
         android:name="com.findajob.jobamax.jobseeker.profile.account.password.SeekerChangePasswordFragment"
         android:label="fragment_seeker_change_password"
         tools:layout="@layout/fragment_seeker_change_password" />
+    <fragment
+        android:id="@+id/jobSeekerChangeLanguageFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.account.JobSeekerChangeLanguageFragment"
+        android:label="fragment_job_seeker_change_language"
+        tools:layout="@layout/fragment_job_seeker_change_language" />
 
 </navigation>

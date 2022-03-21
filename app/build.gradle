@@ -217,9 +217,9 @@ android {
         implementation "com.ncorti:slidetoact:0.9.0"
 
         // Android Jetpack
-        implementation 'androidx.appcompat:appcompat:1.4.0'
-        implementation 'com.google.android.material:material:1.4.0'
-        implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+        implementation 'androidx.appcompat:appcompat:1.4.1'
+        implementation 'com.google.android.material:material:1.5.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
         implementation "androidx.recyclerview:recyclerview:1.2.1"
 
         // SwipeLayout - for adding swipe option in recycler view
@@ -263,7 +263,7 @@ android {
 
 
         implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-        implementation 'androidx.work:work-runtime:2.7.0'
+        implementation 'androidx.work:work-runtime:2.7.1'
 
        // exo player
         implementation 'com.google.android.exoplayer:exoplayer-core:2.12.0'

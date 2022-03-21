@@ -17,16 +17,17 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
         sViewsWithIds.put(R.id.imageView12, 7);
         sViewsWithIds.put(R.id.relativeLayout, 8);
         sViewsWithIds.put(R.id.iv_back_button, 9);
-        sViewsWithIds.put(R.id.ll_social_media, 10);
-        sViewsWithIds.put(R.id.iv_insta, 11);
-        sViewsWithIds.put(R.id.iv_linkedin, 12);
-        sViewsWithIds.put(R.id.iv_tiktok, 13);
-        sViewsWithIds.put(R.id.iv_edit, 14);
-        sViewsWithIds.put(R.id.textView9, 15);
-        sViewsWithIds.put(R.id.textView10, 16);
-        sViewsWithIds.put(R.id.textView140, 17);
-        sViewsWithIds.put(R.id.textView11, 18);
-        sViewsWithIds.put(R.id.btn_save_info, 19);
+        sViewsWithIds.put(R.id.iv_edit, 10);
+        sViewsWithIds.put(R.id.ll_social_media, 11);
+        sViewsWithIds.put(R.id.iv_insta, 12);
+        sViewsWithIds.put(R.id.iv_linkedin, 13);
+        sViewsWithIds.put(R.id.iv_tiktok, 14);
+        sViewsWithIds.put(R.id.iv_barcode, 15);
+        sViewsWithIds.put(R.id.textView9, 16);
+        sViewsWithIds.put(R.id.textView10, 17);
+        sViewsWithIds.put(R.id.textView140, 18);
+        sViewsWithIds.put(R.id.textView11, 19);
+        sViewsWithIds.put(R.id.btn_save_info, 20);
     }
     // views
     @NonNull
@@ -37,29 +38,30 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAboutMeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 20, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAboutMeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[19]
+            , (android.widget.Button) bindings[20]
             , (android.widget.EditText) bindings[6]
             , (android.widget.EditText) bindings[3]
             , (android.widget.EditText) bindings[4]
             , (android.widget.EditText) bindings[5]
             , (android.widget.ImageView) bindings[7]
             , (android.widget.ImageView) bindings[9]
-            , (android.widget.ImageView) bindings[14]
-            , (android.widget.ImageView) bindings[11]
+            , (android.widget.ImageView) bindings[15]
+            , (android.widget.ImageView) bindings[10]
             , (android.widget.ImageView) bindings[12]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.ImageView) bindings[13]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.ImageView) bindings[14]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
-            , (android.widget.LinearLayout) bindings[10]
+            , (android.widget.LinearLayout) bindings[11]
             , (android.widget.RelativeLayout) bindings[8]
-            , (android.widget.TextView) bindings[16]
-            , (android.widget.TextView) bindings[18]
             , (android.widget.TextView) bindings[17]
-            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[19]
+            , (android.widget.TextView) bindings[18]
+            , (android.widget.TextView) bindings[16]
             );
         this.etDescription.setTag(null);
         this.etFirstName.setTag(null);
@@ -130,15 +132,11 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
         java.lang.String jobSeekerProfilePicUrl = null;
         java.lang.String jobSeekerElevatorPitch = null;
         com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
-        boolean jobSeekerLastNameEqualsJavaLangString = false;
         java.lang.String jobSeekerProfession = null;
         java.lang.String jobSeekerFirstName = null;
         boolean jobSeekerProfessionEqualsJavaLangString = false;
         java.lang.String jobSeekerElevatorPitchEqualsJavaLangStringJavaLangStringJobSeekerElevatorPitch = null;
-        java.lang.String jobSeekerLastNameEqualsJavaLangStringJavaLangStringAnonymousJobSeekerLastName = null;
         boolean jobSeekerElevatorPitchEqualsJavaLangString = false;
-        boolean jobSeekerFirstNameEqualsJavaLangString = false;
-        java.lang.String jobSeekerFirstNameEqualsJavaLangStringJavaLangStringAnonymousJobSeekerFirstName = null;
         java.lang.String jobSeekerProfessionEqualsJavaLangStringJavaLangStringJobSeekerProfession = null;
         java.lang.String jobSeekerLastName = null;
 
@@ -178,30 +176,6 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
                 }
             if((dirtyFlags & 0x3L) != 0) {
                 if(jobSeekerProfessionEqualsJavaLangString) {
-                        dirtyFlags |= 0x200L;
-                }
-                else {
-                        dirtyFlags |= 0x100L;
-                }
-            }
-                if (jobSeekerFirstName != null) {
-                    // read jobSeeker.firstName.equals("")
-                    jobSeekerFirstNameEqualsJavaLangString = jobSeekerFirstName.equals("");
-                }
-            if((dirtyFlags & 0x3L) != 0) {
-                if(jobSeekerFirstNameEqualsJavaLangString) {
-                        dirtyFlags |= 0x80L;
-                }
-                else {
-                        dirtyFlags |= 0x40L;
-                }
-            }
-                if (jobSeekerLastName != null) {
-                    // read jobSeeker.lastName.equals("")
-                    jobSeekerLastNameEqualsJavaLangString = jobSeekerLastName.equals("");
-                }
-            if((dirtyFlags & 0x3L) != 0) {
-                if(jobSeekerLastNameEqualsJavaLangString) {
                         dirtyFlags |= 0x20L;
                 }
                 else {
@@ -215,10 +189,6 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
 
                 // read jobSeeker.elevatorPitch.equals("") ? "" : jobSeeker.elevatorPitch
                 jobSeekerElevatorPitchEqualsJavaLangStringJavaLangStringJobSeekerElevatorPitch = ((jobSeekerElevatorPitchEqualsJavaLangString) ? ("") : (jobSeekerElevatorPitch));
-                // read jobSeeker.lastName.equals("") ? "anonymous" : jobSeeker.lastName
-                jobSeekerLastNameEqualsJavaLangStringJavaLangStringAnonymousJobSeekerLastName = ((jobSeekerLastNameEqualsJavaLangString) ? ("anonymous") : (jobSeekerLastName));
-                // read jobSeeker.firstName.equals("") ? "anonymous" : jobSeeker.firstName
-                jobSeekerFirstNameEqualsJavaLangStringJavaLangStringAnonymousJobSeekerFirstName = ((jobSeekerFirstNameEqualsJavaLangString) ? ("anonymous") : (jobSeekerFirstName));
                 // read jobSeeker.profession.equals("") ? "" : jobSeeker.profession
                 jobSeekerProfessionEqualsJavaLangStringJavaLangStringJobSeekerProfession = ((jobSeekerProfessionEqualsJavaLangString) ? ("") : (jobSeekerProfession));
         }
@@ -227,8 +197,8 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etDescription, jobSeekerElevatorPitchEqualsJavaLangStringJavaLangStringJobSeekerElevatorPitch);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etFirstName, jobSeekerFirstNameEqualsJavaLangStringJavaLangStringAnonymousJobSeekerFirstName);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etLastName, jobSeekerLastNameEqualsJavaLangStringJavaLangStringAnonymousJobSeekerLastName);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etFirstName, jobSeekerFirstName);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etLastName, jobSeekerLastName);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.etProfession, jobSeekerProfessionEqualsJavaLangStringJavaLangStringJobSeekerProfession);
             com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivProfileUser, jobSeekerProfilePicUrl);
             com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivUserProfilePic, jobSeekerProfilePicUrl);
@@ -243,12 +213,8 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
         flag 1 (0x2L): null
         flag 2 (0x3L): jobSeeker.elevatorPitch.equals("") ? "" : jobSeeker.elevatorPitch
         flag 3 (0x4L): jobSeeker.elevatorPitch.equals("") ? "" : jobSeeker.elevatorPitch
-        flag 4 (0x5L): jobSeeker.lastName.equals("") ? "anonymous" : jobSeeker.lastName
-        flag 5 (0x6L): jobSeeker.lastName.equals("") ? "anonymous" : jobSeeker.lastName
-        flag 6 (0x7L): jobSeeker.firstName.equals("") ? "anonymous" : jobSeeker.firstName
-        flag 7 (0x8L): jobSeeker.firstName.equals("") ? "anonymous" : jobSeeker.firstName
-        flag 8 (0x9L): jobSeeker.profession.equals("") ? "" : jobSeeker.profession
-        flag 9 (0xaL): jobSeeker.profession.equals("") ? "" : jobSeeker.profession
+        flag 4 (0x5L): jobSeeker.profession.equals("") ? "" : jobSeeker.profession
+        flag 5 (0x6L): jobSeeker.profession.equals("") ? "" : jobSeeker.profession
     flag mapping end*/
     //end
 }

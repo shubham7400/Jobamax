@@ -152,7 +152,7 @@ class PortfolioImageFragment : BaseFragmentMain<FragmentPortfolioImageBinding>()
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().finish()
         }
     }
 

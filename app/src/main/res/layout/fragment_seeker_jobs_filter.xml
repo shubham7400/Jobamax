@@ -43,11 +43,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toRightOf="@+id/iv_back_button"
-                    android:fontFamily="@font/opensans_bold"
-                    android:text="Filters"
+                     android:fontFamily="@font/opensans_bold"
+                    android:text="@string/filters"
                     android:textColor="@color/blue_2"
                     android:textSize="20dp" />
 
@@ -78,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="My dream job"
+                    android:text="@string/my_dream_job"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
                 <EditText
@@ -88,7 +87,7 @@
                     android:layout_margin="10dp"
                     android:padding="10dp"
                     android:drawableEnd="@drawable/ic_search"
-                    android:hint="What job are you looking for"
+                    android:hint="@string/what_are_you_looking_for"
                     android:background="@drawable/rounded_white_box"/>
 
                 <LinearLayout
@@ -106,7 +105,7 @@
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/opensans_bold"
-                            android:text="Location"
+                            android:text="@string/location"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +126,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/opensans_regular"
-                            android:hint="My current location"
+                            android:hint="@string/my_current_location"
                             android:textColor="@color/colorHypeLink"
                             android:textColorHint="@color/colorHypeLink"
                             android:textSize="20sp"
@@ -148,7 +147,7 @@
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/opensans_bold"
-                            android:text="Distance"
+                            android:text="@string/distance"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -201,7 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="Industry"
+                    android:text="@string/industry"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
                 <EditText
@@ -211,14 +210,14 @@
                     android:layout_marginHorizontal="10dp"
                     android:padding="10dp"
                     android:layout_marginVertical="10dp"
-                    android:hint="Which industry?"
+                    android:hint="@string/which_industry"
                     android:background="@drawable/rounded_white_box"/>
                 <TextView
                     android:layout_marginTop="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="Type of work"
+                    android:text="@string/type_of_work"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
                 <LinearLayout
@@ -244,7 +243,7 @@
                                 android:layout_alignParentStart="true"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="end"
-                                android:text="Apprenticeship"
+                                android:text="@string/apprenticeship"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
@@ -269,7 +268,7 @@
                                 android:layout_alignParentStart="true"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="end"
-                                android:text="Part-time"
+                                android:text="@string/part_time"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
@@ -297,7 +296,7 @@
                                 android:layout_alignParentStart="true"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="end"
-                                android:text="Internship"
+                                android:text="@string/internship"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
@@ -322,7 +321,7 @@
                                 android:layout_alignParentStart="true"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="end"
-                                android:text="Permanent"
+                                android:text="@string/permanent"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
@@ -340,7 +339,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="Work-experience"
+                    android:text="@string/work_experience"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
                 <LinearLayout

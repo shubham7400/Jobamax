@@ -121,13 +121,17 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
 
     private fun setClickListeners() {
          binding.ivIdealJobVideo.setOnClickListener {
-             if (portfolio!!.videoURL  != ""){
-                 startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", portfolio!!.videoURL))
+             idealJob?.videoURL?.let {
+                 if (it  != ""){
+                     startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", it))
+                 }
              }
          }
         binding.ivPortfolioVideo.setOnClickListener {
-            if (idealJob!!.videoURL  != ""){
-                startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", idealJob!!.videoURL))
+            portfolio?.videoURL?.let {
+                if (it  != ""){
+                    startActivity( Intent(requireContext(), VideoPlayActivity::class.java).putExtra("video_url", it))
+                }
             }
         }
         binding.ivBackButton.setOnClickListener {
@@ -191,17 +195,19 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
     }
 
     private fun setActivitiesTags() {
-        val activities = JSONArray(viewModel.jobSeeker.activities)
-        var i = 0
-        while (i < activities.length()) {
-            activitiesTags.add(activities.getString(i))
-            i++
-        }
-        activitiesTags.forEach { str ->
-            val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgActivities, false) as Chip
-            chip.text = str
-            binding.cgActivities.addView(chip)
-        }
+       if (viewModel.jobSeeker.activities.isEmpty()){ }else{
+           val activities = JSONArray(viewModel.jobSeeker.activities)
+           var i = 0
+           while (i < activities.length()) {
+               activitiesTags.add(activities.getString(i))
+               i++
+           }
+           activitiesTags.forEach { str ->
+               val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgActivities, false) as Chip
+               chip.text = str
+               binding.cgActivities.addView(chip)
+           }
+       }
     }
 
 
@@ -227,51 +233,33 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
     }
 
     private fun getPortfolioData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Portfolio.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    portfolioImageAdapter = SeekerPreviewPortfolioImagesAdapter(portfolioImageUrlList)
-                    binding.rvPortfolioImages.adapter = portfolioImageAdapter
-                    portfolio = Portfolio(result)
-                    binding.tvPortfolioDescription.text = portfolio!!.text
-                    portfolio!!.arrImages.forEach {
-                        portfolioImageUrlList.add(it)
-                    }
-                    portfolioImageAdapter!!.submitList(portfolioImageUrlList)
-                    portfolioImageAdapter!!.notifyDataSetChanged()
-                }
+        jobSeeker?.portfolio?.let { parseObject ->
+            portfolioImageAdapter = SeekerPreviewPortfolioImagesAdapter(portfolioImageUrlList)
+            binding.rvPortfolioImages.adapter = portfolioImageAdapter
+            portfolio = Portfolio(parseObject)
+            binding.tvPortfolioDescription.text = portfolio!!.text
+            portfolio!!.arrImages.forEach {
+                portfolioImageUrlList.add(it)
             }
+            portfolioImageAdapter!!.submitList(portfolioImageUrlList)
+            portfolioImageAdapter!!.notifyDataSetChanged()
         }
+
+
     }
 
 
     private fun getIdealJobData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IdealJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
-        query.include("jobSeeker")
-        query.getFirstInBackground { result, e ->
-            when {
-                e != null -> {
-                    toast("${e.message.toString()}")
-                }
-                result != null -> {
-                    idealJobImageAdapter = SeekerPreviewIdealJobImagesAdapter(idealJobImageUrlList)
-                    binding.rvIdealJobImages.adapter = idealJobImageAdapter
-                    idealJob = IdealJob(result)
-                    binding.tvIdealJobDescription.text = idealJob!!.text
-                    idealJob!!.arrImages.forEach {
-                        idealJobImageUrlList.add(it)
-                    }
-                    idealJobImageAdapter!!.submitList(idealJobImageUrlList)
-                    idealJobImageAdapter!!.notifyDataSetChanged()
-                }
+        jobSeeker?.idealJob?.let { parseObject ->
+            idealJobImageAdapter = SeekerPreviewIdealJobImagesAdapter(idealJobImageUrlList)
+            binding.rvIdealJobImages.adapter = idealJobImageAdapter
+            idealJob = IdealJob(parseObject)
+            binding.tvIdealJobDescription.text = idealJob!!.text
+            idealJob!!.arrImages.forEach {
+                idealJobImageUrlList.add(it)
             }
+            idealJobImageAdapter!!.submitList(idealJobImageUrlList)
+            idealJobImageAdapter!!.notifyDataSetChanged()
         }
     }
 
@@ -292,8 +280,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
             log("${e.message.toString()}")
             arrayListOf()
         }
-        volunteeringAdapter!!.submitList(volunteerings)
-        volunteeringAdapter!!.notifyDataSetChanged()
+        if (volunteerings.isEmpty()){
+            binding.tvVolunteeringTitle.visibility = View.GONE
+        }else{
+            binding.tvVolunteeringTitle.visibility = View.VISIBLE
+            volunteeringAdapter!!.submitList(volunteerings)
+            volunteeringAdapter!!.notifyDataSetChanged()
+        }
     }
 
     private fun setHardSkillAdapter() {

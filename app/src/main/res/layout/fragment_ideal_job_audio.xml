@@ -49,11 +49,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
+                            android:layout_centerInParent="true"
                             android:layout_marginStart="10dp"
-                            android:layout_toEndOf="@+id/iv_back_button"
+
                             android:fontFamily="@font/opensans_bold"
-                            android:text="My Ideal Job"
+                            android:text="@string/my_ideal_job"
                             android:textColor="#7800EF"
                             android:textSize="20dp" />
 
@@ -143,7 +143,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:background="@drawable/bg_gradient_rounded"
                     android:layout_marginTop="20dp"
-                    android:text="Retake"
+                    android:text="@string/retake"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintEnd_toEndOf="parent"

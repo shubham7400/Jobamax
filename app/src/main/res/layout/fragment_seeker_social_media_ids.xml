@@ -43,16 +43,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/iv_back_button"
-                    android:fontFamily="@font/opensans_bold"
+                     android:fontFamily="@font/opensans_bold"
                     android:text="Social Media"
                     android:textColor="#7800EF"
                     android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_profile"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                     android:layout_width="50dp"
                     android:layout_height="50dp"

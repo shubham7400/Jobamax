@@ -34,8 +34,6 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
-    @NonNull
-    private final de.hdodenhof.circleimageview.CircleImageView mboundView1;
     // variables
     // values
     // listeners
@@ -52,6 +50,7 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
             , (android.widget.EditText) bindings[9]
             , (android.widget.EditText) bindings[7]
             , (android.widget.ImageView) bindings[3]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.LinearLayout) bindings[12]
             , (android.widget.RelativeLayout) bindings[2]
             , (android.widget.TextView) bindings[6]
@@ -63,10 +62,9 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
             , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[14]
             );
+        this.ivUserProfile.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (de.hdodenhof.circleimageview.CircleImageView) bindings[1];
-        this.mboundView1.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -141,7 +139,7 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.mboundView1, jobSeekerProfilePicUrl);
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivUserProfile, jobSeekerProfilePicUrl);
         }
     }
     // Listener Stub Implementations

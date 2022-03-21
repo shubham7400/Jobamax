@@ -18,6 +18,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentContainerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -45,6 +46,9 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
 
   @NonNull
   public final ImageView ivClearStartDate;
+
+  @NonNull
+  public final CircleImageView ivUserProfile;
 
   @NonNull
   public final LinearLayout linearLayout4;
@@ -88,11 +92,11 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
   protected FragmentSeekerAddExperienceBinding(Object _bindingComponent, View _root,
       int _localFieldCount, FragmentContainerView autocompleteFragment, Button btnAddExperience,
       EditText etCompanyName, EditText etDescription, EditText etJob, ImageView ivBackButton,
-      ImageView ivClearEndDate, ImageView ivClearStartDate, LinearLayout linearLayout4,
-      RelativeLayout relativeLayout, RelativeLayout relativeLayout4, TextView textView139,
-      TextView textView13r49, TextView textView13rdd49, TextView textView16, TextView textView19,
-      TextView textViewdd19, TextView tvSelectEndDate, TextView tvSelectLocation,
-      TextView tvSelectStartDate) {
+      ImageView ivClearEndDate, ImageView ivClearStartDate, CircleImageView ivUserProfile,
+      LinearLayout linearLayout4, RelativeLayout relativeLayout, RelativeLayout relativeLayout4,
+      TextView textView139, TextView textView13r49, TextView textView13rdd49, TextView textView16,
+      TextView textView19, TextView textViewdd19, TextView tvSelectEndDate,
+      TextView tvSelectLocation, TextView tvSelectStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.autocompleteFragment = autocompleteFragment;
     this.btnAddExperience = btnAddExperience;
@@ -102,6 +106,7 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
     this.ivBackButton = ivBackButton;
     this.ivClearEndDate = ivClearEndDate;
     this.ivClearStartDate = ivClearStartDate;
+    this.ivUserProfile = ivUserProfile;
     this.linearLayout4 = linearLayout4;
     this.relativeLayout = relativeLayout;
     this.relativeLayout4 = relativeLayout4;

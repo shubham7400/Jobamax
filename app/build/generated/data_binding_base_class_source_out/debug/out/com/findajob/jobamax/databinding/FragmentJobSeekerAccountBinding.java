@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
@@ -28,6 +29,9 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   public final SwitchCompat hideMeFlag;
 
   @NonNull
+  public final ImageView imageView17;
+
+  @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
@@ -36,6 +40,12 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   @NonNull
   public final SwitchButton sbPushNotification;
 
+  @NonNull
+  public final TextView tvChangeLanguage;
+
+  @NonNull
+  public final TextView tvCurrentLanguage;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
@@ -43,14 +53,18 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   protected JobSeekerAccountInterface mHandler;
 
   protected FragmentJobSeekerAccountBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, CircleImageView civUser, SwitchCompat hideMeFlag,
-      ImageView ivBackButton, RelativeLayout relativeLayout, SwitchButton sbPushNotification) {
+      int _localFieldCount, CircleImageView civUser, SwitchCompat hideMeFlag, ImageView imageView17,
+      ImageView ivBackButton, RelativeLayout relativeLayout, SwitchButton sbPushNotification,
+      TextView tvChangeLanguage, TextView tvCurrentLanguage) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.hideMeFlag = hideMeFlag;
+    this.imageView17 = imageView17;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.sbPushNotification = sbPushNotification;
+    this.tvChangeLanguage = tvChangeLanguage;
+    this.tvCurrentLanguage = tvCurrentLanguage;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

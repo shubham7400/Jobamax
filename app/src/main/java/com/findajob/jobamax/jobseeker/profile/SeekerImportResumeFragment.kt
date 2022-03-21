@@ -11,6 +11,7 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerImportResumeBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.model.JobSeeker
+import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.toast
 import com.parse.FunctionCallback
 import com.parse.ParseCloud
@@ -38,7 +39,7 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
                 toast("Please Enter the link first.")
             }else{
                 progressHud.show()
-                ParseCloud.callFunctionInBackground("importFromLinkedIn", hashMapOf("link" to binding.etLink.text.toString(), "jobSeekerId" to jobSeeker!!.jobSeekerId),
+                ParseCloud.callFunctionInBackground("importFromLinkedIn", hashMapOf("link" to binding.etLink.text.toString().trim(), "jobSeekerId" to requireContext().getUserId()),
                     FunctionCallback<Any> { result, e ->
                         progressHud.dismiss()
                         when {

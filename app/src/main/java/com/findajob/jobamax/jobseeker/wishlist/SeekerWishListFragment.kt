@@ -1,9 +1,14 @@
 package com.findajob.jobamax.jobseeker.wishlist
 
+import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.PopupWindow
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -18,21 +23,20 @@ import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.model.WishlistedJob
 import com.findajob.jobamax.preference.getUserId
-import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.popup_add_job_to_track.view.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 @AndroidEntryPoint
 class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>() {
@@ -60,19 +64,39 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
     private fun setAdapter() {
         adapter = SeekerWishListAdapter(wishlistJobs)
         binding.rvWishlistJob.adapter = adapter
-        adapter.clickListener = { wishlistJob: WishlistedJob, action: Int ->
+        adapter.clickListener = { wishlistJob: WishlistedJob, action: Int, view: View? ->
             when(action){
                 1 -> {
                     updateFavorite(wishlistJob)
                 }
                 2 -> {
-                    addToTrackingJobList(wishlistJob)
+                    displayPopupWindow(wishlistJob, view)
+                }
+                3 -> {
+                    addToArchived(wishlistJob)
                 }
                 else -> {
-                   addToArchived(wishlistJob)
+                    val jobUrl = wishlistJob.job?.getString("jobUrl")
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(jobUrl))
+                    startActivity(browserIntent)
                 }
             }
         }
+    }
+
+    private fun displayPopupWindow(wishlistJob: WishlistedJob, view: View?) {
+        val popup = PopupWindow(requireContext())
+        val layout: View = layoutInflater.inflate(R.layout.popup_add_job_to_track, null)
+        layout.tv_message.setOnClickListener {
+            addToTrackingJobList(wishlistJob)
+        }
+        popup.contentView = layout
+        popup.height = WindowManager.LayoutParams.WRAP_CONTENT
+        popup.width = WindowManager.LayoutParams.WRAP_CONTENT
+        popup.isOutsideTouchable = true
+        popup.isFocusable = true
+        popup.setBackgroundDrawable(BitmapDrawable())
+        popup.showAsDropDown(view)
     }
 
     private fun addToArchived(wishlistJob: WishlistedJob) {
@@ -91,6 +115,9 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
     }
 
     private fun addToTrackingJobList(wishlistJob: WishlistedJob) {
+        wishlistJob.pfObject?.put("isAddedToTracking", true)
+        wishlistJob.pfObject?.saveInBackground()
+
         val trackingJob = TrackingJob()
         trackingJob.jobSeekerId =
             wishlistJob.jobSeeker?.let { JobSeeker(it).jobSeekerId }.toString()
@@ -115,17 +142,17 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                     if (it != null) {
                         toast("${it.message.toString()} Something Went Wrong")
                     } else {
-                        deleteWishlistJob(wishlistJob)
+                        fetchWishlist( )
                     }
                 }
             } else {
-                deleteWishlistJob(wishlistJob)
+                fetchWishlist( )
                 toast("This job is already in tracking.")
             }
         }
     }
 
-    private fun deleteWishlistJob(wishlistJob: WishlistedJob) {
+   /* private fun deleteWishlistJob(wishlistJob: WishlistedJob) {
         wishlistJob.pfObject?.deleteInBackground { exception ->
             if (exception != null) {
                 toast("${exception.message.toString()}")
@@ -133,7 +160,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                 fetchWishlist( )
             }
         }
-    }
+    }*/
 
     private fun updateFavorite(wishlistJob: WishlistedJob) {
         wishlistJob.pfObject?.put("isFavroite", !wishlistJob.isFavroite)
@@ -225,7 +252,9 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),requireContext().getUserId())
         query.include("job")
         query.include("jobSeeker")
+        progressHud.show()
         query.findInBackground { result, e ->
+            progressHud.dismiss()
             when {
                 e != null -> {
                     toast("${e.message.toString()}")
@@ -254,7 +283,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
 
 class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.Adapter<SeekerWishListAdapter.ViewHolder>(){
     var filter = SeekerWishlistJobFilter.ALL
-    var clickListener: (WishlistedJob, Int) -> Unit = { wishlistJob: WishlistedJob, i: Int ->
+    var clickListener: (WishlistedJob, Int, view: View?) -> Unit = { wishlistedJob: WishlistedJob, i: Int, view: View? ->
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemWishlistJobBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -272,19 +301,31 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
                     }else{
                         this.ivCompany.setBackgroundResource(R.drawable.ic_company)
                     }
+                    if (wishlistJob.isAddedToTracking){
+                        this.ivAdd.visibility = View.GONE
+                        this.ivFavorite.visibility = View.GONE
+                    }
                     if (wishlistJob.isFavroite){
                         this.ivFavorite.setImageResource(R.drawable.heart)
                     }else{
                         this.ivFavorite.setImageResource(R.drawable.heart_holo)
                     }
+                    if (wishlistJob.isArchived){
+                        this.ivArchive.setImageResource(R.drawable.ic_unarchive)
+                    }else{
+                        this.ivArchive.setImageResource(R.drawable.ic_archive)
+                    }
                     this.ivFavorite.setOnClickListener {
-                        clickListener(wishlistJob, 1)
+                        clickListener(wishlistJob, 1, null)
                     }
                     this.ivAdd.setOnClickListener {
-                        clickListener(wishlistJob, 2)
+                        clickListener(wishlistJob, 2, it)
                     }
                     this.ivArchive.setOnClickListener {
-                        clickListener(wishlistJob, 3)
+                        clickListener(wishlistJob, 3, null)
+                    }
+                    this.acbtnApply.setOnClickListener {
+                        clickListener(wishlistJob, 4, null)
                     }
                 }
                 else -> {

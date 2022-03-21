@@ -15,7 +15,10 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 17);
-        sViewsWithIds.put(R.id.sb_push_notification, 18);
+        sViewsWithIds.put(R.id.tv_change_language, 18);
+        sViewsWithIds.put(R.id.tv_current_language, 19);
+        sViewsWithIds.put(R.id.imageView17, 20);
+        sViewsWithIds.put(R.id.sb_push_notification, 21);
     }
     // views
     @NonNull
@@ -84,15 +87,18 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
     // Inverse Binding Event Handlers
 
     public FragmentJobSeekerAccountBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 19, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
     }
     private FragmentJobSeekerAccountBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
             , (androidx.appcompat.widget.SwitchCompat) bindings[4]
+            , (android.widget.ImageView) bindings[20]
             , (android.widget.ImageView) bindings[1]
             , (android.widget.RelativeLayout) bindings[17]
-            , (com.suke.widget.SwitchButton) bindings[18]
+            , (com.suke.widget.SwitchButton) bindings[21]
+            , (android.widget.TextView) bindings[18]
+            , (android.widget.TextView) bindings[19]
             );
         this.civUser.setTag(null);
         this.hideMeFlag.setTag(null);

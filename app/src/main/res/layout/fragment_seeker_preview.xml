@@ -37,11 +37,10 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
+                   android:layout_centerInParent="true"
                    android:layout_marginStart="10dp"
-                   android:layout_toRightOf="@+id/iv_back_button"
-                   android:fontFamily="@font/opensans_bold"
-                   android:text="Filter by...."
+                    android:fontFamily="@font/opensans_bold"
+                   android:text="@string/filter_by"
                    android:textColor="@color/blue_2"
                    android:textSize="20dp" />
 
@@ -164,7 +163,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="About"
+                   android:text="@string/about"
                    android:textColor="@color/black"
                    android:textSize="20sp" />
 
@@ -183,7 +182,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="Schools"
+                   android:text="@string/schools"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -199,7 +198,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="Experiences"
+                   android:text="@string/experience"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -215,7 +214,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="Hard Skills"
+                   android:text="@string/hard_skills"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -231,7 +230,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="Soft Skills"
+                   android:text="@string/soft_skills"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -244,11 +243,11 @@
                </com.google.android.material.chip.ChipGroup>
 
                <TextView
-                   android:id="@+id/textViewrde2dx6"
+                   android:id="@+id/tv_volunteering_title"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="Volunteering"
+                   android:text="@string/volunteering"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -264,7 +263,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="Intrests"
+                   android:text="@string/interest"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -281,7 +280,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="My ideal job"
+                   android:text="@string/my_ideal_job"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -290,7 +289,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_regular"
-                   android:text="Elevator speech"
+                   android:text="@string/elevator_speech"
                    android:textColor="@color/black"
                    android:textSize="16sp"
                    android:layout_marginTop="10dp" />
@@ -357,7 +356,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="My ideal job"
+                   android:text="@string/my_portfolio"
                    android:textColor="@color/black"
                    android:textSize="20sp"
                    android:layout_marginTop="30dp" />
@@ -366,7 +365,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_regular"
-                   android:text="Elevator speech"
+                   android:text="@string/elevator_speech"
                    android:textColor="@color/black"
                    android:textSize="16sp"
                    android:layout_marginTop="10dp" />

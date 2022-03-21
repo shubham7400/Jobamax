@@ -65,14 +65,19 @@ class SeekerVolunteeringListFragment : BaseFragmentMain<FragmentSeekerVolunteeri
 
 
     private fun viewModelObserver() {
-        viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
-            if (it){
+        viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
+            if (it) {
                 binding.jobSeeker = viewModel.jobSeeker
-                volunteerings = ArrayList(Gson().fromJson(viewModel.jobSeeker.volunteerings, VolunteeringGroup::class.java)?.list ?: listOf())
+                volunteerings = ArrayList(
+                    Gson().fromJson(
+                        viewModel.jobSeeker.volunteerings,
+                        VolunteeringGroup::class.java
+                    )?.list ?: listOf()
+                )
                 adapter.submitList(volunteerings)
                 adapter.notifyDataSetChanged()
             }
-        })
+        }
     }
 
 
@@ -83,6 +88,9 @@ class SeekerVolunteeringListFragment : BaseFragmentMain<FragmentSeekerVolunteeri
         }
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
         }
     }
 

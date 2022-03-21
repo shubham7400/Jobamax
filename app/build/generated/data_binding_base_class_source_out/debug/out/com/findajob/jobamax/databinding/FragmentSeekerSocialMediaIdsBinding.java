@@ -16,6 +16,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -45,6 +46,9 @@ public abstract class FragmentSeekerSocialMediaIdsBinding extends ViewDataBindin
   public final ImageView ivTiktok;
 
   @NonNull
+  public final CircleImageView ivUserProfile;
+
+  @NonNull
   public final LinearLayout llSocialMediaLink;
 
   @NonNull
@@ -56,7 +60,8 @@ public abstract class FragmentSeekerSocialMediaIdsBinding extends ViewDataBindin
   protected FragmentSeekerSocialMediaIdsBinding(Object _bindingComponent, View _root,
       int _localFieldCount, Button btnSave, EditText etInstagramLink, EditText etLinkedinLink,
       EditText etTiktokLink, ImageView ivBackButton, ImageView ivInsta, ImageView ivLinkedin,
-      ImageView ivTiktok, LinearLayout llSocialMediaLink, RelativeLayout relativeLayout) {
+      ImageView ivTiktok, CircleImageView ivUserProfile, LinearLayout llSocialMediaLink,
+      RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSave = btnSave;
     this.etInstagramLink = etInstagramLink;
@@ -66,6 +71,7 @@ public abstract class FragmentSeekerSocialMediaIdsBinding extends ViewDataBindin
     this.ivInsta = ivInsta;
     this.ivLinkedin = ivLinkedin;
     this.ivTiktok = ivTiktok;
+    this.ivUserProfile = ivUserProfile;
     this.llSocialMediaLink = llSocialMediaLink;
     this.relativeLayout = relativeLayout;
   }

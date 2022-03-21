@@ -4,11 +4,13 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -27,7 +29,13 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final CircleImageView civUser;
 
   @NonNull
+  public final ConstraintLayout clSearchBar;
+
+  @NonNull
   public final CardStackView csvJob;
+
+  @NonNull
+  public final EditText etJobKeyword;
 
   @NonNull
   public final FloatingActionButton fabApply;
@@ -42,13 +50,13 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final FloatingActionButton fabShare;
 
   @NonNull
-  public final ImageView imageView10;
-
-  @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
   public final ImageView ivFilterJob;
+
+  @NonNull
+  public final ImageView ivSearchIcon;
 
   @NonNull
   public final ItemSeekerJobCardBinding lJob;
@@ -69,21 +77,24 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerJobsBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CircleImageView civUser, CardStackView csvJob, FloatingActionButton fabApply,
-      FloatingActionButton fabRefuse, FloatingActionButton fabRewind, FloatingActionButton fabShare,
-      ImageView imageView10, ImageView ivBackButton, ImageView ivFilterJob,
-      ItemSeekerJobCardBinding lJob, LinearLayout llFloatButtons, NestedScrollView nsvCard,
-      PercentageChartView pcvMatch, RelativeLayout relativeLayout) {
+      CircleImageView civUser, ConstraintLayout clSearchBar, CardStackView csvJob,
+      EditText etJobKeyword, FloatingActionButton fabApply, FloatingActionButton fabRefuse,
+      FloatingActionButton fabRewind, FloatingActionButton fabShare, ImageView ivBackButton,
+      ImageView ivFilterJob, ImageView ivSearchIcon, ItemSeekerJobCardBinding lJob,
+      LinearLayout llFloatButtons, NestedScrollView nsvCard, PercentageChartView pcvMatch,
+      RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
+    this.clSearchBar = clSearchBar;
     this.csvJob = csvJob;
+    this.etJobKeyword = etJobKeyword;
     this.fabApply = fabApply;
     this.fabRefuse = fabRefuse;
     this.fabRewind = fabRewind;
     this.fabShare = fabShare;
-    this.imageView10 = imageView10;
     this.ivBackButton = ivBackButton;
     this.ivFilterJob = ivFilterJob;
+    this.ivSearchIcon = ivSearchIcon;
     this.lJob = lJob;
     this.llFloatButtons = llFloatButtons;
     this.nsvCard = nsvCard;

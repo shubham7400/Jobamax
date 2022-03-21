@@ -197,3 +197,14 @@ fun Context.getJobSeekerJobFilter(): String {
 	return sharedPreferences.getString("jobFilter", "") ?: ""
 }
 
+fun Context.setLanguage(languageCode: String) {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	val editor = sharedPreferences.edit()
+	editor.putString("language", languageCode).apply()
+}
+
+fun Context.getLanguage(): String {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	return sharedPreferences.getString("language", "en") ?: "en"
+}
+

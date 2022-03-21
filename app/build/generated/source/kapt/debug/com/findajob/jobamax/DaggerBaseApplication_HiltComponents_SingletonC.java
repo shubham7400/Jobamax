@@ -70,6 +70,7 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity;
+import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobWebFragment;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment;
 import com.findajob.jobamax.jobseeker.profile.JobSeekerProfileFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment;
@@ -530,6 +531,10 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public void injectSeekerCoachingFragment(SeekerCoachingFragment seekerCoachingFragment) {
+    }
+
+    @Override
+    public void injectSeekerJobWebFragment(SeekerJobWebFragment seekerJobWebFragment) {
     }
 
     @Override

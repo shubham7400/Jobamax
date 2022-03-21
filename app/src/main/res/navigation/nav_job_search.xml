@@ -21,10 +21,18 @@
             android:name="jobOfferId"
             app:argType="java.lang.String"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_seekerJobsFragment_to_seekerJobWebFragment"
+            app:destination="@id/seekerJobWebFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekerJobsFilterFragment"
         android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFilterFragment"
         android:label="fragment_seeker_jobs_filter"
         tools:layout="@layout/fragment_seeker_jobs_filter" />
+    <fragment
+        android:id="@+id/seekerJobWebFragment"
+        android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobWebFragment"
+        android:label="fragment_seeker_job_web"
+        tools:layout="@layout/fragment_seeker_job_web" />
 </navigation>

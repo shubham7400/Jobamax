@@ -158,6 +158,7 @@ class   NewJobOffer {
     var monthlySalary: String = ""
     var companyId: String = ""
     var profilePicUrl: String = ""
+    var companyLogo: String = ""
     var jobOfferId: String = ""
     var jobUrl: String = ""
     var workplaceVibes: List<String> = listOf()
@@ -186,6 +187,7 @@ class   NewJobOffer {
         monthlySalary = jsonObject.getString("monthlySalary")
         companyId = jsonObject.getString("companyId")
         profilePicUrl = jsonObject.getString("profilePicUrl")
+        companyLogo = jsonObject.getString("companyLogo")
         jobOfferId = jsonObject.getString("jobOfferId")
         jobUrl = jsonObject.getString("jobUrl")
         workplaceVibes = convertToList(jsonObject.get("workplaceVibes").toString())

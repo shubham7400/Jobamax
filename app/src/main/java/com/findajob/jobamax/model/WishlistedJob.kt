@@ -8,6 +8,7 @@ class WishlistedJob {
     var job: ParseObject? = null
     var isFavroite: Boolean = false
     var isArchived: Boolean = false
+    var isAddedToTracking: Boolean = false
     var pfObject: ParseObject? = null
 
     fun toParseObject(): ParseObject {
@@ -16,6 +17,7 @@ class WishlistedJob {
         job?.let { wishlistedJob.put("job", it) }
         wishlistedJob.put("isFavroite", isFavroite)
         wishlistedJob.put("isArchived", isArchived)
+        wishlistedJob.put("isAddedToTracking", isAddedToTracking)
         pfObject?.let { wishlistedJob.put("pfObject", it) }
         return wishlistedJob
     }
@@ -25,6 +27,7 @@ class WishlistedJob {
         this.job = obj.getParseObject("job")
         this.isFavroite = obj.getBoolean("isFavroite")
         this.isArchived = obj.getBoolean("isArchived")
+        this.isAddedToTracking = obj.getBoolean("isAddedToTracking")
         this.pfObject = obj
     }
 

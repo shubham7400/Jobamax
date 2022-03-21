@@ -7,12 +7,15 @@ import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.findajob.jobamax.BaseFragment
 import com.findajob.jobamax.R
 import com.ckdroid.dynamicpermissions.PermissionStatus
@@ -169,4 +172,8 @@ fun convertMillisToMinuteAndSecond(millis: Long) : String {
     val minutes = milliseconds / 1000 / 60
     val seconds = milliseconds / 1000 % 60
     return "$minutes min : $seconds sec"
+}
+
+fun loadImageFromUrl(imageView: ImageView, url: String?, defaultImage: Int?){
+    Glide.with(imageView.context).applyDefaultRequestOptions( RequestOptions().placeholder(R.drawable.ic_company).error(R.drawable.ic_company)).load(url).into(imageView)
 }

@@ -44,6 +44,9 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
   public final ImageView ivBackButton;
 
   @NonNull
+  public final ImageView ivBarcode;
+
+  @NonNull
   public final ImageView ivEdit;
 
   @NonNull
@@ -84,10 +87,11 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
 
   protected FragmentSeekerAboutMeBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button btnSaveInfo, EditText etDescription, EditText etFirstName, EditText etLastName,
-      EditText etProfession, ImageView imageView12, ImageView ivBackButton, ImageView ivEdit,
-      ImageView ivInsta, ImageView ivLinkedin, CircleImageView ivProfileUser, ImageView ivTiktok,
-      CircleImageView ivUserProfilePic, LinearLayout llSocialMedia, RelativeLayout relativeLayout,
-      TextView textView10, TextView textView11, TextView textView140, TextView textView9) {
+      EditText etProfession, ImageView imageView12, ImageView ivBackButton, ImageView ivBarcode,
+      ImageView ivEdit, ImageView ivInsta, ImageView ivLinkedin, CircleImageView ivProfileUser,
+      ImageView ivTiktok, CircleImageView ivUserProfilePic, LinearLayout llSocialMedia,
+      RelativeLayout relativeLayout, TextView textView10, TextView textView11, TextView textView140,
+      TextView textView9) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
     this.etDescription = etDescription;
@@ -96,6 +100,7 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
     this.etProfession = etProfession;
     this.imageView12 = imageView12;
     this.ivBackButton = ivBackButton;
+    this.ivBarcode = ivBarcode;
     this.ivEdit = ivEdit;
     this.ivInsta = ivInsta;
     this.ivLinkedin = ivLinkedin;

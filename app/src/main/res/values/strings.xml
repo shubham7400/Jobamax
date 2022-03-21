@@ -6,27 +6,27 @@
     <!-- === -->
 
     <!-- back4app -->
-    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="back4app_server_url" translatable="false">https://parseapi.back4app.com/</string>
     <!--    <string name="back4app_app_id">2dhxDPPrNlxvT4faFZZpA7GX0WVRdhWfT2K7ivBS</string>-->
     <!--    <string name="back4app_client_key">BitojXiteH1Qry78ap3nLZmHyt9fxbeMjKMRGCHn</string>-->
     <!--    <string name="back4app_live_query_url">wss://jobamaxx.b4a.io/</string>-->
-    <string name="back4app_app_id">s3gwYWzFlAYgtfSLTNWZVp6wpTQwj5ISs5XgF7lL</string>
-    <string name="back4app_client_key">scOjnd7zjtRTrqblPRg6iFcsJTSLS2phmd48OE0E</string>
-    <string name="back4app_live_query_url">wss://jobamax.b4a.io/</string>
+    <string name="back4app_app_id" translatable="false">s3gwYWzFlAYgtfSLTNWZVp6wpTQwj5ISs5XgF7lL</string>
+    <string name="back4app_client_key" translatable="false">scOjnd7zjtRTrqblPRg6iFcsJTSLS2phmd48OE0E</string>
+    <string name="back4app_live_query_url" translatable="false">wss://jobamax.b4a.io/</string>
 
     <!-- Pushwoosh -->
 
-    <string name="pushwoosh_app_id">46BF6-FA55C</string>
-    <string name="fcm_sender_id">916226274147</string>
-    <string name="default_channel_id">channelid</string>
+    <string name="pushwoosh_app_id" translatable="false">46BF6-FA55C</string>
+    <string name="fcm_sender_id" translatable="false">916226274147</string>
+    <string name="default_channel_id" translatable="false">channelid</string>
 
     <!-- facebook -->
     <!--    <string name="facebook_app_id">329366911842680</string>-->
     <!--    <string name="fb_login_protocol_scheme">fb329366911842680</string>-->
 
     <!-- TBL FB App -->
-    <string name="facebook_app_id">304727217812972</string>
-    <string name="fb_login_protocol_scheme">fb304727217812972</string>
+    <string name="facebook_app_id" translatable="false">304727217812972</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb304727217812972</string>
 
     <string name="product_id" translatable="false">android.test.purchased</string>
     <string name="recruiter">Recruiter</string>
@@ -109,7 +109,7 @@
     <string name="distance">Distance</string>
     <string name="name_of_job">Name of Job</string>
     <string name="enter_job_name">Enter Job Name</string>
-    <string name="company">Company</string>
+    <string name="company">Company*</string>
     <string name="city">City</string>
     <string name="enter_city">Enter City</string>
     <string name="industry">Industry</string>
@@ -124,13 +124,13 @@
     <string name="key_skills_needed">Key Skills Needed</string>
     <string name="enter_skills">Enter Skills</string>
     <string name="job_category">Category</string>
-    <string name="job">Job</string>
+    <string name="job">Job*</string>
     <string name="work_study">Remote</string>
     <string name="internship">internship</string>
     <string name="other">Other</string>
     <string name="add_skills">Add Skills</string>
     <string name="about_job">About Job</string>
-    <string name="experience">Experience (Years)</string>
+    <string name="experience">Experience</string>
     <string name="upload_job_presentation">Upload Job Presentation</string>
     <string name="permanent">Permanent</string>
     <string name="temporary">Temporary</string>
@@ -206,7 +206,7 @@
     <string name="date_format_mm_yy">MM/YY</string>
     <string name="experiences">Experiences</string>
     <string name="add_education">Add Education</string>
-    <string name="add_experiences">Add Experiences</string>
+    <string name="add_experiences">Add Experience</string>
     <string name="skills">Skills</string>
     <string name="activities">Activities</string>
     <string name="enter_activity">Enter Activity</string>
@@ -225,7 +225,7 @@
     <string name="attachments">Attachments</string>
     <string name="upload_cover_letter_c_v_recommendation_letter">Upload Cover Letter, C.V., Recommendation Letter</string>
     <string name="send_a_message_to_a_recruiter_without_further_delay">Send a message to a recruiter without further delay</string>
-    <string name="enter">Enter job type</string>
+    <string name="enter_job_type">Enter job type</string>
     <string name="what_job_are_you_looking_for">What job are you looking for?</string>
     <string name="add_a_job_offer">Add a job offer</string>
     <string name="password">Password</string>
@@ -394,10 +394,10 @@
     <string name="enter_industry_required">"Enter Industry "</string>
     <string name="delete">Delete</string>
     //LinkedIn SDK Access
-    <string name="linked_in_client_id">869zzm9vjdjp5h</string>
-    <string name="linked_in_client_secret">SFqONJQpLuuy9mBW</string>
-    <string name="linked_in_redirect_uri">https://jobamax.com</string>
-    <string name="linked_in_state">jobamax</string>
+    <string name="linked_in_client_id" translatable="false">869zzm9vjdjp5h</string>
+    <string name="linked_in_client_secret" translatable="false">SFqONJQpLuuy9mBW</string>
+    <string name="linked_in_redirect_uri" translatable="false">https://jobamax.com</string>
+    <string name="linked_in_state" translatable="false">jobamax</string>
     <string-array name="linked_in_access_scopes">
         <item>r_liteprofile</item>
         <item>r_emailaddress</item>
@@ -557,6 +557,91 @@
     <string name="one_two">one-two</string>
     <string name="two_more">two-more</string>
     <string name="wishlist">Wishlist</string>
+    <string name="select_date">Select Date</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="my_experience">My Experience</string>
+    <string name="add_another">Add Another</string>
+    <string name="go_back_to_my_profile">Go back to my profile</string>
+    <string name="new_education">New Education</string>
+    <string name="add_your_school">Add your school</string>
+    <string name="add_your_degree">Add your degree</string>
+    <string name="current_student">Current Student</string>
+    <string name="save_information">Save Information</string>
+    <string name="my_education">My Education</string>
+    <string name="add_volunteering">Add Volunteering</string>
+    <string name="activity">Activity*</string>
+    <string name="organization">Organization</string>
+    <string name="my_volunteering">My Volunteering</string>
+    <string name="my_skills">My Skills</string>
+    <string name="hard_skills">Hard Skills</string>
+    <string name="soft_skills">Soft Skills</string>
+    <string name="interest">Interest</string>
+    <string name="my_profile">My Profile</string>
+    <string name="make_your_2_0_cv_now">Make your 2.0 CV now.</string>
+    <string name="my_ideal_job">My ideal job</string>
+    <string name="explain_your_career_goals_and_what_can_you_bring_to_a_company">Explain your career goals and what can you bring to a company</string>
+    <string name="video">Video</string>
+    <string name="text_240_characters">Text 240 Characters</string>
+    <string name="audio">Audio</string>
+    <string name="my_resume">My Resume</string>
+    <string name="import_my_linkedin_profile">Import my\nLinkedin Profile</string>
+    <string name="volunteering">Volunteering</string>
+    <string name="my_portfolio">My Portfolio</string>
+    <string name="text_link">Text + Link</string>
+    <string name="my_ideal_workspace">My ideal workspace</string>
+    <string name="tracking">Tracking</string>
+    <string name="next_deadline">Next Deadline</string>
+    <string name="next_interview">Next Interview</string>
+    <string name="jobamax_jobs">Jobamax Jobs</string>
+    <string name="other_jobs">Other Jobs</string>
+    <string name="your_job_application">Your job application</string>
+    <string name="add_job_in_tracking">Add Job In Tracking</string>
+    <string name="job_title">Job Title</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter">Enter...</string>
+    <string name="my_wishlist">My Wishlist</string>
+    <string name="coaching">Coaching</string>
+    <string name="about_the_job">About the job</string>
+    <string name="about_the_company">About the company</string>
+    <string name="see_job_description">See job description</string>
+    <string name="filters">Filters</string>
+    <string name="my_dream_job">My dream job</string>
+    <string name="my_current_location">My current location</string>
+    <string name="which_industry">Which industry?</string>
+    <string name="don_t_wait_to">Don\'t wait to</string>
+    <string name="no_data">No Data</string>
+    <string name="let_s_find_your_dream_job_together">Let\'s find your\nDream job together.</string>
+    <string name="calendar">Calendar</string>
+    <string name="start_my_job_search">Start my job search</string>
+    <string name="track_my_applications">Track my applications</string>
+    <string name="language">Language</string>
+    <string name="retake">Retake</string>
+    <string name="upload_image">Upload image</string>
+    <string name="upload_video">Upload Video</string>
+    <string name="text">Text</string>
+    <string name="links">Links</string>
+    <string name="enter_link_here">Enter Link here</string>
+    <string name="add_link">Add Link</string>
+    <string name="filter_by">Filter by....</string>
+    <string name="about">About</string>
+    <string name="elevator_speech">Elevator speech</string>
+    <string name="filter_when_you_click_on_filters">Filter when you click on filters</string>
+    <string name="all">All</string>
+    <string name="favorite">Favorite</string>
+    <string name="applied">Applied</string>
+    <string name="refused">Refused</string>
+    <string name="online_interview">Online interview</string>
+    <string name="assessments">Assessments</string>
+    <string name="phone_call">Phone call</string>
+    <string name="hired">Hired</string>
+    <string name="go">Go!</string>
+    <string name="your_first_name">Your First Name</string>
+    <string name="your_last_name">Your Last Name</string>
+    <string name="your_profession">Your Profession</string>
+    <string name="your_elevator_pitch_240_characters">Your elevator pitch (240 characters)</string>
+    <string name="language_change_alert_message">You need to restart the app in order to see the changes in language.</string>
+    <string name="images">Images</string>
+    <string name="job_description">Job Description</string>
 
 
 </resources>

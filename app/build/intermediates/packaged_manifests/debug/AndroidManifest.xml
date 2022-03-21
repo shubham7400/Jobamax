@@ -118,14 +118,11 @@
             android:name="com.findajob.jobamax.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
-
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
         <activity
             android:name="com.findajob.jobamax.recruiter.profile.account.companyInfo.CompanyIntroInfoActivity"
@@ -291,10 +288,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+                <!--
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
+                -->
                 <data
                     android:host="jobamax.page.link"
                     android:path="/verifyemail"
@@ -309,15 +307,17 @@
             android:theme="@style/Base.Theme.AppCompat"
             android:windowSoftInputMode="adjustResize" />
 
+        <!--
         <service
-            android:name="com.findajob.jobamax.NewMatchFirebaseMessagingService"
+            android:name=".NewMatchFirebaseMessagingService"
             android:exported="false"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
+        -->
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -381,13 +381,15 @@
         <!-- android:name="com.facebook.FacebookContentProvider" -->
         <!-- android:authorities="com.facebook.app.FacebookContentProvider329366911842680" -->
         <!-- android:exported="true" /> -->
+        <!--
         <service
             android:name="com.parse.fcm.ParseFirebaseMessagingService"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        -->
 
         <meta-data
             android:name="com.pushwoosh.appid"
@@ -398,7 +400,7 @@
 
         <service
             android:name="com.findajob.jobamax.jobseeker.profile.FirebaseMessageService"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

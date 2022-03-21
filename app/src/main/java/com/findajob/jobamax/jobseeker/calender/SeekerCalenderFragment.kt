@@ -26,6 +26,7 @@ import com.google.gson.Gson
 import com.parse.FunctionCallback
 import com.parse.ParseCloud
 import dagger.hilt.android.AndroidEntryPoint
+import org.jetbrains.anko.textColor
 import org.json.JSONObject
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -200,6 +201,7 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
 
 class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var phases: ArrayList<Phase>, var selectedDate: LocalDate) : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
     var onDateClick : (String) -> Unit = {}
+    var selected_index = -1
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder  = CalendarViewHolder(CalendarCellBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
@@ -208,6 +210,8 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
             this.cellDayText.text = item
             this.cellDayText.setOnClickListener {
                 onDateClick(item)
+                selected_index = position
+                notifyDataSetChanged()
             }
             if (item != ""){
                 phases.forEach {
@@ -218,7 +222,9 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
                         date1 = sdf.parse(it.date)
                     }catch (e: Exception){
                         sdf = SimpleDateFormat("MMM dd, yyyy", Locale.FRANCE)
-                        date1 = sdf.parse(it.date)
+                        try {
+                            date1 = sdf.parse(it.date)
+                        }catch (e: Exception){}
                     }
                     val monthFormatter = DateTimeFormatter.ofPattern("MMMM")
                     val yearFormatter = DateTimeFormatter.ofPattern("yyyy")
@@ -233,12 +239,17 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
                     log("fddkfd $date1,  $date2")
                     if (date1 != null) {
                         if (date1.compareTo(date2) == 0){
-                            this.cellDayText.setBackgroundResource(R.drawable.bg_gradient_rounded)
-                            this.cellDayText.setTextColor(Color.WHITE)
+                            this.cellDayText.setTextColor(Color.parseColor("#0975FE"))
                         }
                     }
                 }
 
+            }
+            if (selected_index == position){
+                this.cellDayText.setTextColor(Color.WHITE)
+                this.cellDayText.setBackgroundResource(R.drawable.bg_gradient_rounded)
+            }else{
+                this.cellDayText.setBackgroundResource(0)
             }
          }
     }

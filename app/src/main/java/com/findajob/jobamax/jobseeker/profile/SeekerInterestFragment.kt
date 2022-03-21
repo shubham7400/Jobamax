@@ -103,6 +103,9 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.civUser.setOnClickListener {
+            requireActivity().finish()
+        }
         binding.ivActivities.setOnClickListener {
             if (binding.actvActivities.text.isNullOrEmpty()){
                 toast("Please enter tag first.")

@@ -44,7 +44,7 @@ class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescription
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().finish()
         }
     }
 

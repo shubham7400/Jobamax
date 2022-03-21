@@ -20,6 +20,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentContainerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -47,6 +48,9 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
 
   @NonNull
   public final ImageView ivBackButton;
+
+  @NonNull
+  public final CircleImageView ivUserProfile;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -91,10 +95,10 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
       int _localFieldCount, FragmentContainerView autocompleteFragment, Button btnAddVolunteering,
       CheckBox cbCurrentStudent, ConstraintLayout clEndDate, EditText etActivity,
       EditText etDescription, EditText etOrganisation, ImageView ivBackButton,
-      LinearLayout linearLayout, RelativeLayout relativeLayout, RelativeLayout relativeLayout4,
-      TextView textView139, TextView textView144, TextView textView15, TextView textView16,
-      TextView textView19, TextView textViewdd19, TextView tvEndDate, TextView tvSelectLocation,
-      TextView tvStartDate) {
+      CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
+      RelativeLayout relativeLayout4, TextView textView139, TextView textView144,
+      TextView textView15, TextView textView16, TextView textView19, TextView textViewdd19,
+      TextView tvEndDate, TextView tvSelectLocation, TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.autocompleteFragment = autocompleteFragment;
     this.btnAddVolunteering = btnAddVolunteering;
@@ -104,6 +108,7 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
     this.etDescription = etDescription;
     this.etOrganisation = etOrganisation;
     this.ivBackButton = ivBackButton;
+    this.ivUserProfile = ivUserProfile;
     this.linearLayout = linearLayout;
     this.relativeLayout = relativeLayout;
     this.relativeLayout4 = relativeLayout4;

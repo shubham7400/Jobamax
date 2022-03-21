@@ -50,7 +50,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_toRightOf="@+id/iv_back_button"
                         android:fontFamily="@font/opensans_bold"
-                        android:text="My Profile"
+                        android:text="@string/my_profile"
                         android:textColor="@color/blue_2"
                         android:textSize="20dp" />
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -98,7 +98,7 @@
                     android:fontFamily="@font/opensans_regular"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:text="Make your 2.0 CV now."
+                    android:text="@string/make_your_2_0_cv_now"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,8 @@
                             android:layout_marginVertical="20dp"
                             android:fontFamily="@font/opensans_regular"
                             android:text="This section \n is empty"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/tv_about_me_btn"
@@ -140,14 +141,15 @@
                             android:background="@drawable/rounded_white_box"
                             android:fontFamily="@font/opensans_regular"
                             android:padding="10dp"
-                            android:text="About me"
+                            android:text="@string/about_me"
+                            android:textSize="18sp"
                             android:textColor="@color/blue_2" />
                     </RelativeLayout>
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_user"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
                         android:layout_marginEnd="-30dp"
                         loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                         android:src="@drawable/default_user_img"
@@ -177,7 +179,7 @@
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
                             android:fontFamily="@font/opensans_bold"
-                            android:text="My ideal job"
+                            android:text="@string/my_ideal_job"
                             android:textColor="@color/blue_2"
                             android:textSize="20dp" />
 
@@ -196,7 +198,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/opensans_regular"
-                        android:text="Explain your career goals and what can you bring to a company"
+                        android:text="@string/explain_your_career_goals_and_what_can_you_bring_to_a_company"
                         android:textColor="@color/gray"
                         android:textSize="18sp" />
 
@@ -223,7 +225,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="center"
-                                android:text="Video 0/1"
+                                android:text="@string/video"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
 
@@ -260,7 +262,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="center"
-                                android:text="Text 240 Characters"
+                                android:text="@string/text_240_characters"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
 
@@ -297,7 +299,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="center"
-                                android:text="Audio"
+                                android:text="@string/audio"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
 
@@ -329,7 +331,7 @@
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
                             android:fontFamily="@font/opensans_bold"
-                            android:text="My Resume"
+                            android:text="@string/my_resume"
                             android:textColor="@color/blue_2"
                             android:textSize="20dp" />
 
@@ -344,7 +346,7 @@
                             android:fontFamily="@font/opensans_regular"
                             android:gravity="center"
                             android:padding="10dp"
-                            android:text="Import my\nLinkedin Profile"
+                            android:text="@string/import_my_linkedin_profile"
                             android:textColor="@color/white" />
                     </RelativeLayout>
 
@@ -364,7 +366,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Education"
+                                android:text="@string/education"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -404,7 +406,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Experience"
+                                android:text="@string/experience"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -448,7 +450,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Volunteering"
+                                android:text="@string/volunteering"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -489,7 +491,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Skills"
+                                android:text="@string/skills"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -534,7 +536,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:fontFamily="@font/opensans_bold"
-                                android:text="Intrests"
+                                android:text="@string/interest"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -563,10 +565,44 @@
                         <View
                             android:layout_width="10dp"
                             android:layout_height="match_parent"/>
-                        <View
-                            android:layout_width="match_parent"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_images"
                             android:layout_weight="0.50"
-                            android:layout_height="wrap_content"/>
+                            android:background="@drawable/rounded_white_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/textViedwf76"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:text="@string/images"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:layout_width="33dp"
+                                android:layout_height="33dp"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="30dp"
+                                android:src="@drawable/camera_icon"
+                                app:layout_constraintBottom_toTopOf="@+id/textViewx86d"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textViedwf76" />
+                            <ImageView
+                                android:id="@+id/textViewx86d"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="10dp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:src="@drawable/edit"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </LinearLayout>
 
@@ -576,7 +612,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
-                        android:text="My Portfolio"
+                        android:text="@string/my_portfolio"
                         android:textColor="@color/blue_2"
                         android:textSize="20dp" />
 
@@ -585,7 +621,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/opensans_regular"
-                        android:text="Explain your career goals and what can you bring to a company"
+                        android:text="@string/explain_your_career_goals_and_what_can_you_bring_to_a_company"
                         android:textColor="@color/gray"
                         android:textSize="18sp" />
 
@@ -612,7 +648,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="center"
-                                android:text="Video 0/1"
+                                android:text="@string/video"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
                             <ImageView
@@ -648,7 +684,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/opensans_regular"
                                 android:gravity="center"
-                                android:text="Text + Link"
+                                android:text="@string/text_link"
                                 android:textColor="@color/gray"
                                 android:textSize="18dp" />
 
@@ -709,7 +745,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
-                        android:text="My ideal workspace"
+                        android:text="@string/my_ideal_workspace"
                         android:textColor="@color/blue_2"
                         android:textSize="20dp" />
 
@@ -739,7 +775,7 @@
                             android:layout_toEndOf="@+id/iv_add_ideal_workspace_btn"
                             android:background="@drawable/rounded_white_box"
                             android:fontFamily="@font/opensans_regular"
-                            android:hint="Enter Skill ..."
+                            android:hint="@string/enter_skills"
                             android:minHeight="30dp"
                             android:paddingStart="10dp"
                             android:textColor="@color/black"

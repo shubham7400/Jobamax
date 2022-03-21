@@ -37,10 +37,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toRightOf="@+id/iv_back_button"
-                    android:fontFamily="@font/opensans_bold"
+                     android:fontFamily="@font/opensans_bold"
                     android:text="Import Resume"
                     android:textColor="@color/blue_2"
                     android:textSize="20dp" />

@@ -19,6 +19,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -40,6 +41,9 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
 
   @NonNull
   public final ImageView ivBackButton;
+
+  @NonNull
+  public final CircleImageView ivUserProfile;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -77,9 +81,9 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   protected FragmentSeekerNewEducationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, Button btnSaveInfo, CheckBox cbCurrentStudent,
       ConstraintLayout clEndDate, EditText etGpa, EditText etProgram, ImageView ivBackButton,
-      LinearLayout linearLayout, RelativeLayout relativeLayout, TextView textView10,
-      TextView textView11, TextView textView144, TextView textView15, TextView textView9,
-      TextView tvEndDate, TextView tvSchool, TextView tvStartDate) {
+      CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
+      TextView textView10, TextView textView11, TextView textView144, TextView textView15,
+      TextView textView9, TextView tvEndDate, TextView tvSchool, TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
     this.cbCurrentStudent = cbCurrentStudent;
@@ -87,6 +91,7 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
     this.etGpa = etGpa;
     this.etProgram = etProgram;
     this.ivBackButton = ivBackButton;
+    this.ivUserProfile = ivUserProfile;
     this.linearLayout = linearLayout;
     this.relativeLayout = relativeLayout;
     this.textView10 = textView10;

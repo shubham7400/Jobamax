@@ -42,11 +42,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toRightOf="@+id/iv_back_button"
-                    android:fontFamily="@font/opensans_bold"
-                    android:text="Add Job In Tracking"
+                     android:fontFamily="@font/opensans_bold"
+                    android:text="@string/add_job_in_tracking"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20dp" />
 
@@ -81,7 +80,7 @@
                          android:layout_marginTop="30dp"
                          android:layout_marginBottom="10dp"
                          android:fontFamily="@font/opensans_bold"
-                         android:text="Job Title"
+                         android:text="@string/job_title"
                          android:textColor="@color/black"
                          android:textSize="20sp" />
 
@@ -89,7 +88,7 @@
                          android:id="@+id/et_job_title"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:hint="Enter title"
+                         android:hint="@string/enter_title"
                          android:background="@drawable/rounded_white_box"
                          android:padding="10dp" />
 
@@ -99,7 +98,7 @@
                          android:layout_marginTop="30dp"
                          android:layout_marginBottom="10dp"
                          android:fontFamily="@font/opensans_bold"
-                         android:text="City"
+                         android:text="@string/city"
                          android:textColor="@color/black"
                          android:textSize="20sp" />
 
@@ -107,7 +106,7 @@
                          android:id="@+id/et_city"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:hint="Enter city"
+                         android:hint="@string/enter_city"
                          android:background="@drawable/rounded_white_box"
                          android:padding="10dp" />
 
@@ -117,7 +116,7 @@
                          android:layout_marginTop="30dp"
                          android:layout_marginBottom="10dp"
                          android:fontFamily="@font/opensans_bold"
-                         android:text="Company name"
+                         android:text="@string/company_name"
                          android:textColor="@color/black"
                          android:textSize="20sp" />
 
@@ -125,7 +124,7 @@
                          android:id="@+id/et_company_name"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:hint="Enter company name"
+                         android:hint="@string/enter_company_name"
                          android:background="@drawable/rounded_white_box"
                          android:padding="10dp" />
 
@@ -135,7 +134,7 @@
                          android:layout_marginTop="30dp"
                          android:layout_marginBottom="10dp"
                          android:fontFamily="@font/opensans_bold"
-                         android:text="About job"
+                         android:text="@string/about_job"
                          android:textColor="@color/black"
                          android:textSize="20sp" />
 
@@ -144,7 +143,7 @@
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
                          android:minHeight="200dp"
-                         android:hint="Enter..."
+                         android:hint="@string/enter"
                          android:gravity="top"
                          android:background="@drawable/rounded_white_box"
                          android:padding="10dp" />
@@ -154,7 +153,7 @@
                          android:layout_width="match_parent"
                          android:layout_height="50dp"
                          android:background="@drawable/bg_gradient_rounded"
-                         android:text="Save"
+                         android:text="@string/save"
                          android:textAllCaps="false"
                          android:textColor="@color/white"
                          android:textSize="18dp"

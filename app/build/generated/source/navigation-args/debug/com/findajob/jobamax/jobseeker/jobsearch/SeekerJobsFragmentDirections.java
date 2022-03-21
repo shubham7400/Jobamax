@@ -13,4 +13,9 @@ public class SeekerJobsFragmentDirections {
   public static NavDirections actionSeekerJobsFragmentToSeekerJobsFilterFragment() {
     return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerJobsFilterFragment);
   }
+
+  @NonNull
+  public static NavDirections actionSeekerJobsFragmentToSeekerJobWebFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerJobWebFragment);
+  }
 }

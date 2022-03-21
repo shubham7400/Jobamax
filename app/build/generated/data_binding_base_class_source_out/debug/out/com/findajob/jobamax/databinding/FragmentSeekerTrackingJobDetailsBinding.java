@@ -23,7 +23,7 @@ import java.lang.Object;
 
 public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBinding {
   @NonNull
-  public final AppCompatButton appCompatButton;
+  public final AppCompatButton acbSeeJobDesc;
 
   @NonNull
   public final CircleImageView circleImageView2;
@@ -53,7 +53,7 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   public final RecyclerView rvJobTrackingCard;
 
   @NonNull
-  public final TextView tvCompanyName;
+  public final TextView tvAboutJob;
 
   @NonNull
   public final TextView tvJobTitle;
@@ -68,13 +68,13 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerTrackingJobDetailsBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatButton appCompatButton, CircleImageView circleImageView2,
+      int _localFieldCount, AppCompatButton acbSeeJobDesc, CircleImageView circleImageView2,
       ConstraintLayout constraintLayout8, View ivAddPhase, ImageView ivBackButton,
       ImageView ivFinal, ImageView ivRemoveJob, CircleImageView ivUserProfile,
-      RelativeLayout relativeLayout, RecyclerView rvJobTrackingCard, TextView tvCompanyName,
+      RelativeLayout relativeLayout, RecyclerView rvJobTrackingCard, TextView tvAboutJob,
       TextView tvJobTitle, TextView tvPageTitle, View view11) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.appCompatButton = appCompatButton;
+    this.acbSeeJobDesc = acbSeeJobDesc;
     this.circleImageView2 = circleImageView2;
     this.constraintLayout8 = constraintLayout8;
     this.ivAddPhase = ivAddPhase;
@@ -84,7 +84,7 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
     this.ivUserProfile = ivUserProfile;
     this.relativeLayout = relativeLayout;
     this.rvJobTrackingCard = rvJobTrackingCard;
-    this.tvCompanyName = tvCompanyName;
+    this.tvAboutJob = tvAboutJob;
     this.tvJobTitle = tvJobTitle;
     this.tvPageTitle = tvPageTitle;
     this.view11 = view11;

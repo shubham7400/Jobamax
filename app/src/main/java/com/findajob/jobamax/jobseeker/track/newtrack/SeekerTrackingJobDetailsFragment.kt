@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
@@ -19,6 +22,7 @@ import com.findajob.jobamax.dialog.SeekerJobTrackingCardDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
 import com.findajob.jobamax.model.TrackingJob
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
 
@@ -37,14 +41,15 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerTrackingJobDetailsBinding.inflate(inflater, container, false)
+
         configureUi()
         return binding.root
     }
 
     private fun configureUi() {
         setAdapter()
-        setClickListeners()
         viewModelObserver()
+        setClickListeners()
         arguments?.getSerializable("trackingJobamaxJob")?.let {
             trackingJob = it as TrackingJob
             updateViewForJobamaxJob()
@@ -104,13 +109,14 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
 
     private fun setJobamaxJobData() {
         binding.tvJobTitle.text = trackingJob?.job?.getString("jobTitle") ?: ""
-        binding.tvCompanyName.text = trackingJob?.job?.getString("companyName") ?: ""
+        binding.tvAboutJob.text = trackingJob?.job?.getString("description") ?: ""
+        binding.tvPageTitle.text = trackingJob?.job?.getString("companyName") ?: ""
         val mainObject = Gson().fromJson(trackingJob!!.phases, PhaseGroup::class.java)
         phases = arrayListOf(
             "Select Phase",
             "Online interviews",
             "Assessments",
-            "Phone call ",
+            "Phone call",
             "Interview",
             "Hired",
             "Refused"
@@ -179,7 +185,21 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
             }.show()
         }
         binding.ivRemoveJob.setOnClickListener {
-            trackingJob?.pfObject?.delete()
+            progressHud.show()
+            trackingJob?.pfObject?.deleteInBackground {
+                progressHud.dismiss()
+                if (it != null){
+                    toast("${it.message.toString()}")
+                }else{
+                    toast("Job deleted.")
+                    requireActivity().onBackPressed()
+                }
+            }
+        }
+        binding.acbSeeJobDesc.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable("tracking_job", trackingJob)
+            Navigation.findNavController(it).navigate(R.id.seekerTrackingJobDescriptionFragment, bundle)
         }
         binding.ivFinal.setOnClickListener {
             trackingJob?.pfObject?.put("isSelected", true)
@@ -195,6 +215,10 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
                      }
                 }
             }
+        }
+
+        binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 

@@ -50,9 +50,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:gravity="center"
                     android:layout_toStartOf="@+id/civ_user"
                     android:layout_toEndOf="@+id/iv_back_button"
+                    android:gravity="center"
                     android:text="@string/account"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20dp" />
@@ -148,10 +148,42 @@
                     style="@style/v_divider"
                     android:layout_marginHorizontal="16dp" />
 
-                <TextView
-                    style="@style/seeker_account_menu.arrow_right"
-                    android:text="Language"
-                    app:drawableEndCompat="@drawable/ic_arrow_forward" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="@drawable/rounded_white_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_change_language"
+                        style="@style/seeker_account_menu.arrow_right"
+                        android:layout_width="0dp"
+                        android:text="@string/language"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_current_language"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_current_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="en"
+                        android:textSize="18sp"
+                        android:paddingHorizontal="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView17"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <RelativeLayout

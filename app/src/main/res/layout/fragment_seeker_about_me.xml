@@ -52,11 +52,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_centerInParent="true"
                         android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/iv_back_button"
-                        android:fontFamily="@font/opensans_bold"
-                        android:text="About me"
+                         android:fontFamily="@font/opensans_bold"
+                        android:text="@string/about_me"
                         android:textColor="#7800EF"
                         android:textSize="20dp" />
 
@@ -80,6 +79,16 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+
+                <ImageView
+                    android:id="@+id/iv_edit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/edit"
+                    android:layout_marginStart="-10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_pic"
+                    app:layout_constraintStart_toEndOf="@+id/iv_user_profile_pic" />
 
 
                 <LinearLayout
@@ -110,10 +119,10 @@
                         android:layout_marginEnd="20dp"
                         android:src="@drawable/tiktok" />
                     <ImageView
-                        android:id="@+id/iv_edit"
+                        android:id="@+id/iv_barcode"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/edit" />
+                        android:src="@drawable/barcode" />
                 </LinearLayout>
 
                 <TextView
@@ -124,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="Your First Name"
+                    android:text="@string/your_first_name"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +145,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="40dp"
-                    android:text='@{jobSeeker.firstName.equals("") ?  ("anonymous") : jobSeeker.firstName}'
+                    android:text='@{jobSeeker.firstName}'
                     android:layout_marginHorizontal="20dp"
                     android:paddingStart="10dp"
                     android:background="@drawable/rounded_white_box"
@@ -151,7 +160,7 @@
                     android:fontFamily="@font/opensans_bold"
                     android:layout_marginTop="30dp"
                     android:layout_marginHorizontal="20dp"
-                    android:text="Your Last Name"
+                    android:text="@string/your_last_name"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +173,7 @@
                     android:minHeight="40dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginHorizontal="20dp"
-                    android:text='@{jobSeeker.lastName.equals("") ?  ("anonymous") : jobSeeker.lastName}'
+                    android:text='@{jobSeeker.lastName}'
                     android:paddingStart="10dp"
                     android:background="@drawable/rounded_white_box"
                     app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +187,7 @@
                     android:fontFamily="@font/opensans_bold"
                     android:layout_marginTop="30dp"
                     android:layout_marginHorizontal="20dp"
-                    android:text="Your Profession"
+                    android:text="@string/your_profession"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -205,7 +214,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginHorizontal="20dp"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="Your elevator pitch (240 characters)"
+                    android:text="@string/your_elevator_pitch_240_characters"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -217,10 +226,12 @@
                     android:layout_height="150dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginBottom="50dp"
                     android:background="@drawable/rounded_white_box"
                     android:gravity="top"
                     android:padding="10dp"
                     android:text='@{jobSeeker.elevatorPitch.equals("") ?  ("") : jobSeeker.elevatorPitch}'
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView11" />

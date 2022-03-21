@@ -71,27 +71,18 @@
                                 android:id="@+id/tv_page_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
+                                android:layout_centerInParent="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_toRightOf="@+id/iv_back_button"
-                                android:fontFamily="@font/opensans_bold"
+                                 android:fontFamily="@font/opensans_bold"
                                 android:text="Macdonals"
                                 android:textColor="#7800EF"
                                 android:textSize="20dp" />
 
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_toEndOf="@+id/tv_page_title"
-                                android:src="@drawable/menu" />
-
 
                             <de.hdodenhof.circleimageview.CircleImageView
                                 android:id="@+id/iv_user_profile"
-                                android:layout_width="50dp"
                                 loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                                android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_alignParentEnd="true"
                                 android:src="@drawable/default_user_img" />
@@ -120,12 +111,13 @@
                         android:text="Product\n Assistant Manager"
                         android:textColor="@color/black"
                         android:textSize="18sp"
+                        android:maxLines="2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
 
                     <TextView
-                        android:id="@+id/tv_company_name"
+                        android:id="@+id/tv_about_job"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -135,12 +127,13 @@
                         android:text="Macdonalds Product\n London"
                         android:textColor="@color/black"
                         android:textSize="16sp"
+                        android:maxLines="2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_job_title" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/appCompatButton"
+                        android:id="@+id/acb_see_job_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginTop="20dp"
@@ -151,7 +144,7 @@
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_about_job" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -160,7 +153,7 @@
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/appCompatButton">
+                        app:layout_constraintTop_toBottomOf="@+id/acb_see_job_desc">
 
                         <ImageView
                             android:id="@+id/iv_remove_job"

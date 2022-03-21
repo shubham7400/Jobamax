@@ -51,6 +51,9 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
     }
 
     private fun setClickListeners() {
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
+        }
          binding.btnAddVolunteering.setOnClickListener {
              if(validate()){
                  val volunteering = if (volunteeringOld != null){

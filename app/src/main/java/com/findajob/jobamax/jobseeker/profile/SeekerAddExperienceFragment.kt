@@ -80,6 +80,9 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
     }
 
     private fun setClickListeners() {
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
+        }
         binding.ivClearStartDate.setOnClickListener {
             binding.tvSelectStartDate.text = ""
         }

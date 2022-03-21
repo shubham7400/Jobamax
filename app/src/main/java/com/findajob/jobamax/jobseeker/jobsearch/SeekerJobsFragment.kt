@@ -1,6 +1,7 @@
 package com.findajob.jobamax.jobseeker.jobsearch
 
 import android.content.Intent
+import android.content.Intent.getIntent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -10,7 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
- import android.view.animation.LinearInterpolator
+import android.view.animation.LinearInterpolator
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +19,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.HardSkill
 import com.findajob.jobamax.databinding.FragmentSeekerJobsBinding
@@ -31,9 +31,10 @@ import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.JobSeekerJobFilter
- import com.findajob.jobamax.model.NewJobOffer
+import com.findajob.jobamax.model.NewJobOffer
 import com.findajob.jobamax.preference.getJobSeekerJobFilter
 import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.preference.setJobSeekerJobFilter
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.material.chip.Chip
@@ -50,6 +51,7 @@ import com.squareup.picasso.Picasso
 import com.yuyakaido.android.cardstackview.*
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONObject
+import com.findajob.jobamax.R
 
 
 @AndroidEntryPoint
@@ -180,7 +182,6 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                         list.add(NewJobOffer(mainObject))
                     }
                     jobOfferList = list
-                    log("dfkldk ${list.size}")
                     adapter.submitList(jobOfferList)
                     adapter.notifyDataSetChanged()
                     setMatchPercentage()
@@ -252,8 +253,8 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             this.tvIndustry.text = job.industry
 
 
-            if(job.profilePicUrl.isNotEmpty()){
-                Picasso.get().load(job.profilePicUrl).into(this.ivCompany)
+            if(job.companyLogo.isNotEmpty()){
+                Picasso.get().load(job.companyLogo).into(this.ivCompany)
             }else{
                 this.ivCompany.setImageResource(R.drawable.ic_company)
             }
@@ -487,7 +488,14 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 result == null -> {
                     toast("No result found")
                 }
-                else -> {}
+                else -> {
+                    log("dfsdlkf   ${swipedJobOffer?.jobUrl}")
+                    swipedJobOffer?.jobUrl?.let {
+                        val bundle = Bundle()
+                        bundle.putSerializable("job_url", it)
+                        Navigation.findNavController(binding.root).navigate(com.findajob.jobamax.R.id.seekerJobWebFragment, bundle)
+                    }
+                }
             }
         })
     }
@@ -534,7 +542,12 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             binding.csvJob.swipe()
         }
 
-
+        binding.ivSearchIcon.setOnClickListener {
+            if (!binding.etJobKeyword.text.isNullOrEmpty()){
+                updateJobFilter(binding.etJobKeyword.text.toString())
+            }
+            getJobOffers()
+        }
 
         binding.civUser.setOnClickListener { requireActivity().onBackPressed() }
 
@@ -542,6 +555,16 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             requireActivity().onBackPressed()
         }
         binding.ivFilterJob.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_seekerJobsFilterFragment, null))
+    }
+
+    private fun updateJobFilter(searchString: String) {
+        val jobSeekerJobFilter = if (requireContext().getJobSeekerJobFilter() != ""){
+             Gson().fromJson(requireContext().getJobSeekerJobFilter(), JobSeekerJobFilter::class.java)
+        }else{
+            JobSeekerJobFilter()
+        }
+        jobSeekerJobFilter.searchString = searchString
+        requireContext().setJobSeekerJobFilter(Gson().toJson(jobSeekerJobFilter ))
     }
 
     private fun shareJob() {
@@ -594,8 +617,8 @@ class SeekerJobCardStackAdapter(var list : ArrayList<NewJobOffer>)  : RecyclerVi
             this.tvJobOfferId.text = jobOffer.jobOfferId
             this.clOverlay.visibility = View.GONE
 
-            if(jobOffer.profilePicUrl.isNotEmpty()){
-                Picasso.get().load(jobOffer.profilePicUrl).into(this.ivCompany)
+            if(jobOffer.companyLogo.isNotEmpty()){
+                Picasso.get().load(jobOffer.companyLogo).into(this.ivCompany)
             }else{
                 this.ivCompany.setImageResource(R.drawable.ic_company)
             }

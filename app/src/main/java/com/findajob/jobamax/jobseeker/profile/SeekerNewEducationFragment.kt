@@ -86,6 +86,9 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         binding.ivBackButton.setOnClickListener {
             (activity as SeekerProfileActivity).onBackPressed()
         }
+       binding.ivUserProfile.setOnClickListener {
+           requireActivity().finish()
+       }
         binding.tvStartDate.setOnClickListener {
             onDateClicked(binding.tvStartDate)
         }

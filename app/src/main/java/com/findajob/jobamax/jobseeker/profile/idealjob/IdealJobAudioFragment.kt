@@ -86,7 +86,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
 
     private fun setClickListeners() {
         binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().finish()
         }
         binding.btnRecord.setOnClickListener {
             onRecord(mStartRecording)

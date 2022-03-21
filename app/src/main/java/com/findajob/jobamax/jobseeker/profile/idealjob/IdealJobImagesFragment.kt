@@ -61,7 +61,9 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IdealJob.toString())
         query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
         query.include("jobSeeker")
+        progressHud.show()
         query.getFirstInBackground { result, e ->
+            progressHud.dismiss()
             when {
                 e != null -> {
                     toast("${e.message.toString()}")

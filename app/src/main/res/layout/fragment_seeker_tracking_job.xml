@@ -53,11 +53,10 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
+                   android:layout_centerInParent="true"
                    android:layout_marginStart="10dp"
-                   android:layout_toRightOf="@+id/iv_back_button"
-                   android:fontFamily="@font/opensans_bold"
-                   android:text="Tracking"
+                    android:fontFamily="@font/opensans_bold"
+                   android:text="@string/tracking"
                    android:textColor="@color/colorPrimary"
                    android:textSize="20dp" />
 
@@ -100,7 +99,7 @@
                    android:layout_height="wrap_content"
                    android:layout_centerVertical="true"
                    android:fontFamily="@font/opensans_regular"
-                   android:text="Next Deadline"
+                   android:text="@string/next_deadline"
                    android:textColor="@color/black"
                    android:textSize="20dp"
                    app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +140,7 @@
                    android:layout_height="wrap_content"
                    android:layout_centerVertical="true"
                    android:fontFamily="@font/opensans_regular"
-                   android:text="Next Interview"
+                   android:text="@string/next_interview"
                    android:textColor="@color/black"
                    android:textSize="20dp"
                    app:layout_constraintEnd_toEndOf="parent"
@@ -197,7 +196,7 @@
                    android:fontFamily="@font/opensans_regular"
                    android:textColor="@color/black"
                    android:background="@drawable/rounded_white_box"
-                   android:text="Jobamax Jobs" />
+                   android:text="@string/jobamax_jobs" />
 
                <TextView
                    android:id="@+id/tv_other_job"
@@ -210,7 +209,7 @@
                    android:textColor="@color/black"
                    android:fontFamily="@font/opensans_regular"
                    android:gravity="center"
-                    android:text="Other Jobs" />
+                    android:text="@string/other_jobs" />
            </LinearLayout>
 
        </androidx.constraintlayout.widget.ConstraintLayout>
@@ -231,7 +230,7 @@
                android:layout_height="wrap_content"
                android:layout_centerVertical="true"
                android:fontFamily="@font/opensans_bold"
-               android:text="Your job appllications"
+               android:text="@string/your_job_application"
                android:textColor="@color/black"
                android:textSize="20dp"
                app:layout_constraintBottom_toBottomOf="parent"

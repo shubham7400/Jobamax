@@ -44,15 +44,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toRightOf="@+id/iv_back_button"
-                    android:fontFamily="@font/opensans_bold"
-                    android:text="My Skills"
+                     android:fontFamily="@font/opensans_bold"
+                    android:text="@string/my_skills"
                     android:textColor="#7800EF"
                     android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_profile"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="My Skills"
+                    android:text="@string/my_skills"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +101,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/opensans_bold"
-                        android:text="Hard Skills"
+                        android:text="@string/hard_skills"
                         android:textColor="#7800EF"
                         android:textSize="20dp" />
 
@@ -157,7 +157,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/opensans_bold"
-                        android:text="Soft Skills"
+                        android:text="@string/soft_skills"
                         android:textColor="#7800EF"
                         android:textSize="20dp" />
 
@@ -206,7 +206,7 @@
                     android:background="@drawable/bg_gradient_rounded"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
-                    android:text="Save Information"
+                    android:text="@string/save_information"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18dp" />

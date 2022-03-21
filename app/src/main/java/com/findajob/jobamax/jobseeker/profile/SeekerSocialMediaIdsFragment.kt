@@ -46,6 +46,9 @@ class SeekerSocialMediaIdsFragment : BaseFragmentMain<FragmentSeekerSocialMediaI
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().finish()
+        }
          binding.btnSave.setOnClickListener {
              val instagramLink = if(binding.etInstagramLink.text.isNullOrBlank()) "" else binding.etInstagramLink.text.toString()
              val linkedInLink = if(binding.etLinkedinLink.text.isNullOrBlank()) "" else binding.etLinkedinLink.text.toString()

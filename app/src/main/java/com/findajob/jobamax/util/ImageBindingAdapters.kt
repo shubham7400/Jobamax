@@ -11,6 +11,7 @@ import coil.transform.RoundedCornersTransformation
 import com.findajob.jobamax.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
+import com.bumptech.glide.request.RequestOptions
 
 @BindingAdapter("loadImageFromDrawable")
 fun loadImageFromDrawable(imageView: ImageView, icon: Int) {
@@ -116,7 +117,7 @@ fun loadImageFromUrl(imageView: ImageView, imgUrl: String?) {
         imageView.setImageResource(R.drawable.default_user_img)
     }else{
         imgUrl.let {
-            Glide.with(imageView.context)
+            Glide.with(imageView.context).applyDefaultRequestOptions( RequestOptions().placeholder(R.drawable.default_user_img).error(R.drawable.default_user_img))
                 .load(it)
                 .into(imageView)
         }

@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.chip.ChipGroup;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -44,6 +45,9 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
   public final ImageView ivSoftSkillAddBtn;
 
   @NonNull
+  public final CircleImageView ivUserProfile;
+
+  @NonNull
   public final RelativeLayout relativeLayout;
 
   @NonNull
@@ -61,8 +65,8 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
   protected FragmentSeekerMySkillBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AutoCompleteTextView actvHardSkill, AutoCompleteTextView actvSoftSkill, Button btnSaveInfo,
       ChipGroup cgSoftSkill, ImageView ivBackButton, ImageView ivHardSkillAddBtn,
-      ImageView ivSoftSkillAddBtn, RelativeLayout relativeLayout, RecyclerView rvHardSkill,
-      TextView tvDdd, TextView tvDddd) {
+      ImageView ivSoftSkillAddBtn, CircleImageView ivUserProfile, RelativeLayout relativeLayout,
+      RecyclerView rvHardSkill, TextView tvDdd, TextView tvDddd) {
     super(_bindingComponent, _root, _localFieldCount);
     this.actvHardSkill = actvHardSkill;
     this.actvSoftSkill = actvSoftSkill;
@@ -71,6 +75,7 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
     this.ivBackButton = ivBackButton;
     this.ivHardSkillAddBtn = ivHardSkillAddBtn;
     this.ivSoftSkillAddBtn = ivSoftSkillAddBtn;
+    this.ivUserProfile = ivUserProfile;
     this.relativeLayout = relativeLayout;
     this.rvHardSkill = rvHardSkill;
     this.tvDdd = tvDdd;
