@@ -4,7 +4,6 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,13 +24,13 @@ import java.lang.Object;
 
 public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding {
   @NonNull
-  public final Button btnSaveInfo;
-
-  @NonNull
   public final CheckBox cbCurrentStudent;
 
   @NonNull
   public final ConstraintLayout clEndDate;
+
+  @NonNull
+  public final TextView etDescription;
 
   @NonNull
   public final EditText etGpa;
@@ -67,6 +66,9 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   public final TextView textView9;
 
   @NonNull
+  public final TextView tvDescriptionTitle;
+
+  @NonNull
   public final TextView tvEndDate;
 
   @NonNull
@@ -79,15 +81,16 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerNewEducationBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, Button btnSaveInfo, CheckBox cbCurrentStudent,
-      ConstraintLayout clEndDate, EditText etGpa, EditText etProgram, ImageView ivBackButton,
+      int _localFieldCount, CheckBox cbCurrentStudent, ConstraintLayout clEndDate,
+      TextView etDescription, EditText etGpa, EditText etProgram, ImageView ivBackButton,
       CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
       TextView textView10, TextView textView11, TextView textView144, TextView textView15,
-      TextView textView9, TextView tvEndDate, TextView tvSchool, TextView tvStartDate) {
+      TextView textView9, TextView tvDescriptionTitle, TextView tvEndDate, TextView tvSchool,
+      TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnSaveInfo = btnSaveInfo;
     this.cbCurrentStudent = cbCurrentStudent;
     this.clEndDate = clEndDate;
+    this.etDescription = etDescription;
     this.etGpa = etGpa;
     this.etProgram = etProgram;
     this.ivBackButton = ivBackButton;
@@ -99,6 +102,7 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
     this.textView144 = textView144;
     this.textView15 = textView15;
     this.textView9 = textView9;
+    this.tvDescriptionTitle = tvDescriptionTitle;
     this.tvEndDate = tvEndDate;
     this.tvSchool = tvSchool;
     this.tvStartDate = tvStartDate;

@@ -20,10 +20,7 @@ import com.findajob.jobamax.databinding.ItemPortfolioImageBinding
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.util.ImagePicker
-import com.findajob.jobamax.util.errorToast
-import com.findajob.jobamax.util.log
-import com.findajob.jobamax.util.toast
+import com.findajob.jobamax.util.*
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
@@ -83,7 +80,6 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
     }
 
     private fun setAdapter() {
-        log("lkdfjsd $idealJobImageUrlList")
         adapter = IdealJobImageAdapter(idealJobImageUrlList)
         binding.rvImageAndVideo.adapter = adapter
         adapter.addImage = {
@@ -125,6 +121,7 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
                 if(it != null){
                     toast("${it.message.toString()}")
                 }
+                callback()
             }
         }else{
             val portfolioParseObject = idealJob!!.pfObject
@@ -153,17 +150,14 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
                 val result = CropImage.getActivityResult(data)
                 val profilePicUri = result.uri
                 if (profilePicUri != null) {
-                    viewModel.uploadImage(profilePicUri, {
-                        if (it != null) {
-                            toast("${it.message.toString()}")
-                        }
-                    },{
-                        if (it != null) {
-                            idealJobImageUrlList.add(it)
+                    uploadImageToParse(profilePicUri, requireContext(), { exception ->
+                        toast(exception)
+                    },
+                        { imageUrl ->
+                            idealJobImageUrlList.add(imageUrl)
                             adapter.submitList(idealJobImageUrlList)
                             adapter.notifyDataSetChanged()
-                        }
-                    })
+                        })
                 }
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
@@ -172,18 +166,10 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
         }
     }
 
-    override fun setGalleryImage(imageUri: Uri?) {
+    override fun setImageUri(imageUri: Uri?) {
         imageUri?.let { cropImageFromUri(it) }
     }
 
-    override fun setCameraImage(filePath: String?) {
-        filePath?.let { cropImageFromUri(Uri.fromFile(File(filePath))) }
-
-    }
-
-    override fun setImageFile(file: File?) {
-        file?.let { cropImageFromUri(Uri.fromFile(file)) }
-    }
 
     private fun cropImageFromUri(uri: Uri) {
         CropImage.activity(uri)

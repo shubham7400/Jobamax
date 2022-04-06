@@ -2,23 +2,14 @@ package com.findajob.jobamax.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.findajob.jobamax.BaseFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentKeepMePostedBinding
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity
-import com.findajob.jobamax.model.UpdateUserCallback
-import com.findajob.jobamax.preference.getRole
 import com.findajob.jobamax.preference.getUserType
-import com.findajob.jobamax.recruiter.profile.account.personalInfo.RecruiterPersonalInfoIntroActivity
-import com.findajob.jobamax.util.ROLE_JOB_SEEKER
-import com.findajob.jobamax.util.errorToast
+
 
 class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), KeepMePostedInterface {
 
@@ -63,7 +54,7 @@ class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), Ke
 	private fun navHome() {
 		if (requireActivity().getUserType() == 2)
 			startActivity(Intent(requireContext(), JobSeekerPersonalIntroInfoActivity::class.java))
-		else startActivity(Intent(requireContext(), RecruiterPersonalInfoIntroActivity::class.java))
+		/*else startActivity(Intent(requireContext(), RecruiterPersonalInfoIntroActivity::class.java))*/
 		requireActivity().finishAffinity()
 	}
 

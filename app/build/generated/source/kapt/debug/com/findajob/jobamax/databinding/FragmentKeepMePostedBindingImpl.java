@@ -25,9 +25,9 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback238;
+    private final android.view.View.OnClickListener mCallback54;
     @Nullable
-    private final android.view.View.OnClickListener mCallback237;
+    private final android.view.View.OnClickListener mCallback53;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -47,8 +47,8 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback238 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback237 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback54 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback53 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -110,8 +110,8 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback237);
-            this.mboundView2.setOnClickListener(mCallback238);
+            this.mboundView1.setOnClickListener(mCallback53);
+            this.mboundView2.setOnClickListener(mCallback54);
         }
     }
     // Listener Stub Implementations

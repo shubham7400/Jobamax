@@ -51,17 +51,17 @@
                                   android:layout_height="wrap_content"
                                   android:layout_centerInParent="true"
                                   android:layout_marginStart="10dp"
-                                   android:fontFamily="@font/opensans_bold"
+                                  android:fontFamily="@font/opensans_bold"
                                   android:text="@string/my_profile"
                                   android:textColor="@color/colorPrimary"
-                                  android:textSize="20dp" />
+                                  android:textSize="20sp" />
 
                               <de.hdodenhof.circleimageview.CircleImageView
                                   android:id="@+id/civ_user"
+                                  style="@style/circular_image"
                                   loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-                                  android:layout_width="50dp"
-                                  android:layout_height="50dp"
                                   android:layout_alignParentEnd="true"
+                                  app:civ_border_color="@color/colorPrimary"
                                   android:src="@drawable/default_user_img" />
                          </RelativeLayout>
                     </RelativeLayout>
@@ -73,7 +73,7 @@
                         android:text="@string/text"
                         android:fontFamily="@font/opensans_bold"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="25sp"
+                        android:textSize="18sp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="30dp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -89,8 +89,7 @@
                         android:background="@drawable/rounded_white_box"
                         android:fontFamily="@font/opensans_regular"
                         android:gravity="top"
-                        android:hint="@string/enter"
-                        android:minHeight="150dp"
+                         android:minHeight="150dp"
                         android:padding="5dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"
@@ -105,9 +104,10 @@
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="50dp"
                         android:text="@string/links"
+                        android:hint="@string/enter_file_link"
                         android:fontFamily="@font/opensans_bold"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="25sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/et_portfolio_description" />
 
@@ -118,8 +118,7 @@
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/rounded_white_box"
-                        android:hint="@string/enter_link_here"
-                        android:minHeight="50dp"
+                         android:minHeight="50dp"
                         android:paddingHorizontal="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -141,7 +140,7 @@
                         android:layout_marginStart="10dp"
                         android:text="@string/add_link"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_add_link"
                         app:layout_constraintStart_toEndOf="@+id/iv_add_link"

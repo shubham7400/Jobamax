@@ -60,10 +60,9 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:onClick="@{() -> handler.onBackButtonClicked()}"
+                    style="@style/circular_image"
                     android:layout_alignParentEnd="true"
+                    android:onClick="@{() -> handler.onBackButtonClicked()}"
                     android:src="@drawable/default_user_img" />
             </RelativeLayout>
         </RelativeLayout>
@@ -150,6 +149,7 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_change_language"
                     android:background="@drawable/rounded_white_box"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -172,11 +172,11 @@
                         android:textSize="18sp"
                         android:paddingHorizontal="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/imageView17"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_change_language_arrow"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/imageView17"
+                        android:id="@+id/iv_change_language_arrow"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/ic_arrow_forward"
@@ -283,17 +283,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.suke.widget.SwitchButton
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/sb_push_notification"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:sb_uncheck_color="@color/gray"
-                        app:sb_checked_color="#0576FE" />
-
+                        app:track="@drawable/selector_switch_track"
+                        android:thumb="@drawable/selector_switch_thumb"
+                        />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -329,6 +328,7 @@
                     android:layout_marginTop="20dp"
                     android:onClick="@{() -> handler.onShareJobamaxClicked()}"
                     android:text="@string/share_jobamax" />
+
 
                 <TextView
                     android:layout_marginTop="20dp"

@@ -22,16 +22,16 @@ import java.lang.Object;
 
 public abstract class FragmentSeekerInterestBinding extends ViewDataBinding {
   @NonNull
-  public final AutoCompleteTextView actvActivities;
+  public final AutoCompleteTextView actvInterest;
 
   @NonNull
-  public final ChipGroup cgActivities;
+  public final ChipGroup cgInterests;
 
   @NonNull
   public final CircleImageView civUser;
 
   @NonNull
-  public final ImageView ivActivities;
+  public final ImageView ivAddInterest;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -46,14 +46,14 @@ public abstract class FragmentSeekerInterestBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerInterestBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AutoCompleteTextView actvActivities, ChipGroup cgActivities,
-      CircleImageView civUser, ImageView ivActivities, ImageView ivBackButton,
+      int _localFieldCount, AutoCompleteTextView actvInterest, ChipGroup cgInterests,
+      CircleImageView civUser, ImageView ivAddInterest, ImageView ivBackButton,
       RelativeLayout relativeLayout, TextView tvActivities) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.actvActivities = actvActivities;
-    this.cgActivities = cgActivities;
+    this.actvInterest = actvInterest;
+    this.cgInterests = cgInterests;
     this.civUser = civUser;
-    this.ivActivities = ivActivities;
+    this.ivAddInterest = ivAddInterest;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.tvActivities = tvActivities;

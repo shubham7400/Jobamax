@@ -2,8 +2,8 @@ package com.findajob.jobamax.jobseeker.jobsearch;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0006\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0003J\b\u0010\u001e\u001a\u00020\u001fH\u0002J\u0006\u0010 \u001a\u00020\u001fJ\u0018\u0010!\u001a\u0012\u0012\u0004\u0012\u00020#0\"j\b\u0012\u0004\u0012\u00020#`$H\u0002J\u0018\u0010%\u001a\u0012\u0012\u0004\u0012\u00020#0\"j\b\u0012\u0004\u0012\u00020#`$H\u0002J\b\u0010\u001a\u001a\u00020&H\u0014J$\u0010\'\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\b\u0010+\u001a\u0004\u0018\u00010,2\b\u0010-\u001a\u0004\u0018\u00010.H\u0016J\u0012\u0010/\u001a\u00020\u001f2\b\u00100\u001a\u0004\u0018\u00010.H\u0014J\b\u00101\u001a\u00020\u001fH\u0002J\b\u00102\u001a\u00020\u001fH\u0002J\b\u00103\u001a\u00020\u001fH\u0002J\b\u00104\u001a\u00020\u001fH\u0002J\b\u00105\u001a\u00020\u001fH\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001e\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0086\u000e\u00a2\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0011\u001a\u00020\u00128TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u001e\u0010\u0015\u001a\u0004\u0018\u00010\u000bX\u0086\u000e\u00a2\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\u0016\u0010\r\"\u0004\b\u0017\u0010\u000fR\u001b\u0010\u0018\u001a\u00020\u00198FX\u0086\u0084\u0002\u00a2\u0006\f\n\u0004\b\u001c\u0010\u001d\u001a\u0004\b\u001a\u0010\u001b\u00a8\u00066"}, d2 = {"Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobsFilterFragment;", "Lcom/findajob/jobamax/base/BaseFragmentMain;", "Lcom/findajob/jobamax/databinding/FragmentSeekerJobsFilterBinding;", "()V", "autocompleteFragment", "Lcom/google/android/libraries/places/widget/AutocompleteSupportFragment;", "getAutocompleteFragment", "()Lcom/google/android/libraries/places/widget/AutocompleteSupportFragment;", "setAutocompleteFragment", "(Lcom/google/android/libraries/places/widget/AutocompleteSupportFragment;)V", "lat", "", "getLat", "()Ljava/lang/Double;", "setLat", "(Ljava/lang/Double;)V", "Ljava/lang/Double;", "layoutRes", "", "getLayoutRes", "()I", "lng", "getLng", "setLng", "viewModel", "Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "getViewModel", "()Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "viewModel$delegate", "Lkotlin/Lazy;", "configureUi", "", "getCurrent", "getExperience", "Ljava/util/ArrayList;", "", "Lkotlin/collections/ArrayList;", "getTypeOfWork", "Landroidx/lifecycle/ViewModel;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onCreated", "savedInstance", "saveFilters", "setListeners", "setPlaceAutocompleteFragment", "setPreferenceValue", "viewModelObserver", "app_debug"})
-public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.BaseFragmentMain<com.findajob.jobamax.databinding.FragmentSeekerJobsFilterBinding> {
+@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u00012\u00020\u0003B\u0005\u00a2\u0006\u0002\u0010\u0004J\b\u0010,\u001a\u00020-H\u0002J\b\u0010.\u001a\u00020-H\u0002J\b\u0010/\u001a\u00020-H\u0002J\u000e\u00100\u001a\b\u0012\u0004\u0012\u00020\u00160\fH\u0002J\b\u00101\u001a\u00020-H\u0002J\u000e\u00102\u001a\b\u0012\u0004\u0012\u00020\u001603H\u0002J\b\u00104\u001a\u00020-H\u0002J\b\u0010(\u001a\u000205H\u0014J\u0016\u00106\u001a\u00020-2\f\u00107\u001a\b\u0012\u0004\u0012\u00020-08H\u0016J$\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020<2\b\u0010=\u001a\u0004\u0018\u00010>2\b\u0010?\u001a\u0004\u0018\u00010@H\u0016J\u0012\u0010A\u001a\u00020-2\b\u0010B\u001a\u0004\u0018\u00010@H\u0014J\u0016\u0010C\u001a\u00020-2\f\u00107\u001a\b\u0012\u0004\u0012\u00020-08H\u0002J\b\u0010D\u001a\u00020-H\u0002J\b\u0010E\u001a\u00020-H\u0002J\b\u0010F\u001a\u00020-H\u0002J\b\u0010G\u001a\u00020-H\u0002J\b\u0010H\u001a\u00020-H\u0002J\b\u0010I\u001a\u00020-H\u0002J\u0016\u0010J\u001a\u00020-2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fH\u0002J\b\u0010K\u001a\u00020-H\u0002R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.\u00a2\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00160\fX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u001e\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0086\u000e\u00a2\u0006\u0010\n\u0002\u0010\u001d\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\u0014\u0010\u001e\u001a\u00020\u001f8TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\b \u0010!R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00160\fX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u001e\u0010#\u001a\u0004\u0018\u00010\u0018X\u0086\u000e\u00a2\u0006\u0010\n\u0002\u0010\u001d\u001a\u0004\b$\u0010\u001a\"\u0004\b%\u0010\u001cR\u001b\u0010&\u001a\u00020\'8FX\u0086\u0084\u0002\u00a2\u0006\f\n\u0004\b*\u0010+\u001a\u0004\b(\u0010)\u00a8\u0006L"}, d2 = {"Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobsFilterFragment;", "Lcom/findajob/jobamax/base/BaseFragmentMain;", "Lcom/findajob/jobamax/databinding/FragmentSeekerJobsFilterBinding;", "Lcom/findajob/jobamax/jobseeker/profile/idealjob/IOnBackPressed;", "()V", "autocompleteFragment", "Lcom/google/android/libraries/places/widget/AutocompleteSupportFragment;", "getAutocompleteFragment", "()Lcom/google/android/libraries/places/widget/AutocompleteSupportFragment;", "setAutocompleteFragment", "(Lcom/google/android/libraries/places/widget/AutocompleteSupportFragment;)V", "categories", "Ljava/util/ArrayList;", "Lcom/findajob/jobamax/data/pojo/Categories;", "isJobTitleSelected", "", "()Z", "setJobTitleSelected", "(Z)V", "jobTitleAdapter", "Lcom/findajob/jobamax/jobseeker/jobsearch/SeekerJobTitleAdapter;", "jobTitles", "", "lat", "", "getLat", "()Ljava/lang/Double;", "setLat", "(Ljava/lang/Double;)V", "Ljava/lang/Double;", "layoutRes", "", "getLayoutRes", "()I", "listOfTypeOfWork", "lng", "getLng", "setLng", "viewModel", "Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "getViewModel", "()Lcom/findajob/jobamax/jobseeker/home/JobSeekerHomeViewModel;", "viewModel$delegate", "Lkotlin/Lazy;", "configureUi", "", "experienceListener", "getCurrent", "getExperience", "getGPSLocation", "getIndustries", "", "getJobTypes", "Landroidx/lifecycle/ViewModel;", "onBackPressed", "callback", "Lkotlin/Function0;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onCreated", "savedInstance", "saveFilters", "setIndustryListRecyclerview", "setJobTypeRecyclerview", "setListeners", "setPlaceAutocompleteFragment", "setPreferenceValue", "typeOfWorkListeners", "updateList", "viewModelObserver", "app_debug"})
+public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.BaseFragmentMain<com.findajob.jobamax.databinding.FragmentSeekerJobsFilterBinding> implements com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed {
     @org.jetbrains.annotations.NotNull()
     private final kotlin.Lazy viewModel$delegate = null;
     public com.google.android.libraries.places.widget.AutocompleteSupportFragment autocompleteFragment;
@@ -11,6 +11,11 @@ public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.Ba
     private java.lang.Double lat;
     @org.jetbrains.annotations.Nullable()
     private java.lang.Double lng;
+    private com.findajob.jobamax.jobseeker.jobsearch.SeekerJobTitleAdapter jobTitleAdapter;
+    private java.util.ArrayList<java.lang.String> jobTitles;
+    private boolean isJobTitleSelected = false;
+    private java.util.ArrayList<com.findajob.jobamax.data.pojo.Categories> categories;
+    private final java.util.ArrayList<java.lang.String> listOfTypeOfWork = null;
     private java.util.HashMap _$_findViewCache;
     
     public SeekerJobsFilterFragment() {
@@ -60,6 +65,13 @@ public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.Ba
     java.lang.Double p0) {
     }
     
+    public final boolean isJobTitleSelected() {
+        return false;
+    }
+    
+    public final void setJobTitleSelected(boolean p0) {
+    }
+    
     @org.jetbrains.annotations.NotNull()
     @java.lang.Override()
     public android.view.View onCreateView(@org.jetbrains.annotations.NotNull()
@@ -72,10 +84,22 @@ public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.Ba
     private final void configureUi() {
     }
     
+    private final void setIndustryListRecyclerview() {
+    }
+    
+    private final void updateList(java.util.ArrayList<com.findajob.jobamax.data.pojo.Categories> categories) {
+    }
+    
+    private final void getGPSLocation() {
+    }
+    
+    private final void setJobTypeRecyclerview() {
+    }
+    
     private final void viewModelObserver() {
     }
     
-    public final void getCurrent() {
+    private final void getCurrent() {
     }
     
     private final void setPreferenceValue() {
@@ -84,14 +108,23 @@ public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.Ba
     private final void setListeners() {
     }
     
-    private final void saveFilters() {
+    private final void experienceListener() {
     }
     
-    private final java.util.ArrayList<java.lang.String> getExperience() {
+    private final void typeOfWorkListeners() {
+    }
+    
+    private final void getJobTypes() {
+    }
+    
+    private final void saveFilters(kotlin.jvm.functions.Function0<kotlin.Unit> callback) {
+    }
+    
+    private final java.util.List<java.lang.String> getIndustries() {
         return null;
     }
     
-    private final java.util.ArrayList<java.lang.String> getTypeOfWork() {
+    private final java.util.ArrayList<java.lang.String> getExperience() {
         return null;
     }
     
@@ -101,5 +134,10 @@ public final class SeekerJobsFilterFragment extends com.findajob.jobamax.base.Ba
     @java.lang.Override()
     protected void onCreated(@org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstance) {
+    }
+    
+    @java.lang.Override()
+    public void onBackPressed(@org.jetbrains.annotations.NotNull()
+    kotlin.jvm.functions.Function0<kotlin.Unit> callback) {
     }
 }

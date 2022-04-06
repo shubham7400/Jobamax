@@ -16,23 +16,32 @@ public class FragmentSeekerJobsFilterBindingImpl extends FragmentSeekerJobsFilte
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.et_job_keyword, 4);
-        sViewsWithIds.put(R.id.textView29, 5);
-        sViewsWithIds.put(R.id.autocomplete_fragment, 6);
-        sViewsWithIds.put(R.id.tv_select_location, 7);
-        sViewsWithIds.put(R.id.textView2e9, 8);
-        sViewsWithIds.put(R.id.tv_distance, 9);
-        sViewsWithIds.put(R.id.textView30, 10);
-        sViewsWithIds.put(R.id.sb_distance, 11);
-        sViewsWithIds.put(R.id.et_industry_name, 12);
-        sViewsWithIds.put(R.id.accb_apprenticeship, 13);
-        sViewsWithIds.put(R.id.accb_part_time, 14);
-        sViewsWithIds.put(R.id.accb_internship, 15);
-        sViewsWithIds.put(R.id.accb_permanent, 16);
-        sViewsWithIds.put(R.id.accb_less_than_one, 17);
-        sViewsWithIds.put(R.id.accb_one_to_two, 18);
-        sViewsWithIds.put(R.id.accb_more_than_two, 19);
-        sViewsWithIds.put(R.id.btn_save, 20);
+        sViewsWithIds.put(R.id.tv_job_title_hint, 4);
+        sViewsWithIds.put(R.id.et_job_keyword, 5);
+        sViewsWithIds.put(R.id.ll_add_category, 6);
+        sViewsWithIds.put(R.id.iv_add_category, 7);
+        sViewsWithIds.put(R.id.ll_industry, 8);
+        sViewsWithIds.put(R.id.linearLayout6, 9);
+        sViewsWithIds.put(R.id.textView29, 10);
+        sViewsWithIds.put(R.id.autocomplete_fragment, 11);
+        sViewsWithIds.put(R.id.tv_select_location, 12);
+        sViewsWithIds.put(R.id.textView2e9, 13);
+        sViewsWithIds.put(R.id.tv_distance, 14);
+        sViewsWithIds.put(R.id.textView30, 15);
+        sViewsWithIds.put(R.id.sb_distance, 16);
+        sViewsWithIds.put(R.id.aaaa, 17);
+        sViewsWithIds.put(R.id.et_company_name, 18);
+        sViewsWithIds.put(R.id.bbbb, 19);
+        sViewsWithIds.put(R.id.lllll, 20);
+        sViewsWithIds.put(R.id.accb_apprenticeship, 21);
+        sViewsWithIds.put(R.id.accb_part_time, 22);
+        sViewsWithIds.put(R.id.accb_internship, 23);
+        sViewsWithIds.put(R.id.accb_permanent, 24);
+        sViewsWithIds.put(R.id.cccc, 25);
+        sViewsWithIds.put(R.id.accb_less_than_one, 26);
+        sViewsWithIds.put(R.id.accb_one_to_two, 27);
+        sViewsWithIds.put(R.id.accb_more_than_two, 28);
+        sViewsWithIds.put(R.id.rv_job_types, 29);
     }
     // views
     @NonNull
@@ -43,30 +52,39 @@ public class FragmentSeekerJobsFilterBindingImpl extends FragmentSeekerJobsFilte
     // Inverse Binding Event Handlers
 
     public FragmentSeekerJobsFilterBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 30, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerJobsFilterBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[13]
-            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[15]
-            , (android.widget.CheckBox) bindings[17]
-            , (android.widget.CheckBox) bindings[19]
-            , (android.widget.CheckBox) bindings[18]
-            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[14]
-            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[16]
-            , (androidx.fragment.app.FragmentContainerView) bindings[6]
-            , (android.widget.Button) bindings[20]
+            , (android.widget.TextView) bindings[17]
+            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[21]
+            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[23]
+            , (android.widget.CheckBox) bindings[26]
+            , (android.widget.CheckBox) bindings[28]
+            , (android.widget.CheckBox) bindings[27]
+            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[22]
+            , (androidx.appcompat.widget.AppCompatCheckBox) bindings[24]
+            , (androidx.fragment.app.FragmentContainerView) bindings[11]
+            , (android.widget.TextView) bindings[19]
+            , (android.widget.TextView) bindings[25]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.EditText) bindings[12]
-            , (android.widget.EditText) bindings[4]
+            , (android.widget.EditText) bindings[18]
+            , (android.widget.EditText) bindings[5]
+            , (android.widget.ImageView) bindings[7]
             , (android.widget.ImageView) bindings[3]
+            , (android.widget.LinearLayout) bindings[9]
+            , (android.widget.LinearLayout) bindings[6]
+            , (android.widget.LinearLayout) bindings[8]
+            , (android.widget.LinearLayout) bindings[20]
             , (android.widget.RelativeLayout) bindings[2]
-            , (android.widget.SeekBar) bindings[11]
-            , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[8]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[29]
+            , (android.widget.SeekBar) bindings[16]
             , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[14]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[12]
             );
         this.civUser.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

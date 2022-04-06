@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.base.functional.Either
+
 import com.findajob.jobamax.base.isNetworkConnected
 import com.findajob.jobamax.data.remote.NoInternetException
 import com.findajob.jobamax.databinding.FragmentRegisterBinding
@@ -51,7 +51,7 @@ class RegisterFragment : BaseFragmentMain<FragmentRegisterBinding>(), RegisterIn
 			if (requireContext().isNetworkConnected()){
 				(requireActivity() as LoginActivity).isEmailAlreadyRegistered(email, password)
 			}else{
-				Either.Left(NoInternetException())
+				toast(NoInternetException.MSG)
 			}
 		}
 		

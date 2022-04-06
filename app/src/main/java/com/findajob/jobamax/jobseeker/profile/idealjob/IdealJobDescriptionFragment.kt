@@ -1,7 +1,7 @@
 package com.findajob.jobamax.jobseeker.profile.idealjob
 
 import android.os.Bundle
- import android.view.LayoutInflater
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
@@ -10,14 +10,10 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.IdealJob
 import com.findajob.jobamax.databinding.FragmentIdealJobDescriptionBinding
-  import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.util.log
-import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
-import com.parse.ParseQuery
-import kotlinx.android.synthetic.main.fragment_job_search.*
 
 
 class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescriptionBinding>(), IOnBackPressed {

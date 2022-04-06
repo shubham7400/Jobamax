@@ -15,6 +15,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,7 +30,13 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final CircleImageView civUser;
 
   @NonNull
+  public final ConstraintLayout clMostParent;
+
+  @NonNull
   public final ConstraintLayout clSearchBar;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout;
 
   @NonNull
   public final CardStackView csvJob;
@@ -53,6 +60,9 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final ImageView ivBackButton;
 
   @NonNull
+  public final ImageView ivFavorite;
+
+  @NonNull
   public final ImageView ivFilterJob;
 
   @NonNull
@@ -65,6 +75,12 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final LinearLayout llFloatButtons;
 
   @NonNull
+  public final LinearLayout llMatchPercent;
+
+  @NonNull
+  public final LinearLayout llRewind;
+
+  @NonNull
   public final NestedScrollView nsvCard;
 
   @NonNull
@@ -73,19 +89,29 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   @NonNull
   public final RelativeLayout relativeLayout;
 
+  @NonNull
+  public final RecyclerView rvJobTypes;
+
+  @NonNull
+  public final View vFilterState;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerJobsBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CircleImageView civUser, ConstraintLayout clSearchBar, CardStackView csvJob,
-      EditText etJobKeyword, FloatingActionButton fabApply, FloatingActionButton fabRefuse,
-      FloatingActionButton fabRewind, FloatingActionButton fabShare, ImageView ivBackButton,
+      CircleImageView civUser, ConstraintLayout clMostParent, ConstraintLayout clSearchBar,
+      ConstraintLayout constraintLayout, CardStackView csvJob, EditText etJobKeyword,
+      FloatingActionButton fabApply, FloatingActionButton fabRefuse, FloatingActionButton fabRewind,
+      FloatingActionButton fabShare, ImageView ivBackButton, ImageView ivFavorite,
       ImageView ivFilterJob, ImageView ivSearchIcon, ItemSeekerJobCardBinding lJob,
-      LinearLayout llFloatButtons, NestedScrollView nsvCard, PercentageChartView pcvMatch,
-      RelativeLayout relativeLayout) {
+      LinearLayout llFloatButtons, LinearLayout llMatchPercent, LinearLayout llRewind,
+      NestedScrollView nsvCard, PercentageChartView pcvMatch, RelativeLayout relativeLayout,
+      RecyclerView rvJobTypes, View vFilterState) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
+    this.clMostParent = clMostParent;
     this.clSearchBar = clSearchBar;
+    this.constraintLayout = constraintLayout;
     this.csvJob = csvJob;
     this.etJobKeyword = etJobKeyword;
     this.fabApply = fabApply;
@@ -93,13 +119,18 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
     this.fabRewind = fabRewind;
     this.fabShare = fabShare;
     this.ivBackButton = ivBackButton;
+    this.ivFavorite = ivFavorite;
     this.ivFilterJob = ivFilterJob;
     this.ivSearchIcon = ivSearchIcon;
     this.lJob = lJob;
     this.llFloatButtons = llFloatButtons;
+    this.llMatchPercent = llMatchPercent;
+    this.llRewind = llRewind;
     this.nsvCard = nsvCard;
     this.pcvMatch = pcvMatch;
     this.relativeLayout = relativeLayout;
+    this.rvJobTypes = rvJobTypes;
+    this.vFilterState = vFilterState;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

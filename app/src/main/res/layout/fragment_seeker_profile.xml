@@ -11,7 +11,7 @@
     </data>
 
     <androidx.core.widget.NestedScrollView
-        android:background="#F5F0FD"
+        android:background="@color/background_blue"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -19,7 +19,6 @@
             android:orientation="vertical"
             android:layout_height="match_parent">
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:background="#F5F0FD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageView
@@ -56,6 +55,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
                         android:layout_height="wrap_content">
 
                         <ImageView
@@ -100,7 +100,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/make_your_2_0_cv_now"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_seeker_name" />
 
@@ -123,27 +123,31 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/tv_aaa"
+                            android:id="@+id/tv_elevetor_pitch_section"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="20dp"
                             android:fontFamily="@font/opensans_regular"
-                            android:text="This section \n is empty"
+                            android:text="@string/this_section_is_empty"
                             android:textColor="@color/white"
-                            android:textSize="20sp" />
+                            android:textSize="18sp"
+                            android:visibility="invisible" />
 
                         <TextView
                             android:id="@+id/tv_about_me_btn"
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/tv_aaa"
+                            android:layout_below="@+id/tv_elevetor_pitch_section"
                             android:layout_marginBottom="20dp"
                             android:background="@drawable/rounded_white_box"
+                            android:ellipsize="end"
                             android:fontFamily="@font/opensans_regular"
+                            android:gravity="center"
+                            android:maxLines="1"
                             android:padding="10dp"
                             android:text="@string/about_me"
-                            android:textSize="18sp"
-                            android:textColor="@color/blue_2" />
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
                     </RelativeLayout>
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -151,6 +155,8 @@
                         android:layout_width="220dp"
                         android:layout_height="220dp"
                         android:layout_marginEnd="-30dp"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"
                         loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                         android:src="@drawable/default_user_img"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -180,7 +186,7 @@
                             android:layout_centerVertical="true"
                             android:fontFamily="@font/opensans_bold"
                             android:text="@string/my_ideal_job"
-                            android:textColor="@color/blue_2"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="20dp" />
 
                         <ImageView
@@ -196,7 +202,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/opensans_regular"
                         android:text="@string/explain_your_career_goals_and_what_can_you_bring_to_a_company"
                         android:textColor="@color/gray"
@@ -321,7 +327,7 @@
 
 
                     <RelativeLayout
-                        android:layout_marginTop="20dp"
+                        android:layout_marginVertical="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -332,7 +338,7 @@
                             android:layout_centerVertical="true"
                             android:fontFamily="@font/opensans_bold"
                             android:text="@string/my_resume"
-                            android:textColor="@color/blue_2"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="20dp" />
 
                         <TextView
@@ -452,7 +458,7 @@
                                 android:fontFamily="@font/opensans_bold"
                                 android:text="@string/volunteering"
                                 android:textColor="@color/black"
-                                android:textSize="20dp"
+                                android:textSize="20sp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -607,26 +613,39 @@
                     </LinearLayout>
 
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/opensans_bold"
-                        android:text="@string/my_portfolio"
-                        android:textColor="@color/blue_2"
-                        android:textSize="20dp" />
+                        android:gravity="center_vertical"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/opensans_regular"
-                        android:text="@string/explain_your_career_goals_and_what_can_you_bring_to_a_company"
-                        android:textColor="@color/gray"
-                        android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/tv_dddd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/my_portfolio"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/iv_infco"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toRightOf="@+id/tv_dddd"
+                            android:src="@drawable/info_blue" />
+                    </RelativeLayout>
+
+
 
                     <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -746,14 +765,14 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@string/my_ideal_workspace"
-                        android:textColor="@color/blue_2"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="20dp" />
 
                     <RelativeLayout
                         android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:gravity="center_vertical"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
@@ -775,9 +794,8 @@
                             android:layout_toEndOf="@+id/iv_add_ideal_workspace_btn"
                             android:background="@drawable/rounded_white_box"
                             android:fontFamily="@font/opensans_regular"
-                            android:hint="@string/enter_skills"
-                            android:minHeight="30dp"
-                            android:paddingStart="10dp"
+                             android:minHeight="30dp"
+                            android:paddingHorizontal="10dp"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
                     </RelativeLayout>

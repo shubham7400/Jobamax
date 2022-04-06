@@ -28,17 +28,17 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
         sViewsWithIds.put(R.id.iv_tiktok, 12);
         sViewsWithIds.put(R.id.textView26, 13);
         sViewsWithIds.put(R.id.tv_seeker_about, 14);
-        sViewsWithIds.put(R.id.textView2x6, 15);
+        sViewsWithIds.put(R.id.tv_school, 15);
         sViewsWithIds.put(R.id.rv_school, 16);
-        sViewsWithIds.put(R.id.textView2dx6, 17);
+        sViewsWithIds.put(R.id.tv_experience, 17);
         sViewsWithIds.put(R.id.rv_experience, 18);
-        sViewsWithIds.put(R.id.textViewd2dx6, 19);
+        sViewsWithIds.put(R.id.tv_hard_skill, 19);
         sViewsWithIds.put(R.id.rv_hard_skill, 20);
-        sViewsWithIds.put(R.id.textViewde2dx6, 21);
+        sViewsWithIds.put(R.id.tv_soft_skill, 21);
         sViewsWithIds.put(R.id.cg_soft_skill, 22);
         sViewsWithIds.put(R.id.tv_volunteering_title, 23);
         sViewsWithIds.put(R.id.rv_volunteering, 24);
-        sViewsWithIds.put(R.id.textVisewrde2dx6, 25);
+        sViewsWithIds.put(R.id.tv_interest, 25);
         sViewsWithIds.put(R.id.cg_activities, 26);
         sViewsWithIds.put(R.id.textVisewdrde2dx6, 27);
         sViewsWithIds.put(R.id.tv_ideal_job_description, 28);
@@ -92,19 +92,19 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
             , (androidx.recyclerview.widget.RecyclerView) bindings[24]
             , (android.widget.SeekBar) bindings[33]
             , (android.widget.TextView) bindings[13]
-            , (android.widget.TextView) bindings[17]
-            , (android.widget.TextView) bindings[15]
-            , (android.widget.TextView) bindings[19]
-            , (android.widget.TextView) bindings[21]
             , (android.widget.TextView) bindings[35]
             , (android.widget.TextView) bindings[27]
-            , (android.widget.TextView) bindings[25]
             , (android.widget.TextView) bindings[34]
+            , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[28]
+            , (android.widget.TextView) bindings[25]
             , (android.widget.TextView) bindings[36]
+            , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[14]
             , (android.widget.TextView) bindings[7]
             , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[21]
             , (android.widget.TextView) bindings[23]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

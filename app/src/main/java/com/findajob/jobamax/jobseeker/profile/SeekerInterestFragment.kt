@@ -16,7 +16,6 @@ import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.material.chip.Chip
 import com.parse.ParseObject
-import org.json.JSONArray
 
 
 class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>() {
@@ -25,9 +24,9 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
     override fun getViewModel(): ViewModel = viewModel
 
-    var activitiesTags = ArrayList<String>()
+    var interestTags = ArrayList<String>()
     var volunteeringTagsSuggestions = ArrayList<String>()
-    var activitiesTagsSuggestions = ArrayList<String>()
+    var interestTagsSuggestions = ArrayList<String>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerInterestBinding.inflate(inflater, container, false)
@@ -42,11 +41,11 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
 
         viewModel.getExistingActivitiesTags(object : GetAllUserCallback{
             override fun onSuccess(parseObject: List<ParseObject>) {
-                activitiesTagsSuggestions.clear()
+                interestTagsSuggestions.clear()
                 parseObject.forEach {
-                    it.getString("name")?.let { tag -> activitiesTagsSuggestions.add(tag) }
+                    it.getString("name")?.let { tag -> interestTagsSuggestions.add(tag) }
                 }
-                binding.actvActivities.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, activitiesTagsSuggestions))
+                binding.actvInterest.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, interestTagsSuggestions))
             }
             override fun onFailure(e: Exception?) {
                 if (e != null) {
@@ -57,36 +56,27 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
     }
 
     private fun viewModelObserver() {
-         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner, {
-             if(it){
+         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
+             if (it) {
                  binding.jobSeeker = viewModel.jobSeeker
-                 if (viewModel.jobSeeker.activities != ""){
+                 if (viewModel.jobSeeker.interests.isNotEmpty()) {
                      setActivitiesTags()
                  }
              }
-         })
+         }
     }
 
 
 
     private fun setActivitiesTags() {
-        val activities = JSONArray(viewModel.jobSeeker.activities)
-        var i = 0
-        while (i < activities.length()) {
-            activitiesTags.add(activities.getString(i))
-            i++
-        }
+        val activitiesTags = ArrayList(viewModel.jobSeeker.interests)
         activitiesTags.forEach { str ->
-            val chip = layoutInflater.inflate(
-                R.layout.item_custom_chip,
-                binding.cgActivities,
-                false
-            ) as Chip
+            val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgInterests, false) as Chip
             chip.text = str
             chip.setOnCloseIconClickListener { c ->
                 activitiesTags.remove((c as Chip).text)
-                binding.cgActivities.removeView(c)
-                viewModel.addActivitiesTags(activitiesTags) {
+                binding.cgInterests.removeView(c)
+                viewModel.addInterestTags(activitiesTags) {
                     if (it != null) {
                         toast("${it.message.toString()} Something went wrong")
                     }
@@ -95,7 +85,7 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
             chip.isCloseIconVisible = true
             chip.setCloseIconResource(R.drawable.close_white)
             chip.setCloseIconTintResource(R.color.white)
-            binding.cgActivities.addView(chip)
+            binding.cgInterests.addView(chip)
         }
     }
 
@@ -106,23 +96,23 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
         binding.civUser.setOnClickListener {
             requireActivity().finish()
         }
-        binding.ivActivities.setOnClickListener {
-            if (binding.actvActivities.text.isNullOrEmpty()){
+        binding.ivAddInterest.setOnClickListener {
+            if (binding.actvInterest.text.isNullOrEmpty()){
                 toast("Please enter tag first.")
             }else{
-                 if (! volunteeringTagsSuggestions.contains(binding.actvActivities.text.toString())){
-                     viewModel.saveActivitiesTag(binding.actvActivities.text.toString())
+                 if (! volunteeringTagsSuggestions.contains(binding.actvInterest.text.toString())){
+                     viewModel.saveActivitiesTag(binding.actvInterest.text.toString().trim())
                  }
-                 if (activitiesTags.contains(binding.actvActivities.text.toString())){
+                 if (interestTags.contains(binding.actvInterest.text.toString())){
                      toast("This Skill is already exist.")
                  }else{
-                     activitiesTags.add(binding.actvActivities.text.toString())
-                     val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgActivities, false) as Chip
-                     chip.text = binding.actvActivities.text.toString()
+                     interestTags.add(binding.actvInterest.text.toString().trim())
+                     val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgInterests, false) as Chip
+                     chip.text = binding.actvInterest.text.toString()
                      chip.setOnCloseIconClickListener { c ->
-                         activitiesTags.remove((c as Chip).text)
-                         binding.cgActivities.removeView(c)
-                         viewModel.addActivitiesTags(activitiesTags){
+                         interestTags.remove((c as Chip).text)
+                         binding.cgInterests.removeView(c)
+                         viewModel.addInterestTags(interestTags){
                              if(it != null){
                                  toast("${it.message.toString()} Something went wrong")
                              }
@@ -131,9 +121,9 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
                      chip.isCloseIconVisible = true
                      chip.setCloseIconResource(R.drawable.close_white)
                      chip.setCloseIconTintResource(R.color.white)
-                     binding.cgActivities.addView(chip)
-                     binding.actvActivities.text.clear()
-                     viewModel.addActivitiesTags(activitiesTags){
+                     binding.cgInterests.addView(chip)
+                     binding.actvInterest.text.clear()
+                     viewModel.addInterestTags(interestTags){
                          if(it != null){
                              toast("${it.message.toString()} Something went wrong")
                          }

@@ -3,10 +3,14 @@ package com.findajob.jobamax.jobseeker.profile.account.home
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.findajob.jobamax.*
 import com.findajob.jobamax.base.BaseFragmentMain
@@ -19,14 +23,13 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.UpdateUserCallback
 import com.findajob.jobamax.preference.clearUserPref
+import com.findajob.jobamax.preference.getLanguage
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.*
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
-import org.jetbrains.anko.sdk27.coroutines.onCapturedPointer
-import org.jetbrains.anko.sdk27.coroutines.onTouch
 
 @AndroidEntryPoint
 class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBinding>(), JobSeekerAccountInterface {
@@ -47,12 +50,20 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
             binding.jobSeeker = viewModel.jobSeeker
         }
         setClickListeners()
+        configureUi()
     }
 
+    private fun configureUi() {
+        binding.tvCurrentLanguage.text = requireContext().getLanguage()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        binding.sbPushNotification.isChecked = NotificationManagerCompat.from(requireContext()).areNotificationsEnabled()
+    }
 
     private fun setClickListeners() {
-        binding.sbPushNotification.isChecked = NotificationManagerCompat.from(requireContext()).areNotificationsEnabled()
-        binding.sbPushNotification.setOnCheckedChangeListener { _, isChecked ->
+        binding.sbPushNotification.setOnClickListener {
             val intent = Intent()
             intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -62,15 +73,14 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
             startActivity(intent)
         }
 
-        binding.tvChangeLanguage.setOnClickListener {
-            navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment)
-        }
+        binding.clChangeLanguage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment, null))
+
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
     }
 
-    fun getCurrent( ) {
+    private fun getCurrent( ) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
         query.include("portfolio")

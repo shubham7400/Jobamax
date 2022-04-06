@@ -178,7 +178,7 @@
                    android:layout_marginTop="10dp" />
 
                <TextView
-                   android:id="@+id/textView2x6"
+                   android:id="@+id/tv_school"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -194,7 +194,7 @@
                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                <TextView
-                   android:id="@+id/textView2dx6"
+                   android:id="@+id/tv_experience"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -210,7 +210,7 @@
                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                <TextView
-                   android:id="@+id/textViewd2dx6"
+                   android:id="@+id/tv_hard_skill"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -226,7 +226,7 @@
                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                <TextView
-                   android:id="@+id/textViewde2dx6"
+                   android:id="@+id/tv_soft_skill"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -259,7 +259,7 @@
                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                <TextView
-                   android:id="@+id/textVisewrde2dx6"
+                   android:id="@+id/tv_interest"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"

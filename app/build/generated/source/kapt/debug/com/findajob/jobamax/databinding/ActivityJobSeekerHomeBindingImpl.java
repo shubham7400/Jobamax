@@ -17,13 +17,13 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         sViewsWithIds.put(R.id.imageView10, 3);
         sViewsWithIds.put(R.id.iv_setting, 4);
         sViewsWithIds.put(R.id.textView6, 5);
-        sViewsWithIds.put(R.id.ll1, 6);
-        sViewsWithIds.put(R.id.v_profile, 7);
-        sViewsWithIds.put(R.id.tv_aa, 8);
-        sViewsWithIds.put(R.id.v_calendar, 9);
-        sViewsWithIds.put(R.id.iv_calender, 10);
-        sViewsWithIds.put(R.id.tv_calender_title, 11);
-        sViewsWithIds.put(R.id.bt_job_search, 12);
+        sViewsWithIds.put(R.id.bt_job_search, 6);
+        sViewsWithIds.put(R.id.ll1, 7);
+        sViewsWithIds.put(R.id.v_profile, 8);
+        sViewsWithIds.put(R.id.tv_aa, 9);
+        sViewsWithIds.put(R.id.v_calendar, 10);
+        sViewsWithIds.put(R.id.iv_calender, 11);
+        sViewsWithIds.put(R.id.tv_calender_title, 12);
         sViewsWithIds.put(R.id.ll2, 13);
         sViewsWithIds.put(R.id.v_track, 14);
         sViewsWithIds.put(R.id.image_user2, 15);
@@ -51,7 +51,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     }
     private ActivityJobSeekerHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[12]
+            , (android.widget.Button) bindings[6]
             , (android.widget.Button) bindings[25]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[21]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
@@ -60,20 +60,20 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[24]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[23]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[22]
-            , (android.widget.ImageView) bindings[10]
+            , (android.widget.ImageView) bindings[11]
             , (android.widget.ImageView) bindings[20]
             , (android.widget.ImageView) bindings[4]
-            , (android.widget.LinearLayout) bindings[6]
+            , (android.widget.LinearLayout) bindings[7]
             , (android.widget.LinearLayout) bindings[13]
             , (android.widget.RelativeLayout) bindings[18]
             , (android.widget.TextView) bindings[16]
             , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[11]
+            , (android.widget.TextView) bindings[9]
+            , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[19]
             , (android.widget.TextView) bindings[1]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[9]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[10]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[8]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[14]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[17]
             );
@@ -89,7 +89,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x10L;
+                mDirtyFlags = 0x8L;
         }
         requestRebind();
     }
@@ -110,9 +110,6 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         if (BR.jobSeeker == variableId) {
             setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
         }
-        else if (BR.handler == variableId) {
-            setHandler((com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface) variable);
-        }
         else if (BR.state == variableId) {
             setState((java.lang.Integer) variable);
         }
@@ -132,9 +129,6 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         }
         notifyPropertyChanged(BR.jobSeeker);
         super.requestRebind();
-    }
-    public void setHandler(@Nullable com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface Handler) {
-        this.mHandler = Handler;
     }
     public void setState(@Nullable java.lang.Integer State) {
         this.mState = State;
@@ -165,7 +159,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
         java.lang.String jobSeekerFirstName = null;
         java.lang.String jobSeekerLastName = null;
 
-        if ((dirtyFlags & 0x11L) != 0) {
+        if ((dirtyFlags & 0x9L) != 0) {
 
 
 
@@ -191,7 +185,7 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
                 javaLangStringHelloJobSeekerFirstNameCharJobSeekerLastName = (javaLangStringHelloJobSeekerFirstNameChar) + (jobSeekerLastName);
         }
         // batch finished
-        if ((dirtyFlags & 0x11L) != 0) {
+        if ((dirtyFlags & 0x9L) != 0) {
             // api target 1
 
             com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.imageUser, jobSeekerProfilePicUrl);
@@ -204,10 +198,9 @@ public class ActivityJobSeekerHomeBindingImpl extends ActivityJobSeekerHomeBindi
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
         flag 0 (0x1L): jobSeeker
-        flag 1 (0x2L): handler
-        flag 2 (0x3L): state
-        flag 3 (0x4L): trackToggleFlag
-        flag 4 (0x5L): null
+        flag 1 (0x2L): state
+        flag 2 (0x3L): trackToggleFlag
+        flag 3 (0x4L): null
     flag mapping end*/
     //end
 }

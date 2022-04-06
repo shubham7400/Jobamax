@@ -99,34 +99,31 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final TextView textView26;
 
   @NonNull
-  public final TextView textView2dx6;
-
-  @NonNull
-  public final TextView textView2x6;
-
-  @NonNull
-  public final TextView textViewd2dx6;
-
-  @NonNull
-  public final TextView textViewde2dx6;
-
-  @NonNull
   public final TextView textVisewdrde2ddx6;
 
   @NonNull
   public final TextView textVisewdrde2dx6;
 
   @NonNull
-  public final TextView textVisewrde2dx6;
+  public final TextView tvAudioDuration;
 
   @NonNull
-  public final TextView tvAudioDuration;
+  public final TextView tvExperience;
+
+  @NonNull
+  public final TextView tvHardSkill;
 
   @NonNull
   public final TextView tvIdealJobDescription;
 
   @NonNull
+  public final TextView tvInterest;
+
+  @NonNull
   public final TextView tvPortfolioDescription;
+
+  @NonNull
+  public final TextView tvSchool;
 
   @NonNull
   public final TextView tvSeekerAbout;
@@ -136,6 +133,9 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
 
   @NonNull
   public final TextView tvSeekerProfession;
+
+  @NonNull
+  public final TextView tvSoftSkill;
 
   @NonNull
   public final TextView tvVolunteeringTitle;
@@ -149,12 +149,12 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
       LinearLayout linearLayout7, NestedScrollView linearLayoutCompat2s,
       RelativeLayout relativeLayout, RecyclerView rvExperience, RecyclerView rvHardSkill,
       RecyclerView rvIdealJobImages, RecyclerView rvPortfolioImages, RecyclerView rvSchool,
-      RecyclerView rvVolunteering, SeekBar sbAudio, TextView textView26, TextView textView2dx6,
-      TextView textView2x6, TextView textViewd2dx6, TextView textViewde2dx6,
-      TextView textVisewdrde2ddx6, TextView textVisewdrde2dx6, TextView textVisewrde2dx6,
-      TextView tvAudioDuration, TextView tvIdealJobDescription, TextView tvPortfolioDescription,
+      RecyclerView rvVolunteering, SeekBar sbAudio, TextView textView26,
+      TextView textVisewdrde2ddx6, TextView textVisewdrde2dx6, TextView tvAudioDuration,
+      TextView tvExperience, TextView tvHardSkill, TextView tvIdealJobDescription,
+      TextView tvInterest, TextView tvPortfolioDescription, TextView tvSchool,
       TextView tvSeekerAbout, TextView tvSeekerName, TextView tvSeekerProfession,
-      TextView tvVolunteeringTitle) {
+      TextView tvSoftSkill, TextView tvVolunteeringTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cgActivities = cgActivities;
     this.cgSoftSkill = cgSoftSkill;
@@ -181,19 +181,19 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
     this.rvVolunteering = rvVolunteering;
     this.sbAudio = sbAudio;
     this.textView26 = textView26;
-    this.textView2dx6 = textView2dx6;
-    this.textView2x6 = textView2x6;
-    this.textViewd2dx6 = textViewd2dx6;
-    this.textViewde2dx6 = textViewde2dx6;
     this.textVisewdrde2ddx6 = textVisewdrde2ddx6;
     this.textVisewdrde2dx6 = textVisewdrde2dx6;
-    this.textVisewrde2dx6 = textVisewrde2dx6;
     this.tvAudioDuration = tvAudioDuration;
+    this.tvExperience = tvExperience;
+    this.tvHardSkill = tvHardSkill;
     this.tvIdealJobDescription = tvIdealJobDescription;
+    this.tvInterest = tvInterest;
     this.tvPortfolioDescription = tvPortfolioDescription;
+    this.tvSchool = tvSchool;
     this.tvSeekerAbout = tvSeekerAbout;
     this.tvSeekerName = tvSeekerName;
     this.tvSeekerProfession = tvSeekerProfession;
+    this.tvSoftSkill = tvSoftSkill;
     this.tvVolunteeringTitle = tvVolunteeringTitle;
   }
 

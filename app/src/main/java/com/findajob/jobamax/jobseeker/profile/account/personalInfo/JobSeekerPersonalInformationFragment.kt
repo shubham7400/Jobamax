@@ -15,7 +15,6 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.util.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_job_seeker_personal_information.*
-import org.jetbrains.anko.support.v4.longToast
 import java.util.*
 
 @AndroidEntryPoint
@@ -99,7 +98,7 @@ class JobSeekerPersonalInformationFragment : BaseFragmentMain<FragmentJobSeekerP
             genderLabel.error = null
 
             if (Date().addYear(-18).yyyyMMdd() < calendar.time.yyyyMMdd()) {
-                longToast("Age should be 18+")
+                toast("Age should be 18+")
             } else {
                 personalInfoModel.dob = calendar.time.dd_MM_yy()
                 binding.dobField.error = null

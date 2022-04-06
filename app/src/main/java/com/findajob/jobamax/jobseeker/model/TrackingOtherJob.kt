@@ -6,7 +6,7 @@ import com.parse.ParseObject
 import java.io.Serializable
 
 class TrackingOtherJob : Serializable {
-
+    @Transient
     var jobSeeker: ParseObject? = null
     var jobSeekerId: String = ""
     var phases: String = ""
@@ -15,6 +15,7 @@ class TrackingOtherJob : Serializable {
     var jobTitle: String = ""
     var description: String = ""
     var isSelected: Boolean = false
+    @Transient
     var pfObject: ParseObject? = null
 
     fun toParseObject(): ParseObject {

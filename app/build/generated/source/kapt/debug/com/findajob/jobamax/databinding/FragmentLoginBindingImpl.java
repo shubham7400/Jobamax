@@ -28,9 +28,9 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     @NonNull
     private final android.widget.ScrollView mboundView0;
     @NonNull
-    private final android.widget.TextView mboundView2;
+    private final android.widget.Button mboundView2;
     @NonNull
-    private final android.widget.Button mboundView3;
+    private final android.widget.TextView mboundView3;
     @NonNull
     private final android.widget.ImageView mboundView4;
     @NonNull
@@ -41,19 +41,19 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     private final android.widget.TextView mboundView7;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback27;
+    private final android.view.View.OnClickListener mCallback7;
     @Nullable
-    private final android.view.View.OnClickListener mCallback25;
+    private final android.view.View.OnClickListener mCallback5;
     @Nullable
-    private final android.view.View.OnClickListener mCallback26;
+    private final android.view.View.OnClickListener mCallback6;
     @Nullable
-    private final android.view.View.OnClickListener mCallback23;
+    private final android.view.View.OnClickListener mCallback3;
     @Nullable
-    private final android.view.View.OnClickListener mCallback24;
+    private final android.view.View.OnClickListener mCallback4;
     @Nullable
-    private final android.view.View.OnClickListener mCallback21;
+    private final android.view.View.OnClickListener mCallback1;
     @Nullable
-    private final android.view.View.OnClickListener mCallback22;
+    private final android.view.View.OnClickListener mCallback2;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -76,9 +76,9 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
             );
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView2 = (android.widget.TextView) bindings[2];
+        this.mboundView2 = (android.widget.Button) bindings[2];
         this.mboundView2.setTag(null);
-        this.mboundView3 = (android.widget.Button) bindings[3];
+        this.mboundView3 = (android.widget.TextView) bindings[3];
         this.mboundView3.setTag(null);
         this.mboundView4 = (android.widget.ImageView) bindings[4];
         this.mboundView4.setTag(null);
@@ -91,13 +91,13 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
         this.showPasswordButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback27 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
-        mCallback25 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback26 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
-        mCallback23 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback24 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback21 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback22 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback7 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
+        mCallback5 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
+        mCallback6 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
+        mCallback3 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback4 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback1 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback2 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -159,13 +159,13 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView2.setOnClickListener(mCallback22);
-            this.mboundView3.setOnClickListener(mCallback23);
-            this.mboundView4.setOnClickListener(mCallback24);
-            this.mboundView5.setOnClickListener(mCallback25);
-            this.mboundView6.setOnClickListener(mCallback26);
-            this.mboundView7.setOnClickListener(mCallback27);
-            this.showPasswordButton.setOnClickListener(mCallback21);
+            this.mboundView2.setOnClickListener(mCallback2);
+            this.mboundView3.setOnClickListener(mCallback3);
+            this.mboundView4.setOnClickListener(mCallback4);
+            this.mboundView5.setOnClickListener(mCallback5);
+            this.mboundView6.setOnClickListener(mCallback6);
+            this.mboundView7.setOnClickListener(mCallback7);
+            this.showPasswordButton.setOnClickListener(mCallback1);
         }
     }
     // Listener Stub Implementations
@@ -236,7 +236,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onEmailLoginClicked();
+                    handler.onForgotPasswordClicked();
                 }
                 break;
             }
@@ -287,7 +287,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onForgotPasswordClicked();
+                    handler.onEmailLoginClicked();
                 }
                 break;
             }

@@ -10,13 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface;
 import com.findajob.jobamax.model.JobSeeker;
-import com.suke.widget.SwitchButton;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -26,19 +26,22 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   public final CircleImageView civUser;
 
   @NonNull
-  public final SwitchCompat hideMeFlag;
+  public final ConstraintLayout clChangeLanguage;
 
   @NonNull
-  public final ImageView imageView17;
+  public final SwitchCompat hideMeFlag;
 
   @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
+  public final ImageView ivChangeLanguageArrow;
+
+  @NonNull
   public final RelativeLayout relativeLayout;
 
   @NonNull
-  public final SwitchButton sbPushNotification;
+  public final SwitchCompat sbPushNotification;
 
   @NonNull
   public final TextView tvChangeLanguage;
@@ -53,14 +56,16 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   protected JobSeekerAccountInterface mHandler;
 
   protected FragmentJobSeekerAccountBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, CircleImageView civUser, SwitchCompat hideMeFlag, ImageView imageView17,
-      ImageView ivBackButton, RelativeLayout relativeLayout, SwitchButton sbPushNotification,
-      TextView tvChangeLanguage, TextView tvCurrentLanguage) {
+      int _localFieldCount, CircleImageView civUser, ConstraintLayout clChangeLanguage,
+      SwitchCompat hideMeFlag, ImageView ivBackButton, ImageView ivChangeLanguageArrow,
+      RelativeLayout relativeLayout, SwitchCompat sbPushNotification, TextView tvChangeLanguage,
+      TextView tvCurrentLanguage) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
+    this.clChangeLanguage = clChangeLanguage;
     this.hideMeFlag = hideMeFlag;
-    this.imageView17 = imageView17;
     this.ivBackButton = ivBackButton;
+    this.ivChangeLanguageArrow = ivChangeLanguageArrow;
     this.relativeLayout = relativeLayout;
     this.sbPushNotification = sbPushNotification;
     this.tvChangeLanguage = tvChangeLanguage;

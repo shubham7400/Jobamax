@@ -51,6 +51,7 @@ class JobSeeker {
     var workspaces: List<String> = listOf()
     var volunteerings: String = ""
     var activities: String = ""
+    var interests: List<String> = listOf()
     var instagramLink: String = ""
     var linkedInLink: String = ""
     var tikTokLink: String = ""
@@ -120,6 +121,7 @@ class JobSeeker {
         jobSeeker.put("workspaces", workspaces)
         jobSeeker.put("volunteerings", volunteerings)
         jobSeeker.put("activities", activities)
+        jobSeeker.put("interests", interests)
         jobSeeker.put("instagramLink", instagramLink)
         jobSeeker.put("linkedInLink", linkedInLink)
         jobSeeker.put("tikTokLink", tikTokLink)
@@ -198,6 +200,7 @@ class JobSeeker {
         this.workspaces = (obj["workspaces"] as? List<String>) ?: listOf()
         this.volunteerings = obj["volunteerings"]?.toString() ?: ""
         this.activities = obj["activities"]?.toString() ?: ""
+        this.interests =  (obj["interests"] as? List<String>) ?: listOf()
         this.instagramLink = obj["instagramLink"]?.toString() ?: ""
         this.linkedInLink = obj["linkedInLink"]?.toString() ?: ""
         this.tikTokLink = obj["tikTokLink"]?.toString() ?: ""

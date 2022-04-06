@@ -52,9 +52,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                    style="@style/circular_image"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/default_user_img" />
             </RelativeLayout>

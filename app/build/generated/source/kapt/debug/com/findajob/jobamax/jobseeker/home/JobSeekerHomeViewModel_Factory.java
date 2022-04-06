@@ -2,8 +2,6 @@
 package com.findajob.jobamax.jobseeker.home;
 
 import android.app.Application;
-import com.findajob.jobamax.repo.JobOfferRepository;
-import com.findajob.jobamax.repo.JobSeekerRepo;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import javax.inject.Provider;
@@ -16,31 +14,20 @@ import javax.inject.Provider;
 public final class JobSeekerHomeViewModel_Factory implements Factory<JobSeekerHomeViewModel> {
   private final Provider<Application> contextProvider;
 
-  private final Provider<JobSeekerRepo> jobSeekerRepoProvider;
-
-  private final Provider<JobOfferRepository> jobOfferRepoProvider;
-
-  public JobSeekerHomeViewModel_Factory(Provider<Application> contextProvider,
-      Provider<JobSeekerRepo> jobSeekerRepoProvider,
-      Provider<JobOfferRepository> jobOfferRepoProvider) {
+  public JobSeekerHomeViewModel_Factory(Provider<Application> contextProvider) {
     this.contextProvider = contextProvider;
-    this.jobSeekerRepoProvider = jobSeekerRepoProvider;
-    this.jobOfferRepoProvider = jobOfferRepoProvider;
   }
 
   @Override
   public JobSeekerHomeViewModel get() {
-    return newInstance(contextProvider.get(), jobSeekerRepoProvider.get(), jobOfferRepoProvider.get());
+    return newInstance(contextProvider.get());
   }
 
-  public static JobSeekerHomeViewModel_Factory create(Provider<Application> contextProvider,
-      Provider<JobSeekerRepo> jobSeekerRepoProvider,
-      Provider<JobOfferRepository> jobOfferRepoProvider) {
-    return new JobSeekerHomeViewModel_Factory(contextProvider, jobSeekerRepoProvider, jobOfferRepoProvider);
+  public static JobSeekerHomeViewModel_Factory create(Provider<Application> contextProvider) {
+    return new JobSeekerHomeViewModel_Factory(contextProvider);
   }
 
-  public static JobSeekerHomeViewModel newInstance(Application context, JobSeekerRepo jobSeekerRepo,
-      JobOfferRepository jobOfferRepo) {
-    return new JobSeekerHomeViewModel(context, jobSeekerRepo, jobOfferRepo);
+  public static JobSeekerHomeViewModel newInstance(Application context) {
+    return new JobSeekerHomeViewModel(context);
   }
 }

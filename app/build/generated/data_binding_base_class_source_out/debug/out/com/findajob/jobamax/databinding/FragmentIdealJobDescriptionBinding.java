@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -31,17 +32,21 @@ public abstract class FragmentIdealJobDescriptionBinding extends ViewDataBinding
   @NonNull
   public final RelativeLayout relativeLayout;
 
+  @NonNull
+  public final TextView tvTitle;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentIdealJobDescriptionBinding(Object _bindingComponent, View _root,
       int _localFieldCount, CircleImageView civUser, EditText etIdealJobDescription,
-      ImageView ivBackButton, RelativeLayout relativeLayout) {
+      ImageView ivBackButton, RelativeLayout relativeLayout, TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.etIdealJobDescription = etIdealJobDescription;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
+    this.tvTitle = tvTitle;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

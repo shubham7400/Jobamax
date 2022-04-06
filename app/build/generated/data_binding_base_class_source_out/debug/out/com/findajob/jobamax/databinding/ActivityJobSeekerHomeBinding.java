@@ -16,7 +16,6 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import com.findajob.jobamax.jobseeker.home.JobSeekerHomeInterface;
 import com.findajob.jobamax.model.JobSeeker;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
@@ -105,9 +104,6 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   protected Boolean mTrackToggleFlag;
 
   @Bindable
-  protected JobSeekerHomeInterface mHandler;
-
-  @Bindable
   protected JobSeeker mJobSeeker;
 
   protected ActivityJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
@@ -158,13 +154,6 @@ public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   @Nullable
   public Boolean getTrackToggleFlag() {
     return mTrackToggleFlag;
-  }
-
-  public abstract void setHandler(@Nullable JobSeekerHomeInterface handler);
-
-  @Nullable
-  public JobSeekerHomeInterface getHandler() {
-    return mHandler;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

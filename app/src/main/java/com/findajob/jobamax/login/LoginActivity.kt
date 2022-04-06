@@ -11,24 +11,18 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
-import com.findajob.jobamax.base.logThis
-import com.findajob.jobamax.data.remote.AuthRepository
 import com.findajob.jobamax.data.remote.NoInternetException
 import com.findajob.jobamax.databinding.ActivityLoginBinding
 import com.findajob.jobamax.dialog.multiChoice.BasicDialog
-import com.findajob.jobamax.domain.CheckExistingJobSeekerUseCase
-import com.findajob.jobamax.domain.CheckExistingRecruiterUseCase
 import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
-import com.findajob.jobamax.location.SelectLocationActivity
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.Recruiter
 import com.findajob.jobamax.model.User
 import com.findajob.jobamax.preference.*
-import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
 import com.findajob.jobamax.util.*
 import com.google.firebase.messaging.FirebaseMessaging
 import com.parse.ParseObject
@@ -55,59 +49,10 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
     }
 
     private fun configureViewModel(){
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java).apply {
-            AuthRepository.Factory.getInstance(this@LoginActivity).either(
-                {
-                    toast(it.localizedMessage ?: "")
-                },
-                {
-                    /*
-                    Manually instantiate required component for view model.
-                    It should be done via DI.
-                     */
-                    authRepository = it
-                    checkExistingRecruiterUseCase = CheckExistingRecruiterUseCase(authRepository)
-                    checkExistingJobSeekerUseCase = CheckExistingJobSeekerUseCase(authRepository)
-                    logThis(checkExistingRecruiterUseCase.toString())
-                }
-            )
-        }
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
     }
 
 
-    fun checkForExistingUser(user: User) {
-        /*
-        Note: Removed the live data mechanism with callback (Higher Order Function)
-        When callback invoked, post on Main thread with lifecycleScope
-         */
-        progressHud.show()
-        viewModel.getCurrentUser(user,
-            { existingUser ->
-                progressHud.dismiss()
-                lifecycleScope.launchWhenResumed {
-                    user.id = if (viewModel.roleType == ROLE_JOB_SEEKER)
-                        existingUser["jobSeekerId"].toString()
-                    else existingUser["recruiterId"].toString()
-                    navHome(user, false)
-                }
-            },
-            {
-                progressHud.dismiss()
-                lifecycleScope.launchWhenResumed {
-                    when (it) {
-                        is NoInternetException -> {
-                            toast(NoInternetException.MSG)
-                        }
-                        is ParseQueryEmptyThrowable -> {
-                            saveDetails(user)
-                        }
-                        else -> {
-                            toast(it.localizedMessage ?: "")
-                        }
-                    }
-                }
-            })
-    }
 
     private fun navHome(user: User, isRegister: Boolean) {
         try {
@@ -121,10 +66,10 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
                 if (checkLocationPermission()) {
                     startActivity(
                         Intent(
-                            this,
-                            if (getRole() == ROLE_JOB_SEEKER)
+                            this,JobSeekerHomeActivity::class.java
+                            /*if (getRole() == ROLE_JOB_SEEKER)
                                 JobSeekerHomeActivity::class.java
-                            else RecruiterHomeActivity::class.java
+                            else RecruiterHomeActivity::class.java*/
                         )
                     )
                     finishAffinity()
@@ -263,8 +208,8 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
                     setLoginType(recruiter.loginType)
                     setLoggedIn(true)
                     if (checkLocationPermission()) {
-                        startActivity(Intent(this, RecruiterHomeActivity::class.java))
-                        finishAffinity()
+                        /*startActivity(Intent(this, RecruiterHomeActivity::class.java))
+                        finishAffinity()*/
                     } else navController.navigate(
                         R.id.locationPermissionFragment,
                         bundleOf(ARG_ACTION to ACTION_LOGIN)
@@ -297,8 +242,8 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
     }
 
     fun navLocationPicker() {
-        val intent = Intent(this, SelectLocationActivity::class.java)
-        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
+        /*val intent = Intent(this, SelectLocationActivity::class.java)
+        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)*/
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

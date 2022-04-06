@@ -15,6 +15,7 @@ import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import com.abedelazizshe.lightcompressorlibrary.CompressionListener
 import com.abedelazizshe.lightcompressorlibrary.VideoCompressor
 import com.abedelazizshe.lightcompressorlibrary.VideoQuality
@@ -32,7 +33,6 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.parse.ParseObject
-import org.jetbrains.anko.support.v4.runOnUiThread
 import java.io.File
 
 
@@ -94,7 +94,7 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
                         saveAt = Environment.DIRECTORY_MOVIES,
                         listener = object : CompressionListener {
                             override fun onProgress(index: Int, percent: Float) {
-                                runOnUiThread {
+                                lifecycleScope.launchWhenStarted {
                                     progressHud.show()
                                 }
                             }

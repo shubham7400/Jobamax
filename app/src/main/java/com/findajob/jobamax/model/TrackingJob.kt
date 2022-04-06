@@ -6,11 +6,13 @@ import com.parse.ParseObject
 import java.io.Serializable
 
 class TrackingJob : Serializable {
+    @Transient
     var jobSeeker: ParseObject? = null
     var job: ParseObject? = null
     var jobSeekerId: String = ""
     var phases: String = ""
     var isSelected: Boolean = false
+    @Transient
     var pfObject: ParseObject? = null
 
     fun toParseObject(): ParseObject {

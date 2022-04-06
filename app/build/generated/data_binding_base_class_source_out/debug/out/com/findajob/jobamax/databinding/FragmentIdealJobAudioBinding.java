@@ -53,6 +53,9 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvAudioTime;
 
+  @NonNull
+  public final TextView tvTitle;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
@@ -60,7 +63,7 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
       AppCompatButton btnRecord, CircleImageView civUser, ConstraintLayout clAudioPlayer,
       ImageView ivAudioPlayBtn, ImageView ivBackButton, CircularImageProgressView pbAudioRecording,
       RelativeLayout relativeLayout, SeekBar sbAudio, TextView tvAudioDuration,
-      TextView tvAudioTime) {
+      TextView tvAudioTime, TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnRecord = btnRecord;
     this.civUser = civUser;
@@ -72,6 +75,7 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
     this.sbAudio = sbAudio;
     this.tvAudioDuration = tvAudioDuration;
     this.tvAudioTime = tvAudioTime;
+    this.tvTitle = tvTitle;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

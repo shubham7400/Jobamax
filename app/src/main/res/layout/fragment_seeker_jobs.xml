@@ -25,8 +25,9 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_most_parent"
         android:layout_width="match_parent"
-        android:background="#E9F2FB"
+        android:background="@color/background_blue"
         android:layout_height="match_parent">
 
         <RelativeLayout
@@ -61,19 +62,26 @@
                     android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="@string/job_search"
+                    android:text="@string/offers"
                     android:textColor="@color/blue_2"
                     android:textSize="20dp" />
 
 
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"
+                    style="@style/circular_image"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                    android:layout_toStartOf="@+id/iv_favorite"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/default_user_img"
+                    app:civ_border_color="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/iv_favorite"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/default_user_img" />
+                    android:src="@drawable/filled_heart" />
             </RelativeLayout>
         </RelativeLayout>
 
@@ -86,23 +94,24 @@
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/rounded_white_box_sad_white_strok"
+                android:background="@drawable/rounded_white_box_50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/iv_filter_job"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
                     android:id="@+id/et_job_keyword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="What job are looking for"
-                    android:maxHeight="50dp"
-                    android:padding="10dp"
                     android:background="@android:color/transparent"
+                    android:hint="What job are looking for"
+                    android:maxHeight="40dp"
+                    android:padding="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/iv_search_icon"
                     app:layout_constraintStart_toStartOf="parent"
@@ -112,12 +121,22 @@
                     android:id="@+id/iv_search_icon"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_search"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/v_filter_state"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/rounded_box_red"
+                android:layout_marginBottom="-7dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/iv_filter_job"
+                app:layout_constraintEnd_toEndOf="@+id/iv_filter_job" />
 
 
             <ImageView
@@ -130,7 +149,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 
@@ -141,7 +162,7 @@
             android:clipToPadding="false"
             android:paddingHorizontal="20dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/ll_float_buttons"
+            app:layout_constraintBottom_toTopOf="@+id/nsv_card"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_search_bar" />
@@ -150,119 +171,150 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nsv_card"
             android:layout_width="match_parent"
-            android:visibility="gone"
-            android:scrollbars="none"
-            android:paddingHorizontal="20dp"
+            android:layout_height="0dp"
             android:layout_marginVertical="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/ll_float_buttons"
-            app:layout_constraintTop_toBottomOf="@+id/cl_search_bar"
-            android:layout_height="0dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <include
-                    android:id="@+id/l_job"
-                    android:layout_height="wrap_content"
-                    layout="@layout/item_seeker_job_card"
-                    android:layout_width="match_parent" />
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
-
-
-
-        <LinearLayout
-            android:id="@+id/ll_float_buttons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:paddingHorizontal="20dp"
+            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_rewind"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_rewind" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_refuse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_reject" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_share"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_share" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_apply"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_show" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <com.ramijemli.percentagechartview.PercentageChartView
-                    android:id="@+id/pcv_match"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="40dp"
-                    android:textSize="20sp"
-                    app:pcv_animDuration="800"
-                    app:pcv_animInterpolator="anticipate_overshoot"
-                    app:pcv_backgroundBarColor="@color/gray"
-                    app:pcv_backgroundBarThickness="5dp"
-                    app:pcv_backgroundColor="@color/transparent"
-                    app:pcv_mode="ring"
-                    app:pcv_orientation="clockwise"
-                    app:pcv_progress="0"
-                    app:pcv_progressBarThickness="5dp"
-                    app:pcv_progressColor="#7800EF"
-                    app:pcv_startAngle="270"
-                    app:pcv_textColor="@color/black"
-                    app:pcv_textStyle="bold" />
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/l_job"
+                        layout="@layout/item_seeker_job_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_float_buttons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/l_job">
+
+                        <LinearLayout
+                            android:id="@+id/ll_rewind"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_rewind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:src="@drawable/ic_rewind" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_refuse"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:src="@drawable/ic_reject" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_share"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:src="@drawable/ic_share" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_apply"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:src="@drawable/ic_show" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_match_percent"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.ramijemli.percentagechartview.PercentageChartView
+                                android:id="@+id/pcv_match"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="40dp"
+                                android:textSize="20sp"
+                                app:pcv_animDuration="800"
+                                app:pcv_animInterpolator="anticipate_overshoot"
+                                app:pcv_backgroundBarColor="@color/gray"
+                                app:pcv_backgroundBarThickness="5dp"
+                                app:pcv_backgroundColor="@color/transparent"
+                                app:pcv_mode="ring"
+                                app:pcv_orientation="clockwise"
+                                app:pcv_progress="0"
+                                app:pcv_progressBarThickness="5dp"
+                                app:pcv_progressColor="#7800EF"
+                                app:pcv_startAngle="270"
+                                app:pcv_textColor="@color/black"
+                                app:pcv_textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
-        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_job_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_white_box"
+            android:layout_marginHorizontal="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_search_bar" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

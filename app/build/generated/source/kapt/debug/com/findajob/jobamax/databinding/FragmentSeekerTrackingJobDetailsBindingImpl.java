@@ -14,10 +14,11 @@ public class FragmentSeekerTrackingJobDetailsBindingImpl extends FragmentSeekerT
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.constraintLayout8, 3);
-        sViewsWithIds.put(R.id.relativeLayout, 4);
-        sViewsWithIds.put(R.id.iv_back_button, 5);
-        sViewsWithIds.put(R.id.tv_page_title, 6);
+        sViewsWithIds.put(R.id.constraintLayout8, 2);
+        sViewsWithIds.put(R.id.relativeLayout, 3);
+        sViewsWithIds.put(R.id.iv_back_button, 4);
+        sViewsWithIds.put(R.id.tv_page_title, 5);
+        sViewsWithIds.put(R.id.civ_company_logo, 6);
         sViewsWithIds.put(R.id.tv_job_title, 7);
         sViewsWithIds.put(R.id.tv_about_job, 8);
         sViewsWithIds.put(R.id.acb_see_job_desc, 9);
@@ -41,21 +42,20 @@ public class FragmentSeekerTrackingJobDetailsBindingImpl extends FragmentSeekerT
     private FragmentSeekerTrackingJobDetailsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.appcompat.widget.AppCompatButton) bindings[9]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[3]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
             , (android.view.View) bindings[14]
-            , (android.widget.ImageView) bindings[5]
+            , (android.widget.ImageView) bindings[4]
             , (android.widget.ImageView) bindings[11]
             , (android.widget.ImageView) bindings[10]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.RelativeLayout) bindings[4]
+            , (android.widget.RelativeLayout) bindings[3]
             , (androidx.recyclerview.widget.RecyclerView) bindings[12]
             , (android.widget.TextView) bindings[8]
             , (android.widget.TextView) bindings[7]
-            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[5]
             , (android.view.View) bindings[13]
             );
-        this.circleImageView2.setTag(null);
         this.ivUserProfile.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
         this.mboundView0.setTag(null);
@@ -133,7 +133,6 @@ public class FragmentSeekerTrackingJobDetailsBindingImpl extends FragmentSeekerT
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.circleImageView2, jobSeekerProfilePicUrl);
             com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivUserProfile, jobSeekerProfilePicUrl);
         }
     }

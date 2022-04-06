@@ -5,12 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
@@ -18,9 +15,6 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
-  @NonNull
-  public final AppCompatButton btnGo;
-
   @NonNull
   public final CheckBox cbAll;
 
@@ -31,13 +25,7 @@ public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
   public final CheckBox cbFavorite;
 
   @NonNull
-  public final ImageView ivBackButton;
-
-  @NonNull
-  public final RelativeLayout relativeLayout;
-
-  @NonNull
-  public final TextView textView24;
+  public final CheckBox cbInProgress;
 
   @NonNull
   public final TextView tvAll;
@@ -48,21 +36,22 @@ public abstract class FragmentSeekerFilterJobBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvFavorite;
 
+  @NonNull
+  public final TextView tvInProgress;
+
   protected FragmentSeekerFilterJobBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatButton btnGo, CheckBox cbAll, CheckBox cbArchive,
-      CheckBox cbFavorite, ImageView ivBackButton, RelativeLayout relativeLayout,
-      TextView textView24, TextView tvAll, TextView tvArchive, TextView tvFavorite) {
+      int _localFieldCount, CheckBox cbAll, CheckBox cbArchive, CheckBox cbFavorite,
+      CheckBox cbInProgress, TextView tvAll, TextView tvArchive, TextView tvFavorite,
+      TextView tvInProgress) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnGo = btnGo;
     this.cbAll = cbAll;
     this.cbArchive = cbArchive;
     this.cbFavorite = cbFavorite;
-    this.ivBackButton = ivBackButton;
-    this.relativeLayout = relativeLayout;
-    this.textView24 = textView24;
+    this.cbInProgress = cbInProgress;
     this.tvAll = tvAll;
     this.tvArchive = tvArchive;
     this.tvFavorite = tvFavorite;
+    this.tvInProgress = tvInProgress;
   }
 
   @NonNull

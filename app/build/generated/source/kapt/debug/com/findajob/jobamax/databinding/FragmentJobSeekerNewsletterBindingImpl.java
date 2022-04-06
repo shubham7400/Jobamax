@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 @SuppressWarnings("unchecked")
-public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNewsletterBinding implements com.findajob.jobamax.generated.callback.OnClickListener.Listener, com.findajob.jobamax.generated.callback.OnCheckedChangeListener.Listener {
+public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNewsletterBinding implements com.findajob.jobamax.generated.callback.OnCheckedChangeListener.Listener, com.findajob.jobamax.generated.callback.OnClickListener.Listener {
 
     @Nullable
     private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
@@ -24,11 +24,11 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback76;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback32;
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback77;
+    private final android.view.View.OnClickListener mCallback30;
     @Nullable
-    private final android.view.View.OnClickListener mCallback75;
+    private final android.view.View.OnClickListener mCallback31;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,9 +51,9 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
         this.newsletterCheck.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback76 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback77 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
-        mCallback75 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback32 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
+        mCallback30 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback31 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -115,32 +115,32 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback75);
-            this.mboundView2.setOnClickListener(mCallback76);
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.newsletterCheck, mCallback77, (androidx.databinding.InverseBindingListener)null);
+            this.imageView.setOnClickListener(mCallback30);
+            this.mboundView2.setOnClickListener(mCallback31);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.newsletterCheck, mCallback32, (androidx.databinding.InverseBindingListener)null);
         }
     }
     // Listener Stub Implementations
     // callback impls
+    public final void _internalCallbackOnCheckedChanged(int sourceId , android.widget.CompoundButton callbackArg_0, boolean callbackArg_1) {
+        // localize variables for thread safety
+        // handler
+        com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterInterface handler = mHandler;
+        // handler != null
+        boolean handlerJavaLangObjectNull = false;
+
+
+
+        handlerJavaLangObjectNull = (handler) != (null);
+        if (handlerJavaLangObjectNull) {
+
+
+
+            handler.toggleNewsletterFlag(callbackArg_1);
+        }
+    }
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackPress();
-                }
-                break;
-            }
             case 1: {
                 // localize variables for thread safety
                 // handler
@@ -158,23 +158,23 @@ public class FragmentJobSeekerNewsletterBindingImpl extends FragmentJobSeekerNew
                 }
                 break;
             }
-        }
-    }
-    public final void _internalCallbackOnCheckedChanged(int sourceId , android.widget.CompoundButton callbackArg_0, boolean callbackArg_1) {
-        // localize variables for thread safety
-        // handler
-        com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterInterface handler = mHandler;
-        // handler != null
-        boolean handlerJavaLangObjectNull = false;
+            case 2: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
 
 
 
-        handlerJavaLangObjectNull = (handler) != (null);
-        if (handlerJavaLangObjectNull) {
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
 
 
-
-            handler.toggleNewsletterFlag(callbackArg_1);
+                    handler.onBackPress();
+                }
+                break;
+            }
         }
     }
     // dirty flag

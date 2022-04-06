@@ -15,24 +15,21 @@ import com.findajob.jobamax.data.pojo.HardSkill
 import com.findajob.jobamax.data.pojo.IdealJob
 import com.findajob.jobamax.data.pojo.Portfolio
 import com.findajob.jobamax.databinding.*
-import com.findajob.jobamax.enums.ParseTableFields
-import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.*
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.log
-import com.findajob.jobamax.util.toast
 import com.google.android.material.chip.Chip
 import com.google.gson.Gson
-import com.parse.ParseObject
-import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import org.json.JSONObject
 import android.media.MediaPlayer
 import android.widget.SeekBar
+
+
 import java.io.IOException
 
 
@@ -152,11 +149,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         }else{
             player = MediaPlayer().apply {
                 try {
-                    setDataSource(idealJob?.audioUrl)
-                    prepare()
-                    start()
-                    mStartPlaying = false
-                    binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+                    idealJob?.audioUrl?.let { audioUrl ->
+                        setDataSource(audioUrl)
+                        prepare()
+                        start()
+                        mStartPlaying = false
+                        binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+                    }
                 } catch (e: IOException) {
                     log(  "prepare() failed")
                 }
@@ -208,6 +207,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
                binding.cgActivities.addView(chip)
            }
        }
+        if (activitiesTags.isEmpty()){
+            binding.tvInterest.visibility = View.GONE
+            binding.cgActivities.visibility = View.GONE
+        }else{
+            binding.tvInterest.visibility = View.VISIBLE
+            binding.cgActivities.visibility = View.VISIBLE
+        }
     }
 
 
@@ -229,6 +235,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
                 binding.cgSoftSkill.removeView(c)
             }
             binding.cgSoftSkill.addView(chip)
+        }
+        if (ownedSoftSkills.isEmpty()){
+            binding.tvSoftSkill.visibility = View.GONE
+            binding.cgSoftSkill.visibility = View.GONE
+        }else{
+            binding.tvSoftSkill.visibility = View.VISIBLE
+            binding.cgSoftSkill.visibility = View.VISIBLE
         }
     }
 
@@ -301,6 +314,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         }
         hardSkillAdapter!!.submitList(ownedHardSkills)
         hardSkillAdapter!!.notifyDataSetChanged()
+        if (ownedHardSkills.isEmpty()){
+            binding.tvHardSkill.visibility = View.GONE
+            binding.rvHardSkill.visibility = View.GONE
+        }else{
+            binding.tvHardSkill.visibility = View.VISIBLE
+            binding.rvHardSkill.visibility = View.VISIBLE
+        }
     }
 
     private fun setExperienceAdapter() {
@@ -314,6 +334,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         }
         experienceAdapter!!.submitList(experiences)
         experienceAdapter!!.notifyDataSetChanged()
+        if (experiences.isEmpty()){
+            binding.tvExperience.visibility = View.GONE
+            binding.rvExperience.visibility = View.GONE
+        }else{
+            binding.tvExperience.visibility = View.VISIBLE
+            binding.rvExperience.visibility = View.VISIBLE
+        }
     }
 
     private fun setSchoolAdapter() {
@@ -327,6 +354,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         }
         schoolAdapter!!.submitList(educations)
         schoolAdapter!!.notifyDataSetChanged()
+        if (educations.isEmpty()){
+            binding.tvSchool.visibility = View.GONE
+            binding.rvSchool.visibility = View.GONE
+        }else{
+            binding.tvSchool.visibility = View.VISIBLE
+            binding.rvSchool.visibility = View.VISIBLE
+        }
     }
 
     override fun onCreated(savedInstance: Bundle?) {

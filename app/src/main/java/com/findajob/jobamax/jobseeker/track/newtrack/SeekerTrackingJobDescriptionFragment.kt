@@ -10,12 +10,9 @@ import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobDescriptionBinding
-import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobDetailsBinding
-import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.model.JobOffer
-import com.findajob.jobamax.model.TrackingJob
+ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+ import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.util.loadImageFromUrl
-import com.findajob.jobamax.util.log
 
 
 class SeekerTrackingJobDescriptionFragment : BaseFragmentMain<FragmentSeekerTrackingJobDescriptionBinding>() {

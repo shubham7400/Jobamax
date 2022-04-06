@@ -9,12 +9,16 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
+import com.findajob.jobamax.data.pojo.PhaseGroup
 import com.findajob.jobamax.databinding.FragmentSeekerAddPersonalTrackJobBinding
 import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobBinding
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.util.convertCustomObjectToJsonString
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
+import com.google.gson.Gson
 import com.parse.ParseObject
 import com.parse.ParseQuery
 
@@ -61,6 +65,7 @@ class SeekerAddPersonalTrackJobFragment : BaseFragmentMain<FragmentSeekerAddPers
              }else{
                  pfObject.put(ParseTableFields.description.toString(), binding.etAboutJob.text.toString())
              }
+             pfObject.put("phases", convertCustomObjectToJsonString(PhaseGroup()))
              progressHud.show()
              pfObject.saveInBackground {
                  progressHud.dismiss()

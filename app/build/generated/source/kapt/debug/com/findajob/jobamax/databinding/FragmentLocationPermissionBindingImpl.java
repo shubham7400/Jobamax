@@ -26,9 +26,9 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback241;
+    private final android.view.View.OnClickListener mCallback58;
     @Nullable
-    private final android.view.View.OnClickListener mCallback242;
+    private final android.view.View.OnClickListener mCallback57;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,8 +51,8 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback241 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback242 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback58 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback57 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -78,7 +78,7 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.handler == variableId) {
-            setHandler((com.findajob.jobamax.recruiter.profile.jobOffer.location.LocationPermissionInterface) variable);
+            setHandler((com.findajob.jobamax.login.LocationPermissionInterface) variable);
         }
         else {
             variableSet = false;
@@ -86,7 +86,7 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
             return variableSet;
     }
 
-    public void setHandler(@Nullable com.findajob.jobamax.recruiter.profile.jobOffer.location.LocationPermissionInterface Handler) {
+    public void setHandler(@Nullable com.findajob.jobamax.login.LocationPermissionInterface Handler) {
         this.mHandler = Handler;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -109,40 +109,23 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.findajob.jobamax.recruiter.profile.jobOffer.location.LocationPermissionInterface handler = mHandler;
+        com.findajob.jobamax.login.LocationPermissionInterface handler = mHandler;
         // batch finished
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.button2.setOnClickListener(mCallback241);
-            this.mboundView2.setOnClickListener(mCallback242);
+            this.button2.setOnClickListener(mCallback57);
+            this.mboundView2.setOnClickListener(mCallback58);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.recruiter.profile.jobOffer.location.LocationPermissionInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onAllowLocationClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
-                com.findajob.jobamax.recruiter.profile.jobOffer.location.LocationPermissionInterface handler = mHandler;
+                com.findajob.jobamax.login.LocationPermissionInterface handler = mHandler;
                 // handler != null
                 boolean handlerJavaLangObjectNull = false;
 
@@ -153,6 +136,23 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
 
 
                     handler.onTellMeMoreClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.LocationPermissionInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onAllowLocationClicked();
                 }
                 break;
             }

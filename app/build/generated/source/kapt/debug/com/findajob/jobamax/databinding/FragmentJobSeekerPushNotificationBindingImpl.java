@@ -26,9 +26,9 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback239;
+    private final android.view.View.OnClickListener mCallback56;
     @Nullable
-    private final android.view.View.OnClickListener mCallback240;
+    private final android.view.View.OnClickListener mCallback55;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -51,8 +51,8 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback239 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback240 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback56 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback55 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,15 +114,15 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback239);
-            this.mboundView2.setOnClickListener(mCallback240);
+            this.imageView.setOnClickListener(mCallback55);
+            this.mboundView2.setOnClickListener(mCallback56);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationInterface handler = mHandler;
@@ -139,7 +139,7 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
                 }
                 break;
             }
-            case 2: {
+            case 1: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationInterface handler = mHandler;

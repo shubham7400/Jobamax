@@ -1,6 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile.portfolio
 
-import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -17,21 +17,13 @@ import com.findajob.jobamax.cropper.CropImageView
 import com.findajob.jobamax.data.pojo.Portfolio
 import com.findajob.jobamax.databinding.FragmentPortfolioImageBinding
 import com.findajob.jobamax.databinding.ItemPortfolioImageBinding
-import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.idealjob.ADD_NEW_ITEM
 import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
-import com.findajob.jobamax.util.ImagePicker
-import com.findajob.jobamax.util.errorToast
-import com.findajob.jobamax.util.log
-import com.findajob.jobamax.util.toast
-import com.parse.Parse
+import com.findajob.jobamax.util.*
 import com.parse.ParseObject
-import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
-import jp.wasabeef.picasso.transformations.CropCircleTransformation
-import java.io.File
 import java.util.*
 
 
@@ -90,36 +82,6 @@ class PortfolioImageFragment : BaseFragmentMain<FragmentPortfolioImageBinding>()
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK && data != null) {
-                val result = CropImage.getActivityResult(data)
-                val profilePicUri = result.uri
-                if (profilePicUri != null) {
-                    viewModel.uploadImage(profilePicUri, {
-                        if (it != null) {
-                            toast("${it.message.toString()}")
-                        }
-                    },{
-                        if (it != null) {
-                            portfolioImageUrlList.add(it)
-                            if (!portfolioImageUrlList.contains(ADD_NEW_ITEM)){
-                                portfolioImageUrlList.add(ADD_NEW_ITEM)
-                            }
-                            adapter.submitList(portfolioImageUrlList)
-                            adapter.notifyDataSetChanged()
-                        }
-                    })
-                }
-
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                requireContext().errorToast()
-            }
-        }
-    }
-
-
 
 
     private fun setAdapter() {
@@ -162,17 +124,32 @@ class PortfolioImageFragment : BaseFragmentMain<FragmentPortfolioImageBinding>()
         binding.jobSeeker = viewModel.jobSeeker
     }
 
-    override fun setGalleryImage(imageUri: Uri?) {
-        imageUri?.let { cropImageFromUri(it) }
+    override fun setImageUri(imageUri: Uri?) {
+        imageUri?.let {
+            cropImageFromUri(it)
+        }
     }
 
-    override fun setCameraImage(filePath: String?) {
-        filePath?.let { cropImageFromUri(Uri.fromFile(File(filePath))) }
-
-    }
-
-    override fun setImageFile(file: File?) {
-        file?.let { cropImageFromUri(Uri.fromFile(file)) }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+            if (resultCode == RESULT_OK) {
+                val resultUri = result.uri
+                uploadImageToParse(resultUri, requireContext(), { exception ->
+                    toast(exception)
+                },
+                    { imageUrl ->
+                        portfolioImageUrlList.add(imageUrl)
+                        if (!portfolioImageUrlList.contains(ADD_NEW_ITEM)){
+                            portfolioImageUrlList.add(ADD_NEW_ITEM)
+                        }
+                        adapter.submitList(portfolioImageUrlList)
+                        adapter.notifyDataSetChanged()
+                    })
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                log(result.error.message.toString())
+            }
+        }
     }
 
     private fun cropImageFromUri(uri: Uri) {

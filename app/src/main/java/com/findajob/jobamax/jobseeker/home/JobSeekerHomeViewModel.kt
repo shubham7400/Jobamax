@@ -7,30 +7,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.findajob.jobamax.base.BaseAndroidViewModel
-import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
-import com.findajob.jobamax.enums.SeekerWishlistJobFilter
-import com.findajob.jobamax.extensions.ioToMain
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel
-import com.findajob.jobamax.jobseeker.profile.account.social.JobSeekerSocialAccountModel
-import com.findajob.jobamax.jobseeker.profile.cv.model.*
-import com.findajob.jobamax.jobseeker.profile.jobSearch.JobSearchState
-import com.findajob.jobamax.jobseeker.track.JobSeekerTrackState
+ import com.findajob.jobamax.jobseeker.profile.cv.model.*
+
 import com.findajob.jobamax.model.*
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.preference.setNewMatchPNFlag
 import com.findajob.jobamax.preference.setProfilePicUrl
-import com.findajob.jobamax.repo.GetAllJobOfferCallback
-import com.findajob.jobamax.repo.JobOfferRepository
-import com.findajob.jobamax.repo.JobSeekerRepo
-import com.findajob.jobamax.repo.SaveParseObjectCallback
 import com.findajob.jobamax.util.*
 import com.google.gson.Gson
 import com.parse.*
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.rxkotlin.addTo
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
@@ -41,7 +30,7 @@ import kotlin.collections.ArrayList
 
 
 @HiltViewModel
-class JobSeekerHomeViewModel @Inject constructor(val context: Application, val jobSeekerRepo: JobSeekerRepo, val jobOfferRepo: JobOfferRepository) : BaseAndroidViewModel(context) {
+class JobSeekerHomeViewModel @Inject constructor(val context: Application) : BaseAndroidViewModel(context) {
 
     var jobSeekerObject: ParseObject? = null
     var jobOffers: ArrayList<ParseObject> = arrayListOf()
@@ -49,9 +38,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
     var jobOfferPageIndex = 0
     var isJobOfferExhausted = false
 
-    var selectedLocation = ParseGeoPoint()
-    var currentLocation = ParseGeoPoint()
-    var isCurrentLocation = true
+
 
     val jobSeeker get() = if (jobSeekerObject == null) JobSeeker() else JobSeeker(jobSeekerObject!!)
 
@@ -70,132 +57,57 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         ACCEPT
     }
 
-    private val _jobSeekerTrackStateLiveData = MutableLiveData<JobSeekerTrackState>()
-    val jobSeekerTrackStateLiveData = _jobSeekerTrackStateLiveData
 
     fun getJobSeeker() {
         viewModelScope.launch {
-            jobSeekerRepo.getCurrent(object : GetUserCallback {
-                override fun onSuccess(parseObject: ParseObject) {
-                    jobSeekerObject = parseObject
-
-
-                    if (jobSeeker.disableAccountFlag) {
-                        jobSeekerObject?.put("disableAccountFlag", false)
-                        jobSeekerObject?.saveInBackground()
+            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+            query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context.getUserId())
+            query.findInBackground { it, e ->
+                val parseObject = it?.firstOrNull()
+                when {
+                    e != null -> {
+                        log(e.message.toString())
                     }
-
-                    context.setNewMatchPNFlag(jobSeeker.newMatchPNFlag)
-                    currentIndex = 0
-                    jobOfferPageIndex = 0
-                    isJobOfferExhausted = false
-                    jobOffers = arrayListOf()
-
-                    if (jobSeeker.lastTodayReachUpdatedAt < Date().toText()) {
-                        jobSeekerObject?.put("lastTodayReachUpdatedAt", Date().toText())
-                        jobSeekerObject?.put("todayReach", 3)
-                        jobSeekerObject?.saveInBackground()
+                    jobSeeker == null -> {
+                        log("User Not Found")
                     }
+                    else -> {
+                        jobSeekerObject = parseObject
 
-                    loadJobOffers()
-                    loadAppliedJobs()
-                    isJobSeekerUpdated.value = true
+
+                        if (jobSeeker.disableAccountFlag) {
+                            jobSeekerObject?.put("disableAccountFlag", false)
+                            jobSeekerObject?.saveInBackground()
+                        }
+
+                        context.setNewMatchPNFlag(jobSeeker.newMatchPNFlag)
+                        currentIndex = 0
+                        jobOfferPageIndex = 0
+                        isJobOfferExhausted = false
+                        jobOffers = arrayListOf()
+
+                        if (jobSeeker.lastTodayReachUpdatedAt < Date().toText()) {
+                            jobSeekerObject?.put("lastTodayReachUpdatedAt", Date().toText())
+                            jobSeekerObject?.put("todayReach", 3)
+                            jobSeekerObject?.saveInBackground()
+                        }
+
+                        isJobSeekerUpdated.value = true
+                    }
                 }
-                override fun onFailure(e: Exception?) {}
-            })
+            }
         }
     }
 
-    fun loadAppliedJobs() {
-        jobOfferRepo.getAppliedJobs(jobSeeker.jobSeekerId).ioToMain().subscribe({
-                log("Job Seeker track state has been chosen $it")
-                _jobSeekerTrackStateLiveData.postValue(it)
-            }, { e ->
-                log("The job seeker state could not be loaded ${e.message}", e)
-                _jobSeekerTrackStateLiveData.postValue(JobSeekerTrackState())
-            }).addTo(disposeBag)
-    }
 
     private val _selectedJobOffer = MutableLiveData<ParseObject>()
     val selectedJobOffer: LiveData<ParseObject> = _selectedJobOffer
 
-    fun getSelectedJobOffer() = viewModelScope.launch(Dispatchers.IO) {
-        try {
-            val jobOfferPo = jobOffers[currentIndex]
-            _selectedJobOffer.postValue(jobOfferPo)
-        } catch (e: Exception) {
-            log("Could not get the selected job offer due to ${e.message ?: "Unknown reason"}", e)
-            _selectedJobOffer.postValue(
-                ParseObject.createWithoutData(
-                    JobOffer.CLASS_NAME,
-                    UUID.randomUUID().toString()
-                )
-            )
-        }
-
-    }
-
-    fun getCompanyFromJobOffer(jobOfferParseObject: ParseObject?): ParseObject? {
-        if (jobOfferParseObject == null) return null
-        return jobOfferParseObject.getParseObject("company")?.fetchIfNeeded()
-    }
 
 
-    fun loadJobOffers() {
-        _jobOfferLiveData.value = null
-        val location = if (isCurrentLocation) currentLocation else selectedLocation
 
-        jobOfferRepo.getAll(jobSeeker, location, jobOfferPageIndex, object : GetAllJobOfferCallback {
-                override fun onFinish(parseObjects: List<ParseObject>) {
-                    val jobOffersList = parseObjects.filter {
-                        val isNotArchived = !it.getBoolean("isArchived")
-                        log("loadJobOffers: checking ${it.objectId} if it is archived or not ($isNotArchived)")
-                        // ignoring all the job offers that has been archived
-                        isNotArchived
-                    }
-                    log("loadJobOffers: job offers amount: ${parseObjects.size}")
-                    isJobOfferExhausted = jobOffersList.isEmpty()
-                    jobOfferPageIndex++
-                    jobOffers.addAll(jobOffersList)
-                    _jobOfferLiveData.value = jobOffers
-                }
-            })
-    }
 
-    /**
-     * load Jobamax, Adzuna, and Remotive job offers
-     */
-    fun loadAllJobOffers() {
 
-        viewModelScope.launch(Dispatchers.IO) {
-            _jobOfferLiveData.postValue(null)
-            val location = if (isCurrentLocation) currentLocation else selectedLocation
-
-            jobOfferRepo.getAll(
-                jobSeeker,
-                location,
-                jobOfferPageIndex,
-                object : GetAllJobOfferCallback {
-                    override fun onFinish(parseObjects: List<ParseObject>) {
-                        log("Job Offers Size: ${parseObjects.size}")
-                        isJobOfferExhausted = parseObjects.isEmpty()
-                        jobOfferPageIndex++
-                        jobOffers.addAll(parseObjects)
-
-                        //load JobsPikr jobs api
-                        jobOfferRepo.loadJobsPikrJobOffers(
-                            jobSeeker,
-                            object : GetAllJobOfferCallback {
-                                override fun onFinish(parseObjects: List<ParseObject>) {
-                                    log("JobsPikr Job Offers Size: ${parseObjects.size}")
-                                    jobOffers.addAll(parseObjects)
-                                    _jobOfferLiveData.postValue(jobOffers)
-                                }
-                            })
-                    }
-                })
-        }
-    }
 
 
     private val _pushNotificationStateObserver = MutableLiveData<Pair<Boolean, Boolean>>()
@@ -240,37 +152,9 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         jobSeekerObject!!.saveInBackground {
             callback(it)
         }
-       /* personalInfoModel.update(jobSeekerObject!!)
-        val user = jobSeekerObject?.getParseObject(User.CLASS_NAME)
-        user?.let { user ->
-            user.put("lastName", jobSeekerObject!!.get("lastName")!!)
-            user.put("firstName", jobSeekerObject!!.get("firstName")!!)
-            user.put("email", jobSeekerObject!!.get("email")!!)
-            user.put("username", jobSeekerObject!!.get("email")!!)
-            user.saveInBackground()
-        }
-
-        jobSeekerObject?.saveInBackground {
-            callback(it)
-        }*/
     }
 
-    fun updateSocialMediaLinks(
-        socialMedia: JobSeekerSocialAccountModel,
-        callback: (it: ParseException?) -> Unit
-    ) {
-        socialMedia.update(jobSeekerObject!!)
-        jobSeekerObject?.saveInBackground {
-            callback(it)
-        }
-    }
 
-    fun updateReachCount(reachCount: Int, callback: UpdateUserCallback) {
-        jobSeekerObject?.put("totalReach", jobSeeker.totalReach + reachCount)
-        jobSeekerObject?.saveInBackground {
-            callback.onFinish(it == null)
-        }
-    }
 
     fun uploadProfilePicUri(profilePicUri: Uri, callback: SaveParseObjectCallback) {
         val inputStream: InputStream? = context.contentResolver.openInputStream(profilePicUri)
@@ -281,9 +165,6 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         parseFile.saveInBackground(SaveCallback {
             if (it == null) {
                 jobSeekerObject?.put("profilePicUrl", parseFile.url)
-                val user = jobSeekerObject?.getParseObject("user")
-                user?.put("profilePicUrl", parseFile.url)
-                user?.saveInBackground()
                 context.setProfilePicUrl(parseFile.url ?: "")
                 jobSeekerObject?.saveInBackground {
                     callback.onFinish(it == null)
@@ -328,50 +209,10 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
     }
 
 
-    private val _jobSearchStateObservable = MutableLiveData<JobSearchState>()
-    val jobSearchStateObservable: LiveData<JobSearchState> = _jobSearchStateObservable
-
-    init {
-        _jobSearchStateObservable.value = JobSearchState(jobSeeker)
-    }
-
-    fun saveJobSearchState(jobSearchState: JobSearchState) = viewModelScope.launch(Dispatchers.IO) {
-        _jobSearchStateObservable.postValue(jobSearchState)
-    }
 
 
-    fun saveJobSearch() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val jobSeeker = jobSearchStateObservable.value?.toJobSeeker()
-            if (jobSeekerObject != null && jobSeeker != null) {
-                jobSeekerObject?.put("jobSeekerId", jobSeeker.jobSeekerId)
-                jobSeekerObject?.put("hideMeFlag", jobSeeker.hideMeFlag)
-                jobSeekerObject?.put("job", jobSeeker.job)
-                jobSeekerObject?.put("location", jobSeeker.location)
-                jobSeekerObject?.put("distance", jobSeeker.distance)
-                jobSeekerObject?.put("lat", jobSeeker.lat)
-                jobSeekerObject?.put("lng", jobSeeker.lng)
-                jobSeekerObject?.put("typeOfWork", jobSeeker.typeOfWork)
-                jobSeekerObject?.put("jobCategory", jobSeeker.jobCategory)
-                jobSeekerObject?.put("experience", jobSeeker.experience)
-            } else {
-                jobSeeker?.jobSeekerId = context.getUserId()
-                jobSeekerObject = jobSeeker?.toParseObject()
-            }
 
-            currentIndex = 0
-            jobOfferPageIndex = 0
-            isJobOfferExhausted = false
-            jobOffers = arrayListOf()
 
-            loadAllJobOffers()
-        }
-    }
-
-    fun submitLocation(lat: Double, lng: Double) = viewModelScope.launch(Dispatchers.IO) {
-        isCurrentLocation = false
-        selectedLocation = ParseGeoPoint(lat, lng)
-    }
 
     private val _deleteAccountStatus: MutableLiveData<Boolean> by lazy {
         MutableLiveData()
@@ -380,16 +221,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         _deleteAccountStatus
     }
 
-    fun deleteAccount(reasons: String? = null) {
-        reasons?.let {
-            val reasonParseObject = DeleteAccountReason(reason = it, accountId = jobSeeker.jobSeekerId).toParseObject()
-            reasonParseObject.saveInBackground()
-        }
-        ParseUser.logOut()
-        jobSeekerObject?.deleteInBackground {
-            _deleteAccountStatus.value = it == null
-        }
-    }
+
 
     fun changePassword(newPassword: String, callback: (it: ParseException?) -> Unit) {
         jobSeekerObject!!.put(ParseTableFields.password.toString(), newPassword)
@@ -471,12 +303,12 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
     }
 
 
-    fun addActivitiesTags(activitiesTags: ArrayList<String>, callback: (it: ParseException?) -> Unit) {
-        val activitiesTagsJsonArray = JSONArray()
-        activitiesTags.forEach {
-            activitiesTagsJsonArray.put(it)
+    fun addInterestTags(interestTags: ArrayList<String>, callback: (it: ParseException?) -> Unit) {
+        val interestTagsJsonArray = JSONArray()
+        interestTags.forEach {
+            interestTagsJsonArray.put(it)
         }
-         jobSeekerObject?.put(ParseTableFields.activities.toString(), activitiesTagsJsonArray.toString())
+         jobSeekerObject?.put(ParseTableFields.interests.toString(), interestTagsJsonArray)
         jobSeekerObject?.saveInBackground {
             callback(it)
         }
@@ -569,7 +401,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
 
 
     fun getExistingActivitiesTags(callback: GetAllUserCallback) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Activities.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Interests.toString())
         query.findInBackground { it, e ->
             val jobSeeker = it?.firstOrNull()
             when {
@@ -586,12 +418,6 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun saveVolunteeringTag(tag: String) {
-        val volunteeringParseObject = ParseObject(ParseTableName.Volunteering.toString())
-        volunteeringParseObject.put("name", tag)
-        volunteeringParseObject.saveInBackground {
-        }
-    }
 
     fun saveActivitiesTag(tag: String) {
         val activitiesParseObject = ParseObject(ParseTableName.Activities.toString())
@@ -612,25 +438,6 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun getWishList(callback: GetAllUserCallback ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),context.getUserId())
-        query.include("job")
-        query.include("jobSeeker")
-        query.findInBackground { it, e ->
-            when {
-                e != null -> {
-                    callback.onFailure(e)
-                }
-                it == null -> {
-                    callback.onFailure(java.lang.Exception("User Not Found"))
-                }
-                else -> {
-                    callback.onSuccess(it)
-                }
-            }
-        }
-    }
 
     fun updateWishlistJob(parseObject: ParseObject, callback: (ParseException?) -> Unit) {
         parseObject.saveInBackground {
@@ -655,20 +462,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
        })
     }
 
-    fun uploadImage(uri: Uri, onFailure: (ParseException?) -> Unit, onSuccess: (String?) -> Unit) {
-        val inputStream: InputStream? = context.contentResolver.openInputStream(uri)
-        var fileName = context.getFileName(uri)
-        if (fileName.isEmpty())
-            fileName = Date().yyyyMMddHHmmss()
-        val parseFile = ParseFile(fileName, inputStream?.readBytes())
-        parseFile.saveInBackground(SaveCallback {
-            if (it != null){
-                onFailure(it)
-            }else{
-                onSuccess(parseFile.url)
-            }
-        })
-    }
+
 
     fun loadTrackingJob(callback: GetAllUserCallback) {
          val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
@@ -688,32 +482,6 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
                 }
             }
         }
-    }
-
-    fun getNextInterview(phase: String, jobSeekerId: String, onFailure: (ParseException) -> Unit, onSuccess: (String?) -> Unit) {
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), mapOf("name" to phase , "jobSeekerId" to jobSeekerId ), FunctionCallback<String>() { result, e ->
-            when {
-                e != null -> {
-                    onFailure(e)
-                }
-                else -> {
-                    onSuccess(result)
-                }
-            }
-        })
-    }
-
-    fun getNextDeadline(phase: String, jobSeekerId: String, onFailure: (ParseException) -> Unit, onSuccess: (String?) -> Unit) {
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), mapOf("name" to phase , "jobSeekerId" to jobSeekerId ), FunctionCallback<String>() { result, e ->
-            when {
-                e != null -> {
-                    onFailure(e)
-                }
-                else -> {
-                    onSuccess(result)
-                }
-            }
-        })
     }
 
     fun addOrUpdateVolunteering(volunteering: Volunteering, callback: (it: ParseException?) -> Unit) {
@@ -751,30 +519,8 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application, val j
         }
     }
 
-    fun addNewOrUpdateVolunteering(volunteering: Volunteering, callback: (ParseException?) -> Unit) {
-        val volunteerings = ArrayList(Gson().fromJson(jobSeekerObject?.get("volunteerings").toString(), VolunteeringGroup::class.java)?.list ?: listOf())
-        var isVolunteeringExist = false
-        for (edu in volunteerings.iterator()){
-            if (edu.id == volunteering.id){
-                isVolunteeringExist = true
-                volunteerings[volunteerings.indexOf(edu)].apply {
-                    job = volunteering.job
-                    company = volunteering.company
-                    description = volunteering.description
-                    location = volunteering.location
-                    startDate = volunteering.startDate
-                    endDate = volunteering.endDate
-                }
-            }
-        }
-        if (!isVolunteeringExist){
-            volunteerings.add(volunteering)
-        }
-        val volunteeringGroup = VolunteeringGroup(volunteerings)
-        jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), Gson().toJson(volunteeringGroup))
-        jobSeekerObject!!.saveInBackground {
-            callback(it)
-            getJobSeeker()
-        }
-    }
+ }
+
+interface SaveParseObjectCallback {
+    fun onFinish(isSuccessful: Boolean)
 }

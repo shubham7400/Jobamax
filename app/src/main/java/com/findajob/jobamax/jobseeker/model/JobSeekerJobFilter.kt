@@ -8,8 +8,9 @@ class JobSeekerJobFilter : Serializable {
     var location: String? = null
     var lat: Double? = null
     var lng: Double? = null
-    var industry: String? = null
     var typeOfWork = emptyList<String>()
     var jobType: String? = null
+    var companyName: String? = null
     var experience = emptyList<String>()
+    var industry = emptyList<String>()
 }

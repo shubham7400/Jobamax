@@ -39,23 +39,23 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/back_arrow_img" />
+                    android:src="@drawable/back_arrow_blue" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                     android:fontFamily="@font/opensans_bold"
+                    android:fontFamily="@font/opensans_bold"
                     android:text="@string/my_skills"
-                    android:textColor="#7800EF"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_user_profile"
+                    style="@style/circular_image"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    app:civ_border_color="@color/colorPrimary"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/default_user_img" />
             </RelativeLayout>
@@ -75,49 +75,34 @@
                 android:paddingHorizontal="20dp">
 
                 <TextView
+                    android:id="@+id/tv_ddd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:fontFamily="@font/opensans_bold"
-                    android:text="@string/my_skills"
+                    android:text="@string/hard_skills"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+                    android:textSize="18sp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:gravity="center_vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/tv_ddd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/opensans_bold"
-                        android:text="@string/hard_skills"
-                        android:textColor="#7800EF"
-                        android:textSize="20dp" />
 
 
                     <AutoCompleteTextView
                         android:id="@+id/actv_hard_skill"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="5dp"
                         android:layout_toStartOf="@+id/iv_hard_skill_add_btn"
-                        android:layout_toEndOf="@+id/tv_ddd"
                         android:background="@drawable/rounded_white_box"
                         android:fontFamily="@font/opensans_regular"
-                        android:hint="Enter Skill ..."
-                        android:minHeight="30dp"
+                         android:minHeight="30dp"
                         android:paddingHorizontal="10dp"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -141,38 +126,36 @@
                     tools:listitem="@layout/item_seeker_hard_skill" />
 
 
+                <TextView
+                    android:id="@+id/tv_dddd"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/soft_skills"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center_vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/tv_dddd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/opensans_bold"
-                        android:text="@string/soft_skills"
-                        android:textColor="#7800EF"
-                        android:textSize="20dp" />
 
 
                     <AutoCompleteTextView
                         android:id="@+id/actv_soft_skill"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="5dp"
                         android:layout_toStartOf="@+id/iv_soft_skill_add_btn"
-                        android:layout_toEndOf="@+id/tv_dddd"
                         android:background="@drawable/rounded_white_box"
                         android:fontFamily="@font/opensans_regular"
-                        android:hint="Enter Skill ..."
                         android:minHeight="30dp"
                         android:paddingHorizontal="10dp"
                         android:textColor="@color/black"
@@ -180,8 +163,8 @@
 
                     <ImageView
                         android:id="@+id/iv_soft_skill_add_btn"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="5dp"

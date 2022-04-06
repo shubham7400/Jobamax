@@ -77,6 +77,9 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ImageView ivIdealJobVideo;
 
   @NonNull
+  public final ImageView ivInfco;
+
+  @NonNull
   public final ImageView ivInfo;
 
   @NonNull
@@ -146,9 +149,6 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ImageView textViewx86d;
 
   @NonNull
-  public final TextView tvAaa;
-
-  @NonNull
   public final TextView tvAboutMeBtn;
 
   @NonNull
@@ -156,6 +156,12 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
 
   @NonNull
   public final TextView tvDdd;
+
+  @NonNull
+  public final TextView tvDddd;
+
+  @NonNull
+  public final TextView tvElevetorPitchSection;
 
   @NonNull
   public final TextView tvIdealJobAudioTitle;
@@ -188,7 +194,7 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
       AutoCompleteTextView etIdealWorkspace, ImageView imageView11,
       ImageView ivAddIdealWorkspaceBtn, ImageView ivBackButton, ImageView ivCalender,
       ImageView ivCalendxer, ImageView ivCalvender, ImageView ivIdealJobAudio,
-      ImageView ivIdealJobMessage, ImageView ivIdealJobVideo, ImageView ivInfo,
+      ImageView ivIdealJobMessage, ImageView ivIdealJobVideo, ImageView ivInfco, ImageView ivInfo,
       ImageView ivJobSearch, ImageView ivPreview, CircleImageView ivUser,
       RelativeLayout rlIdealJobAudio, RelativeLayout rlIdealJobMessage,
       RelativeLayout rlIdealJobVideo, RelativeLayout rlPortfolioImage,
@@ -196,10 +202,10 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
       TextView textViedwf76, TextView textView6, TextView textView7, TextView textView73,
       TextView textView76, TextView textView77, ImageView textView8, ImageView textView83,
       ImageView textView86, ImageView textView86d, ImageView textView88, ImageView textViewx86d,
-      TextView tvAaa, TextView tvAboutMeBtn, TextView tvCalenderTitlef, TextView tvDdd,
-      TextView tvIdealJobAudioTitle, TextView tvIdealJobMessageTitle, TextView tvIdealJobVideoTitle,
-      TextView tvImportResumeBtn, TextView tvPortfolioImagesTitle, TextView tvPortfolioVideoTitle,
-      TextView tvSeekerName) {
+      TextView tvAboutMeBtn, TextView tvCalenderTitlef, TextView tvDdd, TextView tvDddd,
+      TextView tvElevetorPitchSection, TextView tvIdealJobAudioTitle,
+      TextView tvIdealJobMessageTitle, TextView tvIdealJobVideoTitle, TextView tvImportResumeBtn,
+      TextView tvPortfolioImagesTitle, TextView tvPortfolioVideoTitle, TextView tvSeekerName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cgIdealWorkspace = cgIdealWorkspace;
     this.clEducation = clEducation;
@@ -219,6 +225,7 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     this.ivIdealJobAudio = ivIdealJobAudio;
     this.ivIdealJobMessage = ivIdealJobMessage;
     this.ivIdealJobVideo = ivIdealJobVideo;
+    this.ivInfco = ivInfco;
     this.ivInfo = ivInfo;
     this.ivJobSearch = ivJobSearch;
     this.ivPreview = ivPreview;
@@ -242,10 +249,11 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     this.textView86d = textView86d;
     this.textView88 = textView88;
     this.textViewx86d = textViewx86d;
-    this.tvAaa = tvAaa;
     this.tvAboutMeBtn = tvAboutMeBtn;
     this.tvCalenderTitlef = tvCalenderTitlef;
     this.tvDdd = tvDdd;
+    this.tvDddd = tvDddd;
+    this.tvElevetorPitchSection = tvElevetorPitchSection;
     this.tvIdealJobAudioTitle = tvIdealJobAudioTitle;
     this.tvIdealJobMessageTitle = tvIdealJobMessageTitle;
     this.tvIdealJobVideoTitle = tvIdealJobVideoTitle;

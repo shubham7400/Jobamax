@@ -22,20 +22,7 @@ fun Context.getFileName(uri: Uri): String {
 	return ""
 }
 
-fun Context.getFile(uri: Uri): File {
-	val dir = File("${getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)}/backups")
-	if (!dir.exists())
-		dir.mkdirs()
-	val file = File("$dir/tempFile")
-	writeFileContent(uri, file)
-	return file
-}
 
 
-fun Context.writeFileContent(uri: Uri, file: File) {
-	val pfd: ParcelFileDescriptor = contentResolver.openFileDescriptor(uri, "w")!!
-	val fileOutputStream = FileOutputStream(pfd.fileDescriptor)
-	fileOutputStream.write(file.readBytes())
-	fileOutputStream.close()
-	pfd.close()
-}
+
+

@@ -25,9 +25,9 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
     private final android.widget.Button mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback52;
+    private final android.view.View.OnClickListener mCallback16;
     @Nullable
-    private final android.view.View.OnClickListener mCallback53;
+    private final android.view.View.OnClickListener mCallback17;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -49,8 +49,8 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback52 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback53 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback16 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback17 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -112,8 +112,8 @@ public class FragmentMeetNearbyPeopleBindingImpl extends FragmentMeetNearbyPeopl
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView7.setOnClickListener(mCallback52);
-            this.mboundView2.setOnClickListener(mCallback53);
+            this.imageView7.setOnClickListener(mCallback16);
+            this.mboundView2.setOnClickListener(mCallback17);
         }
     }
     // Listener Stub Implementations

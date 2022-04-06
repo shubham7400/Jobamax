@@ -16,18 +16,15 @@ public class FragmentSeekerTrackingJobFilterDialogBindingImpl extends FragmentSe
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 1);
         sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.textView24, 3);
-        sViewsWithIds.put(R.id.cb_all, 4);
-        sViewsWithIds.put(R.id.cb_favorite, 5);
-        sViewsWithIds.put(R.id.cb_archive, 6);
-        sViewsWithIds.put(R.id.cb_applied, 7);
-        sViewsWithIds.put(R.id.cb_refused, 8);
-        sViewsWithIds.put(R.id.cb_online_intervie, 9);
-        sViewsWithIds.put(R.id.cb_assessments, 10);
-        sViewsWithIds.put(R.id.cb_phone_call, 11);
-        sViewsWithIds.put(R.id.cb_interview, 12);
-        sViewsWithIds.put(R.id.cb_hired, 13);
-        sViewsWithIds.put(R.id.btn_go, 14);
+        sViewsWithIds.put(R.id.cb_all, 3);
+        sViewsWithIds.put(R.id.cb_applied, 4);
+        sViewsWithIds.put(R.id.cb_refused, 5);
+        sViewsWithIds.put(R.id.cb_online_intervie, 6);
+        sViewsWithIds.put(R.id.cb_assessments, 7);
+        sViewsWithIds.put(R.id.cb_phone_call, 8);
+        sViewsWithIds.put(R.id.cb_interview, 9);
+        sViewsWithIds.put(R.id.cb_hired, 10);
+        sViewsWithIds.put(R.id.btn_go, 11);
     }
     // views
     @NonNull
@@ -38,24 +35,21 @@ public class FragmentSeekerTrackingJobFilterDialogBindingImpl extends FragmentSe
     // Inverse Binding Event Handlers
 
     public FragmentSeekerTrackingJobFilterDialogBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerTrackingJobFilterDialogBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[14]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[11]
+            , (android.widget.CheckBox) bindings[3]
             , (android.widget.CheckBox) bindings[4]
             , (android.widget.CheckBox) bindings[7]
-            , (android.widget.CheckBox) bindings[6]
             , (android.widget.CheckBox) bindings[10]
-            , (android.widget.CheckBox) bindings[5]
-            , (android.widget.CheckBox) bindings[13]
-            , (android.widget.CheckBox) bindings[12]
             , (android.widget.CheckBox) bindings[9]
-            , (android.widget.CheckBox) bindings[11]
+            , (android.widget.CheckBox) bindings[6]
             , (android.widget.CheckBox) bindings[8]
+            , (android.widget.CheckBox) bindings[5]
             , (android.widget.ImageView) bindings[2]
             , (android.widget.RelativeLayout) bindings[1]
-            , (android.widget.TextView) bindings[3]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

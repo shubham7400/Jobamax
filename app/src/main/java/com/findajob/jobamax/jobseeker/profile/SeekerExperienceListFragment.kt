@@ -1,27 +1,20 @@
 package com.findajob.jobamax.jobseeker.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ExpandableListAdapter
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.databinding.FragmentSeekerAddExperienceBinding
 import com.findajob.jobamax.databinding.FragmentSeekerExperienceListBinding
-import com.findajob.jobamax.databinding.FragmentSeekerProfileBinding
 import com.findajob.jobamax.databinding.ItemSeekerExperienceBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.profile.cv.model.Education
-import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
 import com.findajob.jobamax.jobseeker.profile.cv.model.Experience
 import com.findajob.jobamax.jobseeker.profile.cv.model.ExperienceGroup
-import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso

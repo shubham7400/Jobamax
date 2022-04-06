@@ -11,14 +11,15 @@ import androidx.fragment.app.DialogFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.FragmentSeekerFilterJobBinding
 import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobFilterDialogBinding
+import com.findajob.jobamax.enums.SeekerTrackingJobFilter
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.jobseeker.wishlist.SeekerFilterJobFragment
 
 
 class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
     lateinit var binding: FragmentSeekerTrackingJobFilterDialogBinding
-    var onGoClickListener: (String) -> Unit = {}
-    var filteredJob = SeekerWishlistJobFilter.ALL.name
+    var onGoClickListener: (SeekerTrackingJobFilter) -> Unit = {}
+    var filteredJob = SeekerTrackingJobFilter.ALL
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerTrackingJobFilterDialogBinding.inflate(inflater, container, false)
@@ -35,27 +36,102 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
         }
         binding.cbAll.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                binding.cbFavorite.isChecked = false
-                binding.cbArchive.isChecked = false
-                filteredJob = SeekerWishlistJobFilter.ALL.name
+                binding.cbInterview.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbHired.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.ALL
             }
         }
-        binding.cbFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.cbApplied.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
                 binding.cbAll.isChecked = false
-                binding.cbArchive.isChecked = false
-                filteredJob = SeekerWishlistJobFilter.FAVORITE.name
+                binding.cbInterview.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbHired.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.APPLIED
             }
         }
-        binding.cbArchive.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.cbRefused.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                binding.cbFavorite.isChecked = false
                 binding.cbAll.isChecked = false
-                filteredJob = SeekerWishlistJobFilter.ARCHIVE.name
+                binding.cbInterview.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbHired.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.REFUSED
             }
         }
+        binding.cbOnlineIntervie.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbAll.isChecked = false
+                binding.cbInterview.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbHired.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.ONLINE_INTERVIEWS
+            }
+        }
+        binding.cbAssessments.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbAll.isChecked = false
+                binding.cbInterview.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbHired.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.ASSESSMENTS
+            }
+        }
+        binding.cbPhoneCall.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbAll.isChecked = false
+                binding.cbInterview.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbHired.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.PHONE_CALL
+            }
+        }
+        binding.cbInterview.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbAll.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbHired.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.INTERVIEWS
+            }
+        }
+        binding.cbHired.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.cbAll.isChecked = false
+                binding.cbInterview.isChecked = false
+                binding.cbRefused.isChecked = false
+                binding.cbPhoneCall.isChecked = false
+                binding.cbApplied.isChecked = false
+                binding.cbOnlineIntervie.isChecked = false
+                binding.cbAssessments.isChecked = false
+                filteredJob = SeekerTrackingJobFilter.HIRED
+            }
+        }
+
         binding.btnGo.setOnClickListener {
-            // call onGoClickListener and create that listener parameter and pass in it whatever you want.
             onGoClickListener(filteredJob)
             dismiss()
         }

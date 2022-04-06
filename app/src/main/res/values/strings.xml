@@ -126,15 +126,14 @@
     <string name="job_category">Category</string>
     <string name="job">Job*</string>
     <string name="work_study">Remote</string>
-    <string name="internship">internship</string>
     <string name="other">Other</string>
     <string name="add_skills">Add Skills</string>
     <string name="about_job">About Job</string>
-    <string name="experience">Experience</string>
+    <string name="experience">Experiences</string>
     <string name="upload_job_presentation">Upload Job Presentation</string>
     <string name="permanent">Permanent</string>
     <string name="temporary">Temporary</string>
-    <string name="part_time">part-time</string>
+    <string name="part_time">Part-time</string>
     <string name="full_time">full-time</string>
     <string name="low">Low</string>
     <string name="medium">Medium</string>
@@ -520,7 +519,7 @@
     <string name="see_in_details">see in details</string>
 
     <string name="click_to_add">Click to add</string>
-    <string name="education">Education</string>
+    <string name="education">Educations</string>
     <string name="job_asterick">Job*</string>
     <string name="click_to_add_location">Click to add location</string>
 
@@ -552,7 +551,8 @@
 
     <string name="networking">Networking</string>
 
-    <string name="apprenticeship">apprenticeship</string>
+    <string name="apprenticeship">Apprenticeship</string>
+    <string name="internship">Internship</string>
     <string name="under_one">under-one</string>
     <string name="one_two">one-two</string>
     <string name="two_more">two-more</string>
@@ -575,7 +575,7 @@
     <string name="my_skills">My Skills</string>
     <string name="hard_skills">Hard Skills</string>
     <string name="soft_skills">Soft Skills</string>
-    <string name="interest">Interest</string>
+    <string name="interest">Interests</string>
     <string name="my_profile">My Profile</string>
     <string name="make_your_2_0_cv_now">Make your 2.0 CV now.</string>
     <string name="my_ideal_job">My ideal job</string>
@@ -585,7 +585,7 @@
     <string name="audio">Audio</string>
     <string name="my_resume">My Resume</string>
     <string name="import_my_linkedin_profile">Import my\nLinkedin Profile</string>
-    <string name="volunteering">Volunteering</string>
+    <string name="volunteering">Volunteerings</string>
     <string name="my_portfolio">My Portfolio</string>
     <string name="text_link">Text + Link</string>
     <string name="my_ideal_workspace">My ideal workspace</string>
@@ -634,7 +634,7 @@
     <string name="assessments">Assessments</string>
     <string name="phone_call">Phone call</string>
     <string name="hired">Hired</string>
-    <string name="go">Go!</string>
+    <string name="go">Go</string>
     <string name="your_first_name">Your First Name</string>
     <string name="your_last_name">Your Last Name</string>
     <string name="your_profession">Your Profession</string>
@@ -642,6 +642,18 @@
     <string name="language_change_alert_message">You need to restart the app in order to see the changes in language.</string>
     <string name="images">Images</string>
     <string name="job_description">Job Description</string>
+    <string name="in_progress">In Progress</string>
+    <string name="see_less">See less</string>
+    <string name="which_company">Which company?</string>
+    <string name="categories">Categories</string>
+    <string name="matching_results">Matching Results</string>
+    <string name="missing_keywords">Missing Keywords</string>
+    <string name="this_section_is_empty">This section\nis empty</string>
+    <string name="vocal_30_secondes">vocal (30 secondes)</string>
+    <string name="import_resume">Import Resume</string>
+    <string name="profile_url">Profile URL</string>
+    <string name="enter_file_link">Enter file link</string>
+    <string name="offers">Offers</string>
 
 
 </resources>

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
@@ -17,10 +18,18 @@ public abstract class CalendarCellBinding extends ViewDataBinding {
   @NonNull
   public final TextView cellDayText;
 
+  @NonNull
+  public final ConstraintLayout clDateCell;
+
+  @NonNull
+  public final View vEventHint;
+
   protected CalendarCellBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView cellDayText) {
+      TextView cellDayText, ConstraintLayout clDateCell, View vEventHint) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cellDayText = cellDayText;
+    this.clDateCell = clDateCell;
+    this.vEventHint = vEventHint;
   }
 
   @NonNull

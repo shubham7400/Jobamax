@@ -6,7 +6,6 @@
         <item name="android:windowFullscreen">true</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
         <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
     </style>
 
@@ -22,7 +21,6 @@
         <item name="colorPrimary">@color/colorWhite</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
 
     </style>
 
@@ -167,8 +165,7 @@
         <item name="android:maxLines">1</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">44dp</item>
-        <item name="text_style">bold</item>
-        <item name="android:paddingLeft">16dp</item>
+         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -453,8 +450,7 @@
 
     <style name="CalendarDaySelectedCustomStyle">
         <item name="itemBackground">@drawable/bg_gradient</item>
-        <item name="text_color">@color/white</item>
-    </style>
+     </style>
 
     <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
         <item name="android:textColor">@color/white</item>
@@ -517,6 +513,13 @@
         <item name="android:textSize">16sp</item>
         <item name="android:backgroundTint">@color/color_bg_duration</item>
         <item name="android:background">@drawable/round_32</item>
+    </style>
+
+    <style name="circular_image">
+        <item name="civ_border_color">@color/new_purple</item>
+        <item name="civ_border_width">2dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
     </style>
 
 </resources>

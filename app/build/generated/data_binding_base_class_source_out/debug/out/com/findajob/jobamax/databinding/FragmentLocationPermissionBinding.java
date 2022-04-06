@@ -14,7 +14,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import com.findajob.jobamax.recruiter.profile.jobOffer.location.LocationPermissionInterface;
+import com.findajob.jobamax.login.LocationPermissionInterface;
 import java.lang.Deprecated;
 import java.lang.Object;
 

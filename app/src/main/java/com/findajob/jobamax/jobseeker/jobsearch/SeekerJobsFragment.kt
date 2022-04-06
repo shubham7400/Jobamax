@@ -1,11 +1,13 @@
 package com.findajob.jobamax.jobseeker.jobsearch
 
 import android.content.Intent
-import android.content.Intent.getIntent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.text.Editable
 import android.text.Html
+import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
@@ -15,15 +17,16 @@ import android.view.animation.LinearInterpolator
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.HardSkill
-import com.findajob.jobamax.databinding.FragmentSeekerJobsBinding
-import com.findajob.jobamax.databinding.ItemSeekerJobCardBinding
-import com.findajob.jobamax.databinding.ItemSeekerPreviewHardSkillBinding
+import com.findajob.jobamax.databinding.*
 import com.findajob.jobamax.dialog.JobReportDialog
 import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.ParseCloudFunction
@@ -31,10 +34,14 @@ import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.JobSeekerJobFilter
+import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFilterDialogFragment
 import com.findajob.jobamax.model.NewJobOffer
+import com.findajob.jobamax.preference.getCurrentLocation
 import com.findajob.jobamax.preference.getJobSeekerJobFilter
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.preference.setJobSeekerJobFilter
+import com.findajob.jobamax.util.getCurrentLatitude
+import com.findajob.jobamax.util.getCurrentLongitude
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.material.chip.Chip
@@ -48,10 +55,12 @@ import com.parse.ParseCloud
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
-import com.yuyakaido.android.cardstackview.*
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager
+import com.yuyakaido.android.cardstackview.CardStackListener
+import com.yuyakaido.android.cardstackview.Direction
+import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONObject
-import com.findajob.jobamax.R
 
 
 @AndroidEntryPoint
@@ -77,6 +86,23 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     var jobSeekerId: String? = ""
     var jobOfferId: String? = ""
 
+    lateinit var jobTitleAdapter: SeekerJobTitleAdapter
+    var jobTitles = arrayListOf<String>()
+    var isJobTitleSelected = false
+
+
+    var runnable: Runnable = object : Runnable {
+        override fun run() {
+            try {
+                topJobOfferId = cardStackLayoutManager.topView.findViewById<TextView>(R.id.tv_job_offer_id).text.toString()
+                setMatchPercentage()
+            }catch (e: Exception){}
+            handler.postDelayed(this, 2000)
+        }
+    }
+
+    var handler: Handler = Handler()
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerJobsBinding.inflate(inflater, container, false)
@@ -86,23 +112,67 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 
     @RequiresApi(Build.VERSION_CODES.N)
     private fun configureUi() {
-
-        if (requireArguments().getString("jobSeekerId") != null){
-            jobSeekerId = requireArguments().getString("jobSeekerId")
-        }
-        if (requireArguments().getString("jobOfferId") != null){
-            jobOfferId = requireArguments().getString("jobOfferId")
+        val bundle = requireActivity().intent?.extras
+        if (bundle != null) {
+            jobSeekerId = bundle.getString("jobSeekerId")
+            jobOfferId = bundle.getString("jobOfferId")
         }
 
          setClickListeners()
         setCardStackView()
         viewModelObserver()
         setHardSkillAdapter()
+        setFilterStateIcon()
+        setJobTypeRecyclerview()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        handler.postDelayed(runnable,20000)
+        runnable.run()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        handler.removeCallbacks(runnable)
+    }
+
+    private fun setJobKeyword() {
+         if (requireContext().getJobSeekerJobFilter() != ""){
+             val jobSeekerJobFilter = Gson().fromJson(requireContext().getJobSeekerJobFilter(), JobSeekerJobFilter::class.java)
+             isJobTitleSelected = true
+             binding.etJobKeyword.setText(jobSeekerJobFilter.searchString)
+             isJobTitleSelected = true
+         }
+    }
+
+    private fun setJobTypeRecyclerview() {
+        jobTitleAdapter =  SeekerJobTitleAdapter(jobTitles)
+        binding.rvJobTypes.adapter = jobTitleAdapter
+        jobTitleAdapter.onJobTypeClick = {
+            isJobTitleSelected = true
+            binding.etJobKeyword.setText(it)
+            binding.rvJobTypes.visibility = View.GONE
+            binding.etJobKeyword.clearFocus()
+            updateJobs()
+        }
+        if (jobTitles.isEmpty()){
+            binding.rvJobTypes.visibility = View.GONE
+        }
+    }
+
+    private fun setFilterStateIcon() {
+        if (requireContext().getJobSeekerJobFilter() == "") {
+            binding.vFilterState.visibility = View.GONE
+        } else {
+            binding.vFilterState.visibility = View.VISIBLE
+        }
+
     }
 
     private fun viewModelObserver() {
         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
-            progressHud.dismiss()
             if (it) {
                 binding.jobSeeker = viewModel.jobSeeker
             }
@@ -115,9 +185,10 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         }
         binding.jobSeeker = viewModel.jobSeeker
         getJobOffers()
+        setJobKeyword()
     }
 
-    fun getCurrent( ) {
+    private fun getCurrent( ) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
         query.include("portfolio")
@@ -148,16 +219,18 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             param = hashMapOf("jobSeekerId" to requireContext().getUserId(), "isFilterApply " to false, "jobOfferId" to jobOfferId!! )
         }else{
             if (requireContext().getJobSeekerJobFilter() == "" ){
-                param = hashMapOf("jobSeekerId" to requireContext().getUserId(), "isFilterApply " to false, "jobOfferId" to jobOfferId!! )
-                log("dfffkdk $param")
+                param = hashMapOf("jobSeekerId" to requireContext().getUserId(), "isFilterApply " to false/*, "jobOfferId" to jobOfferId!!*/ )
             }else{
                 val jobSeekerJobFilter = Gson().fromJson(requireContext().getJobSeekerJobFilter(), JobSeekerJobFilter::class.java)
                 param["searchString"] = if (jobSeekerJobFilter.searchString == null) "" else jobSeekerJobFilter.searchString!!
+                param["jobSeekerId"] = requireContext().getUserId()
+                param["isFilterApply"] = true
                 param["distance"] = if (jobSeekerJobFilter.distance == null) 0 else jobSeekerJobFilter.distance!!
                 param["location"] = if (jobSeekerJobFilter.location == null) "" else jobSeekerJobFilter.location!!
-                param["lat"] = if (jobSeekerJobFilter.lat == null) 0.0 else jobSeekerJobFilter.lat!!
-                param["lng"] = if (jobSeekerJobFilter.lng == null) 0.0 else jobSeekerJobFilter.lng!!
-                param["industry"] = if (jobSeekerJobFilter.industry == null) "" else jobSeekerJobFilter.industry!!
+                param["lat"] = if (jobSeekerJobFilter.lat == null) getCurrentLatitude() else jobSeekerJobFilter.lat!!
+                param["lng"] = if (jobSeekerJobFilter.lng == null) getCurrentLongitude() else jobSeekerJobFilter.lng!!
+                param["industry"] = jobSeekerJobFilter.industry
+                param["companyName"] = if (jobSeekerJobFilter.companyName == null) "" else jobSeekerJobFilter.companyName!!
                 param["typeOfWork"] = jobSeekerJobFilter.typeOfWork.ifEmpty { emptyList() }
                 param["experience"] = jobSeekerJobFilter.experience.ifEmpty { emptyList() }
             }
@@ -190,12 +263,10 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         })
     }
 
+
+
     private fun setMatchPercentage() {
         var topJobOffer: NewJobOffer? = null
-      /*  topJobOfferId = null
-        try {
-            topJobOfferId = cardStackLayoutManager.topView.findViewById<TextView>(R.id.tv_job_offer_id).text.toString()
-        }catch (e: Exception){}*/
         if (topJobOfferId != null){
             for (job in jobOfferList.iterator()){
                 if (topJobOfferId != null){
@@ -222,30 +293,45 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 
         adapter.seeDescriptionClick = { job ->
             binding.csvJob.visibility = View.GONE
-            binding.llFloatButtons.visibility = View.GONE
-            binding.nsvCard.visibility = View.VISIBLE
-           binding.lJob.acbSeeJobDesc.text = "less job description"
+            binding.llRewind.visibility = View.GONE
+            binding.lJob.rootLayout.visibility = View.VISIBLE
+            binding.clSearchBar.visibility = View.GONE
+           binding.lJob.acbSeeJobDesc.text = resources.getString(R.string.see_less)
             binding.nsvCard.scrollTo(0, 0)
             setJobInfo(job)
+            val set = ConstraintSet()
+            set.clone(binding.clMostParent)
+            set.connect(binding.nsvCard.id, ConstraintSet.TOP, binding.csvJob.id, ConstraintSet.BOTTOM , 10)
+            set.applyTo(binding.clMostParent)
         }
-        adapter.onJobsEnd = {
+        /*adapter.onJobsEnd = {
             getJobOffers()
         }
-
+*/
         adapter.reportFlagClick = {
             JobReportDialog(requireActivity()).show()
         }
         binding.lJob.acbSeeJobDesc.setOnClickListener {
             binding.csvJob.visibility = View.VISIBLE
-            binding.llFloatButtons.visibility = View.VISIBLE
-            binding.nsvCard.visibility = View.GONE
+            binding.lJob.rootLayout.visibility = View.GONE
+            binding.llRewind.visibility = View.VISIBLE
+            binding.clSearchBar.visibility = View.VISIBLE
+            val set = ConstraintSet()
+            set.clone(binding.clMostParent)
+            set.clear(binding.nsvCard.id, ConstraintSet.TOP)
+            set.applyTo(binding.clMostParent)
         }
     }
 
     private fun setJobInfo(job: NewJobOffer) {
         binding.lJob.apply {
             this.tvJobTitle.text = job.jobTitle
-            this.tvCompanyAddress.text = job.city
+            this.tvCompanyAddress.text = job.location
+            if (job.typeOfWork == ""){
+                this.tvJobType.visibility = View.GONE
+            }else{
+                this.tvJobType.visibility = View.VISIBLE
+            }
             this.tvJobType.text = job.typeOfWork
             this.tvAboutJob.text = job.description
             this.tvAboutCompany.text = job.aboutOfCompany
@@ -372,18 +458,18 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 direction?.let {
                     when(direction){
                         Direction.Left -> {
-                            overlay.setBackgroundColor(resources.getColor(R.color.trans_red))
+                            overlay.setBackgroundResource(R.drawable.rounded_red_box_trans)
                             overlayLabel.text = resources.getString(R.string.refuse)
                             overlayLabel.rotation = 315F
                         }
                         Direction.Top -> {
-                            overlay.setBackgroundColor(resources.getColor(R.color.trans_purple))
-                            overlayLabel.text = resources.getString(R.string.share)
+                            overlay.setBackgroundResource(R.drawable.rounded_purpal_box_trans)
+                             overlayLabel.text = resources.getString(R.string.share)
                             overlayLabel.rotation = 0F
                         }
                         Direction.Right -> {
-                            overlay.setBackgroundColor(resources.getColor(R.color.transBlue))
-                            overlayLabel.text = resources.getString(R.string.wishlist)
+                            overlay.setBackgroundResource(R.drawable.rounded_blue_box_trans)
+                             overlayLabel.text = resources.getString(R.string.wishlist)
                             overlayLabel.rotation = 45F
                         }
                         else -> { overlay.visibility = View.GONE}
@@ -407,7 +493,9 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                             addToRefuseJob(1) // type 1 to add job in refused list
                         }
                     }
-                    Direction.Top -> { shareJob() }
+                    Direction.Top -> {
+                        shareJob()
+                    }
                     Direction.Right -> {
                         if (swipedJobOffer != null){
                             addToWishlistJob()
@@ -448,6 +536,19 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             override fun onCardDisappeared(view: View?, position: Int) {}
         }
 
+
+        binding.csvJob.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if(cardStackLayoutManager.childCount == 0){
+                    getJobOffers()
+                }
+            }
+        })
     }
 
     private fun removeJobFromRefuse(type: Int) {
@@ -489,16 +590,21 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                     toast("No result found")
                 }
                 else -> {
-                    log("dfsdlkf   ${swipedJobOffer?.jobUrl}")
-                    swipedJobOffer?.jobUrl?.let {
-                        val bundle = Bundle()
-                        bundle.putSerializable("job_url", it)
-                        Navigation.findNavController(binding.root).navigate(com.findajob.jobamax.R.id.seekerJobWebFragment, bundle)
+                    toast("Added successfully to wishlist.")
+                    val seekerJobWebDialogFragment = swipedJobOffer?.jobUrl?.let {
+                        SeekerJobWebDialogFragment.newInstance(it)
                     }
+                    seekerJobWebDialogFragment?.show(childFragmentManager,"dialog")
+                    /*swipedJobOffer?.jobUrl?.let {
+                        val i = Intent(Intent.ACTION_VIEW)
+                        i.data = Uri.parse(it)
+                        startActivity(i)
+                    }*/
                 }
             }
         })
     }
+
 
     private fun addToRefuseJob(type: Int) {
         refuseJobsId.add(swipedJobOffer!!.jobOfferId)
@@ -521,6 +627,9 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             binding.csvJob.rewind()
         }
         binding.fabRefuse.setOnClickListener {
+            if (binding.lJob.rootLayout.isVisible){
+                binding.lJob.acbSeeJobDesc.performClick()
+            }
             val setting = SwipeAnimationSetting.Builder().setDirection(Direction.Left).setDuration(200).setInterpolator(
                 AccelerateInterpolator()
             ).build()
@@ -528,6 +637,9 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             binding.csvJob.swipe()
         }
         binding.fabShare.setOnClickListener {
+            if (binding.lJob.rootLayout.isVisible){
+                binding.lJob.acbSeeJobDesc.performClick()
+            }
             val setting = SwipeAnimationSetting.Builder().setDirection(Direction.Top).setDuration(200).setInterpolator(
                 AccelerateInterpolator()
             ).build()
@@ -535,6 +647,9 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             binding.csvJob.swipe()
         }
         binding.fabApply.setOnClickListener {
+            if (binding.lJob.rootLayout.isVisible){
+                binding.lJob.acbSeeJobDesc.performClick()
+            }
             val setting = SwipeAnimationSetting.Builder().setDirection(Direction.Right).setDuration(200).setInterpolator(
                 AccelerateInterpolator()
             ).build()
@@ -543,10 +658,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         }
 
         binding.ivSearchIcon.setOnClickListener {
-            if (!binding.etJobKeyword.text.isNullOrEmpty()){
-                updateJobFilter(binding.etJobKeyword.text.toString())
-            }
-            getJobOffers()
+            updateJobs()
         }
 
         binding.civUser.setOnClickListener { requireActivity().onBackPressed() }
@@ -554,7 +666,80 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.ivFilterJob.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_seekerJobsFilterFragment, null))
+        binding.ivFilterJob.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_seekerJobsFragment_to_seekerJobsFilterFragment)
+        }
+
+        binding.etJobKeyword.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.etJobKeyword.text.isNullOrEmpty()){
+                    binding.rvJobTypes.visibility = View.GONE
+                }else{
+                    if (!isJobTitleSelected){
+                        getJobTypes()
+                    }
+                    isJobTitleSelected = false
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        binding.llMatchPercent.setOnClickListener {
+
+            var topJobOffer: NewJobOffer? = null
+            for (job in jobOfferList.iterator()){
+                if (topJobOfferId != null){
+                    if (job.jobOfferId == topJobOfferId){
+                        topJobOffer = job
+                    }
+                }
+            }
+            if (topJobOffer == null){
+                toast("Please drag little the top job card.")
+            }else{
+                val instance = SeekerJobMatchInfoDialogFragment.newInstance(topJobOffer)
+                instance.show(childFragmentManager,"dialog")
+            }
+        }
+        binding.ivFavorite.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_seekerWishListFragment2, null))
+    }
+
+    private fun updateJobs() {
+        if (!binding.etJobKeyword.text.isNullOrEmpty()) {
+            updateJobFilter(binding.etJobKeyword.text.toString())
+        }
+        getJobOffers()
+        setFilterStateIcon()
+        if (!isJobTitleSelected) {
+            addJobTitle()
+        }
+    }
+
+    private fun addJobTitle() {
+         ParseCloud.callFunctionInBackground(ParseCloudFunction.addJobTitle.toString(), hashMapOf<String, Any>("title" to binding.etJobKeyword.text.toString()), FunctionCallback<Any> { result, e ->
+             when{
+                 e != null -> { toast(e.message.toString()) }
+                 result == null -> {}
+                 else -> {}
+             }
+         })
+    }
+
+    private fun getJobTypes() {
+         ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobTitles.toString(), hashMapOf<String, Any>("search" to binding.etJobKeyword.text.toString()), FunctionCallback<ArrayList<String>> { result, e ->
+             when{
+                 e != null -> { toast(e.message.toString()) }
+                 result == null -> {
+                     binding.rvJobTypes.visibility = View.GONE
+                 }
+                 else -> {
+                     binding.rvJobTypes.visibility = View.VISIBLE
+                     jobTitleAdapter.submitList(result)
+                     jobTitleAdapter.notifyDataSetChanged()
+                 }
+             }
+         })
     }
 
     private fun updateJobFilter(searchString: String) {
@@ -596,8 +781,13 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 putExtra(Intent.EXTRA_TEXT, dynamicLink.uri.toString())
                 type = "text/plain"
             }, "It is job offer link")
-            startActivity(shareIntent)
+            startActivityForResult(shareIntent, 2)
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        binding.csvJob.rewind()
     }
 
 
@@ -607,7 +797,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 class SeekerJobCardStackAdapter(var list : ArrayList<NewJobOffer>)  : RecyclerView.Adapter<SeekerJobCardStackAdapter.ViewHolder>(){
     var seeDescriptionClick: (NewJobOffer) -> Unit = {}
     var reportFlagClick: (NewJobOffer) -> Unit = {}
-    var onJobsEnd: () -> Unit = {}
+   /* var onJobsEnd: () -> Unit = {}*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
         ItemSeekerJobCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -623,13 +813,18 @@ class SeekerJobCardStackAdapter(var list : ArrayList<NewJobOffer>)  : RecyclerVi
                 this.ivCompany.setImageResource(R.drawable.ic_company)
             }
 
-            if( position+ 1 == list.size){
-                onJobsEnd()
-            }
+           /* if( position+ 1 == list.size){
+                onvdvobsEnd()
+            }*/
 
             this.tvJobTitle.text = jobOffer.jobTitle
             this.tvAboutJob.text = jobOffer.description
-            this.tvCompanyAddress.text = jobOffer.city
+            this.tvCompanyAddress.text = jobOffer.location
+            if (jobOffer.typeOfWork == ""){
+                this.tvJobType.visibility = View.GONE
+            }else{
+                this.tvJobType.visibility = View.VISIBLE
+            }
             this.tvJobType.text = jobOffer.typeOfWork
             this.tvAboutCompany.text = jobOffer.aboutOfCompany
             this.tvCompanyName.text = jobOffer.companyName
@@ -680,4 +875,23 @@ class SeekerJobHardSkillAdapter(var list : ArrayList<HardSkill>) : RecyclerView.
     }
 
     class ViewHolder(val binding: ItemSeekerPreviewHardSkillBinding) : RecyclerView.ViewHolder(binding.root)
+}
+
+
+class SeekerJobTitleAdapter(var list: ArrayList<String>) : RecyclerView.Adapter<SeekerJobTitleAdapter.ViewHolder>(){
+    var onJobTypeClick : (String) -> Unit = {}
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemJobTitleBinding.inflate(LayoutInflater.from(parent.context), parent , false))
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = list[position]
+         holder.binding.tvText.text = item
+         holder.binding.tvText.setOnClickListener {
+             onJobTypeClick(item)
+         }
+    }
+    override fun getItemCount(): Int = list.size
+    fun submitList(result: ArrayList<String>) {
+        list = result
+    }
+
+    class ViewHolder(val binding: ItemJobTitleBinding) : RecyclerView.ViewHolder(binding.root)
 }

@@ -25,11 +25,11 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback67;
+    private final android.view.View.OnClickListener mCallback25;
     @Nullable
-    private final android.view.View.OnClickListener mCallback68;
+    private final android.view.View.OnClickListener mCallback23;
     @Nullable
-    private final android.view.View.OnClickListener mCallback66;
+    private final android.view.View.OnClickListener mCallback24;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -53,9 +53,9 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
         this.submitButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback67 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback68 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback66 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback25 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback23 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback24 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -117,32 +117,15 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback66);
-            this.mboundView2.setOnClickListener(mCallback67);
-            this.submitButton.setOnClickListener(mCallback68);
+            this.imageView.setOnClickListener(mCallback23);
+            this.mboundView2.setOnClickListener(mCallback24);
+            this.submitButton.setOnClickListener(mCallback25);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackPress();
-                }
-                break;
-            }
             case 3: {
                 // localize variables for thread safety
                 // handler
@@ -161,6 +144,23 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
                 break;
             }
             case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackPress();
+                }
+                break;
+            }
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordInterface handler = mHandler;

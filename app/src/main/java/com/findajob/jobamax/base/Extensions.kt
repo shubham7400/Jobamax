@@ -7,9 +7,7 @@ import android.widget.TextView
 import timber.log.Timber
 
 
-fun logThis(message: String) {
-    Timber.d(message)
-}
+
 
 fun Context.isNetworkConnected(): Boolean {
     return try {
@@ -20,6 +18,3 @@ fun Context.isNetworkConnected(): Boolean {
     }
 }
 
-fun TextView.underline() {
-    paintFlags = paintFlags or Paint.UNDERLINE_TEXT_FLAG
-}

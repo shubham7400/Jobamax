@@ -22,6 +22,7 @@ import com.findajob.jobamax.dialog.SeekerJobTrackingCardDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
 import com.findajob.jobamax.model.TrackingJob
+import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
@@ -36,7 +37,8 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
     lateinit var adapter: SeekerTrackingJobDetailsAdapter
     var trackingJob: TrackingJob? = null
     var trackingOtherJob: TrackingOtherJob? = null
-    var phases = arrayListOf("Select Phase", "Online interviews" , "Assessments" , "Phone call ", "Interview", "Hired" , "Refused")
+    private val phaseList = arrayListOf("Select Phase", "Online interview" , "Assesment" , "Phone call", "Interview", "Hired" , "Refused")
+    private var phases = phaseList
     var existingPhaseList = ArrayList<Phase>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -68,23 +70,18 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
     }
 
     private fun setOtherJobData() {
-        val mainObject = Gson().fromJson(trackingOtherJob!!.phases, PhaseGroup::class.java)
-        phases = arrayListOf(
-            "Select Phase",
-            "Online interviews",
-            "Assessments",
-            "Phone call ",
-            "Interview",
-            "Hired",
-            "Refused"
-        )
-        existingPhaseList.clear()
-        existingPhaseList = ArrayList(mainObject.phases)
-        existingPhaseList.forEach {
-            phases.remove(it.name)
+        log("dsfjklsdklf ${trackingOtherJob!!.phases}")
+        if (trackingOtherJob!!.phases != ""){
+            val mainObject = Gson().fromJson(trackingOtherJob!!.phases, PhaseGroup::class.java)
+            phases = phaseList
+            existingPhaseList.clear()
+            existingPhaseList = ArrayList(mainObject.phases)
+            existingPhaseList.forEach {
+                phases.remove(it.name)
+            }
+            adapter.submitList(existingPhaseList, trackingOtherJob!!.isSelected)
+            adapter.notifyDataSetChanged()
         }
-        adapter.submitList(existingPhaseList, trackingOtherJob!!.isSelected)
-        adapter.notifyDataSetChanged()
     }
 
     private fun updateViewForJobamaxJob() {
@@ -111,16 +108,10 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
         binding.tvJobTitle.text = trackingJob?.job?.getString("jobTitle") ?: ""
         binding.tvAboutJob.text = trackingJob?.job?.getString("description") ?: ""
         binding.tvPageTitle.text = trackingJob?.job?.getString("companyName") ?: ""
+        val logo = trackingJob?.job?.getString("logo") ?: ""
+        loadImageFromUrl(binding.civCompanyLogo, logo, R.drawable.ic_company)
         val mainObject = Gson().fromJson(trackingJob!!.phases, PhaseGroup::class.java)
-        phases = arrayListOf(
-            "Select Phase",
-            "Online interviews",
-            "Assessments",
-            "Phone call",
-            "Interview",
-            "Hired",
-            "Refused"
-        )
+        phases = phaseList
         existingPhaseList.clear()
         existingPhaseList = ArrayList(mainObject.phases)
         existingPhaseList.forEach {
@@ -223,7 +214,11 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
     }
 
     private fun createGoogleEvent(name: String) {
-        val title = trackingJob?.job?.getString("jobTitle") +" - "+ name
+        val title = if (trackingJob == null){
+            trackingOtherJob?.jobTitle+" - "+ name
+        }else{
+            trackingJob?.job?.getString("jobTitle") +" - "+ name
+        }
         val description = "this is event description"
         val intent = Intent(Intent.ACTION_INSERT).setData(CalendarContract.Events.CONTENT_URI).also {
             it.putExtra(CalendarContract.Events.TITLE, title)
@@ -238,15 +233,7 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
     }
 
     private fun updateData() {
-        phases = arrayListOf(
-            "Select Phase",
-            "Online interviews",
-            "Assessments",
-            "Phone call ",
-            "Interview",
-            "Hired",
-            "Refused"
-        )
+        phases = phaseList
         if (trackingJob != null){
             existingPhaseList.forEach {
                 phases.remove(it.name)

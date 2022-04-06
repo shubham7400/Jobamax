@@ -16,8 +16,12 @@ public final class ItemTextviewBinding implements ViewBinding {
   @NonNull
   private final TextView rootView;
 
-  private ItemTextviewBinding(@NonNull TextView rootView) {
+  @NonNull
+  public final TextView tvText;
+
+  private ItemTextviewBinding(@NonNull TextView rootView, @NonNull TextView tvText) {
     this.rootView = rootView;
+    this.tvText = tvText;
   }
 
   @Override
@@ -47,6 +51,8 @@ public final class ItemTextviewBinding implements ViewBinding {
       throw new NullPointerException("rootView");
     }
 
-    return new ItemTextviewBinding((TextView) rootView);
+    TextView tvText = (TextView) rootView;
+
+    return new ItemTextviewBinding((TextView) rootView, tvText);
   }
 }

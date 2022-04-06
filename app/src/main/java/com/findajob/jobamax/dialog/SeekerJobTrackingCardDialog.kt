@@ -72,7 +72,7 @@ class SeekerJobTrackingCardDialog(val activity: Activity, private val phases: Ar
         }
     }
 
-    fun onDateClicked(view: View ) {
+    private fun onDateClicked(view: View ) {
         val today = Calendar.getInstance()
         val year = today.get(Calendar.YEAR)
         val month = today.get(Calendar.MONTH)

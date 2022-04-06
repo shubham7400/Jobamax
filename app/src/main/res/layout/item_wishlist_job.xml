@@ -37,6 +37,8 @@
                 android:text="Android Developer"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +51,9 @@
                 android:text="Applligent Technology"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                android:maxLines="1"
+                android:paddingVertical="5dp"
+                android:ellipsize="end"
                 app:layout_constraintBottom_toTopOf="@+id/tv_location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +67,8 @@
                 android:text="Ujjain"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -75,7 +82,8 @@
             android:layout_marginVertical="10dp"
             android:background="@drawable/rounded_white_box"
             android:backgroundTint="@color/green"
-            android:text="apply"
+            android:text="@string/apply"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

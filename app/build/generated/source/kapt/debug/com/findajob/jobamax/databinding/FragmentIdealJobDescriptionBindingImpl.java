@@ -16,7 +16,8 @@ public class FragmentIdealJobDescriptionBindingImpl extends FragmentIdealJobDesc
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.et_ideal_job_description, 4);
+        sViewsWithIds.put(R.id.tv_title, 4);
+        sViewsWithIds.put(R.id.et_ideal_job_description, 5);
     }
     // views
     @NonNull
@@ -27,14 +28,15 @@ public class FragmentIdealJobDescriptionBindingImpl extends FragmentIdealJobDesc
     // Inverse Binding Event Handlers
 
     public FragmentIdealJobDescriptionBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private FragmentIdealJobDescriptionBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.EditText) bindings[4]
+            , (android.widget.EditText) bindings[5]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[2]
+            , (android.widget.TextView) bindings[4]
             );
         this.civUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];

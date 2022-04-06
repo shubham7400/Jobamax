@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0975FE</color>
+    <color name="colorPrimary">#2E68FF</color>
     <!--<color name="colorPrimaryDark">#3700B3</color>-->
     <color name="colorAccent">#0975FE</color>
     <color name="transBlue">#aa0975FE</color>
@@ -24,7 +24,7 @@
     <color name="colorGray">#D6D6D6</color>
     <color name="colorGray_2">#CCCCCC</color>
     <color name="colorLightGray">#C3ECECEC</color>
-    <color name="colorGreen">#4CAF50</color>
+    <color name="colorGreen">#34C759</color>
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorYellow">#FFD700</color>
     <color name="colorDividerLight">#D6D6D6</color>
@@ -39,7 +39,7 @@
     <color name="black">#000000</color>
     <color name="red">#FE4C4C</color>
     <color name="yellow">#FDCB19</color>
-    <color name="green">#05A94D</color>
+    <color name="green">#34C759</color>
     <color name="deep_blue">#2e336a</color>
     <color name="transGrey">#aaaaaaaa</color>
     <color name="trans_black_25">#40000000</color>
@@ -50,9 +50,11 @@
     <color name="gray">#B9B9B9</color>
     <color name="colorGray_3">#B9B9B9</color>
     <color name="blue_1">#1491FF</color>
+    <color name="background_blue">#E9F2FB</color>
 
 
     <color name="new_purple">#7800EF</color>
+    <color name="dark_green">#0A9632</color>
 
 
 </resources>

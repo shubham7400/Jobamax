@@ -4,10 +4,10 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,6 +18,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentContainerView;
+import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -25,6 +26,9 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerJobsFilterBinding extends ViewDataBinding {
+  @NonNull
+  public final TextView aaaa;
+
   @NonNull
   public final AppCompatCheckBox accbApprenticeship;
 
@@ -50,22 +54,43 @@ public abstract class FragmentSeekerJobsFilterBinding extends ViewDataBinding {
   public final FragmentContainerView autocompleteFragment;
 
   @NonNull
-  public final Button btnSave;
+  public final TextView bbbb;
+
+  @NonNull
+  public final TextView cccc;
 
   @NonNull
   public final CircleImageView civUser;
 
   @NonNull
-  public final EditText etIndustryName;
+  public final EditText etCompanyName;
 
   @NonNull
   public final EditText etJobKeyword;
 
   @NonNull
+  public final ImageView ivAddCategory;
+
+  @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
+  public final LinearLayout linearLayout6;
+
+  @NonNull
+  public final LinearLayout llAddCategory;
+
+  @NonNull
+  public final LinearLayout llIndustry;
+
+  @NonNull
+  public final LinearLayout lllll;
+
+  @NonNull
   public final RelativeLayout relativeLayout;
+
+  @NonNull
+  public final RecyclerView rvJobTypes;
 
   @NonNull
   public final SeekBar sbDistance;
@@ -83,20 +108,27 @@ public abstract class FragmentSeekerJobsFilterBinding extends ViewDataBinding {
   public final TextView tvDistance;
 
   @NonNull
+  public final TextView tvJobTitleHint;
+
+  @NonNull
   public final TextView tvSelectLocation;
 
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerJobsFilterBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatCheckBox accbApprenticeship, AppCompatCheckBox accbInternship,
-      CheckBox accbLessThanOne, CheckBox accbMoreThanTwo, CheckBox accbOneToTwo,
-      AppCompatCheckBox accbPartTime, AppCompatCheckBox accbPermanent,
-      FragmentContainerView autocompleteFragment, Button btnSave, CircleImageView civUser,
-      EditText etIndustryName, EditText etJobKeyword, ImageView ivBackButton,
-      RelativeLayout relativeLayout, SeekBar sbDistance, TextView textView29, TextView textView2e9,
-      TextView textView30, TextView tvDistance, TextView tvSelectLocation) {
+      int _localFieldCount, TextView aaaa, AppCompatCheckBox accbApprenticeship,
+      AppCompatCheckBox accbInternship, CheckBox accbLessThanOne, CheckBox accbMoreThanTwo,
+      CheckBox accbOneToTwo, AppCompatCheckBox accbPartTime, AppCompatCheckBox accbPermanent,
+      FragmentContainerView autocompleteFragment, TextView bbbb, TextView cccc,
+      CircleImageView civUser, EditText etCompanyName, EditText etJobKeyword,
+      ImageView ivAddCategory, ImageView ivBackButton, LinearLayout linearLayout6,
+      LinearLayout llAddCategory, LinearLayout llIndustry, LinearLayout lllll,
+      RelativeLayout relativeLayout, RecyclerView rvJobTypes, SeekBar sbDistance,
+      TextView textView29, TextView textView2e9, TextView textView30, TextView tvDistance,
+      TextView tvJobTitleHint, TextView tvSelectLocation) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.aaaa = aaaa;
     this.accbApprenticeship = accbApprenticeship;
     this.accbInternship = accbInternship;
     this.accbLessThanOne = accbLessThanOne;
@@ -105,17 +137,25 @@ public abstract class FragmentSeekerJobsFilterBinding extends ViewDataBinding {
     this.accbPartTime = accbPartTime;
     this.accbPermanent = accbPermanent;
     this.autocompleteFragment = autocompleteFragment;
-    this.btnSave = btnSave;
+    this.bbbb = bbbb;
+    this.cccc = cccc;
     this.civUser = civUser;
-    this.etIndustryName = etIndustryName;
+    this.etCompanyName = etCompanyName;
     this.etJobKeyword = etJobKeyword;
+    this.ivAddCategory = ivAddCategory;
     this.ivBackButton = ivBackButton;
+    this.linearLayout6 = linearLayout6;
+    this.llAddCategory = llAddCategory;
+    this.llIndustry = llIndustry;
+    this.lllll = lllll;
     this.relativeLayout = relativeLayout;
+    this.rvJobTypes = rvJobTypes;
     this.sbDistance = sbDistance;
     this.textView29 = textView29;
     this.textView2e9 = textView2e9;
     this.textView30 = textView30;
     this.tvDistance = tvDistance;
+    this.tvJobTitleHint = tvJobTitleHint;
     this.tvSelectLocation = tvSelectLocation;
   }
 

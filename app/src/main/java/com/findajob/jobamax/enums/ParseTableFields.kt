@@ -28,7 +28,6 @@ enum class ParseTableFields() {
     FAQsNotification,
     ratingNotification,
     experiences,
-    interests,
     sourced,
     enteredAt,
     ACL,
@@ -101,5 +100,6 @@ enum class ParseTableFields() {
     jobTitle,
     city,
     companyName,
-    description
+    description,
+    interests
 }

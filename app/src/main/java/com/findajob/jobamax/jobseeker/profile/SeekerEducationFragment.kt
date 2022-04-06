@@ -17,13 +17,12 @@ import com.findajob.jobamax.databinding.FragmentSeekerEducationBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Education
 import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
-import com.findajob.jobamax.util.loadImageFromUrl
+
+
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
-import com.squareup.picasso.Picasso
-import org.jetbrains.anko.doAsync
-import java.lang.Exception
+  import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 

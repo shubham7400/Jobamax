@@ -1,38 +1,53 @@
 package com.findajob.jobamax.jobseeker.jobsearch
 
-import android.content.Intent
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.SeekBar
+import android.widget.TextView
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
+import com.findajob.jobamax.data.pojo.Categories
+import com.findajob.jobamax.data.pojo.CategoryGroup
 import com.findajob.jobamax.databinding.FragmentSeekerJobsFilterBinding
+import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.JobSeekerJobFilter
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.preference.getJobSeekerJobFilter
 import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.preference.setJobSearchFilterCategories
 import com.findajob.jobamax.preference.setJobSeekerJobFilter
-import com.findajob.jobamax.util.toast
+import com.findajob.jobamax.util.*
 import com.google.android.gms.common.api.Status
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.gson.Gson
+import com.parse.FunctionCallback
+import com.parse.ParseCloud
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.pushwoosh.internal.platform.AndroidPlatformModule
- import java.util.*
-import kotlin.collections.ArrayList
+import java.util.*
 
 
-class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBinding>() {
+class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBinding>() , IOnBackPressed  {
 
     override val layoutRes: Int get() = R.layout.fragment_seeker_jobs_filter
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -41,6 +56,15 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
     lateinit var autocompleteFragment: AutocompleteSupportFragment
     var lat: Double? = null
     var lng: Double? = null
+
+    private lateinit var jobTitleAdapter: SeekerJobTitleAdapter
+    private var jobTitles = arrayListOf<String>()
+    var isJobTitleSelected = false
+
+    private var categories = arrayListOf<Categories>()
+    private val listOfTypeOfWork = ArrayList<String>()
+
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -59,7 +83,62 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         }else{
             binding.jobSeeker = viewModel.jobSeeker
         }
+        setJobTypeRecyclerview()
+        setIndustryListRecyclerview()
+        getGPSLocation()
     }
+
+
+
+    private fun setIndustryListRecyclerview() {
+        categories = getJobCategories(requireContext())
+        binding.llIndustry.removeAllViews()
+        categories.forEach { category ->
+            val inflater = requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val view = inflater.inflate(R.layout.item_category_chip, null)
+            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+            layoutParams.setMargins(0, 20, 0, 0);
+            if (category.isSelected){
+                view.findViewById<TextView>(R.id.tv_category).text = category.text
+                view.findViewById<ImageView>(R.id.iv_remove).setOnClickListener {
+                    category.isSelected = category.isSelected != true
+                    updateList(categories)
+                }
+                binding.llIndustry.addView(view, layoutParams)
+            }
+        }
+
+    }
+
+    private fun updateList(categories: ArrayList<Categories>) {
+        requireContext().setJobSearchFilterCategories(Gson().toJson(CategoryGroup(categories)))
+        setIndustryListRecyclerview()
+    }
+
+    private fun getGPSLocation() {
+         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+             return
+         }
+        if (getCurrentLatitude() != 0.0 && getCurrentLongitude() != 0.0){
+            binding.tvSelectLocation.text = getAddressByLatLng(getCurrentLatitude(), getCurrentLongitude(), requireContext())
+        }
+     }
+
+
+
+     private fun setJobTypeRecyclerview() {
+        jobTitleAdapter =  SeekerJobTitleAdapter(jobTitles)
+        binding.rvJobTypes.adapter = jobTitleAdapter
+        jobTitleAdapter.onJobTypeClick = {
+            isJobTitleSelected = true
+            binding.etJobKeyword.setText(it)
+            binding.rvJobTypes.visibility = View.GONE
+        }
+        if (jobTitles.isEmpty()){
+            binding.rvJobTypes.visibility = View.GONE
+        }
+    }
+
 
     private fun viewModelObserver() {
         viewModel.isJobSeekerUpdated.observe(viewLifecycleOwner) {
@@ -70,7 +149,7 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         }
     }
 
-    fun getCurrent( ) {
+    private fun getCurrent( ) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
         query.include("portfolio")
@@ -108,8 +187,8 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
                 binding.tvDistance.text = jobSeekerJobFilter.distance.toString()
                 binding.sbDistance.progress = jobSeekerJobFilter.distance!!
             }
-            if (jobSeekerJobFilter.industry != null) {
-                binding.etIndustryName.setText(jobSeekerJobFilter.industry)
+            if (jobSeekerJobFilter.companyName != null) {
+                binding.etCompanyName.setText(jobSeekerJobFilter.companyName)
             }
             if (jobSeekerJobFilter.typeOfWork.isNotEmpty()) {
                 if (jobSeekerJobFilter.typeOfWork.contains(resources.getString(R.string.apprenticeship))) {
@@ -149,9 +228,6 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         binding.tvSelectLocation.setOnClickListener {
             autocompleteFragment.requireView().findViewById<View>(R.id.places_autocomplete_search_input).performClick()
         }
-        binding.btnSave.setOnClickListener {
-            saveFilters()
-        }
 
         binding.sbDistance.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(view: SeekBar?, progress: Int, p2: Boolean) {
@@ -166,22 +242,121 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.etJobKeyword.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.etJobKeyword.text.isNullOrEmpty()){
+                    binding.rvJobTypes.visibility = View.GONE
+                }else{
+                    if (!isJobTitleSelected){
+                        getJobTypes()
+                    }
+                    isJobTitleSelected = false
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        binding.ivAddCategory.setOnClickListener {
+            val instance = SeekerJobSearchFilterCategoriesDialogFragment.newInstance()
+            instance.show(childFragmentManager,"dialog")
+            instance.onDialogDismiss = {
+                setIndustryListRecyclerview()
+            }
+        }
+
+        typeOfWorkListeners()
+        experienceListener()
     }
 
-    private fun saveFilters() {
+    private fun experienceListener() {
+        binding.accbLessThanOne.setOnClickListener {
+            binding.accbOneToTwo.isChecked = false
+            binding.accbMoreThanTwo.isChecked = false
+        }
+        binding.accbOneToTwo.setOnClickListener {
+            binding.accbLessThanOne.isChecked = false
+            binding.accbMoreThanTwo.isChecked = false
+        }
+        binding.accbMoreThanTwo.setOnClickListener {
+            binding.accbLessThanOne.isChecked = false
+            binding.accbOneToTwo.isChecked = false
+        }
+    }
+
+    private fun typeOfWorkListeners() {
+        binding.accbApprenticeship.setOnClickListener {
+            binding.accbPartTime.isChecked = false
+            binding.accbInternship.isChecked = false
+            binding.accbPermanent.isChecked = false
+            listOfTypeOfWork.clear()
+            if (binding.accbApprenticeship.isChecked){
+                listOfTypeOfWork.add(resources.getString(R.string.apprenticeship))
+            }
+        }
+        binding.accbPartTime.setOnClickListener {
+            binding.accbApprenticeship.isChecked = false
+            binding.accbInternship.isChecked = false
+            binding.accbPermanent.isChecked = false
+            listOfTypeOfWork.clear()
+            if (binding.accbPartTime.isChecked){
+                listOfTypeOfWork.add(resources.getString(R.string.part_time))
+            }
+        }
+        binding.accbInternship.setOnClickListener {
+            binding.accbApprenticeship.isChecked = false
+            binding.accbPartTime.isChecked = false
+            binding.accbPermanent.isChecked = false
+            listOfTypeOfWork.clear()
+            if (binding.accbInternship.isChecked){
+                listOfTypeOfWork.add(resources.getString(R.string.internship))
+            }
+        }
+        binding.accbPermanent.setOnClickListener {
+            binding.accbApprenticeship.isChecked = false
+            binding.accbInternship.isChecked = false
+            binding.accbPartTime.isChecked = false
+            listOfTypeOfWork.clear()
+            if (binding.accbPermanent.isChecked){
+                listOfTypeOfWork.add(resources.getString(R.string.full_time))
+            }
+        }
+    }
+
+
+    private fun getJobTypes() {
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobTitles.toString(), hashMapOf<String, Any>("search" to binding.etJobKeyword.text.toString()), FunctionCallback<ArrayList<String>> { result, e ->
+            when{
+                e != null -> { toast(e.message.toString()) }
+                result == null -> {
+                    binding.rvJobTypes.visibility = View.GONE
+                }
+                else -> {
+                    binding.rvJobTypes.visibility = View.VISIBLE
+                    jobTitleAdapter.submitList(result)
+                    jobTitleAdapter.notifyDataSetChanged()
+                }
+            }
+        })
+    }
+
+    private fun saveFilters(callback: () -> Unit) {
         val filter = JobSeekerJobFilter()
         filter.searchString = if (binding.etJobKeyword.text.isNullOrEmpty()) null else binding.etJobKeyword.text.toString()
         filter.location = if (binding.tvSelectLocation.text.isNullOrEmpty()) null else binding.tvSelectLocation.text.toString()
-        filter.lat = if (lat == null) null else lat
-        filter.lng = if (lng == null) null else lng
+        filter.lat = if (lat == null) getCurrentLatitude() else lat
+        filter.lng = if (lng == null) getCurrentLongitude() else lng
         filter.distance = if (binding.tvDistance.text.isNullOrEmpty()) null else binding.tvDistance.text.toString().toInt()
-        filter.industry = if (binding.etIndustryName.text.isNullOrEmpty()) null else binding.etIndustryName.text.toString()
-        filter.typeOfWork = getTypeOfWork()
+        filter.companyName = if (binding.etCompanyName.text.isNullOrEmpty()) null else binding.etCompanyName.text.toString()
+        filter.typeOfWork = listOfTypeOfWork
         filter.experience = getExperience()
+        filter.industry = getIndustries()
         requireContext().setJobSeekerJobFilter(Gson().toJson(filter ))
 
-        requireActivity().onBackPressed()
+        callback()
     }
+
+    private fun getIndustries(): List<String> = getJobCategories(requireContext()).filter { category -> category.isSelected }.map { it.text }
 
     private fun getExperience(): ArrayList<String> {
         val list = ArrayList<String>()
@@ -189,30 +364,17 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
             list.add(resources.getString(R.string.under_one))
         }
         if (binding.accbOneToTwo.isChecked){
+            list.add(resources.getString(R.string.under_one))
             list.add(resources.getString(R.string.one_two))
         }
         if (binding.accbMoreThanTwo.isChecked){
+            list.add(resources.getString(R.string.under_one))
+            list.add(resources.getString(R.string.one_two))
             list.add(resources.getString(R.string.two_more))
         }
         return  list
     }
 
-    private fun getTypeOfWork(): ArrayList<String> {
-        val list = ArrayList<String>()
-        if (binding.accbApprenticeship.isChecked){
-            list.add(resources.getString(R.string.apprenticeship))
-        }
-        if (binding.accbPartTime.isChecked){
-            list.add(resources.getString(R.string.part_time))
-        }
-        if (binding.accbInternship.isChecked){
-            list.add(resources.getString(R.string.internship))
-        }
-        if (binding.accbPermanent.isChecked){
-            list.add(resources.getString(R.string.full_time) )
-        }
-        return  list
-    }
 
     private fun setPlaceAutocompleteFragment() {
         if (!Places.isInitialized()) {
@@ -235,4 +397,11 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
 
     }
 
+    override fun onBackPressed(callback: () -> Unit) {
+        saveFilters{
+            callback()
+        }
+    }
+
 }
+

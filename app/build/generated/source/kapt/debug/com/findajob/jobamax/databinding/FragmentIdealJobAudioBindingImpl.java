@@ -16,13 +16,14 @@ public class FragmentIdealJobAudioBindingImpl extends FragmentIdealJobAudioBindi
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.pb_audio_recording, 4);
-        sViewsWithIds.put(R.id.tv_audio_time, 5);
-        sViewsWithIds.put(R.id.cl_audio_player, 6);
-        sViewsWithIds.put(R.id.iv_audio_play_btn, 7);
-        sViewsWithIds.put(R.id.sb_audio, 8);
-        sViewsWithIds.put(R.id.tv_audio_duration, 9);
-        sViewsWithIds.put(R.id.btn_record, 10);
+        sViewsWithIds.put(R.id.tv_title, 4);
+        sViewsWithIds.put(R.id.pb_audio_recording, 5);
+        sViewsWithIds.put(R.id.tv_audio_time, 6);
+        sViewsWithIds.put(R.id.cl_audio_player, 7);
+        sViewsWithIds.put(R.id.iv_audio_play_btn, 8);
+        sViewsWithIds.put(R.id.sb_audio, 9);
+        sViewsWithIds.put(R.id.tv_audio_duration, 10);
+        sViewsWithIds.put(R.id.btn_record, 11);
     }
     // views
     @NonNull
@@ -33,20 +34,21 @@ public class FragmentIdealJobAudioBindingImpl extends FragmentIdealJobAudioBindi
     // Inverse Binding Event Handlers
 
     public FragmentIdealJobAudioBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private FragmentIdealJobAudioBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[10]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[11]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
-            , (android.widget.ImageView) bindings[7]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
+            , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[3]
-            , (com.mobstac.circularimageprogress.CircularImageProgressView) bindings[4]
+            , (com.mobstac.circularimageprogress.CircularImageProgressView) bindings[5]
             , (android.widget.RelativeLayout) bindings[2]
-            , (android.widget.SeekBar) bindings[8]
-            , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[5]
+            , (android.widget.SeekBar) bindings[9]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[4]
             );
         this.civUser.setTag(null);
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];

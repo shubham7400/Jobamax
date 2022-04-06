@@ -48,35 +48,46 @@
                                   android:layout_width="24dp"
                                   android:layout_height="24dp"
                                   android:layout_centerVertical="true"
-                                  android:src="@drawable/back_arrow_img" />
+                                  android:src="@drawable/back_arrow_blue" />
 
                               <TextView
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
                                   android:layout_centerInParent="true"
                                   android:layout_marginStart="10dp"
-                                   android:fontFamily="@font/opensans_bold"
+                                  android:fontFamily="@font/opensans_bold"
                                   android:text="@string/my_ideal_job"
-                                  android:textColor="#7800EF"
-                                  android:textSize="20dp" />
+                                  android:textColor="@color/colorPrimary"
+                                  android:textSize="20sp" />
 
                               <de.hdodenhof.circleimageview.CircleImageView
                                   android:id="@+id/civ_user"
+                                  style="@style/circular_image"
                                   loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-                                  android:layout_width="50dp"
-                                  android:layout_height="50dp"
                                   android:layout_alignParentEnd="true"
+                                  app:civ_border_color="@color/colorPrimary"
                                   android:src="@drawable/default_user_img" />
                          </RelativeLayout>
                     </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                         android:layout_margin="20dp"
+                         android:text="@string/text"
+                         android:textSize="18sp"
+                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                         android:textColor="@color/colorPrimary"/>
 
                     <EditText
                         android:id="@+id/et_ideal_job_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="30dp"
-                        android:background="@drawable/rounded_white_box"
+                        android:layout_marginTop="20dp"
+                         android:background="@drawable/rounded_white_box"
                         android:fontFamily="@font/opensans_regular"
                         android:gravity="top"
                         android:hint="@string/enter"
@@ -86,7 +97,7 @@
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
 
                </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,9 +37,6 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
   public final ConstraintLayout clOverlay;
 
   @NonNull
-  public final ConstraintLayout clTopParent;
-
-  @NonNull
   public final ConstraintLayout constraintLayout13;
 
   @NonNull
@@ -71,6 +68,9 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
 
   @NonNull
   public final LinearLayout llWorkspace;
+
+  @NonNull
+  public final ConstraintLayout rootLayout;
 
   @NonNull
   public final RecyclerView rvHardSkill;
@@ -113,11 +113,11 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
 
   protected ItemSeekerJobCardBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton acbSeeJobDesc, AppCompatButton acbSeeLessJobDesc, ChipGroup cgBenefits,
-      ChipGroup cgSoftSkill, ConstraintLayout clOverlay, ConstraintLayout clTopParent,
-      ConstraintLayout constraintLayout13, CircleImageView ivCompany, ImageView ivReport,
-      LinearLayout llAboutCompany, LinearLayout llAboutJob, LinearLayout llBenefits,
-      LinearLayout llHardSkill, LinearLayout llIndustry, LinearLayout llSalary,
-      LinearLayout llSoftSkill, LinearLayout llWorkspace, RecyclerView rvHardSkill,
+      ChipGroup cgSoftSkill, ConstraintLayout clOverlay, ConstraintLayout constraintLayout13,
+      CircleImageView ivCompany, ImageView ivReport, LinearLayout llAboutCompany,
+      LinearLayout llAboutJob, LinearLayout llBenefits, LinearLayout llHardSkill,
+      LinearLayout llIndustry, LinearLayout llSalary, LinearLayout llSoftSkill,
+      LinearLayout llWorkspace, ConstraintLayout rootLayout, RecyclerView rvHardSkill,
       RecyclerView rvHardSklilsl, TextView tvAboutCompany, TextView tvAboutJob,
       TextView tvCompanyAddress, TextView tvCompanyName, TextView tvCompanyUrl, TextView tvIndustry,
       TextView tvJobOfferId, TextView tvJobTitle, TextView tvJobType, TextView tvOverlayLabel,
@@ -128,7 +128,6 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
     this.cgBenefits = cgBenefits;
     this.cgSoftSkill = cgSoftSkill;
     this.clOverlay = clOverlay;
-    this.clTopParent = clTopParent;
     this.constraintLayout13 = constraintLayout13;
     this.ivCompany = ivCompany;
     this.ivReport = ivReport;
@@ -140,6 +139,7 @@ public abstract class ItemSeekerJobCardBinding extends ViewDataBinding {
     this.llSalary = llSalary;
     this.llSoftSkill = llSoftSkill;
     this.llWorkspace = llWorkspace;
+    this.rootLayout = rootLayout;
     this.rvHardSkill = rvHardSkill;
     this.rvHardSklilsl = rvHardSklilsl;
     this.tvAboutCompany = tvAboutCompany;

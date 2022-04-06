@@ -54,7 +54,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
         binding.jobSeeker = viewModel.jobSeeker
     }
 
-    fun getCurrent( ) {
+    private fun getCurrent( ) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
         query.include("portfolio")
@@ -95,9 +95,10 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
 
     private fun setProfile() {
         binding.jobSeeker = viewModel.jobSeeker
+        val jobSeeker = viewModel.jobSeeker
         ownedWorkSpaces.clear()
-        if (viewModel.jobSeeker.workspaces.isNotEmpty()) {
-            val workSpaces = JSONArray(viewModel.jobSeeker.workspaces)
+        if (jobSeeker.workspaces.isNotEmpty()) {
+            val workSpaces = JSONArray(jobSeeker.workspaces)
             var i = 0
             while (i < workSpaces.length()) {
                 ownedWorkSpaces.add(workSpaces.getString(i))
@@ -106,11 +107,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
         }
         binding.cgIdealWorkspace.removeAllViews()
         ownedWorkSpaces.forEach {
-            val chip = layoutInflater.inflate(
-                R.layout.item_custom_chip,
-                binding.cgIdealWorkspace,
-                false
-            ) as Chip
+            val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgIdealWorkspace, false) as Chip
             chip.text = it
             chip.setOnCloseIconClickListener { c ->
                 ownedWorkSpaces.remove((c as Chip).text)
@@ -129,7 +126,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             binding.cgIdealWorkspace.addView(chip)
         }
 
-        val idealJob = viewModel.jobSeeker.idealJob?.let {
+        val idealJob = jobSeeker.idealJob?.let {
             IdealJob(it)
         }
 
@@ -147,7 +144,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             }
         }
 
-        val portfolio = viewModel.jobSeeker.portfolio?.let { Portfolio(it) }
+        val portfolio = jobSeeker.portfolio?.let { Portfolio(it) }
 
         portfolio?.let {
             if (portfolio.videoURL != ""){
@@ -161,6 +158,11 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             }else{
                 binding.tvPortfolioImagesTitle.text = "Images 0/1"
             }
+        }
+        if (jobSeeker.elevatorPitch == ""){
+            binding.tvElevetorPitchSection.visibility = View.VISIBLE
+        }else{
+            binding.tvElevetorPitchSection.visibility = View.INVISIBLE
         }
     }
 
@@ -182,9 +184,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
 
         binding.rlIdealJobVideo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobVideoFragment, null))
         binding.rlIdealJobMessage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobDescriptionFragment, null))
-/*
-        binding.rlIdealJobImage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobImagesFragment, null))
-*/
+
         binding.rlIdealJobAudio.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobAudioFragment, null))
         binding.rlPortfolioVideo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioVideoFragment, null))
         binding.rlPortfolioMessage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioDescriptionFragment, null))
@@ -218,30 +218,34 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
 
 
     private fun addIdealWorkspace() {
-        ownedWorkSpaces.add(binding.etIdealWorkspace.text.toString())
-        val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgIdealWorkspace, false) as Chip
-        chip.text = binding.etIdealWorkspace.text.toString()
-        chip.setOnCloseIconClickListener { c ->
-            ownedWorkSpaces.remove((c as Chip).text)
-            binding.cgIdealWorkspace.removeView(c)
+        if (ownedWorkSpaces.size > 8){
+            toast("You can not add more than 8 tags.")
+        }else{
+            ownedWorkSpaces.add(binding.etIdealWorkspace.text.toString())
+            val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgIdealWorkspace, false) as Chip
+            chip.text = binding.etIdealWorkspace.text.toString()
+            chip.setOnCloseIconClickListener { c ->
+                ownedWorkSpaces.remove((c as Chip).text)
+                binding.cgIdealWorkspace.removeView(c)
+                progressHud.show()
+                viewModel.addWorkSpace(ownedWorkSpaces){
+                    progressHud.dismiss()
+                    if (it != null){
+                        toast("${it.message.toString()} Something went wrong")
+                    }
+                }
+            }
+            chip.isCloseIconVisible = true
+            chip.setCloseIconResource(R.drawable.close_white)
+            chip.setCloseIconTintResource(R.color.white)
+            binding.cgIdealWorkspace.addView(chip)
+            binding.etIdealWorkspace.text.clear()
             progressHud.show()
             viewModel.addWorkSpace(ownedWorkSpaces){
                 progressHud.dismiss()
                 if (it != null){
                     toast("${it.message.toString()} Something went wrong")
                 }
-            }
-        }
-        chip.isCloseIconVisible = true
-        chip.setCloseIconResource(R.drawable.close_white)
-        chip.setCloseIconTintResource(R.color.white)
-        binding.cgIdealWorkspace.addView(chip)
-        binding.etIdealWorkspace.text.clear()
-        progressHud.show()
-        viewModel.addWorkSpace(ownedWorkSpaces){
-            progressHud.dismiss()
-            if (it != null){
-                toast("${it.message.toString()} Something went wrong")
             }
         }
     }

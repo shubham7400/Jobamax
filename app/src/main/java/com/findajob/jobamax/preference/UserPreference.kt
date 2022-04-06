@@ -190,6 +190,9 @@ fun Context.setJobSeekerJobFilter(jobSeekerJobFilter: String) {
 	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
 	val editor = sharedPreferences.edit()
 	editor.putString("jobFilter", jobSeekerJobFilter).apply()
+	if (jobSeekerJobFilter == ""){
+		setJobSearchFilterCategories("")
+	}
 }
 
 fun Context.getJobSeekerJobFilter(): String {
@@ -208,3 +211,24 @@ fun Context.getLanguage(): String {
 	return sharedPreferences.getString("language", "en") ?: "en"
 }
 
+fun Context.setJobSearchFilterCategories(categories: String) {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	val editor = sharedPreferences.edit()
+	editor.putString("job_search_categories", categories).apply()
+}
+
+fun Context.getJobSearchFilterCategories(): String {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	return sharedPreferences.getString("job_search_categories", "") ?: ""
+}
+
+fun Context.setCurrentLocation(location: String) {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	val editor = sharedPreferences.edit()
+	editor.putString("current_location", location).apply()
+}
+
+fun Context.getCurrentLocation(): String {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	return sharedPreferences.getString("current_location", "") ?: ""
+}

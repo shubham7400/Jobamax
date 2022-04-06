@@ -1,7 +1,9 @@
 package com.findajob.jobamax.util
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -27,7 +29,7 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     private val CAMERA_REQUEST_CODE: Int = 1021
     private val GALARY_REQUEST_CODE: Int = 1056
 
-    public override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view: View = inflater.inflate(R.layout.layout_image_picker, container, false)
 
         view.findViewById<View>(R.id.camera).setOnClickListener {
@@ -44,21 +46,18 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     }
 
     interface GetImage {
-        fun setGalleryImage(imageUri: Uri?)
-        fun setCameraImage(filePath: String?)
-        fun setImageFile(file: File?)
+        fun setImageUri(imageUri: Uri?)
     }
 
-    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == GALARY_REQUEST_CODE) {
-                val returnUri: Uri? = data!!.data
-                getImage.setGalleryImage(returnUri)
+                val uri: Uri? = data!!.data
+                getImage.setImageUri(uri)
             }
             if (requestCode == CAMERA_REQUEST_CODE) {
-                getImage.setImageFile(cameraImage)
-                getImage.setCameraImage(cameraFilePath)
+                getImage.setImageUri(Uri.fromFile(cameraImage))
             }
             dismiss()
         }
@@ -76,21 +75,28 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
     @Throws(IOException::class)
     private fun createImageFile(): File {
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val imageFileName: String = "JPEG_" + timeStamp + "_"
-        val storageDir: File = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_DCIM), "Camera")
-        val image: File = File.createTempFile(imageFileName,  /* prefix */".jpg",  /* suffix */storageDir /* directory */)
-        cameraFilePath = "file://" + image.absolutePath
-        cameraImage = image
-        return image
+        val storageDir: File? = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile("JPEG_${timeStamp}_", ".jpg", storageDir).apply {
+            cameraImage = this
+            cameraFilePath = this.absolutePath
+        }
     }
 
     private fun captureFromCamera() {
-        try {
-            val intent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-              intent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile((context)!!, BuildConfig.APPLICATION_ID + ".provider", createImageFile()))
-            startActivityForResult(intent, CAMERA_REQUEST_CODE)
-        } catch (ex: IOException) {
-            ex.printStackTrace()
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            takePictureIntent.resolveActivity(requireActivity().packageManager)?.also {
+                val photoFile: File? = try {
+                    createImageFile()
+                } catch (ex: IOException) {
+                  log(ex.message.toString())
+                    null
+                }
+                photoFile?.also {
+                    val photoURI: Uri = FileProvider.getUriForFile(requireContext(), "com.findajob.jobamax.provider", it)
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                    startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE)
+                }
+            }
         }
     }
 }

@@ -16,8 +16,8 @@ public class FragmentSeekerCalenderBindingImpl extends FragmentSeekerCalenderBin
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.btn_previous_month, 4);
-        sViewsWithIds.put(R.id.monthYearTV, 5);
+        sViewsWithIds.put(R.id.monthYearTV, 4);
+        sViewsWithIds.put(R.id.btn_previous_month, 5);
         sViewsWithIds.put(R.id.btn_next_month, 6);
         sViewsWithIds.put(R.id.calendarRecyclerView, 7);
         sViewsWithIds.put(R.id.rv_events, 8);
@@ -36,11 +36,11 @@ public class FragmentSeekerCalenderBindingImpl extends FragmentSeekerCalenderBin
     private FragmentSeekerCalenderBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[6]
-            , (android.widget.ImageView) bindings[4]
+            , (android.widget.ImageView) bindings[5]
             , (androidx.recyclerview.widget.RecyclerView) bindings[7]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[4]
             , (android.widget.RelativeLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[8]
             );

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -28,13 +27,7 @@ public abstract class FragmentSeekerTrackingJobFilterDialogBinding extends ViewD
   public final CheckBox cbApplied;
 
   @NonNull
-  public final CheckBox cbArchive;
-
-  @NonNull
   public final CheckBox cbAssessments;
-
-  @NonNull
-  public final CheckBox cbFavorite;
 
   @NonNull
   public final CheckBox cbHired;
@@ -57,21 +50,16 @@ public abstract class FragmentSeekerTrackingJobFilterDialogBinding extends ViewD
   @NonNull
   public final RelativeLayout relativeLayout;
 
-  @NonNull
-  public final TextView textView24;
-
   protected FragmentSeekerTrackingJobFilterDialogBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppCompatButton btnGo, CheckBox cbAll, CheckBox cbApplied,
-      CheckBox cbArchive, CheckBox cbAssessments, CheckBox cbFavorite, CheckBox cbHired,
-      CheckBox cbInterview, CheckBox cbOnlineIntervie, CheckBox cbPhoneCall, CheckBox cbRefused,
-      ImageView ivBackButton, RelativeLayout relativeLayout, TextView textView24) {
+      CheckBox cbAssessments, CheckBox cbHired, CheckBox cbInterview, CheckBox cbOnlineIntervie,
+      CheckBox cbPhoneCall, CheckBox cbRefused, ImageView ivBackButton,
+      RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnGo = btnGo;
     this.cbAll = cbAll;
     this.cbApplied = cbApplied;
-    this.cbArchive = cbArchive;
     this.cbAssessments = cbAssessments;
-    this.cbFavorite = cbFavorite;
     this.cbHired = cbHired;
     this.cbInterview = cbInterview;
     this.cbOnlineIntervie = cbOnlineIntervie;
@@ -79,7 +67,6 @@ public abstract class FragmentSeekerTrackingJobFilterDialogBinding extends ViewD
     this.cbRefused = cbRefused;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
-    this.textView24 = textView24;
   }
 
   @NonNull

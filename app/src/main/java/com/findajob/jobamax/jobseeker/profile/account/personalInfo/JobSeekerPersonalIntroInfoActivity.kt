@@ -26,9 +26,7 @@ import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
 import com.parse.*
 import kotlinx.android.synthetic.main.fragment_job_seeker_personal_information.*
- import org.jetbrains.anko.longToast
  import java.util.*
-import javax.security.auth.callback.Callback
 import kotlin.collections.HashMap
 
 
@@ -143,7 +141,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
             binding.tvGenderHint.error = null
             if (Date().addYear(-18).yyyyMMdd() < calendar.time.yyyyMMdd()) {
-                longToast("Age should be 18+")
+                toast("Age should be 18+")
             } else {
                /* personalInfoModel.dob = calendar.time.dd_MM_yy()
                 binding.jobSeeker = personalInfoModel*/

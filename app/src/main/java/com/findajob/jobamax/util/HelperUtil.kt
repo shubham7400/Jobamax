@@ -3,7 +3,8 @@ package com.findajob.jobamax.util
 import android.Manifest
 import android.app.Activity
 import android.content.Context
-import android.content.DialogInterface
+import android.location.Geocoder
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -16,15 +17,22 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.findajob.jobamax.BaseFragment
-import com.findajob.jobamax.R
 import com.ckdroid.dynamicpermissions.PermissionStatus
 import com.ckdroid.dynamicpermissions.PermissionUtils
+import com.findajob.jobamax.BaseFragment
+import com.findajob.jobamax.R
+import com.findajob.jobamax.data.pojo.Categories
+import com.findajob.jobamax.data.pojo.CategoryGroup
+import com.findajob.jobamax.preference.getJobSearchFilterCategories
+import com.google.gson.Gson
+import com.parse.ParseFile
+import com.parse.SaveCallback
 import kotlinx.android.synthetic.main.dialog_basic.view.*
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 import java.io.ByteArrayOutputStream
 import java.io.FileInputStream
+import java.io.InputStream
+import java.util.*
+
 
 fun Context.errorToast() {
     Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
@@ -39,27 +47,10 @@ fun BaseFragment.errorToast(e: Throwable?) {
 }
 
 
-fun Context.executeAfter(millis: Long, f: () -> Unit) {
-    doAsync {
-        Thread.sleep(millis)
-        uiThread {
-            f()
-        }
-    }
-}
-
 fun Activity.checkForPermissions(): Boolean {
 
-    val STORAGE_AND_CAMERA_PERMISSIONS = arrayOf(
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.CAMERA
-    )
-    val permissionResult = PermissionUtils.checkAndRequestPermissions(
-        this,
-        STORAGE_AND_CAMERA_PERMISSIONS.toMutableList(),
-        102
-    )
+    val STORAGE_AND_CAMERA_PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+    val permissionResult = PermissionUtils.checkAndRequestPermissions(this, STORAGE_AND_CAMERA_PERMISSIONS.toMutableList(), 102)
     when (permissionResult.finalStatus) {
         PermissionStatus.ALLOWED -> return true
         /*PermissionStatus.DENIED_PERMANENTLY -> {
@@ -67,11 +58,7 @@ fun Activity.checkForPermissions(): Boolean {
             return false
         }*/
         else -> {
-            ActivityCompat.requestPermissions(
-                this,
-                STORAGE_AND_CAMERA_PERMISSIONS,
-                REQUEST_ALL_PERMISSIONS
-            )
+            ActivityCompat.requestPermissions(this, STORAGE_AND_CAMERA_PERMISSIONS, REQUEST_ALL_PERMISSIONS)
             return false
         }
     }
@@ -90,36 +77,7 @@ fun Context.hideKeyboard(view: View) {
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
-fun showBasicDialog(
-    context: Context,
-    message: String,
-    buttonText: String?,
-    buttonClick: DialogInterface.OnDismissListener?
-) {
-    //Inflate the dialog as custom view
-    val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_basic, null)
 
-    //AlertDialogBuilder
-    val dialog = AlertDialog.Builder(context).setView(dialogView)
-
-    //setting text values
-    dialogView.tv_message.text = message
-    if (!buttonText.isNullOrEmpty()) {
-        dialogView.primaryButton.text = buttonText
-    }
-
-    //show dialog
-    val dialogInstance = dialog.show()
-    dialogInstance.window?.setBackgroundDrawableResource(android.R.color.transparent);
-
-    if (buttonClick != null) {
-        dialogInstance.setOnDismissListener(buttonClick)
-    }
-
-    dialogView.primaryButton.setOnClickListener {
-        dialogInstance.dismiss()
-    }
-}
 
 
 fun Activity.showDialog(
@@ -174,6 +132,38 @@ fun convertMillisToMinuteAndSecond(millis: Long) : String {
     return "$minutes min : $seconds sec"
 }
 
-fun loadImageFromUrl(imageView: ImageView, url: String?, defaultImage: Int?){
+fun loadImageFromUrl(imageView: ImageView, url: String?, defaultImage: Int? ){
     Glide.with(imageView.context).applyDefaultRequestOptions( RequestOptions().placeholder(R.drawable.ic_company).error(R.drawable.ic_company)).load(url).into(imageView)
 }
+
+fun uploadImageToParse(uri: Uri, requireContext: Context, onException: (String) -> Unit, onSuccess: (String) -> Unit) {
+    val inputStream: InputStream? = requireContext.contentResolver.openInputStream(uri)
+    var fileName = requireContext.getFileName(uri)
+    if (fileName.isEmpty())
+        fileName = Date().yyyyMMddHHmmss()
+    val parseFile = ParseFile(fileName, inputStream?.readBytes())
+    parseFile.saveInBackground(SaveCallback { exception ->
+        if (exception != null){
+            onException(exception.message.toString())
+        }else{
+            onSuccess(parseFile.url)
+        }
+    })
+}
+
+fun getAddressByLatLng(lat: Double, lng: Double, requireContext: Context) : String {
+    val geocoder = Geocoder(requireContext, Locale.getDefault())
+    val addresses = geocoder.getFromLocation(lat, lng, 1)
+    return addresses[0].getAddressLine(0)
+}
+
+fun getJobCategories(requireContext: Context): ArrayList<Categories> = if (requireContext.getJobSearchFilterCategories() == "") {
+    Categories.getJobCategories()
+} else {
+    val categoryGroup = Gson().fromJson(
+        requireContext.getJobSearchFilterCategories(),
+        CategoryGroup::class.java
+    )
+    categoryGroup.list
+}
+

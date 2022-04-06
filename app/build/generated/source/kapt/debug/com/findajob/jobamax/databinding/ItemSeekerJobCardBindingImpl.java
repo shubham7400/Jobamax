@@ -60,7 +60,6 @@ public class ItemSeekerJobCardBindingImpl extends ItemSeekerJobCardBinding  {
             , (com.google.android.material.chip.ChipGroup) bindings[24]
             , (com.google.android.material.chip.ChipGroup) bindings[17]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[27]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
             , (android.widget.ImageView) bindings[6]
@@ -72,6 +71,7 @@ public class ItemSeekerJobCardBindingImpl extends ItemSeekerJobCardBinding  {
             , (android.widget.LinearLayout) bindings[20]
             , (android.widget.LinearLayout) bindings[16]
             , (android.widget.LinearLayout) bindings[23]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (androidx.recyclerview.widget.RecyclerView) bindings[15]
             , (androidx.recyclerview.widget.RecyclerView) bindings[22]
             , (android.widget.TextView) bindings[13]
@@ -86,7 +86,7 @@ public class ItemSeekerJobCardBindingImpl extends ItemSeekerJobCardBinding  {
             , (android.widget.TextView) bindings[28]
             , (android.widget.TextView) bindings[9]
             );
-        this.clTopParent.setTag(null);
+        this.rootLayout.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

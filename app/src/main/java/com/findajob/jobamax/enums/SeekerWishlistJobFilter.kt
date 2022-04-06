@@ -1,7 +1,8 @@
 package com.findajob.jobamax.enums
 
-enum class SeekerWishlistJobFilter(jobType: String) {
+enum class SeekerWishlistJobFilter(filterType: String) {
     ALL("all"),
     FAVORITE("favorite"),
-    ARCHIVE("archive")
+    ARCHIVE("archive"),
+    IN_PROGRESS("in_progress")
 }

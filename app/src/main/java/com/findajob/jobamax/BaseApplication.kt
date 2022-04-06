@@ -1,40 +1,24 @@
 package com.findajob.jobamax
 
+import android.Manifest
 import android.app.Application
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import androidx.lifecycle.Lifecycle
+import android.content.Intent
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
-import com.findajob.jobamax.data.pojo.Chat
-import com.findajob.jobamax.data.pojo.Message
-import com.findajob.jobamax.model.Event
-import com.findajob.jobamax.preference.getUserId
-import com.findajob.jobamax.preference.getUserObjectId
-import com.findajob.jobamax.training.model.CurrentUserSettings
-import com.findajob.jobamax.training.model.WorkerThread
+ import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
+import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
 import com.google.firebase.messaging.FirebaseMessaging
-import com.parse.Parse
-import com.parse.ParseInstallation
-import com.parse.ParseObject
-import com.parse.ParseUser
+import com.parse.*
 import com.parse.facebook.ParseFacebookUtils
 import com.parse.google.ParseGoogleUtils
 import com.pushwoosh.Pushwoosh
-import com.stripe.android.PaymentConfiguration
 import com.uxcam.UXCam
 import dagger.hilt.android.HiltAndroidApp
-import io.reactivex.exceptions.UndeliverableException
-import io.reactivex.plugins.RxJavaPlugins
-import org.json.JSONException
-import org.json.JSONObject
 import timber.log.Timber
-import java.util.HashMap
 
 
 @HiltAndroidApp
@@ -44,55 +28,76 @@ class BaseApplication : Application(), LifecycleObserver {
         super.onCreate()
         subscribeToFirebaseMessagingTopics()
         initialiseParseSdk()
-        setUpNotificationChannel()
-      /*  configurePushWoosh()*/
-        configurePayment()
-        configureRxJava()
+        setJobSeekerJobFilter("")
+        Pushwoosh.getInstance().registerForPushNotifications( ) // registering pushwoosh notification
         configureUXCam()
-//        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
-    }
-
-    /*private fun configurePushWoosh() {
-        Pushwoosh.getInstance().registerForPushNotifications()
-    }
-*/
-
-    private fun configureUXCam() {
-        UXCam.startWithKey(UX_CAM_API_KEY)
+        updateAppUsageCount()
     }
 
 
-    private fun configureRxJava() {
-        RxJavaPlugins.setErrorHandler { e ->
-            if (e is UndeliverableException) {
-                // Merely log undeliverable exceptions
-                log("the error could not be delivered ${e.message}")
-            } else {
-                // Forward all others to current thread's uncaught exception handler
-                Thread.currentThread().also { thread ->
-                    thread.uncaughtExceptionHandler?.uncaughtException(thread, e)
+
+    private fun updateAppUsageCount() {
+        if (isLoggedIn()) {
+            if (getUserType() == 2){
+                if (getUserId() != ""){
+                    updateAppUsage()
                 }
             }
         }
     }
 
-    private fun setUpNotificationChannel() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            val manager = getSystemService(NotificationManager::class.java)
-            val checkJobOfferChannel = NotificationChannel(
-                CHECK_JOB_OFFER_CHANNEL,
-                "Check Job Offer",
-                NotificationManager.IMPORTANCE_HIGH
-            )
-            manager?.createNotificationChannel(checkJobOfferChannel)
+    private fun updateAppUsage() {
+        val query = ParseQuery<ParseObject>(ParseTableName.Notification.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), getUserId())
+        query.getFirstInBackground { result, e ->
+            when{
+                e != null -> {
+                    val notification = ParseObject(ParseTableName.Notification.toString())
+                    getCurrentJobSeeker{
+                        if (it != null) {
+                            notification.put("jobSeeker", it)
+                        }
+                        notification.put("jobSeekerId", getUserId())
+                        notification.put("lastUsageTime", (System.currentTimeMillis() / 1000))
+                        notification.put("appUsageCount", 1)
+                        notification.saveInBackground { exception ->
+                            if (exception != null){ toast(exception.message.toString())}
+                        }
+                    }
+                }
+                else -> {
+                    result.put("lastUsageTime", (System.currentTimeMillis() / 1000))
+                    result.put("appUsageCount", result.getInt("appUsageCount").plus(1))
+                    result.saveInBackground {
+                        if (it != null){ toast(it.message.toString())}
+                    }
+                }
+            }
         }
     }
 
-    private fun configurePayment() {
-        PaymentConfiguration.init(
-            applicationContext,
-            STRIPE_PUBLISHABLE_KEY
-        )
+    private fun getCurrentJobSeeker(call: (ParseObject?) -> Unit)  {
+        var parseObject: ParseObject? = null
+        val query = ParseQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo("jobSeekerId", getUserId())
+        query.getFirstInBackground { result, e ->
+            when{
+                e != null -> {
+                    call(parseObject)
+                    toast(e.message.toString())
+                }
+                else -> {
+                    parseObject = result
+                    call(parseObject)
+                }
+            }
+        }
+    }
+
+
+
+    private fun configureUXCam() {
+        UXCam.startWithKey(UX_CAM_API_KEY)
     }
 
     private fun subscribeToFirebaseMessagingTopics() {
@@ -119,105 +124,6 @@ class BaseApplication : Application(), LifecycleObserver {
         ParseFacebookUtils.initialize(this)
         ParseGoogleUtils.initialize(getString(R.string.default_web_client_id))
 
-        ParseObject.registerSubclass(Message::class.java)
-        ParseObject.registerSubclass(Chat::class.java)
-        ParseObject.registerSubclass(Event::class.java)
 
-
-    }
-
-    private var mWorkerThread: WorkerThread? = null
-
-    @Synchronized
-    fun initWorkerThread() {
-        if (mWorkerThread == null) {
-            mWorkerThread = WorkerThread(applicationContext)
-            mWorkerThread?.start()
-            mWorkerThread?.waitForReady()
-        }
-    }
-
-    @Synchronized
-    fun getWorkerThread(): WorkerThread? {
-        return mWorkerThread
-    }
-
-    @Synchronized
-    fun deInitWorkerThread() {
-        mWorkerThread?.exit()
-        try {
-            mWorkerThread?.join()
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        mWorkerThread = null
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onAppBackgrounded() {
-        val user = ParseUser.getCurrentUser()
-        if (user != null) {
-            user.put("isActive", false)
-            user.save()
-            sendActiveNotification()
-        }
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onAppForegrounded() {
-        val user = ParseUser.getCurrentUser()
-        if (user != null) {
-            user.put("isActive", true)
-            user.save()
-            sendActiveNotification()
-        }
-    }
-
-    fun sendActiveNotification() {
-        val topic =
-            "/topics/$ARG_REFRESH_ACTIVE" //topic has to match what the receiver subscribed to
-
-        val notification = JSONObject()
-        val notificationBody = JSONObject()
-
-        try {
-            notificationBody.put("title", ARG_REFRESH_ACTIVE)
-            notificationBody.put(
-                "message",
-                ParseUser.getCurrentUser().objectId
-            )   //Enter your notification message
-            notification.put("to", topic)
-            notification.put("data", notificationBody)
-            log("try")
-        } catch (e: JSONException) {
-            log("onCreate: " + e.message)
-        }
-
-        sendNotification(notification)
-    }
-
-    private val requestQueue: RequestQueue by lazy { Volley.newRequestQueue(this) }
-
-    private fun sendNotification(notification: JSONObject) {
-        log("sendNotification")
-        val serverKey = "key=$FCM_SERVER_KEY"
-        val contentType = "application/json"
-        val jsonObjectRequest = object : JsonObjectRequest(
-            FCM_API,
-            notification,
-            Response.Listener { response -> log("onResponse: $response") },
-            Response.ErrorListener { log("onErrorResponse: Didn't work" + it?.message) }) {
-            override fun getHeaders(): Map<String, String> {
-                val params = HashMap<String, String>()
-                params["Authorization"] = serverKey
-                params["Content-Type"] = contentType
-                return params
-            }
-        }
-        requestQueue.add(jsonObjectRequest)
-    }
-
-    companion object {
-        val mAudioSettings: CurrentUserSettings = CurrentUserSettings()
     }
 }

@@ -2,7 +2,9 @@
 <layout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_date_cell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -13,11 +15,23 @@
             android:padding="5dp"
             android:textSize="20sp"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintVertical_bias="0.25"/>
+            />
+
+        <View
+            android:id="@+id/v_event_hint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="-5dp"
+            android:visibility="gone"
+            android:background="@drawable/rounded_blue_box"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cellDayText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

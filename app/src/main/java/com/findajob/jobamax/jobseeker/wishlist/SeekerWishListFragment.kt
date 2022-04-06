@@ -27,6 +27,7 @@ import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.model.WishlistedJob
 import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
 import com.parse.ParseObject
@@ -36,6 +37,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.popup_add_job_to_track.view.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 @AndroidEntryPoint
@@ -47,7 +49,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
 
     lateinit var adapter: SeekerWishListAdapter
     var wishlistJobs = ArrayList<WishlistedJob>()
-    var filteredJob = SeekerWishlistJobFilter.ALL.name
+    var selectedFilter = SeekerWishlistJobFilter.ALL
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerWishListBinding.inflate(inflater, container, false)
@@ -142,6 +144,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                     if (it != null) {
                         toast("${it.message.toString()} Something Went Wrong")
                     } else {
+                        toast("Added to tracking successfully.")
                         fetchWishlist( )
                     }
                 }
@@ -152,15 +155,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         }
     }
 
-   /* private fun deleteWishlistJob(wishlistJob: WishlistedJob) {
-        wishlistJob.pfObject?.deleteInBackground { exception ->
-            if (exception != null) {
-                toast("${exception.message.toString()}")
-            } else {
-                fetchWishlist( )
-            }
-        }
-    }*/
+
 
     private fun updateFavorite(wishlistJob: WishlistedJob) {
         wishlistJob.pfObject?.put("isFavroite", !wishlistJob.isFavroite)
@@ -190,6 +185,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
             var all = 0
             var favorite = 0
             var archive = 0
+            var inProgress = 0
             wishlistJobs.forEach {
                 if (it.isArchived){
                     archive++
@@ -197,12 +193,16 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                 if (it.isFavroite){
                     favorite++
                 }
+                if(it.isAddedToTracking && !it.isArchived){
+                    inProgress++
+                }
                 all++
             }
-            val seekerFilterJobFragment = SeekerFilterJobFragment().newInstance(all, favorite, archive)
+            val seekerFilterJobFragment = SeekerFilterJobFragment().newInstance(all, favorite, archive, inProgress, selectedFilter)
             seekerFilterJobFragment.show(childFragmentManager,"dialog")
             seekerFilterJobFragment.onGoClickListener = {
-                adapter.submitList(wishlistJobs, it)
+                selectedFilter = it
+                adapter.submitList(wishlistJobs, selectedFilter)
                 adapter.notifyDataSetChanged()
             }
         }
@@ -224,7 +224,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         fetchWishlist()
     }
 
-    fun getCurrent( ) {
+    private fun getCurrent( ) {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
         query.include("portfolio")
@@ -250,6 +250,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
     private fun fetchWishlist() {
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
         query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),requireContext().getUserId())
+        query.whereLessThan("createdAt", Date(Date().time - 120000))
         query.include("job")
         query.include("jobSeeker")
         progressHud.show()
@@ -267,7 +268,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                     result.forEach {
                         wishlistJobs.add(WishlistedJob(it))
                     }
-                    adapter.submitList(wishlistJobs)
+                    adapter.submitList(wishlistJobs, selectedFilter)
                     adapter.notifyDataSetChanged()
                     if (wishlistJobs.isEmpty()){
                         binding.tvNoData.visibility  = View.VISIBLE
@@ -336,29 +337,22 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
         }
     }
     override fun getItemCount(): Int = list.size
-    fun submitList(wishlistedJobs: ArrayList<WishlistedJob>, f: SeekerWishlistJobFilter = SeekerWishlistJobFilter.ALL) {
-        var jobs = ArrayList<WishlistedJob>()
-        this.filter = f
-        when(filter){
+    fun submitList(wishlistedJobs: ArrayList<WishlistedJob>, selectedFilter: SeekerWishlistJobFilter) {
+        this.filter = selectedFilter
+        list = when(filter){
             SeekerWishlistJobFilter.ARCHIVE -> {
-                wishlistedJobs.forEach {
-                    if (it.isArchived){
-                        jobs.add(it)
-                    }
-                }
+                wishlistedJobs.filter { it.isArchived } as ArrayList<WishlistedJob>
             }
             SeekerWishlistJobFilter.FAVORITE -> {
-                wishlistedJobs.forEach {
-                    if (it.isFavroite){
-                        jobs.add(it)
-                    }
-                }
+                wishlistedJobs.filter { it.isFavroite } as ArrayList<WishlistedJob>
+            }
+            SeekerWishlistJobFilter.IN_PROGRESS -> {
+                wishlistedJobs.filter { it.isAddedToTracking && !it.isArchived }  as ArrayList<WishlistedJob>
             }
             else -> {
-                jobs = wishlistedJobs
+                wishlistedJobs.filter { !it.isArchived } as ArrayList<WishlistedJob>
             }
         }
-        list = jobs
     }
 
 

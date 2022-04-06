@@ -1,7 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +10,9 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.databinding.FragmentSeekerProfileBinding
 import com.findajob.jobamax.databinding.FragmentSeekerVolunteeringListBinding
-import com.findajob.jobamax.databinding.ItemSeekerEducationBinding
 import com.findajob.jobamax.databinding.ItemSeekerVolunteeringBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.profile.cv.model.Education
-import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
 import com.findajob.jobamax.jobseeker.profile.cv.model.Volunteering
 import com.findajob.jobamax.jobseeker.profile.cv.model.VolunteeringGroup
 import com.findajob.jobamax.util.toast

@@ -11,8 +11,6 @@ import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.FragmentMeetNearbyPeopleBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
-import com.findajob.jobamax.preference.getRole
-import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
 import com.findajob.jobamax.util.*
 
 
@@ -54,8 +52,8 @@ class MeetPeopleNearbyFragment : Fragment(), MeetPeopleNearbyInterface {
                         ACTION_LOGIN -> {
                             startActivity(
                                 Intent(
-                                    requireActivity(),
-                                    if (requireActivity().getRole() == ROLE_JOB_SEEKER) JobSeekerHomeActivity::class.java else RecruiterHomeActivity::class.java
+                                    requireActivity(),JobSeekerHomeActivity::class.java
+                                    /*if (requireActivity().getRole() == ROLE_JOB_SEEKER) JobSeekerHomeActivity::class.java else RecruiterHomeActivity::class.java*/
                                 )
                             )
                             requireActivity().finishAffinity()

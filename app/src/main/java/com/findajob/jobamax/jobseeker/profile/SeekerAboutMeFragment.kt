@@ -17,22 +17,13 @@ import com.findajob.jobamax.cropper.CropImageView
 import com.findajob.jobamax.databinding.FragmentSeekerAboutMeBinding
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.home.SaveParseObjectCallback
 import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
-import com.findajob.jobamax.repo.SaveParseObjectCallback
-import com.findajob.jobamax.util.*
-import com.google.android.gms.common.api.Status
-import com.google.android.libraries.places.api.Places
-import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.api.model.TypeFilter
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
-import com.pushwoosh.internal.platform.AndroidPlatformModule.getApplicationContext
+ import com.findajob.jobamax.util.*
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
-import kotlinx.android.synthetic.main.fragment_job_seeker_profile.*
-import java.io.File
-import java.util.*
+
 
 @AndroidEntryPoint
 class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() , ImagePicker.GetImage, IOnBackPressed {
@@ -79,9 +70,6 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
          binding.ivBackButton.setOnClickListener {
              (activity as SeekerProfileActivity).onBackPressed()
          }
-      /*  binding.btnSaveInfo.setOnClickListener {
-
-        }*/
     }
 
     private fun setupImagePicker() {
@@ -119,17 +107,10 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
     }
 
 
-    override fun setGalleryImage(imageUri: Uri?) {
+    override fun setImageUri(imageUri: Uri?) {
         imageUri?.let { cropImageFromUri(it) }
     }
 
-    override fun setCameraImage(filePath: String?) {
-        filePath?.let { cropImageFromUri(Uri.fromFile(File(filePath))) }
-    }
-
-    override fun setImageFile(file: File?) {
-        file?.let { cropImageFromUri(Uri.fromFile(file)) }
-    }
     private fun cropImageFromUri(uri: Uri) {
         CropImage.activity(uri)
             .setGuidelines(CropImageView.Guidelines.ON)

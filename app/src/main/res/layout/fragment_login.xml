@@ -70,7 +70,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Login"
+                        android:text="@string/login"
                         android:layout_marginTop="30dp"
                         android:textSize="20sp"
                         android:fontFamily="@font/opensans_bold"
@@ -128,14 +128,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        style="@style/regular_label"
-                        android:layout_marginTop="8dp"
-                        android:onClick="@{() -> handler.onForgotPasswordClicked()}"
-                        android:padding="8dp"
-                        android:fontFamily="@font/opensans_regular"
-                        android:text="@string/in_case_you_forgot_password"
-                        android:textColor="@color/black" />
+
 
                     <Button
                         android:layout_width="match_parent"
@@ -143,13 +136,21 @@
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="24dp"
                         android:layout_marginRight="24dp"
-                        android:layout_marginBottom="15dp"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/btn_gradient_rounded"
                         android:onClick="@{() -> handler.onEmailLoginClicked()}"
                         android:text="@string/log_in"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
+
+                    <TextView
+                        style="@style/regular_label"
+                        android:onClick="@{() -> handler.onForgotPasswordClicked()}"
+                        android:padding="8dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:text="@string/in_case_you_forgot_password"
+                        android:textColor="@color/black" />
 
                     <FrameLayout
                         android:id="@+id/container"

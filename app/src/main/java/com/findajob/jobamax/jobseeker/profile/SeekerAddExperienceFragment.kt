@@ -11,9 +11,8 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerAddExperienceBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.profile.cv.model.Education
 import com.findajob.jobamax.jobseeker.profile.cv.model.Experience
- import com.findajob.jobamax.util.mm_yy_disp
+import com.findajob.jobamax.util.mm_yy_disp
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.common.api.Status
 import com.google.android.libraries.places.api.Places

@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerImportResumeBinding
+import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.preference.getUserId
@@ -39,7 +40,7 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
                 toast("Please Enter the link first.")
             }else{
                 progressHud.show()
-                ParseCloud.callFunctionInBackground("importFromLinkedIn", hashMapOf("link" to binding.etLink.text.toString().trim(), "jobSeekerId" to requireContext().getUserId()),
+                ParseCloud.callFunctionInBackground(ParseCloudFunction.importFromLinkedIn.toString(), hashMapOf("link" to binding.etLink.text.toString().trim(), "jobSeekerId" to requireContext().getUserId()),
                     FunctionCallback<Any> { result, e ->
                         progressHud.dismiss()
                         when {

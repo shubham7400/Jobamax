@@ -26,7 +26,7 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   public final AppCompatButton acbSeeJobDesc;
 
   @NonNull
-  public final CircleImageView circleImageView2;
+  public final CircleImageView civCompanyLogo;
 
   @NonNull
   public final ConstraintLayout constraintLayout8;
@@ -68,14 +68,14 @@ public abstract class FragmentSeekerTrackingJobDetailsBinding extends ViewDataBi
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerTrackingJobDetailsBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatButton acbSeeJobDesc, CircleImageView circleImageView2,
+      int _localFieldCount, AppCompatButton acbSeeJobDesc, CircleImageView civCompanyLogo,
       ConstraintLayout constraintLayout8, View ivAddPhase, ImageView ivBackButton,
       ImageView ivFinal, ImageView ivRemoveJob, CircleImageView ivUserProfile,
       RelativeLayout relativeLayout, RecyclerView rvJobTrackingCard, TextView tvAboutJob,
       TextView tvJobTitle, TextView tvPageTitle, View view11) {
     super(_bindingComponent, _root, _localFieldCount);
     this.acbSeeJobDesc = acbSeeJobDesc;
-    this.circleImageView2 = circleImageView2;
+    this.civCompanyLogo = civCompanyLogo;
     this.constraintLayout8 = constraintLayout8;
     this.ivAddPhase = ivAddPhase;
     this.ivBackButton = ivBackButton;

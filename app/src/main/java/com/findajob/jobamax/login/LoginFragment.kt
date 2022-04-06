@@ -28,14 +28,12 @@ import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.preference.*
-import com.findajob.jobamax.recruiter.home.RecruiterHomeActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
+ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.*
 import com.google.gson.Gson
 import com.kusu.linkedinlogin.Linkedin
 import com.kusu.linkedinlogin.LinkedinLoginListener
@@ -154,7 +152,6 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface {
                     user.firstName = nameArray.first().capitalize(Locale.ROOT)
                 if (nameArray.size > 1)
                     user.lastName = nameArray.last().capitalize(Locale.ROOT)
-                (requireActivity() as LoginActivity).checkForExistingUser(user)
             }
         } catch (e: ApiException) {
             progressHud.dismiss()

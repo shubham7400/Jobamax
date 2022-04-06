@@ -26,8 +26,7 @@ import com.google.gson.Gson
 import com.parse.FunctionCallback
 import com.parse.ParseCloud
 import dagger.hilt.android.AndroidEntryPoint
-import org.jetbrains.anko.textColor
-import org.json.JSONObject
+ import org.json.JSONObject
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -239,15 +238,15 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
                     log("fddkfd $date1,  $date2")
                     if (date1 != null) {
                         if (date1.compareTo(date2) == 0){
-                            this.cellDayText.setTextColor(Color.parseColor("#0975FE"))
+                            vEventHint.visibility = View.VISIBLE
                         }
                     }
                 }
-
             }
             if (selected_index == position){
                 this.cellDayText.setTextColor(Color.WHITE)
                 this.cellDayText.setBackgroundResource(R.drawable.bg_gradient_rounded)
+                vEventHint.visibility = View.GONE
             }else{
                 this.cellDayText.setBackgroundResource(0)
             }

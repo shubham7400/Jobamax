@@ -22,48 +22,50 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
         sViewsWithIds.put(R.id.et_program, 7);
         sViewsWithIds.put(R.id.textView11, 8);
         sViewsWithIds.put(R.id.et_gpa, 9);
-        sViewsWithIds.put(R.id.btn_save_info, 10);
-        sViewsWithIds.put(R.id.cb_current_student, 11);
-        sViewsWithIds.put(R.id.linearLayout, 12);
-        sViewsWithIds.put(R.id.textView15, 13);
-        sViewsWithIds.put(R.id.tv_Start_date, 14);
-        sViewsWithIds.put(R.id.cl_end_date, 15);
-        sViewsWithIds.put(R.id.textView144, 16);
-        sViewsWithIds.put(R.id.tv_end_date, 17);
+        sViewsWithIds.put(R.id.cb_current_student, 10);
+        sViewsWithIds.put(R.id.linearLayout, 11);
+        sViewsWithIds.put(R.id.textView15, 12);
+        sViewsWithIds.put(R.id.tv_Start_date, 13);
+        sViewsWithIds.put(R.id.cl_end_date, 14);
+        sViewsWithIds.put(R.id.textView144, 15);
+        sViewsWithIds.put(R.id.tv_end_date, 16);
+        sViewsWithIds.put(R.id.tv_description_title, 17);
+        sViewsWithIds.put(R.id.et_description, 18);
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    private final android.widget.ScrollView mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerNewEducationBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 19, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerNewEducationBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[10]
-            , (android.widget.CheckBox) bindings[11]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[15]
+            , (android.widget.CheckBox) bindings[10]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[14]
+            , (android.widget.TextView) bindings[18]
             , (android.widget.EditText) bindings[9]
             , (android.widget.EditText) bindings[7]
             , (android.widget.ImageView) bindings[3]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[12]
+            , (android.widget.LinearLayout) bindings[11]
             , (android.widget.RelativeLayout) bindings[2]
             , (android.widget.TextView) bindings[6]
             , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[16]
-            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[16]
             , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[14]
+            , (android.widget.TextView) bindings[13]
             );
         this.ivUserProfile.setTag(null);
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

@@ -12,7 +12,7 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
     @Nullable
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
-        sIncludes = new androidx.databinding.ViewDataBinding.IncludedLayouts(18);
+        sIncludes = new androidx.databinding.ViewDataBinding.IncludedLayouts(24);
         sIncludes.setIncludes(2, 
             new String[] {"item_seeker_job_card"},
             new int[] {3},
@@ -20,56 +20,66 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 4);
         sViewsWithIds.put(R.id.iv_back_button, 5);
-        sViewsWithIds.put(R.id.cl_search_bar, 6);
-        sViewsWithIds.put(R.id.et_job_keyword, 7);
-        sViewsWithIds.put(R.id.iv_search_icon, 8);
-        sViewsWithIds.put(R.id.iv_filter_job, 9);
-        sViewsWithIds.put(R.id.csv_job, 10);
-        sViewsWithIds.put(R.id.nsv_card, 11);
-        sViewsWithIds.put(R.id.ll_float_buttons, 12);
-        sViewsWithIds.put(R.id.fab_rewind, 13);
-        sViewsWithIds.put(R.id.fab_refuse, 14);
-        sViewsWithIds.put(R.id.fab_share, 15);
-        sViewsWithIds.put(R.id.fab_apply, 16);
-        sViewsWithIds.put(R.id.pcv_match, 17);
+        sViewsWithIds.put(R.id.iv_favorite, 6);
+        sViewsWithIds.put(R.id.cl_search_bar, 7);
+        sViewsWithIds.put(R.id.constraintLayout, 8);
+        sViewsWithIds.put(R.id.et_job_keyword, 9);
+        sViewsWithIds.put(R.id.iv_search_icon, 10);
+        sViewsWithIds.put(R.id.v_filter_state, 11);
+        sViewsWithIds.put(R.id.iv_filter_job, 12);
+        sViewsWithIds.put(R.id.csv_job, 13);
+        sViewsWithIds.put(R.id.nsv_card, 14);
+        sViewsWithIds.put(R.id.ll_float_buttons, 15);
+        sViewsWithIds.put(R.id.ll_rewind, 16);
+        sViewsWithIds.put(R.id.fab_rewind, 17);
+        sViewsWithIds.put(R.id.fab_refuse, 18);
+        sViewsWithIds.put(R.id.fab_share, 19);
+        sViewsWithIds.put(R.id.fab_apply, 20);
+        sViewsWithIds.put(R.id.ll_match_percent, 21);
+        sViewsWithIds.put(R.id.pcv_match, 22);
+        sViewsWithIds.put(R.id.rv_job_types, 23);
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
-    @NonNull
-    private final android.widget.LinearLayout mboundView2;
+    private final androidx.constraintlayout.widget.ConstraintLayout mboundView2;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerJobsBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 24, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerJobsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 1
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
-            , (com.yuyakaido.android.cardstackview.CardStackView) bindings[10]
-            , (android.widget.EditText) bindings[7]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[16]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[14]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[13]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[15]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[7]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[8]
+            , (com.yuyakaido.android.cardstackview.CardStackView) bindings[13]
+            , (android.widget.EditText) bindings[9]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[20]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[18]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[17]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[19]
             , (android.widget.ImageView) bindings[5]
-            , (android.widget.ImageView) bindings[9]
-            , (android.widget.ImageView) bindings[8]
+            , (android.widget.ImageView) bindings[6]
+            , (android.widget.ImageView) bindings[12]
+            , (android.widget.ImageView) bindings[10]
             , (com.findajob.jobamax.databinding.ItemSeekerJobCardBinding) bindings[3]
-            , (android.widget.LinearLayout) bindings[12]
-            , (androidx.core.widget.NestedScrollView) bindings[11]
-            , (com.ramijemli.percentagechartview.PercentageChartView) bindings[17]
+            , (android.widget.LinearLayout) bindings[15]
+            , (android.widget.LinearLayout) bindings[21]
+            , (android.widget.LinearLayout) bindings[16]
+            , (androidx.core.widget.NestedScrollView) bindings[14]
+            , (com.ramijemli.percentagechartview.PercentageChartView) bindings[22]
             , (android.widget.RelativeLayout) bindings[4]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[23]
+            , (android.view.View) bindings[11]
             );
         this.civUser.setTag(null);
+        this.clMostParent.setTag(null);
         setContainedBinding(this.lJob);
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
-        this.mboundView0.setTag(null);
-        this.mboundView2 = (android.widget.LinearLayout) bindings[2];
+        this.mboundView2 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[2];
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners

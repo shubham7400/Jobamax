@@ -1,7 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,19 +9,19 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.dashboard.home.training.masterclass.LikeDislikeDialogFragment
 import com.findajob.jobamax.data.pojo.University
 import com.findajob.jobamax.databinding.FragmentSeekerNewEducationBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.account.SeekerSearchUniversityDialogFragment
 import com.findajob.jobamax.jobseeker.profile.cv.model.Education
-import com.findajob.jobamax.util.mm_yy_disp
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
+ import com.findajob.jobamax.util.mm_yy_disp
 import com.findajob.jobamax.util.toast
 import com.whiteelephant.monthpicker.MonthPickerDialog
 import java.util.*
 
 
-class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBinding>() {
+class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBinding>(), IOnBackPressed {
 
     override val layoutRes: Int get() = R.layout.fragment_seeker_new_education
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -64,6 +63,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         educationOld?.let {
             binding.tvSchool.text = educationOld!!.name
             binding.etProgram.setText(educationOld!!.program)
+            binding.etDescription.text = educationOld!!.description
             binding.etGpa.setText(educationOld!!.gpa.toString())
             binding.tvStartDate.text = educationOld!!.startDate
             if (educationOld!!.endDate == ""){
@@ -84,7 +84,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
             }
         }
         binding.ivBackButton.setOnClickListener {
-            (activity as SeekerProfileActivity).onBackPressed()
+            requireActivity().onBackPressed()
         }
        binding.ivUserProfile.setOnClickListener {
            requireActivity().finish()
@@ -95,54 +95,13 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         binding.tvEndDate.setOnClickListener {
             onDateClicked(binding.tvEndDate)
         }
-        binding.btnSaveInfo.setOnClickListener {
-            when {
-                binding.tvSchool.text.isNullOrEmpty() -> {
-                    toast("Enter school name.")
-                }
-                binding.etProgram.text.isNullOrEmpty() -> {
-                    toast("Enter program name.")
-                }
-                binding.etGpa.text.isNullOrEmpty() -> {
-                    toast("Enter education level name.")
-                }
-                binding.tvStartDate.text.isNullOrEmpty() -> {
-                    toast("Select start date.")
-                }
-                !binding.cbCurrentStudent.isChecked && binding.tvEndDate.text.isNullOrEmpty() -> {
-                    toast("Select end date.")
-                }
-                else -> {
-                   val education = if (educationOld != null){
-                       educationOld
-                   }else{
-                       Education()
-                   }
-                    education!!.name = binding.tvSchool.text.toString()
-                    education.program = binding.etProgram.text.toString()
-                    education.gpa = binding.etGpa.text.toString().toDouble()
-                    education.startDate = binding.tvStartDate.text.toString()
-                    education.logo = university?.logo ?: ""
-                    if (binding.cbCurrentStudent.isChecked){
-                        education.endDate =  ""
-                    }else{
-                        education.endDate =  binding.tvEndDate.text.toString()
-                    }
-                     viewModel.addNewOrUpdateEducation(education) {
-                         if (it == null){
-                             toast("Education added")
-                             requireActivity().onBackPressed()
-                         }else{
-                             toast("${it.message.toString()} Something went wrong")
-                         }
-                     }
-                }
-            }
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 
 
-    fun onDateClicked(view: View ) {
+    private fun onDateClicked(view: View ) {
         val today = Calendar.getInstance()
 
         MonthPickerDialog.Builder(
@@ -164,6 +123,62 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
             .setTitle("Select")
             .build()
             .show()
+    }
+
+    override fun onBackPressed(callback: () -> Unit) {
+        when {
+            binding.tvSchool.text.isNullOrEmpty() -> {
+                toast("Enter school name.")
+                callback()
+            }
+            binding.etProgram.text.isNullOrEmpty() -> {
+                toast("Enter program name.")
+                callback()
+            }
+            binding.etGpa.text.isNullOrEmpty() -> {
+                toast("Enter education level name.")
+                callback()
+            }
+            binding.tvStartDate.text.isNullOrEmpty() -> {
+                toast("Select start date.")
+                callback()
+            }
+            !binding.cbCurrentStudent.isChecked && binding.tvEndDate.text.isNullOrEmpty() -> {
+                toast("Select end date.")
+                callback()
+            }
+            binding.etDescription.text.isNullOrEmpty() -> {
+                toast("Enter description.")
+                callback()
+            }
+            else -> {
+                val education = if (educationOld != null){
+                    educationOld
+                }else{
+                    Education()
+                }
+                education!!.name = binding.tvSchool.text.toString()
+                education.program = binding.etProgram.text.toString()
+                education.description = binding.etDescription.text.toString()
+                education.gpa = binding.etGpa.text.toString().toDouble()
+                education.startDate = binding.tvStartDate.text.toString()
+                education.logo = university?.logo ?: ""
+                if (binding.cbCurrentStudent.isChecked){
+                    education.endDate =  ""
+                }else{
+                    education.endDate =  binding.tvEndDate.text.toString()
+                }
+                viewModel.addNewOrUpdateEducation(education) {
+                    if (it == null){
+                        toast("Education added")
+                        callback()
+                    }else{
+                        toast("${it.message.toString()} Something went wrong")
+                        callback()
+                    }
+                }
+            }
+        }
     }
 
 }

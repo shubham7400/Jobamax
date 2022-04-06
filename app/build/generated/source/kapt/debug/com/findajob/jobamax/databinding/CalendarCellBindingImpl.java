@@ -15,24 +15,24 @@ public class CalendarCellBindingImpl extends CalendarCellBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.cellDayText, 1);
+        sViewsWithIds.put(R.id.v_event_hint, 2);
     }
     // views
-    @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public CalendarCellBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
     }
     private CalendarCellBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.TextView) bindings[1]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
+            , (android.view.View) bindings[2]
             );
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
-        this.mboundView0.setTag(null);
+        this.clDateCell.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

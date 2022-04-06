@@ -17,9 +17,9 @@ public class FragmentSeekerInterestBindingImpl extends FragmentSeekerInterestBin
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
         sViewsWithIds.put(R.id.tv_activities, 4);
-        sViewsWithIds.put(R.id.actv_activities, 5);
-        sViewsWithIds.put(R.id.iv_activities, 6);
-        sViewsWithIds.put(R.id.cg_activities, 7);
+        sViewsWithIds.put(R.id.actv_interest, 5);
+        sViewsWithIds.put(R.id.iv_add_interest, 6);
+        sViewsWithIds.put(R.id.cg_interests, 7);
     }
     // views
     @NonNull

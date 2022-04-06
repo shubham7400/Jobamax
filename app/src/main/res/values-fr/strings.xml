@@ -8,16 +8,16 @@
     <string name="job_seeker">Demandeur d\'emploi</string>
     <string name="i_am_a">Je suis un</string>
     <string name="or">OU</string>
-    <string name="don_t_have_an_account">Je n\'ai pas de compte ? </string>
-    <string name="login">Connexion</string>
-    <string name="log_in">S\'inscrire</string>
+    <string name="don_t_have_an_account">Tu n’as pas encore de compte ?</string>
+    <string name="login">Bienvenue</string>
+    <string name="log_in">Se connecter</string>
     <string name="hello_blank_fragment">Bonjour fragment vide</string>
     <string name="send"> Envoyer</string>
     <string name="verify">Vérifier</string>
     <string name="please_enter_the_verification_code_sent_to">Veuillez entrer le code de vérification envoyé à %s</string>
     <string name="didn_t_get_the_code_resend">Vous n\'avez pas reçu le code ? Renvoyez-le à</string>
     <string name="enter_verification_code">Entrez le code de vérification</string>
-    <string name="register">Registre</string>
+    <string name="register">Créer mon compte</string>
     <string name="already_have_an_account">Vous avez déjà un compte ?</string>
     <string name="phone">Téléphone</string>
     <string name="course">Cours</string>
@@ -67,7 +67,7 @@
     <string name="company_name_asterisk">Nom de la société *</string>
     <string name="enter_company_name">Entrez le nom de l\'entreprise</string>
     <string name="postcode_asterisk">Code postal</string>
-    <string name="email_asterisk">Courriel :<font fgcolor='#0975FE'>*</font></string>
+    <string name="email_asterisk">Email<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_email">Entrez l\'email</string>
     <string name="phone_number_asterisk">Numéro de téléphone<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_phone_number">Entrez le numéro de téléphone</string>
@@ -184,7 +184,7 @@
     <string name="activities">Activités</string>
     <string name="enter_activity">Entrer l\'activité</string>
     <string name="add_activities">Ajouter des activités</string>
-    <string name="about_me">À propos de moi</string>
+    <string name="about_me">Ma bio</string>
     <string name="enter_school_name">Entrez le nom de l\'école</string>
     <string name="enter_program">Entrer le programme</string>
     <string name="enter_start_date">Entrez la date de début</string>
@@ -202,11 +202,11 @@
     <string name="what_job_are_you_looking_for">Quel emploi recherchez-vous ?</string>
     <string name="add_a_job_offer">Ajouter une offre d\'emploi</string>
     <string name="password">Mot de passe</string>
-    <string name="confirm_password">Confirmer le mot de passe</string>
-    <string name="email">Courriel :</string>
+    <string name="confirm_password">Confirmation du mot de passe</string>
+    <string name="email">Email</string>
     <string name="apply">Appliquer</string>
     <string name="cancel">Annuler</string>
-    <string name="in_case_you_forgot_password"><u>En cas d\'oubli du mot de passe</u></string>
+    <string name="in_case_you_forgot_password"><u>Tu as oublié ton mot de passe ?</u></string>
     <string name="reach">Reach</string>
     <string name="text_return">Retourner à</string>
     <string name="my_job_offers">Mes offres d\'emploi</string>
@@ -481,7 +481,7 @@
     <string name="click_to_add">Cliquez pour ajouter</string>
     <string name="education">Éducation</string>
     <string name="job_asterick">Emploi*</string>
-    <string name="click_to_add_location">Cliquez pour ajouter un lieu</string>
+    <string name="click_to_add_location">clique pour ajouter une localisation</string>
 
     <string name="online_courses">Cours en ligne</string>
     <string name="instructor">Instructeur</string>
@@ -516,7 +516,7 @@
     <string name="one_two">une-deux</string>
     <string name="two_more">deux de plus</string>
     <string name="wishlist">Liste de souhaits</string>
-    <string name="select_date">Sélectionnez la date</string>
+    <string name="select_date">ajouter</string>
     <string name="enter_description">Entrez la description</string>
     <string name="my_experience">Mon expérience</string>
     <string name="add_another">Ajouter un autre</string>
@@ -531,20 +531,20 @@
     <string name="activity">Activité*</string>
     <string name="organization">Organisation</string>
     <string name="my_volunteering">Mon volontariat</string>
-    <string name="my_skills">Mes compétences</string>
+    <string name="my_skills">Compétences</string>
     <string name="hard_skills">Compétences difficiles</string>
     <string name="soft_skills">Compétences générales</string>
     <string name="interest">Intérêt</string>
     <string name="my_profile">Mon profil</string>
-    <string name="make_your_2_0_cv_now">Faites votre CV 2.0 maintenant.</string>
-    <string name="my_ideal_job">Mon emploi idéal</string>
+    <string name="make_your_2_0_cv_now">Réalise ton CV 2.0 !</string>
+    <string name="my_ideal_job">Mon job idéal</string>
     <string name="explain_your_career_goals_and_what_can_you_bring_to_a_company">Expliquez vos objectifs de carrière et ce que vous pouvez apporter à une entreprise.</string>
     <string name="video">Vidéo</string>
     <string name="text_240_characters">Texte 240 caractères</string>
     <string name="audio">Audio</string>
     <string name="my_resume">Mon CV</string>
     <string name="import_my_linkedin_profile">Importer mon\nprofil Linkedine</string>
-    <string name="volunteering">Volontariat</string>
+    <string name="volunteering">Bénévolat</string>
     <string name="my_portfolio">Mon portefeuille</string>
     <string name="text_link">Texte + Lien</string>
     <string name="my_ideal_workspace">Mon espace de travail idéal</string>
@@ -557,8 +557,8 @@
     <string name="add_job_in_tracking">Ajouter un travail dans le suivi</string>
     <string name="job_title">Titre du poste</string>
     <string name="enter_title">Entrez le titre</string>
-    <string name="enter">Entrez...</string>
-    <string name="my_wishlist">Ma liste de souhaits</string>
+    <string name="enter">Ecris ici…</string>
+    <string name="my_wishlist">Ma wishlist</string>
     <string name="coaching">Coaching</string>
     <string name="about_the_job">À propos du poste</string>
     <string name="about_the_company">À propos de l\'entreprise</string>
@@ -569,18 +569,18 @@
     <string name="which_industry">Quelle industrie ?</string>
     <string name="don_t_wait_to">N\'attendez pas</string>
     <string name="no_data">Pas de données</string>
-    <string name="let_s_find_your_dream_job_together">Trouvons ensemble\nl\'emploi de vos rêves.</string>
+    <string name="let_s_find_your_dream_job_together">Decrochons le job de tes reves.</string>
     <string name="calendar">Calendrier</string>
-    <string name="start_my_job_search">Commencer ma recherche d\'emploi</string>
-    <string name="track_my_applications">Suivre mes demandes</string>
+    <string name="start_my_job_search">Recherche de jobs</string>
+    <string name="track_my_applications">suivre mes candidatures</string>
     <string name="language">Langue</string>
-    <string name="retake">Reprendre</string>
-    <string name="upload_image">Télécharger l\'image</string>
-    <string name="upload_video">Télécharger la vidéo</string>
+    <string name="retake">Enregistrer</string>
+    <string name="upload_image">Télécharger des images</string>
+    <string name="upload_video">Télécharger une vidéo</string>
     <string name="text">Texte</string>
     <string name="links">Liens</string>
     <string name="enter_link_here">Entrez le lien ici</string>
-    <string name="add_link">Ajouter un lien</string>
+    <string name="add_link">ajouter un autre lien</string>
     <string name="filter_by">Filtrer par....</string>
     <string name="about">À propos de</string>
     <string name="elevator_speech">Discours d\'ascenseur</string>
@@ -593,7 +593,7 @@
     <string name="assessments">Évaluations</string>
     <string name="phone_call">Évaluations</string>
     <string name="hired">Engagé</string>
-    <string name="go">Allez-y !</string>
+    <string name="go">Allez-y</string>
     <string name="your_first_name">Votre prénom</string>
     <string name="your_last_name">Votre nom de famille</string>
     <string name="your_profession">Votre profession</string>
@@ -601,5 +601,17 @@
     <string name="language_change_alert_message">Vous devez redémarrer l\'application afin de voir les changements de langue.</string>
     <string name="images">Images</string>
     <string name="job_description">Job Description</string>
+    <string name="in_progress">En cours</string>
+    <string name="see_less">voir moins</string>
+    <string name="which_company">Quelle entreprise ?</string>
+    <string name="categories">Catégories</string>
+    <string name="matching_results">Résultats de l\'appariement</string>
+    <string name="missing_keywords">Mots clés manquants</string>
+    <string name="this_section_is_empty">Présente-toi</string>
+    <string name="vocal_30_secondes">vocal (30 secondes)</string>
+    <string name="import_resume">Importer mon CV</string>
+    <string name="profile_url">profil URL</string>
+    <string name="enter_file_link">Entre l’URL</string>
+    <string name="offers">Offres</string>
 
 </resources>

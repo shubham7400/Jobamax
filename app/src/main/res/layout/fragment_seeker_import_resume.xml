@@ -39,8 +39,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
-                     android:fontFamily="@font/opensans_bold"
-                    android:text="Import Resume"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/import_resume"
                     android:textColor="@color/blue_2"
                     android:textSize="20dp" />
             </RelativeLayout>
@@ -60,9 +60,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_bold"
-                android:text="Profile URL"
+                android:text="@string/profile_url"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
