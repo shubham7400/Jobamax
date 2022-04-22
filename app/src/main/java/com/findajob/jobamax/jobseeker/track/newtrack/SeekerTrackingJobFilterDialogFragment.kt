@@ -20,6 +20,7 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
     lateinit var binding: FragmentSeekerTrackingJobFilterDialogBinding
     var onGoClickListener: (SeekerTrackingJobFilter) -> Unit = {}
     var filteredJob = SeekerTrackingJobFilter.ALL
+    var selectedFilter = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerTrackingJobFilterDialogBinding.inflate(inflater, container, false)
@@ -27,7 +28,40 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
         return binding.root
     }
     private fun configureUi() {
+        setSelectedFilter()
         setClickListeners()
+    }
+
+    private fun setSelectedFilter() {
+        this.selectedFilter = arguments?.getString("selected_filter") ?: ""
+        if (selectedFilter != "") {
+            when (selectedFilter) {
+                SeekerTrackingJobFilter.ALL.filterType -> {
+                    binding.cbAll.isChecked = true
+                }
+                SeekerTrackingJobFilter.APPLIED.filterType -> {
+                    binding.cbApplied.isChecked = true
+                }
+                SeekerTrackingJobFilter.REFUSED.filterType -> {
+                    binding.cbRefused.isChecked = true
+                }
+                SeekerTrackingJobFilter.ONLINE_INTERVIEWS.filterType -> {
+                    binding.cbOnlineIntervie.isChecked = true
+                }
+                SeekerTrackingJobFilter.ASSESSMENTS.filterType -> {
+                    binding.cbAssessments.isChecked = true
+                }
+                SeekerTrackingJobFilter.PHONE_CALL.filterType -> {
+                    binding.cbPhoneCall.isChecked = true
+                }
+                SeekerTrackingJobFilter.INTERVIEWS.filterType -> {
+                    binding.cbInterview.isChecked = true
+                }
+                SeekerTrackingJobFilter.HIRED.filterType -> {
+                    binding.cbHired.isChecked = true
+                }
+            }
+        }
     }
 
     private fun setClickListeners() {
@@ -152,6 +186,12 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
     }
 
     companion object {
-        fun newInstance(): SeekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment()
+        fun newInstance(selectedFilter: SeekerTrackingJobFilter): SeekerTrackingJobFilterDialogFragment {
+            val fragment = SeekerTrackingJobFilterDialogFragment()
+            val args = Bundle()
+            args.putString("selected_filter", selectedFilter.filterType)
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

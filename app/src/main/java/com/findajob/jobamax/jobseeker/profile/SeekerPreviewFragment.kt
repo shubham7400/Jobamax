@@ -1,11 +1,14 @@
 package com.findajob.jobamax.jobseeker.profile
 
+
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
@@ -26,10 +29,6 @@ import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import org.json.JSONObject
-import android.media.MediaPlayer
-import android.widget.SeekBar
-
-
 import java.io.IOException
 
 
@@ -341,6 +340,22 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
             binding.tvExperience.visibility = View.VISIBLE
             binding.rvExperience.visibility = View.VISIBLE
         }
+        binding.ivSeeLessExperience.setOnClickListener {
+            experienceAdapter?.changeVisibility(true)
+            experienceAdapter?.notifyDataSetChanged()
+            it.visibility = View.GONE
+            binding.ivSeeMoreExperience.visibility = View.VISIBLE
+        }
+        binding.ivSeeMoreExperience.setOnClickListener {
+            experienceAdapter?.changeVisibility(false)
+            experienceAdapter?.notifyDataSetChanged()
+            it.visibility = View.GONE
+            binding.ivSeeLessExperience.visibility = View.VISIBLE
+        }
+        if(experiences.isEmpty()){
+            binding.ivSeeLessExperience.visibility = View.GONE
+            binding.ivSeeMoreExperience.visibility = View.GONE
+        }
     }
 
     private fun setSchoolAdapter() {
@@ -398,6 +413,7 @@ class SeekerPreviewSchoolAdapter(var list : ArrayList<Education>) : RecyclerView
 }
 
 class SeekerPreviewExperienceAdapter(var list : ArrayList<Experience>) : RecyclerView.Adapter<SeekerPreviewExperienceAdapter.ViewHolder>() {
+    var isVisibleLess = true
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemSeekerPreviewExperienceBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val experience = list[position]
@@ -410,13 +426,24 @@ class SeekerPreviewExperienceAdapter(var list : ArrayList<Experience>) : Recycle
                 this.tvDateDuration.text = "${experience.startDate} - ${experience.endDate}"
             }
             if (experience.logo != ""){
-                Picasso.get().load(experience.logo).into(holder.binding.ivCompany)
+                Picasso.get().load(experience.logo).into(this.ivCompany)
+            }
+            if (position > 2 && isVisibleLess){
+                this.clMostParent.visibility = View.GONE
+                this.clMostParent.layoutParams = RecyclerView.LayoutParams(0, 0)
+            }else{
+                this.clMostParent.visibility = View.VISIBLE
+                this.clMostParent.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             }
         }
     }
     override fun getItemCount(): Int = list.size
     fun submitList(experiences: ArrayList<Experience>) {
         list = experiences
+    }
+
+    fun changeVisibility(state: Boolean) {
+        isVisibleLess = state
     }
 
     class ViewHolder(val binding: ItemSeekerPreviewExperienceBinding) : RecyclerView.ViewHolder(binding.root)

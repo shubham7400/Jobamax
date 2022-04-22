@@ -10,7 +10,6 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerChangePasswordBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity
 import com.findajob.jobamax.util.toast
 
 
@@ -84,7 +83,7 @@ class SeekerChangePasswordFragment : BaseFragmentMain<FragmentSeekerChangePasswo
     }
 
     override fun onBackPress() {
-        (activity as JobSeekerAccountActivity).onBackPressed()
+        requireActivity().onBackPressed()
     }
 
 

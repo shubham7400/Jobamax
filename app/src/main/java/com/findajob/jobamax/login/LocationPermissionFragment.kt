@@ -1,6 +1,8 @@
 package com.findajob.jobamax.login
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +13,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.FragmentLocationPermissionBinding
+import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
+import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.util.*
 
 class LocationPermissionFragment : Fragment(), LocationPermissionInterface {
@@ -19,11 +23,12 @@ class LocationPermissionFragment : Fragment(), LocationPermissionInterface {
     lateinit var binding: FragmentLocationPermissionBinding
     lateinit var navController: NavController
     var action: String = ""
+    var user : UserTempInfo? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         action = arguments?.getString(ARG_ACTION, "") ?: ""
-        log("arg_action: $action")
+       user = arguments?.getSerializable(ARG_USER) as UserTempInfo
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -39,35 +44,32 @@ class LocationPermissionFragment : Fragment(), LocationPermissionInterface {
     }
 
     override fun onAllowLocationClicked() {
-        // From Android 11, if any permission is denied two times, it will be count as permanently denied.
-        // To resolve this, use 3rd party lib Dexter to manage the permission stuff which detects if any permission is denied permanently.
-        this.context?.manageLocationPermission(
-            {
-                when (action) {
-                    ACTION_REGISTER -> navController.navigate(R.id.keepMePostedFragment)
-                    ACTION_LOGIN -> {
-                        startActivity(
-                            Intent(
-                                requireActivity(), JobSeekerHomeActivity::class.java
-                               /* if (requireActivity().getUserType() == 2) JobSeekerHomeActivity::class.java else RecruiterHomeActivity::class.java*/
-                            )
-                        )
-                        requireActivity().finishAffinity()
-                    }
-                    else -> {
-                        (requireActivity() as LoginActivity).navLocationPicker()
-                        navController.popBackStack()
+        if (checkForPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION))) {
+            when (action) {
+                ACTION_REGISTER -> {
+                    user?.let {
+                        if (user!!.loginType != LoginType.EMAIL.type)
+                        (requireActivity() as LoginActivity).isEmailAlreadyRegistered(it) {
+                            (requireActivity() as LoginActivity).getUserLogin(user!!)
+                        }else{
+                            navController.navigate(R.id.keepMePostedFragment, bundleOf(ARG_USER to user))
+                        }
                     }
                 }
-            },
-            {
-                toast("All permissions request must be granted to access this application")
-            },
-            {
-                toast("Grant permission manually from app settings")
-                this.context?.openAppSettings()
+                ACTION_LOGIN -> {
+                    startActivity(Intent(requireActivity(), JobSeekerHomeActivity::class.java))
+                    requireActivity().finishAffinity()
+                }
+                else -> {}
             }
-        )
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_ALL_PERMISSIONS){
+            binding.btnAllowLocation.performClick()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

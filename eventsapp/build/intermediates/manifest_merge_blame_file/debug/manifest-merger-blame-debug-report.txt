@@ -1,0 +1,61 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.linkedin.android.eventsapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->[:linkedin-sdk] C:\Users\pc\AndroidStudioProjects\jobamaxandroid\linkedin-sdk\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+11-->[:linkedin-sdk] C:\Users\pc\AndroidStudioProjects\jobamaxandroid\linkedin-sdk\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-64
+12
+13    <application
+13-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:5:5-25:19
+14        android:allowBackup="true"
+14-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:6:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.0.0] C:\Users\pc\.gradle\caches\transforms-3\30fd4c3a32bc9fdcc5b6bd54317c9ad1\transformed\core-1.0.0\AndroidManifest.xml:22:18-86
+16        android:debuggable="true"
+17        android:label="@string/app_name"
+17-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:7:9-41
+18        android:largeHeap="true"
+18-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:8:9-33
+19        android:testOnly="true" >
+20        <activity
+20-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:9:9-19:20
+21            android:name="com.linkedin.android.eventsapp.MainActivity"
+21-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:10:13-41
+22            android:exported="true"
+22-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:13:13-36
+23            android:screenOrientation="portrait"
+23-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:11:13-49
+24            android:theme="@style/Theme.AppCompat" >
+24-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:12:13-51
+25            <intent-filter>
+25-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:14:13-18:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:15:17-69
+26-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:15:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:17:17-77
+28-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:17:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity
+31-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:20:9-24:20
+32            android:name="com.linkedin.android.eventsapp.ProfileActivity"
+32-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:21:13-44
+33            android:label="@string/title_activity_profile"
+33-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:23:13-59
+34            android:screenOrientation="portrait" >
+34-->C:\Users\pc\AndroidStudioProjects\jobamaxandroid\eventsapp\src\main\AndroidManifest.xml:22:13-49
+35        </activity>
+36    </application>
+37
+38</manifest>

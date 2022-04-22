@@ -232,3 +232,25 @@ fun Context.getCurrentLocation(): String {
 	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
 	return sharedPreferences.getString("current_location", "") ?: ""
 }
+
+fun Context.setJobSearchScreenEnterTime(seconds: String) {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	val editor = sharedPreferences.edit()
+	editor.putString("job_search_enter_time", seconds).apply()
+}
+
+fun Context.getJobSearchScreenEnterTime(): String {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	return sharedPreferences.getString("job_search_enter_time", "") ?: ""
+}
+
+fun Context.setAppEnterTime(seconds: String) {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	val editor = sharedPreferences.edit()
+	editor.putString("app_enter_time", seconds).apply()
+}
+
+fun Context.getAppEnterTime(): String {
+	val sharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+	return sharedPreferences.getString("app_enter_time", "") ?: ""
+}

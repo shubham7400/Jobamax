@@ -85,14 +85,14 @@ class SeekerEducationFragment : BaseFragmentMain<FragmentSeekerEducationBinding>
 
     private fun setClickListeners() {
         binding.ivBackButton.setOnClickListener {
-            (activity as SeekerProfileActivity).onBackPressed()
+            requireActivity().onBackPressed()
         }
         binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
         binding.btnAddEducation.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerNewEducationFragment, null))
         binding.btnGoToProfile.setOnClickListener{
-            (activity as SeekerProfileActivity).onBackPressed()
+            requireActivity().onBackPressed()
         }
     }
 

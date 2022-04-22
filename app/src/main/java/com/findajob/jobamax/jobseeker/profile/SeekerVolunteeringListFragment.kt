@@ -85,7 +85,7 @@ class SeekerVolunteeringListFragment : BaseFragmentMain<FragmentSeekerVolunteeri
             requireActivity().onBackPressed()
         }
         binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
     }
 

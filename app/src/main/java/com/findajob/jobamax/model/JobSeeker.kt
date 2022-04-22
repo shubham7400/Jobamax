@@ -1,6 +1,5 @@
 package com.findajob.jobamax.model
 
-import com.findajob.jobamax.util.afterDays
 import com.parse.ParseObject
 import java.util.*
 
@@ -34,9 +33,10 @@ class JobSeeker {
     var hideMeFlag: Boolean = false
     var job: String = ""
     var location: String = ""
+    var accountType: Int = 0
     var distance: Int = 0
-    var lat: Float = 0f
-    var lng: Float = 0f
+    var lat: Double = 0.0
+    var lng: Double = 0.0
     var typeOfWork: List<String> = listOf()
     var jobCategory: List<String> = listOf()
     var experience: List<String> = listOf()
@@ -104,6 +104,7 @@ class JobSeeker {
         jobSeeker.put("hideMeFlag", hideMeFlag)
         jobSeeker.put("job", job)
         jobSeeker.put("location", location)
+        jobSeeker.put("accountType", accountType)
         jobSeeker.put("distance", distance)
         jobSeeker.put("lat", lat)
         jobSeeker.put("lng", lng)
@@ -161,8 +162,8 @@ class JobSeeker {
         this.userId = obj["userId"].toString()
         this.gender = obj["gender"].toString()
         this.userObj = obj.getParseObject("_User")
-        this.firstName = obj["firstName"].toString()
-        this.lastName = obj["lastName"].toString()
+        this.firstName = obj["firstName"]?.toString() ?: ""
+        this.lastName = obj["lastName"]?.toString() ?: ""
         this.loginType = obj["loginType"].toString()
         this.profilePicUrl = obj["profilePicUrl"].toString()
         this.dob = obj["dob"].toString()
@@ -185,8 +186,9 @@ class JobSeeker {
         this.job = obj["job"]?.toString() ?: ""
         this.location = obj["location"]?.toString() ?: ""
         this.distance = obj["distance"]?.toString()?.toIntOrNull() ?: 50
-        this.lat = obj["lat"].toString().toFloatOrNull() ?: 0f
-        this.lng = obj["lng"].toString().toFloatOrNull() ?: 0f
+        this.accountType = obj["accountType"]?.toString()?.toIntOrNull() ?: -1
+        this.lat = obj["lat"].toString().toDoubleOrNull() ?: 0.0
+        this.lng = obj["lng"].toString().toDoubleOrNull() ?: 0.0
         this.typeOfWork = (obj["typeOfWork"] as? List<String>) ?: listOf()
         this.jobCategory = (obj["jobCategory"] as? List<String>) ?: listOf()
         this.experience = (obj["experience"] as? List<String>) ?: listOf()

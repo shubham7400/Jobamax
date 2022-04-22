@@ -12,6 +12,7 @@
     </data>
 
     <ScrollView
+        android:background="@color/background_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never">
@@ -45,11 +46,11 @@
                             android:layout_height="24dp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/ic_arrow_back" />
+                            android:src="@drawable/back_arrow_blue" />
 
                         <ImageView
                             android:id="@+id/jobamaxImage"
-                            android:layout_width="250dp"
+                            android:layout_width="230dp"
                             android:layout_height="60dp"
                             android:layout_centerInParent="true"
                             android:src="@drawable/logo_jobamax_blue" />
@@ -60,9 +61,8 @@
                         android:id="@+id/loginImage"
                         android:layout_width="225dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginRight="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
                         android:adjustViewBounds="true"
                         android:maxHeight="224dp"
                         android:src="@drawable/login_infograph" />
@@ -70,11 +70,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/login"
                         android:layout_marginTop="30dp"
-                        android:textSize="20sp"
                         android:fontFamily="@font/opensans_bold"
-                        android:textColor="@color/new_purple"/>
+                        android:text="@string/login"
+                        android:textColor="@color/new_purple"
+                        android:textSize="20sp" />
 
 
                     <EditText
@@ -129,7 +129,6 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
@@ -139,23 +138,21 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/btn_gradient_rounded"
                         android:onClick="@{() -> handler.onEmailLoginClicked()}"
-                        android:text="@string/log_in"
+                        android:text="@string/login"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
+
+
                     <TextView
                         style="@style/regular_label"
+                        android:fontFamily="@font/opensans_regular"
                         android:onClick="@{() -> handler.onForgotPasswordClicked()}"
                         android:padding="8dp"
-                        android:fontFamily="@font/opensans_regular"
                         android:text="@string/in_case_you_forgot_password"
                         android:textColor="@color/black" />
 
-                    <FrameLayout
-                        android:id="@+id/container"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -197,13 +194,13 @@
                         android:layout_marginTop="24dp"
                         android:gravity="center_horizontal">
 
-                        <ImageView
+                        <!--<ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:onClick="@{() -> handler.onFacebookLoginClicked()}"
-                            android:src="@drawable/ic_facebook" />
+                            android:src="@drawable/ic_facebook" />-->
 
                         <ImageView
                             android:layout_width="36dp"

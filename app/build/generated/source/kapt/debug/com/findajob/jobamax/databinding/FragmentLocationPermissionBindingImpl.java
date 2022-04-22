@@ -26,9 +26,9 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback58;
+    private final android.view.View.OnClickListener mCallback56;
     @Nullable
-    private final android.view.View.OnClickListener mCallback57;
+    private final android.view.View.OnClickListener mCallback55;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -44,15 +44,15 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
             , (android.widget.TextView) bindings[5]
             );
-        this.button2.setTag(null);
+        this.btnAllowLocation.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback58 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback57 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback56 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback55 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,8 +114,8 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.button2.setOnClickListener(mCallback57);
-            this.mboundView2.setOnClickListener(mCallback58);
+            this.btnAllowLocation.setOnClickListener(mCallback55);
+            this.mboundView2.setOnClickListener(mCallback56);
         }
     }
     // Listener Stub Implementations

@@ -8,13 +8,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationInterface;
 import com.google.android.material.appbar.AppBarLayout;
-import com.suke.widget.SwitchButton;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -26,10 +26,10 @@ public abstract class FragmentJobSeekerPushNotificationBinding extends ViewDataB
   public final AppCompatImageView imageView;
 
   @NonNull
-  public final SwitchButton messageCheck;
+  public final SwitchCompat messageCheck;
 
   @NonNull
-  public final SwitchButton newMatchesFlag;
+  public final SwitchCompat newMatchesFlag;
 
   @NonNull
   public final AppCompatTextView tvToolbarTitle;
@@ -39,7 +39,7 @@ public abstract class FragmentJobSeekerPushNotificationBinding extends ViewDataB
 
   protected FragmentJobSeekerPushNotificationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppBarLayout appBar, AppCompatImageView imageView,
-      SwitchButton messageCheck, SwitchButton newMatchesFlag, AppCompatTextView tvToolbarTitle) {
+      SwitchCompat messageCheck, SwitchCompat newMatchesFlag, AppCompatTextView tvToolbarTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.appBar = appBar;
     this.imageView = imageView;

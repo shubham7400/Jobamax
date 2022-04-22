@@ -13,6 +13,7 @@ import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPers
  import com.findajob.jobamax.jobseeker.profile.cv.model.*
 
 import com.findajob.jobamax.model.*
+import com.findajob.jobamax.preference.getCurrentLocation
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.preference.setNewMatchPNFlag
 import com.findajob.jobamax.preference.setProfilePicUrl
@@ -149,6 +150,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
         jobSeekerObject!!.put(ParseTableFields.dob.toString(), personalInfoModel.dob)
         jobSeekerObject!!.put(ParseTableFields.email.toString(), personalInfoModel.email)
         jobSeekerObject!!.put(ParseTableFields.phoneNumber.toString(), personalInfoModel.phoneNumber)
+
         jobSeekerObject!!.saveInBackground {
             callback(it)
         }
@@ -166,8 +168,8 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
             if (it == null) {
                 jobSeekerObject?.put("profilePicUrl", parseFile.url)
                 context.setProfilePicUrl(parseFile.url ?: "")
-                jobSeekerObject?.saveInBackground {
-                    callback.onFinish(it == null)
+                jobSeekerObject?.saveInBackground { exception ->
+                    callback.onFinish(exception == null)
                 }
             } else callback.onFinish(false)
         })

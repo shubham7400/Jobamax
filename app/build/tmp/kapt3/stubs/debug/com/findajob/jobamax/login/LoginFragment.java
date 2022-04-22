@@ -2,17 +2,26 @@ package com.findajob.jobamax.login;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u00012\u00020\u0003B\u0005\u00a2\u0006\u0002\u0010\u0004J\b\u0010\u0015\u001a\u00020\u0016H\u0002JT\u0010\u0017\u001a\u00020\u001626\u0010\u0018\u001a2\u0012\u0013\u0012\u00110\u001a\u00a2\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u001d\u0012\u0013\u0012\u00110\u001e\u00a2\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u001f\u0012\u0004\u0012\u00020\u00160\u00192\u0012\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\"\u0012\u0004\u0012\u00020\u00160!H\u0002J\b\u0010#\u001a\u00020$H\u0014J\u0016\u0010%\u001a\u00020\u00162\f\u0010&\u001a\b\u0012\u0004\u0012\u00020(0\'H\u0002J\b\u0010)\u001a\u00020\u0016H\u0002J\"\u0010*\u001a\u00020\u00162\u0006\u0010+\u001a\u00020\n2\u0006\u0010,\u001a\u00020\n2\b\u0010-\u001a\u0004\u0018\u00010\u0007H\u0016J\u0012\u0010.\u001a\u00020\u00162\b\u0010/\u001a\u0004\u0018\u000100H\u0014J\b\u00101\u001a\u00020\u0016H\u0016J\b\u00102\u001a\u00020\u0016H\u0016J\b\u00103\u001a\u00020\u0016H\u0016J\b\u00104\u001a\u00020\u0016H\u0016J\b\u00105\u001a\u00020\u0016H\u0016J\b\u00106\u001a\u00020\u0016H\u0016J\b\u00107\u001a\u00020\u0016H\u0016J\b\u00108\u001a\u00020\u0016H\u0016J\u001a\u00109\u001a\u00020\u00162\u0006\u0010:\u001a\u00020;2\b\u0010<\u001a\u0004\u0018\u000100H\u0016R\u001c\u0010\u0005\u001a\u0010\u0012\f\u0012\n \b*\u0004\u0018\u00010\u00070\u00070\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\u00020\n8TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082.\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.\u00a2\u0006\u0002\n\u0000\u00a8\u0006="}, d2 = {"Lcom/findajob/jobamax/login/LoginFragment;", "Lcom/findajob/jobamax/base/BaseFragmentMain;", "Lcom/findajob/jobamax/databinding/FragmentLoginBinding;", "Lcom/findajob/jobamax/login/LoginInterface;", "()V", "googleLoginActivityResult", "Landroidx/activity/result/ActivityResultLauncher;", "Landroid/content/Intent;", "kotlin.jvm.PlatformType", "layoutRes", "", "getLayoutRes", "()I", "linkedInFlag", "", "mGoogleSignInClient", "Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;", "navController", "Landroidx/navigation/NavController;", "viewModel", "Lcom/findajob/jobamax/login/LoginViewModel;", "configureViewModel", "", "getUserDetailFromFB", "onSuccess", "Lkotlin/Function2;", "Lcom/findajob/jobamax/model/User;", "Lkotlin/ParameterName;", "name", "user", "Lcom/parse/ParseObject;", "parseObject", "onError", "Lkotlin/Function1;", "", "getViewModel", "Landroidx/lifecycle/ViewModel;", "handleSignInResult", "completedTask", "Lcom/google/android/gms/tasks/Task;", "Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;", "initViews", "onActivityResult", "requestCode", "resultCode", "data", "onCreated", "savedInstance", "Landroid/os/Bundle;", "onEmailLoginClicked", "onEyeClicked", "onFacebookLoginClicked", "onForgotPasswordClicked", "onGoogleLoginClicked", "onLinkedInLoginClicked", "onRegisterClicked", "onResume", "onViewCreated", "view", "Landroid/view/View;", "savedInstanceState", "app_debug"})
-public final class LoginFragment extends com.findajob.jobamax.base.BaseFragmentMain<com.findajob.jobamax.databinding.FragmentLoginBinding> implements com.findajob.jobamax.login.LoginInterface {
+@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u00012\u00020\u00032\u00020\u0004B\u0005\u00a2\u0006\u0002\u0010\u0005J\b\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u001dH\u0014J\u0016\u0010\u001e\u001a\u00020\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0002J\b\u0010\"\u001a\u00020\u001bH\u0002J\u0012\u0010#\u001a\u00020\u001b2\b\u0010$\u001a\u0004\u0018\u00010%H\u0014J\b\u0010&\u001a\u00020\u001bH\u0016J\b\u0010\'\u001a\u00020\u001bH\u0016J\b\u0010(\u001a\u00020\u001bH\u0016J\b\u0010)\u001a\u00020\u001bH\u0016J\b\u0010*\u001a\u00020\u001bH\u0016J\u0012\u0010+\u001a\u00020\u001b2\b\u0010,\u001a\u0004\u0018\u00010-H\u0016J\b\u0010.\u001a\u00020\u001bH\u0016J\u0012\u0010/\u001a\u00020\u001b2\b\u00100\u001a\u0004\u0018\u000101H\u0016J\b\u00102\u001a\u00020\u001bH\u0016J\u0012\u00103\u001a\u00020\u001b2\b\u00104\u001a\u0004\u0018\u000105H\u0016J\b\u00106\u001a\u00020\u001bH\u0016J\u0012\u00107\u001a\u00020\u001b2\b\u00108\u001a\u0004\u0018\u000109H\u0016J\b\u0010:\u001a\u00020\u001bH\u0016J\b\u0010;\u001a\u00020\u001bH\u0016J\b\u0010<\u001a\u00020\u001bH\u0016J\b\u0010=\u001a\u00020\u001bH\u0016J\u001a\u0010>\u001a\u00020\u001b2\u0006\u0010?\u001a\u00020@2\b\u0010A\u001a\u0004\u0018\u00010%H\u0016R\u001c\u0010\u0006\u001a\u0010\u0012\f\u0012\n \t*\u0004\u0018\u00010\b0\b0\u0007X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\u00020\u000b8TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u000fX\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082.\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082.\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082.\u00a2\u0006\u0002\n\u0000\u00a8\u0006B"}, d2 = {"Lcom/findajob/jobamax/login/LoginFragment;", "Lcom/findajob/jobamax/base/BaseFragmentMain;", "Lcom/findajob/jobamax/databinding/FragmentLoginBinding;", "Lcom/findajob/jobamax/login/LoginInterface;", "Lcom/realtimecoding/linkedinmanager/events/LinkedInManagerResponse;", "()V", "googleLoginActivityResult", "Landroidx/activity/result/ActivityResultLauncher;", "Landroid/content/Intent;", "kotlin.jvm.PlatformType", "layoutRes", "", "getLayoutRes", "()I", "linkedInRequestManager", "Lcom/realtimecoding/linkedinmanager/helper/LinkedInRequestManager;", "getLinkedInRequestManager", "()Lcom/realtimecoding/linkedinmanager/helper/LinkedInRequestManager;", "setLinkedInRequestManager", "(Lcom/realtimecoding/linkedinmanager/helper/LinkedInRequestManager;)V", "mGoogleSignInClient", "Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;", "navController", "Landroidx/navigation/NavController;", "viewModel", "Lcom/findajob/jobamax/login/LoginViewModel;", "configureViewModel", "", "getViewModel", "Landroidx/lifecycle/ViewModel;", "handleSignInResult", "completedTask", "Lcom/google/android/gms/tasks/Task;", "Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;", "initViews", "onCreated", "savedInstance", "Landroid/os/Bundle;", "onEmailLoginClicked", "onEyeClicked", "onFacebookLoginClicked", "onForgotPasswordClicked", "onGetAccessTokenFailed", "onGetAccessTokenSuccess", "linkedInAccessToken", "Lcom/realtimecoding/linkedinmanager/models/LinkedInAccessToken;", "onGetCodeFailed", "onGetCodeSuccess", "code", "", "onGetEmailAddressFailed", "onGetEmailAddressSuccess", "linkedInEmailAddress", "Lcom/realtimecoding/linkedinmanager/models/LinkedInEmailAddress;", "onGetProfileDataFailed", "onGetProfileDataSuccess", "linkedInUserProfile", "Lcom/realtimecoding/linkedinmanager/models/LinkedInUserProfile;", "onGoogleLoginClicked", "onLinkedInLoginClicked", "onRegisterClicked", "onResume", "onViewCreated", "view", "Landroid/view/View;", "savedInstanceState", "app_debug"})
+public final class LoginFragment extends com.findajob.jobamax.base.BaseFragmentMain<com.findajob.jobamax.databinding.FragmentLoginBinding> implements com.findajob.jobamax.login.LoginInterface, com.realtimecoding.linkedinmanager.events.LinkedInManagerResponse {
     private com.findajob.jobamax.login.LoginViewModel viewModel;
     private com.google.android.gms.auth.api.signin.GoogleSignInClient mGoogleSignInClient;
     private androidx.navigation.NavController navController;
-    private boolean linkedInFlag = false;
+    public com.realtimecoding.linkedinmanager.helper.LinkedInRequestManager linkedInRequestManager;
     private final androidx.activity.result.ActivityResultLauncher<android.content.Intent> googleLoginActivityResult = null;
     private java.util.HashMap _$_findViewCache;
     
     public LoginFragment() {
         super();
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final com.realtimecoding.linkedinmanager.helper.LinkedInRequestManager getLinkedInRequestManager() {
+        return null;
+    }
+    
+    public final void setLinkedInRequestManager(@org.jetbrains.annotations.NotNull()
+    com.realtimecoding.linkedinmanager.helper.LinkedInRequestManager p0) {
     }
     
     @java.lang.Override()
@@ -55,14 +64,6 @@ public final class LoginFragment extends com.findajob.jobamax.base.BaseFragmentM
     public void onEyeClicked() {
     }
     
-    private final void handleSignInResult(com.google.android.gms.tasks.Task<com.google.android.gms.auth.api.signin.GoogleSignInAccount> completedTask) {
-    }
-    
-    @java.lang.Override()
-    public void onActivityResult(int requestCode, int resultCode, @org.jetbrains.annotations.Nullable()
-    android.content.Intent data) {
-    }
-    
     @java.lang.Override()
     public void onFacebookLoginClicked() {
     }
@@ -71,8 +72,7 @@ public final class LoginFragment extends com.findajob.jobamax.base.BaseFragmentM
     public void onGoogleLoginClicked() {
     }
     
-    @java.lang.Override()
-    public void onLinkedInLoginClicked() {
+    private final void handleSignInResult(com.google.android.gms.tasks.Task<com.google.android.gms.auth.api.signin.GoogleSignInAccount> completedTask) {
     }
     
     @java.lang.Override()
@@ -83,12 +83,43 @@ public final class LoginFragment extends com.findajob.jobamax.base.BaseFragmentM
     public void onRegisterClicked() {
     }
     
-    /**
-     * Extract facebook user information
-     *
-     * @param onSuccess, success callback return [User] and [ParseObject]
-     * @param onError, error callback return [Throwable]
-     */
-    private final void getUserDetailFromFB(kotlin.jvm.functions.Function2<? super com.findajob.jobamax.model.User, ? super com.parse.ParseObject, kotlin.Unit> onSuccess, kotlin.jvm.functions.Function1<? super java.lang.Throwable, kotlin.Unit> onError) {
+    @java.lang.Override()
+    public void onLinkedInLoginClicked() {
+    }
+    
+    @java.lang.Override()
+    public void onGetAccessTokenFailed() {
+    }
+    
+    @java.lang.Override()
+    public void onGetAccessTokenSuccess(@org.jetbrains.annotations.Nullable()
+    com.realtimecoding.linkedinmanager.models.LinkedInAccessToken linkedInAccessToken) {
+    }
+    
+    @java.lang.Override()
+    public void onGetCodeFailed() {
+    }
+    
+    @java.lang.Override()
+    public void onGetCodeSuccess(@org.jetbrains.annotations.Nullable()
+    java.lang.String code) {
+    }
+    
+    @java.lang.Override()
+    public void onGetEmailAddressFailed() {
+    }
+    
+    @java.lang.Override()
+    public void onGetEmailAddressSuccess(@org.jetbrains.annotations.Nullable()
+    com.realtimecoding.linkedinmanager.models.LinkedInEmailAddress linkedInEmailAddress) {
+    }
+    
+    @java.lang.Override()
+    public void onGetProfileDataFailed() {
+    }
+    
+    @java.lang.Override()
+    public void onGetProfileDataSuccess(@org.jetbrains.annotations.Nullable()
+    com.realtimecoding.linkedinmanager.models.LinkedInUserProfile linkedInUserProfile) {
     }
 }

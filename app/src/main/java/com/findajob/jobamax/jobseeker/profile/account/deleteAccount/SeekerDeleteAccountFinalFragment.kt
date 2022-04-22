@@ -40,7 +40,6 @@ class SeekerDeleteAccountFinalFragment : BaseFragmentMain<FragmentSeekerDeleteAc
 
     private fun observeDeleteStatus() {
         observe(viewModel.deleteAccountLiveData) {
-            showLoading(false)
             if (it == true) {
                 requireActivity().clearUserPref()
                 startActivity(Intent(requireActivity(), MainActivity::class.java))
@@ -54,10 +53,7 @@ class SeekerDeleteAccountFinalFragment : BaseFragmentMain<FragmentSeekerDeleteAc
     override fun onDeleteAccount() {
         val deleteAccountDialog = DeleteAccountDialog(requireActivity()) {
             progressHud.show()
-            ParseCloud.callFunctionInBackground(
-                ParseCloudFunction.deleteUser.toString(),
-                hashMapOf( "jobSeekerId" to requireActivity().getUserId()),
-                FunctionCallback<Any?> { response, e ->
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.deleteUser.toString(), hashMapOf( "jobSeekerId" to requireActivity().getUserId()), FunctionCallback<Any?> { response, e ->
                     progressHud.dismiss()
                     if (e == null) {
                         requireActivity().clearUserPref()
@@ -69,10 +65,6 @@ class SeekerDeleteAccountFinalFragment : BaseFragmentMain<FragmentSeekerDeleteAc
                 })
         }
         deleteAccountDialog.show()
-
-        /*val reasons = arguments?.getString(LeavingReason::class.simpleName)
-        showLoading(true)
-        viewModel.deleteAccount(reasons)*/
     }
 
     override fun onBackPress() {

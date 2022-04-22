@@ -2,7 +2,7 @@ package com.findajob.jobamax.enums;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0010\b\u0086\u0001\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010\u00a8\u0006\u0011"}, d2 = {"Lcom/findajob/jobamax/enums/ParseCloudFunction;", "", "(Ljava/lang/String;I)V", "getTopics", "getSeasonsById", "saveInMyList", "saveLikeAndDislike", "getTrackingStatus", "getJobSearch", "dropoutActions", "addJobToWishlist", "removeFromWishlist", "getJobsLogo", "deleteUser", "getJobTitles", "addJobTitle", "importFromLinkedIn", "app_debug"})
+@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0012\b\u0086\u0001\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012\u00a8\u0006\u0013"}, d2 = {"Lcom/findajob/jobamax/enums/ParseCloudFunction;", "", "(Ljava/lang/String;I)V", "getTopics", "getSeasonsById", "saveInMyList", "saveLikeAndDislike", "getTrackingStatus", "getJobSearch", "dropoutActions", "addJobToWishlist", "removeFromWishlist", "getJobsLogo", "deleteUser", "getJobTitles", "addJobTitle", "importFromLinkedIn", "saveSpentTime", "saveSwipeCount", "app_debug"})
 public enum ParseCloudFunction {
     /*public static final*/ getTopics /* = new getTopics() */,
     /*public static final*/ getSeasonsById /* = new getSeasonsById() */,
@@ -17,7 +17,9 @@ public enum ParseCloudFunction {
     /*public static final*/ deleteUser /* = new deleteUser() */,
     /*public static final*/ getJobTitles /* = new getJobTitles() */,
     /*public static final*/ addJobTitle /* = new addJobTitle() */,
-    /*public static final*/ importFromLinkedIn /* = new importFromLinkedIn() */;
+    /*public static final*/ importFromLinkedIn /* = new importFromLinkedIn() */,
+    /*public static final*/ saveSpentTime /* = new saveSpentTime() */,
+    /*public static final*/ saveSwipeCount /* = new saveSwipeCount() */;
     
     ParseCloudFunction() {
     }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerAddVolunteeringBinding
@@ -51,9 +52,7 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
     }
 
     private fun setClickListeners() {
-        binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
-        }
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerAddVolunteeringFragment_to_seekerProfileFragment, null))
          binding.btnAddVolunteering.setOnClickListener {
              if(validate()){
                  val volunteering = if (volunteeringOld != null){
@@ -98,7 +97,7 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
             }
         }
         binding.ivBackButton.setOnClickListener {
-            (activity as SeekerProfileActivity).onBackPressed()
+            requireActivity().onBackPressed()
         }
         binding.tvSelectLocation.setOnClickListener {
             autocompleteFragment.requireView().findViewById<View>(R.id.places_autocomplete_search_input).performClick()

@@ -55,7 +55,7 @@
                    android:layout_height="wrap_content"
                    android:layout_centerInParent="true"
                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/opensans_bold"
+                   android:fontFamily="@font/opensans_bold"
                    android:text="@string/tracking"
                    android:textColor="@color/colorPrimary"
                    android:textSize="20dp" />

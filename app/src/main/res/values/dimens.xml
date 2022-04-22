@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="small_padding">8dp</dimen>
-    <dimen name="text_size_regular">16sp</dimen>
-    <dimen name="medium_padding">16dp</dimen>
-    <dimen name="tab_height_online_course">60dp</dimen>
-</resources>
+<resources></resources>

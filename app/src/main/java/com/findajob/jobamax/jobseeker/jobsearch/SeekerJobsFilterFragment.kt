@@ -215,11 +215,11 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
                     binding.accbMoreThanTwo.isChecked = true
                 }
             }
-            if (jobSeekerJobFilter.lat != null) {
-                lat = jobSeekerJobFilter.lat
+            if (jobSeekerJobFilter.latitude != null) {
+                lat = jobSeekerJobFilter.latitude
             }
             if (jobSeekerJobFilter.searchString != null) {
-                lng = jobSeekerJobFilter.lng
+                lng = jobSeekerJobFilter.longitude
             }
         }
     }
@@ -344,8 +344,8 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         val filter = JobSeekerJobFilter()
         filter.searchString = if (binding.etJobKeyword.text.isNullOrEmpty()) null else binding.etJobKeyword.text.toString()
         filter.location = if (binding.tvSelectLocation.text.isNullOrEmpty()) null else binding.tvSelectLocation.text.toString()
-        filter.lat = if (lat == null) getCurrentLatitude() else lat
-        filter.lng = if (lng == null) getCurrentLongitude() else lng
+        filter.latitude = if (lat == null) getCurrentLatitude() else lat
+        filter.longitude = if (lng == null) getCurrentLongitude() else lng
         filter.distance = if (binding.tvDistance.text.isNullOrEmpty()) null else binding.tvDistance.text.toString().toInt()
         filter.companyName = if (binding.etCompanyName.text.isNullOrEmpty()) null else binding.etCompanyName.text.toString()
         filter.typeOfWork = listOfTypeOfWork

@@ -43,8 +43,10 @@
         <action
             android:id="@+id/action_locationPermissionFragment_to_meetPeopleNearbyFragment"
             app:destination="@id/meetPeopleNearbyFragment"
-            app:enterAnim="@anim/slide_in_bottom"
-            app:exitAnim="@anim/slide_out_bottom" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/meetPeopleNearbyFragment"

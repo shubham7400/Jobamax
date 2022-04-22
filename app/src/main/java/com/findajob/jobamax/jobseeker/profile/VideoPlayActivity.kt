@@ -5,21 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.findajob.jobamax.R
 import com.findajob.jobamax.databinding.ActivityVideoPlayBinding
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
+ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.util.Util
 
 class VideoPlayActivity : AppCompatActivity() {
     lateinit var binding: ActivityVideoPlayBinding
 
-    private val playbackStateListener: Player.EventListener = playbackStateListener()
+    private val playbackStateListener: Player.Listener  = playbackStateListener()
 
-    private var player: SimpleExoPlayer? = null
+    private var player: ExoPlayer? = null
 
     private var playWhenReady = true
     private var currentWindow = 0
@@ -48,7 +46,7 @@ class VideoPlayActivity : AppCompatActivity() {
         }
         if (player == null){
             try {
-                player = SimpleExoPlayer.Builder(this)
+                player = ExoPlayer.Builder(this)
                     .setTrackSelector(trackSelector)
                     .build()
                     .also { exoPlayer ->
@@ -125,8 +123,8 @@ class VideoPlayActivity : AppCompatActivity() {
     }
 }
 
-private fun playbackStateListener() = object : Player.EventListener {
-    override fun onPlaybackStateChanged(playbackState: Int) {
+private fun playbackStateListener() = object : Player.Listener {
+    override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
         val stateString: String = when (playbackState) {
             ExoPlayer.STATE_IDLE -> "ExoPlayer.STATE_IDLE      -"
             ExoPlayer.STATE_BUFFERING -> "ExoPlayer.STATE_BUFFERING -"

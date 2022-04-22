@@ -1,9 +1,8 @@
 package com.findajob.jobamax.util
 
+import android.Manifest
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -12,7 +11,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.FileProvider
-import com.findajob.jobamax.BuildConfig
 import com.findajob.jobamax.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.io.File
@@ -33,12 +31,12 @@ class ImagePicker constructor(var getImage: GetImage) : BottomSheetDialogFragmen
         val view: View = inflater.inflate(R.layout.layout_image_picker, container, false)
 
         view.findViewById<View>(R.id.camera).setOnClickListener {
-            if (requireActivity().checkForPermissions()) {
+            if (requireActivity().checkForPermissions(arrayOf(Manifest.permission.CAMERA))) {
                 captureFromCamera()
             }
         }
         view.findViewById<View>(R.id.gallery).setOnClickListener {
-            if (requireActivity().checkForPermissions()) {
+            if (requireActivity().checkForPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE))) {
                 startGallery()
             }
         }

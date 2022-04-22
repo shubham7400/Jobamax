@@ -20,7 +20,7 @@ import java.lang.Object;
 
 public abstract class FragmentLocationPermissionBinding extends ViewDataBinding {
   @NonNull
-  public final Button button2;
+  public final Button btnAllowLocation;
 
   @NonNull
   public final ImageView imageView6;
@@ -38,10 +38,10 @@ public abstract class FragmentLocationPermissionBinding extends ViewDataBinding 
   protected LocationPermissionInterface mHandler;
 
   protected FragmentLocationPermissionBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, Button button2, ImageView imageView6, ImageView ivBackButton,
+      int _localFieldCount, Button btnAllowLocation, ImageView imageView6, ImageView ivBackButton,
       ConstraintLayout linearLayout2, TextView textView2) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.button2 = button2;
+    this.btnAllowLocation = btnAllowLocation;
     this.imageView6 = imageView6;
     this.ivBackButton = ivBackButton;
     this.linearLayout2 = linearLayout2;

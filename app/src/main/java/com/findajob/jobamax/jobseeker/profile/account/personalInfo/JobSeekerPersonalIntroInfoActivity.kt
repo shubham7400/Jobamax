@@ -15,9 +15,11 @@ import com.findajob.jobamax.databinding.ActivityJobSeekerPersonalIntroInfoBindin
  import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.LoginType
+import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
  import com.findajob.jobamax.model.JobSeeker
+import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
   import com.google.firebase.dynamiclinks.ktx.androidParameters
@@ -26,7 +28,8 @@ import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
 import com.parse.*
 import kotlinx.android.synthetic.main.fragment_job_seeker_personal_information.*
- import java.util.*
+import java.io.Serializable
+import java.util.*
 import kotlin.collections.HashMap
 
 
@@ -37,6 +40,8 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
     private lateinit var viewModel: JobSeekerPersonalIntroInfoViewModel
     private lateinit var personalInfoModel: JobSeekerPersonalInformationModel
 
+    var user : UserTempInfo? = null
+
 
     override val layoutRes: Int get() = R.layout.activity_job_seeker_personal_intro_info
 
@@ -44,28 +49,32 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
     override fun onCreated(instance: Bundle?) {
         configureViewModel()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        user = intent.getSerializableExtra(ARG_USER) as UserTempInfo
         initViews()
     }
 
     private fun initViews() {
         binding.handler = this
-
-        when(getLoginType()){
-            LoginType.email.toString() -> {
-                binding.etEmailField.setText(getEmail())
+        binding.etEmailField.setText(user?.email ?: "")
+        when(user?.loginType){
+            LoginType.EMAIL.type -> {
+                binding.etEmailField.isClickable = false
             }
-            LoginType.facebook.toString() -> {
+            LoginType.FACEBOOK.type -> {
                 binding.etEmailField.isClickable = true
             }
-            LoginType.linkedin.toString() -> {
+            LoginType.LINKEDIN.type -> {
                 binding.etEmailField.isClickable = true
             }
-            LoginType.google.toString() -> {
-
+            LoginType.GOOGLE.type -> {
+                binding.etEmailField.isClickable = true
             }
         }
 
-       /* progressHud.show()*/
     }
 
     private fun configureViewModel() {
@@ -77,12 +86,12 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
 
     private fun subscribeObserver() {
-        viewModel.getJobSeekerObserver().observe(this, {
+        viewModel.getJobSeekerObserver().observe(this) {
             progressHud.dismiss()
             personalInfoModel = JobSeekerPersonalInformationModel(it)
             binding.jobSeeker = personalInfoModel
             binding.tvGenderHint.text = personalInfoModel.gender.capitalize(Locale.ROOT)
-        })
+        }
     }
 
     override fun onGenderClicked(view: View) {
@@ -108,23 +117,10 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
     override fun onSubmitClicked() {
         addPhoneNumber()
-
-        if (validateFields()) {
-            progressHud.show()
-            storeUserInParse()
-           /* viewModel.submitData(personalInfoModel) {
-                progressHud.dismiss()
-                if (it != null)
-                    errorToast(it)
-                else {
-                    val dialog = RegistrationSuccessfulDialog(this) {
-                        startActivity(Intent(this, LoginActivity::class.java))
-                        finish()
-                    }
-                    dialog.setCancelable(false)
-                    dialog.show()
-                }
-            }*/
+        if (user != null) {
+            if (validateFields()) {
+                storeUserInParse()
+            }
         }
     }
 
@@ -223,13 +219,9 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         progressHud.show()
         val jobSeeker = JobSeeker()
         val id = UUID.randomUUID().toString()
-        if (getLoginType() == LoginType.email.toString()){
-            jobSeeker.jobSeekerId = id
-        }else{
-            jobSeeker.jobSeekerId = getUserId()
-        }
-        jobSeeker.email = getEmail()
-        jobSeeker.loginType = getLoginType()
+        jobSeeker.jobSeekerId = id
+        jobSeeker.email = user!!.email
+        jobSeeker.loginType = user!!.loginType
         jobSeeker.firstName = binding.etFirstName.text.toString()
         jobSeeker.lastName = binding.etLastName.text.toString()
         jobSeeker.gender = binding.tvGenderHint.text.toString()
@@ -241,53 +233,65 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         jobSeeker.dob = binding.tvDateOfBirthField.text.toString()
         jobSeeker.profilePicUrl = ""
         jobSeeker.emailVerified = false
-        jobSeeker.password = AESCrypt.encrypt(getPassword())
+        if (user!!.password != ""){
+            jobSeeker.password = AESCrypt.encrypt(user!!.password)
+        }
         jobSeeker.gotReferralCode = ""
+        jobSeeker.accountType = 1
+        jobSeeker.lat = getCurrentLatitude()
+        jobSeeker.lng = getCurrentLongitude()
+        jobSeeker.location = getAddressByLatLng(getCurrentLatitude(), getCurrentLongitude(), this)
+
         val parseObject = jobSeeker.toParseObject()
         parseObject.saveInBackground { e ->
             progressHud.dismiss()
             if (e != null) {
                 toast(e.message.toString())
             } else {
-                progressHud.show()
-                val builder = Uri.Builder()
-                builder.scheme("https")
-                    .authority("jobamax.page.link")
-                    .appendPath(FirebaseDynamicLinkPath.verifyemail.toString())
-                    .appendQueryParameter("userType", getUserType().toString())
-                    .appendQueryParameter("LoginType", LoginType.email.toString())
-                    .appendQueryParameter("recruiterId", id)
-                val myUrl: String = builder.build().toString()
-                val dynamicLink = Firebase.dynamicLinks.dynamicLink {
-                    link = Uri.parse(myUrl)
-                    domainUriPrefix = "https://jobamax.page.link"
-                    androidParameters("com.findajob.jobamax") {
+                if (user!!.loginType == LoginType.EMAIL.type){
+                    progressHud.show()
+                    val builder = Uri.Builder()
+                    builder.scheme("https")
+                        .authority("jobamax.page.link")
+                        .appendPath(FirebaseDynamicLinkPath.verifyemail.toString())
+                        .appendQueryParameter("userType", getUserType().toString())
+                        .appendQueryParameter("LoginType", LoginType.EMAIL.type)
+                        .appendQueryParameter("recruiterId", id)
+                    val myUrl: String = builder.build().toString()
+                    val dynamicLink = Firebase.dynamicLinks.dynamicLink {
+                        link = Uri.parse(myUrl)
+                        domainUriPrefix = "https://jobamax.page.link"
+                        androidParameters("com.findajob.jobamax") {
+                        }
                     }
-                }
-                val param = HashMap<String, String>()
-                param["toEmail"] = getEmail()
-                param["link"] = dynamicLink.uri.toString()
-                ParseCloud.callFunctionInBackground<Any>("sendgridEmail", param) { obj, e ->
-                    progressHud.dismiss()
-                    if (e != null && obj == null) {
-                        toast("Something Went Wrong.")
-                    } else {
-                        BasicDialog(
-                            this@JobSeekerPersonalIntroInfoActivity,
-                            "An email with verification link is sent to:\n ${getEmail()}",
-                            true
-                        ) {
-                            startActivity(
-                                Intent(
-                                    this@JobSeekerPersonalIntroInfoActivity,
-                                    MainActivity::class.java
+                    val param = HashMap<String, String>()
+                    param["toEmail"] = getEmail()
+                    param["link"] = dynamicLink.uri.toString()
+                    ParseCloud.callFunctionInBackground<Any>("sendgridEmail", param) { obj, e ->
+                        progressHud.dismiss()
+                        if (e != null && obj == null) {
+                            toast("Something Went Wrong.")
+                        } else {
+                            BasicDialog(
+                                this@JobSeekerPersonalIntroInfoActivity,
+                                "An email with verification link is sent to:\n ${getEmail()}",
+                                true
+                            ) {
+                                startActivity(
+                                    Intent(
+                                        this@JobSeekerPersonalIntroInfoActivity,
+                                        MainActivity::class.java
+                                    )
                                 )
-                            )
-                            finish()
-                        }.also {
-                            it.setCancelable(false)
-                        }.show()
+                                finish()
+                            }.also {
+                                it.setCancelable(false)
+                            }.show()
+                        }
                     }
+                }else{
+                    startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                    finishAffinity()
                 }
             }
         }

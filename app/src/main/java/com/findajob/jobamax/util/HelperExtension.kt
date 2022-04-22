@@ -21,11 +21,6 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.data.pojo.Location
 import com.findajob.jobamax.preference.getCurrentLocation
 import com.google.gson.Gson
-import com.karumi.dexter.Dexter
-import com.karumi.dexter.MultiplePermissionsReport
-import com.karumi.dexter.PermissionToken
-import com.karumi.dexter.listener.PermissionRequest
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 
 
 fun Any.log(text: String) {
@@ -109,47 +104,6 @@ fun List<String>.toPlainString(): String {
 
 
 
-fun Context.manageLocationPermission(onGranted: () -> Unit, onDeniedOne: () -> Unit, onPermanentlyDeniedAnyOne: () -> Unit) {
-    try {
-        val allPermissions = mutableListOf(
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION
-        )
-        val listenerCallback = object : MultiplePermissionsListener {
-            override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {
-                when (p0 == null) {
-                    true -> onDeniedOne.invoke()
-                    else -> {
-                        when {
-                            p0.areAllPermissionsGranted() -> {
-                                onGranted.invoke()
-                            }
-                            p0.isAnyPermissionPermanentlyDenied -> {
-                                onPermanentlyDeniedAnyOne.invoke()
-                            }
-                            p0.grantedPermissionResponses.size != allPermissions.size -> {
-                                onDeniedOne.invoke()
-                            }
-                        }
-                    }
-                }
-            }
-
-            override fun onPermissionRationaleShouldBeShown(
-                p0: MutableList<PermissionRequest>?,
-                p1: PermissionToken?
-            ) {
-                p1?.continuePermissionRequest()
-            }
-        }
-        Dexter.withContext(this)
-            .withPermissions(allPermissions)
-            .withListener(listenerCallback)
-            .check()
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-}
 
 /**
  * Open respective app settings

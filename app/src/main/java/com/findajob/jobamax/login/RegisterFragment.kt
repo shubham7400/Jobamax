@@ -11,6 +11,8 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.base.isNetworkConnected
 import com.findajob.jobamax.data.remote.NoInternetException
 import com.findajob.jobamax.databinding.FragmentRegisterBinding
+import com.findajob.jobamax.enums.LoginType
+import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.util.isValidEmail
 import com.findajob.jobamax.util.toast
 
@@ -22,8 +24,15 @@ class RegisterFragment : BaseFragmentMain<FragmentRegisterBinding>(), RegisterIn
 	override val layoutRes: Int get() = R.layout.fragment_register
 
 	override fun onCreated(savedInstance: Bundle?) {
-		viewModel = ViewModelProvider(requireActivity()).get(LoginViewModel::class.java)
+		viewModel = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
 		binding.handler = this
+
+		binding.tvLogin.setOnClickListener {
+			requireActivity().onBackPressed()
+		}
+		binding.ivBackButton.setOnClickListener {
+			requireActivity().onBackPressed()
+		}
 
 	}
 
@@ -49,7 +58,12 @@ class RegisterFragment : BaseFragmentMain<FragmentRegisterBinding>(), RegisterIn
 			toast("Password and Confirm password does not match")
 		}else{
 			if (requireContext().isNetworkConnected()){
-				(requireActivity() as LoginActivity).isEmailAlreadyRegistered(email, password)
+					val user = UserTempInfo().also {
+						it.email = email
+						it.password = password
+						it.loginType = LoginType.EMAIL.type
+					}
+				(requireActivity() as LoginActivity).isEmailAlreadyRegistered(user){}
 			}else{
 				toast(NoInternetException.MSG)
 			}

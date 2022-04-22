@@ -1,24 +1,15 @@
 package com.findajob.jobamax
 
-import android.Manifest
 import android.app.Application
-import android.content.Intent
-import android.content.pm.PackageManager
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleObserver
- import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
 import com.google.firebase.messaging.FirebaseMessaging
 import com.parse.*
-import com.parse.facebook.ParseFacebookUtils
-import com.parse.google.ParseGoogleUtils
 import com.pushwoosh.Pushwoosh
-import com.uxcam.UXCam
-import dagger.hilt.android.HiltAndroidApp
-import timber.log.Timber
+ import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
@@ -30,7 +21,6 @@ class BaseApplication : Application(), LifecycleObserver {
         initialiseParseSdk()
         setJobSeekerJobFilter("")
         Pushwoosh.getInstance().registerForPushNotifications( ) // registering pushwoosh notification
-        configureUXCam()
         updateAppUsageCount()
     }
 
@@ -96,16 +86,12 @@ class BaseApplication : Application(), LifecycleObserver {
 
 
 
-    private fun configureUXCam() {
-        UXCam.startWithKey(UX_CAM_API_KEY)
-    }
 
     private fun subscribeToFirebaseMessagingTopics() {
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/abc123456789")
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/" + getUserId())
         getUserObjectId().let {
             FirebaseMessaging.getInstance().subscribeToTopic("/topics/$it")
-            Timber.d("onCreate: /topics/$it")
         }
     }
 
@@ -121,8 +107,6 @@ class BaseApplication : Application(), LifecycleObserver {
         val installation = ParseInstallation.getCurrentInstallation()
         installation.put("GCMSenderId", "916226274147")
         installation.saveInBackground()
-        ParseFacebookUtils.initialize(this)
-        ParseGoogleUtils.initialize(getString(R.string.default_web_client_id))
 
 
     }

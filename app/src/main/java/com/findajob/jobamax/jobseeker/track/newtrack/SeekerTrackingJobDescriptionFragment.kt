@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobDescriptionBinding
@@ -60,9 +61,7 @@ class SeekerTrackingJobDescriptionFragment : BaseFragmentMain<FragmentSeekerTrac
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
-        }
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobDescriptionFragment_to_seekerTrackingJobFragment, null))
     }
 
 }

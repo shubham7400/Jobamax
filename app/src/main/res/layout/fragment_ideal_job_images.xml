@@ -75,8 +75,8 @@
                         android:layout_marginTop="30dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@string/upload_image"
-                        android:textColor="@color/colorHypeLink"
-                        android:textSize="20sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 

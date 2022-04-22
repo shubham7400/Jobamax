@@ -1,12 +1,7 @@
 package com.findajob.jobamax.base
 
 import android.content.Context
-import android.graphics.Paint
 import android.net.ConnectivityManager
-import android.widget.TextView
-import timber.log.Timber
-
-
 
 
 fun Context.isNetworkConnected(): Boolean {

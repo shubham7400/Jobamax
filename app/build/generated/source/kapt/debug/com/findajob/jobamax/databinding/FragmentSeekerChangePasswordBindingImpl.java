@@ -25,11 +25,11 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback25;
-    @Nullable
     private final android.view.View.OnClickListener mCallback23;
     @Nullable
-    private final android.view.View.OnClickListener mCallback24;
+    private final android.view.View.OnClickListener mCallback21;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback22;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -53,9 +53,9 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
         this.submitButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback25 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback23 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback24 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback23 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback21 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback22 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -117,9 +117,9 @@ public class FragmentSeekerChangePasswordBindingImpl extends FragmentSeekerChang
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback23);
-            this.mboundView2.setOnClickListener(mCallback24);
-            this.submitButton.setOnClickListener(mCallback25);
+            this.imageView.setOnClickListener(mCallback21);
+            this.mboundView2.setOnClickListener(mCallback22);
+            this.submitButton.setOnClickListener(mCallback23);
         }
     }
     // Listener Stub Implementations

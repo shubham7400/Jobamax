@@ -7,9 +7,7 @@ import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
-import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity;
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment;
-import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity;
 import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingFragment;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel;
@@ -20,20 +18,20 @@ import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment;
-import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment;
-import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment;
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment;
 import com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment;
 import com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment;
-import com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity;
 import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFragment;
-import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity;
 import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment;
+import com.findajob.jobamax.login.LoginActivity;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import dagger.hilt.android.ActivityRetainedLifecycle;
+import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
 import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
@@ -49,7 +47,6 @@ import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideAppl
 import dagger.internal.DaggerGenerated;
 import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
-import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import javax.inject.Provider;
@@ -79,6 +76,11 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
   }
 
   @Override
+  public Set<Boolean> getDisableFragmentGetContextFix() {
+    return ImmutableSet.<Boolean>of();
+  }
+
+  @Override
   public ActivityRetainedComponentBuilder retainedComponentBuilder() {
     return new ActivityRetainedCBuilder(singletonC);
   }
@@ -96,6 +98,16 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     public Builder applicationContextModule(ApplicationContextModule applicationContextModule) {
       this.applicationContextModule = Preconditions.checkNotNull(applicationContextModule);
+      return this;
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder hiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule(
+        HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule hiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule) {
+      Preconditions.checkNotNull(hiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule);
       return this;
     }
 
@@ -362,7 +374,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment jobSeekerAccountFragment) {
+    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment arg0) {
     }
 
     @Override
@@ -445,14 +457,6 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectSeekerCalenderActivity(SeekerCalenderActivity arg0) {
-    }
-
-    @Override
-    public void injectSeekerCoachingActivity(SeekerCoachingActivity arg0) {
-    }
-
-    @Override
     public void injectJobSeekerHomeActivity(JobSeekerHomeActivity arg0) {
     }
 
@@ -461,19 +465,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectSeekerProfileActivity(SeekerProfileActivity arg0) {
-    }
-
-    @Override
-    public void injectJobSeekerAccountActivity(JobSeekerAccountActivity arg0) {
-    }
-
-    @Override
-    public void injectSeekerJobTrackingActivity(SeekerJobTrackingActivity arg0) {
-    }
-
-    @Override
-    public void injectSeekerWishListActivity(SeekerWishListActivity arg0) {
+    public void injectLoginActivity(LoginActivity arg0) {
     }
 
     @Override
@@ -483,7 +475,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public Set<String> getViewModelKeys() {
-      return Collections.<String>singleton(JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory.provide());
+      return ImmutableSet.<String>of(JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory.provide());
     }
 
     @Override
@@ -531,7 +523,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-      return Collections.<String, Provider<ViewModel>>singletonMap("com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel", (Provider) jobSeekerHomeViewModelProvider);
+      return ImmutableMap.<String, Provider<ViewModel>>of("com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel", (Provider) jobSeekerHomeViewModelProvider);
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

@@ -61,7 +61,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ef_ic_camera_white"
+            app:srcCompat="@drawable/camera_icon"
             app:tint="@color/black" />
 
 

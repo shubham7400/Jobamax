@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
@@ -19,9 +18,6 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentLoginBinding extends ViewDataBinding {
-  @NonNull
-  public final FrameLayout container;
-
   @NonNull
   public final EditText emailField;
 
@@ -53,11 +49,10 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   protected LoginInterface mHandler;
 
   protected FragmentLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      FrameLayout container, EditText emailField, LinearLayout footerLayout, ImageView ivBackButton,
+      EditText emailField, LinearLayout footerLayout, ImageView ivBackButton,
       ImageView jobamaxImage, ImageView loginImage, LinearLayout loginLayout,
       EditText passwordField, ImageView showPasswordButton, LinearLayout socialMediaLayout) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.container = container;
     this.emailField = emailField;
     this.footerLayout = footerLayout;
     this.ivBackButton = ivBackButton;

@@ -33,6 +33,9 @@ public abstract class FragmentIdealJobDescriptionBinding extends ViewDataBinding
   public final RelativeLayout relativeLayout;
 
   @NonNull
+  public final TextView tvTextSize;
+
+  @NonNull
   public final TextView tvTitle;
 
   @Bindable
@@ -40,12 +43,14 @@ public abstract class FragmentIdealJobDescriptionBinding extends ViewDataBinding
 
   protected FragmentIdealJobDescriptionBinding(Object _bindingComponent, View _root,
       int _localFieldCount, CircleImageView civUser, EditText etIdealJobDescription,
-      ImageView ivBackButton, RelativeLayout relativeLayout, TextView tvTitle) {
+      ImageView ivBackButton, RelativeLayout relativeLayout, TextView tvTextSize,
+      TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.etIdealJobDescription = etIdealJobDescription;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
+    this.tvTextSize = tvTextSize;
     this.tvTitle = tvTitle;
   }
 

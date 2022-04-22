@@ -26,9 +26,9 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback56;
+    private final android.view.View.OnClickListener mCallback54;
     @Nullable
-    private final android.view.View.OnClickListener mCallback55;
+    private final android.view.View.OnClickListener mCallback53;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -40,8 +40,8 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         super(bindingComponent, root, 0
             , (com.google.android.material.appbar.AppBarLayout) bindings[3]
             , (androidx.appcompat.widget.AppCompatImageView) bindings[1]
-            , (com.suke.widget.SwitchButton) bindings[6]
-            , (com.suke.widget.SwitchButton) bindings[5]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[6]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[5]
             , (androidx.appcompat.widget.AppCompatTextView) bindings[4]
             );
         this.imageView.setTag(null);
@@ -51,8 +51,8 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback56 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback55 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback54 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback53 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,8 +114,8 @@ public class FragmentJobSeekerPushNotificationBindingImpl extends FragmentJobSee
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback55);
-            this.mboundView2.setOnClickListener(mCallback56);
+            this.imageView.setOnClickListener(mCallback53);
+            this.mboundView2.setOnClickListener(mCallback54);
         }
     }
     // Listener Stub Implementations

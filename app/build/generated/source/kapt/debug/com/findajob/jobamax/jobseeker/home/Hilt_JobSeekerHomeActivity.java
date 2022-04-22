@@ -2,9 +2,8 @@ package com.findajob.jobamax.jobseeker.home;
 
 import android.content.Context;
 import androidx.activity.contextaware.OnContextAvailableListener;
-import androidx.databinding.ViewDataBinding;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import com.findajob.jobamax.base.BaseActivityMain;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
@@ -15,7 +14,7 @@ import java.lang.Override;
 /**
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
-public abstract class Hilt_JobSeekerHomeActivity<V extends ViewDataBinding> extends BaseActivityMain<V> implements GeneratedComponentManagerHolder {
+public abstract class Hilt_JobSeekerHomeActivity extends AppCompatActivity implements GeneratedComponentManagerHolder {
   private volatile ActivityComponentManager componentManager;
 
   private final Object componentManagerLock = new Object();
@@ -24,6 +23,11 @@ public abstract class Hilt_JobSeekerHomeActivity<V extends ViewDataBinding> exte
 
   Hilt_JobSeekerHomeActivity() {
     super();
+    _initHiltInternal();
+  }
+
+  Hilt_JobSeekerHomeActivity(int contentLayoutId) {
+    super(contentLayoutId);
     _initHiltInternal();
   }
 

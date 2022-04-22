@@ -50,8 +50,9 @@
                     android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                    android:id="@+id/iv_user_profile"
                     style="@style/circular_image"
+                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/default_user_img" />
             </RelativeLayout>

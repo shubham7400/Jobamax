@@ -14,15 +14,14 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.loginLayout, 8);
-        sViewsWithIds.put(R.id.iv_back_button, 9);
-        sViewsWithIds.put(R.id.jobamaxImage, 10);
-        sViewsWithIds.put(R.id.loginImage, 11);
-        sViewsWithIds.put(R.id.emailField, 12);
-        sViewsWithIds.put(R.id.passwordField, 13);
-        sViewsWithIds.put(R.id.container, 14);
-        sViewsWithIds.put(R.id.footerLayout, 15);
-        sViewsWithIds.put(R.id.socialMediaLayout, 16);
+        sViewsWithIds.put(R.id.loginLayout, 7);
+        sViewsWithIds.put(R.id.iv_back_button, 8);
+        sViewsWithIds.put(R.id.jobamaxImage, 9);
+        sViewsWithIds.put(R.id.loginImage, 10);
+        sViewsWithIds.put(R.id.emailField, 11);
+        sViewsWithIds.put(R.id.passwordField, 12);
+        sViewsWithIds.put(R.id.footerLayout, 13);
+        sViewsWithIds.put(R.id.socialMediaLayout, 14);
     }
     // views
     @NonNull
@@ -36,12 +35,8 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     @NonNull
     private final android.widget.ImageView mboundView5;
     @NonNull
-    private final android.widget.ImageView mboundView6;
-    @NonNull
-    private final android.widget.TextView mboundView7;
+    private final android.widget.TextView mboundView6;
     // variables
-    @Nullable
-    private final android.view.View.OnClickListener mCallback7;
     @Nullable
     private final android.view.View.OnClickListener mCallback5;
     @Nullable
@@ -59,20 +54,19 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     // Inverse Binding Event Handlers
 
     public FragmentLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 17, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
     }
     private FragmentLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.FrameLayout) bindings[14]
-            , (android.widget.EditText) bindings[12]
-            , (android.widget.LinearLayout) bindings[15]
+            , (android.widget.EditText) bindings[11]
+            , (android.widget.LinearLayout) bindings[13]
+            , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[9]
             , (android.widget.ImageView) bindings[10]
-            , (android.widget.ImageView) bindings[11]
-            , (android.widget.LinearLayout) bindings[8]
-            , (android.widget.EditText) bindings[13]
+            , (android.widget.LinearLayout) bindings[7]
+            , (android.widget.EditText) bindings[12]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[16]
+            , (android.widget.LinearLayout) bindings[14]
             );
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
@@ -84,14 +78,11 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
         this.mboundView4.setTag(null);
         this.mboundView5 = (android.widget.ImageView) bindings[5];
         this.mboundView5.setTag(null);
-        this.mboundView6 = (android.widget.ImageView) bindings[6];
+        this.mboundView6 = (android.widget.TextView) bindings[6];
         this.mboundView6.setTag(null);
-        this.mboundView7 = (android.widget.TextView) bindings[7];
-        this.mboundView7.setTag(null);
         this.showPasswordButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback7 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
         mCallback5 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
         mCallback6 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
         mCallback3 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
@@ -164,7 +155,6 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
             this.mboundView4.setOnClickListener(mCallback4);
             this.mboundView5.setOnClickListener(mCallback5);
             this.mboundView6.setOnClickListener(mCallback6);
-            this.mboundView7.setOnClickListener(mCallback7);
             this.showPasswordButton.setOnClickListener(mCallback1);
         }
     }
@@ -172,23 +162,6 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 7: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.LoginInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onRegisterClicked();
-                }
-                break;
-            }
             case 5: {
                 // localize variables for thread safety
                 // handler
@@ -202,7 +175,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onGoogleLoginClicked();
+                    handler.onLinkedInLoginClicked();
                 }
                 break;
             }
@@ -219,7 +192,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onLinkedInLoginClicked();
+                    handler.onRegisterClicked();
                 }
                 break;
             }
@@ -253,7 +226,7 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onFacebookLoginClicked();
+                    handler.onGoogleLoginClicked();
                 }
                 break;
             }

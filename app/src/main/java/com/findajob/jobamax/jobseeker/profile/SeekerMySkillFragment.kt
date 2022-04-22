@@ -144,11 +144,11 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
 
     private fun setClickListeners() {
          binding.ivBackButton.setOnClickListener {
-             (activity as SeekerProfileActivity).onBackPressed()
+             requireActivity().onBackPressed()
          }
 
         binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
         binding.ivHardSkillAddBtn.setOnClickListener {
             if (binding.actvHardSkill.text.isNullOrEmpty()){
@@ -177,6 +177,7 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
                 if(it == null){
                     saveSoftSkill()
                 }else{
+                    saveSoftSkill()
                     toast("${it.message.toString()} Something went wrong.")
                 }
             }
@@ -196,6 +197,7 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
                 toast("Skills Added.")
                 requireActivity().onBackPressed()
             }else{
+                requireActivity().onBackPressed()
                 toast("${it.message.toString()} Something went wrong.")
             }
         }

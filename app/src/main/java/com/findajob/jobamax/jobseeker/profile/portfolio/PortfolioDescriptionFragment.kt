@@ -1,6 +1,8 @@
 package com.findajob.jobamax.jobseeker.profile.portfolio
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,7 +49,7 @@ class PortfolioDescriptionFragment : BaseFragmentMain<FragmentPortfolioDescripti
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
         binding.ivAddLink.setOnClickListener {
             if (binding.etLink.text.isNullOrBlank()){
@@ -68,6 +70,13 @@ class PortfolioDescriptionFragment : BaseFragmentMain<FragmentPortfolioDescripti
 
             }
         }
+        binding.etPortfolioDescription.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                binding.tvTextSize.text = "${binding.etPortfolioDescription.text.length}/240"
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
     }
 
     private fun getPortfolioData() {
@@ -84,6 +93,7 @@ class PortfolioDescriptionFragment : BaseFragmentMain<FragmentPortfolioDescripti
 
         portfolio?.let {
             binding.etPortfolioDescription.setText(portfolio!!.text)
+            binding.tvTextSize.text = "${binding.etPortfolioDescription.text.length}/240"
         }
         adapter = PortfolioLinksAdapter(portfolio!!.links)
         binding.rvLinks.adapter = adapter

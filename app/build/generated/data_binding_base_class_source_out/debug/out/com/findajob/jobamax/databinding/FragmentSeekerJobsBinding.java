@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -93,6 +94,9 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final RecyclerView rvJobTypes;
 
   @NonNull
+  public final TextView tvNoJobsHint;
+
+  @NonNull
   public final View vFilterState;
 
   @Bindable
@@ -106,7 +110,7 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
       ImageView ivFilterJob, ImageView ivSearchIcon, ItemSeekerJobCardBinding lJob,
       LinearLayout llFloatButtons, LinearLayout llMatchPercent, LinearLayout llRewind,
       NestedScrollView nsvCard, PercentageChartView pcvMatch, RelativeLayout relativeLayout,
-      RecyclerView rvJobTypes, View vFilterState) {
+      RecyclerView rvJobTypes, TextView tvNoJobsHint, View vFilterState) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.clMostParent = clMostParent;
@@ -130,6 +134,7 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
     this.pcvMatch = pcvMatch;
     this.relativeLayout = relativeLayout;
     this.rvJobTypes = rvJobTypes;
+    this.tvNoJobsHint = tvNoJobsHint;
     this.vFilterState = vFilterState;
   }
 

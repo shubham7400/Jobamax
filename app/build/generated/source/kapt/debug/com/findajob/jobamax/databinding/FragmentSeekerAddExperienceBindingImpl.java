@@ -34,22 +34,22 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
         sViewsWithIds.put(R.id.textViewdd19, 19);
         sViewsWithIds.put(R.id.et_description, 20);
         sViewsWithIds.put(R.id.btn_add_experience, 21);
+        sViewsWithIds.put(R.id.rv_company_suggestions, 22);
     }
     // views
-    @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAddExperienceBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAddExperienceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.fragment.app.FragmentContainerView) bindings[10]
             , (android.widget.Button) bindings[21]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.EditText) bindings[7]
             , (android.widget.EditText) bindings[20]
             , (android.widget.EditText) bindings[5]
@@ -60,6 +60,7 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
             , (android.widget.LinearLayout) bindings[12]
             , (android.widget.RelativeLayout) bindings[2]
             , (android.widget.RelativeLayout) bindings[8]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[22]
             , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[13]
             , (android.widget.TextView) bindings[16]
@@ -70,9 +71,8 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
             , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[14]
             );
+        this.clMostParent.setTag(null);
         this.ivUserProfile.setTag(null);
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
-        this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

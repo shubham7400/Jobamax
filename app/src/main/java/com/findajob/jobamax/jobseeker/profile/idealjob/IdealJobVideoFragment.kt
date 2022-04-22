@@ -113,7 +113,7 @@ class IdealJobVideoFragment : BaseFragmentMain<FragmentIdealJobVideoBinding>() {
             dispatchTakeVideoIntent()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()

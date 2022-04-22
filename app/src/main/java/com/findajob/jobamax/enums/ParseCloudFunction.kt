@@ -14,5 +14,7 @@ enum class ParseCloudFunction {
     deleteUser,
     getJobTitles,
     addJobTitle,
-    importFromLinkedIn
+    importFromLinkedIn,
+    saveSpentTime,
+    saveSwipeCount
 }

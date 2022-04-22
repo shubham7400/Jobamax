@@ -19,6 +19,8 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.preference.setCurrentLocation
 import com.findajob.jobamax.util.convertCustomObjectToJsonString
 import com.findajob.jobamax.util.toast
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.crashlytics.internal.common.CrashlyticsCore
 import com.google.gson.Gson
 
 
@@ -46,29 +48,6 @@ class LocationService : Service(){
         }
     }
 
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        startListeningUserLocation(this, locationListener)
-        return START_STICKY
-    }
-
-    override fun onTaskRemoved(rootIntent: Intent?) {
-        super.onTaskRemoved(rootIntent)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            stopForeground(true)
-        }else{
-            val nm = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-            nm.cancel(1)
-        }
-    }
-
-    private fun startListeningUserLocation(context: Context, myListener: LocationListener) {
-        val mLocationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return
-        }
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME.toLong(), LOCATION_REFRESH_DISTANCE.toFloat(), myListener)
-    }
-
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
             mLocation = location
@@ -84,6 +63,32 @@ class LocationService : Service(){
         override fun onProviderDisabled(provider: String) {}
         override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
     }
+
+    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+        startListeningUserLocation(this, locationListener)
+        return START_STICKY
+    }
+
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        super.onTaskRemoved(rootIntent)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            stopForeground(true)
+        }else{
+            val nm = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            nm.cancel(1)
+        }
+        this.stopSelf()
+    }
+
+    private fun startListeningUserLocation(context: Context, myListener: LocationListener) {
+        val mLocationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
+        }
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME.toLong(), LOCATION_REFRESH_DISTANCE.toFloat(), myListener)
+    }
+
+
 
 
 }

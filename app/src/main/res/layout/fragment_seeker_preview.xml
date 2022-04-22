@@ -39,8 +39,8 @@
                    android:layout_height="wrap_content"
                    android:layout_centerInParent="true"
                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/opensans_bold"
-                   android:text="@string/filter_by"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/preview"
                    android:textColor="@color/blue_2"
                    android:textSize="20dp" />
 
@@ -208,6 +208,37 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:id="@+id/iv_see_less_experience"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_margin="5dp"
+                       android:visibility="gone"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       android:src="@drawable/minus_blue"/>
+                   <ImageView
+                       android:id="@+id/iv_see_more_experience"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:layout_gravity="center_horizontal"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/add_blue"/>
+               </androidx.constraintlayout.widget.ConstraintLayout>
 
                <TextView
                    android:id="@+id/tv_hard_skill"

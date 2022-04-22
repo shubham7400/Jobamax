@@ -48,13 +48,17 @@ public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBindin
   @NonNull
   public final TextView tvText;
 
+  @NonNull
+  public final TextView tvTextSize;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
   protected FragmentPortfolioDescriptionBinding(Object _bindingComponent, View _root,
       int _localFieldCount, CircleImageView civUser, EditText etLink,
       EditText etPortfolioDescription, ImageView ivAddLink, ImageView ivBackButton,
-      RelativeLayout relativeLayout, RecyclerView rvLinks, TextView textView31, TextView tvText) {
+      RelativeLayout relativeLayout, RecyclerView rvLinks, TextView textView31, TextView tvText,
+      TextView tvTextSize) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.etLink = etLink;
@@ -65,6 +69,7 @@ public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBindin
     this.rvLinks = rvLinks;
     this.textView31 = textView31;
     this.tvText = tvText;
+    this.tvTextSize = tvTextSize;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

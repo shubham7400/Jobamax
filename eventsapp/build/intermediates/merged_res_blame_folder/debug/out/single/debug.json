@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_layout_event_fragment.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\layout_event_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_attendee_list_item.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\attendee_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_layout_linkedin_login.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\layout_linkedin_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_ghost_person.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\ghost_person.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_arrow_right.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_ic_action_search.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\ic_action_search.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_conference.jpg.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\conference.jpg"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_linkedin_login.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\linkedin_login.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_layout_view_on_linkedin.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\layout_view_on_linkedin.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\drawable_arrow_left.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\drawable\\arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\build\\intermediates\\merged_res\\debug\\layout_layout_action_bar.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\eventsapp\\src\\main\\res\\layout\\layout_action_bar.xml"
+    }
+]

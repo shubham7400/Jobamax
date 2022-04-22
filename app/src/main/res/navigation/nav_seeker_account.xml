@@ -39,20 +39,6 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerPaymentMethodsFragment"
-            app:destination="@id/jobSeekerPaymentMethodsFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerSocialAccountFragment"
-            app:destination="@id/jobSeekerSocialAccountFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
             android:id="@+id/action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2"
             app:destination="@id/seekerDeleteAccountFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -61,11 +47,18 @@
             app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_jobSeekerAccountFragment_to_seekerChangePasswordFragment"
-            app:destination="@id/seekerChangePasswordFragment" />
+            app:destination="@id/seekerChangePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment"
-            app:destination="@id/jobSeekerChangeLanguageFragment" />
-
+            app:destination="@id/jobSeekerChangeLanguageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerDeleteAccountFragment"
@@ -88,21 +81,13 @@
         android:name="com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment"
         android:label="JobSeekerManageReadReceiptsFragment"
         tools:layout="@layout/fragment_job_seeker_manage_read_receipts" />
-    <fragment
-        android:id="@+id/jobSeekerSocialAccountFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.social.JobSeekerSocialAccountFragment"
-        android:label="JobSeekerSocialAccountFragment"
-        tools:layout="@layout/fragment_job_seeker_social_links" />
+
     <fragment
         android:id="@+id/jobSeekerNewsletterFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment"
         android:label="JobSeekerNewsletterFragment"
         tools:layout="@layout/fragment_job_seeker_newsletter" />
-    <fragment
-        android:id="@+id/jobSeekerPaymentMethodsFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.paymentMethods.JobSeekerPaymentMethodsFragment"
-        android:label="JobSeekerPaymentMethodsFragment"
-        tools:layout="@layout/fragment_job_seeker_payment_methods" />
+
     <fragment
         android:id="@+id/jobSeekerPersonalInformationFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment"

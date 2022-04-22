@@ -6,30 +6,26 @@ import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
-import com.findajob.jobamax.data.remote.NoInternetException
 import com.findajob.jobamax.databinding.ActivityLoginBinding
 import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
-import com.findajob.jobamax.extensions.observe
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.Recruiter
-import com.findajob.jobamax.model.User
+import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
-import com.google.firebase.messaging.FirebaseMessaging
 import com.parse.ParseObject
 import com.parse.ParseQuery
-import com.parse.ParseUser
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
     lateinit var viewModel: LoginViewModel
     lateinit var navController: NavController
@@ -52,103 +48,53 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
     }
 
-
-
-    private fun navHome(user: User, isRegister: Boolean) {
-        try {
-            log("Logging in...")
-            setLoggedIn(true)
-            saveLocally(user, viewModel.roleType)
-            FirebaseMessaging.getInstance().subscribeToTopic("/topics/" + user.id)
-            if (isRegister) {
-                navController.navigate(R.id.valuePrivacyFragment)
-            } else {
-                if (checkLocationPermission()) {
-                    startActivity(
-                        Intent(
-                            this,JobSeekerHomeActivity::class.java
-                            /*if (getRole() == ROLE_JOB_SEEKER)
-                                JobSeekerHomeActivity::class.java
-                            else RecruiterHomeActivity::class.java*/
-                        )
-                    )
-                    finishAffinity()
-                } else navController.navigate(
-                    R.id.locationPermissionFragment,
-                    bundleOf(ARG_ACTION to ACTION_LOGIN)
-                )
-            }
-        }
-        catch (e : Exception){
-            e.printStackTrace()
-            errorToast(e)
-        }
-    }
-
-    private fun register(email: String, password: String) {
-
-        /*isEmailAlreadyRegistered(email, password)
+    fun isEmailAlreadyRegistered(user: UserTempInfo, callback : () -> Unit) {
         progressHud.show()
-        val parseUser = ParseUser()
-        parseUser.email = email
-        parseUser.setPassword(password)
-        parseUser.username = email
-
-        parseUser.signUpInBackground { it ->
-            progressHud.dismiss()
-            if (it == null) {
-                val user = User()
-                user.email = email
-                user.loginType = EMAIL_LOGIN_TYPE
-                user.userId = parseUser.objectId
-
-                parseUser.objectId?.let {
-                    setUserObjectId(it)
-                    setUserFullName(parseUser.username)
-                    FirebaseMessaging.getInstance().subscribeToTopic("/topics/$it")
-                }
-
-                saveDetails(user)
-            } else errorToast(it)
-        }*/
-    }
-
-    fun isEmailAlreadyRegistered(email: String, password: String) {
-        progressHud.show()
-        val query = if (getUserType() == 2){
-            ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        }else{
-            ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
-        }
-        query.whereContains(ParseTableFields.email.toString(), email)
-        query.whereContains(ParseTableFields.loginType.toString(), LoginType.email.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereContains(ParseTableFields.email.toString(), user.email)
+        query.whereContains(ParseTableFields.loginType.toString(), LoginType.EMAIL.type)
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
             when{
                 result != null -> {
-                    BasicDialog(this, "User is already registered with this email."){}.show()
+                    BasicDialog(this, "User is already registered with this email.", true){callback()}.show()
                 }
                 else -> {
-                    setEmail(email)
-                    setPassword(password)
-                    setLoginType(LoginType.email.toString())
-                    setRole(viewModel.roleType)
-                    navController.navigate(R.id.valuePrivacyFragment)
+                    navController.navigate(R.id.valuePrivacyFragment, bundleOf(ARG_ACTION to ACTION_REGISTER, ARG_USER to user))
                 }
             }
         }
     }
 
-    fun loginSeeker(email: String, password: String) {
+    fun loginSeeker(user: UserTempInfo) {
+        when(user.loginType){
+            LoginType.EMAIL.type ->{
+                getUserLogin(user)
+            }
+            LoginType.GOOGLE.type ->{
+                navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_ACTION to ACTION_REGISTER, ARG_USER to user))
+            }
+            LoginType.LINKEDIN.type ->{
+                navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_ACTION to ACTION_REGISTER, ARG_USER to user))
+            }
+            LoginType.FACEBOOK.type ->{
+                navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_ACTION to ACTION_REGISTER, ARG_USER to user))
+            }
+        }
+    }
+
+    fun getUserLogin(user: UserTempInfo) {
         progressHud.show()
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.email.toString(), email)
-        query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.email.toString())
-        query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(password)  )
+        query.whereEqualTo(ParseTableFields.email.toString(), user.email)
+        if (user.loginType == LoginType.EMAIL.type){
+            query.whereEqualTo(ParseTableFields.loginType.toString(), user.loginType)
+            query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(user.password))
+        }
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
-            if (e == null && result != null){
-                if(result.getBoolean("emailVerified")){
+            if (e == null && result != null) {
+                if (result.getBoolean("emailVerified")) {
                     val jobSeeker = JobSeeker(result)
                     setUserId(jobSeeker.jobSeekerId)
                     setPhoneNumber(jobSeeker.phoneNumber)
@@ -157,46 +103,22 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
                     if (checkLocationPermission()) {
                         startActivity(Intent(this, JobSeekerHomeActivity::class.java))
                         finishAffinity()
-                    } else navController.navigate(
-                        R.id.locationPermissionFragment,
-                        bundleOf(ARG_ACTION to ACTION_LOGIN)
-                    )
-                }else{
+                    } else
+                        navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_ACTION to ACTION_LOGIN, ARG_USER to user))
+                } else {
                     toast("Please verify account clicking on sent email at the time of registration.")
                 }
-            }else{
+            } else {
                 toast("error: ${e.message.toString()}")
             }
         }
-
-     /*   progressHud.show()
-        val parseUser = ParseUser()
-        parseUser.email = email
-        parseUser.setPassword(password)
-        parseUser.username = email
-
-        ParseUser.logInInBackground(email, password) { u, e ->
-            progressHud.dismiss()
-            if (e == null) {
-                val user = User()
-                user.email = email
-                user.loginType = EMAIL_LOGIN_TYPE
-
-                u?.objectId?.let {
-                    setUserObjectId(it)
-                    setUserFullName(parseUser.username)
-                    FirebaseMessaging.getInstance().subscribeToTopic("/topics/$it")
-                }
-                checkForExistingUser(user)
-            } else errorToast(e)
-        }*/
     }
 
     fun loginRecruiter(email: String, password: String) {
         progressHud.show()
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
         query.whereEqualTo(ParseTableFields.email.toString(), email)
-        query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.email.toString())
+        query.whereEqualTo(ParseTableFields.loginType.toString(), LoginType.EMAIL.type)
         query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(password) )
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
@@ -223,28 +145,7 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
         }
     }
 
-    private fun saveDetails(user: User) {
-        progressHud.show()
-        viewModel.saveUserDetails(user)
 
-        observe(viewModel.detailedUser) {
-            it?.let {
-                progressHud.dismiss()
-                navHome(user, true)
-            }
-        }
-        observe(viewModel.errorMessage) {
-            it?.let { em ->
-                progressHud.dismiss()
-                toast(em)
-            }
-        }
-    }
-
-    fun navLocationPicker() {
-        /*val intent = Intent(this, SelectLocationActivity::class.java)
-        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)*/
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

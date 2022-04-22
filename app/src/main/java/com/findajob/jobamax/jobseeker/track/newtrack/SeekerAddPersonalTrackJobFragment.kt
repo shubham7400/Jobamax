@@ -38,6 +38,7 @@ class SeekerAddPersonalTrackJobFragment : BaseFragmentMain<FragmentSeekerAddPers
 
     private fun configureUi() {
          setClickListeners()
+        binding.jobSeeker = viewModel.jobSeeker
     }
 
     private fun setClickListeners() {
@@ -77,6 +78,9 @@ class SeekerAddPersonalTrackJobFragment : BaseFragmentMain<FragmentSeekerAddPers
                  }
              }
          }
+
+        binding.ivBackButton.setOnClickListener { requireActivity().onBackPressed() }
+        binding.ivUserProfile.setOnClickListener { requireActivity().onBackPressed() }
     }
 
     override fun onCreated(savedInstance: Bundle?) {

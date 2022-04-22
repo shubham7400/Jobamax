@@ -96,14 +96,16 @@
                     android:textSize="14sp"
                     android:textStyle="normal" />
 
-                <com.suke.widget.SwitchButton
+                <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/newMatchesFlag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
-                    app:sb_checked_color="#0576FE" />
+                    app:track="@drawable/selector_switch_track"
+                    android:thumb="@drawable/selector_switch_thumb" />
+
             </RelativeLayout>
 
             <TextView
@@ -127,14 +129,16 @@
                     android:textSize="14sp"
                     android:textStyle="normal" />
 
-                <com.suke.widget.SwitchButton
+                <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/messageCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
-                    app:sb_checked_color="#0576FE" />
+                    app:track="@drawable/selector_switch_track"
+                    android:thumb="@drawable/selector_switch_thumb" />
+
             </RelativeLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

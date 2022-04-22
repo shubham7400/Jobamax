@@ -41,11 +41,11 @@ public class ActivityJobSeekerPersonalIntroInfoBindingImpl extends ActivityJobSe
     @Nullable
     private final android.view.View.OnClickListener mCallback27;
     @Nullable
-    private final android.view.View.OnClickListener mCallback29;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback28;
+    private final android.view.View.OnClickListener mCallback25;
     @Nullable
     private final android.view.View.OnClickListener mCallback26;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback24;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -87,10 +87,10 @@ public class ActivityJobSeekerPersonalIntroInfoBindingImpl extends ActivityJobSe
         this.tvDateOfBirthField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback27 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback29 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback28 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback26 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback27 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback25 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback26 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback24 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -158,16 +158,33 @@ public class ActivityJobSeekerPersonalIntroInfoBindingImpl extends ActivityJobSe
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.btnSave.setOnClickListener(mCallback29);
-            this.ivBackButton.setOnClickListener(mCallback26);
-            this.rlGenderButton.setOnClickListener(mCallback27);
-            this.tvDateOfBirthField.setOnClickListener(mCallback28);
+            this.btnSave.setOnClickListener(mCallback27);
+            this.ivBackButton.setOnClickListener(mCallback24);
+            this.rlGenderButton.setOnClickListener(mCallback25);
+            this.tvDateOfBirthField.setOnClickListener(mCallback26);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 4: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSubmitClicked();
+                }
+                break;
+            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -183,23 +200,6 @@ public class ActivityJobSeekerPersonalIntroInfoBindingImpl extends ActivityJobSe
 
 
                     handler.onGenderClicked(callbackArg_0);
-                }
-                break;
-            }
-            case 4: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSubmitClicked();
                 }
                 break;
             }

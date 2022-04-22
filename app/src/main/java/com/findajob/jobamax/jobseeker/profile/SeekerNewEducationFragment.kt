@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.University
@@ -63,7 +64,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         educationOld?.let {
             binding.tvSchool.text = educationOld!!.name
             binding.etProgram.setText(educationOld!!.program)
-            binding.etDescription.text = educationOld!!.description
+            binding.etDescription.setText( educationOld!!.description)
             binding.etGpa.setText(educationOld!!.gpa.toString())
             binding.tvStartDate.text = educationOld!!.startDate
             if (educationOld!!.endDate == ""){
@@ -83,11 +84,9 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
                 binding.clEndDate.visibility = View.VISIBLE
             }
         }
-        binding.ivBackButton.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
-       binding.ivUserProfile.setOnClickListener {
-           requireActivity().finish()
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerNewEducationFragment_to_seekerProfileFragment, null))
+       binding.ivBackButton.setOnClickListener {
+           requireActivity().onBackPressed()
        }
         binding.tvStartDate.setOnClickListener {
             onDateClicked(binding.tvStartDate)
@@ -95,9 +94,7 @@ class SeekerNewEducationFragment : BaseFragmentMain<FragmentSeekerNewEducationBi
         binding.tvEndDate.setOnClickListener {
             onDateClicked(binding.tvEndDate)
         }
-        binding.ivUserProfile.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+
     }
 
 

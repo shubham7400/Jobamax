@@ -22,13 +22,11 @@ import androidx.core.content.FileProvider
 import com.findajob.jobamax.R
 import com.findajob.jobamax.util.log
 import kotlinx.android.synthetic.main.crop_image_activity.*
-import timber.log.Timber
 import java.io.File
 import java.io.IOException
 
 private lateinit var photoFile: File
 private const val SCANNED_FILE_NAME = "readmore_cache_"
-private const val TAKE_PICTURE_CODE = 491
 
 /**
  * Built-in activity for image cropping.<br></br>
@@ -374,7 +372,7 @@ open class CropImageActivity : AppCompatActivity(), CropImageView.OnSetImageUriC
                     menuItemIcon.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
                     menuItem.icon = menuItemIcon
                 } catch (e: Exception) {
-                    Timber.w(e, "Failed to update menu item color")
+                    log( "Failed to update menu item color")
                 }
             }
         }

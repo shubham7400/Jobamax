@@ -8,16 +8,23 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentKeepMePostedBinding
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity
+import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.preference.getUserType
+import com.findajob.jobamax.util.ARG_USER
 
 
 class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), KeepMePostedInterface {
 
 	lateinit var viewModel: LoginViewModel
-
+	var user : UserTempInfo? = null
 
 	override val layoutRes: Int
 		get() = R.layout.fragment_keep_me_posted
+
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		user = arguments?.getSerializable(ARG_USER) as UserTempInfo
+	}
 
 	override fun onCreated(savedInstance: Bundle?) {
 		configureViewModel()
@@ -37,25 +44,15 @@ class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), Ke
 	
 	override fun onNotifiedClicked() {
 		navHome()
-		/*progressHud.show()
-		viewModel.updateFlag(object : UpdateUserCallback {
-			override fun onFinish(isSuccessful: Boolean) {
-				progressHud.dismiss()
-				if (isSuccessful) {
-					navHome()
-				} else requireActivity().errorToast()
-			}
-		})*/
 	}
 	
 	override fun onNotNowClicked() = navHome()
 
 	
 	private fun navHome() {
-		if (requireActivity().getUserType() == 2)
-			startActivity(Intent(requireContext(), JobSeekerPersonalIntroInfoActivity::class.java))
-		/*else startActivity(Intent(requireContext(), RecruiterPersonalInfoIntroActivity::class.java))*/
-		requireActivity().finishAffinity()
+		startActivity(Intent(requireContext(), JobSeekerPersonalIntroInfoActivity::class.java).also {
+			it.putExtra(ARG_USER, user)
+		})
 	}
 
 }

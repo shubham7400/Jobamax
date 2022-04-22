@@ -1,17 +1,26 @@
 package com.findajob.jobamax.jobseeker.profile
 
 import android.os.Bundle
- import android.view.LayoutInflater
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
  import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerAddExperienceBinding
+import com.findajob.jobamax.databinding.ItemSearchQueryCompanyBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Experience
+import com.findajob.jobamax.model.SearchQueryCompany
+import com.findajob.jobamax.network.ApiFetchCompaniesService
+import com.findajob.jobamax.repos.SearchQueryCompanyRepo
+import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.mm_yy_disp
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.common.api.Status
@@ -19,9 +28,8 @@ import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
-import com.pushwoosh.internal.platform.AndroidPlatformModule.getApplicationContext
+ import com.pushwoosh.internal.platform.AndroidPlatformModule.getApplicationContext
 import com.whiteelephant.monthpicker.MonthPickerDialog
-import kotlinx.android.synthetic.main.fragment_seeker_add_experience.view.*
 import java.util.*
 
 class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperienceBinding>() {
@@ -30,8 +38,13 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
     override fun getViewModel(): ViewModel = viewModel
 
-    lateinit var autocompleteFragment: AutocompleteSupportFragment
+    private lateinit var autocompleteFragment: AutocompleteSupportFragment
     var experienceOld: Experience? = null
+
+    lateinit var searchQueryCompanyRepo: SearchQueryCompanyRepo
+    var selectedCompany: SearchQueryCompany? = null
+    lateinit var adapter: SearchQueryCompanySuggestionAdapter
+    var canFetchList = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerAddExperienceBinding.inflate(inflater, container, false)
@@ -62,6 +75,19 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
         binding.jobSeeker = viewModel.jobSeeker
         setClickListeners()
         setPlaceAutocompleteFragment()
+        setAdapterFunctionality()
+    }
+
+    private fun setAdapterFunctionality() {
+        adapter = SearchQueryCompanySuggestionAdapter(arrayListOf())
+        binding.rvCompanySuggestions.adapter = adapter
+        adapter.onCompanyClick = { company ->
+            selectedCompany = company
+            binding.rvCompanySuggestions.visibility = View.GONE
+            canFetchList = false
+            binding.etCompanyName.setText(selectedCompany?.name)
+        }
+        searchQueryCompanyRepo = SearchQueryCompanyRepo(ApiFetchCompaniesService.getInstance(requireContext()).create(ApiFetchCompaniesService::class.java))
     }
 
     private fun setPlaceAutocompleteFragment() {
@@ -79,9 +105,7 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
     }
 
     private fun setClickListeners() {
-        binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
-        }
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerAddExperienceFragment_to_seekerProfileFragment, null))
         binding.ivClearStartDate.setOnClickListener {
             binding.tvSelectStartDate.text = ""
         }
@@ -101,56 +125,93 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
             autocompleteFragment.requireView().findViewById<View>(R.id.places_autocomplete_search_input).performClick()
         }
          binding.btnAddExperience.setOnClickListener {
-             when{
-                 binding.etJob.text.isNullOrEmpty() -> {
-                    toast("Please enter job.")
-                 }
-                 binding.etCompanyName.text.isNullOrEmpty() -> {
-                     toast("Please enter company name.")
-                 }
-                 binding.etDescription.text.isNullOrEmpty() -> {
-                     toast("Please enter job description.")
-                 }
-                 binding.tvSelectStartDate.text.isNullOrEmpty() -> {
-                     toast("Please select start date.")
-                 }
-                 else -> {
-                     val experience = if (experienceOld == null){
-                         Experience()
-                     }else{
-                         experienceOld
-                     }
-                     experience!!.job = binding.etJob.text.toString()
-                     experience.company = binding.etCompanyName.text.toString()
-                     experience.description = binding.etDescription.text.toString()
-                     if (binding.tvSelectLocation.text.isNullOrEmpty()){
-                         experience.location = ""
-                     }else{
-                         experience.location = binding.tvSelectLocation.text.toString()
-                     }
-                     experience.startDate = binding.tvSelectStartDate.text.toString()
-                     if (binding.tvSelectEndDate.text.isNullOrEmpty()){
-                         experience.endDate = ""
-                     }else{
-                         experience.endDate = binding.tvSelectEndDate.text.toString()
-                     }
-                     progressHud.show()
-                     viewModel.addAndUpdateExperience(experience){
-                         progressHud.dismiss()
-                         if (it == null){
-                             toast("Experience Added.")
-                             requireActivity().onBackPressed()
-                         }else{
-                             toast("${it.message.toString()} Something Went Wrong.")
-                         }
-                     }
-                 }
-             }
+             addExperience()
          }
+
+        binding.etCompanyName.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.etCompanyName.text.isNullOrEmpty()){
+                    binding.rvCompanySuggestions.visibility = View.GONE
+                }else{
+                    if (canFetchList){
+                        selectedCompany = null
+                        getCompanySuggestions()
+                    }
+                    canFetchList = true
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        binding.clMostParent.setOnClickListener {
+            binding.rvCompanySuggestions.visibility = View.GONE
+        }
+
+    }
+
+    private fun getCompanySuggestions() {
+        searchQueryCompanyRepo.getCompanies(binding.etCompanyName.text.toString()){ list ->
+            if (list.isEmpty()){
+                binding.rvCompanySuggestions.visibility = View.GONE
+            }else{
+                adapter.submitList(list)
+                binding.rvCompanySuggestions.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun addExperience() {
+        when {
+            binding.etJob.text.isNullOrEmpty() -> {
+                toast("Please enter job.")
+            }
+            binding.etCompanyName.text.isNullOrEmpty() -> {
+                toast("Please enter company name.")
+            }
+            binding.etDescription.text.isNullOrEmpty() -> {
+                toast("Please enter job description.")
+            }
+            binding.tvSelectStartDate.text.isNullOrEmpty() -> {
+                toast("Please select start date.")
+            }
+            else -> {
+                val experience = if (experienceOld == null) {
+                    Experience()
+                } else {
+                    experienceOld
+                }
+                experience!!.job = binding.etJob.text.toString()
+                experience.company = selectedCompany?.name ?: binding.etCompanyName.text.toString()
+                experience.description = binding.etDescription.text.toString()
+                if (binding.tvSelectLocation.text.isNullOrEmpty()) {
+                    experience.location = ""
+                } else {
+                    experience.location = binding.tvSelectLocation.text.toString()
+                }
+                experience.startDate = binding.tvSelectStartDate.text.toString()
+                if (binding.tvSelectEndDate.text.isNullOrEmpty()) {
+                    experience.endDate = ""
+                } else {
+                    experience.endDate = binding.tvSelectEndDate.text.toString()
+                }
+                experience.logo = selectedCompany?.logo ?: ""
+                progressHud.show()
+                viewModel.addAndUpdateExperience(experience) {
+                    progressHud.dismiss()
+                    if (it == null) {
+                        toast("Experience Added.")
+                        requireActivity().onBackPressed()
+                    } else {
+                        toast("${it.message.toString()} Something Went Wrong.")
+                    }
+                }
+            }
+        }
     }
 
 
-    fun onDateClicked(view: View ) {
+    private fun onDateClicked(view: View ) {
         val today = Calendar.getInstance()
 
         MonthPickerDialog.Builder(
@@ -174,4 +235,26 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
             .show()
     }
 
+}
+
+class SearchQueryCompanySuggestionAdapter(var list: ArrayList<SearchQueryCompany>) : RecyclerView.Adapter<SearchQueryCompanySuggestionAdapter.ViewHolder>() {
+    var onCompanyClick: (SearchQueryCompany) -> Unit = {}
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemSearchQueryCompanyBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = list[position]
+        holder.binding.apply {
+            this.tvCompanyName.text = item.name
+            this.tvCompanyDomain.text = item.domain
+            loadImageFromUrl(this.civCompanyLogo, item.logo, R.drawable.ic_company)
+            this.clMostParent.setOnClickListener {
+                onCompanyClick(item)
+            }
+        }
+    }
+    override fun getItemCount(): Int = list.size
+    fun submitList(suggestions: ArrayList<SearchQueryCompany>) {
+        this.list = suggestions
+    }
+
+    class ViewHolder(val binding: ItemSearchQueryCompanyBinding) : RecyclerView.ViewHolder(binding.root)
 }

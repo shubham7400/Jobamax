@@ -82,7 +82,7 @@ class SeekerExperienceListFragment : BaseFragmentMain<FragmentSeekerExperienceLi
             requireActivity().onBackPressed()
         }
         binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
         binding.btnAddExperience.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerExperienceListFragment_to_seekerAddExperienceFragment, null))
     }

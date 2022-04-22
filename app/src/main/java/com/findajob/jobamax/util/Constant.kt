@@ -9,6 +9,7 @@ const val ARG_LAT = "arg_lat"
 const val ARG_LNG = "arg_lng"
 const val ARG_CITY = "arg_city"
 const val ARG_ACTION = "arg_action"
+const val ARG_USER = "arg_user"
 const val ACTION_LOGIN = "login_action"
 const val ACTION_REGISTER = "register_action"
 const val AUTOCOMPLETE_REQUEST_CODE = 1007

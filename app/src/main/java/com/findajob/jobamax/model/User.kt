@@ -23,11 +23,6 @@ class User {
 }
 
 
-interface GetUserCallback {
-    fun onSuccess(parseObject: ParseObject)
-
-    fun onFailure(e: Exception?)
-}
 
 interface GetAllUserCallback {
     fun onSuccess(parseObject: List<ParseObject>)

@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -38,6 +39,9 @@ public abstract class FragmentSeekerAddPersonalTrackJobBinding extends ViewDataB
   public final ImageView ivBackButton;
 
   @NonNull
+  public final CircleImageView ivUserProfile;
+
+  @NonNull
   public final RelativeLayout relativeLayout;
 
   @Bindable
@@ -46,7 +50,7 @@ public abstract class FragmentSeekerAddPersonalTrackJobBinding extends ViewDataB
   protected FragmentSeekerAddPersonalTrackJobBinding(Object _bindingComponent, View _root,
       int _localFieldCount, Button btnSaveInfo, EditText etAboutJob, EditText etCity,
       EditText etCompanyName, EditText etJobTitle, ImageView ivBackButton,
-      RelativeLayout relativeLayout) {
+      CircleImageView ivUserProfile, RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
     this.etAboutJob = etAboutJob;
@@ -54,6 +58,7 @@ public abstract class FragmentSeekerAddPersonalTrackJobBinding extends ViewDataB
     this.etCompanyName = etCompanyName;
     this.etJobTitle = etJobTitle;
     this.ivBackButton = ivBackButton;
+    this.ivUserProfile = ivUserProfile;
     this.relativeLayout = relativeLayout;
   }
 

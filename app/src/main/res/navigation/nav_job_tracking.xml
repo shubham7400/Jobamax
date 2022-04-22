@@ -12,10 +12,25 @@
         tools:layout="@layout/fragment_seeker_tracking_job" >
         <action
             android:id="@+id/action_seekerTrackingJobFragment_to_seekerTrackingJobDetailsFragment"
-            app:destination="@id/seekerTrackingJobDetailsFragment" />
+            app:destination="@id/seekerTrackingJobDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerTrackingJobFragment_to_seekerAddPersonalTrackJobFragment"
-            app:destination="@id/seekerAddPersonalTrackJobFragment" />
+            app:destination="@id/seekerAddPersonalTrackJobFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_seekerTrackingJobFragment_to_seekerCalenderFragment2"
+            app:destination="@id/seekerCalenderFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerTrackingJobDetailsFragment"
@@ -24,7 +39,11 @@
         tools:layout="@layout/fragment_seeker_tracking_job_details" >
         <action
             android:id="@+id/action_seekerTrackingJobDetailsFragment_to_seekerTrackingJobDescriptionFragment"
-            app:destination="@id/seekerTrackingJobDescriptionFragment" />
+            app:destination="@id/seekerTrackingJobDescriptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerAddPersonalTrackJobFragment"
@@ -35,5 +54,16 @@
         android:id="@+id/seekerTrackingJobDescriptionFragment"
         android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobDescriptionFragment"
         android:label="fragment_seeker_tracking_job_description"
-        tools:layout="@layout/fragment_seeker_tracking_job_description" />
+        tools:layout="@layout/fragment_seeker_tracking_job_description" >
+        <action
+            android:id="@+id/action_seekerTrackingJobDescriptionFragment_to_seekerTrackingJobFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerTrackingJobFragment"
+            app:destination="@id/seekerTrackingJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerCalenderFragment2"
+        android:name="com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment"
+        android:label="fragment_seeker_calender"
+        tools:layout="@layout/fragment_seeker_calender" />
 </navigation>

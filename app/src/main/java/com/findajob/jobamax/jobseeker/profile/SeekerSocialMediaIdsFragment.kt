@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerAboutMeBinding
@@ -43,11 +44,9 @@ class SeekerSocialMediaIdsFragment : BaseFragmentMain<FragmentSeekerSocialMediaI
     }
 
     private fun setClickListeners() {
-        binding.ivBackButton.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        binding.ivBackButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerSocialMediaIdsFragment_to_seekerProfileFragment, null))
         binding.ivUserProfile.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
          binding.btnSave.setOnClickListener {
              val instagramLink = if(binding.etInstagramLink.text.isNullOrBlank()) "" else binding.etInstagramLink.text.toString()

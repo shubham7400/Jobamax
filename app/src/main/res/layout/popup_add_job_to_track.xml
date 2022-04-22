@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/rounded_blue_box"
-        android:backgroundTint="#E9F2FB"
+        android:background="@drawable/rounded_white_box_sad_white_strok"
         android:layout_width="wrap_content"
         android:layout_margin="10dp"
         android:layout_height="wrap_content">

@@ -32,16 +32,6 @@ public class JobSeekerAccountFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionJobSeekerAccountFragmentToJobSeekerPaymentMethodsFragment() {
-    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_jobSeekerPaymentMethodsFragment);
-  }
-
-  @NonNull
-  public static NavDirections actionJobSeekerAccountFragmentToJobSeekerSocialAccountFragment() {
-    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_jobSeekerSocialAccountFragment);
-  }
-
-  @NonNull
   public static NavDirections actionJobSeekerAccountFragmentToSeekerDeleteAccountFragment2() {
     return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2);
   }

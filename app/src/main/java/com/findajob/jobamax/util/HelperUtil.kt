@@ -47,19 +47,24 @@ fun BaseFragment.errorToast(e: Throwable?) {
 }
 
 
-fun Activity.checkForPermissions(): Boolean {
-
-    val STORAGE_AND_CAMERA_PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
-    val permissionResult = PermissionUtils.checkAndRequestPermissions(this, STORAGE_AND_CAMERA_PERMISSIONS.toMutableList(), 102)
-    when (permissionResult.finalStatus) {
-        PermissionStatus.ALLOWED -> return true
-        /*PermissionStatus.DENIED_PERMANENTLY -> {
-            if (important) showPermissionGrantDialog()
-            return false
-        }*/
+fun Activity.checkForPermissions(permissions: Array<String>): Boolean {
+    val permissionResult = PermissionUtils.checkAndRequestPermissions(this, permissions.toMutableList(), 102)
+    return when (permissionResult.finalStatus) {
+        PermissionStatus.ALLOWED -> true
         else -> {
-            ActivityCompat.requestPermissions(this, STORAGE_AND_CAMERA_PERMISSIONS, REQUEST_ALL_PERMISSIONS)
-            return false
+            ActivityCompat.requestPermissions(this, permissions, REQUEST_ALL_PERMISSIONS)
+            false
+        }
+    }
+}
+
+fun Fragment.checkForPermissions(permissions: Array<String>): Boolean {
+    val permissionResult = PermissionUtils.checkAndRequestPermissions(requireActivity(), permissions.toMutableList(), 102)
+    return when (permissionResult.finalStatus) {
+        PermissionStatus.ALLOWED -> true
+        else -> {
+             requestPermissions(permissions, REQUEST_ALL_PERMISSIONS)
+            false
         }
     }
 }

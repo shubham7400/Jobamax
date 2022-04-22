@@ -1,6 +1,8 @@
 package com.findajob.jobamax.jobseeker.profile.idealjob
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,7 +42,7 @@ class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescription
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
     }
 
@@ -60,8 +62,16 @@ class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescription
 
         idealJob?.let {
             binding.etIdealJobDescription.setText(idealJob!!.text)
+            binding.tvTextSize.text = "${binding.etIdealJobDescription.text.length}/240"
         }
 
+        binding.etIdealJobDescription.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                binding.tvTextSize.text = "${binding.etIdealJobDescription.text.length}/240"
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
     }
 
     private fun saveDataToParse(callback : () -> Unit) {

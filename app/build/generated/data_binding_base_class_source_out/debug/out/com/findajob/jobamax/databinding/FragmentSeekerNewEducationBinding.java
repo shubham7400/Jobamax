@@ -30,7 +30,7 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   public final ConstraintLayout clEndDate;
 
   @NonNull
-  public final TextView etDescription;
+  public final EditText etDescription;
 
   @NonNull
   public final EditText etGpa;
@@ -82,7 +82,7 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
 
   protected FragmentSeekerNewEducationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, CheckBox cbCurrentStudent, ConstraintLayout clEndDate,
-      TextView etDescription, EditText etGpa, EditText etProgram, ImageView ivBackButton,
+      EditText etDescription, EditText etGpa, EditText etProgram, ImageView ivBackButton,
       CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
       TextView textView10, TextView textView11, TextView textView144, TextView textView15,
       TextView textView9, TextView tvDescriptionTitle, TextView tvEndDate, TextView tvSchool,

@@ -114,13 +114,11 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
 
     override fun onNewsletterClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerNewsletterFragment)
 
-    override fun onSocialLayoutClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerSocialAccountFragment)
 
 
     override fun onBackButtonClicked() = requireActivity().onBackPressed()
 
 
-    override fun onPaymentMethodsClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerPaymentMethodsFragment)
 
 
     override fun onRestorePurchaseClicked() = WorkInProgressDialog(requireActivity()).show()
@@ -169,10 +167,10 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
     override fun onTemporaryDisableAccountClicked() {
         requireActivity().showDialog(message = getString(R.string.do_you_want_to_disable)) {
             if (it) {
-                showLoading(true)
+                progressHud.show()
                 viewModel.updateFlag(true, "temporaryDisableFlag", object : UpdateUserCallback {
                     override fun onFinish(isSuccessful: Boolean) {
-                        showLoading(false)
+                        progressHud.dismiss()
                         if (isSuccessful) {
                             onLogoutClicked()
                         } else requireActivity().errorToast()

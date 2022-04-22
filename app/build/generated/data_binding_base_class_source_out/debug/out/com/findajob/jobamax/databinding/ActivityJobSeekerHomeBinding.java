@@ -4,163 +4,23 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.fragment.app.FragmentContainerView;
 import com.findajob.jobamax.R;
-import com.findajob.jobamax.model.JobSeeker;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityJobSeekerHomeBinding extends ViewDataBinding {
   @NonNull
-  public final Button btJobSearch;
-
-  @NonNull
-  public final Button btnCoaching;
-
-  @NonNull
-  public final ConstraintLayout constraintLayout15;
-
-  @NonNull
-  public final CircleImageView imageUser;
-
-  @NonNull
-  public final ImageView imageUser2;
-
-  @NonNull
-  public final ImageView imageView10;
-
-  @NonNull
-  public final CircleImageView iv1;
-
-  @NonNull
-  public final CircleImageView iv2;
-
-  @NonNull
-  public final CircleImageView iv3;
-
-  @NonNull
-  public final ImageView ivCalender;
-
-  @NonNull
-  public final ImageView ivRightArrow;
-
-  @NonNull
-  public final ImageView ivSetting;
-
-  @NonNull
-  public final LinearLayout ll1;
-
-  @NonNull
-  public final LinearLayout ll2;
-
-  @NonNull
-  public final RelativeLayout rlAbcd;
-
-  @NonNull
-  public final TextView textView28;
-
-  @NonNull
-  public final TextView textView6;
-
-  @NonNull
-  public final TextView tvAa;
-
-  @NonNull
-  public final TextView tvCalenderTitle;
-
-  @NonNull
-  public final TextView tvEf;
-
-  @NonNull
-  public final TextView tvSeekerName;
-
-  @NonNull
-  public final ConstraintLayout vCalendar;
-
-  @NonNull
-  public final ConstraintLayout vProfile;
-
-  @NonNull
-  public final ConstraintLayout vTrack;
-
-  @NonNull
-  public final ConstraintLayout vWishlist;
-
-  @Bindable
-  protected Integer mState;
-
-  @Bindable
-  protected Boolean mTrackToggleFlag;
-
-  @Bindable
-  protected JobSeeker mJobSeeker;
+  public final FragmentContainerView navSeekerHomeContainer;
 
   protected ActivityJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btJobSearch, Button btnCoaching, ConstraintLayout constraintLayout15,
-      CircleImageView imageUser, ImageView imageUser2, ImageView imageView10, CircleImageView iv1,
-      CircleImageView iv2, CircleImageView iv3, ImageView ivCalender, ImageView ivRightArrow,
-      ImageView ivSetting, LinearLayout ll1, LinearLayout ll2, RelativeLayout rlAbcd,
-      TextView textView28, TextView textView6, TextView tvAa, TextView tvCalenderTitle,
-      TextView tvEf, TextView tvSeekerName, ConstraintLayout vCalendar, ConstraintLayout vProfile,
-      ConstraintLayout vTrack, ConstraintLayout vWishlist) {
+      FragmentContainerView navSeekerHomeContainer) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btJobSearch = btJobSearch;
-    this.btnCoaching = btnCoaching;
-    this.constraintLayout15 = constraintLayout15;
-    this.imageUser = imageUser;
-    this.imageUser2 = imageUser2;
-    this.imageView10 = imageView10;
-    this.iv1 = iv1;
-    this.iv2 = iv2;
-    this.iv3 = iv3;
-    this.ivCalender = ivCalender;
-    this.ivRightArrow = ivRightArrow;
-    this.ivSetting = ivSetting;
-    this.ll1 = ll1;
-    this.ll2 = ll2;
-    this.rlAbcd = rlAbcd;
-    this.textView28 = textView28;
-    this.textView6 = textView6;
-    this.tvAa = tvAa;
-    this.tvCalenderTitle = tvCalenderTitle;
-    this.tvEf = tvEf;
-    this.tvSeekerName = tvSeekerName;
-    this.vCalendar = vCalendar;
-    this.vProfile = vProfile;
-    this.vTrack = vTrack;
-    this.vWishlist = vWishlist;
-  }
-
-  public abstract void setState(@Nullable Integer state);
-
-  @Nullable
-  public Integer getState() {
-    return mState;
-  }
-
-  public abstract void setTrackToggleFlag(@Nullable Boolean trackToggleFlag);
-
-  @Nullable
-  public Boolean getTrackToggleFlag() {
-    return mTrackToggleFlag;
-  }
-
-  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
-
-  @Nullable
-  public JobSeeker getJobSeeker() {
-    return mJobSeeker;
+    this.navSeekerHomeContainer = navSeekerHomeContainer;
   }
 
   @NonNull

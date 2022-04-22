@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -27,23 +28,40 @@ public abstract class FragmentRegisterBinding extends ViewDataBinding {
   public final EditText etPasswordField;
 
   @NonNull
+  public final ImageView ivBackButton;
+
+  @NonNull
   public final ImageView ivShowConfirmPasswordButton;
 
   @NonNull
   public final ImageView ivShowPasswordButton;
+
+  @NonNull
+  public final ImageView jobamaxImage;
+
+  @NonNull
+  public final ImageView loginImage;
+
+  @NonNull
+  public final TextView tvLogin;
 
   @Bindable
   protected RegisterInterface mHandler;
 
   protected FragmentRegisterBinding(Object _bindingComponent, View _root, int _localFieldCount,
       EditText etConfirmPasswordField, EditText etEmailField, EditText etPasswordField,
-      ImageView ivShowConfirmPasswordButton, ImageView ivShowPasswordButton) {
+      ImageView ivBackButton, ImageView ivShowConfirmPasswordButton, ImageView ivShowPasswordButton,
+      ImageView jobamaxImage, ImageView loginImage, TextView tvLogin) {
     super(_bindingComponent, _root, _localFieldCount);
     this.etConfirmPasswordField = etConfirmPasswordField;
     this.etEmailField = etEmailField;
     this.etPasswordField = etPasswordField;
+    this.ivBackButton = ivBackButton;
     this.ivShowConfirmPasswordButton = ivShowConfirmPasswordButton;
     this.ivShowPasswordButton = ivShowPasswordButton;
+    this.jobamaxImage = jobamaxImage;
+    this.loginImage = loginImage;
+    this.tvLogin = tvLogin;
   }
 
   public abstract void setHandler(@Nullable RegisterInterface handler);

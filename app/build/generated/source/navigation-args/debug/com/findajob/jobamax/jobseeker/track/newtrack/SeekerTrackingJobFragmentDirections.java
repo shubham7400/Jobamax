@@ -18,4 +18,9 @@ public class SeekerTrackingJobFragmentDirections {
   public static NavDirections actionSeekerTrackingJobFragmentToSeekerAddPersonalTrackJobFragment() {
     return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobFragment_to_seekerAddPersonalTrackJobFragment);
   }
+
+  @NonNull
+  public static NavDirections actionSeekerTrackingJobFragmentToSeekerCalenderFragment2() {
+    return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobFragment_to_seekerCalenderFragment2);
+  }
 }

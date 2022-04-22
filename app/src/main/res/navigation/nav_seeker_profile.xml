@@ -12,52 +12,116 @@
         tools:layout="@layout/fragment_seeker_profile" >
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerAboutMeFragment"
-            app:destination="@id/seekerAboutMeFragment" />
+            app:destination="@id/seekerAboutMeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerEducationFragment"
-            app:destination="@id/seekerEducationFragment" />
+            app:destination="@id/seekerEducationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerMySkillFragment"
-            app:destination="@id/seekerMySkillFragment" />
+            app:destination="@id/seekerMySkillFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerInterestFragment"
-            app:destination="@id/seekerInterestFragment" />
+            app:destination="@id/seekerInterestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerExperienceListFragment"
-            app:destination="@id/seekerExperienceListFragment" />
+            app:destination="@id/seekerExperienceListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerPreviewFragment"
-            app:destination="@id/seekerPreviewFragment" />
+            app:destination="@id/seekerPreviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerImportResumeFragment"
-            app:destination="@id/seekerImportResumeFragment" />
+            app:destination="@id/seekerImportResumeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_seekerVolunteeringListFragment"
-            app:destination="@id/seekerVolunteeringListFragment" />
+            app:destination="@id/seekerVolunteeringListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_idealJobAudioFragment"
-            app:destination="@id/idealJobAudioFragment" />
+            app:destination="@id/idealJobAudioFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_idealJobImagesFragment"
-            app:destination="@id/idealJobImagesFragment" />
+            app:destination="@id/idealJobImagesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_idealJobDescriptionFragment"
-            app:destination="@id/idealJobDescriptionFragment" />
+            app:destination="@id/idealJobDescriptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_idealJobVideoFragment"
-            app:destination="@id/idealJobVideoFragment" />
+            app:destination="@id/idealJobVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_self"
-            app:destination="@id/seekerProfileFragment" />
+            app:destination="@id/seekerProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_portfolioVideoFragment"
-            app:destination="@id/portfolioVideoFragment" />
+            app:destination="@id/portfolioVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_portfolioDescriptionFragment"
-            app:destination="@id/portfolioDescriptionFragment" />
+            app:destination="@id/portfolioDescriptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerProfileFragment_to_portfolioImageFragment"
-            app:destination="@id/portfolioImageFragment" />
+            app:destination="@id/portfolioImageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerAboutMeFragment"
@@ -66,7 +130,11 @@
         tools:layout="@layout/fragment_seeker_about_me" >
         <action
             android:id="@+id/action_seekerAboutMeFragment_to_seekerSocialMediaIdsFragment"
-            app:destination="@id/seekerSocialMediaIdsFragment" />
+            app:destination="@id/seekerSocialMediaIdsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerEducationFragment"
@@ -75,10 +143,18 @@
         tools:layout="@layout/fragment_seeker_education" >
         <action
             android:id="@+id/action_seekerEducationFragment_to_seekerNewEducationFragment"
-            app:destination="@id/seekerNewEducationFragment" />
+            app:destination="@id/seekerNewEducationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_seekerEducationFragment_to_seekerProfileFragment"
-            app:destination="@id/seekerProfileFragment" />
+            app:destination="@id/seekerProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerMySkillFragment"
@@ -93,6 +169,11 @@
         <argument
             android:name="education"
             app:argType="com.findajob.jobamax.jobseeker.profile.cv.model.Education" />
+        <action
+            android:id="@+id/action_seekerNewEducationFragment_to_seekerProfileFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerProfileFragment"
+            app:destination="@id/seekerProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekerInterestFragment"
@@ -106,18 +187,34 @@
         tools:layout="@layout/fragment_seeker_experience_list" >
         <action
             android:id="@+id/action_seekerExperienceListFragment_to_seekerAddExperienceFragment"
-            app:destination="@id/seekerAddExperienceFragment" />
+            app:destination="@id/seekerAddExperienceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerAddExperienceFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerAddExperienceFragment"
         android:label="fragment_seeker_add_experience"
-        tools:layout="@layout/fragment_seeker_add_experience" />
+        tools:layout="@layout/fragment_seeker_add_experience" >
+        <action
+            android:id="@+id/action_seekerAddExperienceFragment_to_seekerProfileFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerProfileFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seekerSocialMediaIdsFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerSocialMediaIdsFragment"
         android:label="fragment_seeker_social_media_ids"
-        tools:layout="@layout/fragment_seeker_social_media_ids" />
+        tools:layout="@layout/fragment_seeker_social_media_ids" >
+        <action
+            android:id="@+id/action_seekerSocialMediaIdsFragment_to_seekerProfileFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerProfileFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seekerPreviewFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment"
@@ -135,13 +232,23 @@
         tools:layout="@layout/fragment_seeker_volunteering_list" >
         <action
             android:id="@+id/action_seekerVolunteeringListFragment_to_seekerAddVolunteeringFragment"
-            app:destination="@id/seekerAddVolunteeringFragment" />
+            app:destination="@id/seekerAddVolunteeringFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/seekerAddVolunteeringFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment"
         android:label="fragment_seeker_add_volunteering"
-        tools:layout="@layout/fragment_seeker_add_volunteering" />
+        tools:layout="@layout/fragment_seeker_add_volunteering" >
+        <action
+            android:id="@+id/action_seekerAddVolunteeringFragment_to_seekerProfileFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerProfileFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/idealJobVideoFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobVideoFragment"

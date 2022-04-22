@@ -12,7 +12,7 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
     @Nullable
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
-        sIncludes = new androidx.databinding.ViewDataBinding.IncludedLayouts(24);
+        sIncludes = new androidx.databinding.ViewDataBinding.IncludedLayouts(25);
         sIncludes.setIncludes(2, 
             new String[] {"item_seeker_job_card"},
             new int[] {3},
@@ -28,16 +28,17 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
         sViewsWithIds.put(R.id.v_filter_state, 11);
         sViewsWithIds.put(R.id.iv_filter_job, 12);
         sViewsWithIds.put(R.id.csv_job, 13);
-        sViewsWithIds.put(R.id.nsv_card, 14);
-        sViewsWithIds.put(R.id.ll_float_buttons, 15);
-        sViewsWithIds.put(R.id.ll_rewind, 16);
-        sViewsWithIds.put(R.id.fab_rewind, 17);
-        sViewsWithIds.put(R.id.fab_refuse, 18);
-        sViewsWithIds.put(R.id.fab_share, 19);
-        sViewsWithIds.put(R.id.fab_apply, 20);
-        sViewsWithIds.put(R.id.ll_match_percent, 21);
-        sViewsWithIds.put(R.id.pcv_match, 22);
-        sViewsWithIds.put(R.id.rv_job_types, 23);
+        sViewsWithIds.put(R.id.tv_no_jobs_hint, 14);
+        sViewsWithIds.put(R.id.nsv_card, 15);
+        sViewsWithIds.put(R.id.ll_float_buttons, 16);
+        sViewsWithIds.put(R.id.ll_rewind, 17);
+        sViewsWithIds.put(R.id.fab_rewind, 18);
+        sViewsWithIds.put(R.id.fab_refuse, 19);
+        sViewsWithIds.put(R.id.fab_share, 20);
+        sViewsWithIds.put(R.id.fab_apply, 21);
+        sViewsWithIds.put(R.id.ll_match_percent, 22);
+        sViewsWithIds.put(R.id.pcv_match, 23);
+        sViewsWithIds.put(R.id.rv_job_types, 24);
     }
     // views
     @NonNull
@@ -48,7 +49,7 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentSeekerJobsBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 24, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 25, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerJobsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 1
@@ -58,22 +59,23 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[8]
             , (com.yuyakaido.android.cardstackview.CardStackView) bindings[13]
             , (android.widget.EditText) bindings[9]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[20]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[18]
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[17]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[21]
             , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[19]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[18]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[20]
             , (android.widget.ImageView) bindings[5]
             , (android.widget.ImageView) bindings[6]
             , (android.widget.ImageView) bindings[12]
             , (android.widget.ImageView) bindings[10]
             , (com.findajob.jobamax.databinding.ItemSeekerJobCardBinding) bindings[3]
-            , (android.widget.LinearLayout) bindings[15]
-            , (android.widget.LinearLayout) bindings[21]
             , (android.widget.LinearLayout) bindings[16]
-            , (androidx.core.widget.NestedScrollView) bindings[14]
-            , (com.ramijemli.percentagechartview.PercentageChartView) bindings[22]
+            , (android.widget.LinearLayout) bindings[22]
+            , (android.widget.LinearLayout) bindings[17]
+            , (androidx.core.widget.NestedScrollView) bindings[15]
+            , (com.ramijemli.percentagechartview.PercentageChartView) bindings[23]
             , (android.widget.RelativeLayout) bindings[4]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[23]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[24]
+            , (android.widget.TextView) bindings[14]
             , (android.view.View) bindings[11]
             );
         this.civUser.setTag(null);

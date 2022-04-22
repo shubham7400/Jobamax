@@ -1,21 +1,6 @@
 [
   {
-    "name": "nav_chat",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_coaching",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
     "name": "nav_job_search",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_job_seeker_home",
     "navigationXmlIds": [],
     "deepLinks": []
   },
@@ -25,37 +10,7 @@
     "deepLinks": []
   },
   {
-    "name": "nav_location",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_login",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_master_class",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
     "name": "nav_new_login",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_online_course",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_recruiter_home",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_room",
     "navigationXmlIds": [],
     "deepLinks": []
   },
@@ -65,22 +20,17 @@
     "deepLinks": []
   },
   {
-    "name": "nav_seeker_calender",
-    "navigationXmlIds": [],
+    "name": "nav_seeker_home",
+    "navigationXmlIds": [
+      "nav_seeker_profile",
+      "nav_job_tracking",
+      "nav_job_search",
+      "nav_seeker_account"
+    ],
     "deepLinks": []
   },
   {
     "name": "nav_seeker_profile",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_seeker_wishlist",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "nav_training",
     "navigationXmlIds": [],
     "deepLinks": []
   }

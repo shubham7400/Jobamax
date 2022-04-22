@@ -94,7 +94,7 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
             requireActivity().onBackPressed()
         }
         binding.civUser.setOnClickListener {
-            requireActivity().finish()
+            requireActivity().onBackPressed()
         }
         binding.ivAddInterest.setOnClickListener {
             if (binding.actvInterest.text.isNullOrEmpty()){

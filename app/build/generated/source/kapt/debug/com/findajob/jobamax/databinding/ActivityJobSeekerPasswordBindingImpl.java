@@ -25,9 +25,9 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
     private final androidx.appcompat.widget.AppCompatTextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback8;
+    private final android.view.View.OnClickListener mCallback7;
     @Nullable
-    private final android.view.View.OnClickListener mCallback10;
+    private final android.view.View.OnClickListener mCallback8;
     @Nullable
     private final android.view.View.OnClickListener mCallback9;
     // values
@@ -53,9 +53,9 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
         this.submitButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback8 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback10 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback9 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback7 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback8 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback9 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -117,9 +117,9 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.imageView.setOnClickListener(mCallback8);
-            this.mboundView2.setOnClickListener(mCallback9);
-            this.submitButton.setOnClickListener(mCallback10);
+            this.imageView.setOnClickListener(mCallback7);
+            this.mboundView2.setOnClickListener(mCallback8);
+            this.submitButton.setOnClickListener(mCallback9);
         }
     }
     // Listener Stub Implementations
@@ -127,6 +127,23 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
             case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackPress();
+                }
+                break;
+            }
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordInterface handler = mHandler;
@@ -157,23 +174,6 @@ public class ActivityJobSeekerPasswordBindingImpl extends ActivityJobSeekerPassw
 
 
                     handler.onSubmitClicked();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackPress();
                 }
                 break;
             }

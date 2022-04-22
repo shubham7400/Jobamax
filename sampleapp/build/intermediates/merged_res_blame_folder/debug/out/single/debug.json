@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\layout_activity_api.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\layout\\activity_api.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\menu_deeplink.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\menu\\deeplink.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\layout_activity_deeplink.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\layout\\activity_deeplink.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\menu_api.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\menu\\api.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\menu_main.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\sampleapp\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]

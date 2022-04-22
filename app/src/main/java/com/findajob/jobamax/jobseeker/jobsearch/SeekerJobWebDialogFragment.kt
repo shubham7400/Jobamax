@@ -25,6 +25,7 @@ class SeekerJobWebDialogFragment : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSeekerJobWebDialogBinding.inflate(inflater, container, false)
         configureUi()
+
         return binding.root
     }
 
@@ -36,7 +37,7 @@ class SeekerJobWebDialogFragment : DialogFragment() {
             binding.wvJobSite.settings.javaScriptEnabled = true
             binding.wvJobSite.webViewClient =  object : WebViewClient(){
                 override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-                    /*progressHud.show()*/
+
                     super.onPageStarted(view, url, favicon)
                 }
                 override fun onPageFinished(view: WebView?, url: String?) {

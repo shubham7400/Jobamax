@@ -1,6 +1,5 @@
 package com.findajob.jobamax.jobseeker.track.newtrack
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobBinding
 import com.findajob.jobamax.databinding.ItemSeekerOtherJobBinding
 import com.findajob.jobamax.databinding.ItemSeekerTrackBinding
 import com.findajob.jobamax.enums.*
-import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
  import com.findajob.jobamax.model.GetAllUserCallback
@@ -106,11 +104,9 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
 
     private fun getNextDeadline() {
         val request = mapOf("name" to JobPhase.DEADLINE.phase , "jobSeekerId" to requireContext().getUserId() )
-        log("sdkfsld $request")
          ParseCloud.callFunctionInBackground(ParseCloudFunction.getTrackingStatus.toString(), request, FunctionCallback<String>() { result, e ->
             when {
                 e != null -> {
-                    log("ldsflksdjks ${e.message.toString()}")
                     toast("${e.message.toString()}")
                 }
                 else -> {
@@ -148,11 +144,10 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
         binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.ivCalendar.setOnClickListener {
-            requireContext().startActivity(Intent(requireContext(), SeekerCalenderActivity::class.java))
-        }
+        binding.ivCalendar.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobFragment_to_seekerCalenderFragment2, null))
+
         binding.ivFilter.setOnClickListener {
-            val seekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment.newInstance()
+            val seekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment.newInstance(selectedFilter)
             seekerTrackingJobFilterDialogFragment.show(childFragmentManager,"dialog")
             seekerTrackingJobFilterDialogFragment.onGoClickListener = {
                 selectedFilter = it

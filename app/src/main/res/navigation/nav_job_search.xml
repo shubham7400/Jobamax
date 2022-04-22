@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_seeker_jobs" >
         <action
             android:id="@+id/action_seekerJobsFragment_to_seekerJobsFilterFragment"
-            app:destination="@id/seekerJobsFilterFragment" />
+            app:destination="@id/seekerJobsFilterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <argument
             android:name="jobSeekerId"
             app:argType="java.lang.String"
@@ -23,7 +27,14 @@
             app:nullable="true" />
         <action
             android:id="@+id/action_seekerJobsFragment_to_seekerWishListFragment2"
-            app:destination="@id/seekerWishListFragment2" />
+            app:destination="@id/seekerWishListFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_seekerJobsFragment_to_seekerAboutMeFragment2"
+            app:destination="@id/seekerAboutMeFragment2" />
     </fragment>
     <fragment
         android:id="@+id/seekerJobsFilterFragment"
@@ -35,5 +46,10 @@
         android:name="com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment"
         android:label="fragment_seeker_wish_list"
         tools:layout="@layout/fragment_seeker_wish_list" />
+    <fragment
+        android:id="@+id/seekerAboutMeFragment2"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment"
+        android:label="fragment_seeker_about_me"
+        tools:layout="@layout/fragment_seeker_about_me" />
 
 </navigation>

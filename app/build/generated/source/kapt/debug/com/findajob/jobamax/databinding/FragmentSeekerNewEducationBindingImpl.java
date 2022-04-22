@@ -47,7 +47,7 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
         super(bindingComponent, root, 0
             , (android.widget.CheckBox) bindings[10]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[14]
-            , (android.widget.TextView) bindings[18]
+            , (android.widget.EditText) bindings[18]
             , (android.widget.EditText) bindings[9]
             , (android.widget.EditText) bindings[7]
             , (android.widget.ImageView) bindings[3]

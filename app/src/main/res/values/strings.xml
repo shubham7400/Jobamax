@@ -1,73 +1,40 @@
 <resources>
     <string name="app_name">Jobamax</string>
-
-    <!-- === -->
-    <!-- Credentials -->
-    <!-- === -->
+    
 
     <!-- back4app -->
     <string name="back4app_server_url" translatable="false">https://parseapi.back4app.com/</string>
-    <!--    <string name="back4app_app_id">2dhxDPPrNlxvT4faFZZpA7GX0WVRdhWfT2K7ivBS</string>-->
-    <!--    <string name="back4app_client_key">BitojXiteH1Qry78ap3nLZmHyt9fxbeMjKMRGCHn</string>-->
-    <!--    <string name="back4app_live_query_url">wss://jobamaxx.b4a.io/</string>-->
     <string name="back4app_app_id" translatable="false">s3gwYWzFlAYgtfSLTNWZVp6wpTQwj5ISs5XgF7lL</string>
     <string name="back4app_client_key" translatable="false">scOjnd7zjtRTrqblPRg6iFcsJTSLS2phmd48OE0E</string>
-    <string name="back4app_live_query_url" translatable="false">wss://jobamax.b4a.io/</string>
 
     <!-- Pushwoosh -->
-
     <string name="pushwoosh_app_id" translatable="false">46BF6-FA55C</string>
     <string name="fcm_sender_id" translatable="false">916226274147</string>
-    <string name="default_channel_id" translatable="false">channelid</string>
-
-    <!-- facebook -->
-    <!--    <string name="facebook_app_id">329366911842680</string>-->
-    <!--    <string name="fb_login_protocol_scheme">fb329366911842680</string>-->
 
     <!-- TBL FB App -->
     <string name="facebook_app_id" translatable="false">304727217812972</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb304727217812972</string>
+    
+    <!--linked in-->
+    <string name="linked_in_client_id" translatable="false">869zzm9vjdjp5h</string>
+    <string name="linked_in_client_secret" translatable="false">SFqONJQpLuuy9mBW</string>
+    <string name="linked_in_redirect_url" translatable="false">https://www.jobamax.com</string>
 
-    <string name="product_id" translatable="false">android.test.purchased</string>
-    <string name="recruiter">Recruiter</string>
-    <string name="recruit">Recruit</string>
+
     <string name="refuse">Refuse</string>
-    <string name="job_seeker">Job Seeker</string>
-    <string name="i_am_a">I am a</string>
     <string name="or">OR</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="login">Login</string>
     <string name="log_in">Sign In</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="send">Send</string>
-    <string name="verify">Verify</string>
-    <string name="please_enter_the_verification_code_sent_to">Please enter the verification code sent to %s</string>
-    <string name="didn_t_get_the_code_resend">Didn\'t get the code? Resend</string>
-    <string name="enter_verification_code">Enter Verification Code</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="phone">Phone</string>
-    <string name="course">Course</string>
     <string name="track">Track</string>
-    <string name="chat">Chat</string>
     <string name="profile">Profile</string>
     <string name="account">Account</string>
-    <string name="job_offer">Job Offer</string>
-    <string name="media">Media</string>
-    <string name="subscription">Subscription</string>
-    <string name="sponsorship">Sponsorship</string>
     <string name="my_personal_information">My Personal Information</string>
     <string name="hide_me">Hide Me</string>
-    <string name="read_receipts">Read Receipts</string>
-    <string name="social_networks">Social Networks</string>
     <string name="notifications">Notifications</string>
     <string name="push_notifications">Push Notifications</string>
     <string name="newsletter">Newsletter</string>
-    <string name="payment">Payment</string>
-    <string name="payment_methods">Payment Methods</string>
-    <string name="company_information">Company Information</string>
-    <string name="invoices">Invoices</string>
-    <string name="restore_purchase">Restore Purchase</string>
     <string name="share_jobamax">Share Jobamax</string>
     <string name="help_and_support">Help &amp; Support</string>
     <string name="email_us">Email us</string>
@@ -81,17 +48,14 @@
     <string name="terms_of_service">Terms of Service</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="delete_my_account">Delete my account</string>
-    <string name="temporary_disable_my_account">Temporarily disable my account</string>
     <string name="log_out">Log out</string>
     <string name="arg_version">Version 1.0</string>
     <string name="gender_with_asterisk">Gender<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_gender_here">Enter gender here</string>
     <string name="submit">Submit</string>
-    <string name="start">Start</string>
     <string name="skip">Skip</string>
     <string name="first_name_asterisk">First Name<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_first_name">First name</string>
-    <string name="company_name_asterisk">Company Name *</string>
     <string name="enter_company_name">Enter company name</string>
     <string name="postcode_asterisk">Zip code</string>
     <string name="email_asterisk">Email<font fgcolor='#0975FE'>*</font></string>
@@ -104,186 +68,54 @@
     <string name="send_read_receipts">Send Read Receipts</string>
     <string name="manage_read_receipts">Manage Read Receipts</string>
     <string name="instruction_manage_read_receipts">Turning this off will prevent any matches from activating reading Read Receipts in your conversation from this moment forward.</string>
-    <string name="current_location">Current Location</string>
     <string name="location">Location</string>
     <string name="distance">Distance</string>
-    <string name="name_of_job">Name of Job</string>
-    <string name="enter_job_name">Enter Job Name</string>
     <string name="company">Company*</string>
     <string name="city">City</string>
     <string name="enter_city">Enter City</string>
-    <string name="industry">Industry</string>
-    <string name="enter_industry">Enter Industry</string>
     <string name="type_of_work">Type of Work</string>
-    <string name="choose_full_time_part_time">Choose Full time, Part time</string>
-    <string name="choose_permanent_temporary">Choose Permanent, Temporary</string>
-    <string name="monthly_salary">Monthly Salary</string>
-    <string name="enter_salary">Enter Salary($)</string>
-    <string name="level_of_hierarchy">Level of Hierarchy</string>
-    <string name="select_high_medium_low">Select (High, Medium, Low)</string>
-    <string name="key_skills_needed">Key Skills Needed</string>
-    <string name="enter_skills">Enter Skills</string>
-    <string name="job_category">Category</string>
     <string name="job">Job*</string>
-    <string name="work_study">Remote</string>
-    <string name="other">Other</string>
-    <string name="add_skills">Add Skills</string>
     <string name="about_job">About Job</string>
     <string name="experience">Experiences</string>
-    <string name="upload_job_presentation">Upload Job Presentation</string>
     <string name="permanent">Permanent</string>
-    <string name="temporary">Temporary</string>
     <string name="part_time">Part-time</string>
     <string name="full_time">full-time</string>
-    <string name="low">Low</string>
-    <string name="medium">Medium</string>
-    <string name="high">High</string>
-    <string name="select_job_category">Select Job Category</string>
-    <string name="select_experience">Select Experience</string>
-    <string name="enter_job_details">Enter Job Details</string>
-    <string name="job_offers">Job Offers</string>
-    <string name="create">Create</string>
-    <string name="no_offers_found">No Offers Found!</string>
-    <string name="edit">Edit</string>
-    <string name="job_details">Job Details</string>
     <string name="instruction_newsletter">I want to receive news, updates and offers from Jobamax</string>
     <string name="you_just_got_a_new_match">You just got a new match</string>
-    <string name="full_name">%1$s %2$s</string>
     <string name="someone_sent_you_a_new_message">Someone sent you a new message</string>
-    <string name="type_user_name">Search</string>
-    <string name="messages">Messages</string>
     <string name="new_matches">New Matches</string>
     <string name="enable_location">Enable Location</string>
     <string name="instruction_enable_location">You\'ll need to enable your location in order to use Jobamax</string>
     <string name="allow_location">Allow Location</string>
     <string name="tell_me_more">Tell Me More</string>
-    <string name="job_presentation_uploaded">Job Presentation Uploaded</string>
-    <string name="select_new_job_presentation">Select New Job Presentation</string>
-    <string name="loading">Loading…</string>
-    <string name="logo_upload">Logo Upload</string>
-    <string name="video_presentation">Video Presentation</string>
-    <string name="introduce_your_company_to_job_seekers">Introduce your company to job seekers</string>
-    <string name="enter_company_registration">Enter company registration(optional)</string>
-    <string name="company_registration">Company Registration</string>
-    <string name="company_registration_with_asterisk">Company Registration<font fgcolor='#0975FE'>*</font></string>
-    <string name="headquarter">Headquarter *</string>
-    <string name="headquarter_with_asterisk">Headquarter<font fgcolor='#0975FE'>*</font></string>
-    <string name="enter_headquarter_address">Enter headquarter address(optional)</string>
-    <string name="enter_vat_number">Enter VAT number(optional)</string>
-    <string name="vat_number">VAT number</string>
-    <string name="vat_number_with_asterisk">VAT number<font fgcolor='#0975FE'>*</font></string>
-    <string name="c_v">C.V.</string>
-    <string name="job_search">Job Search</string>
-    <string name="get_jobamax_reach">Get Jobamax Reach</string>
-    <string name="enter_valid_email">Enter valid email</string>
-    <string name="enter_phone_number_with_country_code">Enter phone number with country code!</string>
     <string name="enter_valid_phone_number">Enter valid phone number!</string>7
     <string name="date_of_birth_with_asterisk">Date of Birth*</string>
     <string name="enter_date_of_birth">Enter date of birth</string>
 
-    <string name="menu_top_home">Home</string>
-    <string name="menu_top_search">Search</string>
-    <string name="menu_top_messages">Messages</string>
-    <string name="menu_top_settings">Settings</string>
-    <string name="label_none">None</string>
-    <string name="label_get_jobamax_reach">Get Jobamax Reach</string>
-    <string name="label_jobamax_club">Jobamax Club</string>
-    <string name="hint_search">Search</string>
-    <string name="label_matches">Matches</string>
-    <string name="text_cv">C.V.</string>
-    <string name="upload_resume">Upload Resume</string>
-    <string name="upload_resume_presentation">Upload Resume Presentation</string>
-    <string name="resume_presentation_uploaded">Resume Presentation Uploaded</string>
-    <string name="select_new_resume_presentation">Select New Resume Presentation</string>
     <string name="educations">Educations</string>
-    <string name="school_name">School Name</string>
     <string name="schools">Schools</string>
-    <string name="text_enter">Enter</string>
-    <string name="program_name">Program Name</string>
     <string name="start_date">Start Date</string>
     <string name="end_date">End Date</string>
-    <string name="date_format_mm_yy">MM/YY</string>
-    <string name="experiences">Experiences</string>
-    <string name="add_education">Add Education</string>
     <string name="add_experiences">Add Experience</string>
     <string name="skills">Skills</string>
-    <string name="activities">Activities</string>
-    <string name="enter_activity">Enter Activity</string>
-    <string name="add_activities">Add Activities</string>
     <string name="about_me">About Me</string>
-    <string name="enter_school_name">Enter School Name</string>
-    <string name="enter_program">Enter Program</string>
-    <string name="enter_start_date">Enter Start Date</string>
-    <string name="enter_end_date">Enter End Date</string>
     <string name="enter_company">Enter Company</string>
     <string name="enter_job">Enter Job</string>
-    <string name="profile_picture">Profile Picture</string>
-    <string name="upload_profile_picture">Upload profile picture</string>
-    <string name="personal_presentation">Personal Presentation</string>
-    <string name="introduce_yourself_to_recruiters">Introduce yourself to recruiters</string>
-    <string name="attachments">Attachments</string>
-    <string name="upload_cover_letter_c_v_recommendation_letter">Upload Cover Letter, C.V., Recommendation Letter</string>
-    <string name="send_a_message_to_a_recruiter_without_further_delay">Send a message to a recruiter without further delay</string>
-    <string name="enter_job_type">Enter job type</string>
-    <string name="what_job_are_you_looking_for">What job are you looking for?</string>
-    <string name="add_a_job_offer">Add a job offer</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
     <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
     <string name="in_case_you_forgot_password"><u>In case you forgot password</u></string>
-    <string name="reach">Reach</string>
-    <string name="text_return">Return</string>
-    <string name="my_job_offers">My Job Offers</string>
-    <string name="video_of_candidate">Video of Candidate</string>
-    <string name="source">Source</string>
     <string name="description">Description</string>
-    <string name="keep_me_posted">Keep Me Posted</string>
     <string name="not_now">Not Now</string>
-    <string name="find_out_when_get_a_match_or_message">Find out when get a match or message</string>
     <string name="i_want_to_be_notified">I want to be notified</string>
     <string name="instruction_meet_people_nearby">Your location will be used to show potential job offers near you</string>
     <string name="instruction_we_value_our_privacy">At Jobamax, your privacy is a top priority. Your privacy is at the core of the way we design and build the services and products you know and love, so that you can fully trust them and focus on building meaningful connections.</string>
     <string name="i_accept">I Accept</string>
 
-    <string name="label_my_list">My List</string>
-    <string name="label_our_categories">Our Class Categories</string>
-    <string name="label_upcoming_events">Upcoming Events</string>
-    <string name="label_course_available">\u0020Course Available</string>
-    <string name="label_enter_message">Type something</string>
-    <string name="online_course_error_loading">Courses could not be loaded</string>
-    <string name="try_again">Try again</string>
-    <string name="type_course_name">Type course name…</string>
-    <string name="no_result_online_courses">No results found for this query</string>
-    <string name="course_title_dummy">Energy Justice: Exploring and Equitable Green Transitoin</string>
-    <string name="insructor_name">Jason A. Roh, Rh.D</string>
-    <string name="offered_by">Offered By</string>
-    <string name="organization_name">Lorem</string>
-
-    <string name="enable_scroll">Enable Scroll</string>
-    <string name="disable_scroll">Disable Scroll</string>
-    <string name="security">Security</string>
     <string name="what_are_you_looking_for">What are you looking for?</string>
-    <string name="enter_city_or_country">Enter city or country</string>
-    <string name="add_locations">Add locations</string>
-    <string name="enter_experiences">Enter experiences</string>
-    <string name="enter_education">Enter education</string>
     <string name="title_activity_maps">Map</string>
-    <string name="choose_a_subscription">Choose a subscription</string>
-    <string name="standard_recruiter">Standard Professional</string>
-    <string name="price_standard_recruiter">$99/month \n $79/month (Annual Subscription)</string>
-    <string name="info_standard_recruiter"><font fgcolor='#FFBF00'>• </font> For individual recruiters with occasional hiring needs : 99$ (monthly) and 79$ (annually)  : Find your talent : 1 job listing per month / 50 matches per month / 50  AI sourcing contact credit per month / Unlimited access to Jobamax Club\n<font fgcolor='#FFBF00'>• </font> 1 job offer at a time\n<font fgcolor='#FFBF00'>• </font> Unlimited chat\n<font fgcolor='#FFBF00'>• </font> Source 1 profile every day</string>
-    <string name="info_premium_recruiter"><font fgcolor='#FFBF00'>• </font> For recruiters with continuous recruitment needs : 249$ (monthly) and 199$ (annual) : Boost your hiring needs : 2–3 job listings per month / 300 matches per month / Go back to a profile / 150 AI sourcing contact credit per month / Unlimited access to Jobamax Club<font fgcolor='#FFBF00'>• </font> 3 job offer simultaneously\n<font fgcolor='#FFBF00'>• </font> Unlimited chat\n<font fgcolor='#FFBF00'>• </font> Go Back\n<font fgcolor='#FFBF00'>• </font> Source 10 profile every day</string>
-    <string name="info_recruiter_experience"><font fgcolor='#FFBF00'>• </font> or recruiters with continuous recruitment needs : 249$ (monthly) and 199$ (annual) : Boost your hiring needs : 2–3 job listings per month / 300 matches per month / Go back to a profile / 150 AI sourcing contact credit per month / Unlimited access to Jobamax Club\n<font fgcolor='#FFBF00'>• </font> Unlimited job offer simultaneously\n<font fgcolor='#FFBF00'>• </font> Unlimited chat\n<font fgcolor='#FFBF00'>• </font> Go Back\n<font fgcolor='#FFBF00'>• </font> Unlimited sourcing</string>
-    <string name="premium_subscription">Premium Professional</string>
-    <string name="price_premium_recruiter">249$ (monthly) and 199$ (annual) </string>
-    <string name="recruiter_experience">Professional Experience</string>
-    <string name="price_recruiter_exeprience">$399/month</string>
-    <string name="text_continue">Continue</string>
-    <string name="reset">Reset</string>
-    <string name="current_password">Current Password</string>
-    <string name="enter_current_password">Enter current password</string>
     <string name="new_password">New Password*</string>
     <string name="enter_new_password">Enter new password</string>
     <string name="confirm_new_password">Confirm New Password*</string>
@@ -297,206 +129,28 @@
     <string name="crop_image_menu_flip_vertically">Flip vertically</string>
     <string name="crop_image_activity_no_permissions">Cancelling, required permissions are not granted</string>
 
-    <string name="msg_welcome_message">Welcome to OpenLive Voice Only!</string>
-    <string name="label_room_name_hint">Room name</string>
-    <string name="msg_choose_role">Would you like to be the broadcaster or an audience?</string>
-    <string name="label_audience">Audience</string>
-    <string name="label_broadcaster">Broadcaster</string>
-    <string name="label_confirm">Confirm</string>
-    <string name="label_join">Join</string>
-    <string name="msg_no_network_connection">No network connection, please check the network settings</string>
     // DO NOT TRANSLATE
-    <string name="bit_rate_value_with_unit">%d kbps</string>
     <string name="save">Save</string>
     <string name="share">Share</string>
     <string name="send_to_friend">Send to Friend</string>
-    <string name="are_any_of_the_following_benefits_offered">Are any of the following benefits offered?</string>
-    <string name="benefits_offered">Benefits Offered</string>
     <string name="about_course">About this Course</string>
-    <string name="recent_views">44,693 recent views</string>
-    <string name="course_info_dummy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-    magnis dis parturient montes, nascetur ridiculus mus.
-    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</string>
-    <string name="learner_career_outcomes">Learner Career Outcomes</string>
-    <string name="onlinecourse_cv_tv_two">&#032;started a new career after completing these courses</string>
-    <string name="onlinecourse_cv_tv_three">&#032;got a tangible career benefit from this course</string>
-    <string name="enroll_for">Enroll for</string>
-    <string name="reviews_error_loading">Reviews could not be loaded</string>
-    <string name="no_reviews_online_courses">There is no review yet</string>
-    <string name="syllabus_error_loading">Syllabus could not be loaded</string>
-    <string name="no_syllabus_online_courses">Syllabus is empty</string>
-    <string name="no_instructor_online_course">No instructors found</string>
-    <string name="instructors_loading_error">Instructors could not be loaded</string>
-    <string name="syllabus_title">Syllabus - What you will learn from this course</string>
-    <string name="trending">Trending</string>
-    <string name="my_list">My List</string>
-    <string name="new_list">New</string>
-    <string name="coming_soon">Coming Soon</string>
-    <string name="master_class_dummy_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-    magnis dis parturient montes, nascetur ridiculus mus.</string>
-    <string name="base_facebook_url">https://www.facebook.com/</string>
-    <string name="base_twitter_url">https://www.twitter.com/</string>
-    <string name="base_instagram_url">https://www.instagram.com/</string>
-    <string name="base_linkedin_url">https://www.linkedin.com/</string>
-    <string name="tv_username">Username</string>
-    <string name="one_month_free_trial">1 month free trial</string>
     <string name="ok">OK</string>
-    <string name="error">Error</string>
-    <string name="add_new_card">Add Card</string>
-    <string name="add_card_successful">Successfully added card</string>
-    <string name="remove_card_successful">Successfully removed card</string>
-    <string name="pay">Pay</string>
-    <string name="one_month_free_trial_started">One month free trial started</string>
-    <string name="confirm_payment">Confirm Payment</string>
-    <string name="payment_successful">Payment Successful</string>
-    <string name="payment_failed">Payment Failed</string>
     <string name="text_photos">Gallery</string>
     <string name="text_camera">Camera</string>
-    <string name="label_chats">Chats</string>
-    <string name="label_people">People</string>
-    <string name="starter_subscription">Starter</string>
-    <string name="info_starter_recruiter">For new recruiters just getting started with Jobamax : free : Try Jobamax for free : 1 AI sourcing contact credit per day / Unlimited access to Jobamax Club</string>
-    <string name="standard_subscription">Standard</string>
-    <string name="enterprise_subscription">Enterprise</string>
-    <string name="info_enterprise_recruiter">For recruiting team with advanced features needs : custom plan :  Scale up your team : *number of job listings per month / unlimited matches per month / Go back to a profile / *number of AI sourcing contact credit per month / Unlimited access to Jobamax Club</string>
-    <string name="price_enterprise_recruiter">Pay-As-You-Go</string>
-    <string name="purpose_of_calling">Purpose of calling</string>
-    <string name="add_new_event">Add new Event</string>
-    <string name="event_name">Event name</string>
-    <string name="message">Message</string>
-    <string name="go_back">Go back</string>
-    <string name="event_calendar">Event Calendar</string>
-    <string name="content_description_add_event">Add Event</string>
-    <string name="participants">Participants</string>
-    <string name="rooms">Rooms</string>
-    <string name="start_a_room">+ Start a room</string>
-    <string name="welcome">Welcome to </string>
-    <string name="next">Next</string>
-    <string name="messaging">Messaging</string>
-    <string name="matches">Matches</string>
-    <string name="background">background</string>
-    <string name="purpose_of_call">Purpose of call</string>
     <string name="interview">Interview</string>
-    <string name="information">Information</string>
-    <string name="requirements">Requirements</string>
-    <string name="get_started">Get Started</string>
-    <string name="hint_gpa">Enter your GPA</string>
-    <string name="gpa">GPA</string>
-    <string name="currently_working">Currently working</string>
-    <string name="location_required">Location*</string>
-    <string name="name_of_job_required">Name of Job*</string>
-    <string name="company_required">Company*</string>
-    <string name="city_required">City*</string>
-    <string name="industry_required">Industry*</string>
-    <string name="enter_industry_required">"Enter Industry "</string>
-    <string name="delete">Delete</string>
     //LinkedIn SDK Access
-    <string name="linked_in_client_id" translatable="false">869zzm9vjdjp5h</string>
-    <string name="linked_in_client_secret" translatable="false">SFqONJQpLuuy9mBW</string>
-    <string name="linked_in_redirect_uri" translatable="false">https://jobamax.com</string>
-    <string name="linked_in_state" translatable="false">jobamax</string>
-    <string-array name="linked_in_access_scopes">
-        <item>r_liteprofile</item>
-        <item>r_emailaddress</item>
-    </string-array>
     <string name="archive">Archive</string>
-    <string name="filter_by_job">Filter by job</string>
-    <string name="leave_room"><u>Leave</u></string>
-    <string name="resume">Resume</string>
-    <string name="become_ambassador">Become Ambassador</string>
-    <string name="send_an_instant">Send an instant message to recruiter to get hired faster</string>
-    <string name="market_jobamax">Market jobamax and earn $4 per student you bring into the app.</string>
-    <string name="get_jobomax_reaches">Get Jobamax Reaches</string>
-    <string name="s_reaches_this_month">%s reaches left this month</string>
-    <string name="upgrade">Upgrade</string>
-    <string name="analysis_for_data">360° analysis for data-driven recruitment</string>
-    <string name="get_jobomax_analytics">Get Jobamax analytics report</string>
-    <string name="s_ai_searching">%s AI sourcing contact credits left this month</string>
-    <string name="s_matching_this_month">%s matching left this month</string>
-    <string name="show_case_your">Showcase your brand</string>
-    <string name="job_listing">Job Listing</string>
-    <string name="current_subscription">Current Subscription</string>
-    <string name="schedule_a_demo">Schedule a demo</string>
-    <string name="contact">Contact</string>
     <string name="we_value_your_privacy">We value your privacy</string>
     <string name="invitation_code">Promo code (optional)</string>
-    <string name="postcode">Zip code</string>
-    <string name="position">Position *</string>
-    <string name="company_position">Company Position</string>
     <string name="company_name">Company Name</string>
-    <string name="company_address_demo">example.com</string>
-    <string name="company_website">Company Website</string>
-    <string name="company_address_hint">2124 Union Street Suite D San Francisco, CA 94123 USA</string>
-    <string name="vat_number_hint">123456789</string>
-    <string name="company_size">Company Size</string>
-    <string name="one_to_ten">1–10</string>
-    <string name="fifty_one_to_one_ninety_nine">51–199</string>
-    <string name="eleven_to_fifty">11–50</string>
-    <string name="two_to_five_hundred">200–500</string>
-    <string name="five_hundred_plus">500+</string>
-    <string name="mm_dd_yy">MM/DD/YY</string>
     <string name="back">Back</string>
     <string name="do_you_want_to_logout">Do you want to log out</string>
     <string name="do_you_want_to_disable">Do you want to disable your account</string>
-    <string name="enter_headquarter">Enter headquarters</string>
-    <string name="headquarters">Headquarters</string>
-    <string name="website_url">Website URL</string>
-    <string name="enter_website_url">Enter website url</string>
-    <string name="select_company_size">Select company size</string>
-    <string name="short_list">Short list</string>
-    <string name="unarchive">Unarchive</string>
-    <string name="job_listings">Job Listings</string>
-    <string name="add">Add</string>
-    <string name="archived">Archived</string>
-    <string name="go_to_archived_messages">Go to archived messages</string>
-    <string name="active_job_offers">Active Job Offers</string>
-    <string name="active">Active</string>
-    <string name="archived_job_offers">Archived Job Offers</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="you_want_to_add_a_job">You want to add a job?</string>
     <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="jobamax_logo">Jobamax Logo</string>
-    <string name="contact_me">Contact Me</string>
-    <string name="jobamax_contact_header">Jobamax may already have your job offer online with a pool of candidates.</string>
-    <string name="contact_us_to_find_out">Contact us to find out</string>
-    <string name="phone_number_email_confirmation">Is your phone number and email correct?</string>
-    <string name="modify">Modify</string>
-    <string name="location_label">Location:</string>
-    <string name="_50_km">50 KM</string>
-    <string name="_100_km">100 KM</string>
-    <string name="name_of_job_asterick">Name of Job*</string>
-    <string name="enter_name_of_the_job">Enter name of the job</string>
-    <string name="company_asterick">Company*</string>
-    <string name="type_of_work_asterick">Type of work*</string>
-    <string name="salary">Salary</string>
-    <string name="monthly">Monthly</string>
-    <string name="yearly">Yearly</string>
-    <string name="key_skills">Key Skills</string>
-    <string name="seperate_by_comma">Seperate skills by comma</string>
     <string name="work_experience">Work Experience</string>
-    <string name="zero_to_one">0-1</string>
-    <string name="two_to_three">2-3</string>
-    <string name="three_plus">3+</string>
-    <string name="benefits_detail">Are any of the following benefits Offered?</string>
-    <string name="cell_phone_reimbursment">Cell phone reimbursment</string>
-    <string name="commuter_assistance">Commuter assistance</string>
-    <string name="flexible_schedule">Flexible schedule</string>
-    <string name="food_allowance">Food allowance</string>
-    <string name="health_insurance">Health insurance</string>
-    <string name="internet_reimbursement">Internet reimbursement</string>
-    <string name="life_insurance">Life Insurance</string>
-    <string name="work_from_home">Work from home</string>
-    <string name="screening_questions">Screening question</string>
-    <string name="screening_hint">Ask a job seeker to respond to your\nquestion in a 30s audio.</string>
-    <string name="type_your_question_here">Type your question here</string>
-    <string name="enter_your_job_code">Enter your job code.</string>
     <string name="delete_account">Delete Account</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete Your account?</string>
     <string name="please_let_us_know">Please let us know the reason you are leaving.</string>
-    <string name="i_found_out">I found what I was looking for</string>
     <string name="continue_to_account_deletion">Continue to Account Deletion</string>
     <string name="please_select_reason">Please select reason</string>
     <string-array name="leaving_reason">
@@ -506,50 +160,12 @@
         <item>I got into troubles</item>
         <item>I just don’t have time for it</item>
     </string-array>
-    <string name="enter_company_website">Enter website URL</string>
-    <string name="salary_type">Salary Type</string>
-    <string name="you_want_to_end_this_job">you want to end this job</string>
-    <string name="you_want_to_restore_this_job">you want to restore this job?</string>
-    <string name="tell_us_about_yourself">Tell us about yourself</string>
-    <string name="keep_swiping">Keep Swiping</string>
-    <string name="send_message">Send Message</string>
-    <string name="you_and_company_can_now_discuss_with_each_other">You and company can now discuss with each other.</string>
-    <string name="it_s_a_match">It\'s a Match!</string>
-    <string name="logo_of_recruiter">logo of recruiter</string>
-    <string name="see_in_details">see in details</string>
 
-    <string name="click_to_add">Click to add</string>
     <string name="education">Educations</string>
-    <string name="job_asterick">Job*</string>
     <string name="click_to_add_location">Click to add location</string>
 
-    <string name="online_courses">Online Courses</string>
-    <string name="instructor">Instructor</string>
-    <string name="month">Month</string>
-    <string name="_14_days_trial">14 days free trial</string>
-    <string name="choose_plan">Choose Plan</string>
-    <string name="membership_plan">Membership Plan</string>
-    <string name="annually">Annually</string>
-    <string name="compare">Compare</string>
-    <string name="master_class">Master Class</string>
-    <string name="play">Play</string>
-    <string name="episodes">Episodes</string>
     <string name="enable_push_notifications">Enable push-notifications</string>
     <string name="i_agree_to_receive_push_notifications_from_jobamax_to_inform_me_about_my_activity_on_the_platform">I agree to receive push notifications from Jobamax to inform me about my activity on the platform.</string>
-    <string name="code">code</string>
-    <string name="phone_number">Phone number</string>
-    <string name="first_name">First name</string>
-    <string name="last_name">Last name</string>
-    <string name="enter_zip_code">Enter zip code</string>
-    <string name="rate">Rate</string>
-    <string name="_7">7+</string>
-    <string name="season_1">Season 1</string>
-    <string name="hd">HD</string>
-    <string name="_new">New</string>
-
-    <string name="media_url_dash"><![CDATA[https://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube?as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,source,id,as&ip=0.0.0.0&ipbits=0&expire=19000000000&signature=51AF5F39AB0CEC3E5497CD9C900EBFEAECCCB5C7.8506521BFC350652163895D4C26DEE124209AA9E&key=ik0]]></string>
-
-    <string name="networking">Networking</string>
 
     <string name="apprenticeship">Apprenticeship</string>
     <string name="internship">Internship</string>
@@ -607,7 +223,6 @@
     <string name="filters">Filters</string>
     <string name="my_dream_job">My dream job</string>
     <string name="my_current_location">My current location</string>
-    <string name="which_industry">Which industry?</string>
     <string name="don_t_wait_to">Don\'t wait to</string>
     <string name="no_data">No Data</string>
     <string name="let_s_find_your_dream_job_together">Let\'s find your\nDream job together.</string>
@@ -620,12 +235,10 @@
     <string name="upload_video">Upload Video</string>
     <string name="text">Text</string>
     <string name="links">Links</string>
-    <string name="enter_link_here">Enter Link here</string>
     <string name="add_link">Add Link</string>
     <string name="filter_by">Filter by....</string>
     <string name="about">About</string>
     <string name="elevator_speech">Elevator speech</string>
-    <string name="filter_when_you_click_on_filters">Filter when you click on filters</string>
     <string name="all">All</string>
     <string name="favorite">Favorite</string>
     <string name="applied">Applied</string>
@@ -654,6 +267,9 @@
     <string name="profile_url">Profile URL</string>
     <string name="enter_file_link">Enter file link</string>
     <string name="offers">Offers</string>
+    <string name="preview">Preview</string>
+    <string name="what_job_are_looking_for">What job are looking for</string>
+    <string name="no_jobs_available">No Jobs Available</string>
 
 
 </resources>

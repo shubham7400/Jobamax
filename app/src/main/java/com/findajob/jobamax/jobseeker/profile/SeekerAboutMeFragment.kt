@@ -1,5 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -16,10 +17,14 @@ import com.findajob.jobamax.cropper.CropImage
 import com.findajob.jobamax.cropper.CropImageView
 import com.findajob.jobamax.databinding.FragmentSeekerAboutMeBinding
 import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.home.SaveParseObjectCallback
 import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
- import com.findajob.jobamax.util.*
+import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.util.*
+import com.parse.ParseObject
+import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
@@ -60,15 +65,15 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
         binding.ivEdit.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerSocialMediaIdsFragment, null))
 
         binding.ivProfileUser.setOnClickListener {
-           requireActivity().finish()
+           requireActivity().onBackPressed()
         }
         binding.ivUserProfilePic.setOnClickListener {
-            if (requireActivity().checkForPermissions()) {
+            if (requireActivity().checkForPermissions(arrayOf(Manifest.permission.CAMERA))) {
                 setupImagePicker()
             }
         }
          binding.ivBackButton.setOnClickListener {
-             (activity as SeekerProfileActivity).onBackPressed()
+             requireActivity().onBackPressed()
          }
     }
 
@@ -95,6 +100,7 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
                             progressHud.dismiss()
                             if (isSuccessful) {
                                 toast("Media Uploaded Successfully")
+                                getCurrent()
                             } else toast("Something went wrong!")
                         }
                     })
@@ -102,6 +108,30 @@ class SeekerAboutMeFragment : BaseFragmentMain<FragmentSeekerAboutMeBinding>() ,
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 requireContext().errorToast()
+            }
+        }
+    }
+
+    private fun getCurrent( ) {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        query.include("portfolio")
+        query.include("idealJob")
+        progressHud.show()
+        query.findInBackground { it, e ->
+            progressHud.dismiss()
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    toast(e.message.toString())
+                }
+                jobSeeker == null -> {
+                    toast("User Not Found.")
+                }
+                else -> {
+                    viewModel.jobSeekerObject = jobSeeker
+                    viewModel.isJobSeekerUpdated.value = true
+                }
             }
         }
     }

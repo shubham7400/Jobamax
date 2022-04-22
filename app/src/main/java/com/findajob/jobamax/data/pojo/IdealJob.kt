@@ -2,7 +2,6 @@ package com.findajob.jobamax.data.pojo
 
 import com.findajob.jobamax.enums.ParseTableName
 import com.parse.ParseObject
-import com.parse.coroutines.read.parse_object.fetchIfNeeded
 
 class IdealJob(obj: ParseObject) {
     var text: String = ""

@@ -36,10 +36,7 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.JobSeekerJobFilter
 import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFilterDialogFragment
 import com.findajob.jobamax.model.NewJobOffer
-import com.findajob.jobamax.preference.getCurrentLocation
-import com.findajob.jobamax.preference.getJobSeekerJobFilter
-import com.findajob.jobamax.preference.getUserId
-import com.findajob.jobamax.preference.setJobSeekerJobFilter
+import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.getCurrentLatitude
 import com.findajob.jobamax.util.getCurrentLongitude
 import com.findajob.jobamax.util.log
@@ -50,16 +47,14 @@ import com.google.firebase.dynamiclinks.ktx.dynamicLink
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
-import com.parse.FunctionCallback
-import com.parse.ParseCloud
-import com.parse.ParseObject
-import com.parse.ParseQuery
+import com.parse.*
 import com.squareup.picasso.Picasso
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.internal.SynchronizedObject
 import org.json.JSONObject
 
 
@@ -126,6 +121,37 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         setJobTypeRecyclerview()
 
     }
+
+    override fun onStart() {
+        super.onStart()
+        requireContext().setJobSearchScreenEnterTime((System.currentTimeMillis() / 1000).toString())
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        saveSpentTimeOnJobSearch()
+    }
+
+    private fun saveSpentTimeOnJobSearch() {
+        if (requireContext().getJobSearchScreenEnterTime() != ""){
+            val request = HashMap<String, Any>().also {
+                it["jobSeekerId"] = requireContext().getUserId()
+                it["enterTime"] = requireContext().getJobSearchScreenEnterTime().toLong()
+                it["leaveTime"] = System.currentTimeMillis() / 1000
+                it["type"] = 1
+            }
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.saveSpentTime.toString(), request, FunctionCallback<Any> { result, e ->
+                if (e != null) {
+                    try {
+                        toast(e.message.toString())
+                    }catch (e: Exception){}
+                }
+                requireContext().setJobSearchScreenEnterTime("")
+            })
+        }
+        requireContext().setJobSearchScreenEnterTime("")
+    }
+
 
     override fun onResume() {
         super.onResume()
@@ -219,7 +245,10 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             param = hashMapOf("jobSeekerId" to requireContext().getUserId(), "isFilterApply " to false, "jobOfferId" to jobOfferId!! )
         }else{
             if (requireContext().getJobSeekerJobFilter() == "" ){
-                param = hashMapOf("jobSeekerId" to requireContext().getUserId(), "isFilterApply " to false/*, "jobOfferId" to jobOfferId!!*/ )
+                param["jobSeekerId"]  =  requireContext().getUserId()
+                param["isFilterApply"]  = false
+                param["latitude"]  = getCurrentLatitude()
+                param["longitude"]  = getCurrentLongitude()
             }else{
                 val jobSeekerJobFilter = Gson().fromJson(requireContext().getJobSeekerJobFilter(), JobSeekerJobFilter::class.java)
                 param["searchString"] = if (jobSeekerJobFilter.searchString == null) "" else jobSeekerJobFilter.searchString!!
@@ -227,8 +256,8 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 param["isFilterApply"] = true
                 param["distance"] = if (jobSeekerJobFilter.distance == null) 0 else jobSeekerJobFilter.distance!!
                 param["location"] = if (jobSeekerJobFilter.location == null) "" else jobSeekerJobFilter.location!!
-                param["lat"] = if (jobSeekerJobFilter.lat == null) getCurrentLatitude() else jobSeekerJobFilter.lat!!
-                param["lng"] = if (jobSeekerJobFilter.lng == null) getCurrentLongitude() else jobSeekerJobFilter.lng!!
+                param["latitude"] = if (jobSeekerJobFilter.latitude == null) getCurrentLatitude() else jobSeekerJobFilter.latitude!!
+                param["longitude"] = if (jobSeekerJobFilter.longitude == null) getCurrentLongitude() else jobSeekerJobFilter.longitude!!
                 param["industry"] = jobSeekerJobFilter.industry
                 param["companyName"] = if (jobSeekerJobFilter.companyName == null) "" else jobSeekerJobFilter.companyName!!
                 param["typeOfWork"] = jobSeekerJobFilter.typeOfWork.ifEmpty { emptyList() }
@@ -258,6 +287,11 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                     adapter.submitList(jobOfferList)
                     adapter.notifyDataSetChanged()
                     setMatchPercentage()
+                    if (jobOfferList.isEmpty()){
+                        binding.tvNoJobsHint.visibility = View.VISIBLE
+                    }else{
+                        binding.tvNoJobsHint.visibility = View.GONE
+                    }
                 }
             }
         })
@@ -304,10 +338,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             set.connect(binding.nsvCard.id, ConstraintSet.TOP, binding.csvJob.id, ConstraintSet.BOTTOM , 10)
             set.applyTo(binding.clMostParent)
         }
-        /*adapter.onJobsEnd = {
-            getJobOffers()
-        }
-*/
+
         adapter.reportFlagClick = {
             JobReportDialog(requireActivity()).show()
         }
@@ -495,6 +526,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                     }
                     Direction.Top -> {
                         shareJob()
+                        saveSwipeCount()
                     }
                     Direction.Right -> {
                         if (swipedJobOffer != null){
@@ -547,6 +579,20 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 if(cardStackLayoutManager.childCount == 0){
                     getJobOffers()
                 }
+            }
+        })
+    }
+
+    private fun saveSwipeCount() {
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.saveSwipeCount.toString(), hashMapOf( "jobSeekerId" to requireContext().getUserId(), "type" to 3), FunctionCallback<Any> { result, e ->
+            when {
+                e != null -> {
+                    toast("${e.message.toString()}")
+                }
+                result == null -> {
+                    toast("No result found")
+                }
+                else -> {}
             }
         })
     }
@@ -630,9 +676,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             if (binding.lJob.rootLayout.isVisible){
                 binding.lJob.acbSeeJobDesc.performClick()
             }
-            val setting = SwipeAnimationSetting.Builder().setDirection(Direction.Left).setDuration(200).setInterpolator(
-                AccelerateInterpolator()
-            ).build()
+            val setting = SwipeAnimationSetting.Builder().setDirection(Direction.Left).setDuration(200).setInterpolator(AccelerateInterpolator()).build()
             cardStackLayoutManager.setSwipeAnimationSetting(setting)
             binding.csvJob.swipe()
         }
@@ -661,7 +705,9 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             updateJobs()
         }
 
-        binding.civUser.setOnClickListener { requireActivity().onBackPressed() }
+        binding.civUser.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_seekerJobsFragment_to_seekerAboutMeFragment2)
+        }
 
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()

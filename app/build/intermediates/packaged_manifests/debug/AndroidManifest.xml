@@ -6,10 +6,9 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="31" />
+        android:targetSdkVersion="32" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -55,6 +54,7 @@
         android:required="true" />
 
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
@@ -68,31 +68,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity"
-            android:exported="false" />
         <activity
             android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.findajob.jobamax.jobseeker.profile.VideoPlayActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity"
             android:exported="false" />
         <activity
             android:name="com.findajob.jobamax.SplashActivity"
@@ -185,21 +168,6 @@
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/back4app_client_key" /> <!-- don't forget to put your Facebook App ID in the following link -->
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-        <meta-data
-            android:name="com.parse.SERVER_URL"
-            android:value="@string/back4app_server_url" />
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <meta-data
-            android:name="com.parse.APPLICATION_ID"
-            android:value="@string/back4app_app_id" />
-        <meta-data
-            android:name="com.parse.CLIENT_KEY"
-            android:value="@string/back4app_client_key" /> <!-- don't forget to put your Facebook App ID in the following link -->
-        <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@mipmap/ic_launcher" />
         <meta-data
@@ -235,12 +203,10 @@
             </intent-filter>
         </service>
         <service
-            android:name="com.uxcam.service.HttpPostService"
-            android:exported="false" />
-        <service
             android:name="com.findajob.jobamax.services.LocationService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:stopWithTask="true" />
 
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
@@ -252,6 +218,11 @@
             </intent-filter>
         </receiver>
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.findajob.jobamax.com.squareup.picasso"
+            android:exported="false" />
+
         <activity
             android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
             android:exported="false"
@@ -259,16 +230,58 @@
             android:theme="@style/PlacesAutocompleteOverlay"
             android:windowSoftInputMode="adjustResize" >
         </activity>
-        <activity android:name="com.kusu.linkedinlogin.ui.LinkedinSignInActivity" />
 
-        <provider
-            android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.findajob.jobamax.com.squareup.picasso"
-            android:exported="false" />
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.ktx.FirebaseDynamicLinksKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
 
-        <activity
-            android:name="com.karumi.dexter.DexterActivity"
-            android:theme="@style/Dexter.Internal.Theme.Transparent" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
@@ -305,67 +318,6 @@
                     android:scheme="recaptcha" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-            android:enabled="true"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
-        <service
-            android:name="com.google.firebase.components.ComponentDiscoveryService"
-            android:directBootAware="true"
-            android:exported="false" >
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.ktx.FirebaseDynamicLinksKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-        </service>
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
@@ -478,21 +430,7 @@
                     android:host="cct.com.findajob.jobamax"
                     android:scheme="fbconnect" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.esafirm.imagepicker.features.ImagePickerActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/ef_AppTheme" />
-
-        <provider
-            android:name="com.esafirm.imagepicker.helper.ImagePickerFileProvider"
-            android:authorities="com.findajob.jobamax.imagepicker.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/image_picker_provider_paths" />
-        </provider> <!-- Needs to be explicitly declared on P+ -->
+        </activity> <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
@@ -543,16 +481,37 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <!--
+         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+         with the application context. This config is merged in with the host app's manifest,
+         but there can only be one provider with the same authority activated at any given
+         point; so if the end user has two or more different apps that use Facebook SDK, only the
+         first one will be able to use the provider. To work around this problem, we use the
+         following placeholder in the authority to identify each host application as if it was
+         a completely different provider.
+        -->
+        <provider
+            android:name="com.facebook.internal.FacebookInitProvider"
+            android:authorities="com.findajob.jobamax.FacebookInitProvider"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+            </intent-filter>
+        </receiver>
 
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.findajob.jobamax.androidx-startup"
             android:exported="false" >
             <meta-data
-                android:name="androidx.work.WorkManagerInitializer"
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
                 android:value="androidx.startup" />
             <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:name="androidx.work.WorkManagerInitializer"
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
@@ -650,27 +609,13 @@
                 <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
             </intent-filter>
         </receiver>
-        <!--
-         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
-         with the application context. This config is merged in with the host app's manifest,
-         but there can only be one provider with the same authority activated at any given
-         point; so if the end user has two or more different apps that use Facebook SDK, only the
-         first one will be able to use the provider. To work around this problem, we use the
-         following placeholder in the authority to identify each host application as if it was
-         a completely different provider.
-        -->
-        <provider
-            android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.findajob.jobamax.FacebookInitProvider"
-            android:exported="false" />
 
-        <receiver
-            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-            </intent-filter>
-        </receiver>
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
 
         <service
             android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
@@ -696,7 +641,7 @@
 
         <meta-data
             android:name="com.google.android.play.billingclient.version"
-            android:value="3.0.3" />
+            android:value="4.1.0" />
 
         <activity
             android:name="com.android.billingclient.api.ProxyBillingActivity"

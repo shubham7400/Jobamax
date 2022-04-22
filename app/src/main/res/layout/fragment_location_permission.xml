@@ -89,7 +89,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_allow_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/grad_button"
@@ -116,9 +116,9 @@
                 android:textColor="@color/primary_text"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/button2"
-                app:layout_constraintStart_toStartOf="@+id/button2"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
+                app:layout_constraintEnd_toEndOf="@+id/btn_allow_location"
+                app:layout_constraintStart_toStartOf="@+id/btn_allow_location"
+                app:layout_constraintTop_toBottomOf="@+id/btn_allow_location" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

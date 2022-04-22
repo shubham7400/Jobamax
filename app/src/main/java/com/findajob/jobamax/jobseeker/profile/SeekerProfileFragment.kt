@@ -36,7 +36,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
     override fun getViewModel(): ViewModel = viewModel
 
-    var ownedWorkSpaces = ArrayList<String>()
+    private var ownedWorkSpaces = ArrayList<String>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerProfileBinding.inflate(inflater, container, false)
@@ -170,10 +170,10 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
         binding.ivInfo.setOnClickListener(this)
         binding.ivBackButton.setOnClickListener(this)
         binding.ivAddIdealWorkspaceBtn.setOnClickListener(this)
-        binding.tvAboutMeBtn.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerAboutMeFragment, null))
-        binding.ivUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerAboutMeFragment, null))
-        binding.clEducation.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerEducationFragment, null))
-        binding.clSkills.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerMySkillFragment, null))
+        binding.tvAboutMeBtn.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerAboutMeFragment, null))
+        binding.ivUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerAboutMeFragment, null))
+        binding.clEducation.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerEducationFragment, null))
+        binding.clSkills.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerMySkillFragment, null))
         binding.clImages.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_idealJobImagesFragment, null))
         binding.clInterest.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerInterestFragment, null))
         binding.clJobs.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerExperienceListFragment, null))
@@ -203,7 +203,7 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
                 binding.ivInfo.performLongClick()
             }
             binding.ivBackButton -> {
-                (activity as SeekerProfileActivity).onBackPressed()
+                requireActivity().onBackPressed()
             }
             binding.ivAddIdealWorkspaceBtn -> {
                 if (binding.etIdealWorkspace.text.isNullOrEmpty()){
@@ -249,7 +249,5 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             }
         }
     }
-
-
 
 }

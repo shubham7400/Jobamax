@@ -7,13 +7,8 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentJobSeekerPushNotificationBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.model.UpdateUserCallback
-import com.findajob.jobamax.preference.setNewMatchPNFlag
-import com.findajob.jobamax.util.errorToast
-import com.findajob.jobamax.util.log
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_job_seeker_push_notification.*
-import com.suke.widget.SwitchButton
+
 
 
 @AndroidEntryPoint

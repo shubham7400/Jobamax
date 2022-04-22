@@ -1,9 +1,7 @@
 package com.findajob.jobamax;
 
 import com.findajob.jobamax.di.ViewModelModule;
-import com.findajob.jobamax.jobseeker.calender.SeekerCalenderActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.coaching.SeekerCoachingFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
@@ -13,19 +11,16 @@ import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment_GeneratedInj
 import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.profile.SeekerProfileActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.profile.account.JobSeekerAccountActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.track.newtrack.SeekerJobTrackingActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment_GeneratedInjector;
+import com.findajob.jobamax.login.LoginActivity_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -37,6 +32,8 @@ import dagger.hilt.android.components.ServiceComponent;
 import dagger.hilt.android.components.ViewComponent;
 import dagger.hilt.android.components.ViewModelComponent;
 import dagger.hilt.android.components.ViewWithFragmentComponent;
+import dagger.hilt.android.flags.FragmentGetContextFix;
+import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
 import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
@@ -140,11 +137,13 @@ public final class BaseApplication_HiltComponents {
       modules = {
           ApplicationContextModule.class,
           ActivityRetainedCBuilderModule.class,
-          ServiceCBuilderModule.class
+          ServiceCBuilderModule.class,
+          HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class
       }
   )
   @Singleton
   public abstract static class SingletonC implements BaseApplication_GeneratedInjector,
+      FragmentGetContextFix.FragmentGetContextFixEntryPoint,
       HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint,
       ServiceComponentManager.ServiceComponentBuilderEntryPoint,
       SingletonComponent,
@@ -189,14 +188,9 @@ public final class BaseApplication_HiltComponents {
   @ActivityScoped
   public abstract static class ActivityC implements MainActivity_GeneratedInjector,
       SplashActivity_GeneratedInjector,
-      SeekerCalenderActivity_GeneratedInjector,
-      SeekerCoachingActivity_GeneratedInjector,
       JobSeekerHomeActivity_GeneratedInjector,
       SeekerJobSearchActivity_GeneratedInjector,
-      SeekerProfileActivity_GeneratedInjector,
-      JobSeekerAccountActivity_GeneratedInjector,
-      SeekerJobTrackingActivity_GeneratedInjector,
-      SeekerWishListActivity_GeneratedInjector,
+      LoginActivity_GeneratedInjector,
       ActivityComponent,
       DefaultViewModelFactories.ActivityEntryPoint,
       HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint,

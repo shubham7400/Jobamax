@@ -1,8 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <corners android:radius="4sp" />
-    <solid android:color="@android:color/transparent"/>
-    <stroke
-        android:width="2sp"
-        android:color="@color/com_facebook_blue" />
-</shape>

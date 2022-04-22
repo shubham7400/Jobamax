@@ -1,8 +1,8 @@
 package com.findajob.jobamax.enums
 
-enum class LoginType {
-    email,
-    facebook,
-    linkedin,
-    google
+enum class LoginType(val type : String) {
+    EMAIL("email"),
+    FACEBOOK("facebook"),
+    LINKEDIN("linkedin"),
+    GOOGLE("google")
 }
