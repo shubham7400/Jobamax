@@ -1,20 +1,12 @@
 package com.findajob.jobamax.util
 
-import android.Manifest
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.provider.Settings
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
-import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.findajob.jobamax.BuildConfig
 import com.findajob.jobamax.R
@@ -119,39 +111,5 @@ fun Context.openAppSettings() {
     }
 }
 
-fun Context.checkLocationPermission(): Boolean {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        val accessFineLocationPermissionFlag = ActivityCompat.checkSelfPermission(
-            this,
-            Manifest.permission.ACCESS_FINE_LOCATION
-        ) == PackageManager.PERMISSION_GRANTED
-        val accessCoarseLocationPermissionFlag = ActivityCompat.checkSelfPermission(
-            this,
-            Manifest.permission.ACCESS_COARSE_LOCATION
-        ) == PackageManager.PERMISSION_GRANTED
-        val accessBackgroundLocationFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_BACKGROUND_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        } else {
-            true
-        }
-        return accessFineLocationPermissionFlag || accessCoarseLocationPermissionFlag || accessBackgroundLocationFlag
-    }
-    return true
-}
 
-fun Fragment.debugToast(msg: String) {
-    try {
-        (requireActivity() as Activity).debugToast(msg)
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-}
 
-fun Activity.debugToast(msg: String) {
-    if (BuildConfig.DEBUG) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-    }
-}

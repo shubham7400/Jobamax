@@ -17,6 +17,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerEducationBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Education
 import com.findajob.jobamax.jobseeker.profile.cv.model.EducationGroup
+import com.findajob.jobamax.util.loadImageFromUrl
 
 
 import com.findajob.jobamax.util.log
@@ -108,26 +109,24 @@ class SeekerEducationAdapter(var list: ArrayList<Education>) : RecyclerView.Adap
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemSeekerEducationBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val education = list[position]
-        holder.binding.tvInstituteName.text = education.name
-        holder.binding.tvProgramName.text = education.program
-        if (education.logo.isNotEmpty()){
-            Glide.with(holder.binding.ivUser.context).applyDefaultRequestOptions( RequestOptions().placeholder(R.drawable.ic_company).error(R.drawable.ic_company)).load(education.logo).into(holder.binding.ivUser)
-        }else{
-            holder.binding.ivUser.setBackgroundResource(R.drawable.ic_company)
-        }
-         holder.binding.tvDateDuration.text = education.startDate+" to "+education.endDate
-        val calendar = Calendar.getInstance(TimeZone.getDefault());
-        val endDate = "${calendar.get(Calendar.DAY_OF_MONTH)}/ ${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"
-        if (education.endDate == ""){
-            holder.binding.tvDateDuration.text = education.startDate+" to "+endDate
-        }else{
-            holder.binding.tvDateDuration.text = education.startDate+" to "+education.endDate
-        }
-        val bundle = Bundle()
-        bundle.putSerializable("education", education)
-        holder.binding.rlParent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerNewEducationFragment, bundle))
-        holder.binding.ivDeleteItem.setOnClickListener {
-            clickListener(education)
+        holder.binding.apply {
+            this.tvInstituteName.text = education.name
+            this.tvProgramName.text = education.program
+            loadImageFromUrl(this.ivUser,education.logo ,R.drawable.school_dummy)
+            this.tvDateDuration.text = education.startDate+" to "+education.endDate
+            val calendar = Calendar.getInstance(TimeZone.getDefault());
+            val endDate = "${calendar.get(Calendar.DAY_OF_MONTH)}/ ${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"
+            if (education.endDate == ""){
+                this.tvDateDuration.text = education.startDate+" to "+endDate
+            }else{
+                this.tvDateDuration.text = education.startDate+" to "+education.endDate
+            }
+            val bundle = Bundle()
+            bundle.putSerializable("education", education)
+            this.rlParent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerNewEducationFragment, bundle))
+            this.ivDeleteItem.setOnClickListener {
+                clickListener(education)
+            }
         }
     }
     override fun getItemCount(): Int  = list.size

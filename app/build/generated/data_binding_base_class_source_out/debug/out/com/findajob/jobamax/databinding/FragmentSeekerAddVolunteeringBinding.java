@@ -18,6 +18,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentContainerView;
+import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -36,6 +37,9 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
 
   @NonNull
   public final ConstraintLayout clEndDate;
+
+  @NonNull
+  public final ConstraintLayout clMostParent;
 
   @NonNull
   public final EditText etActivity;
@@ -60,6 +64,9 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
 
   @NonNull
   public final RelativeLayout relativeLayout4;
+
+  @NonNull
+  public final RecyclerView rvCompanySuggestions;
 
   @NonNull
   public final TextView textView139;
@@ -93,17 +100,18 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
 
   protected FragmentSeekerAddVolunteeringBinding(Object _bindingComponent, View _root,
       int _localFieldCount, FragmentContainerView autocompleteFragment, Button btnAddVolunteering,
-      CheckBox cbCurrentStudent, ConstraintLayout clEndDate, EditText etActivity,
-      EditText etDescription, EditText etOrganisation, ImageView ivBackButton,
+      CheckBox cbCurrentStudent, ConstraintLayout clEndDate, ConstraintLayout clMostParent,
+      EditText etActivity, EditText etDescription, EditText etOrganisation, ImageView ivBackButton,
       CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
-      RelativeLayout relativeLayout4, TextView textView139, TextView textView144,
-      TextView textView15, TextView textView16, TextView textView19, TextView textViewdd19,
-      TextView tvEndDate, TextView tvSelectLocation, TextView tvStartDate) {
+      RelativeLayout relativeLayout4, RecyclerView rvCompanySuggestions, TextView textView139,
+      TextView textView144, TextView textView15, TextView textView16, TextView textView19,
+      TextView textViewdd19, TextView tvEndDate, TextView tvSelectLocation, TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.autocompleteFragment = autocompleteFragment;
     this.btnAddVolunteering = btnAddVolunteering;
     this.cbCurrentStudent = cbCurrentStudent;
     this.clEndDate = clEndDate;
+    this.clMostParent = clMostParent;
     this.etActivity = etActivity;
     this.etDescription = etDescription;
     this.etOrganisation = etOrganisation;
@@ -112,6 +120,7 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
     this.linearLayout = linearLayout;
     this.relativeLayout = relativeLayout;
     this.relativeLayout4 = relativeLayout4;
+    this.rvCompanySuggestions = rvCompanySuggestions;
     this.textView139 = textView139;
     this.textView144 = textView144;
     this.textView15 = textView15;

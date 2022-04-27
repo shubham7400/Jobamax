@@ -14,20 +14,25 @@ import androidx.navigation.fragment.findNavController
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentValuePrivacyBinding
-import com.findajob.jobamax.util.ACTION_REGISTER
-import com.findajob.jobamax.util.ARG_ACTION
-import com.findajob.jobamax.util.checkLocationPermission
+import com.findajob.jobamax.model.UserTempInfo
+import com.findajob.jobamax.util.*
 
 class ValuePrivacyFragment : BaseFragmentMain<FragmentValuePrivacyBinding>(), ValuePrivacyInterface {
 	
 
 	lateinit var navController: NavController
+	var user : UserTempInfo? = null
 
 	override val layoutRes: Int
 		get() = R.layout.fragment_value_privacy
 
 	override fun onCreated(savedInstance: Bundle?) {
 		initViews()
+	}
+
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		user = arguments?.getSerializable(ARG_USER) as UserTempInfo
 	}
 
 	override fun getViewModel(): ViewModel? = null
@@ -42,11 +47,7 @@ class ValuePrivacyFragment : BaseFragmentMain<FragmentValuePrivacyBinding>(), Va
 	}
 	
 	override fun onAcceptClicked() {
-		navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_ACTION to ACTION_REGISTER))
-		/*if (requireActivity().checkLocationPermission())
-			navController.navigate(R.id.keepMePostedFragment)
-		else
-			navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_ACTION to ACTION_REGISTER))*/
+		navController.navigate(R.id.keepMePostedFragment, bundleOf(ARG_USER to user))
 	}
 
 

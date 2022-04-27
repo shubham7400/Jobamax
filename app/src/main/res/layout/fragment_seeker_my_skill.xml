@@ -55,9 +55,9 @@
                     android:id="@+id/iv_user_profile"
                     style="@style/circular_image"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-                    app:civ_border_color="@color/colorPrimary"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/default_user_img" />
+                    android:src="@drawable/default_user_img"
+                    app:civ_border_color="@color/colorPrimary" />
             </RelativeLayout>
         </RelativeLayout>
 

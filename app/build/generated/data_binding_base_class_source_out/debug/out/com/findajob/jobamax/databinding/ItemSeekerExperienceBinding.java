@@ -12,13 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ItemSeekerExperienceBinding extends ViewDataBinding {
   @NonNull
-  public final CircleImageView ivCompany;
+  public final ImageView ivCompany;
 
   @NonNull
   public final ImageView ivDeleteItem;
@@ -39,8 +38,8 @@ public abstract class ItemSeekerExperienceBinding extends ViewDataBinding {
   public final TextView tvJobName;
 
   protected ItemSeekerExperienceBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CircleImageView ivCompany, ImageView ivDeleteItem, RelativeLayout rlParent,
-      TextView tvAddress, TextView tvCompanyName, TextView tvDateDuration, TextView tvJobName) {
+      ImageView ivCompany, ImageView ivDeleteItem, RelativeLayout rlParent, TextView tvAddress,
+      TextView tvCompanyName, TextView tvDateDuration, TextView tvJobName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.ivCompany = ivCompany;
     this.ivDeleteItem = ivDeleteItem;

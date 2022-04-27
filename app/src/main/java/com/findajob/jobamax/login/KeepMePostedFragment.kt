@@ -2,20 +2,26 @@ package com.findajob.jobamax.login
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentKeepMePostedBinding
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity
 import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.preference.getUserType
+import com.findajob.jobamax.util.ARG_ACTION
 import com.findajob.jobamax.util.ARG_USER
+import com.findajob.jobamax.util.log
 
 
 class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), KeepMePostedInterface {
 
 	lateinit var viewModel: LoginViewModel
+	lateinit var navController: NavController
 	var user : UserTempInfo? = null
 
 	override val layoutRes: Int
@@ -28,6 +34,16 @@ class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), Ke
 
 	override fun onCreated(savedInstance: Bundle?) {
 		configureViewModel()
+		initViews()
+
+		binding.ivBackButton.setOnClickListener {
+			requireActivity().onBackPressed()
+		}
+	}
+
+	private fun initViews(){
+		binding.handler = this
+		navController = findNavController()
 
 		binding.ivBackButton.setOnClickListener {
 			requireActivity().onBackPressed()
@@ -50,9 +66,7 @@ class KeepMePostedFragment : BaseFragmentMain<FragmentKeepMePostedBinding>(), Ke
 
 	
 	private fun navHome() {
-		startActivity(Intent(requireContext(), JobSeekerPersonalIntroInfoActivity::class.java).also {
-			it.putExtra(ARG_USER, user)
-		})
+		navController.navigate(R.id.locationPermissionFragment, bundleOf(ARG_USER to user))
 	}
 
 }

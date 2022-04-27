@@ -4,6 +4,7 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,13 +12,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ItemSearchQueryCompanyBinding extends ViewDataBinding {
   @NonNull
-  public final CircleImageView civCompanyLogo;
+  public final ImageView civCompanyLogo;
 
   @NonNull
   public final ConstraintLayout clMostParent;
@@ -29,7 +29,7 @@ public abstract class ItemSearchQueryCompanyBinding extends ViewDataBinding {
   public final TextView tvCompanyName;
 
   protected ItemSearchQueryCompanyBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, CircleImageView civCompanyLogo, ConstraintLayout clMostParent,
+      int _localFieldCount, ImageView civCompanyLogo, ConstraintLayout clMostParent,
       TextView tvCompanyDomain, TextView tvCompanyName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civCompanyLogo = civCompanyLogo;

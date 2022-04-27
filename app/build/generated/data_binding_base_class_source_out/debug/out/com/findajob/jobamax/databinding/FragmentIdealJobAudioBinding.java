@@ -39,6 +39,9 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
   public final ImageView ivBackButton;
 
   @NonNull
+  public final ImageView ivRemoveAudio;
+
+  @NonNull
   public final CircularImageProgressView pbAudioRecording;
 
   @NonNull
@@ -51,6 +54,9 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
   public final TextView tvAudioDuration;
 
   @NonNull
+  public final TextView tvAudioDurationProgress;
+
+  @NonNull
   public final TextView tvAudioTime;
 
   @NonNull
@@ -61,19 +67,22 @@ public abstract class FragmentIdealJobAudioBinding extends ViewDataBinding {
 
   protected FragmentIdealJobAudioBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton btnRecord, CircleImageView civUser, ConstraintLayout clAudioPlayer,
-      ImageView ivAudioPlayBtn, ImageView ivBackButton, CircularImageProgressView pbAudioRecording,
-      RelativeLayout relativeLayout, SeekBar sbAudio, TextView tvAudioDuration,
-      TextView tvAudioTime, TextView tvTitle) {
+      ImageView ivAudioPlayBtn, ImageView ivBackButton, ImageView ivRemoveAudio,
+      CircularImageProgressView pbAudioRecording, RelativeLayout relativeLayout, SeekBar sbAudio,
+      TextView tvAudioDuration, TextView tvAudioDurationProgress, TextView tvAudioTime,
+      TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnRecord = btnRecord;
     this.civUser = civUser;
     this.clAudioPlayer = clAudioPlayer;
     this.ivAudioPlayBtn = ivAudioPlayBtn;
     this.ivBackButton = ivBackButton;
+    this.ivRemoveAudio = ivRemoveAudio;
     this.pbAudioRecording = pbAudioRecording;
     this.relativeLayout = relativeLayout;
     this.sbAudio = sbAudio;
     this.tvAudioDuration = tvAudioDuration;
+    this.tvAudioDurationProgress = tvAudioDurationProgress;
     this.tvAudioTime = tvAudioTime;
     this.tvTitle = tvTitle;
   }

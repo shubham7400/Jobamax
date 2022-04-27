@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".jobseeker.profile.SeekerPreviewFragment">
 
+    <data>
+        <variable
+            name="jobSeeker"
+            type="com.findajob.jobamax.model.JobSeeker" />
+    </data>
+
    <androidx.constraintlayout.widget.ConstraintLayout
        android:background="#E9F2FB"
        android:layout_width="match_parent"
@@ -44,29 +50,24 @@
                    android:textColor="@color/blue_2"
                    android:textSize="20dp" />
 
-               <ImageView
-                   android:layout_width="30dp"
-                   android:layout_height="30dp"
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:id="@+id/iv_user_profile"
+                   style="@style/circular_image"
+                   loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                    android:layout_alignParentEnd="true"
-                   android:src="@drawable/eye" />
+                   android:src="@drawable/default_user_img"
+                   app:civ_border_color="@color/colorPrimary" />
            </RelativeLayout>
        </RelativeLayout>
 
-       <ImageView
-           android:id="@+id/imageView10"
-           android:layout_width="150dp"
-           android:layout_height="50dp"
-           android:layout_margin="10dp"
-           android:src="@drawable/jobamax_text"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
        <androidx.core.widget.NestedScrollView
            android:id="@+id/linearLayoutCompat2s"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginTop="30dp"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/imageView10"
+           app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
            android:background="@drawable/rounded_white_box"
            android:layout_marginHorizontal="10dp"
            android:layout_width="match_parent"
@@ -159,7 +160,7 @@
                </androidx.constraintlayout.widget.ConstraintLayout>
 
                <TextView
-                   android:id="@+id/textView26"
+                   android:id="@+id/tv_about_title"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -307,7 +308,7 @@
                </com.google.android.material.chip.ChipGroup>
 
                <TextView
-                   android:id="@+id/textVisewdrde2dx6"
+                   android:id="@+id/tv_ideal_job_title"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -326,6 +327,7 @@
                    android:layout_marginTop="10dp" />
 
                <androidx.cardview.widget.CardView
+                   android:id="@+id/cv_ideal_job_video"
                    android:layout_width="match_parent"
                    app:cardCornerRadius="10dp"
                    android:layout_marginVertical="10dp"
@@ -354,9 +356,9 @@
 
                    <ImageView
                        android:id="@+id/iv_audio_play_btn"
-                       android:layout_width="40dp"
-                       android:layout_height="40dp"
-                       android:src="@drawable/ic_play_circle_filled"
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/play"
                        app:layout_constraintBottom_toBottomOf="parent"
                        app:layout_constraintStart_toStartOf="parent"
                        app:layout_constraintTop_toTopOf="parent" />
@@ -383,7 +385,7 @@
 
 
                <TextView
-                   android:id="@+id/textVisewdrde2ddx6"
+                   android:id="@+id/tv_portfolio_title"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/opensans_bold"
@@ -402,6 +404,7 @@
                    android:layout_marginTop="10dp" />
 
                <androidx.cardview.widget.CardView
+                   android:id="@+id/cv_portfolio_video"
                    android:layout_width="match_parent"
                    app:cardCornerRadius="10dp"
                    android:layout_marginVertical="10dp"

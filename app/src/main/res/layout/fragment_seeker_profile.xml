@@ -316,10 +316,10 @@
                                 android:layout_below="@+id/tv_ideal_job_audio_title"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
                                 android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="20dp"
-                                android:src="@drawable/video_icon" />
+                                android:src="@drawable/audio_symbol" />
                         </RelativeLayout>
 
                      </androidx.appcompat.widget.LinearLayoutCompat>

@@ -33,10 +33,13 @@ public class FragmentJobSeekerHomeBindingImpl extends FragmentJobSeekerHomeBindi
         sViewsWithIds.put(R.id.tv_ef, 19);
         sViewsWithIds.put(R.id.iv_right_arrow, 20);
         sViewsWithIds.put(R.id.constraintLayout15, 21);
-        sViewsWithIds.put(R.id.iv_3, 22);
-        sViewsWithIds.put(R.id.iv_2, 23);
-        sViewsWithIds.put(R.id.iv_1, 24);
-        sViewsWithIds.put(R.id.btn_coaching, 25);
+        sViewsWithIds.put(R.id.cl_img1, 22);
+        sViewsWithIds.put(R.id.iv_3, 23);
+        sViewsWithIds.put(R.id.cl_img2, 24);
+        sViewsWithIds.put(R.id.iv_2, 25);
+        sViewsWithIds.put(R.id.cl_img3, 26);
+        sViewsWithIds.put(R.id.iv_1, 27);
+        sViewsWithIds.put(R.id.btn_coaching, 28);
     }
     // views
     @NonNull
@@ -47,19 +50,22 @@ public class FragmentJobSeekerHomeBindingImpl extends FragmentJobSeekerHomeBindi
     // Inverse Binding Event Handlers
 
     public FragmentJobSeekerHomeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 26, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 29, sIncludes, sViewsWithIds));
     }
     private FragmentJobSeekerHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[6]
-            , (android.widget.Button) bindings[25]
+            , (android.widget.Button) bindings[28]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[22]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[24]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[26]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[21]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
             , (android.widget.ImageView) bindings[15]
             , (android.widget.ImageView) bindings[3]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[24]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[23]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[22]
+            , (android.widget.ImageView) bindings[27]
+            , (android.widget.ImageView) bindings[25]
+            , (android.widget.ImageView) bindings[23]
             , (android.widget.ImageView) bindings[11]
             , (android.widget.ImageView) bindings[20]
             , (android.widget.ImageView) bindings[4]

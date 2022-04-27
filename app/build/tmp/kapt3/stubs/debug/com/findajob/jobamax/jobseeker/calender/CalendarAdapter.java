@@ -2,40 +2,21 @@ package com.findajob.jobamax.jobseeker.calender;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\r\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001+B3\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0016\u0010\u0006\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0004j\b\u0012\u0004\u0012\u00020\u0007`\b\u0012\u0006\u0010\t\u001a\u00020\n\u00a2\u0006\u0002\u0010\u000bJ\b\u0010!\u001a\u00020\u001cH\u0016J\u0018\u0010\"\u001a\u00020\u000e2\u0006\u0010#\u001a\u00020\u00022\u0006\u0010$\u001a\u00020\u001cH\u0017J\u0018\u0010%\u001a\u00020\u00022\u0006\u0010&\u001a\u00020\'2\u0006\u0010(\u001a\u00020\u001cH\u0016J\u001e\u0010)\u001a\u00020\u000e2\u0016\u0010*\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0004j\b\u0012\u0004\u0012\u00020\u0007`\bR\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u0004\u00a2\u0006\u0002\n\u0000R&\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u000e0\rX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R*\u0010\u0006\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0004j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\t\u001a\u00020\nX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\u00020\u001cX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u001e\"\u0004\b\u001f\u0010 \u00a8\u0006,"}, d2 = {"Lcom/findajob/jobamax/jobseeker/calender/CalendarAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/findajob/jobamax/jobseeker/calender/CalendarAdapter$CalendarViewHolder;", "daysOfMonth", "Ljava/util/ArrayList;", "", "phases", "Lcom/findajob/jobamax/data/pojo/Phase;", "Lkotlin/collections/ArrayList;", "selectedDate", "Ljava/time/LocalDate;", "(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/time/LocalDate;)V", "onDateClick", "Lkotlin/Function1;", "", "getOnDateClick", "()Lkotlin/jvm/functions/Function1;", "setOnDateClick", "(Lkotlin/jvm/functions/Function1;)V", "getPhases", "()Ljava/util/ArrayList;", "setPhases", "(Ljava/util/ArrayList;)V", "getSelectedDate", "()Ljava/time/LocalDate;", "setSelectedDate", "(Ljava/time/LocalDate;)V", "selected_index", "", "getSelected_index", "()I", "setSelected_index", "(I)V", "getItemCount", "onBindViewHolder", "holder", "position", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "submitList", "list", "CalendarViewHolder", "app_debug"})
+@kotlin.Metadata(mv = {1, 6, 0}, k = 1, d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\'B;\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0016\u0010\u0006\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0004j\b\u0012\u0004\u0012\u00020\u0007`\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f\u00a2\u0006\u0002\u0010\rJ\b\u0010\u001d\u001a\u00020\fH\u0016J\u0018\u0010\u001e\u001a\u00020\u00102\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\fH\u0017J\u0018\u0010!\u001a\u00020\u00022\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\fH\u0016J\u001e\u0010%\u001a\u00020\u00102\u0016\u0010&\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0004j\b\u0012\u0004\u0012\u00020\u0007`\bR\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u0004\u00a2\u0006\u0002\n\u0000R&\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00100\u000fX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u001e\u0010\u0006\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0004j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\u00020\fX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\fX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0017\"\u0004\b\u001c\u0010\u0019\u00a8\u0006("}, d2 = {"Lcom/findajob/jobamax/jobseeker/calender/CalendarAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/findajob/jobamax/jobseeker/calender/CalendarAdapter$CalendarViewHolder;", "daysOfMonth", "Ljava/util/ArrayList;", "", "phases", "Lcom/findajob/jobamax/data/pojo/Phase;", "Lkotlin/collections/ArrayList;", "selectedDate", "Ljava/time/LocalDate;", "dayOfMonth", "", "(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/time/LocalDate;I)V", "onDateClick", "Lkotlin/Function1;", "", "getOnDateClick", "()Lkotlin/jvm/functions/Function1;", "setOnDateClick", "(Lkotlin/jvm/functions/Function1;)V", "selected_index", "getSelected_index", "()I", "setSelected_index", "(I)V", "today", "getToday", "setToday", "getItemCount", "onBindViewHolder", "holder", "position", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "submitList", "list", "CalendarViewHolder", "app_debug"})
 public final class CalendarAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<com.findajob.jobamax.jobseeker.calender.CalendarAdapter.CalendarViewHolder> {
     private final java.util.ArrayList<java.lang.String> daysOfMonth = null;
-    @org.jetbrains.annotations.NotNull()
     private java.util.ArrayList<com.findajob.jobamax.data.pojo.Phase> phases;
-    @org.jetbrains.annotations.NotNull()
     private java.time.LocalDate selectedDate;
     @org.jetbrains.annotations.NotNull()
     private kotlin.jvm.functions.Function1<? super java.lang.String, kotlin.Unit> onDateClick;
     private int selected_index = -1;
+    private int today;
     
     public CalendarAdapter(@org.jetbrains.annotations.NotNull()
     java.util.ArrayList<java.lang.String> daysOfMonth, @org.jetbrains.annotations.NotNull()
     java.util.ArrayList<com.findajob.jobamax.data.pojo.Phase> phases, @org.jetbrains.annotations.NotNull()
-    java.time.LocalDate selectedDate) {
+    java.time.LocalDate selectedDate, int dayOfMonth) {
         super();
-    }
-    
-    @org.jetbrains.annotations.NotNull()
-    public final java.util.ArrayList<com.findajob.jobamax.data.pojo.Phase> getPhases() {
-        return null;
-    }
-    
-    public final void setPhases(@org.jetbrains.annotations.NotNull()
-    java.util.ArrayList<com.findajob.jobamax.data.pojo.Phase> p0) {
-    }
-    
-    @org.jetbrains.annotations.NotNull()
-    public final java.time.LocalDate getSelectedDate() {
-        return null;
-    }
-    
-    public final void setSelectedDate(@org.jetbrains.annotations.NotNull()
-    java.time.LocalDate p0) {
     }
     
     @org.jetbrains.annotations.NotNull()
@@ -52,6 +33,13 @@ public final class CalendarAdapter extends androidx.recyclerview.widget.Recycler
     }
     
     public final void setSelected_index(int p0) {
+    }
+    
+    public final int getToday() {
+        return 0;
+    }
+    
+    public final void setToday(int p0) {
     }
     
     @org.jetbrains.annotations.NotNull()

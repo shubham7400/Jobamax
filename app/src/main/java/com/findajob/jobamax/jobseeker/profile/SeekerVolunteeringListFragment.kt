@@ -15,6 +15,7 @@ import com.findajob.jobamax.databinding.ItemSeekerVolunteeringBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Volunteering
 import com.findajob.jobamax.jobseeker.profile.cv.model.VolunteeringGroup
+import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
@@ -101,21 +102,24 @@ class SeekerVolunteeringAdapter(var list: ArrayList<Volunteering>) : RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemSeekerVolunteeringBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val volunteering = list[position]
-        holder.binding.tvCompanyName.text = volunteering.company
-        holder.binding.tvJob.text = volunteering.job
-        holder.binding.tvDateDuration.text = volunteering.startDate+" to "+volunteering.endDate
-        val calendar = Calendar.getInstance(TimeZone.getDefault());
-        val endDate = "${calendar.get(Calendar.DAY_OF_MONTH)}/ ${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"
-        if (volunteering.endDate == ""){
-            holder.binding.tvDateDuration.text = volunteering.startDate+" to "+endDate
-        }else{
-            holder.binding.tvDateDuration.text = volunteering.startDate+" to "+volunteering.endDate
-        }
-        val bundle = Bundle()
-        bundle.putSerializable("volunteering", volunteering)
-        holder.binding.rlParent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerAddVolunteeringFragment, bundle))
-        holder.binding.ivDeleteItem.setOnClickListener {
-            clickListener(volunteering)
+        holder.binding.apply {
+            loadImageFromUrl(this.ivCompany, volunteering.logo, R.drawable.volunteering_dummy)
+            this.tvCompanyName.text = volunteering.company
+            this.tvJob.text = volunteering.job
+            this.tvDateDuration.text = volunteering.startDate+" to "+volunteering.endDate
+            val calendar = Calendar.getInstance(TimeZone.getDefault());
+            val endDate = "${calendar.get(Calendar.DAY_OF_MONTH)}/ ${calendar.get(Calendar.MONTH ) + 1}/ ${calendar.get(Calendar.YEAR)}"
+            if (volunteering.endDate == ""){
+                this.tvDateDuration.text = volunteering.startDate+" to "+endDate
+            }else{
+                this.tvDateDuration.text = volunteering.startDate+" to "+volunteering.endDate
+            }
+            val bundle = Bundle()
+            bundle.putSerializable("volunteering", volunteering)
+            this.rlParent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerAddVolunteeringFragment, bundle))
+            this.ivDeleteItem.setOnClickListener {
+                clickListener(volunteering)
+            }
         }
     }
     override fun getItemCount(): Int  = list.size

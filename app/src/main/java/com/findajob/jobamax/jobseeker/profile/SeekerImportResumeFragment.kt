@@ -10,12 +10,16 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerImportResumeBinding
 import com.findajob.jobamax.enums.ParseCloudFunction
+import com.findajob.jobamax.enums.ParseTableFields
+import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.toast
 import com.parse.FunctionCallback
 import com.parse.ParseCloud
+import com.parse.ParseObject
+import com.parse.ParseQuery
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -49,12 +53,37 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
                             }
                             result != null -> {
                                 toast("Resume Imported Successfully.")
-                               requireActivity().onBackPressed()
+                                getCurrent()
                             }
                         }
                     }
                 )
             }
+        }
+    }
+
+    private fun getCurrent() {
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),  requireContext().getUserId())
+        query.include("portfolio")
+        query.include("idealJob")
+        progressHud.show()
+        query.findInBackground { it, e ->
+            progressHud.dismiss()
+            val jobSeeker = it?.firstOrNull()
+            when {
+                e != null -> {
+                    toast(e.message.toString())
+                }
+                jobSeeker == null -> {
+                    toast("User Not Found.")
+                }
+                else -> {
+                    viewModel.jobSeekerObject = jobSeeker
+                    viewModel.isJobSeekerUpdated.value = true
+                }
+            }
+            requireActivity().onBackPressed()
         }
     }
 

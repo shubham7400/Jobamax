@@ -71,8 +71,8 @@
 
                <de.hdodenhof.circleimageview.CircleImageView
                    android:id="@+id/civ_user"
-                   loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                    style="@style/circular_image"
+                   loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                    android:layout_alignParentEnd="true"
                    android:src="@drawable/default_user_img" />
            </RelativeLayout>
@@ -113,7 +113,7 @@
                    android:layout_height="wrap_content"
                    android:layout_centerVertical="true"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="0"
+                   android:text="@string/no_deadline"
                    android:textColor="@color/new_purple"
                    android:textSize="20dp"
                    app:layout_constraintBottom_toBottomOf="parent"
@@ -154,7 +154,7 @@
                    android:layout_height="wrap_content"
                    android:layout_centerVertical="true"
                    android:fontFamily="@font/opensans_bold"
-                   android:text="5th January"
+                   android:text="@string/no_interview"
                    android:textColor="@color/new_purple"
                    android:textSize="20dp"
                    app:layout_constraintBottom_toBottomOf="parent"

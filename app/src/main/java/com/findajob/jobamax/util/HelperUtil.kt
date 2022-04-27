@@ -134,11 +134,11 @@ fun convertMillisToMinuteAndSecond(millis: Long) : String {
     val milliseconds: Long = millis
     val minutes = milliseconds / 1000 / 60
     val seconds = milliseconds / 1000 % 60
-    return "$minutes min : $seconds sec"
+    return "$minutes:$seconds"
 }
 
-fun loadImageFromUrl(imageView: ImageView, url: String?, defaultImage: Int? ){
-    Glide.with(imageView.context).applyDefaultRequestOptions( RequestOptions().placeholder(R.drawable.ic_company).error(R.drawable.ic_company)).load(url).into(imageView)
+fun loadImageFromUrl(imageView: ImageView, url: String?, defaultImage: Int ){
+    Glide.with(imageView.context).applyDefaultRequestOptions( RequestOptions().placeholder(defaultImage).error(defaultImage)).load(url).into(imageView)
 }
 
 fun uploadImageToParse(uri: Uri, requireContext: Context, onException: (String) -> Unit, onSuccess: (String) -> Unit) {

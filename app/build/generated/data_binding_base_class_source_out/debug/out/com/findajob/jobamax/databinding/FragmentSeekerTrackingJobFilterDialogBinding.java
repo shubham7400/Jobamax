@@ -13,6 +13,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -45,6 +46,9 @@ public abstract class FragmentSeekerTrackingJobFilterDialogBinding extends ViewD
   public final CheckBox cbRefused;
 
   @NonNull
+  public final CircleImageView civUser;
+
+  @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
@@ -53,7 +57,7 @@ public abstract class FragmentSeekerTrackingJobFilterDialogBinding extends ViewD
   protected FragmentSeekerTrackingJobFilterDialogBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppCompatButton btnGo, CheckBox cbAll, CheckBox cbApplied,
       CheckBox cbAssessments, CheckBox cbHired, CheckBox cbInterview, CheckBox cbOnlineIntervie,
-      CheckBox cbPhoneCall, CheckBox cbRefused, ImageView ivBackButton,
+      CheckBox cbPhoneCall, CheckBox cbRefused, CircleImageView civUser, ImageView ivBackButton,
       RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnGo = btnGo;
@@ -65,6 +69,7 @@ public abstract class FragmentSeekerTrackingJobFilterDialogBinding extends ViewD
     this.cbOnlineIntervie = cbOnlineIntervie;
     this.cbPhoneCall = cbPhoneCall;
     this.cbRefused = cbRefused;
+    this.civUser = civUser;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
   }

@@ -1,5 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile.idealjob
 
+import android.Manifest
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
@@ -23,12 +24,12 @@ import com.abedelazizshe.lightcompressorlibrary.config.Configuration
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.IdealJob
-import com.findajob.jobamax.data.pojo.Portfolio
 import com.findajob.jobamax.databinding.FragmentIdealJobVideoBinding
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
  import com.findajob.jobamax.jobseeker.profile.VideoPlayActivity
- import com.findajob.jobamax.util.log
+import com.findajob.jobamax.util.checkForPermissions
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.storage.FirebaseStorage
@@ -110,7 +111,9 @@ class IdealJobVideoFragment : BaseFragmentMain<FragmentIdealJobVideoBinding>() {
 
     private fun setClickListeners() {
         binding.ivAddVideo.setOnClickListener {
-            dispatchTakeVideoIntent()
+            if (checkForPermissions(arrayOf(Manifest.permission.CAMERA))){
+                dispatchTakeVideoIntent()
+            }
         }
         binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
@@ -229,7 +232,7 @@ class IdealJobVideoFragment : BaseFragmentMain<FragmentIdealJobVideoBinding>() {
 
     private fun setVideoImage() {
         if (videoUrl != "") {
-            binding.roundedImageView.setImageResource(R.drawable.ic_play_circle_filled)
+            binding.roundedImageView.setImageResource(R.drawable.play)
             binding.ivAddVideo.visibility = View.GONE
             binding.ivRemoveVideo.visibility = View.VISIBLE
         } else {

@@ -24,7 +24,7 @@ public class FragmentValuePrivacyBindingImpl extends FragmentValuePrivacyBinding
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback31;
+    private final android.view.View.OnClickListener mCallback30;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -45,7 +45,7 @@ public class FragmentValuePrivacyBindingImpl extends FragmentValuePrivacyBinding
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback31 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback30 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -107,7 +107,7 @@ public class FragmentValuePrivacyBindingImpl extends FragmentValuePrivacyBinding
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.btnAccept.setOnClickListener(mCallback31);
+            this.btnAccept.setOnClickListener(mCallback30);
         }
     }
     // Listener Stub Implementations

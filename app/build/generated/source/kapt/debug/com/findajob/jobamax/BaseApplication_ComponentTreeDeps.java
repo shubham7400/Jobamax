@@ -99,13 +99,11 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _dagger_hilt_android_internal_managers_ViewComponentManager_ViewWithFragmentComponentBuilderEntryPoint.class,
         _dagger_hilt_android_internal_modules_ApplicationContextModule.class,
         _dagger_hilt_android_internal_modules_HiltWrapper_ActivityModule.class,
-        _com_findajob_jobamax_BaseApplication_GeneratedInjector.class,
         _com_findajob_jobamax_di_ViewModelModule.class,
+        _com_findajob_jobamax_BaseApplication_GeneratedInjector.class,
         _com_findajob_jobamax_jobseeker_calender_SeekerCalenderFragment_GeneratedInjector.class,
         _com_findajob_jobamax_jobseeker_coaching_SeekerCoachingFragment_GeneratedInjector.class,
         _com_findajob_jobamax_jobseeker_home_JobSeekerHomeActivity_GeneratedInjector.class,
-        _com_findajob_jobamax_jobseeker_home_JobSeekerHomeViewModel_HiltModules_BindsModule.class,
-        _com_findajob_jobamax_jobseeker_home_JobSeekerHomeViewModel_HiltModules_KeyModule.class,
         _com_findajob_jobamax_jobseeker_jobsearch_SeekerJobSearchActivity_GeneratedInjector.class,
         _com_findajob_jobamax_jobseeker_jobsearch_SeekerJobsFragment_GeneratedInjector.class,
         _com_findajob_jobamax_jobseeker_profile_account_home_JobSeekerAccountFragment_GeneratedInjector.class,
@@ -123,7 +121,9 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _com_findajob_jobamax_jobseeker_wishlist_SeekerWishListFragment_GeneratedInjector.class,
         _com_findajob_jobamax_login_LoginActivity_GeneratedInjector.class,
         _com_findajob_jobamax_MainActivity_GeneratedInjector.class,
-        _com_findajob_jobamax_SplashActivity_GeneratedInjector.class
+        _com_findajob_jobamax_SplashActivity_GeneratedInjector.class,
+        _com_findajob_jobamax_jobseeker_home_JobSeekerHomeViewModel_HiltModules_BindsModule.class,
+        _com_findajob_jobamax_jobseeker_home_JobSeekerHomeViewModel_HiltModules_KeyModule.class
     }
 )
 class BaseApplication_ComponentTreeDeps {

@@ -172,7 +172,7 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
 
     private fun setVideoImage() {
         if (videoUrl != ""){
-            binding.roundedImageView.setImageResource(R.drawable.ic_play_circle_filled)
+            binding.roundedImageView.setImageResource(R.drawable.play)
             binding.ivAddVideo.visibility = View.GONE
             binding.ivRemoveVideo.visibility = View.VISIBLE
         }else{

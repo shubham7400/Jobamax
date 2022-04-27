@@ -843,7 +843,6 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 class SeekerJobCardStackAdapter(var list : ArrayList<NewJobOffer>)  : RecyclerView.Adapter<SeekerJobCardStackAdapter.ViewHolder>(){
     var seeDescriptionClick: (NewJobOffer) -> Unit = {}
     var reportFlagClick: (NewJobOffer) -> Unit = {}
-   /* var onJobsEnd: () -> Unit = {}*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
         ItemSeekerJobCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -859,9 +858,9 @@ class SeekerJobCardStackAdapter(var list : ArrayList<NewJobOffer>)  : RecyclerVi
                 this.ivCompany.setImageResource(R.drawable.ic_company)
             }
 
-           /* if( position+ 1 == list.size){
-                onvdvobsEnd()
-            }*/
+            this.tvAboutJob.maxLines = 6
+            this.llAboutCompany.visibility = View.INVISIBLE
+            this.llHardSkill.visibility = View.INVISIBLE
 
             this.tvJobTitle.text = jobOffer.jobTitle
             this.tvAboutJob.text = jobOffer.description

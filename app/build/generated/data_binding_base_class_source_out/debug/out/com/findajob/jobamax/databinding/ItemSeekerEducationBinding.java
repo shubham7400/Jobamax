@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -21,7 +20,7 @@ public abstract class ItemSeekerEducationBinding extends ViewDataBinding {
   public final ImageView ivDeleteItem;
 
   @NonNull
-  public final CircleImageView ivUser;
+  public final ImageView ivUser;
 
   @NonNull
   public final RelativeLayout rlParent;
@@ -36,8 +35,8 @@ public abstract class ItemSeekerEducationBinding extends ViewDataBinding {
   public final TextView tvProgramName;
 
   protected ItemSeekerEducationBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView ivDeleteItem, CircleImageView ivUser, RelativeLayout rlParent,
-      TextView tvDateDuration, TextView tvInstituteName, TextView tvProgramName) {
+      ImageView ivDeleteItem, ImageView ivUser, RelativeLayout rlParent, TextView tvDateDuration,
+      TextView tvInstituteName, TextView tvProgramName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.ivDeleteItem = ivDeleteItem;
     this.ivUser = ivUser;

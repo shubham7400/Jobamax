@@ -236,7 +236,7 @@
     <string name="text">Text</string>
     <string name="links">Links</string>
     <string name="add_link">Add Link</string>
-    <string name="filter_by">Filter by....</string>
+    <string name="filter_by">Filter by</string>
     <string name="about">About</string>
     <string name="elevator_speech">Elevator speech</string>
     <string name="all">All</string>
@@ -270,6 +270,9 @@
     <string name="preview">Preview</string>
     <string name="what_job_are_looking_for">What job are looking for</string>
     <string name="no_jobs_available">No Jobs Available</string>
+    <string name="most_recent_ones">Most recent ones</string>
+    <string name="no_interview">No Interview</string>
+    <string name="no_deadline">No Deadline</string>
 
 
 </resources>

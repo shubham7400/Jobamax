@@ -16,15 +16,16 @@ public class FragmentSeekerTrackingJobFilterDialogBindingImpl extends FragmentSe
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 1);
         sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.cb_all, 3);
-        sViewsWithIds.put(R.id.cb_applied, 4);
-        sViewsWithIds.put(R.id.cb_refused, 5);
-        sViewsWithIds.put(R.id.cb_online_intervie, 6);
-        sViewsWithIds.put(R.id.cb_assessments, 7);
-        sViewsWithIds.put(R.id.cb_phone_call, 8);
-        sViewsWithIds.put(R.id.cb_interview, 9);
-        sViewsWithIds.put(R.id.cb_hired, 10);
-        sViewsWithIds.put(R.id.btn_go, 11);
+        sViewsWithIds.put(R.id.civ_user, 3);
+        sViewsWithIds.put(R.id.cb_all, 4);
+        sViewsWithIds.put(R.id.cb_applied, 5);
+        sViewsWithIds.put(R.id.cb_refused, 6);
+        sViewsWithIds.put(R.id.cb_online_intervie, 7);
+        sViewsWithIds.put(R.id.cb_assessments, 8);
+        sViewsWithIds.put(R.id.cb_phone_call, 9);
+        sViewsWithIds.put(R.id.cb_interview, 10);
+        sViewsWithIds.put(R.id.cb_hired, 11);
+        sViewsWithIds.put(R.id.btn_go, 12);
     }
     // views
     @NonNull
@@ -35,19 +36,20 @@ public class FragmentSeekerTrackingJobFilterDialogBindingImpl extends FragmentSe
     // Inverse Binding Event Handlers
 
     public FragmentSeekerTrackingJobFilterDialogBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerTrackingJobFilterDialogBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[11]
-            , (android.widget.CheckBox) bindings[3]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[12]
             , (android.widget.CheckBox) bindings[4]
-            , (android.widget.CheckBox) bindings[7]
+            , (android.widget.CheckBox) bindings[5]
+            , (android.widget.CheckBox) bindings[8]
+            , (android.widget.CheckBox) bindings[11]
             , (android.widget.CheckBox) bindings[10]
+            , (android.widget.CheckBox) bindings[7]
             , (android.widget.CheckBox) bindings[9]
             , (android.widget.CheckBox) bindings[6]
-            , (android.widget.CheckBox) bindings[8]
-            , (android.widget.CheckBox) bindings[5]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[3]
             , (android.widget.ImageView) bindings[2]
             , (android.widget.RelativeLayout) bindings[1]
             );

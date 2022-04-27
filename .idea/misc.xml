@@ -21,6 +21,7 @@
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/btn_switch_camera.xml" value="0.103" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/btn_video_off.xml" value="0.103" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/checkbox_state_selector.xml" value="0.18076923076923077" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/circle_stroke_blue.xml" value="0.1875" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/close_black.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/close_white.xml" value="0.18076923076923077" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/default_user_img.xml" value="0.17848101265822786" />
@@ -425,6 +426,9 @@
         <entry key="app/src/main/res/layout/item_training_courses.xml" value="0.29635416666666664" />
       </map>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/color/gradient.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

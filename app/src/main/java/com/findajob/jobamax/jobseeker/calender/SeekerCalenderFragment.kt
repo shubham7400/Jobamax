@@ -60,14 +60,15 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setMonthView() {
-        binding.monthYearTV.text =    monthYearFromDate(selectedDate)
+        binding.monthYearTV.text =  monthYearFromDate(selectedDate)
         val daysInMonth: java.util.ArrayList<String> = daysInMonthArray(selectedDate)
-        calendarAdapter = CalendarAdapter(daysInMonth, phases, selectedDate)
+        calendarAdapter = CalendarAdapter(daysInMonth, phases, selectedDate, selectedDate.dayOfMonth)
         binding.calendarRecyclerView.adapter = calendarAdapter
         calendarAdapter.onDateClick = {
             if (it != "") {
                 showClickedDateEvents(it)
             }
+            calendarAdapter.notifyDataSetChanged()
         }
         binding.btnNextMonth.setOnClickListener {
             nextMonthAction()
@@ -198,9 +199,10 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
 
 }
 
-class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var phases: ArrayList<Phase>, var selectedDate: LocalDate) : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
+class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, private var phases: ArrayList<Phase>, private var selectedDate: LocalDate, dayOfMonth: Int) : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
     var onDateClick : (String) -> Unit = {}
     var selected_index = -1
+    var today = dayOfMonth
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder  = CalendarViewHolder(CalendarCellBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
@@ -208,9 +210,8 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
         holder.binding.apply {
             this.cellDayText.text = item
             this.cellDayText.setOnClickListener {
-                onDateClick(item)
                 selected_index = position
-                notifyDataSetChanged()
+                onDateClick(item)
             }
             if (item != ""){
                 phases.forEach {
@@ -243,7 +244,11 @@ class CalendarAdapter(private val daysOfMonth: java.util.ArrayList<String>, var 
                     }
                 }
             }
-            if (selected_index == position){
+            if ( today == try { item.toInt() }catch (e: Exception){}  && selectedDate.month == LocalDate.now().month){
+                selected_index = position
+                today = -1
+            }
+            if (selected_index == position ){
                 this.cellDayText.setTextColor(Color.WHITE)
                 this.cellDayText.setBackgroundResource(R.drawable.bg_gradient_rounded)
                 vEventHint.visibility = View.GONE

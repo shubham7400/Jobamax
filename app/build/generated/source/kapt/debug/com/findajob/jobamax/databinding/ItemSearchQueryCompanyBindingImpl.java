@@ -32,7 +32,7 @@ public class ItemSearchQueryCompanyBindingImpl extends ItemSearchQueryCompanyBin
     }
     private ItemSearchQueryCompanyBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
+            , (android.widget.ImageView) bindings[2]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[3]

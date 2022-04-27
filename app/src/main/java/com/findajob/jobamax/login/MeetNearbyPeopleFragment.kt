@@ -50,7 +50,7 @@ class MeetPeopleNearbyFragment : Fragment(), MeetPeopleNearbyInterface {
     }
 
     override fun onTopupClicked() {
-        navController.navigate(R.id.action_meetPeopleNearbyFragment_to_locationPermissionFragment)
+        /*navController.navigate(R.id.action_meetPeopleNearbyFragment_to_locationPermissionFragment)*/
     }
 }
 

@@ -1,6 +1,8 @@
 package com.findajob.jobamax.jobseeker.profile
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,9 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerAddVolunteeringBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Volunteering
+import com.findajob.jobamax.model.SearchQueryCompany
+import com.findajob.jobamax.network.ApiFetchCompaniesService
+import com.findajob.jobamax.repos.SearchQueryCompanyRepo
 import com.findajob.jobamax.util.mm_yy_disp
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.common.api.Status
@@ -35,6 +40,11 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
     lateinit var autocompleteFragment: AutocompleteSupportFragment
     var volunteeringOld: Volunteering? = null
 
+    lateinit var searchQueryCompanyRepo: SearchQueryCompanyRepo
+    var selectedCompany: SearchQueryCompany? = null
+    lateinit var adapter: SearchQueryCompanySuggestionAdapter
+    var canFetchList = true
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerAddVolunteeringBinding.inflate(inflater, container, false)
         configureUi()
@@ -49,6 +59,19 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
         }else{
             binding.clEndDate.visibility = View.VISIBLE
         }
+        setAdapterFunctionality()
+    }
+
+    private fun setAdapterFunctionality() {
+        adapter = SearchQueryCompanySuggestionAdapter(arrayListOf())
+        binding.rvCompanySuggestions.adapter = adapter
+        adapter.onCompanyClick = { company ->
+            selectedCompany = company
+            binding.rvCompanySuggestions.visibility = View.GONE
+            canFetchList = false
+            binding.etOrganisation.setText(selectedCompany?.name)
+        }
+        searchQueryCompanyRepo = SearchQueryCompanyRepo(ApiFetchCompaniesService.getInstance(requireContext()).create(ApiFetchCompaniesService::class.java))
     }
 
     private fun setClickListeners() {
@@ -71,6 +94,7 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
                  }else{
                      volunteering.endDate =  binding.tvEndDate.text.toString()
                  }
+                 volunteering.logo = selectedCompany?.logo ?: ""
                  progressHud.show()
                  viewModel.addOrUpdateVolunteering(volunteering) {
                      progressHud.dismiss()
@@ -101,6 +125,37 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
         }
         binding.tvSelectLocation.setOnClickListener {
             autocompleteFragment.requireView().findViewById<View>(R.id.places_autocomplete_search_input).performClick()
+        }
+
+        binding.etOrganisation.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.etOrganisation.text.isNullOrEmpty()){
+                    binding.rvCompanySuggestions.visibility = View.GONE
+                }else{
+                    if (canFetchList){
+                        selectedCompany = null
+                        getCompanySuggestions()
+                    }
+                    canFetchList = true
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        binding.clMostParent.setOnClickListener {
+            binding.rvCompanySuggestions.visibility = View.GONE
+        }
+    }
+
+    private fun getCompanySuggestions() {
+        searchQueryCompanyRepo.getCompanies(binding.etOrganisation.text.toString()){ list ->
+            if (list.isEmpty()){
+                binding.rvCompanySuggestions.visibility = View.GONE
+            }else{
+                adapter.submitList(list)
+                binding.rvCompanySuggestions.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -151,7 +206,7 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
         binding.jobSeeker = viewModel.jobSeeker
     }
 
-    fun onDateClicked(view: View ) {
+    private fun onDateClicked(view: View ) {
         val today = Calendar.getInstance()
 
         MonthPickerDialog.Builder(

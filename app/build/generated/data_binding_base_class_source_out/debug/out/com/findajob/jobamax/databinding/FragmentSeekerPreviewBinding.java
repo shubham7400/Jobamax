@@ -11,12 +11,15 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.chip.ChipGroup;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
@@ -42,7 +45,10 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final ConstraintLayout constraintLayout12;
 
   @NonNull
-  public final ImageView imageView10;
+  public final CardView cvIdealJobVideo;
+
+  @NonNull
+  public final CardView cvPortfolioVideo;
 
   @NonNull
   public final ImageView ivAudioPlayBtn;
@@ -70,6 +76,9 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
 
   @NonNull
   public final ImageView ivTiktok;
+
+  @NonNull
+  public final CircleImageView ivUserProfile;
 
   @NonNull
   public final LinearLayout linearLayout7;
@@ -102,13 +111,7 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final SeekBar sbAudio;
 
   @NonNull
-  public final TextView textView26;
-
-  @NonNull
-  public final TextView textVisewdrde2ddx6;
-
-  @NonNull
-  public final TextView textVisewdrde2dx6;
+  public final TextView tvAboutTitle;
 
   @NonNull
   public final TextView tvAudioDuration;
@@ -123,10 +126,16 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final TextView tvIdealJobDescription;
 
   @NonNull
+  public final TextView tvIdealJobTitle;
+
+  @NonNull
   public final TextView tvInterest;
 
   @NonNull
   public final TextView tvPortfolioDescription;
+
+  @NonNull
+  public final TextView tvPortfolioTitle;
 
   @NonNull
   public final TextView tvSchool;
@@ -146,19 +155,23 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvVolunteeringTitle;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerPreviewBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ChipGroup cgActivities, ChipGroup cgSoftSkill, CircleImageView civSeeker,
       ConstraintLayout clAudioPlayer, ConstraintLayout clPortfolioAudioPlayer,
-      ConstraintLayout constraintLayout12, ImageView imageView10, ImageView ivAudioPlayBtn,
-      ImageView ivBackButton, ImageView ivIdealJobVideo, ImageView ivInstagram,
-      ImageView ivLinkedin, ImageView ivPortfolioVideo, ImageView ivSeeLessExperience,
-      ImageView ivSeeMoreExperience, ImageView ivTiktok, LinearLayout linearLayout7,
+      ConstraintLayout constraintLayout12, CardView cvIdealJobVideo, CardView cvPortfolioVideo,
+      ImageView ivAudioPlayBtn, ImageView ivBackButton, ImageView ivIdealJobVideo,
+      ImageView ivInstagram, ImageView ivLinkedin, ImageView ivPortfolioVideo,
+      ImageView ivSeeLessExperience, ImageView ivSeeMoreExperience, ImageView ivTiktok,
+      CircleImageView ivUserProfile, LinearLayout linearLayout7,
       NestedScrollView linearLayoutCompat2s, RelativeLayout relativeLayout,
       RecyclerView rvExperience, RecyclerView rvHardSkill, RecyclerView rvIdealJobImages,
       RecyclerView rvPortfolioImages, RecyclerView rvSchool, RecyclerView rvVolunteering,
-      SeekBar sbAudio, TextView textView26, TextView textVisewdrde2ddx6, TextView textVisewdrde2dx6,
-      TextView tvAudioDuration, TextView tvExperience, TextView tvHardSkill,
-      TextView tvIdealJobDescription, TextView tvInterest, TextView tvPortfolioDescription,
+      SeekBar sbAudio, TextView tvAboutTitle, TextView tvAudioDuration, TextView tvExperience,
+      TextView tvHardSkill, TextView tvIdealJobDescription, TextView tvIdealJobTitle,
+      TextView tvInterest, TextView tvPortfolioDescription, TextView tvPortfolioTitle,
       TextView tvSchool, TextView tvSeekerAbout, TextView tvSeekerName, TextView tvSeekerProfession,
       TextView tvSoftSkill, TextView tvVolunteeringTitle) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -168,7 +181,8 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
     this.clAudioPlayer = clAudioPlayer;
     this.clPortfolioAudioPlayer = clPortfolioAudioPlayer;
     this.constraintLayout12 = constraintLayout12;
-    this.imageView10 = imageView10;
+    this.cvIdealJobVideo = cvIdealJobVideo;
+    this.cvPortfolioVideo = cvPortfolioVideo;
     this.ivAudioPlayBtn = ivAudioPlayBtn;
     this.ivBackButton = ivBackButton;
     this.ivIdealJobVideo = ivIdealJobVideo;
@@ -178,6 +192,7 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
     this.ivSeeLessExperience = ivSeeLessExperience;
     this.ivSeeMoreExperience = ivSeeMoreExperience;
     this.ivTiktok = ivTiktok;
+    this.ivUserProfile = ivUserProfile;
     this.linearLayout7 = linearLayout7;
     this.linearLayoutCompat2s = linearLayoutCompat2s;
     this.relativeLayout = relativeLayout;
@@ -188,21 +203,28 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
     this.rvSchool = rvSchool;
     this.rvVolunteering = rvVolunteering;
     this.sbAudio = sbAudio;
-    this.textView26 = textView26;
-    this.textVisewdrde2ddx6 = textVisewdrde2ddx6;
-    this.textVisewdrde2dx6 = textVisewdrde2dx6;
+    this.tvAboutTitle = tvAboutTitle;
     this.tvAudioDuration = tvAudioDuration;
     this.tvExperience = tvExperience;
     this.tvHardSkill = tvHardSkill;
     this.tvIdealJobDescription = tvIdealJobDescription;
+    this.tvIdealJobTitle = tvIdealJobTitle;
     this.tvInterest = tvInterest;
     this.tvPortfolioDescription = tvPortfolioDescription;
+    this.tvPortfolioTitle = tvPortfolioTitle;
     this.tvSchool = tvSchool;
     this.tvSeekerAbout = tvSeekerAbout;
     this.tvSeekerName = tvSeekerName;
     this.tvSeekerProfession = tvSeekerProfession;
     this.tvSoftSkill = tvSoftSkill;
     this.tvVolunteeringTitle = tvVolunteeringTitle;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

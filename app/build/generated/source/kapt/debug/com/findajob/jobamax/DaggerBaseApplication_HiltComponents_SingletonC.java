@@ -338,69 +338,75 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectSeekerCalenderFragment(SeekerCalenderFragment arg0) {
+    public void injectSeekerCalenderFragment(SeekerCalenderFragment seekerCalenderFragment) {
     }
 
     @Override
-    public void injectSeekerCoachingFragment(SeekerCoachingFragment arg0) {
+    public void injectSeekerCoachingFragment(SeekerCoachingFragment seekerCoachingFragment) {
     }
 
     @Override
-    public void injectSeekerJobsFragment(SeekerJobsFragment arg0) {
+    public void injectSeekerJobsFragment(SeekerJobsFragment seekerJobsFragment) {
     }
 
     @Override
-    public void injectSeekerAboutMeFragment(SeekerAboutMeFragment arg0) {
+    public void injectSeekerAboutMeFragment(SeekerAboutMeFragment seekerAboutMeFragment) {
     }
 
     @Override
-    public void injectSeekerAddVolunteeringFragment(SeekerAddVolunteeringFragment arg0) {
+    public void injectSeekerAddVolunteeringFragment(
+        SeekerAddVolunteeringFragment seekerAddVolunteeringFragment) {
     }
 
     @Override
-    public void injectSeekerImportResumeFragment(SeekerImportResumeFragment arg0) {
+    public void injectSeekerImportResumeFragment(
+        SeekerImportResumeFragment seekerImportResumeFragment) {
     }
 
     @Override
-    public void injectSeekerPreviewFragment(SeekerPreviewFragment arg0) {
+    public void injectSeekerPreviewFragment(SeekerPreviewFragment seekerPreviewFragment) {
     }
 
     @Override
-    public void injectSeekerProfileFragment(SeekerProfileFragment arg0) {
+    public void injectSeekerProfileFragment(SeekerProfileFragment seekerProfileFragment) {
     }
 
     @Override
-    public void injectSeekerVolunteeringListFragment(SeekerVolunteeringListFragment arg0) {
+    public void injectSeekerVolunteeringListFragment(
+        SeekerVolunteeringListFragment seekerVolunteeringListFragment) {
     }
 
     @Override
-    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment arg0) {
+    public void injectJobSeekerAccountFragment(JobSeekerAccountFragment jobSeekerAccountFragment) {
     }
 
     @Override
-    public void injectJobSeekerNewsletterFragment(JobSeekerNewsletterFragment arg0) {
+    public void injectJobSeekerNewsletterFragment(
+        JobSeekerNewsletterFragment jobSeekerNewsletterFragment) {
     }
 
     @Override
     public void injectJobSeekerPersonalInformationFragment(
-        JobSeekerPersonalInformationFragment arg0) {
+        JobSeekerPersonalInformationFragment jobSeekerPersonalInformationFragment) {
     }
 
     @Override
-    public void injectJobSeekerPushNotificationFragment(JobSeekerPushNotificationFragment arg0) {
+    public void injectJobSeekerPushNotificationFragment(
+        JobSeekerPushNotificationFragment jobSeekerPushNotificationFragment) {
     }
 
     @Override
     public void injectJobSeekerManageReadReceiptsFragment(
-        JobSeekerManageReadReceiptsFragment arg0) {
+        JobSeekerManageReadReceiptsFragment jobSeekerManageReadReceiptsFragment) {
     }
 
     @Override
-    public void injectSeekerTrackingJobFragment(SeekerTrackingJobFragment arg0) {
+    public void injectSeekerTrackingJobFragment(
+        SeekerTrackingJobFragment seekerTrackingJobFragment) {
     }
 
     @Override
-    public void injectSeekerWishListFragment(SeekerWishListFragment arg0) {
+    public void injectSeekerWishListFragment(SeekerWishListFragment seekerWishListFragment) {
     }
 
     @Override
@@ -449,23 +455,23 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectMainActivity(MainActivity arg0) {
+    public void injectMainActivity(MainActivity mainActivity) {
     }
 
     @Override
-    public void injectSplashActivity(SplashActivity arg0) {
+    public void injectSplashActivity(SplashActivity splashActivity) {
     }
 
     @Override
-    public void injectJobSeekerHomeActivity(JobSeekerHomeActivity arg0) {
+    public void injectJobSeekerHomeActivity(JobSeekerHomeActivity jobSeekerHomeActivity) {
     }
 
     @Override
-    public void injectSeekerJobSearchActivity(SeekerJobSearchActivity arg0) {
+    public void injectSeekerJobSearchActivity(SeekerJobSearchActivity seekerJobSearchActivity) {
     }
 
     @Override
-    public void injectLoginActivity(LoginActivity arg0) {
+    public void injectLoginActivity(LoginActivity loginActivity) {
     }
 
     @Override

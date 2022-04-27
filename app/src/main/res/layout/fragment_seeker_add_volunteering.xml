@@ -75,6 +75,7 @@
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_most_parent"
                     android:layout_width="match_parent"
                     android:layout_height="800dp">
 
@@ -124,6 +125,7 @@
                         android:background="@drawable/rounded_white_box"
                         app:layout_constraintTop_toBottomOf="@+id/textView19"
                         tools:layout_editor_absoluteX="0dp" />
+
 
 
                     <RelativeLayout
@@ -294,6 +296,19 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_company_suggestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        android:background="@drawable/rounded_white_box"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/et_organisation" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

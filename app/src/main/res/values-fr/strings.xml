@@ -212,7 +212,7 @@
     <string name="text">Texte</string>
     <string name="links">Liens</string>
     <string name="add_link">ajouter un autre lien</string>
-    <string name="filter_by">Filtrer par....</string>
+    <string name="filter_by">Filtrer par</string>
     <string name="about">À propos de</string>
     <string name="elevator_speech">Discours d\'ascenseur</string>
     <string name="all">Tous</string>
@@ -246,5 +246,8 @@
     <string name="preview">Aperçu</string>
     <string name="what_job_are_looking_for">Chercher par mots clés</string>
     <string name="no_jobs_available">0 offres trouvées. Vérifie que tu as bien rempli ton profil pour faire tourner l’algorithme de matching. Sinon vérifie tes critères de recherche et réessaye ☺</string>
+    <string name="most_recent_ones">Les plus récents</string>
+    <string name="no_interview">Pas d\'entretien</string>
+    <string name="no_deadline">Pas de date limite</string>
 
 </resources>

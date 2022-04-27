@@ -98,6 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30 sec"
+                    android:visibility="gone"
                     android:layout_marginBottom="15dp"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintBottom_toBottomOf="@+id/pb_audio_recording"
@@ -115,11 +116,21 @@
 
                     <ImageView
                         android:id="@+id/iv_audio_play_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_play_circle_filled"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/play"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_audio_duration_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_audio_play_btn"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <SeekBar
@@ -128,7 +139,7 @@
                         android:layout_height="40dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/tv_audio_duration"
-                        app:layout_constraintStart_toEndOf="@+id/iv_audio_play_btn"
+                        app:layout_constraintStart_toEndOf="@+id/tv_audio_duration_progress"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -136,6 +147,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="00:00"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_remove_audio"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_remove_audio"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/close_blue"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

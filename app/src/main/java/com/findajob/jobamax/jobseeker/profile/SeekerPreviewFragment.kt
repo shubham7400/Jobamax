@@ -67,6 +67,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerPreviewBinding.inflate(inflater, container, false)
         jobSeeker = viewModel.jobSeeker
+        binding.jobSeeker = viewModel.jobSeeker
         jobSeeker?.let {
             configureUi()
         }
@@ -79,6 +80,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         binding.tvSeekerProfession.text = jobSeeker?.profession ?: ""
         loadImageFromUrl(binding.civSeeker, jobSeeker?.profilePicUrl)
         binding.tvSeekerAbout.text = jobSeeker?.aboutMe ?: ""
+        if (jobSeeker?.aboutMe.isNullOrEmpty()) {
+            binding.tvSeekerAbout.visibility = View.GONE
+            binding.tvAboutTitle.visibility = View.GONE
+        }else{
+            binding.tvSeekerAbout.visibility = View.VISIBLE
+            binding.tvAboutTitle.visibility = View.VISIBLE
+        }
         setAdapters()
     }
 
@@ -137,6 +145,10 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         binding.ivAudioPlayBtn.setOnClickListener {
             onPlay(mStartPlaying)
         }
+
+        binding.ivUserProfile.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     private fun onPlay(start: Boolean) = if (start) { startPlaying() } else { stopPlaying() }
@@ -144,7 +156,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         if (player != null){
             player!!.start()
             mStartPlaying = false
-            binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+            binding.ivAudioPlayBtn.setImageResource(R.drawable.pause)
         }else{
             player = MediaPlayer().apply {
                 try {
@@ -153,7 +165,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
                         prepare()
                         start()
                         mStartPlaying = false
-                        binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+                        binding.ivAudioPlayBtn.setImageResource(R.drawable.pause)
                     }
                 } catch (e: IOException) {
                     log(  "prepare() failed")
@@ -173,7 +185,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar!!, 0)
 
         player?.setOnCompletionListener {
-            binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_play_circle_filled)
+            binding.ivAudioPlayBtn.setImageResource(R.drawable.play)
             mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar!!)
         }
     }
@@ -188,7 +200,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
     private fun stopPlaying() {
         player?.pause()
         mStartPlaying = true
-        binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_play_circle_filled)
+        binding.ivAudioPlayBtn.setImageResource(R.drawable.play)
         mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar!!)
     }
 
@@ -249,29 +261,56 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
             portfolioImageAdapter = SeekerPreviewPortfolioImagesAdapter(portfolioImageUrlList)
             binding.rvPortfolioImages.adapter = portfolioImageAdapter
             portfolio = Portfolio(parseObject)
+            if (portfolio!!.videoURL.isEmpty()) {
+                binding.cvPortfolioVideo.visibility = View.GONE
+            }else{
+                binding.cvPortfolioVideo.visibility = View.VISIBLE
+            }
             binding.tvPortfolioDescription.text = portfolio!!.text
             portfolio!!.arrImages.forEach {
                 portfolioImageUrlList.add(it)
             }
             portfolioImageAdapter!!.submitList(portfolioImageUrlList)
             portfolioImageAdapter!!.notifyDataSetChanged()
-        }
 
+            if (portfolio!!.audioUrl.isEmpty() && portfolio!!.text.isEmpty() && portfolio!!.arrImages.isEmpty()){
+                binding.tvPortfolioTitle.visibility = View.GONE
+            }else{
+                binding.tvPortfolioTitle.visibility = View.VISIBLE
+            }
+        }
 
     }
 
 
     private fun getIdealJobData() {
         jobSeeker?.idealJob?.let { parseObject ->
+
             idealJobImageAdapter = SeekerPreviewIdealJobImagesAdapter(idealJobImageUrlList)
             binding.rvIdealJobImages.adapter = idealJobImageAdapter
             idealJob = IdealJob(parseObject)
+            if (idealJob!!.audioUrl.isEmpty()) {
+                binding.clAudioPlayer.visibility = View.GONE
+            }else{
+                binding.clAudioPlayer.visibility = View.VISIBLE
+            }
+            if (idealJob!!.videoURL.isEmpty()) {
+                binding.cvIdealJobVideo.visibility = View.GONE
+            }else{
+                binding.cvIdealJobVideo.visibility = View.VISIBLE
+            }
             binding.tvIdealJobDescription.text = idealJob!!.text
             idealJob!!.arrImages.forEach {
                 idealJobImageUrlList.add(it)
             }
             idealJobImageAdapter!!.submitList(idealJobImageUrlList)
             idealJobImageAdapter!!.notifyDataSetChanged()
+
+            if (idealJob?.text?.isEmpty() != false && idealJob?.audioUrl?.isEmpty() != false && idealJob?.videoURL?.isEmpty() != false){
+                binding.tvIdealJobTitle.visibility = View.GONE
+            }else{
+                binding.tvIdealJobTitle.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -352,7 +391,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
             it.visibility = View.GONE
             binding.ivSeeLessExperience.visibility = View.VISIBLE
         }
-        if(experiences.isEmpty()){
+        if(experiences.isEmpty() || experiences.size < 3){
             binding.ivSeeLessExperience.visibility = View.GONE
             binding.ivSeeMoreExperience.visibility = View.GONE
         }
@@ -397,11 +436,7 @@ class SeekerPreviewSchoolAdapter(var list : ArrayList<Education>) : RecyclerView
             }else{
                 this.tvDateDuration.text = "${education.startDate} - ${education.endDate}"
             }
-            if (education.logo.isNotEmpty()){
-                Picasso.get().load(education.logo).into(holder.binding.ivInstitute)
-            }else{
-                holder.binding.ivInstitute.setBackgroundResource(R.drawable.ic_company)
-            }
+            loadImageFromUrl(holder.binding.ivInstitute, education.logo, R.drawable.school_dummy)
          }
     }
     override fun getItemCount(): Int = list.size
@@ -425,10 +460,8 @@ class SeekerPreviewExperienceAdapter(var list : ArrayList<Experience>) : Recycle
             }else{
                 this.tvDateDuration.text = "${experience.startDate} - ${experience.endDate}"
             }
-            if (experience.logo != ""){
-                Picasso.get().load(experience.logo).into(this.ivCompany)
-            }
-            if (position > 2 && isVisibleLess){
+            loadImageFromUrl(this.ivCompany, experience.logo, R.drawable.experience_dummy)
+            if (position > 1 && isVisibleLess){
                 this.clMostParent.visibility = View.GONE
                 this.clMostParent.layoutParams = RecyclerView.LayoutParams(0, 0)
             }else{
@@ -479,7 +512,7 @@ class SeekerPreviewVolunteeringAdapter(var list : ArrayList<Volunteering>) : Rec
             }else{
                 this.tvDateDuration.text = "${volunteering.startDate} - ${volunteering.endDate}"
             }
-            /*Picasso.get().load(volunteering.).into(holder.binding.ivCompany)*/
+            loadImageFromUrl(this.ivCompany, volunteering.logo, R.drawable.volunteering_dummy)
         }
     }
     override fun getItemCount(): Int = list.size

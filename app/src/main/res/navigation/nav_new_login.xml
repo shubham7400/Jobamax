@@ -24,13 +24,29 @@
         android:id="@+id/valuePrivacyFragment"
         android:name="com.findajob.jobamax.login.ValuePrivacyFragment"
         android:label="ValuePrivacyFragment"
-        tools:layout="@layout/fragment_value_privacy" />
+        tools:layout="@layout/fragment_value_privacy" >
+        <action
+            android:id="@+id/action_valuePrivacyFragment_to_keepMePostedFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/keepMePostedFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/keepMePostedFragment"
         android:name="com.findajob.jobamax.login.KeepMePostedFragment"
         android:label="KeepMePostedFragment"
-        tools:layout="@layout/fragment_keep_me_posted" />
+        tools:layout="@layout/fragment_keep_me_posted" >
+        <action
+            android:id="@+id/action_keepMePostedFragment_to_locationPermissionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/locationPermissionFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/locationPermissionFragment"
@@ -40,25 +56,11 @@
         <argument
             android:name="arg_action"
             android:defaultValue="" />
-        <action
-            android:id="@+id/action_locationPermissionFragment_to_meetPeopleNearbyFragment"
-            app:destination="@id/meetPeopleNearbyFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/meetPeopleNearbyFragment"
         android:name="com.findajob.jobamax.login.MeetPeopleNearbyFragment"
         android:label="MeetPeopleNearbyFragment"
         tools:layout="@layout/fragment_meet_nearby_people">
-        <action
-            android:id="@+id/action_meetPeopleNearbyFragment_to_locationPermissionFragment"
-            app:destination="@id/locationPermissionFragment"
-            app:enterAnim="@anim/slide_in_top"
-            app:exitAnim="@anim/slide_out_top"
-            app:popUpTo="@id/locationPermissionFragment"
-            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

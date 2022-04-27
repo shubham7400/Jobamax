@@ -44,6 +44,12 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="20dp" />
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user"
+                    style="@style/circular_image"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/default_user_img" />
+
              </RelativeLayout>
         </RelativeLayout>
 
@@ -76,7 +82,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_regular"
-                        android:text="@string/all"
+                        android:text="@string/most_recent_ones"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,8 +92,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_all"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,8 +120,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_applied"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -142,8 +148,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_refused"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,8 +176,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_online_intervie"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -198,8 +204,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_assessments"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -226,8 +232,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_phone_call"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -254,8 +260,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_interview"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -282,8 +288,8 @@
 
                     <CheckBox
                         android:id="@+id/cb_hired"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/checkbox_state_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"

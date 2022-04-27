@@ -4,12 +4,14 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
@@ -24,8 +26,6 @@ import com.findajob.jobamax.util.convertMillisToMinuteAndSecond
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
-import java.io.ByteArrayOutputStream
-import java.io.FileInputStream
 import java.io.IOException
 import java.lang.Exception
 
@@ -49,12 +49,14 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
     private val mSeekbarUpdateHandler: Handler = Handler()
 
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentIdealJobAudioBinding.inflate(inflater, container, false)
         configureUi()
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun configureUi() {
         setClickListeners()
     }
@@ -77,13 +79,31 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
     }
 
     private fun setAudioButton() {
-        if (audioUrl != "") {
-            binding.btnRecord.text = "Record"
-         } else {
-            binding.btnRecord.text = "Retake"
-         }
+        binding.btnRecord.text = "Record"
+        if (audioUrl.isEmpty()) {
+            binding.clAudioPlayer.visibility = View.GONE
+        }else{
+            binding.clAudioPlayer.visibility = View.VISIBLE
+        }
+
+        player = null
+        player = MediaPlayer().apply {
+            try {
+                setDataSource(audioUrl)
+                prepare()
+            } catch (e: IOException) {
+                log(  "prepare() failed")
+            }
+        }
+
+        binding.sbAudio.progress = player!!.currentPosition
+        binding.sbAudio.max = player!!.duration
+        binding.tvAudioDuration.text = convertMillisToMinuteAndSecond((player!!.duration - binding.sbAudio.progress).toLong())
+        binding.tvAudioDurationProgress.text = convertMillisToMinuteAndSecond(binding.sbAudio.progress.toLong())
+        player = null
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun setClickListeners() {
         binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
@@ -96,6 +116,11 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
         }
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.ivRemoveAudio.setOnClickListener {
+            audioUrl = ""
+            saveDataToParse()
+            setAudioButton()
         }
     }
 
@@ -112,8 +137,10 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
                 if (i < 31){
                     binding.pbAudioRecording.progress = i++
                     binding.tvAudioTime.text =  "$i sec"
+                    binding.tvAudioTime.visibility = View.VISIBLE
                 }
             }
+            @RequiresApi(Build.VERSION_CODES.M)
             override fun onFinish() {
                 if (!mStartRecording){
                     stopRecording()
@@ -132,6 +159,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun onRecord(start: Boolean) {
         if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(requireActivity(),  arrayOf(Manifest.permission.RECORD_AUDIO) ,  RECORD_AUDIO);
@@ -145,7 +173,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
         if (player != null){
             player!!.start()
             mStartPlaying = false
-            binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+            binding.ivAudioPlayBtn.setImageResource(R.drawable.pause)
         }else{
             player = MediaPlayer().apply {
                 try {
@@ -153,17 +181,18 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
                     prepare()
                     start()
                     mStartPlaying = false
-                    binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_pause_circle)
+                    binding.ivAudioPlayBtn.setImageResource(R.drawable.pause)
                 } catch (e: IOException) {
                     log(  "prepare() failed")
                 }
             }
         }
 
+
         mUpdateSeekbar  = object : Runnable {
             override fun run() {
                 binding.sbAudio.progress = player!!.currentPosition
-                binding.tvAudioDuration.text = convertMillisToMinuteAndSecond((player!!.duration - binding.sbAudio.progress).toLong())
+                binding.tvAudioDurationProgress.text = convertMillisToMinuteAndSecond((binding.sbAudio.progress).toLong())
                 mSeekbarUpdateHandler.postDelayed(this, 0)
             }
         }
@@ -172,7 +201,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
         mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar!!, 0)
 
         player?.setOnCompletionListener {
-            binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_play_circle_filled)
+            binding.ivAudioPlayBtn.setImageResource(R.drawable.play)
             mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar!!)
         }
     }
@@ -180,14 +209,18 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
     private fun stopPlaying() {
         player?.pause()
         mStartPlaying = true
-        binding.ivAudioPlayBtn.setImageResource(R.drawable.ic_play_circle_filled)
+        binding.ivAudioPlayBtn.setImageResource(R.drawable.play)
         mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar!!)
     }
 
 
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun startRecording() {
-        binding.btnRecord.text = "Recording"
+        binding.btnRecord.text = "Stop"
+        binding.tvAudioTime.visibility = View.VISIBLE
+        binding.btnRecord.setTextColor(resources.getColor(R.color.colorPrimary, null))
+        binding.btnRecord.setBackgroundResource(R.drawable.rounded_white_box)
         mStartRecording = false
         recorder = MediaRecorder().apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
@@ -210,7 +243,10 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun stopRecording() {
+        binding.tvAudioTime.visibility = View.GONE
+        binding.pbAudioRecording.progress = 0
         try {
             countDownTimer?.cancel()
         }catch (e: Exception){}
@@ -218,12 +254,15 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
             stop()
             release()
             binding.btnRecord.text = "Record"
+            binding.btnRecord.setTextColor(resources.getColor(R.color.white, null))
+            binding.btnRecord.setBackgroundResource(R.drawable.bg_gradient_rounded)
             mStartRecording = true
         }
         recorder = null
         uploadAudio()
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun uploadAudio() {
         progressHud.show()
         viewModel.uploadUserAudio(convertAudioToByteArray(fileName), {
@@ -235,10 +274,12 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
             progressHud.dismiss()
             if (it != null) {
                 audioUrl = it
-                setAudioButton()
                 saveDataToParse()
-                binding.btnRecord.text = "Retake"
+                binding.btnRecord.text = "Record"
+                binding.btnRecord.setTextColor(resources.getColor(R.color.white, null))
+                binding.btnRecord.setBackgroundResource(R.drawable.bg_gradient_rounded)
                 player = null
+                setAudioButton()
             }
         })
     }

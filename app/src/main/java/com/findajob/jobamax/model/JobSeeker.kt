@@ -161,6 +161,7 @@ class JobSeeker {
         this.jobSeekerId = obj["jobSeekerId"].toString()
         this.userId = obj["userId"].toString()
         this.gender = obj["gender"].toString()
+        this.emailVerified = obj["emailVerified"].toString().toBoolean()
         this.userObj = obj.getParseObject("_User")
         this.firstName = obj["firstName"]?.toString() ?: ""
         this.lastName = obj["lastName"]?.toString() ?: ""

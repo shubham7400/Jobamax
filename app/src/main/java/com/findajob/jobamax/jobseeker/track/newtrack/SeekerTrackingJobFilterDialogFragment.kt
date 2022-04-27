@@ -14,6 +14,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobFilterDialogBin
 import com.findajob.jobamax.enums.SeekerTrackingJobFilter
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
 import com.findajob.jobamax.jobseeker.wishlist.SeekerFilterJobFragment
+import com.findajob.jobamax.util.loadImageFromUrl
 
 
 class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
@@ -34,6 +35,8 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
 
     private fun setSelectedFilter() {
         this.selectedFilter = arguments?.getString("selected_filter") ?: ""
+        var profilePicUrl = arguments?.getString("profile_pic_url") ?: ""
+        loadImageFromUrl(binding.civUser, profilePicUrl, R.drawable.default_user_img)
         if (selectedFilter != "") {
             when (selectedFilter) {
                 SeekerTrackingJobFilter.ALL.filterType -> {
@@ -65,6 +68,9 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
     }
 
     private fun setClickListeners() {
+        binding.civUser.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
         binding.ivBackButton.setOnClickListener {
             dismiss()
         }
@@ -186,10 +192,11 @@ class SeekerTrackingJobFilterDialogFragment : DialogFragment() {
     }
 
     companion object {
-        fun newInstance(selectedFilter: SeekerTrackingJobFilter): SeekerTrackingJobFilterDialogFragment {
+        fun newInstance(selectedFilter: SeekerTrackingJobFilter, profilePicUrl: String): SeekerTrackingJobFilterDialogFragment {
             val fragment = SeekerTrackingJobFilterDialogFragment()
             val args = Bundle()
             args.putString("selected_filter", selectedFilter.filterType)
+            args.putString("profile_pic_url", profilePicUrl)
             fragment.arguments = args
             return fragment
         }

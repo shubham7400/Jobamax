@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
  import android.view.View
 import android.widget.PopupMenu
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.findajob.jobamax.MainActivity
@@ -80,19 +81,9 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
     private fun configureViewModel() {
         viewModel = ViewModelProvider(this).get(JobSeekerPersonalIntroInfoViewModel::class.java)
         personalInfoModel = JobSeekerPersonalInformationModel()
-       /* viewModel.getJobSeeker()*/
-        /*subscribeObserver()*/
     }
 
 
-    private fun subscribeObserver() {
-        viewModel.getJobSeekerObserver().observe(this) {
-            progressHud.dismiss()
-            personalInfoModel = JobSeekerPersonalInformationModel(it)
-            binding.jobSeeker = personalInfoModel
-            binding.tvGenderHint.text = personalInfoModel.gender.capitalize(Locale.ROOT)
-        }
-    }
 
     override fun onGenderClicked(view: View) {
 
@@ -139,8 +130,6 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
             if (Date().addYear(-18).yyyyMMdd() < calendar.time.yyyyMMdd()) {
                 toast("Age should be 18+")
             } else {
-               /* personalInfoModel.dob = calendar.time.dd_MM_yy()
-                binding.jobSeeker = personalInfoModel*/
                 binding.tvDateOfBirthField.text = calendar.time.dd_MM_yy()
             }
         }
@@ -220,6 +209,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         val jobSeeker = JobSeeker()
         val id = UUID.randomUUID().toString()
         jobSeeker.jobSeekerId = id
+        jobSeeker.emailVerified = user?.loginType != LoginType.EMAIL.type
         jobSeeker.email = user!!.email
         jobSeeker.loginType = user!!.loginType
         jobSeeker.firstName = binding.etFirstName.text.toString()
@@ -232,7 +222,6 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         jobSeeker.phoneNumber = binding.ccp.selectedCountryCode.toString()+binding.etPhoneNumber.text.toString()
         jobSeeker.dob = binding.tvDateOfBirthField.text.toString()
         jobSeeker.profilePicUrl = ""
-        jobSeeker.emailVerified = false
         if (user!!.password != ""){
             jobSeeker.password = AESCrypt.encrypt(user!!.password)
         }
@@ -241,7 +230,6 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         jobSeeker.lat = getCurrentLatitude()
         jobSeeker.lng = getCurrentLongitude()
         jobSeeker.location = getAddressByLatLng(getCurrentLatitude(), getCurrentLongitude(), this)
-
         val parseObject = jobSeeker.toParseObject()
         parseObject.saveInBackground { e ->
             progressHud.dismiss()
@@ -290,12 +278,43 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                         }
                     }
                 }else{
-                    startActivity(Intent(this, JobSeekerHomeActivity::class.java))
-                    finishAffinity()
+                    getUserLogin(user!!)
                 }
             }
         }
     }
+
+    private fun getUserLogin(user: UserTempInfo) {
+        log("dfsdjkl ${user.loginType}")
+        progressHud.show()
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        query.whereEqualTo(ParseTableFields.email.toString(), user.email)
+        if (user.loginType == LoginType.EMAIL.type){
+            query.whereEqualTo(ParseTableFields.loginType.toString(), user.loginType)
+            query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(user.password))
+        }
+        query.getFirstInBackground { result, e ->
+            progressHud.dismiss()
+            if (e == null && result != null) {
+                if (result.getBoolean("emailVerified")) {
+                    val jobSeeker = JobSeeker(result)
+                    setUserId(jobSeeker.jobSeekerId)
+                    setPhoneNumber(jobSeeker.phoneNumber)
+                    setLoginType(jobSeeker.loginType)
+                    setLoggedIn(true)
+                    if (checkForPermissions(permissions)) {
+                        startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                        finishAffinity()
+                    }
+                }else {
+                    toast("Please verify account clicking on sent email at the time of registration.")
+                }
+            } else {
+                toast("error: ${e.message.toString()}")
+            }
+        }
+    }
+
 
     override fun onSkipped() {
         startActivity(Intent(this, JobSeekerHomeActivity::class.java))

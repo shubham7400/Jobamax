@@ -32,7 +32,7 @@ public class ItemSeekerExperienceBindingImpl extends ItemSeekerExperienceBinding
     }
     private ItemSeekerExperienceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.ImageView) bindings[1]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[0]
             , (android.widget.TextView) bindings[6]

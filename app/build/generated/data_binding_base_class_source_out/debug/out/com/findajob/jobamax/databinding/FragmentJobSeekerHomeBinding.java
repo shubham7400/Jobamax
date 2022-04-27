@@ -29,6 +29,15 @@ public abstract class FragmentJobSeekerHomeBinding extends ViewDataBinding {
   public final Button btnCoaching;
 
   @NonNull
+  public final ConstraintLayout clImg1;
+
+  @NonNull
+  public final ConstraintLayout clImg2;
+
+  @NonNull
+  public final ConstraintLayout clImg3;
+
+  @NonNull
   public final ConstraintLayout constraintLayout15;
 
   @NonNull
@@ -41,13 +50,13 @@ public abstract class FragmentJobSeekerHomeBinding extends ViewDataBinding {
   public final ImageView imageView10;
 
   @NonNull
-  public final CircleImageView iv1;
+  public final ImageView iv1;
 
   @NonNull
-  public final CircleImageView iv2;
+  public final ImageView iv2;
 
   @NonNull
-  public final CircleImageView iv3;
+  public final ImageView iv3;
 
   @NonNull
   public final ImageView ivCalender;
@@ -107,16 +116,20 @@ public abstract class FragmentJobSeekerHomeBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentJobSeekerHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btJobSearch, Button btnCoaching, ConstraintLayout constraintLayout15,
-      CircleImageView imageUser, ImageView imageUser2, ImageView imageView10, CircleImageView iv1,
-      CircleImageView iv2, CircleImageView iv3, ImageView ivCalender, ImageView ivRightArrow,
-      ImageView ivSetting, LinearLayout ll1, LinearLayout ll2, RelativeLayout rlAbcd,
-      TextView textView28, TextView textView6, TextView tvAa, TextView tvCalenderTitle,
-      TextView tvEf, TextView tvSeekerName, ConstraintLayout vCalendar, ConstraintLayout vProfile,
-      ConstraintLayout vTrack, ConstraintLayout vWishlist) {
+      Button btJobSearch, Button btnCoaching, ConstraintLayout clImg1, ConstraintLayout clImg2,
+      ConstraintLayout clImg3, ConstraintLayout constraintLayout15, CircleImageView imageUser,
+      ImageView imageUser2, ImageView imageView10, ImageView iv1, ImageView iv2, ImageView iv3,
+      ImageView ivCalender, ImageView ivRightArrow, ImageView ivSetting, LinearLayout ll1,
+      LinearLayout ll2, RelativeLayout rlAbcd, TextView textView28, TextView textView6,
+      TextView tvAa, TextView tvCalenderTitle, TextView tvEf, TextView tvSeekerName,
+      ConstraintLayout vCalendar, ConstraintLayout vProfile, ConstraintLayout vTrack,
+      ConstraintLayout vWishlist) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btJobSearch = btJobSearch;
     this.btnCoaching = btnCoaching;
+    this.clImg1 = clImg1;
+    this.clImg2 = clImg2;
+    this.clImg3 = clImg3;
     this.constraintLayout15 = constraintLayout15;
     this.imageUser = imageUser;
     this.imageUser2 = imageUser2;

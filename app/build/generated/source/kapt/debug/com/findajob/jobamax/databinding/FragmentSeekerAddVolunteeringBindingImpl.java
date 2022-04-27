@@ -16,24 +16,26 @@ public class FragmentSeekerAddVolunteeringBindingImpl extends FragmentSeekerAddV
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.relativeLayout, 2);
         sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.textView16, 4);
-        sViewsWithIds.put(R.id.et_activity, 5);
-        sViewsWithIds.put(R.id.textView19, 6);
-        sViewsWithIds.put(R.id.et_organisation, 7);
-        sViewsWithIds.put(R.id.relativeLayout4, 8);
-        sViewsWithIds.put(R.id.textView139, 9);
-        sViewsWithIds.put(R.id.autocomplete_fragment, 10);
-        sViewsWithIds.put(R.id.tv_select_location, 11);
-        sViewsWithIds.put(R.id.cb_current_student, 12);
-        sViewsWithIds.put(R.id.linearLayout, 13);
-        sViewsWithIds.put(R.id.textView15, 14);
-        sViewsWithIds.put(R.id.tv_Start_date, 15);
-        sViewsWithIds.put(R.id.cl_end_date, 16);
-        sViewsWithIds.put(R.id.textView144, 17);
-        sViewsWithIds.put(R.id.tv_end_date, 18);
-        sViewsWithIds.put(R.id.textViewdd19, 19);
-        sViewsWithIds.put(R.id.et_description, 20);
-        sViewsWithIds.put(R.id.btn_add_volunteering, 21);
+        sViewsWithIds.put(R.id.cl_most_parent, 4);
+        sViewsWithIds.put(R.id.textView16, 5);
+        sViewsWithIds.put(R.id.et_activity, 6);
+        sViewsWithIds.put(R.id.textView19, 7);
+        sViewsWithIds.put(R.id.et_organisation, 8);
+        sViewsWithIds.put(R.id.relativeLayout4, 9);
+        sViewsWithIds.put(R.id.textView139, 10);
+        sViewsWithIds.put(R.id.autocomplete_fragment, 11);
+        sViewsWithIds.put(R.id.tv_select_location, 12);
+        sViewsWithIds.put(R.id.cb_current_student, 13);
+        sViewsWithIds.put(R.id.linearLayout, 14);
+        sViewsWithIds.put(R.id.textView15, 15);
+        sViewsWithIds.put(R.id.tv_Start_date, 16);
+        sViewsWithIds.put(R.id.cl_end_date, 17);
+        sViewsWithIds.put(R.id.textView144, 18);
+        sViewsWithIds.put(R.id.tv_end_date, 19);
+        sViewsWithIds.put(R.id.textViewdd19, 20);
+        sViewsWithIds.put(R.id.et_description, 21);
+        sViewsWithIds.put(R.id.btn_add_volunteering, 22);
+        sViewsWithIds.put(R.id.rv_company_suggestions, 23);
     }
     // views
     @NonNull
@@ -44,31 +46,33 @@ public class FragmentSeekerAddVolunteeringBindingImpl extends FragmentSeekerAddV
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAddVolunteeringBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 24, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAddVolunteeringBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.fragment.app.FragmentContainerView) bindings[10]
-            , (android.widget.Button) bindings[21]
-            , (android.widget.CheckBox) bindings[12]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[16]
-            , (android.widget.EditText) bindings[5]
-            , (android.widget.EditText) bindings[20]
-            , (android.widget.EditText) bindings[7]
+            , (androidx.fragment.app.FragmentContainerView) bindings[11]
+            , (android.widget.Button) bindings[22]
+            , (android.widget.CheckBox) bindings[13]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[17]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[4]
+            , (android.widget.EditText) bindings[6]
+            , (android.widget.EditText) bindings[21]
+            , (android.widget.EditText) bindings[8]
             , (android.widget.ImageView) bindings[3]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[13]
+            , (android.widget.LinearLayout) bindings[14]
             , (android.widget.RelativeLayout) bindings[2]
-            , (android.widget.RelativeLayout) bindings[8]
-            , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[17]
-            , (android.widget.TextView) bindings[14]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[19]
+            , (android.widget.RelativeLayout) bindings[9]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[23]
+            , (android.widget.TextView) bindings[10]
             , (android.widget.TextView) bindings[18]
-            , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[20]
+            , (android.widget.TextView) bindings[19]
+            , (android.widget.TextView) bindings[12]
+            , (android.widget.TextView) bindings[16]
             );
         this.ivUserProfile.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

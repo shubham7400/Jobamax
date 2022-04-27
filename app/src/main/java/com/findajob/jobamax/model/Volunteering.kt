@@ -14,6 +14,7 @@ class Volunteering : Serializable {
     var startDate: String = ""
     var endDate: String = ""
     var description: String = ""
+    var logo: String = ""
 }
 
 class VolunteeringGroup(val list: List<Volunteering> = listOf()) : Serializable

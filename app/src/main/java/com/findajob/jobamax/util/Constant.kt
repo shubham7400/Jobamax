@@ -1,5 +1,6 @@
 package com.findajob.jobamax.util
 
+import android.Manifest
 
 
 const val ROLE_JOB_SEEKER = "job_seeker"
@@ -17,14 +18,10 @@ const val ARG_WEB_URL = "arg_web_url"
 
 const val REQUEST_ALL_PERMISSIONS = 101
 
+val permissions = arrayOf( Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+
 
 const val GOOGLE_LOGIN_TYPE = "google"
-const val LINKEDIN_LOGIN_TYPE = "linkedin"
-const val FACEBOOK_LOGIN_TYPE = "facebook"
-const val PHONE_LOGIN_TYPE = "phone"
-const val EMAIL_LOGIN_TYPE = "email"
-const val EMAIL = "email"
-const val PASSWORD = "password"
 
 const val JOBAMAX_DOWNLOAD_URL = "https://jobamax.com/en/download"
 
@@ -32,6 +29,5 @@ const val JOBAMAX_DOWNLOAD_URL = "https://jobamax.com/en/download"
 
 
 
-// UXCam api-key
-const val UX_CAM_API_KEY = ""
+
 

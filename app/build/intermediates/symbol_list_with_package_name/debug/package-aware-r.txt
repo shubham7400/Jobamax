@@ -1612,6 +1612,7 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color kprogresshud_default_color
 color kprogresshud_grey_color
+color light_blue
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3249,6 +3250,7 @@ drawable adaptive_icon_background
 drawable adaptive_icon_foreground
 drawable add_blue
 drawable add_icon
+drawable audio_symbol
 drawable audio_wave
 drawable avd_hide_password
 drawable avd_show_password
@@ -3275,9 +3277,11 @@ drawable camera_icon
 drawable captha
 drawable ccp_ic_arrow_drop_down
 drawable checkbox_state_selector
+drawable circle_stroke_blue
 drawable close_background_green
 drawable close_background_red
 drawable close_black
+drawable close_blue
 drawable close_blue_white_background
 drawable close_white
 drawable com_facebook_auth_dialog_background
@@ -3407,6 +3411,7 @@ drawable exo_styled_controls_speed
 drawable exo_styled_controls_subtitle_off
 drawable exo_styled_controls_subtitle_on
 drawable exo_styled_controls_vr
+drawable experience_dummy
 drawable eye
 drawable eye_scanner
 drawable fastscroll__default_bubble
@@ -3704,8 +3709,6 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable ic_pause_circle
-drawable ic_play_circle_filled
 drawable ic_recruiter_track
 drawable ic_reject
 drawable ic_rewind
@@ -3781,11 +3784,13 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable or_divider
+drawable pause
 drawable places_autocomplete_toolbar_shadow
 drawable places_ic_clear
 drawable places_ic_search
 drawable places_powered_by_google_dark
 drawable places_powered_by_google_light
+drawable play
 drawable powered_by_google_dark
 drawable powered_by_google_light
 drawable privacy
@@ -3811,6 +3816,7 @@ drawable rounded_red_box_trans
 drawable rounded_white_box
 drawable rounded_white_box_50
 drawable rounded_white_box_sad_white_strok
+drawable school_dummy
 drawable seek
 drawable seek_style
 drawable seek_style_dark_green
@@ -3833,10 +3839,12 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable video_background
 drawable video_icon
+drawable volunteering_dummy
 drawable whishlist_img1
 drawable whishlist_img2
 drawable whishlist_img3
 drawable white_back_img
+drawable wishlist_dummy
 font opensans_bold
 font opensans_bold_italic
 font opensans_extra_bold
@@ -4013,9 +4021,8 @@ id action_jobSeekerHomeFragment_to_nav_seeker_wishlist
 id action_jobSeekerHomeFragment_to_seekerCalenderFragment
 id action_jobSeekerHomeFragment_to_seekerCoachingFragment
 id action_jobSeekerHomeFragment_to_seekerWishListFragment
-id action_locationPermissionFragment_to_meetPeopleNearbyFragment
+id action_keepMePostedFragment_to_locationPermissionFragment
 id action_loginFragment_to_registerFragment
-id action_meetPeopleNearbyFragment_to_locationPermissionFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -4056,6 +4063,7 @@ id action_seekerTrackingJobFragment_to_seekerCalenderFragment2
 id action_seekerTrackingJobFragment_to_seekerTrackingJobDetailsFragment
 id action_seekerVolunteeringListFragment_to_seekerAddVolunteeringFragment
 id action_text
+id action_valuePrivacyFragment_to_keepMePostedFragment
 id actions
 id activity_chooser_view_content
 id actv_hard_skill
@@ -4199,6 +4207,9 @@ id cl_date_cell
 id cl_education
 id cl_end_date
 id cl_images
+id cl_img1
+id cl_img2
+id cl_img3
 id cl_interest
 id cl_jobs
 id cl_most_parent
@@ -4267,7 +4278,9 @@ id custom
 id customPanel
 id customToolbar
 id cut
+id cv_ideal_job_video
 id cv_image
+id cv_portfolio_video
 id dark
 id dataBinding
 id date_picker_actions
@@ -4530,6 +4543,7 @@ id iv_preview
 id iv_privacy_icon
 id iv_profile_user
 id iv_remove
+id iv_remove_audio
 id iv_remove_btn
 id iv_remove_job
 id iv_remove_link
@@ -5003,7 +5017,6 @@ id textView2
 id textView20
 id textView25
 id textView259
-id textView26
 id textView27
 id textView28
 id textView29
@@ -5031,8 +5044,6 @@ id textView_selectedCountry
 id textView_title
 id textViewdd19
 id textViewx86d
-id textVisewdrde2ddx6
-id textVisewdrde2dx6
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
@@ -5071,11 +5082,13 @@ id tv_aa
 id tv_about_company
 id tv_about_job
 id tv_about_me_btn
+id tv_about_title
 id tv_activities
 id tv_address
 id tv_all
 id tv_archive
 id tv_audio_duration
+id tv_audio_duration_progress
 id tv_audio_time
 id tv_body
 id tv_calender_title
@@ -5121,6 +5134,7 @@ id tv_heading
 id tv_ideal_job_audio_title
 id tv_ideal_job_description
 id tv_ideal_job_message_title
+id tv_ideal_job_title
 id tv_ideal_job_video_title
 id tv_import_resume_btn
 id tv_inProgress
@@ -5154,6 +5168,7 @@ id tv_page_title
 id tv_phone_number
 id tv_portfolio_description
 id tv_portfolio_images_title
+id tv_portfolio_title
 id tv_portfolio_video_title
 id tv_postal_code
 id tv_profession
@@ -5945,6 +5960,7 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string missing_keywords
+string most_recent_ones
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -6003,6 +6019,8 @@ string newsletter
 string next_deadline
 string next_interview
 string no_data
+string no_deadline
+string no_interview
 string no_jobs_available
 string no_result_found
 string not_now

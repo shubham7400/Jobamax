@@ -21,6 +21,7 @@ import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.services.LocationService
+import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
@@ -105,13 +106,13 @@ class JobSeekerHomeFragment : BaseFragmentMain<FragmentJobSeekerHomeBinding>() {
                 for (i in 0 until jsonArray.length()){
                     when(i){
                         0 -> {
-                            Picasso.get().load(jsonArray[i].toString()).into(binding.iv1)
+                            loadImageFromUrl(binding.iv1, jsonArray[i].toString(), R.drawable.wishlist_dummy)
                         }
                         1 -> {
-                            Picasso.get().load(jsonArray[i].toString()).into(binding.iv2)
+                            loadImageFromUrl(binding.iv2, jsonArray[i].toString(), R.drawable.wishlist_dummy)
                         }
                         2 -> {
-                            Picasso.get().load(jsonArray[i].toString()).into(binding.iv3)
+                            loadImageFromUrl(binding.iv3, jsonArray[i].toString(), R.drawable.wishlist_dummy)
                         }
                     }
                 }

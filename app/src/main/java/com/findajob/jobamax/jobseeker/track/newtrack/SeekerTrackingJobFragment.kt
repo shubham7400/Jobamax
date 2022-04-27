@@ -147,7 +147,7 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
         binding.ivCalendar.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobFragment_to_seekerCalenderFragment2, null))
 
         binding.ivFilter.setOnClickListener {
-            val seekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment.newInstance(selectedFilter)
+            val seekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment.newInstance(selectedFilter, viewModel.jobSeeker.profilePicUrl)
             seekerTrackingJobFilterDialogFragment.show(childFragmentManager,"dialog")
             seekerTrackingJobFilterDialogFragment.onGoClickListener = {
                 selectedFilter = it

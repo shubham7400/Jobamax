@@ -14,9 +14,8 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 1);
-        sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.imageView10, 3);
+        sViewsWithIds.put(R.id.relativeLayout, 2);
+        sViewsWithIds.put(R.id.iv_back_button, 3);
         sViewsWithIds.put(R.id.linearLayoutCompat2s, 4);
         sViewsWithIds.put(R.id.constraintLayout12, 5);
         sViewsWithIds.put(R.id.civ_seeker, 6);
@@ -26,7 +25,7 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
         sViewsWithIds.put(R.id.iv_instagram, 10);
         sViewsWithIds.put(R.id.iv_linkedin, 11);
         sViewsWithIds.put(R.id.iv_tiktok, 12);
-        sViewsWithIds.put(R.id.textView26, 13);
+        sViewsWithIds.put(R.id.tv_about_title, 13);
         sViewsWithIds.put(R.id.tv_seeker_about, 14);
         sViewsWithIds.put(R.id.tv_school, 15);
         sViewsWithIds.put(R.id.rv_school, 16);
@@ -42,19 +41,21 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
         sViewsWithIds.put(R.id.rv_volunteering, 26);
         sViewsWithIds.put(R.id.tv_interest, 27);
         sViewsWithIds.put(R.id.cg_activities, 28);
-        sViewsWithIds.put(R.id.textVisewdrde2dx6, 29);
+        sViewsWithIds.put(R.id.tv_ideal_job_title, 29);
         sViewsWithIds.put(R.id.tv_ideal_job_description, 30);
-        sViewsWithIds.put(R.id.iv_ideal_job_video, 31);
-        sViewsWithIds.put(R.id.rv_ideal_job_images, 32);
-        sViewsWithIds.put(R.id.cl_audio_player, 33);
-        sViewsWithIds.put(R.id.iv_audio_play_btn, 34);
-        sViewsWithIds.put(R.id.sb_audio, 35);
-        sViewsWithIds.put(R.id.tv_audio_duration, 36);
-        sViewsWithIds.put(R.id.textVisewdrde2ddx6, 37);
-        sViewsWithIds.put(R.id.tv_portfolio_description, 38);
-        sViewsWithIds.put(R.id.iv_portfolio_video, 39);
-        sViewsWithIds.put(R.id.rv_portfolio_images, 40);
-        sViewsWithIds.put(R.id.cl_portfolio_audio_player, 41);
+        sViewsWithIds.put(R.id.cv_ideal_job_video, 31);
+        sViewsWithIds.put(R.id.iv_ideal_job_video, 32);
+        sViewsWithIds.put(R.id.rv_ideal_job_images, 33);
+        sViewsWithIds.put(R.id.cl_audio_player, 34);
+        sViewsWithIds.put(R.id.iv_audio_play_btn, 35);
+        sViewsWithIds.put(R.id.sb_audio, 36);
+        sViewsWithIds.put(R.id.tv_audio_duration, 37);
+        sViewsWithIds.put(R.id.tv_portfolio_title, 38);
+        sViewsWithIds.put(R.id.tv_portfolio_description, 39);
+        sViewsWithIds.put(R.id.cv_portfolio_video, 40);
+        sViewsWithIds.put(R.id.iv_portfolio_video, 41);
+        sViewsWithIds.put(R.id.rv_portfolio_images, 42);
+        sViewsWithIds.put(R.id.cl_portfolio_audio_player, 43);
     }
     // views
     @NonNull
@@ -65,44 +66,46 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
     // Inverse Binding Event Handlers
 
     public FragmentSeekerPreviewBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 42, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 44, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerPreviewBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (com.google.android.material.chip.ChipGroup) bindings[28]
             , (com.google.android.material.chip.ChipGroup) bindings[24]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[33]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[41]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[34]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[43]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
+            , (androidx.cardview.widget.CardView) bindings[31]
+            , (androidx.cardview.widget.CardView) bindings[40]
+            , (android.widget.ImageView) bindings[35]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.ImageView) bindings[34]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.ImageView) bindings[31]
+            , (android.widget.ImageView) bindings[32]
             , (android.widget.ImageView) bindings[10]
             , (android.widget.ImageView) bindings[11]
-            , (android.widget.ImageView) bindings[39]
+            , (android.widget.ImageView) bindings[41]
             , (android.widget.ImageView) bindings[19]
             , (android.widget.ImageView) bindings[20]
             , (android.widget.ImageView) bindings[12]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.LinearLayout) bindings[9]
             , (androidx.core.widget.NestedScrollView) bindings[4]
-            , (android.widget.RelativeLayout) bindings[1]
+            , (android.widget.RelativeLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[18]
             , (androidx.recyclerview.widget.RecyclerView) bindings[22]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[32]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[40]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[33]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[42]
             , (androidx.recyclerview.widget.RecyclerView) bindings[16]
             , (androidx.recyclerview.widget.RecyclerView) bindings[26]
-            , (android.widget.SeekBar) bindings[35]
+            , (android.widget.SeekBar) bindings[36]
             , (android.widget.TextView) bindings[13]
             , (android.widget.TextView) bindings[37]
-            , (android.widget.TextView) bindings[29]
-            , (android.widget.TextView) bindings[36]
             , (android.widget.TextView) bindings[17]
             , (android.widget.TextView) bindings[21]
             , (android.widget.TextView) bindings[30]
+            , (android.widget.TextView) bindings[29]
             , (android.widget.TextView) bindings[27]
+            , (android.widget.TextView) bindings[39]
             , (android.widget.TextView) bindings[38]
             , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[14]
@@ -111,6 +114,7 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
             , (android.widget.TextView) bindings[23]
             , (android.widget.TextView) bindings[25]
             );
+        this.ivUserProfile.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
@@ -121,7 +125,7 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -139,7 +143,22 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.jobSeeker == variableId) {
+            setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setJobSeeker(@Nullable com.findajob.jobamax.model.JobSeeker JobSeeker) {
+        this.mJobSeeker = JobSeeker;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.jobSeeker);
+        super.requestRebind();
     }
 
     @Override
@@ -156,14 +175,32 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String jobSeekerProfilePicUrl = null;
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.ivUserProfile, jobSeekerProfilePicUrl);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): jobSeeker
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }
