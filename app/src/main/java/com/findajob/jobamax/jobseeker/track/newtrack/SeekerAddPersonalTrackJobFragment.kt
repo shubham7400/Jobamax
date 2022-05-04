@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.PhaseGroup
@@ -80,7 +81,7 @@ class SeekerAddPersonalTrackJobFragment : BaseFragmentMain<FragmentSeekerAddPers
          }
 
         binding.ivBackButton.setOnClickListener { requireActivity().onBackPressed() }
-        binding.ivUserProfile.setOnClickListener { requireActivity().onBackPressed() }
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerAddPersonalTrackJobFragment_to_seekerProfileFragment, null))
     }
 
     override fun onCreated(savedInstance: Bundle?) {

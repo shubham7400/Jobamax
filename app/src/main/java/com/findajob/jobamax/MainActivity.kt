@@ -155,14 +155,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun configureNavigation() {
         if (isLoggedIn()) {
-            if (getUserType() == 2){
-                if (getUserId() != ""){
-                    startActivity(Intent(this, JobSeekerHomeActivity::class.java))
-                    finish()
-                }
-            }else{
-               /* startActivity(Intent(this, RecruiterHomeActivity::class.java))
-                finish()*/
+            if (getUserId() != ""){
+                startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                finish()
             }
         }else{
             setUserType(2)

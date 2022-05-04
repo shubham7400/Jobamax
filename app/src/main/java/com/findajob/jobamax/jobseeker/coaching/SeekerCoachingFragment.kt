@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerCoachingBinding
@@ -51,6 +52,7 @@ class SeekerCoachingFragment : BaseFragmentMain<FragmentSeekerCoachingBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerCoachingFragment_to_seekerProfileFragment, null))
         binding.btnContact.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_EMAIL, arrayOf<String>("support@jobamax.com"))

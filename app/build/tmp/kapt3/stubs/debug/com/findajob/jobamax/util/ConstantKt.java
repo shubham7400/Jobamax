@@ -29,7 +29,7 @@ public final class ConstantKt {
     public static final java.lang.String ARG_WEB_URL = "arg_web_url";
     public static final int REQUEST_ALL_PERMISSIONS = 101;
     @org.jetbrains.annotations.NotNull()
-    private static final java.lang.String[] permissions = {"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION"};
+    private static final java.lang.String[] permissions = {"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"};
     @org.jetbrains.annotations.NotNull()
     public static final java.lang.String GOOGLE_LOGIN_TYPE = "google";
     @org.jetbrains.annotations.NotNull()

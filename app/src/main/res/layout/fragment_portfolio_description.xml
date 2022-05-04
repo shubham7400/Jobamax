@@ -47,14 +47,9 @@
                                   android:src="@drawable/back_arrow_blue" />
 
                               <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  style="@style/screen_title"
                                   android:layout_centerInParent="true"
-                                  android:layout_marginStart="10dp"
-                                  android:fontFamily="@font/opensans_bold"
-                                  android:text="@string/my_portfolio"
-                                  android:textColor="@color/colorPrimary"
-                                  android:textSize="20sp" />
+                                  android:text="@string/my_portfolio" />
 
                               <de.hdodenhof.circleimageview.CircleImageView
                                   android:id="@+id/civ_user"
@@ -72,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/text"
                         android:fontFamily="@font/opensans_bold"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="30dp"
@@ -86,11 +81,25 @@
                         android:fontFamily="@font/opensans_regular"
                         android:text="0/240"
                         android:layout_marginStart="10dp"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_text"
                         app:layout_constraintStart_toEndOf="@+id/tv_text"
                         app:layout_constraintTop_toTopOf="@+id/tv_text" />
+
+                    <TextView
+                        android:id="@+id/tv_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Montre tes projects associatifs, concours, photos d'équipes, diplomation etc."
+                        android:fontFamily="@font/opensans_regular"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                       android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_text_size" />
 
 
                     <EditText
@@ -109,7 +118,7 @@
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_text" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_text1" />
 
                     <TextView
                         android:id="@+id/textView31"

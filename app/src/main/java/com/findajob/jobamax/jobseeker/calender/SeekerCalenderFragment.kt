@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
@@ -19,6 +20,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerCalenderBinding
 import com.findajob.jobamax.databinding.ItemCalenderEventCardBinding
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.preference.getLanguage
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
@@ -105,7 +107,7 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun monthYearFromDate(date: LocalDate): String? {
-        val formatter = DateTimeFormatter.ofPattern("MMMM yyyy")
+        val formatter = DateTimeFormatter.ofPattern("MMMM yyyy",if (requireContext().getLanguage() == "fr"){ Locale.FRANCE }else{ Locale.US })
         return date.format(formatter)
     }
 
@@ -157,9 +159,7 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerCalenderFragment_to_seekerProfileFragment, null))
     }
 
     private fun getCalendarData(){

@@ -48,10 +48,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_toolbar_title"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/screen_title"
                     android:text="@string/my_personal_information"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="21sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -263,7 +261,6 @@
                     android:text="" />
 
                 <Button
-                    style="@style/primary_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"

@@ -1,6 +1,8 @@
 package com.findajob.jobamax
 
 import android.app.Application
+import android.content.res.Configuration
+import android.content.res.Resources
 import androidx.lifecycle.LifecycleObserver
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
@@ -10,6 +12,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.parse.*
 import com.pushwoosh.Pushwoosh
  import dagger.hilt.android.HiltAndroidApp
+import java.util.*
 
 
 @HiltAndroidApp

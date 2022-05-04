@@ -27,14 +27,15 @@
 		
 		<Button
 			android:id="@+id/okButton"
-			style="@style/primary_button"
 			android:layout_width="128dp"
 			android:layout_height="40dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="16dp"
 			android:layout_marginEnd="32dp"
 			android:layout_marginBottom="24dp"
-			android:text="OK"
+			android:background="@drawable/btn_gradient_rounded"
+			android:textColor="@color/white"
+			android:text="@string/ok"
 			android:textSize="14sp" />
 	
 	</LinearLayout>

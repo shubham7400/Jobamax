@@ -20,7 +20,12 @@ public class SeekerTrackingJobFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerTrackingJobFragmentToSeekerCalenderFragment2() {
-    return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobFragment_to_seekerCalenderFragment2);
+  public static NavDirections actionSeekerTrackingJobFragmentToSeekerCalenderFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobFragment_to_seekerCalenderFragment);
+  }
+
+  @NonNull
+  public static NavDirections actionSeekerTrackingJobFragmentToSeekerProfileFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobFragment_to_seekerProfileFragment);
   }
 }

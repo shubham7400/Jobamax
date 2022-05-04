@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".jobseeker.profile.SeekerImportResumeFragment">
 
+    <data>
+        <variable
+            name="jobSeeker"
+            type="com.findajob.jobamax.model.JobSeeker" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:background="#E9F2FB"
@@ -35,14 +41,16 @@
                     android:src="@drawable/back_arrow_blue" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/screen_title"
                     android:layout_centerInParent="true"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/opensans_bold"
-                    android:text="@string/import_resume"
-                    android:textColor="@color/blue_2"
-                    android:textSize="20dp" />
+                    android:text="@string/import_resume" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user"
+                    style="@style/circular_image"
+                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/default_user_img" />
             </RelativeLayout>
         </RelativeLayout>
 
@@ -72,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_regular"
-                android:hint="Enter your linkedIn profile URL here"
+                android:hint="@string/enter_your_linkedin_profile_url_here"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 android:layout_marginTop="10dp"
@@ -86,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_bold"
-                android:text="You can copy it from contact information on LinkedIn app"
+                android:text="@string/resume_description"
                  android:textSize="18sp"
                 android:gravity="center"
                 android:layout_marginTop="20dp"
@@ -101,7 +109,7 @@
                 android:layout_marginHorizontal="50dp"
                 android:background="@drawable/btn_gradient_rounded"
                 android:fontFamily="@font/opensans_bold"
-                android:text="Import Resume"
+                android:text="@string/import_resume"
                 android:textAllCaps="false"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/white"

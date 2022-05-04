@@ -211,6 +211,7 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobDetailsFragment_to_seekerProfileFragment, null))
     }
 
     private fun createGoogleEvent(name: String) {

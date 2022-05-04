@@ -45,17 +45,11 @@
                     android:src="@drawable/back_arrow_blue" />
 
                 <TextView
-                    style="@style/regular_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/screen_title"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_toStartOf="@+id/civ_user"
-                    android:layout_toEndOf="@+id/iv_back_button"
-                    android:gravity="center"
-                    android:text="@string/account"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="20dp" />
+                    android:text="@string/account" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"

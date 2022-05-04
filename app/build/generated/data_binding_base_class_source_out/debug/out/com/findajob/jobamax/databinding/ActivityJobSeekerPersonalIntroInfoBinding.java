@@ -56,6 +56,12 @@ public abstract class ActivityJobSeekerPersonalIntroInfoBinding extends ViewData
   public final ImageView ivBackButton;
 
   @NonNull
+  public final LinearLayout llBirthPinCode;
+
+  @NonNull
+  public final LinearLayout llFirstLastName;
+
+  @NonNull
   public final LinearLayout llPhoneNumberField;
 
   @NonNull
@@ -104,11 +110,11 @@ public abstract class ActivityJobSeekerPersonalIntroInfoBinding extends ViewData
       int _localFieldCount, Button btnSave, CountryCodePicker ccp, ConstraintLayout clActionBar,
       EditText etEmailField, EditText etFirstName, EditText etInvitationCode, EditText etLastName,
       EditText etPhoneNumber, EditText etPostalCode, ImageView ivBackButton,
-      LinearLayout llPhoneNumberField, RelativeLayout rlGenderButton, ScrollView svMainBody,
-      TextView tvDateOfBirth, TextView tvDateOfBirthField, TextView tvEmail,
-      TextView tvFirstNameLabel, TextView tvGenderHint, TextView tvGenderLabel,
-      TextView tvInvitationCode, TextView tvLastNameLabel, TextView tvPhoneNumber,
-      TextView tvPostalCode) {
+      LinearLayout llBirthPinCode, LinearLayout llFirstLastName, LinearLayout llPhoneNumberField,
+      RelativeLayout rlGenderButton, ScrollView svMainBody, TextView tvDateOfBirth,
+      TextView tvDateOfBirthField, TextView tvEmail, TextView tvFirstNameLabel,
+      TextView tvGenderHint, TextView tvGenderLabel, TextView tvInvitationCode,
+      TextView tvLastNameLabel, TextView tvPhoneNumber, TextView tvPostalCode) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSave = btnSave;
     this.ccp = ccp;
@@ -120,6 +126,8 @@ public abstract class ActivityJobSeekerPersonalIntroInfoBinding extends ViewData
     this.etPhoneNumber = etPhoneNumber;
     this.etPostalCode = etPostalCode;
     this.ivBackButton = ivBackButton;
+    this.llBirthPinCode = llBirthPinCode;
+    this.llFirstLastName = llFirstLastName;
     this.llPhoneNumberField = llPhoneNumberField;
     this.rlGenderButton = rlGenderButton;
     this.svMainBody = svMainBody;

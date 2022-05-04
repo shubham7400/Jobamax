@@ -53,11 +53,8 @@
 
 				<androidx.appcompat.widget.AppCompatTextView
 					android:id="@+id/tv_toolbar_title"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					style="@style/screen_title"
 					android:text="@string/newsletter"
-					android:textColor="@color/black"
-					android:textSize="21sp"
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"

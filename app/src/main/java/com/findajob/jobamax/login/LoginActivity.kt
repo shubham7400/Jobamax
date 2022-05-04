@@ -106,10 +106,8 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
                     setPhoneNumber(jobSeeker.phoneNumber)
                     setLoginType(jobSeeker.loginType)
                     setLoggedIn(true)
-                    if (checkForPermissions(permissions)) {
-                        startActivity(Intent(this, JobSeekerHomeActivity::class.java))
-                        finishAffinity()
-                    }
+                    startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                    finishAffinity()
                 } else {
                     toast("Please verify account clicking on sent email at the time of registration.")
                 }

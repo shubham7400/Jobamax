@@ -50,14 +50,9 @@
                         android:src="@drawable/back_arrow_blue" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/screen_title"
                         android:layout_centerInParent="true"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="@font/opensans_bold"
-                        android:text="@string/about_me"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="20dp" />
+                        android:text="@string/about_me" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_profile_user"
@@ -134,7 +129,7 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/opensans_bold"
                     android:text="@string/your_first_name"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_social_media" />
@@ -161,7 +156,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginHorizontal="20dp"
                     android:text="@string/your_last_name"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_first_name" />
@@ -188,7 +183,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginHorizontal="20dp"
                     android:text="@string/your_profession"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
@@ -215,7 +210,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:fontFamily="@font/opensans_bold"
                     android:text="@string/your_elevator_pitch_240_characters"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_profession" />

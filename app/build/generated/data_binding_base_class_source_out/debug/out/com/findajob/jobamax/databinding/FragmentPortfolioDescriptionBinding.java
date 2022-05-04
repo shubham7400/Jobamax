@@ -49,6 +49,9 @@ public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBindin
   public final TextView tvText;
 
   @NonNull
+  public final TextView tvText1;
+
+  @NonNull
   public final TextView tvTextSize;
 
   @Bindable
@@ -58,7 +61,7 @@ public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBindin
       int _localFieldCount, CircleImageView civUser, EditText etLink,
       EditText etPortfolioDescription, ImageView ivAddLink, ImageView ivBackButton,
       RelativeLayout relativeLayout, RecyclerView rvLinks, TextView textView31, TextView tvText,
-      TextView tvTextSize) {
+      TextView tvText1, TextView tvTextSize) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.etLink = etLink;
@@ -69,6 +72,7 @@ public abstract class FragmentPortfolioDescriptionBinding extends ViewDataBindin
     this.rvLinks = rvLinks;
     this.textView31 = textView31;
     this.tvText = tvText;
+    this.tvText1 = tvText1;
     this.tvTextSize = tvTextSize;
   }
 

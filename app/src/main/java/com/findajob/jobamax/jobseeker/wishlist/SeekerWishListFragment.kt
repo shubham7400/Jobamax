@@ -12,6 +12,7 @@ import android.widget.PopupWindow
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
@@ -210,9 +211,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.civUser.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerWishListFragment_to_seekerProfileFragment, null))
     }
 
     override fun onCreated(savedInstance: Bundle?) {

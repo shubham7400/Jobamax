@@ -16,23 +16,25 @@ public class ActivityJobSeekerPersonalIntroInfoBindingImpl extends ActivityJobSe
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.cl_action_bar, 5);
         sViewsWithIds.put(R.id.sv_main_body, 6);
-        sViewsWithIds.put(R.id.tv_first_name_label, 7);
-        sViewsWithIds.put(R.id.et_first_name, 8);
-        sViewsWithIds.put(R.id.tv_last_name_label, 9);
-        sViewsWithIds.put(R.id.et_last_name, 10);
-        sViewsWithIds.put(R.id.tv_gender_label, 11);
-        sViewsWithIds.put(R.id.tv_gender_hint, 12);
-        sViewsWithIds.put(R.id.tv_date_of_birth, 13);
-        sViewsWithIds.put(R.id.tv_postal_code, 14);
-        sViewsWithIds.put(R.id.et_postal_code, 15);
-        sViewsWithIds.put(R.id.tv_email, 16);
-        sViewsWithIds.put(R.id.et_email_field, 17);
-        sViewsWithIds.put(R.id.tv_phone_number, 18);
-        sViewsWithIds.put(R.id.ll_phone_number_field, 19);
-        sViewsWithIds.put(R.id.ccp, 20);
-        sViewsWithIds.put(R.id.et_phone_number, 21);
-        sViewsWithIds.put(R.id.tv_invitation_code, 22);
-        sViewsWithIds.put(R.id.et_invitation_code, 23);
+        sViewsWithIds.put(R.id.ll_first_last_name, 7);
+        sViewsWithIds.put(R.id.tv_first_name_label, 8);
+        sViewsWithIds.put(R.id.et_first_name, 9);
+        sViewsWithIds.put(R.id.tv_last_name_label, 10);
+        sViewsWithIds.put(R.id.et_last_name, 11);
+        sViewsWithIds.put(R.id.tv_gender_label, 12);
+        sViewsWithIds.put(R.id.tv_gender_hint, 13);
+        sViewsWithIds.put(R.id.ll_birth_pin_code, 14);
+        sViewsWithIds.put(R.id.tv_date_of_birth, 15);
+        sViewsWithIds.put(R.id.tv_postal_code, 16);
+        sViewsWithIds.put(R.id.et_postal_code, 17);
+        sViewsWithIds.put(R.id.tv_email, 18);
+        sViewsWithIds.put(R.id.et_email_field, 19);
+        sViewsWithIds.put(R.id.tv_phone_number, 20);
+        sViewsWithIds.put(R.id.ll_phone_number_field, 21);
+        sViewsWithIds.put(R.id.ccp, 22);
+        sViewsWithIds.put(R.id.et_phone_number, 23);
+        sViewsWithIds.put(R.id.tv_invitation_code, 24);
+        sViewsWithIds.put(R.id.et_invitation_code, 25);
     }
     // views
     @NonNull
@@ -51,33 +53,35 @@ public class ActivityJobSeekerPersonalIntroInfoBindingImpl extends ActivityJobSe
     // Inverse Binding Event Handlers
 
     public ActivityJobSeekerPersonalIntroInfoBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 24, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 26, sIncludes, sViewsWithIds));
     }
     private ActivityJobSeekerPersonalIntroInfoBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[4]
-            , (com.hbb20.CountryCodePicker) bindings[20]
+            , (com.hbb20.CountryCodePicker) bindings[22]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
-            , (android.widget.EditText) bindings[17]
-            , (android.widget.EditText) bindings[8]
+            , (android.widget.EditText) bindings[19]
+            , (android.widget.EditText) bindings[9]
+            , (android.widget.EditText) bindings[25]
+            , (android.widget.EditText) bindings[11]
             , (android.widget.EditText) bindings[23]
-            , (android.widget.EditText) bindings[10]
-            , (android.widget.EditText) bindings[21]
-            , (android.widget.EditText) bindings[15]
+            , (android.widget.EditText) bindings[17]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[19]
+            , (android.widget.LinearLayout) bindings[14]
+            , (android.widget.LinearLayout) bindings[7]
+            , (android.widget.LinearLayout) bindings[21]
             , (android.widget.RelativeLayout) bindings[2]
             , (android.widget.ScrollView) bindings[6]
-            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[16]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.TextView) bindings[11]
-            , (android.widget.TextView) bindings[22]
-            , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[18]
-            , (android.widget.TextView) bindings[14]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[12]
+            , (android.widget.TextView) bindings[24]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[20]
+            , (android.widget.TextView) bindings[16]
             );
         this.btnSave.setTag(null);
         this.ivBackButton.setTag(null);

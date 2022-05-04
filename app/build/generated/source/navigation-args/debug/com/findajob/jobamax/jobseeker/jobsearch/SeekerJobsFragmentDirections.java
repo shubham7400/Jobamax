@@ -15,12 +15,12 @@ public class SeekerJobsFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerJobsFragmentToSeekerWishListFragment2() {
-    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerWishListFragment2);
+  public static NavDirections actionSeekerJobsFragmentToSeekerWishListFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerWishListFragment);
   }
 
   @NonNull
-  public static NavDirections actionSeekerJobsFragmentToSeekerAboutMeFragment2() {
-    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerAboutMeFragment2);
+  public static NavDirections actionSeekerJobsFragmentToSeekerProfileFragment() {
+    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerProfileFragment);
   }
 }

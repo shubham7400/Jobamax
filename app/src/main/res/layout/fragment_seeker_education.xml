@@ -40,14 +40,10 @@
                     android:src="@drawable/back_arrow_img" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/screen_title"
                     android:layout_centerInParent="true"
-                    android:layout_marginStart="10dp"
-                     android:fontFamily="@font/opensans_bold"
                     android:text="@string/my_education"
-                    android:textColor="#7800EF"
-                    android:textSize="20dp" />
+                    android:textColor="#7800EF" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_user_profile"

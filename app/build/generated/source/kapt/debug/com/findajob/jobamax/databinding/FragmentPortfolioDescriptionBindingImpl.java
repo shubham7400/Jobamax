@@ -18,11 +18,12 @@ public class FragmentPortfolioDescriptionBindingImpl extends FragmentPortfolioDe
         sViewsWithIds.put(R.id.iv_back_button, 3);
         sViewsWithIds.put(R.id.tv_text, 4);
         sViewsWithIds.put(R.id.tv_text_size, 5);
-        sViewsWithIds.put(R.id.et_portfolio_description, 6);
-        sViewsWithIds.put(R.id.textView31, 7);
-        sViewsWithIds.put(R.id.et_link, 8);
-        sViewsWithIds.put(R.id.iv_add_link, 9);
-        sViewsWithIds.put(R.id.rv_links, 10);
+        sViewsWithIds.put(R.id.tv_text1, 6);
+        sViewsWithIds.put(R.id.et_portfolio_description, 7);
+        sViewsWithIds.put(R.id.textView31, 8);
+        sViewsWithIds.put(R.id.et_link, 9);
+        sViewsWithIds.put(R.id.iv_add_link, 10);
+        sViewsWithIds.put(R.id.rv_links, 11);
     }
     // views
     @NonNull
@@ -33,19 +34,20 @@ public class FragmentPortfolioDescriptionBindingImpl extends FragmentPortfolioDe
     // Inverse Binding Event Handlers
 
     public FragmentPortfolioDescriptionBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private FragmentPortfolioDescriptionBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.EditText) bindings[8]
-            , (android.widget.EditText) bindings[6]
-            , (android.widget.ImageView) bindings[9]
+            , (android.widget.EditText) bindings[9]
+            , (android.widget.EditText) bindings[7]
+            , (android.widget.ImageView) bindings[10]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[10]
-            , (android.widget.TextView) bindings[7]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[11]
+            , (android.widget.TextView) bindings[8]
             , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[6]
             , (android.widget.TextView) bindings[5]
             );
         this.civUser.setTag(null);

@@ -11,15 +11,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
+import com.findajob.jobamax.model.JobSeeker;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerImportResumeBinding extends ViewDataBinding {
   @NonNull
   public final AppCompatButton btnImportResume;
+
+  @NonNull
+  public final CircleImageView civUser;
 
   @NonNull
   public final EditText etLink;
@@ -36,17 +42,28 @@ public abstract class FragmentSeekerImportResumeBinding extends ViewDataBinding 
   @NonNull
   public final TextView textView27;
 
+  @Bindable
+  protected JobSeeker mJobSeeker;
+
   protected FragmentSeekerImportResumeBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatButton btnImportResume, EditText etLink,
-      ImageView ivBackButton, RelativeLayout relativeLayout, TextView textView17,
+      int _localFieldCount, AppCompatButton btnImportResume, CircleImageView civUser,
+      EditText etLink, ImageView ivBackButton, RelativeLayout relativeLayout, TextView textView17,
       TextView textView27) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnImportResume = btnImportResume;
+    this.civUser = civUser;
     this.etLink = etLink;
     this.ivBackButton = ivBackButton;
     this.relativeLayout = relativeLayout;
     this.textView17 = textView17;
     this.textView27 = textView27;
+  }
+
+  public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);
+
+  @Nullable
+  public JobSeeker getJobSeeker() {
+    return mJobSeeker;
   }
 
   @NonNull

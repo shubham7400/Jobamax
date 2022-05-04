@@ -17,6 +17,7 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.Categories
@@ -242,6 +243,7 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFilterFragment_to_seekerProfileFragment, null))
         binding.etJobKeyword.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {

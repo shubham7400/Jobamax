@@ -71,15 +71,60 @@
         android:id="@+id/seekerCalenderFragment"
         android:name="com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment"
         android:label="fragment_seeker_calender"
-        tools:layout="@layout/fragment_seeker_calender" />
+        tools:layout="@layout/fragment_seeker_calender" >
+        <action
+            android:id="@+id/action_seekerCalenderFragment_to_seekerProfileFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerCalenderFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerProfileFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment"
+        android:label="fragment_seeker_profile"
+        tools:layout="@layout/fragment_seeker_profile" >
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_seekerPreviewFragment"
+            app:destination="@id/seekerPreviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/seekerCoachingFragment"
         android:name="com.findajob.jobamax.jobseeker.coaching.SeekerCoachingFragment"
         android:label="fragment_seeker_coaching"
-        tools:layout="@layout/fragment_seeker_coaching" />
+        tools:layout="@layout/fragment_seeker_coaching" >
+        <action
+            android:id="@+id/action_seekerCoachingFragment_to_seekerProfileFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/seekerCoachingFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seekerWishListFragment"
         android:name="com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment"
         android:label="fragment_seeker_wish_list"
-        tools:layout="@layout/fragment_seeker_wish_list" />
+        tools:layout="@layout/fragment_seeker_wish_list" >
+        <action
+            android:id="@+id/action_seekerWishListFragment_to_seekerProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerWishListFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seekerPreviewFragment"
+        android:name="com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment"
+        android:label="fragment_seeker_preview"
+        tools:layout="@layout/fragment_seeker_preview" />
 </navigation>

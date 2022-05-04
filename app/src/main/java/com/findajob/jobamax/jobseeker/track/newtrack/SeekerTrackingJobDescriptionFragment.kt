@@ -61,7 +61,7 @@ class SeekerTrackingJobDescriptionFragment : BaseFragmentMain<FragmentSeekerTrac
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobDescriptionFragment_to_seekerTrackingJobFragment, null))
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobDescriptionFragment_to_seekerProfileFragment, null))
     }
 
 }

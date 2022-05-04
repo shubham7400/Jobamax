@@ -1,6 +1,7 @@
 package com.findajob.jobamax.login
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -16,6 +17,7 @@ import com.findajob.jobamax.databinding.FragmentLoginBinding
 import com.findajob.jobamax.dialog.ChangePasswordDialog
 import com.findajob.jobamax.dialog.MessageDialog
 import com.findajob.jobamax.enums.LoginType
+import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.util.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -63,6 +65,9 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface, 
 
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+
+        if (checkForPermissions(permissions)) {
         }
     }
 
@@ -132,12 +137,12 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface, 
 
 
     override fun onGoogleLoginClicked() {
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail()
-            .build()
-        mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
-        val intent = mGoogleSignInClient.signInIntent
-        googleLoginActivityResult.launch(intent)
+        if (checkForPermissions(permissions)) {
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build()
+            mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
+            val intent = mGoogleSignInClient.signInIntent
+            googleLoginActivityResult.launch(intent)
+        }
     }
     private val googleLoginActivityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it == null) {
@@ -200,7 +205,9 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface, 
 
 
     override fun onLinkedInLoginClicked() {
-        linkedInRequestManager.showAuthenticateView(LinkedInRequestManager.MODE_EMAIL_ADDRESS_ONLY )
+        if (checkForPermissions(permissions)) {
+            linkedInRequestManager.showAuthenticateView(LinkedInRequestManager.MODE_EMAIL_ADDRESS_ONLY )
+        }
     }
 
     override fun onGetAccessTokenFailed() {

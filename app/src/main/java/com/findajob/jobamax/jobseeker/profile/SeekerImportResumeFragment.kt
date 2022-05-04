@@ -39,6 +39,7 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
 
     private fun configureUi() {
         jobSeeker = viewModel.jobSeeker
+        binding.jobSeeker = viewModel.jobSeeker
         binding.btnImportResume.setOnClickListener {
             if (binding.etLink.text.isNullOrEmpty()){
                 toast("Please Enter the link first.")
@@ -93,6 +94,9 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
 
     private fun setClickListeners() {
         binding.ivBackButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
     }

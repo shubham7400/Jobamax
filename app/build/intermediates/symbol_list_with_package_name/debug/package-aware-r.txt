@@ -3759,6 +3759,7 @@ drawable material_ic_menu_arrow_up_black_24dp
 drawable message_icon
 drawable message_icon_simple
 drawable minus_blue
+drawable minus_gradient
 drawable month_ripplr
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -4030,14 +4031,18 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_seekerAboutMeFragment_to_seekerSocialMediaIdsFragment
 id action_seekerAddExperienceFragment_to_seekerProfileFragment
+id action_seekerAddPersonalTrackJobFragment_to_seekerProfileFragment
 id action_seekerAddVolunteeringFragment_to_seekerProfileFragment
+id action_seekerCalenderFragment_to_seekerProfileFragment
+id action_seekerCoachingFragment_to_seekerProfileFragment
 id action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment
 id action_seekerEducationFragment_to_seekerNewEducationFragment
 id action_seekerEducationFragment_to_seekerProfileFragment
 id action_seekerExperienceListFragment_to_seekerAddExperienceFragment
-id action_seekerJobsFragment_to_seekerAboutMeFragment2
+id action_seekerJobsFilterFragment_to_seekerProfileFragment
 id action_seekerJobsFragment_to_seekerJobsFilterFragment
-id action_seekerJobsFragment_to_seekerWishListFragment2
+id action_seekerJobsFragment_to_seekerProfileFragment
+id action_seekerJobsFragment_to_seekerWishListFragment
 id action_seekerNewEducationFragment_to_seekerProfileFragment
 id action_seekerProfileFragment_self
 id action_seekerProfileFragment_to_idealJobAudioFragment
@@ -4056,12 +4061,15 @@ id action_seekerProfileFragment_to_seekerMySkillFragment
 id action_seekerProfileFragment_to_seekerPreviewFragment
 id action_seekerProfileFragment_to_seekerVolunteeringListFragment
 id action_seekerSocialMediaIdsFragment_to_seekerProfileFragment
-id action_seekerTrackingJobDescriptionFragment_to_seekerTrackingJobFragment
+id action_seekerTrackingJobDescriptionFragment_to_seekerProfileFragment
+id action_seekerTrackingJobDetailsFragment_to_seekerProfileFragment
 id action_seekerTrackingJobDetailsFragment_to_seekerTrackingJobDescriptionFragment
 id action_seekerTrackingJobFragment_to_seekerAddPersonalTrackJobFragment
-id action_seekerTrackingJobFragment_to_seekerCalenderFragment2
+id action_seekerTrackingJobFragment_to_seekerCalenderFragment
+id action_seekerTrackingJobFragment_to_seekerProfileFragment
 id action_seekerTrackingJobFragment_to_seekerTrackingJobDetailsFragment
 id action_seekerVolunteeringListFragment_to_seekerAddVolunteeringFragment
+id action_seekerWishListFragment_to_seekerProfileFragment
 id action_text
 id action_valuePrivacyFragment_to_keepMePostedFragment
 id actions
@@ -4608,7 +4616,9 @@ id ll_about_job
 id ll_action_button
 id ll_add_category
 id ll_benefits
+id ll_birth_pin_code
 id ll_education
+id ll_first_last_name
 id ll_float_buttons
 id ll_hard_skill
 id ll_industry
@@ -4890,12 +4900,10 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id seekerAboutMeFragment
-id seekerAboutMeFragment2
 id seekerAddExperienceFragment
 id seekerAddPersonalTrackJobFragment
 id seekerAddVolunteeringFragment
 id seekerCalenderFragment
-id seekerCalenderFragment2
 id seekerChangePasswordFragment
 id seekerCoachingFragment
 id seekerDeleteAccountFinalFragment
@@ -4916,7 +4924,6 @@ id seekerTrackingJobDetailsFragment
 id seekerTrackingJobFragment
 id seekerVolunteeringListFragment
 id seekerWishListFragment
-id seekerWishListFragment2
 id select_dialog_listview
 id selected
 id selection_type
@@ -5161,7 +5168,6 @@ id tv_next_deadline
 id tv_next_interview
 id tv_next_interview_title
 id tv_no_data
-id tv_no_jobs_hint
 id tv_other_job
 id tv_overlay_label
 id tv_page_title
@@ -5185,6 +5191,7 @@ id tv_soft_skill
 id tv_soft_skill_missing_tag
 id tv_soft_skill_per
 id tv_text
+id tv_text1
 id tv_text_size
 id tv_title
 id tv_title_about
@@ -5651,6 +5658,7 @@ string about
 string about_course
 string about_job
 string about_me
+string about_me2
 string about_the_company
 string about_the_job
 string account
@@ -5782,6 +5790,7 @@ string enter_email
 string enter_file_link
 string enter_first_name
 string enter_gender_here
+string enter_ideal_workspace
 string enter_job
 string enter_last_name
 string enter_new_password
@@ -5789,6 +5798,7 @@ string enter_phone_number
 string enter_postcode
 string enter_title
 string enter_valid_phone_number
+string enter_your_linkedin_profile_url_here
 string error_icon_content_description
 string exo_controls_cc_disabled_description
 string exo_controls_cc_enabled_description
@@ -5855,13 +5865,16 @@ string fcm_fallback_notification_channel_label
 string fcm_no_args
 string fcm_sender_id
 string filter_by
+string filter_by_track_job
 string filters
 string first_name_asterisk
+string fri
 string full_time
 string gcm_defaultSenderId
 string gender_with_asterisk
 string go
 string go_back_to_my_profile
+string go_track_job
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
@@ -5960,6 +5973,7 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string missing_keywords
+string mon
 string most_recent_ones
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
@@ -6002,6 +6016,7 @@ string my_dream_job
 string my_education
 string my_experience
 string my_ideal_job
+string my_ideal_job2
 string my_ideal_workspace
 string my_personal_information
 string my_portfolio
@@ -6044,6 +6059,7 @@ string path_password_strike_through
 string permanent
 string phone_call
 string phone_number_asterisk
+string pictures_1_5
 string place_autocomplete_clear_button
 string place_autocomplete_search_hint
 string places_autocomplete_clear_button
@@ -6065,11 +6081,14 @@ string profile_url
 string project_id
 string push_notifications
 string pushwoosh_app_id
+string record
 string refuse
 string refused
 string register
+string resume_description
 string retake
 string safety_tips
+string sat
 string save
 string save_information
 string schools
@@ -6085,12 +6104,15 @@ string share
 string share_jobamax
 string skills
 string skip
+string social_media
 string soft_skills
 string someone_sent_you_a_new_message
 string start_date
 string start_my_job_search
 string status_bar_notification_info_overflow
+string stop
 string submit
+string sun
 string tell_me_more
 string terms_of_service
 string text
@@ -6099,10 +6121,12 @@ string text_camera
 string text_link
 string text_photos
 string this_section_is_empty
+string thur
 string title_activity_maps
 string track
 string track_my_applications
 string tracking
+string tue
 string two_more
 string type_of_work
 string under_one
@@ -6112,6 +6136,7 @@ string video
 string vocal_30_secondes
 string volunteering
 string we_value_your_privacy
+string wed
 string what_are_you_looking_for
 string what_job_are_looking_for
 string which_company
@@ -7198,17 +7223,16 @@ style com_facebook_auth_dialog_instructions_textview
 style com_facebook_button
 style com_facebook_button_like
 style com_facebook_loginview_default_style
-style flat_button
 style job_offer_label
 style personal_information_field
 style personal_information_field_seeker
 style personal_information_heading_seeker
-style primary_button
 style regular_heading
 style regular_label
 style regular_multiline_label
 style regular_multiline_subtext
 style regular_subtext
+style screen_title
 style seeker_account_menu
 style seeker_account_menu_arrow_right
 style tooltip_bubble_text
@@ -7398,6 +7422,7 @@ styleable com_facebook_profile_picture_view com_facebook_is_cropped com_facebook
 styleable fastscroll__fastScroller fastscroll__bubbleColor fastscroll__bubbleTextAppearance fastscroll__handleColor
 styleable include constraintSet
 styleable monthPickerDialog dialogActionButtonColor headerBgColor headerFontColorNormal headerFontColorSelected headerTitleColor monthBgColor monthBgSelectedColor monthFontColorDisabled monthFontColorNormal monthFontColorSelected
+xml data_extraction_rules
 xml provider_paths
 xml pw_provider_paths
 xml standalone_badge

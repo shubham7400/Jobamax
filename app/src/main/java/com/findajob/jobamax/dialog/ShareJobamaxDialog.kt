@@ -22,10 +22,7 @@ class ShareJobamaxDialog(val activity: Activity) : Dialog(activity) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.dialog_share_jobamax)
-        window?.setLayout(
-            RelativeLayout.LayoutParams.MATCH_PARENT,
-            RelativeLayout.LayoutParams.WRAP_CONTENT
-        )
+        window?.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         shareButton.setOnClickListener {
@@ -33,10 +30,7 @@ class ShareJobamaxDialog(val activity: Activity) : Dialog(activity) {
             sharingIntent.action = Intent.ACTION_SEND
             sharingIntent.type = "text/plain"
             sharingIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            sharingIntent.putExtra(
-                Intent.EXTRA_TEXT,
-                "Let's use Jobamax ! It's a fast, simple and secure app for recruitment and networking.  Get it at $JOBAMAX_DOWNLOAD_URL"
-            )
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, "Let's use Jobamax ! It's a fast, simple and secure app for recruitment and networking.  Get it at $JOBAMAX_DOWNLOAD_URL")
             activity.startActivity(sharingIntent)
             this@ShareJobamaxDialog.dismiss()
         }

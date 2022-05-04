@@ -79,7 +79,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
     }
 
     private fun setAudioButton() {
-        binding.btnRecord.text = "Record"
+        binding.btnRecord.text = resources.getString(R.string.record)
         if (audioUrl.isEmpty()) {
             binding.clAudioPlayer.visibility = View.GONE
         }else{
@@ -217,7 +217,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     private fun startRecording() {
-        binding.btnRecord.text = "Stop"
+        binding.btnRecord.text = resources.getString(R.string.stop)
         binding.tvAudioTime.visibility = View.VISIBLE
         binding.btnRecord.setTextColor(resources.getColor(R.color.colorPrimary, null))
         binding.btnRecord.setBackgroundResource(R.drawable.rounded_white_box)
@@ -253,7 +253,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
         recorder?.apply {
             stop()
             release()
-            binding.btnRecord.text = "Record"
+            binding.btnRecord.text = resources.getString(R.string.record)
             binding.btnRecord.setTextColor(resources.getColor(R.color.white, null))
             binding.btnRecord.setBackgroundResource(R.drawable.bg_gradient_rounded)
             mStartRecording = true
@@ -275,7 +275,7 @@ class IdealJobAudioFragment : BaseFragmentMain<FragmentIdealJobAudioBinding>() {
             if (it != null) {
                 audioUrl = it
                 saveDataToParse()
-                binding.btnRecord.text = "Record"
+                binding.btnRecord.text = resources.getString(R.string.record)
                 binding.btnRecord.setTextColor(resources.getColor(R.color.white, null))
                 binding.btnRecord.setBackgroundResource(R.drawable.bg_gradient_rounded)
                 player = null

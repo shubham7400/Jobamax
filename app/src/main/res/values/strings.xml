@@ -195,6 +195,7 @@
     <string name="my_profile">My Profile</string>
     <string name="make_your_2_0_cv_now">Make your 2.0 CV now.</string>
     <string name="my_ideal_job">My ideal job</string>
+    <string name="my_ideal_job2">My ideal job</string>
     <string name="explain_your_career_goals_and_what_can_you_bring_to_a_company">Explain your career goals and what can you bring to a company</string>
     <string name="video">Video</string>
     <string name="text_240_characters">Text 240 Characters</string>
@@ -273,6 +274,23 @@
     <string name="most_recent_ones">Most recent ones</string>
     <string name="no_interview">No Interview</string>
     <string name="no_deadline">No Deadline</string>
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thur">Thur</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="pictures_1_5">Pictures 1/5</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="about_me2">About me</string>
+    <string name="social_media">Social Media</string>
+    <string name="enter_your_linkedin_profile_url_here">Enter your linkedIn profile URL here</string>
+    <string name="resume_description">You can copy it from contact information on LinkedIn app</string>
+    <string name="filter_by_track_job">Filter by</string>
+    <string name="enter_ideal_workspace">Enter ideal workspace</string>
+    <string name="go_track_job">Go</string>
 
 
 </resources>

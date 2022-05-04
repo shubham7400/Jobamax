@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -45,11 +46,8 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/screen_title"
                 android:text="@string/my_personal_information"
-                android:textColor="#0975FE"
-                android:textSize="21sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_back_button"
@@ -70,55 +68,77 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:padding="20sp">
 
-                <!-- first name -->
-                <TextView
-                    android:id="@+id/tv_first_name_label"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/ll_first_last_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/first_name_asterisk"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/et_first_name"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/et_first_name"
-                    android:layout_width="170sp"
-                    android:layout_height="40sp"
-                     style="@style/personal_information_field"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginEnd="15sp"
-                    android:background="@drawable/bg_sligthly_rounded_edit_text"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_first_name_label" />
-
-                <!-- last name -->
-                <TextView
-                    android:id="@+id/tv_last_name_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/last_name_asterisk"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/et_last_name"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/et_last_name"
-                    android:layout_width="170sp"
-                    android:layout_height="40sp"
-                    style="@style/personal_information_field"
-                     android:layout_marginTop="10sp"
-                    android:background="@drawable/bg_sligthly_rounded_edit_text"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_first_name_label" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+                        <TextView
+                            android:id="@+id/tv_first_name_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/first_name_asterisk"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/et_first_name"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/et_first_name"
+                            android:layout_width="170sp"
+                            android:layout_height="40sp"
+                            style="@style/personal_information_field"
+                            android:layout_marginTop="10sp"
+                            android:layout_marginEnd="15sp"
+                            android:background="@drawable/bg_sligthly_rounded_edit_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_first_name_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="1dp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+                        <TextView
+                            android:id="@+id/tv_last_name_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/last_name_asterisk"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/et_last_name"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/et_last_name"
+                            android:layout_width="170sp"
+                            android:layout_height="40sp"
+                            style="@style/personal_information_field"
+                            android:layout_marginTop="10sp"
+                            android:background="@drawable/bg_sligthly_rounded_edit_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_last_name_label" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
 
 
                 <!-- Gender -->
@@ -133,7 +153,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/rl_gender_button"
-                    app:layout_constraintTop_toBottomOf="@id/et_first_name" />
+                    app:layout_constraintTop_toBottomOf="@id/ll_first_last_name" />
 
                 <RelativeLayout
                     android:id="@+id/rl_gender_button"
@@ -167,57 +187,85 @@
                     </RelativeLayout>
                 </RelativeLayout>
 
-                <!-- date of birth -->
-                <TextView
-                    android:id="@+id/tv_date_of_birth"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:id="@+id/ll_birth_pin_code"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="@string/date_of_birth_with_asterisk"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/et_first_name"
-                    app:layout_constraintTop_toBottomOf="@id/rl_gender_button" />
-
-                <TextView
-                    android:id="@+id/tv_date_of_birth_field"
-                     android:gravity="center_vertical"
-                    android:layout_width="170sp"
-                    android:layout_height="40sp"
-                    style="@style/personal_information_field"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginEnd="15sp"
-                    android:textColor="@color/black"
-                    android:background="@drawable/bg_sligthly_rounded_edit_text"
-                    android:onClick="@{() -> handler.onDobClicked()}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_date_of_birth" />
-
-                <!-- postal code -->
-                <TextView
-                    android:id="@+id/tv_postal_code"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/postcode_asterisk"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/et_postal_code"
-                    app:layout_constraintTop_toBottomOf="@id/rl_gender_button" />
-
-                <EditText
-                    android:id="@+id/et_postal_code"
-                    android:layout_width="170sp"
-                    android:layout_height="40sp"
-                    style="@style/personal_information_field"
-                     android:layout_marginTop="10sp"
-                    android:background="@drawable/bg_sligthly_rounded_edit_text"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_postal_code" />
+                    app:layout_constraintTop_toBottomOf="@id/rl_gender_button"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_date_of_birth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date_of_birth_with_asterisk"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_date_of_birth_field"
+                            android:gravity="center_vertical"
+                            android:layout_width="170sp"
+                            android:layout_height="40sp"
+                            style="@style/personal_information_field"
+                            android:layout_marginTop="10sp"
+                            android:layout_marginEnd="15sp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/bg_sligthly_rounded_edit_text"
+                            android:onClick="@{() -> handler.onDobClicked()}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_date_of_birth" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="1dp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_postal_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/postcode_asterisk"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <EditText
+                            android:id="@+id/et_postal_code"
+                            android:layout_width="170sp"
+                            android:layout_height="40sp"
+                            style="@style/personal_information_field"
+                            android:layout_marginTop="10sp"
+                            android:background="@drawable/bg_sligthly_rounded_edit_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_postal_code" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
 
 
                 <!-- email -->
@@ -232,7 +280,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/et_email_field"
-                    app:layout_constraintTop_toBottomOf="@id/tv_date_of_birth_field" />
+                    app:layout_constraintTop_toBottomOf="@id/ll_birth_pin_code" />
 
                 <EditText
                     android:id="@+id/et_email_field"
@@ -276,7 +324,7 @@
                         android:layout_height="40sp"
                         android:gravity="center"
                         app:ccp_defaultNameCode="US"
-                        android:layout_marginEnd="6sp"
+                        android:layout_marginEnd="10dp"
                         app:ccp_countryPreference="US,FR,CA"
                         />
 
@@ -318,7 +366,6 @@
                 <!-- save button -->
                 <Button
                     android:id="@+id/btnSave"
-                    style="@style/primary_button"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginHorizontal="37dp"

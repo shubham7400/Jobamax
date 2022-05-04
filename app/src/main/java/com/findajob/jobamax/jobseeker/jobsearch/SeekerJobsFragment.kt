@@ -28,6 +28,7 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.HardSkill
 import com.findajob.jobamax.databinding.*
 import com.findajob.jobamax.dialog.JobReportDialog
+import com.findajob.jobamax.dialog.MessageDialog
 import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.enums.ParseTableFields
@@ -288,9 +289,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                     adapter.notifyDataSetChanged()
                     setMatchPercentage()
                     if (jobOfferList.isEmpty()){
-                        binding.tvNoJobsHint.visibility = View.VISIBLE
-                    }else{
-                        binding.tvNoJobsHint.visibility = View.GONE
+                        MessageDialog(requireActivity(), resources.getString(R.string.no_jobs_available)) {}.show()
                     }
                 }
             }
@@ -706,7 +705,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         }
 
         binding.civUser.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_seekerJobsFragment_to_seekerAboutMeFragment2)
+            Navigation.findNavController(it).navigate(R.id.action_seekerJobsFragment_to_seekerProfileFragment)
         }
 
         binding.ivBackButton.setOnClickListener {
@@ -748,7 +747,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 instance.show(childFragmentManager,"dialog")
             }
         }
-        binding.ivFavorite.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_seekerWishListFragment2, null))
+        binding.ivFavorite.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_seekerWishListFragment, null))
     }
 
     private fun updateJobs() {

@@ -55,6 +55,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         user = intent.getSerializableExtra(ARG_USER) as UserTempInfo
+        log("flkskf ${user!!.email}")
         initViews()
     }
 
@@ -242,7 +243,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                     builder.scheme("https")
                         .authority("jobamax.page.link")
                         .appendPath(FirebaseDynamicLinkPath.verifyemail.toString())
-                        .appendQueryParameter("userType", getUserType().toString())
+                        .appendQueryParameter("userType", 2.toString())
                         .appendQueryParameter("LoginType", LoginType.EMAIL.type)
                         .appendQueryParameter("recruiterId", id)
                     val myUrl: String = builder.build().toString()
@@ -253,7 +254,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                         }
                     }
                     val param = HashMap<String, String>()
-                    param["toEmail"] = getEmail()
+                    param["toEmail"] = user!!.email
                     param["link"] = dynamicLink.uri.toString()
                     ParseCloud.callFunctionInBackground<Any>("sendgridEmail", param) { obj, e ->
                         progressHud.dismiss()
@@ -262,7 +263,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                         } else {
                             BasicDialog(
                                 this@JobSeekerPersonalIntroInfoActivity,
-                                "An email with verification link is sent to:\n ${getEmail()}",
+                                "An email with verification link is sent to:\n ${user!!.email}",
                                 true
                             ) {
                                 startActivity(
@@ -285,7 +286,6 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
     }
 
     private fun getUserLogin(user: UserTempInfo) {
-        log("dfsdjkl ${user.loginType}")
         progressHud.show()
         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
         query.whereEqualTo(ParseTableFields.email.toString(), user.email)
@@ -302,10 +302,8 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                     setPhoneNumber(jobSeeker.phoneNumber)
                     setLoginType(jobSeeker.loginType)
                     setLoggedIn(true)
-                    if (checkForPermissions(permissions)) {
-                        startActivity(Intent(this, JobSeekerHomeActivity::class.java))
-                        finishAffinity()
-                    }
+                    startActivity(Intent(this, JobSeekerHomeActivity::class.java))
+                    finishAffinity()
                 }else {
                     toast("Please verify account clicking on sent email at the time of registration.")
                 }

@@ -14,12 +14,12 @@ public class FragmentSeekerImportResumeBindingImpl extends FragmentSeekerImportR
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 1);
-        sViewsWithIds.put(R.id.iv_back_button, 2);
-        sViewsWithIds.put(R.id.textView17, 3);
-        sViewsWithIds.put(R.id.et_link, 4);
-        sViewsWithIds.put(R.id.textView27, 5);
-        sViewsWithIds.put(R.id.btn_import_resume, 6);
+        sViewsWithIds.put(R.id.relativeLayout, 2);
+        sViewsWithIds.put(R.id.iv_back_button, 3);
+        sViewsWithIds.put(R.id.textView17, 4);
+        sViewsWithIds.put(R.id.et_link, 5);
+        sViewsWithIds.put(R.id.textView27, 6);
+        sViewsWithIds.put(R.id.btn_import_resume, 7);
     }
     // views
     @NonNull
@@ -30,17 +30,19 @@ public class FragmentSeekerImportResumeBindingImpl extends FragmentSeekerImportR
     // Inverse Binding Event Handlers
 
     public FragmentSeekerImportResumeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerImportResumeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[6]
-            , (android.widget.EditText) bindings[4]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.RelativeLayout) bindings[1]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[5]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[7]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
+            , (android.widget.EditText) bindings[5]
+            , (android.widget.ImageView) bindings[3]
+            , (android.widget.RelativeLayout) bindings[2]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[6]
             );
+        this.civUser.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
@@ -51,7 +53,7 @@ public class FragmentSeekerImportResumeBindingImpl extends FragmentSeekerImportR
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -69,7 +71,22 @@ public class FragmentSeekerImportResumeBindingImpl extends FragmentSeekerImportR
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.jobSeeker == variableId) {
+            setJobSeeker((com.findajob.jobamax.model.JobSeeker) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setJobSeeker(@Nullable com.findajob.jobamax.model.JobSeeker JobSeeker) {
+        this.mJobSeeker = JobSeeker;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.jobSeeker);
+        super.requestRebind();
     }
 
     @Override
@@ -86,14 +103,32 @@ public class FragmentSeekerImportResumeBindingImpl extends FragmentSeekerImportR
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        com.findajob.jobamax.model.JobSeeker jobSeeker = mJobSeeker;
+        java.lang.String jobSeekerProfilePicUrl = null;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (jobSeeker != null) {
+                    // read jobSeeker.profilePicUrl
+                    jobSeekerProfilePicUrl = jobSeeker.getProfilePicUrl();
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            com.findajob.jobamax.util.ImageBindingAdaptersKt.loadImageFromUrl(this.civUser, jobSeekerProfilePicUrl);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): jobSeeker
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

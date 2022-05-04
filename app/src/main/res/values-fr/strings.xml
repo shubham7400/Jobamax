@@ -57,11 +57,11 @@
     <string name="enter_city">Entrez la ville</string>
     <string name="type_of_work">Type de travail</string>
     <string name="job">Emploi*</string>
-    <string name="internship">stage</string>
+    <string name="internship">Stages</string>
     <string name="about_job">A propos de l\'emploi</string>
     <string name="experience">Expérience</string>
-    <string name="permanent">Permanent</string>
-    <string name="part_time">à temps partiel</string>
+    <string name="permanent">CDI</string>
+    <string name="part_time">CDD, job étudiant</string>
     <string name="full_time">full-time</string>
     <string name="instruction_newsletter">Je souhaite recevoir des nouvelles, des mises à jour et des offres de Jobamax.</string>
     <string name="you_just_got_a_new_match">Tu viens d\'avoir une nouvelle correspondance</string>
@@ -81,7 +81,7 @@
     <string name="end_date">Date de fin</string>
     <string name="add_experiences">AAjouter une expérience</string>
     <string name="skills">Compétences</string>
-    <string name="about_me">Ma bio</string>
+    <string name="about_me">A propos de moi</string>
     <string name="enter_company">Entrez la société</string>
     <string name="enter_job">Entrer le travail</string>
     <string name="password">Mot de passe</string>
@@ -97,7 +97,7 @@
     <string name="instruction_we_value_our_privacy">Chez Jobamax, la protection de votre vie privée est une priorité absolue. Votre vie privée est au cœur de la conception et de la réalisation des services et des produits que vous connaissez et appréciez, afin que vous puissiez leur faire pleinement confiance et vous concentrer sur l\'établissement de relations fructueuses.</string>
     <string name="i_accept">J\'accepte</string>
 
-    <string name="what_are_you_looking_for">Que cherchez-vous ?</string>
+    <string name="what_are_you_looking_for">Chercher per mots clés</string>
     <string name="title_activity_maps">Carte</string>
     <string name="new_password">Nouveau mot de passe</string>
     <string name="enter_new_password">Entrez le nouveau mot de passe</string>
@@ -120,7 +120,7 @@
     <string name="ok">OK</string>
     <string name="text_photos">Galerie</string>
     <string name="text_camera">Appareil photo</string>
-    <string name="interview">Interview</string>
+    <string name="interview">Entretien</string>
     //LinkedIn SDK Access
 
     <string name="archive">Archives</string>
@@ -144,7 +144,7 @@
     <string name="enable_push_notifications">Activer les notifications push</string>
     <string name="i_agree_to_receive_push_notifications_from_jobamax_to_inform_me_about_my_activity_on_the_platform">J\'accepte de recevoir des notifications push de Jobamax pour m\'informer de mon activité sur la plateforme.</string>
 
-    <string name="apprenticeship">apprentissage</string>
+    <string name="apprenticeship">Alternances</string>
     <string name="under_one">sous un</string>
     <string name="one_two">une-deux</string>
     <string name="two_more">deux de plus</string>
@@ -167,10 +167,10 @@
     <string name="my_skills">Compétences</string>
     <string name="hard_skills">Compétences difficiles</string>
     <string name="soft_skills">Compétences générales</string>
-    <string name="interest">Intérêt</string>
+    <string name="interest">Centres d\'intérêt</string>
     <string name="my_profile">Mon profil</string>
     <string name="make_your_2_0_cv_now">Réalise ton CV 2.0 !</string>
-    <string name="my_ideal_job">Mon job idéal</string>
+    <string name="my_ideal_job">Mon emploi idéal</string>
     <string name="explain_your_career_goals_and_what_can_you_bring_to_a_company">Expliquez vos objectifs de carrière et ce que vous pouvez apporter à une entreprise.</string>
     <string name="video">Vidéo</string>
     <string name="text_240_characters">Texte 240 caractères</string>
@@ -178,15 +178,15 @@
     <string name="my_resume">Mon CV</string>
     <string name="import_my_linkedin_profile">Importer mon\nprofil Linkedine</string>
     <string name="volunteering">Bénévolat</string>
-    <string name="my_portfolio">Mon portefeuille</string>
+    <string name="my_portfolio">Mon portfolio</string>
     <string name="text_link">Texte + Lien</string>
-    <string name="my_ideal_workspace">Mon espace de travail idéal</string>
+    <string name="my_ideal_workspace">Le cadre de travail idéal</string>
     <string name="tracking">Candidatures</string>
-    <string name="next_deadline">Prochaine échéance</string>
-    <string name="next_interview">Interview suivante</string>
-    <string name="jobamax_jobs">Jobamax Emplois</string>
-    <string name="other_jobs">Autres emplois</string>
-    <string name="your_job_application">Votre demande d\'emploi</string>
+    <string name="next_deadline">Prochaine deadline</string>
+    <string name="next_interview">Prochaine entretien</string>
+    <string name="jobamax_jobs">Mes offres d\'emploi</string>
+    <string name="other_jobs">Mes candidatures</string>
+    <string name="your_job_application">Tes candidatures</string>
     <string name="add_job_in_tracking">Ajouter un travail dans le suivi</string>
     <string name="job_title">Titre du poste</string>
     <string name="enter_title">Entrez le titre</string>
@@ -195,7 +195,7 @@
     <string name="coaching">Coaching</string>
     <string name="about_the_job">À propos du poste</string>
     <string name="about_the_company">À propos de l\'entreprise</string>
-    <string name="see_job_description">Voir la description du poste</string>
+    <string name="see_job_description">En savoir plus</string>
     <string name="filters">Filtres</string>
     <string name="my_dream_job">Le métier de mes rêves</string>
     <string name="my_current_location">Ma position actuelle</string>
@@ -217,17 +217,17 @@
     <string name="elevator_speech">Discours d\'ascenseur</string>
     <string name="all">Tous</string>
     <string name="favorite">Favoris</string>
-    <string name="applied">Appliqué</string>
-    <string name="refused">Refused</string>
-    <string name="online_interview">Online interview</string>
+    <string name="applied">Postulé</string>
+    <string name="refused">Refusé</string>
+    <string name="online_interview">Entretiens en ligne</string>
     <string name="assessments">Évaluations</string>
-    <string name="phone_call">Évaluations</string>
-    <string name="hired">Engagé</string>
+    <string name="phone_call">Appel téléphonique</string>
+    <string name="hired">Embauché</string>
     <string name="go">Allez-y</string>
-    <string name="your_first_name">Votre prénom</string>
-    <string name="your_last_name">Votre nom de famille</string>
-    <string name="your_profession">Votre profession</string>
-    <string name="your_elevator_pitch_240_characters">Votre discours d\'ascenseur (240 caractères)</string>
+    <string name="your_first_name">prénom</string>
+    <string name="your_last_name">nom de famille</string>
+    <string name="your_profession">Profession</string>
+    <string name="your_elevator_pitch_240_characters">Bio (240 caractéres)</string>
     <string name="language_change_alert_message">Vous devez redémarrer l\'application afin de voir les changements de langue.</string>
     <string name="images">Images</string>
     <string name="job_description">Job Description</string>
@@ -248,6 +248,23 @@
     <string name="no_jobs_available">0 offres trouvées. Vérifie que tu as bien rempli ton profil pour faire tourner l’algorithme de matching. Sinon vérifie tes critères de recherche et réessaye ☺</string>
     <string name="most_recent_ones">Les plus récents</string>
     <string name="no_interview">Pas d\'entretien</string>
-    <string name="no_deadline">Pas de date limite</string>
-
+    <string name="no_deadline">Pas d\'entretien</string>
+    <string name="sun">Dim</string>
+    <string name="mon">Lun</string>
+    <string name="tue">Mar</string>
+    <string name="wed">Mer</string>
+    <string name="thur">Jeu</string>
+    <string name="fri">Ven</string>
+    <string name="sat">Sam</string>
+    <string name="pictures_1_5">Photos 1/5</string>
+    <string name="record">Enregistrer</string>
+    <string name="stop">Stop</string>
+    <string name="about_me2">Ma bio</string>
+    <string name="social_media">Médias sociaux</string>
+    <string name="enter_your_linkedin_profile_url_here">Entrez ici I\'URL de votre profil linkedIn</string>
+    <string name="resume_description">Vous pouvez le copier à partir des informations de contact sur I\'application LinkedIn</string>
+    <string name="my_ideal_job2">Mon job idéal</string>
+    <string name="filter_by_track_job">Filters</string>
+    <string name="enter_ideal_workspace">Ajoute des tags. Ex:télé-travail</string>
+    <string name="go_track_job">Go</string>
 </resources>
