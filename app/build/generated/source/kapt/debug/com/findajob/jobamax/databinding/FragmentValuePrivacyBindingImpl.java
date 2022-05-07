@@ -21,7 +21,7 @@ public class FragmentValuePrivacyBindingImpl extends FragmentValuePrivacyBinding
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    private final android.widget.ScrollView mboundView0;
     // variables
     @Nullable
     private final android.view.View.OnClickListener mCallback30;
@@ -41,7 +41,7 @@ public class FragmentValuePrivacyBindingImpl extends FragmentValuePrivacyBinding
             , (android.widget.TextView) bindings[4]
             );
         this.btnAccept.setTag(null);
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

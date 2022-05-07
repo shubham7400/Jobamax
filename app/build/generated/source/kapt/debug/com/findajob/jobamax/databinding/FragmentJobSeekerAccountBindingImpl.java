@@ -52,13 +52,11 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
     private final android.widget.TextView mboundView9;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback49;
-    @Nullable
     private final android.view.View.OnClickListener mCallback39;
     @Nullable
     private final android.view.View.OnClickListener mCallback47;
     @Nullable
-    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback37;
+    private final android.view.View.OnClickListener mCallback37;
     @Nullable
     private final android.view.View.OnClickListener mCallback45;
     @Nullable
@@ -72,7 +70,7 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
     @Nullable
     private final android.view.View.OnClickListener mCallback38;
     @Nullable
-    private final android.view.View.OnClickListener mCallback36;
+    private final android.widget.CompoundButton.OnCheckedChangeListener mCallback36;
     @Nullable
     private final android.view.View.OnClickListener mCallback48;
     @Nullable
@@ -135,17 +133,16 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
         this.mboundView9.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback49 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 16);
         mCallback39 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 6);
         mCallback47 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 14);
-        mCallback37 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 4);
+        mCallback37 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
         mCallback45 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 12);
         mCallback35 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         mCallback43 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 10);
         mCallback42 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 9);
         mCallback40 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 7);
         mCallback38 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 5);
-        mCallback36 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback36 = new com.findajob.jobamax.generated.callback.OnCheckedChangeListener(this, 3);
         mCallback48 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 15);
         mCallback34 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         mCallback46 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 13);
@@ -240,148 +237,28 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.civUser.setOnClickListener(mCallback35);
-            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.hideMeFlag, mCallback37, (androidx.databinding.InverseBindingListener)null);
+            androidx.databinding.adapters.CompoundButtonBindingAdapter.setListeners(this.hideMeFlag, mCallback36, (androidx.databinding.InverseBindingListener)null);
             this.ivBackButton.setOnClickListener(mCallback34);
-            this.mboundView10.setOnClickListener(mCallback43);
-            this.mboundView11.setOnClickListener(mCallback44);
-            this.mboundView12.setOnClickListener(mCallback45);
-            this.mboundView13.setOnClickListener(mCallback46);
-            this.mboundView14.setOnClickListener(mCallback47);
-            this.mboundView15.setOnClickListener(mCallback48);
-            this.mboundView16.setOnClickListener(mCallback49);
-            this.mboundView3.setOnClickListener(mCallback36);
-            this.mboundView5.setOnClickListener(mCallback38);
-            this.mboundView6.setOnClickListener(mCallback39);
-            this.mboundView7.setOnClickListener(mCallback40);
-            this.mboundView8.setOnClickListener(mCallback41);
-            this.mboundView9.setOnClickListener(mCallback42);
+            this.mboundView10.setOnClickListener(mCallback42);
+            this.mboundView11.setOnClickListener(mCallback43);
+            this.mboundView12.setOnClickListener(mCallback44);
+            this.mboundView13.setOnClickListener(mCallback45);
+            this.mboundView14.setOnClickListener(mCallback46);
+            this.mboundView15.setOnClickListener(mCallback47);
+            this.mboundView16.setOnClickListener(mCallback48);
+            this.mboundView3.setOnClickListener(mCallback35);
+            this.mboundView5.setOnClickListener(mCallback37);
+            this.mboundView6.setOnClickListener(mCallback38);
+            this.mboundView7.setOnClickListener(mCallback39);
+            this.mboundView8.setOnClickListener(mCallback40);
+            this.mboundView9.setOnClickListener(mCallback41);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 16: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onDeleteAccountClicked();
-                }
-                break;
-            }
             case 6: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onShareJobamaxClicked();
-                }
-                break;
-            }
-            case 14: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onPrivacyPreferencesClicked();
-                }
-                break;
-            }
-            case 12: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onTermsOfServiceClicked();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackButtonClicked();
-                }
-                break;
-            }
-            case 10: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSafetyTipsClicked();
-                }
-                break;
-            }
-            case 9: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onCommunityGuidelinesClicked();
-                }
-                break;
-            }
-            case 7: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
@@ -398,7 +275,24 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 }
                 break;
             }
-            case 5: {
+            case 14: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onLogoutClicked();
+                }
+                break;
+            }
+            case 4: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
@@ -415,7 +309,24 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 }
                 break;
             }
-            case 3: {
+            case 12: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onLicensesClicked();
+                }
+                break;
+            }
+            case 2: {
                 // localize variables for thread safety
                 // handler
                 com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
@@ -432,6 +343,74 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 }
                 break;
             }
+            case 10: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onPrivacyPolicyClicked();
+                }
+                break;
+            }
+            case 9: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onSafetyTipsClicked();
+                }
+                break;
+            }
+            case 7: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onEmailUsClicked();
+                }
+                break;
+            }
+            case 5: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onShareJobamaxClicked();
+                }
+                break;
+            }
             case 15: {
                 // localize variables for thread safety
                 // handler
@@ -445,7 +424,7 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onLogoutClicked();
+                    handler.onDeleteAccountClicked();
                 }
                 break;
             }
@@ -479,7 +458,7 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onLicensesClicked();
+                    handler.onPrivacyPreferencesClicked();
                 }
                 break;
             }
@@ -496,7 +475,7 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onPrivacyPolicyClicked();
+                    handler.onTermsOfServiceClicked();
                 }
                 break;
             }
@@ -513,7 +492,7 @@ public class FragmentJobSeekerAccountBindingImpl extends FragmentJobSeekerAccoun
                 if (handlerJavaLangObjectNull) {
 
 
-                    handler.onEmailUsClicked();
+                    handler.onCommunityGuidelinesClicked();
                 }
                 break;
             }

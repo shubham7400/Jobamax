@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+
+    
+
+                 
+                            
+                                                          
+
+                 
+                          
+                                                                                                   
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_background"
+        android:orientation="vertical" android:tag="layout/fragment_job_seeker_account_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:tag="binding_1"                                 
+                    android:src="@drawable/back_arrow_blue" />
+
+                <TextView
+                    style="@style/screen_title"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user"
+                    style="@style/circular_image"
+                    android:tag="binding_2"                      
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/default_user_img" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+<!--
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="@{() -> handler.onBackButtonClicked()}"
+                android:padding="4dp"
+                android:src="@drawable/ic_arrow_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView2"
+                style="@style/regular_label"
+                android:text="@string/account"
+                android:textColor="@color/colorPrimary"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_user"
+                loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/default_user_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayout">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/logo_jobamax_blue"/>
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_3"                                          
+                    android:text="@string/my_personal_information" />
+                <View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_change_language"
+                    android:background="@drawable/rounded_white_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_change_language"
+                        style="@style/seeker_account_menu.arrow_right"
+                        android:layout_width="0dp"
+                        android:text="@string/language"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_current_language"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_current_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="en"
+                        android:textSize="18sp"
+                        android:paddingHorizontal="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_change_language_arrow"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_change_language_arrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/seeker_account_menu"
+                        android:text="@string/hide_me" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/hideMeFlag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:tag="binding_4"                                                         />
+                </RelativeLayout>
+<!--
+                <TextView
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/read_receipts" />
+
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:onClick="@{() -> handler.onManageReadReceiptsClicked()}"
+                    android:text="@string/manage_read_receipts" />-->
+
+
+                <!--<TextView
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/social_networks" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:onClick="@{()-> handler.onSocialLayoutClicked()}"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/ic_linkedin" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/instagram_circle" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/ic_facebook" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/twitter_circle" />
+
+                </LinearLayout>-->
+
+               <!-- <TextView
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/security" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:onClick="@{() -> handler.onPasswordClicked()}"
+                    android:text="@string/password" />-->
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/notifications" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/seeker_account_menu.arrow_right"
+                        android:layout_width="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/push_notifications"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/sb_push_notification"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/sb_push_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:track="@drawable/selector_switch_track"
+                        android:thumb="@drawable/selector_switch_thumb"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_5"                                 
+                    android:text="@string/newsletter" />
+
+
+              <!--  <TextView
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/payment" />
+
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:layout_marginBottom="32dp"
+                    android:onClick="@{() -> handler.onPaymentMethodsClicked()}"
+                    android:text="@string/payment_methods" />
+
+                <TextView
+                    style="@style/seeker_account_menu"
+                    android:layout_marginBottom="32dp"
+                    android:onClick="@{() -> handler.onRestorePurchaseClicked()}"
+                    android:text="@string/restore_purchase" />-->
+
+                <TextView
+                    style="@style/seeker_account_menu"
+                    android:layout_marginTop="20dp"
+                    android:tag="binding_6"                                   
+                    android:text="@string/share_jobamax" />
+
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/contact_us" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_7"                                     
+                    android:text="@string/help_and_support" />
+
+                <View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />
+
+                <TextView
+                    style="@style/seeker_account_menu"
+                    android:tag="binding_8"                              
+                    android:text="@string/email_us" />
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/community" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_9"                                          
+                    android:text="@string/community_guidelines" />
+
+                <View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_10"                                
+                    android:text="@string/safety_tips" />
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    style="@style/account_subheading_seeker"
+                    android:text="@string/legal" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_11"                                   
+                    android:text="@string/privacy_policy" />
+
+                <View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_12"                                    
+                    android:text="@string/terms_of_service" />
+
+
+                <TextView
+
+                    style="@style/seeker_account_menu.arrow_right"
+                    android:tag="binding_13"                              
+                    android:text="@string/licences"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    style="@style/seeker_account_menu.arrow_right"
+
+                    android:tag="binding_14"                                        
+                    android:text="@string/privacy_preferences"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/screen_background"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="150dp"
+                        android:layout_height="39dp"
+                        android:src="@drawable/logo_jobamax_blue" />
+
+                    <TextView
+                        style="@style/regular_subtext"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/arg_version" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/seeker_account_menu"
+                    android:tag="binding_15"                            
+                    android:text="@string/log_out" />
+
+                <!--<View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />-->
+
+               <!-- <TextView
+                    style="@style/seeker_account_menu"
+                    android:onClick="@{() -> handler.onTemporaryDisableAccountClicked()}"
+                    android:text="@string/temporary_disable_my_account" />-->
+
+                <View
+                    style="@style/v_divider"
+                    android:layout_marginHorizontal="16dp" />
+
+                <TextView
+                    style="@style/seeker_account_menu"
+                    android:tag="binding_16"                                   
+                    android:text="@string/delete_my_account" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

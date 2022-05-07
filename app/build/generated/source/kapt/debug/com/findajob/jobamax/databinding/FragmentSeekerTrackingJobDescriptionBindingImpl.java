@@ -24,29 +24,26 @@ public class FragmentSeekerTrackingJobDescriptionBindingImpl extends FragmentSee
         sViewsWithIds.put(R.id.tv_job_type, 9);
         sViewsWithIds.put(R.id.tv_company_address, 10);
         sViewsWithIds.put(R.id.iv_report, 11);
-        sViewsWithIds.put(R.id.constraintLayout14, 12);
-        sViewsWithIds.put(R.id.appCompatButton2, 13);
-        sViewsWithIds.put(R.id.tv_company_name, 14);
-        sViewsWithIds.put(R.id.ll_about_job, 15);
-        sViewsWithIds.put(R.id.tv_title_about, 16);
-        sViewsWithIds.put(R.id.tv_about_job, 17);
-        sViewsWithIds.put(R.id.ll_about_company, 18);
-        sViewsWithIds.put(R.id.tv_company_url, 19);
-        sViewsWithIds.put(R.id.tv_about_company, 20);
-        sViewsWithIds.put(R.id.ll_hard_skill, 21);
-        sViewsWithIds.put(R.id.rv_hard_skill, 22);
-        sViewsWithIds.put(R.id.ll_soft_skill, 23);
-        sViewsWithIds.put(R.id.cg_soft_skill, 24);
-        sViewsWithIds.put(R.id.ll_industry, 25);
-        sViewsWithIds.put(R.id.tv_industry, 26);
-        sViewsWithIds.put(R.id.ll_salary, 27);
-        sViewsWithIds.put(R.id.ll_benefits, 28);
-        sViewsWithIds.put(R.id.rv_hard_sklilsl, 29);
-        sViewsWithIds.put(R.id.ll_workspace, 30);
-        sViewsWithIds.put(R.id.cg_benefits, 31);
-        sViewsWithIds.put(R.id.cl_overlay, 32);
-        sViewsWithIds.put(R.id.tv_overlay_label, 33);
-        sViewsWithIds.put(R.id.tv_job_offer_id, 34);
+        sViewsWithIds.put(R.id.tv_company_name, 12);
+        sViewsWithIds.put(R.id.ll_about_job, 13);
+        sViewsWithIds.put(R.id.tv_title_about, 14);
+        sViewsWithIds.put(R.id.tv_about_job, 15);
+        sViewsWithIds.put(R.id.ll_bottom_content, 16);
+        sViewsWithIds.put(R.id.ll_about_company, 17);
+        sViewsWithIds.put(R.id.tv_company_url, 18);
+        sViewsWithIds.put(R.id.tv_about_company, 19);
+        sViewsWithIds.put(R.id.ll_hard_skill, 20);
+        sViewsWithIds.put(R.id.rv_hard_skill, 21);
+        sViewsWithIds.put(R.id.ll_soft_skill, 22);
+        sViewsWithIds.put(R.id.cg_soft_skill, 23);
+        sViewsWithIds.put(R.id.ll_industry, 24);
+        sViewsWithIds.put(R.id.tv_industry, 25);
+        sViewsWithIds.put(R.id.ll_salary, 26);
+        sViewsWithIds.put(R.id.ll_benefits, 27);
+        sViewsWithIds.put(R.id.rv_hard_sklilsl, 28);
+        sViewsWithIds.put(R.id.ll_workspace, 29);
+        sViewsWithIds.put(R.id.cg_benefits, 30);
+        sViewsWithIds.put(R.id.btn_see_more_or_less, 31);
     }
     // views
     @NonNull
@@ -57,44 +54,41 @@ public class FragmentSeekerTrackingJobDescriptionBindingImpl extends FragmentSee
     // Inverse Binding Event Handlers
 
     public FragmentSeekerTrackingJobDescriptionBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 35, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 32, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerTrackingJobDescriptionBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[13]
-            , (com.google.android.material.chip.ChipGroup) bindings[31]
-            , (com.google.android.material.chip.ChipGroup) bindings[24]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[32]
+            , (android.widget.Button) bindings[31]
+            , (com.google.android.material.chip.ChipGroup) bindings[30]
+            , (com.google.android.material.chip.ChipGroup) bindings[23]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[12]
             , (android.widget.ImageView) bindings[3]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[7]
+            , (android.widget.ImageView) bindings[7]
             , (android.widget.ImageView) bindings[11]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[18]
-            , (android.widget.LinearLayout) bindings[15]
-            , (android.widget.LinearLayout) bindings[28]
-            , (android.widget.LinearLayout) bindings[21]
-            , (android.widget.LinearLayout) bindings[25]
+            , (android.widget.LinearLayout) bindings[17]
+            , (android.widget.LinearLayout) bindings[13]
             , (android.widget.LinearLayout) bindings[27]
-            , (android.widget.LinearLayout) bindings[23]
-            , (android.widget.LinearLayout) bindings[30]
+            , (android.widget.LinearLayout) bindings[16]
+            , (android.widget.LinearLayout) bindings[20]
+            , (android.widget.LinearLayout) bindings[24]
+            , (android.widget.LinearLayout) bindings[26]
+            , (android.widget.LinearLayout) bindings[22]
+            , (android.widget.LinearLayout) bindings[29]
             , (android.widget.RelativeLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[22]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[29]
-            , (android.widget.TextView) bindings[20]
-            , (android.widget.TextView) bindings[17]
-            , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[14]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[21]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[28]
             , (android.widget.TextView) bindings[19]
-            , (android.widget.TextView) bindings[26]
-            , (android.widget.TextView) bindings[34]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[12]
+            , (android.widget.TextView) bindings[18]
+            , (android.widget.TextView) bindings[25]
             , (android.widget.TextView) bindings[8]
             , (android.widget.TextView) bindings[9]
-            , (android.widget.TextView) bindings[33]
             , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[16]
+            , (android.widget.TextView) bindings[14]
             );
         this.ivUserProfile.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

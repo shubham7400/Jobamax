@@ -60,8 +60,8 @@
                                   style="@style/circular_image"
                                   loadImageFromUrl="@{jobSeeker.profilePicUrl}"
                                   android:layout_alignParentEnd="true"
-                                  app:civ_border_color="@color/colorPrimary"
-                                  android:src="@drawable/default_user_img" />
+                                  android:src="@drawable/default_user_img"
+                                  app:civ_border_color="@color/colorPrimary" />
                          </RelativeLayout>
                     </RelativeLayout>
 

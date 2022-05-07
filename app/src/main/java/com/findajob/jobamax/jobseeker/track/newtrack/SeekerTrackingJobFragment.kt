@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
+import com.findajob.jobamax.data.pojo.Phase
 import com.findajob.jobamax.data.pojo.PhaseGroup
 import com.findajob.jobamax.databinding.FragmentSeekerTrackingJobBinding
 import com.findajob.jobamax.databinding.ItemSeekerOtherJobBinding
@@ -18,7 +19,7 @@ import com.findajob.jobamax.databinding.ItemSeekerTrackBinding
 import com.findajob.jobamax.enums.*
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
- import com.findajob.jobamax.model.GetAllUserCallback
+import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.log
@@ -28,8 +29,13 @@ import com.parse.FunctionCallback
 import com.parse.ParseCloud
 import com.parse.ParseObject
 import com.parse.ParseQuery
+import com.pushwoosh.repository.s
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 @AndroidEntryPoint
 class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBinding>() {
@@ -92,7 +98,7 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
                 }
                 else -> {
                     if (result == "" || result == null){
-                        binding.tvNextInterview.text = "No Interview"
+                        binding.tvNextInterview.text = resources.getString(R.string.no_interview)
                     }else{
                         binding.tvNextInterview.text = result
                     }
@@ -111,7 +117,7 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
                 }
                 else -> {
                     if (result == "" || result == null){
-                        binding.tvNextDeadline.text = "No Deadline"
+                        binding.tvNextDeadline.text = resources.getString(R.string.no_deadline)
                     }else{
                         binding.tvNextDeadline.text = result
                     }
@@ -142,7 +148,7 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
             requireActivity().onBackPressed()
         }
         binding.ivCalendar.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobFragment_to_seekerCalenderFragment, null))
-        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobFragment_to_seekerProfileFragment, null))
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobFragment_to_nav_seeker_profile, null))
 
         binding.ivFilter.setOnClickListener {
             val seekerTrackingJobFilterDialogFragment = SeekerTrackingJobFilterDialogFragment.newInstance(selectedFilter, viewModel.jobSeeker.profilePicUrl)
@@ -232,9 +238,37 @@ class SeekerTrackingJobamaxJobAdapter(var list: ArrayList<TrackingJob>) : Recycl
         holder.binding.apply {
             val mainObject = Gson().fromJson(job.phases, PhaseGroup::class.java)
             val phases = ArrayList(mainObject.phases)
+            var lastPhase: Phase? = null
+            var date: Date? = null
             phases.forEach {
-                it.date
+                var sdf: SimpleDateFormat? = null
+                var date1: Date? = null
+                try {
+                    sdf = SimpleDateFormat("MMM dd, yyyy")
+                    date1 = sdf.parse(it.date)
+                }catch (e: java.lang.Exception){
+                    sdf = SimpleDateFormat("MMM dd, yyyy", Locale.FRANCE)
+                    try {
+                        date1 = sdf.parse(it.date)
+                    }catch (e: java.lang.Exception){}
+                }
+                if (date == null){
+                    date = date1
+                    lastPhase = it
+                }else{
+                    if (date1 != null) {
+                        if (date1.after(date)){
+                            date = date1
+                            lastPhase = it
+                        }
+                    }
+                }
             }
+
+            if (lastPhase != null) {
+                this.tvLatestPhase.text = lastPhase!!.name
+            }
+
 
             this.tvJobTitle.text = job.job?.getString("jobTitle") ?: ""
             this.tvCompanyName.text = job.job?.getString("companyName") ?: ""

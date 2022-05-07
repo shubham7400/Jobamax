@@ -88,14 +88,7 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface, 
             progressHud.show()
             val params = HashMap<String, Any>()
             params["email"] = emailField.text.toString()
-            when (viewModel.roleType) {
-                ROLE_JOB_SEEKER -> {
-                    params["userType"] = 2
-                }
-                ROLE_RECRUITER -> {
-                    params["userType"] = 1
-                }
-            }
+            params["userType"] = JOB_SEEKER_TYPE
             viewModel.changePassword(params,
                 {
                     progressHud.dismiss()

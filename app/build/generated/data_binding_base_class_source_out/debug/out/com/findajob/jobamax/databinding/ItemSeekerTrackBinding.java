@@ -24,6 +24,9 @@ public abstract class ItemSeekerTrackBinding extends ViewDataBinding {
   public final ConstraintLayout clParent;
 
   @NonNull
+  public final ConstraintLayout constraintLayout2;
+
+  @NonNull
   public final CircleImageView ivCompany;
 
   @NonNull
@@ -33,17 +36,23 @@ public abstract class ItemSeekerTrackBinding extends ViewDataBinding {
   public final TextView tvJobTitle;
 
   @NonNull
+  public final TextView tvLatestPhase;
+
+  @NonNull
   public final TextView tvLocation;
 
   protected ItemSeekerTrackBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton acbtnApply, ConstraintLayout clParent, CircleImageView ivCompany,
-      TextView tvCompanyName, TextView tvJobTitle, TextView tvLocation) {
+      AppCompatButton acbtnApply, ConstraintLayout clParent, ConstraintLayout constraintLayout2,
+      CircleImageView ivCompany, TextView tvCompanyName, TextView tvJobTitle,
+      TextView tvLatestPhase, TextView tvLocation) {
     super(_bindingComponent, _root, _localFieldCount);
     this.acbtnApply = acbtnApply;
     this.clParent = clParent;
+    this.constraintLayout2 = constraintLayout2;
     this.ivCompany = ivCompany;
     this.tvCompanyName = tvCompanyName;
     this.tvJobTitle = tvJobTitle;
+    this.tvLatestPhase = tvLatestPhase;
     this.tvLocation = tvLocation;
   }
 

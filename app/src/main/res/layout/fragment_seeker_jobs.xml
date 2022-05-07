@@ -269,26 +269,24 @@
                             android:layout_weight="1"
                             android:gravity="center">
 
-                            <com.ramijemli.percentagechartview.PercentageChartView
+
+                            <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
                                 android:id="@+id/pcv_match"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:minHeight="40dp"
-                                android:textSize="20sp"
-                                app:pcv_animDuration="800"
-                                app:pcv_animInterpolator="anticipate_overshoot"
-                                app:pcv_backgroundBarColor="@color/gray"
-                                app:pcv_backgroundBarThickness="5dp"
-                                app:pcv_backgroundColor="@color/transparent"
-                                app:pcv_mode="ring"
-                                app:pcv_orientation="clockwise"
-                                app:pcv_progress="0"
-                                app:pcv_progressBarThickness="5dp"
-                                app:pcv_progressColor="#7800EF"
-                                app:pcv_startAngle="270"
-                                app:pcv_textColor="@color/black"
-                                app:pcv_textStyle="bold" />
-                        </LinearLayout>
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginVertical="20dp"
+                                app:progressBackgroundColor="@color/grey"
+                                app:direction="clockwise"
+                                app:progressBackgroundStrokeWidth="5dp"
+                                app:progressStrokeWidth="5dp"
+                                app:textSize="15sp"
+                                app:textColor="@color/black"
+                                android:layout_gravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                         </LinearLayout>
                     </LinearLayout>
 
 

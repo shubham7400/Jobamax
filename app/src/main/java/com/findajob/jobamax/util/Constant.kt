@@ -19,6 +19,8 @@ const val ARG_WEB_URL = "arg_web_url"
 const val REQUEST_ALL_PERMISSIONS = 101
 
 val permissions = arrayOf( Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+const val JOB_SEEKER_TYPE = "1"
+const val PROFILE_PIC_URL = "profile_pic_url"
 
 
 const val GOOGLE_LOGIN_TYPE = "google"

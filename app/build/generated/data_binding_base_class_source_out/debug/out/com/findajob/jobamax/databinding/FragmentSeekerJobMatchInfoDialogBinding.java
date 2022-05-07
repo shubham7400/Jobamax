@@ -13,25 +13,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
+import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator;
 import com.findajob.jobamax.R;
-import com.google.android.material.chip.ChipGroup;
-import com.ramijemli.percentagechartview.PercentageChartView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerJobMatchInfoDialogBinding extends ViewDataBinding {
   @NonNull
-  public final ChipGroup cgEducation;
-
-  @NonNull
-  public final ChipGroup cgHardSkill;
-
-  @NonNull
-  public final ChipGroup cgJobTitle;
-
-  @NonNull
-  public final ChipGroup cgSoftSkill;
+  public final CircularProgressIndicator circularProgress;
 
   @NonNull
   public final CircleImageView civUser;
@@ -52,10 +43,19 @@ public abstract class FragmentSeekerJobMatchInfoDialogBinding extends ViewDataBi
   public final LinearLayout llSoftSkill;
 
   @NonNull
-  public final PercentageChartView pcvMatch;
+  public final RelativeLayout relativeLayout;
 
   @NonNull
-  public final RelativeLayout relativeLayout;
+  public final RecyclerView rvEducationMissingTag;
+
+  @NonNull
+  public final RecyclerView rvHardSkillMissingTag;
+
+  @NonNull
+  public final RecyclerView rvJobTitleMissingTag;
+
+  @NonNull
+  public final RecyclerView rvSoftSkillMissingTag;
 
   @NonNull
   public final SeekBar sbEducation;
@@ -94,27 +94,28 @@ public abstract class FragmentSeekerJobMatchInfoDialogBinding extends ViewDataBi
   public final TextView tvSoftSkillPer;
 
   protected FragmentSeekerJobMatchInfoDialogBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ChipGroup cgEducation, ChipGroup cgHardSkill, ChipGroup cgJobTitle,
-      ChipGroup cgSoftSkill, CircleImageView civUser, ImageView ivBackButton,
-      LinearLayout llEducation, LinearLayout llHardSkill, LinearLayout llJobTitle,
-      LinearLayout llSoftSkill, PercentageChartView pcvMatch, RelativeLayout relativeLayout,
-      SeekBar sbEducation, SeekBar sbHardSkill, SeekBar sbJobTitle, SeekBar sbSoftSkill,
-      TextView tvEducationMissingTag, TextView tvEducationPer, TextView tvHardSkillMissingTag,
-      TextView tvHardSkillPer, TextView tvJobTitleMissingTag, TextView tvJobTitlePer,
-      TextView tvSoftSkillMissingTag, TextView tvSoftSkillPer) {
+      int _localFieldCount, CircularProgressIndicator circularProgress, CircleImageView civUser,
+      ImageView ivBackButton, LinearLayout llEducation, LinearLayout llHardSkill,
+      LinearLayout llJobTitle, LinearLayout llSoftSkill, RelativeLayout relativeLayout,
+      RecyclerView rvEducationMissingTag, RecyclerView rvHardSkillMissingTag,
+      RecyclerView rvJobTitleMissingTag, RecyclerView rvSoftSkillMissingTag, SeekBar sbEducation,
+      SeekBar sbHardSkill, SeekBar sbJobTitle, SeekBar sbSoftSkill, TextView tvEducationMissingTag,
+      TextView tvEducationPer, TextView tvHardSkillMissingTag, TextView tvHardSkillPer,
+      TextView tvJobTitleMissingTag, TextView tvJobTitlePer, TextView tvSoftSkillMissingTag,
+      TextView tvSoftSkillPer) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.cgEducation = cgEducation;
-    this.cgHardSkill = cgHardSkill;
-    this.cgJobTitle = cgJobTitle;
-    this.cgSoftSkill = cgSoftSkill;
+    this.circularProgress = circularProgress;
     this.civUser = civUser;
     this.ivBackButton = ivBackButton;
     this.llEducation = llEducation;
     this.llHardSkill = llHardSkill;
     this.llJobTitle = llJobTitle;
     this.llSoftSkill = llSoftSkill;
-    this.pcvMatch = pcvMatch;
     this.relativeLayout = relativeLayout;
+    this.rvEducationMissingTag = rvEducationMissingTag;
+    this.rvHardSkillMissingTag = rvHardSkillMissingTag;
+    this.rvJobTitleMissingTag = rvJobTitleMissingTag;
+    this.rvSoftSkillMissingTag = rvSoftSkillMissingTag;
     this.sbEducation = sbEducation;
     this.sbHardSkill = sbHardSkill;
     this.sbJobTitle = sbJobTitle;

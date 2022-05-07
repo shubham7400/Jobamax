@@ -77,21 +77,30 @@
                     android:background="@drawable/rounded_white_box"
                     android:padding="10dp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <LinearLayout
                         android:id="@+id/circleImasgeView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/flag_tunisia"
+                        android:background="@drawable/circle_grey_box"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/coaching_row1"
+                            />
+                    </LinearLayout>
+
+
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:paddingStart="10dp"
-                        android:text="Administer Personality and Career Tests to Assess Clients’ Career Aptitudes and Interests."
+                        android:text="@string/coaching_row1"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,21 +116,29 @@
                     android:background="@drawable/rounded_white_box"
                     android:padding="10dp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <LinearLayout
                         android:id="@+id/circleImagesView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/flag_tunisia"
+                        android:background="@drawable/circle_grey_box"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/coaching_row2"
+                            />
+                    </LinearLayout>
+
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:paddingStart="10dp"
-                        android:text="Identify career possibilities and educate clients about these options."
+                        android:text="@string/coaching_raw2"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,21 +154,29 @@
                     android:background="@drawable/rounded_white_box"
                     android:padding="10dp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <LinearLayout
                         android:id="@+id/circleImageView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/flag_tunisia"
+                        android:background="@drawable/circle_grey_box"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/coaching_raw3"
+                            />
+                    </LinearLayout>
+
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:paddingStart="10dp"
-                        android:text="Provide referrals to community resources, such as job training opportunities and educational programs."
+                        android:text="@string/coaching_raw3"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -166,22 +191,28 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/rounded_white_box"
                     android:padding="10dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <LinearLayout
                         android:id="@+id/circleImdsageView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/flag_tunisia"
+                        android:background="@drawable/circle_grey_box"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/coaching_raw4"
+                            />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:paddingStart="10dp"
-                        android:text="Help clients identify nearby job openings and internship opportunities."
+                        android:text="@string/coaching_raw4"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -196,22 +227,28 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/rounded_white_box"
                     android:padding="10dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <LinearLayout
                         android:id="@+id/circleImagxxeView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/flag_tunisia"
+                        android:background="@drawable/circle_grey_box"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/coaching_raw5"
+                            />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:paddingStart="10dp"
-                        android:text="Assist clients in creating resumes and cover letters."
+                        android:text="@string/coaching_raw5"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -226,22 +263,28 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/rounded_white_box"
                     android:padding="10dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <LinearLayout
                         android:id="@+id/circleImageViewx4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/flag_tunisia"
+                        android:background="@drawable/circle_grey_box"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/coaching_raw6"
+                            />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensans_bold"
                         android:paddingStart="10dp"
-                        android:text="Teach clients effective interviewing techniques and hold mock interviews."
+                        android:text="@string/coaching_raw6"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -256,15 +299,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="50dp"
+                    android:textColor="@color/white"
                     android:background="@drawable/bg_gradient_rounded"
-                    android:text="Contact a coach for free!" />
-
+                    android:text="@string/contact_a_coach_for_free" />
 
             </LinearLayout>
-
         </ScrollView>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

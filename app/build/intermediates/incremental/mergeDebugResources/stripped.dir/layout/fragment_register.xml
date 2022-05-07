@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+                                            
+
+    
+
+                 
+                          
+                                                                  
+           
+
+    <ScrollView
+        android:background="@color/background_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" android:tag="layout/fragment_register_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context=".login.RegisterFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="48dp">
+
+                <ImageView
+                    android:id="@+id/iv_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back_arrow_blue" />
+
+                <ImageView
+                    android:id="@+id/jobamaxImage"
+                    android:layout_width="230dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/logo_jobamax_blue" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/loginImage"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="20dp"
+                android:maxHeight="224dp"
+                android:src="@drawable/login_infograph" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <LinearLayout
+                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:paddingHorizontal="30dp">
+
+                <EditText
+                    android:id="@+id/et_email_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/round_32"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="10dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/round_32">
+
+                    <EditText
+                        android:id="@+id/et_password_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawablePadding="16dp"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_show_password_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_show_password_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:tag="binding_1"                           
+                        android:src="@drawable/ic_eye_off"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/round_32">
+
+                    <EditText
+                        android:id="@+id/et_confirm_password_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawablePadding="16dp"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_show_confirm_password_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_show_confirm_password_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:tag="binding_2"                           
+                        android:src="@drawable/ic_eye_off"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_gradient_rounded"
+                    android:tag="binding_3"                               
+                    android:text="@string/register"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/regular_label"
+                        android:padding="8dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:text="@string/already_have_an_account"
+                        android:textColor="@color/black" />
+                    <TextView
+                        android:id="@+id/tv_login"
+                        style="@style/regular_label"
+                        android:paddingVertical="8dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:text="@string/login"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+         

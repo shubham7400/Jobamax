@@ -20,7 +20,7 @@ public class SeekerJobsFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerJobsFragmentToSeekerProfileFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_seekerProfileFragment);
+  public static NavDirections actionSeekerJobsFragmentToNavSeekerProfile() {
+    return new ActionOnlyNavDirections(R.id.action_seekerJobsFragment_to_nav_seeker_profile);
   }
 }

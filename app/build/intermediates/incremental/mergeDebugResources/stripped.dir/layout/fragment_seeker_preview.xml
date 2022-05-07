@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                  
+                                                       
+                                                             
+
+    
+                 
+                            
+                                                          
+           
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:background="#E9F2FB"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" android:tag="layout/fragment_seeker_preview_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" tools:context=".jobseeker.profile.SeekerPreviewFragment">
+       <RelativeLayout
+           android:id="@+id/relativeLayout"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/white"
+           android:paddingHorizontal="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="10dp"
+               android:gravity="center_vertical"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:id="@+id/iv_back_button"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:layout_centerVertical="true"
+                   android:src="@drawable/back_arrow_blue" />
+
+               <TextView
+                   style="@style/screen_title"
+                   android:layout_centerInParent="true"
+                   android:text="@string/preview" />
+
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:id="@+id/iv_user_profile"
+                   style="@style/circular_image"
+                   android:tag="binding_1"                      
+                   android:layout_alignParentEnd="true"
+                   android:src="@drawable/default_user_img"
+                   app:civ_border_color="@color/colorPrimary" />
+           </RelativeLayout>
+       </RelativeLayout>
+
+
+       <androidx.core.widget.NestedScrollView
+           android:id="@+id/linearLayoutCompat2s"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginTop="30dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+           android:background="@drawable/rounded_white_box"
+           android:layout_marginHorizontal="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="0dp">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="10dp"
+               android:orientation="vertical">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:id="@+id/constraintLayout12"
+                   android:layout_width="match_parent"
+                   android:layout_marginVertical="20dp"
+                   android:layout_height="wrap_content">
+
+                   <de.hdodenhof.circleimageview.CircleImageView
+                       android:id="@+id/civ_seeker"
+                       android:layout_width="100dp"
+                       android:layout_height="100dp"
+                       android:src="@drawable/default_user_img"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="10dp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toEndOf="@+id/civ_seeker"
+                       app:layout_constraintTop_toTopOf="parent">
+
+                       <TextView
+                           android:id="@+id/tv_seeker_name"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="10dp"
+                           android:text="Shubham Mogarkar"
+                           android:textSize="20sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/opensans_bold"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <TextView
+                           android:id="@+id/tv_seeker_profession"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginVertical="10dp"
+                           android:text="Android Developer"
+                           android:textSize="16sp"
+                           android:fontFamily="@font/opensans_regular"
+                           android:textColor="@color/colorHypeLink"
+                           app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toBottomOf="@+id/tv_seeker_name" />
+
+                       <LinearLayout
+                           android:id="@+id/linearLayout7"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginBottom="10dp"
+                           android:orientation="horizontal"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toStartOf="parent">
+                           <ImageView
+                               android:id="@+id/iv_instagram"
+                               android:layout_width="35dp"
+                               android:layout_height="35dp"
+                               android:layout_marginEnd="20dp"
+                               android:src="@drawable/instagram" />
+                           <ImageView
+                               android:id="@+id/iv_linkedin"
+                               android:layout_width="35dp"
+                               android:layout_height="35dp"
+                               android:layout_marginEnd="20dp"
+                               android:src="@drawable/linkedin" />
+                           <ImageView
+                               android:id="@+id/iv_tiktok"
+                               android:layout_width="35dp"
+                               android:layout_height="35dp"
+                               android:src="@drawable/tiktok" />
+                       </LinearLayout>
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+               <TextView
+                   android:id="@+id/tv_about_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/about"
+                   android:textColor="@color/black"
+                   android:textSize="20sp" />
+
+               <TextView
+                   android:id="@+id/tv_seeker_about"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_regular"
+                   android:text="Elevator speech"
+                   android:textColor="@color/black"
+                   android:textSize="16sp"
+                   android:layout_marginTop="10dp" />
+
+               <TextView
+                   android:id="@+id/tv_school"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/schools"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_school"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <TextView
+                   android:id="@+id/tv_experience"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/experience"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_experience"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:id="@+id/iv_see_less_experience"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_margin="5dp"
+                       android:visibility="gone"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       android:src="@drawable/minus_gradient"/>
+                   <ImageView
+                       android:id="@+id/iv_see_more_experience"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:layout_gravity="center_horizontal"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/add_blue"/>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+               <TextView
+                   android:id="@+id/tv_hard_skill"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/hard_skills"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_hard_skill"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <TextView
+                   android:id="@+id/tv_soft_skill"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/soft_skills"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+
+               <com.google.android.material.chip.ChipGroup
+                   android:id="@+id/cg_soft_skill"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+
+               </com.google.android.material.chip.ChipGroup>
+
+               <TextView
+                   android:id="@+id/tv_volunteering_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/volunteering"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_volunteering"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <TextView
+                   android:id="@+id/tv_interest"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/interest"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+
+               <com.google.android.material.chip.ChipGroup
+                   android:id="@+id/cg_activities"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+
+               </com.google.android.material.chip.ChipGroup>
+
+               <TextView
+                   android:id="@+id/tv_ideal_job_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/my_ideal_job"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+               <TextView
+                   android:id="@+id/tv_ideal_job_description"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_regular"
+                   android:text="@string/elevator_speech"
+                   android:textColor="@color/black"
+                   android:textSize="16sp"
+                   android:layout_marginTop="10dp" />
+
+               <androidx.cardview.widget.CardView
+                   android:id="@+id/cv_ideal_job_video"
+                   android:layout_width="match_parent"
+                   app:cardCornerRadius="10dp"
+                   android:layout_marginVertical="10dp"
+                   android:layout_height="200dp">
+                   <ImageView
+                       android:id="@+id/iv_ideal_job_video"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:scaleType="fitXY"
+                       android:src="@drawable/video_background"/>
+               </androidx.cardview.widget.CardView>
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_ideal_job_images"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginTop="10dp"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:id="@+id/cl_audio_player"
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="10dp"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:id="@+id/iv_audio_play_btn"
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/play"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+                   <SeekBar
+                       android:id="@+id/sb_audio"
+                       android:layout_width="0dp"
+                       android:layout_height="40dp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toStartOf="@+id/tv_audio_duration"
+                       app:layout_constraintStart_toEndOf="@+id/iv_audio_play_btn"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+                   <TextView
+                       android:id="@+id/tv_audio_duration"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="00:00"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+               <TextView
+                   android:id="@+id/tv_portfolio_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_bold"
+                   android:text="@string/my_portfolio"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:layout_marginTop="30dp" />
+               <TextView
+                   android:id="@+id/tv_portfolio_description"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/opensans_regular"
+                   android:text="@string/elevator_speech"
+                   android:textColor="@color/black"
+                   android:textSize="16sp"
+                   android:layout_marginTop="10dp" />
+
+               <androidx.cardview.widget.CardView
+                   android:id="@+id/cv_portfolio_video"
+                   android:layout_width="match_parent"
+                   app:cardCornerRadius="10dp"
+                   android:layout_marginVertical="10dp"
+                   android:layout_height="200dp">
+                   <ImageView
+                       android:id="@+id/iv_portfolio_video"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:scaleType="fitXY"
+                       android:src="@drawable/video_background"/>
+               </androidx.cardview.widget.CardView>
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_portfolio_images"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="10dp"
+                   android:orientation="horizontal"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:id="@+id/cl_portfolio_audio_player"
+                   android:layout_marginTop="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+           </LinearLayout>
+
+
+       </androidx.core.widget.NestedScrollView>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

@@ -21,6 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -32,10 +33,10 @@
                 android:id="@+id/tv_job_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Job Title"
-                android:maxLines="1"
                 android:ellipsize="end"
+                android:fontFamily="@font/opensans_regular"
+                android:maxLines="1"
+                android:text="Job Title"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,13 +47,13 @@
                 android:id="@+id/tv_company_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:fontFamily="@font/opensans_bold"
+                android:maxLines="1"
+                android:paddingVertical="5dp"
                 android:text="Company Name"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:maxLines="1"
-                android:paddingVertical="5dp"
-                android:ellipsize="end"
                 app:layout_constraintBottom_toTopOf="@+id/tv_location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,12 +63,12 @@
                 android:id="@+id/tv_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:fontFamily="@font/opensans_regular"
+                android:maxLines="1"
                 android:text="Location"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
-                android:maxLines="1"
-                android:ellipsize="end"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -85,5 +86,20 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_latest_phase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Added to wishlist"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:padding="2dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:fontFamily="@font/opensans_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/acbtn_apply" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

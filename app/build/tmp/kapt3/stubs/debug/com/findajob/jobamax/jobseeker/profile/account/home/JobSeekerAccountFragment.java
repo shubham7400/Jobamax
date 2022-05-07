@@ -62,6 +62,10 @@ public final class JobSeekerAccountFragment extends com.findajob.jobamax.base.Ba
     }
     
     @java.lang.Override()
+    public void onBackButtonClicked() {
+    }
+    
+    @java.lang.Override()
     public void onPersonalInformationClicked() {
     }
     
@@ -71,10 +75,6 @@ public final class JobSeekerAccountFragment extends com.findajob.jobamax.base.Ba
     
     @java.lang.Override()
     public void onNewsletterClicked() {
-    }
-    
-    @java.lang.Override()
-    public void onBackButtonClicked() {
     }
     
     @java.lang.Override()

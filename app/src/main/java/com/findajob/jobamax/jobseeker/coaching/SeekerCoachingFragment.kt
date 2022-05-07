@@ -52,10 +52,10 @@ class SeekerCoachingFragment : BaseFragmentMain<FragmentSeekerCoachingBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerCoachingFragment_to_seekerProfileFragment, null))
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerCoachingFragment_to_nav_seeker_profile, null))
         binding.btnContact.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf<String>("support@jobamax.com"))
+            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("support@jobamax.com"))
             intent.putExtra(Intent.EXTRA_TEXT, "Write a message to one of our career coaches!")
             intent.type = "message/rfc822"
 

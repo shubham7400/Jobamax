@@ -6,30 +6,28 @@ import android.net.Uri
 import android.os.Bundle
  import android.view.View
 import android.widget.PopupMenu
-import androidx.core.os.bundleOf
-import androidx.lifecycle.ViewModel
+ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.findajob.jobamax.MainActivity
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.databinding.ActivityJobSeekerPersonalIntroInfoBinding
- import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
- import com.findajob.jobamax.model.JobSeeker
+import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
-  import com.google.firebase.dynamiclinks.ktx.androidParameters
+import com.google.firebase.dynamiclinks.ktx.androidParameters
 import com.google.firebase.dynamiclinks.ktx.dynamicLink
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
 import com.parse.*
 import kotlinx.android.synthetic.main.fragment_job_seeker_personal_information.*
-import java.io.Serializable
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -171,10 +169,10 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
             validateFlag = false
         }
 
-        if (binding.etPostalCode.text.isEmpty()) {
+       /* if (binding.etPostalCode.text.isEmpty()) {
             binding.etPostalCode.error = getString(R.string.enter_postcode)
             validateFlag = false
-        }
+        }*/
 
         if (binding.etPhoneNumber.text.isEmpty()) {
             binding.etPhoneNumber.error = getString(R.string.enter_phone_number)
@@ -216,7 +214,12 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
         jobSeeker.firstName = binding.etFirstName.text.toString()
         jobSeeker.lastName = binding.etLastName.text.toString()
         jobSeeker.gender = binding.tvGenderHint.text.toString()
-        jobSeeker.postCode = binding.etPostalCode.text.toString()
+        if (binding.etPostalCode.text.isNullOrBlank()){
+            jobSeeker.postCode = ""
+        }else{
+            jobSeeker.postCode = binding.etPostalCode.text.toString()
+        }
+
         if (binding.etInvitationCode.text.isNotEmpty()){
             jobSeeker.totalReach = 10
         }
@@ -241,21 +244,22 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                     progressHud.show()
                     val builder = Uri.Builder()
                     builder.scheme("https")
-                        .authority("jobamax.page.link")
-                        .appendPath(FirebaseDynamicLinkPath.verifyemail.toString())
-                        .appendQueryParameter("userType", 2.toString())
+                        .authority("jobamax.b4a.app")
+                        .appendPath(FirebaseDynamicLinkPath.emailVerification.toString())
+                        .appendQueryParameter("userType", JOB_SEEKER_TYPE)
                         .appendQueryParameter("LoginType", LoginType.EMAIL.type)
                         .appendQueryParameter("recruiterId", id)
                     val myUrl: String = builder.build().toString()
                     val dynamicLink = Firebase.dynamicLinks.dynamicLink {
                         link = Uri.parse(myUrl)
-                        domainUriPrefix = "https://jobamax.page.link"
+                        domainUriPrefix = "https://jobamax.page.link/"
                         androidParameters("com.findajob.jobamax") {
                         }
                     }
                     val param = HashMap<String, String>()
                     param["toEmail"] = user!!.email
                     param["link"] = dynamicLink.uri.toString()
+                    log("sfdkl link ${param["link"]}")
                     ParseCloud.callFunctionInBackground<Any>("sendgridEmail", param) { obj, e ->
                         progressHud.dismiss()
                         if (e != null && obj == null) {

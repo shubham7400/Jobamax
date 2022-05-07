@@ -30,9 +30,9 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
     private final android.widget.Button mboundView9;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback59;
-    @Nullable
     private final android.view.View.OnClickListener mCallback57;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback55;
     @Nullable
     private final android.view.View.OnClickListener mCallback58;
     @Nullable
@@ -151,10 +151,10 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
         this.postCodeField.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback59 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
-        mCallback57 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback58 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
-        mCallback56 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback57 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
+        mCallback55 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback58 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 4);
+        mCallback56 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -273,12 +273,12 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.dobField.setOnClickListener(mCallback58);
+            this.dobField.setOnClickListener(mCallback57);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.firstNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, firstNameFieldandroidTextAttrChanged);
-            this.imageView8.setOnClickListener(mCallback56);
+            this.imageView8.setOnClickListener(mCallback55);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.lastNameField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, lastNameFieldandroidTextAttrChanged);
-            this.mboundView4.setOnClickListener(mCallback57);
-            this.mboundView9.setOnClickListener(mCallback59);
+            this.mboundView4.setOnClickListener(mCallback56);
+            this.mboundView9.setOnClickListener(mCallback58);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.postCodeField, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, postCodeFieldandroidTextAttrChanged);
         }
         if ((dirtyFlags & 0x5L) != 0) {
@@ -296,6 +296,40 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 3: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onDobClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onBackPress();
+                }
+                break;
+            }
             case 4: {
                 // localize variables for thread safety
                 // handler
@@ -328,40 +362,6 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
 
 
                     handler.onGenderClicked(callbackArg_0);
-                }
-                break;
-            }
-            case 3: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onDobClicked();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onBackPress();
                 }
                 break;
             }

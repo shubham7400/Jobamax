@@ -10,7 +10,7 @@ public class SeekerTrackingJobDescriptionFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerTrackingJobDescriptionFragmentToSeekerProfileFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobDescriptionFragment_to_seekerProfileFragment);
+  public static NavDirections actionSeekerTrackingJobDescriptionFragmentToNavSeekerProfile() {
+    return new ActionOnlyNavDirections(R.id.action_seekerTrackingJobDescriptionFragment_to_nav_seeker_profile);
   }
 }

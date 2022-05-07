@@ -38,12 +38,12 @@ public class FragmentSeekerCoachingBindingImpl extends FragmentSeekerCoachingBin
     private FragmentSeekerCoachingBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[10]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[9]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[5]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[8]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[4]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[7]
+            , (android.widget.LinearLayout) bindings[6]
+            , (android.widget.LinearLayout) bindings[9]
+            , (android.widget.LinearLayout) bindings[5]
+            , (android.widget.LinearLayout) bindings[8]
+            , (android.widget.LinearLayout) bindings[4]
+            , (android.widget.LinearLayout) bindings[7]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[2]

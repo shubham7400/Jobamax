@@ -10,7 +10,7 @@ public class SeekerCalenderFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerCalenderFragmentToSeekerProfileFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerCalenderFragment_to_seekerProfileFragment);
+  public static NavDirections actionSeekerCalenderFragmentToNavSeekerProfile() {
+    return new ActionOnlyNavDirections(R.id.action_seekerCalenderFragment_to_nav_seeker_profile);
   }
 }

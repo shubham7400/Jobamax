@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+                                                                                    
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="#E9F2FB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_seeker_search_university_dialog_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context=".jobseeker.profile.account.SeekerSearchUniversityDialogFragment">
+
+        <EditText
+            android:id="@+id/et_search_university"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_white_box"
+            android:hint="Search University"
+            android:layout_margin="10dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/acbtn_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/acbtn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_gradient_rounded"
+            android:text="Search"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_universities"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_search_university" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

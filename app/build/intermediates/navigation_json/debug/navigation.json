@@ -1,12 +1,16 @@
 [
   {
     "name": "nav_job_search",
-    "navigationXmlIds": [],
+    "navigationXmlIds": [
+      "nav_seeker_profile"
+    ],
     "deepLinks": []
   },
   {
     "name": "nav_job_tracking",
-    "navigationXmlIds": [],
+    "navigationXmlIds": [
+      "nav_seeker_profile"
+    ],
     "deepLinks": []
   },
   {
@@ -16,7 +20,9 @@
   },
   {
     "name": "nav_seeker_account",
-    "navigationXmlIds": [],
+    "navigationXmlIds": [
+      "nav_seeker_profile"
+    ],
     "deepLinks": []
   },
   {

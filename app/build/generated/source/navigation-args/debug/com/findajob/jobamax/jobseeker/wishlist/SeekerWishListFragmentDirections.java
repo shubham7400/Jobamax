@@ -10,7 +10,7 @@ public class SeekerWishListFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerWishListFragmentToSeekerProfileFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerWishListFragment_to_seekerProfileFragment);
+  public static NavDirections actionSeekerWishListFragmentToNavSeekerProfile() {
+    return new ActionOnlyNavDirections(R.id.action_seekerWishListFragment_to_nav_seeker_profile);
   }
 }

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                  
+                                                       
+                                                                          
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/background_blue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_seeker_job_match_info_dialog_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" tools:context=".jobseeker.jobsearch.SeekerJobMatchInfoDialogFragment">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back_arrow_blue" />
+
+                <TextView
+                    style="@style/screen_title"
+                    android:layout_centerInParent="true"
+                    android:text="@string/matching_results" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user"
+                    style="@style/circular_image"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/default_user_img" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_blue">
+
+
+
+                    <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+                        android:id="@+id/circular_progress"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginVertical="20dp"
+                        app:direction="clockwise"
+                        app:textColor="@color/black"
+                        app:textSize="50sp"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_education"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/circular_progress">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/educations"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <SeekBar
+                                android:id="@+id/sb_education"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:progressBackgroundTint="@color/grey"
+                                android:maxHeight="6dp"
+                                android:splitTrack="false"
+                                android:progress="100"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:layout_marginEnd="5dp"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_education_per"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:thumb="@color/transparent"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_education_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/opensans_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:text="0%"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tv_education_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/opensans_regular"
+                            android:text="@string/missing_keywords"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_education_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_hard_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_education">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/hard_skills"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <SeekBar
+                                android:id="@+id/sb_hard_skill"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:progressBackgroundTint="@color/grey"
+                                android:maxHeight="6dp"
+                                android:thumb="@color/transparent"
+                                android:splitTrack="false"
+                                android:progress="100"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:layout_marginEnd="5dp"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_hard_skill_per"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_hard_skill_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/opensans_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:text="0%"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tv_hard_skill_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/opensans_regular"
+                            android:text="@string/missing_keywords"/>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_hard_skill_missing_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_soft_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_hard_skill">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/soft_skills"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <SeekBar
+                                android:id="@+id/sb_soft_skill"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:progressBackgroundTint="@color/grey"
+                                android:maxHeight="6dp"
+                                android:thumb="@color/transparent"
+                                android:splitTrack="false"
+                                android:progress="100"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:layout_marginEnd="5dp"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_soft_skill_per"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                 />
+
+                            <TextView
+                                android:id="@+id/tv_soft_skill_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/opensans_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:text="0%"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tv_soft_skill_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/opensans_regular"
+                            android:text="@string/missing_keywords"/>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_soft_skill_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_job_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_soft_skill">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/job_title"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <SeekBar
+                                android:id="@+id/sb_job_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:progressBackgroundTint="@color/grey"
+                                android:maxHeight="6dp"
+                                android:thumb="@color/transparent"
+                                android:splitTrack="false"
+                                android:progress="100"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:layout_marginEnd="5dp"
+                                 app:layout_constraintEnd_toStartOf="@+id/tv_job_title_per"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_job_title_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/opensans_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:text="0%"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tv_job_title_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/opensans_regular"
+                            android:text="@string/missing_keywords"/>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_job_title_missing_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_job_title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+         

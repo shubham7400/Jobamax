@@ -533,6 +533,7 @@ attr dialogActionButtonColor
 attr dialogCornerRadius
 attr dialogPreferredPadding
 attr dialogTheme
+attr direction
 attr disableLayoutAnimation
 attr displayOptions
 attr divider
@@ -543,9 +544,12 @@ attr dividerInsetStart
 attr dividerPadding
 attr dividerThickness
 attr dividerVertical
+attr dotColor
+attr dotWidth
 attr dragDirection
 attr dragScale
 attr dragThreshold
+attr drawDot
 attr drawPath
 attr drawableBottomCompat
 attr drawableEndCompat
@@ -572,6 +576,7 @@ attr elevationOverlayColor
 attr elevationOverlayEnabled
 attr emojiCompatEnabled
 attr enableEdgeToEdge
+attr enableProgressAnimation
 attr endIconCheckable
 attr endIconContentDescription
 attr endIconDrawable
@@ -624,6 +629,7 @@ attr fastscroll__bubbleColor
 attr fastscroll__bubbleTextAppearance
 attr fastscroll__handleColor
 attr fastscroll__style
+attr fillBackground
 attr finishPrimaryWithSecondary
 attr finishSecondaryWithPrimary
 attr firstBaselineToTopHeight
@@ -670,10 +676,13 @@ attr fontVariationSettings
 attr fontWeight
 attr forceApplySystemWindowInsetTop
 attr foregroundInsidePadding
+attr formattingPattern
 attr framePosition
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
 attr goIcon
+attr gradientEndColor
+attr gradientType
 attr graph
 attr guidelineUseRtl
 attr haloColor
@@ -1017,33 +1026,6 @@ attr passwordToggleTint
 attr passwordToggleTintMode
 attr pathMotionArc
 attr path_percent
-attr pcv_animDuration
-attr pcv_animInterpolator
-attr pcv_backgroundBarColor
-attr pcv_backgroundBarThickness
-attr pcv_backgroundColor
-attr pcv_backgroundOffset
-attr pcv_drawBackground
-attr pcv_drawBackgroundBar
-attr pcv_gradientAngle
-attr pcv_gradientColors
-attr pcv_gradientDistributions
-attr pcv_gradientType
-attr pcv_mode
-attr pcv_orientation
-attr pcv_progress
-attr pcv_progressBarStyle
-attr pcv_progressBarThickness
-attr pcv_progressColor
-attr pcv_startAngle
-attr pcv_textColor
-attr pcv_textShadowColor
-attr pcv_textShadowDistX
-attr pcv_textShadowDistY
-attr pcv_textShadowRadius
-attr pcv_textSize
-attr pcv_textStyle
-attr pcv_typeface
 attr percentHeight
 attr percentWidth
 attr percentX
@@ -1075,8 +1057,13 @@ attr preserveIconSpacing
 attr pressedTranslationZ
 attr primaryActivityName
 attr progress
+attr progressBackgroundColor
+attr progressBackgroundStrokeWidth
 attr progressBarPadding
 attr progressBarStyle
+attr progressCap
+attr progressColor
+attr progressStrokeWidth
 attr progress_background_color
 attr progress_color
 attr progress_width
@@ -1181,6 +1168,7 @@ attr springStopThreshold
 attr srcCompat
 attr stackFromEnd
 attr staggered
+attr startAngle
 attr startDestination
 attr startIconCheckable
 attr startIconContentDescription
@@ -1294,6 +1282,7 @@ attr textBackgroundPanX
 attr textBackgroundPanY
 attr textBackgroundRotate
 attr textBackgroundZoom
+attr textColor
 attr textColorAlertDialogListItem
 attr textColorSearchUrl
 attr textEndPadding
@@ -1311,6 +1300,7 @@ attr textOutlineColor
 attr textOutlineThickness
 attr textPanX
 attr textPanY
+attr textSize
 attr textStartPadding
 attr textureBlurFactor
 attr textureEffect
@@ -3277,6 +3267,7 @@ drawable camera_icon
 drawable captha
 drawable ccp_ic_arrow_drop_down
 drawable checkbox_state_selector
+drawable circle_grey_box
 drawable circle_stroke_blue
 drawable close_background_green
 drawable close_background_red
@@ -3284,6 +3275,12 @@ drawable close_black
 drawable close_blue
 drawable close_blue_white_background
 drawable close_white
+drawable coaching_raw3
+drawable coaching_raw4
+drawable coaching_raw5
+drawable coaching_raw6
+drawable coaching_row1
+drawable coaching_row2
 drawable com_facebook_auth_dialog_background
 drawable com_facebook_auth_dialog_cancel_background
 drawable com_facebook_auth_dialog_header_background
@@ -3957,7 +3954,6 @@ id accb_one_to_two
 id accb_part_time
 id accb_permanent
 id accelerate
-id accelerate_decelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -4012,6 +4008,7 @@ id action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment
 id action_jobSeekerAccountFragment_to_jobSeekerNewsletterFragment
 id action_jobSeekerAccountFragment_to_jobSeekerPersonalInformationFragment
 id action_jobSeekerAccountFragment_to_jobSeekerPushNotificationFragment
+id action_jobSeekerAccountFragment_to_nav_seeker_profile
 id action_jobSeekerAccountFragment_to_seekerChangePasswordFragment
 id action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2
 id action_jobSeekerHomeFragment_to_nav_job_search
@@ -4031,17 +4028,17 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_seekerAboutMeFragment_to_seekerSocialMediaIdsFragment
 id action_seekerAddExperienceFragment_to_seekerProfileFragment
-id action_seekerAddPersonalTrackJobFragment_to_seekerProfileFragment
+id action_seekerAddPersonalTrackJobFragment_to_nav_seeker_profile
 id action_seekerAddVolunteeringFragment_to_seekerProfileFragment
-id action_seekerCalenderFragment_to_seekerProfileFragment
-id action_seekerCoachingFragment_to_seekerProfileFragment
+id action_seekerCalenderFragment_to_nav_seeker_profile
+id action_seekerCoachingFragment_to_nav_seeker_profile
 id action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment
 id action_seekerEducationFragment_to_seekerNewEducationFragment
 id action_seekerEducationFragment_to_seekerProfileFragment
 id action_seekerExperienceListFragment_to_seekerAddExperienceFragment
-id action_seekerJobsFilterFragment_to_seekerProfileFragment
+id action_seekerJobsFilterFragment_to_nav_seeker_profile
+id action_seekerJobsFragment_to_nav_seeker_profile
 id action_seekerJobsFragment_to_seekerJobsFilterFragment
-id action_seekerJobsFragment_to_seekerProfileFragment
 id action_seekerJobsFragment_to_seekerWishListFragment
 id action_seekerNewEducationFragment_to_seekerProfileFragment
 id action_seekerProfileFragment_self
@@ -4061,15 +4058,15 @@ id action_seekerProfileFragment_to_seekerMySkillFragment
 id action_seekerProfileFragment_to_seekerPreviewFragment
 id action_seekerProfileFragment_to_seekerVolunteeringListFragment
 id action_seekerSocialMediaIdsFragment_to_seekerProfileFragment
-id action_seekerTrackingJobDescriptionFragment_to_seekerProfileFragment
-id action_seekerTrackingJobDetailsFragment_to_seekerProfileFragment
+id action_seekerTrackingJobDescriptionFragment_to_nav_seeker_profile
+id action_seekerTrackingJobDetailsFragment_to_nav_seeker_profile
 id action_seekerTrackingJobDetailsFragment_to_seekerTrackingJobDescriptionFragment
+id action_seekerTrackingJobFragment_to_nav_seeker_profile
 id action_seekerTrackingJobFragment_to_seekerAddPersonalTrackJobFragment
 id action_seekerTrackingJobFragment_to_seekerCalenderFragment
-id action_seekerTrackingJobFragment_to_seekerProfileFragment
 id action_seekerTrackingJobFragment_to_seekerTrackingJobDetailsFragment
 id action_seekerVolunteeringListFragment_to_seekerAddVolunteeringFragment
-id action_seekerWishListFragment_to_seekerProfileFragment
+id action_seekerWishListFragment_to_nav_seeker_profile
 id action_text
 id action_valuePrivacyFragment_to_keepMePostedFragment
 id actions
@@ -4092,9 +4089,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
-id anticipate_overshoot
 id appBar
-id appCompatButton2
 id arc
 id asConfigured
 id async
@@ -4112,7 +4107,6 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
-id bold
 id bottom
 id bottom_overlay
 id bounce
@@ -4144,6 +4138,8 @@ id btn_previous_month
 id btn_record
 id btn_save
 id btn_save_info
+id btn_see_more_or_less
+id butt
 id button
 id buttonPanel
 id cache_measures
@@ -4178,11 +4174,8 @@ id center_horizontal
 id center_vertical
 id cg_activities
 id cg_benefits
-id cg_education
-id cg_hard_skill
 id cg_ideal_workspace
 id cg_interests
-id cg_job_title
 id cg_soft_skill
 id chain
 id chain2
@@ -4204,6 +4197,7 @@ id circleImagxxeView4
 id circleImasgeView4
 id circleImdsageView4
 id circle_center
+id circular_progress
 id civ_company_logo
 id civ_seeker
 id civ_university_img
@@ -4255,8 +4249,8 @@ id constraintLayout10
 id constraintLayout11
 id constraintLayout12
 id constraintLayout13
-id constraintLayout14
 id constraintLayout15
+id constraintLayout2
 id constraintLayout3
 id constraintLayout4
 id constraintLayout5
@@ -4270,7 +4264,6 @@ id contiguous
 id continuousVelocity
 id coordinator
 id cos
-id counter_clockwise
 id counterclockwise
 id countryCodeHolder
 id cropImageView
@@ -4422,8 +4415,6 @@ id fab_refuse
 id fab_rewind
 id fab_share
 id fade
-id fast_out_linear_in
-id fast_out_slow_in
 id fastscroll
 id femaleItem
 id fill
@@ -4604,7 +4595,6 @@ id linearLayout7
 id linearLayoutCompat2s
 id linear_flag_border
 id linear_flag_holder
-id linear_out_slow_in
 id linkedInWebView
 id listMode
 id list_item
@@ -4617,6 +4607,7 @@ id ll_action_button
 id ll_add_category
 id ll_benefits
 id ll_birth_pin_code
+id ll_bottom_content
 id ll_education
 id ll_first_last_name
 id ll_float_buttons
@@ -4732,6 +4723,7 @@ id newPasswordField
 id newsletterCheck
 id noScroll
 id noState
+id no_gradient
 id none
 id normal
 id north
@@ -4771,7 +4763,6 @@ id peekHeight
 id percent
 id phoneField
 id picker_view
-id pie
 id pin
 id place_autocomplete_clear_button
 id place_autocomplete_powered_by_google
@@ -4827,7 +4818,6 @@ id rightToLeft
 id right_icon
 id right_overlay
 id right_side
-id ring
 id rlClickConsumer
 id rl_abcd
 id rl_gender_button
@@ -4850,19 +4840,23 @@ id rtl
 id rv_categories
 id rv_company_suggestions
 id rv_education_list
+id rv_education_missing_tag
 id rv_events
 id rv_experience
 id rv_experience_list
 id rv_hard_skill
+id rv_hard_skill_missing_tag
 id rv_hard_sklilsl
 id rv_ideal_job_images
 id rv_image_and_video
+id rv_job_title_missing_tag
 id rv_job_tracking_card
 id rv_job_types
 id rv_links
 id rv_portfolio_images
 id rv_reason
 id rv_school
+id rv_soft_skill_missing_tag
 id rv_tracked_job
 id rv_tracked_other_job
 id rv_universities
@@ -5159,6 +5153,7 @@ id tv_job_title_per
 id tv_job_type
 id tv_jobamax_job
 id tv_last_name_label
+id tv_latest_phase
 id tv_link
 id tv_location
 id tv_login
@@ -5190,6 +5185,7 @@ id tv_select_start_date
 id tv_soft_skill
 id tv_soft_skill_missing_tag
 id tv_soft_skill_per
+id tv_tag
 id tv_text
 id tv_text1
 id tv_text_size
@@ -5442,6 +5438,7 @@ layout fragment_seeker_wish_list
 layout fragment_value_privacy
 layout item_calender_event_card
 layout item_category_chip
+layout item_cheap
 layout item_custom_chip
 layout item_image
 layout item_job_search_filter_category
@@ -5682,6 +5679,7 @@ string apprenticeship
 string archive
 string are_you_sure_you_want_to_delete
 string arg_version
+string assesment_phase
 string assessments
 string audio
 string back
@@ -5702,6 +5700,12 @@ string clear_search_button_content_description
 string clear_text_end_icon_content_description
 string click_to_add_location
 string coaching
+string coaching_raw2
+string coaching_raw3
+string coaching_raw4
+string coaching_raw5
+string coaching_raw6
+string coaching_row1
 string com_crashlytics_android_build_id
 string com_facebook_device_auth_instructions
 string com_facebook_image_download_unknown_error
@@ -5750,6 +5754,7 @@ string company
 string company_name
 string confirm_new_password
 string confirm_password
+string contact_a_coach_for_free
 string contact_us
 string continue_to_account_deletion
 string crop_image_activity_no_permissions
@@ -5885,6 +5890,7 @@ string help_and_support
 string hide_bottom_view_on_scroll_behavior
 string hide_me
 string hired
+string hired_phase
 string i_accept
 string i_agree_to_receive_push_notifications_from_jobamax_to_inform_me_about_my_activity_on_the_platform
 string i_want_to_be_notified
@@ -5902,6 +5908,7 @@ string instruction_we_value_our_privacy
 string interest
 string internship
 string interview
+string interview_phase
 string invitation_code
 string item_view_role_description
 string job
@@ -6044,6 +6051,7 @@ string offers
 string ok
 string one_two
 string online_interview
+string online_interview_phase
 string or
 string organization
 string other_jobs
@@ -6058,6 +6066,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string permanent
 string phone_call
+string phone_call_phase
 string phone_number_asterisk
 string pictures_1_5
 string place_autocomplete_clear_button
@@ -6084,6 +6093,7 @@ string pushwoosh_app_id
 string record
 string refuse
 string refused
+string refused_phase
 string register
 string resume_description
 string retake
@@ -6095,9 +6105,12 @@ string schools
 string search_hint
 string search_menu_title
 string see_job_description
+string see_job_offers
 string see_less
 string select_country
 string select_date
+string select_deadline
+string select_phase
 string send_read_receipts
 string send_to_friend
 string share
@@ -7274,7 +7287,7 @@ styleable Chip android_textAppearance android_textSize android_textColor android
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
 styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularImageProgressView image image_tint max progress progress_background_color progress_color progress_width
-styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
+styleable CircularProgressIndicator direction dotColor dotWidth drawDot enableProgressAnimation fillBackground formattingPattern gradientEndColor gradientType indicatorDirectionCircular indicatorInset indicatorSize progressBackgroundColor progressBackgroundStrokeWidth progressCap progressColor progressStrokeWidth startAngle textColor textSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance collapsedTitleTextColor contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance expandedTitleTextColor extraMultilineHeightEnabled forceApplySystemWindowInsetTop maxLines scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleCollapseMode titleEnabled titlePositionInterpolator toolbarId
@@ -7368,7 +7381,6 @@ styleable NavigationView android_layout_gravity android_background android_fitsS
 styleable Navigator android_label android_id route
 styleable OnClick clickAction targetId
 styleable OnSwipe autoCompleteMode dragDirection dragScale dragThreshold limitBoundsTo maxAcceleration maxVelocity moveWhenScrollAtTop nestedScrollFlags onTouchUp rotationCenterId springBoundary springDamping springMass springStiffness springStopThreshold touchAnchorId touchAnchorSide touchRegionId
-styleable PercentageChartView pcv_animDuration pcv_animInterpolator pcv_backgroundBarColor pcv_backgroundBarThickness pcv_backgroundColor pcv_backgroundOffset pcv_drawBackground pcv_drawBackgroundBar pcv_gradientAngle pcv_gradientColors pcv_gradientDistributions pcv_gradientType pcv_mode pcv_orientation pcv_progress pcv_progressBarStyle pcv_progressBarThickness pcv_progressColor pcv_startAngle pcv_textColor pcv_textShadowColor pcv_textShadowDistX pcv_textShadowDistY pcv_textShadowRadius pcv_textSize pcv_textStyle pcv_typeface
 styleable PlayerControlView ad_marker_color ad_marker_width bar_gravity bar_height buffered_color controller_layout_id played_ad_marker_color played_color repeat_toggle_modes scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_fastforward_button show_next_button show_previous_button show_rewind_button show_shuffle_button show_timeout time_bar_min_update_interval touch_target_height unplayed_color
 styleable PlayerView ad_marker_color ad_marker_width auto_show bar_height buffered_color controller_layout_id default_artwork hide_during_ads hide_on_touch keep_content_on_player_reset played_ad_marker_color played_color player_layout_id repeat_toggle_modes resize_mode scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_buffering show_shuffle_button show_timeout shutter_background_color surface_type time_bar_min_update_interval touch_target_height unplayed_color use_artwork use_controller
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor

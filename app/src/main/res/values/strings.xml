@@ -17,7 +17,7 @@
     <!--linked in-->
     <string name="linked_in_client_id" translatable="false">869zzm9vjdjp5h</string>
     <string name="linked_in_client_secret" translatable="false">SFqONJQpLuuy9mBW</string>
-    <string name="linked_in_redirect_url" translatable="false">https://www.jobamax.com</string>
+    <string name="linked_in_redirect_url" translatable="false">https://jobamax.com/</string>
 
 
     <string name="refuse">Refuse</string>
@@ -89,7 +89,7 @@
     <string name="allow_location">Allow Location</string>
     <string name="tell_me_more">Tell Me More</string>
     <string name="enter_valid_phone_number">Enter valid phone number!</string>7
-    <string name="date_of_birth_with_asterisk">Date of Birth*</string>
+    <string name="date_of_birth_with_asterisk">Date of Birth<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_date_of_birth">Enter date of birth</string>
 
     <string name="educations">Educations</string>
@@ -215,7 +215,7 @@
     <string name="add_job_in_tracking">Add Job In Tracking</string>
     <string name="job_title">Job Title</string>
     <string name="enter_title">Enter title</string>
-    <string name="enter">Enter...</string>
+    <string name="enter">Enter…</string>
     <string name="my_wishlist">My Wishlist</string>
     <string name="coaching">Coaching</string>
     <string name="about_the_job">About the job</string>
@@ -291,6 +291,22 @@
     <string name="filter_by_track_job">Filter by</string>
     <string name="enter_ideal_workspace">Enter ideal workspace</string>
     <string name="go_track_job">Go</string>
+    <string name="coaching_row1">Administer Personality and Career Tests to Assess Clients’ Career Aptitudes and Interests.</string>
+    <string name="coaching_raw2">Identify career possibilities and educate clients about these options.</string>
+    <string name="coaching_raw3">Provide referrals to community resources, such as job training opportunities and educational programs.</string>
+    <string name="coaching_raw4">Help clients identify nearby job openings and internship opportunities.</string>
+    <string name="coaching_raw5">Assist clients in creating resumes and cover letters.</string>
+    <string name="coaching_raw6">Teach clients effective interviewing techniques and hold mock interviews.</string>
+    <string name="contact_a_coach_for_free">Contact a coach for free!</string>
+    <string name="see_job_offers">See job offers</string>
+    <string name="select_phase">Select Phase</string>
+    <string name="online_interview_phase">Online interview</string>
+    <string name="assesment_phase">Assesment</string>
+    <string name="phone_call_phase">Phone call</string>
+    <string name="interview_phase">Interview</string>
+    <string name="hired_phase">Hired</string>
+    <string name="refused_phase">Refused</string>
+    <string name="select_deadline">Select Deadline</string>
 
 
 </resources>

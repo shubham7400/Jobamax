@@ -159,7 +159,7 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerCalenderFragment_to_seekerProfileFragment, null))
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerCalenderFragment_to_nav_seeker_profile, null))
     }
 
     private fun getCalendarData(){

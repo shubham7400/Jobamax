@@ -59,6 +59,15 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_nav_seeker_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/jobSeekerAccountFragment"
+            app:destination="@id/nav_seeker_profile" />
     </fragment>
     <fragment
         android:id="@+id/seekerDeleteAccountFragment"
@@ -108,5 +117,6 @@
         android:name="com.findajob.jobamax.jobseeker.profile.account.JobSeekerChangeLanguageFragment"
         android:label="fragment_job_seeker_change_language"
         tools:layout="@layout/fragment_job_seeker_change_language" />
+    <include app:graph="@navigation/nav_seeker_profile" />
 
 </navigation>

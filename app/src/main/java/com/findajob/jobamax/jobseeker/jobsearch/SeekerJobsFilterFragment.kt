@@ -243,7 +243,7 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
         binding.civUser.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFilterFragment_to_seekerProfileFragment, null))
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFilterFragment_to_nav_seeker_profile, null))
         binding.etJobKeyword.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {

@@ -21,14 +21,14 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    private final android.widget.ScrollView mboundView0;
     @NonNull
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
     private final android.view.View.OnClickListener mCallback54;
     @Nullable
-    private final android.view.View.OnClickListener mCallback55;
+    private final android.view.View.OnClickListener mCallback53;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -45,14 +45,14 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
             , (android.widget.TextView) bindings[5]
             );
         this.btnAllowLocation.setTag(null);
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback54 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback55 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback54 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback53 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -114,31 +114,14 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.btnAllowLocation.setOnClickListener(mCallback54);
-            this.mboundView2.setOnClickListener(mCallback55);
+            this.btnAllowLocation.setOnClickListener(mCallback53);
+            this.mboundView2.setOnClickListener(mCallback54);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.LocationPermissionInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onAllowLocationClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -153,6 +136,23 @@ public class FragmentLocationPermissionBindingImpl extends FragmentLocationPermi
 
 
                     handler.onTellMeMoreClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.LocationPermissionInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onAllowLocationClicked();
                 }
                 break;
             }

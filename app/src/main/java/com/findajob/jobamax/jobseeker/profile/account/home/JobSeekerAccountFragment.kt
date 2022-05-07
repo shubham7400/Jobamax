@@ -74,6 +74,7 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
         }
 
         binding.clChangeLanguage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment, null))
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_jobSeekerAccountFragment_to_nav_seeker_profile, null))
 
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
@@ -107,6 +108,7 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
 
 
     override fun onManageReadReceiptsClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment)
+    override fun onBackButtonClicked() {}
 
     override fun onPersonalInformationClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerPersonalInformationFragment)
 
@@ -116,7 +118,6 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
 
 
 
-    override fun onBackButtonClicked() = requireActivity().onBackPressed()
 
 
 

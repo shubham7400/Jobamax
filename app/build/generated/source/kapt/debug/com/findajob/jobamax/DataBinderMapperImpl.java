@@ -75,6 +75,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerWishListBindingImpl;
 import com.findajob.jobamax.databinding.FragmentValuePrivacyBindingImpl;
 import com.findajob.jobamax.databinding.ItemCalenderEventCardBindingImpl;
 import com.findajob.jobamax.databinding.ItemCategoryChipBindingImpl;
+import com.findajob.jobamax.databinding.ItemCheapBindingImpl;
 import com.findajob.jobamax.databinding.ItemImageBindingImpl;
 import com.findajob.jobamax.databinding.ItemJobSearchFilterCategoryBindingImpl;
 import com.findajob.jobamax.databinding.ItemJobTitleBindingImpl;
@@ -246,51 +247,53 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ITEMCATEGORYCHIP = 69;
 
-  private static final int LAYOUT_ITEMIMAGE = 70;
+  private static final int LAYOUT_ITEMCHEAP = 70;
 
-  private static final int LAYOUT_ITEMJOBSEARCHFILTERCATEGORY = 71;
+  private static final int LAYOUT_ITEMIMAGE = 71;
 
-  private static final int LAYOUT_ITEMJOBTITLE = 72;
+  private static final int LAYOUT_ITEMJOBSEARCHFILTERCATEGORY = 72;
 
-  private static final int LAYOUT_ITEMLEAVINGREASON = 73;
+  private static final int LAYOUT_ITEMJOBTITLE = 73;
 
-  private static final int LAYOUT_ITEMPORTFOLIOIMAGE = 74;
+  private static final int LAYOUT_ITEMLEAVINGREASON = 74;
 
-  private static final int LAYOUT_ITEMPORTFOLIOLINK = 75;
+  private static final int LAYOUT_ITEMPORTFOLIOIMAGE = 75;
 
-  private static final int LAYOUT_ITEMSEARCHQUERYCOMPANY = 76;
+  private static final int LAYOUT_ITEMPORTFOLIOLINK = 76;
 
-  private static final int LAYOUT_ITEMSEEKEREDUCATION = 77;
+  private static final int LAYOUT_ITEMSEARCHQUERYCOMPANY = 77;
 
-  private static final int LAYOUT_ITEMSEEKEREXPERIENCE = 78;
+  private static final int LAYOUT_ITEMSEEKEREDUCATION = 78;
 
-  private static final int LAYOUT_ITEMSEEKERHARDSKILL = 79;
+  private static final int LAYOUT_ITEMSEEKEREXPERIENCE = 79;
 
-  private static final int LAYOUT_ITEMSEEKERJOBCARD = 80;
+  private static final int LAYOUT_ITEMSEEKERHARDSKILL = 80;
 
-  private static final int LAYOUT_ITEMSEEKEROTHERJOB = 81;
+  private static final int LAYOUT_ITEMSEEKERJOBCARD = 81;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWEXPERIENCE = 82;
+  private static final int LAYOUT_ITEMSEEKEROTHERJOB = 82;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWHARDSKILL = 83;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWEXPERIENCE = 83;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWSCHOOL = 84;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWHARDSKILL = 84;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWVOLUNTEERING = 85;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWSCHOOL = 85;
 
-  private static final int LAYOUT_ITEMSEEKERSEARCHUNIVERSITY = 86;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWVOLUNTEERING = 86;
 
-  private static final int LAYOUT_ITEMSEEKERTRACK = 87;
+  private static final int LAYOUT_ITEMSEEKERSEARCHUNIVERSITY = 87;
 
-  private static final int LAYOUT_ITEMSEEKERTRACKINGJOBDETAILCARD = 88;
+  private static final int LAYOUT_ITEMSEEKERTRACK = 88;
 
-  private static final int LAYOUT_ITEMSEEKERVOLUNTEERING = 89;
+  private static final int LAYOUT_ITEMSEEKERTRACKINGJOBDETAILCARD = 89;
 
-  private static final int LAYOUT_ITEMWISHLISTJOB = 90;
+  private static final int LAYOUT_ITEMSEEKERVOLUNTEERING = 90;
 
-  private static final int LAYOUT_POPUPADDJOBTOTRACK = 91;
+  private static final int LAYOUT_ITEMWISHLISTJOB = 91;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(91);
+  private static final int LAYOUT_POPUPADDJOBTOTRACK = 92;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(92);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.activity_job_seeker_home, LAYOUT_ACTIVITYJOBSEEKERHOME);
@@ -362,6 +365,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.fragment_value_privacy, LAYOUT_FRAGMENTVALUEPRIVACY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_calender_event_card, LAYOUT_ITEMCALENDEREVENTCARD);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_category_chip, LAYOUT_ITEMCATEGORYCHIP);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_cheap, LAYOUT_ITEMCHEAP);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_image, LAYOUT_ITEMIMAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_job_search_filter_category, LAYOUT_ITEMJOBSEARCHFILTERCATEGORY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_job_title, LAYOUT_ITEMJOBTITLE);
@@ -810,6 +814,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for item_category_chip is invalid. Received: " + tag);
       }
+      case  LAYOUT_ITEMCHEAP: {
+        if ("layout/item_cheap_0".equals(tag)) {
+          return new ItemCheapBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for item_cheap is invalid. Received: " + tag);
+      }
       case  LAYOUT_ITEMIMAGE: {
         if ("layout/item_image_0".equals(tag)) {
           return new ItemImageBindingImpl(component, view);
@@ -1021,7 +1031,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(91);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(92);
 
     static {
       sKeys.put("layout/activity_job_seeker_home_0", com.findajob.jobamax.R.layout.activity_job_seeker_home);
@@ -1093,6 +1103,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_value_privacy_0", com.findajob.jobamax.R.layout.fragment_value_privacy);
       sKeys.put("layout/item_calender_event_card_0", com.findajob.jobamax.R.layout.item_calender_event_card);
       sKeys.put("layout/item_category_chip_0", com.findajob.jobamax.R.layout.item_category_chip);
+      sKeys.put("layout/item_cheap_0", com.findajob.jobamax.R.layout.item_cheap);
       sKeys.put("layout/item_image_0", com.findajob.jobamax.R.layout.item_image);
       sKeys.put("layout/item_job_search_filter_category_0", com.findajob.jobamax.R.layout.item_job_search_filter_category);
       sKeys.put("layout/item_job_title_0", com.findajob.jobamax.R.layout.item_job_title);

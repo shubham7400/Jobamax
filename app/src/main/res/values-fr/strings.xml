@@ -72,7 +72,7 @@
     <string name="allow_location">Permettre l\'emplacement</string>
     <string name="tell_me_more">Dites-m\'en plus</string>
     <string name="enter_valid_phone_number">Entrez un numéro de téléphone valide !</string>7
-    <string name="date_of_birth_with_asterisk">Date de naissance</string>
+    <string name="date_of_birth_with_asterisk">Date de naissance<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_date_of_birth">Entrez la date de naissance</string>
 
     <string name="educations">Enseignement</string>
@@ -113,7 +113,7 @@
     <string name="crop_image_activity_no_permissions">Annulation, les autorisations requises ne sont pas accordées</string>
 
     // DO NOT TRANSLATE
-    <string name="save">Sauvez</string>
+    <string name="save">Sauvegarder</string>
     <string name="share">Partager</string>
     <string name="send_to_friend">Envoyer à un ami</string>
     <string name="about_course">À propos de ce cours</string>
@@ -193,7 +193,7 @@
     <string name="enter">Ecris ici…</string>
     <string name="my_wishlist">Ma wishlist</string>
     <string name="coaching">Coaching</string>
-    <string name="about_the_job">À propos du poste</string>
+    <string name="about_the_job">À propos du job</string>
     <string name="about_the_company">À propos de l\'entreprise</string>
     <string name="see_job_description">En savoir plus</string>
     <string name="filters">Filtres</string>
@@ -230,7 +230,7 @@
     <string name="your_elevator_pitch_240_characters">Bio (240 caractéres)</string>
     <string name="language_change_alert_message">Vous devez redémarrer l\'application afin de voir les changements de langue.</string>
     <string name="images">Images</string>
-    <string name="job_description">Job Description</string>
+    <string name="job_description">Description du Poste</string>
     <string name="in_progress">En cours</string>
     <string name="see_less">voir moins</string>
     <string name="which_company">Quelle entreprise ?</string>
@@ -267,4 +267,20 @@
     <string name="filter_by_track_job">Filters</string>
     <string name="enter_ideal_workspace">Ajoute des tags. Ex:télé-travail</string>
     <string name="go_track_job">Go</string>
+    <string name="coaching_row1">Administrer des tests de personnalité et de carrière pour évaluer les clients, leurs aptitudes et leurs intérêts professionnels.</string>
+    <string name="coaching_raw2">Identifier les possibilités de carrière et informer les clients de ces options.</string>
+    <string name="coaching_raw3">Fournir des recommandations à la collectivité, telles que les possibilités de formation professionnelle et les programmes éducatifs.</string>
+    <string name="coaching_raw4">Aider les clients à identifier les offres d\'emploi et les possibilités de stage à proximité.</string>
+    <string name="coaching_raw5">Aider les clients à créer des CV et des lettres de motivation.</string>
+    <string name="coaching_raw6">Enseigner aux clients des techniques d\'entretien efficaces et organiser des simulations d\'entretien.</string>
+    <string name="contact_a_coach_for_free">Parler à un coach</string>
+    <string name="see_job_offers">Voir l\'offre</string>
+    <string name="select_phase">Sélectionnez la phase</string>
+    <string name="online_interview_phase">Entretien en ligne</string>
+    <string name="assesment_phase">Évaluation</string>
+    <string name="phone_call_phase">Appel téléphonique</string>
+    <string name="interview_phase">Entretien</string>
+    <string name="hired_phase">Embauché</string>
+    <string name="refused_phase">Refusé</string>
+    <string name="select_deadline">Sélectionner la date limite</string>
 </resources>

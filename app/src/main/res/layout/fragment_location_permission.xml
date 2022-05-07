@@ -10,117 +10,130 @@
             type="com.findajob.jobamax.login.LocationPermissionInterface" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:fillViewport="true"
+        android:isScrollContainer="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/iv_back_button"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_back_arrow_black"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:paddingBottom="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="128dp"
-                android:layout_height="128dp"
-                android:src="@drawable/location"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_back_button"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_back_arrow_black"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView2"
-                style="@style/regular_heading"
-                android:layout_width="0dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:text="@string/enable_location"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-            <TextView
-                style="@style/regular_multiline_subtext"
-                android:layout_width="0dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:gravity="center_horizontal"
-                android:text="@string/instruction_enable_location"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:src="@drawable/location"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="32dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/regular_heading"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="32dp"
+                        android:text="@string/enable_location"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-            <Button
-                android:id="@+id/btn_allow_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/grad_button"
-                android:onClick="@{() -> handler.onAllowLocationClicked()}"
-                android:paddingLeft="48dp"
-                android:paddingRight="48dp"
-                android:text="@string/allow_location"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/regular_multiline_subtext"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="32dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/instruction_enable_location"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:drawablePadding="8dp"
-                android:gravity="center"
-                android:onClick="@{() -> handler.onTellMeMoreClicked()}"
-                android:paddingLeft="32dp"
-                android:paddingRight="32dp"
-                android:text="@string/tell_me_more"
-                android:textAllCaps="true"
-                android:textColor="@color/primary_text"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/btn_allow_location"
-                app:layout_constraintStart_toStartOf="@+id/btn_allow_location"
-                app:layout_constraintTop_toBottomOf="@+id/btn_allow_location" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+                    <Button
+                        android:id="@+id/btn_allow_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grad_button"
+                        android:onClick="@{() -> handler.onAllowLocationClicked()}"
+                        android:paddingLeft="48dp"
+                        android:paddingRight="48dp"
+                        android:text="@string/allow_location"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:onClick="@{() -> handler.onTellMeMoreClicked()}"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:text="@string/tell_me_more"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btn_allow_location"
+                        app:layout_constraintStart_toStartOf="@+id/btn_allow_location"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_allow_location" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+ </layout>

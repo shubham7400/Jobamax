@@ -21,6 +21,7 @@
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/btn_switch_camera.xml" value="0.103" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/btn_video_off.xml" value="0.103" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/checkbox_state_selector.xml" value="0.18076923076923077" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/circle_grey_box.xml" value="0.1415" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/circle_stroke_blue.xml" value="0.1875" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/close_black.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/drawable/close_white.xml" value="0.18076923076923077" />
@@ -331,6 +332,7 @@
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_chat_sender.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_chat_user_horizontal.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_chat_user_vertical.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_cheap.xml" value="0.15128205128205127" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_chip.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_company_profile.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/jobamaxandroid/app/src/main/res/layout/item_company_size.xml" value="0.1675213675213675" />

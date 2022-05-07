@@ -22,6 +22,7 @@ import com.findajob.jobamax.dialog.SeekerJobTrackingCardDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
 import com.findajob.jobamax.model.TrackingJob
+import com.findajob.jobamax.preference.getLanguage
 import com.findajob.jobamax.util.loadImageFromUrl
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
@@ -37,13 +38,19 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
     lateinit var adapter: SeekerTrackingJobDetailsAdapter
     var trackingJob: TrackingJob? = null
     var trackingOtherJob: TrackingOtherJob? = null
-    private val phaseList = arrayListOf("Select Phase", "Online interview" , "Assesment" , "Phone call", "Interview", "Hired" , "Refused")
-    private var phases = phaseList
+    lateinit var phaseList : ArrayList<String>
+    lateinit var phases : ArrayList<String>
     var existingPhaseList = ArrayList<Phase>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerTrackingJobDetailsBinding.inflate(inflater, container, false)
-
+        if ( requireContext().getLanguage() == "en"){
+            phaseList = arrayListOf("Select Phase", "Online interview" , "Assesment" , "Phone call", "Interview", "Hired" , "Refused")
+            phases = phaseList
+        }else{
+            phaseList = arrayListOf("Sélectionnez la phase", "Entretien en ligne" , "Évaluation" , "Appel téléphonique", "Entretien", "Embauché" , "Refusé")
+            phases = phaseList
+        }
         configureUi()
         return binding.root
     }
@@ -211,7 +218,7 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobDetailsFragment_to_seekerProfileFragment, null))
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerTrackingJobDetailsFragment_to_nav_seeker_profile, null))
     }
 
     private fun createGoogleEvent(name: String) {

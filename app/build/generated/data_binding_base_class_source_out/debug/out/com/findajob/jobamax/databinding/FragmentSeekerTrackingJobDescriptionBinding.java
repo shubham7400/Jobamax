@@ -4,13 +4,13 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -25,7 +25,7 @@ import java.lang.Object;
 
 public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDataBinding {
   @NonNull
-  public final AppCompatButton appCompatButton2;
+  public final Button btnSeeMoreOrLess;
 
   @NonNull
   public final ChipGroup cgBenefits;
@@ -34,22 +34,16 @@ public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDa
   public final ChipGroup cgSoftSkill;
 
   @NonNull
-  public final ConstraintLayout clOverlay;
-
-  @NonNull
   public final ConstraintLayout clTopParent;
 
   @NonNull
   public final ConstraintLayout constraintLayout13;
 
   @NonNull
-  public final ConstraintLayout constraintLayout14;
-
-  @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
-  public final CircleImageView ivCompany;
+  public final ImageView ivCompany;
 
   @NonNull
   public final ImageView ivReport;
@@ -65,6 +59,9 @@ public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDa
 
   @NonNull
   public final LinearLayout llBenefits;
+
+  @NonNull
+  public final LinearLayout llBottomContent;
 
   @NonNull
   public final LinearLayout llHardSkill;
@@ -109,16 +106,10 @@ public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDa
   public final TextView tvIndustry;
 
   @NonNull
-  public final TextView tvJobOfferId;
-
-  @NonNull
   public final TextView tvJobTitle;
 
   @NonNull
   public final TextView tvJobType;
-
-  @NonNull
-  public final TextView tvOverlayLabel;
 
   @NonNull
   public final TextView tvPageTitle;
@@ -130,26 +121,22 @@ public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDa
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerTrackingJobDescriptionBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, AppCompatButton appCompatButton2, ChipGroup cgBenefits,
-      ChipGroup cgSoftSkill, ConstraintLayout clOverlay, ConstraintLayout clTopParent,
-      ConstraintLayout constraintLayout13, ConstraintLayout constraintLayout14,
-      ImageView ivBackButton, CircleImageView ivCompany, ImageView ivReport,
-      CircleImageView ivUserProfile, LinearLayout llAboutCompany, LinearLayout llAboutJob,
-      LinearLayout llBenefits, LinearLayout llHardSkill, LinearLayout llIndustry,
+      int _localFieldCount, Button btnSeeMoreOrLess, ChipGroup cgBenefits, ChipGroup cgSoftSkill,
+      ConstraintLayout clTopParent, ConstraintLayout constraintLayout13, ImageView ivBackButton,
+      ImageView ivCompany, ImageView ivReport, CircleImageView ivUserProfile,
+      LinearLayout llAboutCompany, LinearLayout llAboutJob, LinearLayout llBenefits,
+      LinearLayout llBottomContent, LinearLayout llHardSkill, LinearLayout llIndustry,
       LinearLayout llSalary, LinearLayout llSoftSkill, LinearLayout llWorkspace,
       RelativeLayout relativeLayout, RecyclerView rvHardSkill, RecyclerView rvHardSklilsl,
       TextView tvAboutCompany, TextView tvAboutJob, TextView tvCompanyAddress,
-      TextView tvCompanyName, TextView tvCompanyUrl, TextView tvIndustry, TextView tvJobOfferId,
-      TextView tvJobTitle, TextView tvJobType, TextView tvOverlayLabel, TextView tvPageTitle,
-      TextView tvTitleAbout) {
+      TextView tvCompanyName, TextView tvCompanyUrl, TextView tvIndustry, TextView tvJobTitle,
+      TextView tvJobType, TextView tvPageTitle, TextView tvTitleAbout) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.appCompatButton2 = appCompatButton2;
+    this.btnSeeMoreOrLess = btnSeeMoreOrLess;
     this.cgBenefits = cgBenefits;
     this.cgSoftSkill = cgSoftSkill;
-    this.clOverlay = clOverlay;
     this.clTopParent = clTopParent;
     this.constraintLayout13 = constraintLayout13;
-    this.constraintLayout14 = constraintLayout14;
     this.ivBackButton = ivBackButton;
     this.ivCompany = ivCompany;
     this.ivReport = ivReport;
@@ -157,6 +144,7 @@ public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDa
     this.llAboutCompany = llAboutCompany;
     this.llAboutJob = llAboutJob;
     this.llBenefits = llBenefits;
+    this.llBottomContent = llBottomContent;
     this.llHardSkill = llHardSkill;
     this.llIndustry = llIndustry;
     this.llSalary = llSalary;
@@ -171,10 +159,8 @@ public abstract class FragmentSeekerTrackingJobDescriptionBinding extends ViewDa
     this.tvCompanyName = tvCompanyName;
     this.tvCompanyUrl = tvCompanyUrl;
     this.tvIndustry = tvIndustry;
-    this.tvJobOfferId = tvJobOfferId;
     this.tvJobTitle = tvJobTitle;
     this.tvJobType = tvJobType;
-    this.tvOverlayLabel = tvOverlayLabel;
     this.tvPageTitle = tvPageTitle;
     this.tvTitleAbout = tvTitleAbout;
   }

@@ -159,8 +159,13 @@ fun uploadImageToParse(uri: Uri, requireContext: Context, onException: (String) 
 fun getAddressByLatLng(lat: Double, lng: Double, requireContext: Context) : String {
     val geocoder = Geocoder(requireContext, Locale.getDefault())
     val addresses = geocoder.getFromLocation(lat, lng, 1)
-    return addresses[0].getAddressLine(0)
+    return try {
+        addresses[0].getAddressLine(0)
+    } catch (e: Exception) {
+        ""
+    }
 }
+
 
 fun getJobCategories(requireContext: Context): ArrayList<Categories> = if (requireContext.getJobSearchFilterCategories() == "") {
     Categories.getJobCategories()

@@ -10,7 +10,7 @@ public class SeekerCoachingFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSeekerCoachingFragmentToSeekerProfileFragment() {
-    return new ActionOnlyNavDirections(R.id.action_seekerCoachingFragment_to_seekerProfileFragment);
+  public static NavDirections actionSeekerCoachingFragmentToNavSeekerProfile() {
+    return new ActionOnlyNavDirections(R.id.action_seekerCoachingFragment_to_nav_seeker_profile);
   }
 }

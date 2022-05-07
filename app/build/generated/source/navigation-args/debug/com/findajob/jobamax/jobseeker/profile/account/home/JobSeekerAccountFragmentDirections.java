@@ -45,4 +45,9 @@ public class JobSeekerAccountFragmentDirections {
   public static NavDirections actionJobSeekerAccountFragmentToJobSeekerChangeLanguageFragment() {
     return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_jobSeekerChangeLanguageFragment);
   }
+
+  @NonNull
+  public static NavDirections actionJobSeekerAccountFragmentToNavSeekerProfile() {
+    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_nav_seeker_profile);
+  }
 }

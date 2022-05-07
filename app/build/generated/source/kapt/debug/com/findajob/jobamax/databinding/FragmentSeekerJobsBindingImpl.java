@@ -71,7 +71,7 @@ public class FragmentSeekerJobsBindingImpl extends FragmentSeekerJobsBinding  {
             , (android.widget.LinearLayout) bindings[21]
             , (android.widget.LinearLayout) bindings[16]
             , (androidx.core.widget.NestedScrollView) bindings[14]
-            , (com.ramijemli.percentagechartview.PercentageChartView) bindings[22]
+            , (antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator) bindings[22]
             , (android.widget.RelativeLayout) bindings[4]
             , (androidx.recyclerview.widget.RecyclerView) bindings[23]
             , (android.view.View) bindings[11]

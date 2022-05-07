@@ -136,7 +136,7 @@
                         android:background="@drawable/round_32"
                         android:backgroundTint="@color/new_purple"
                         android:paddingHorizontal="20dp"
-                        android:text="See job offers"
+                        android:text="@string/see_job_offers"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

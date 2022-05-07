@@ -211,7 +211,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerWishListFragment_to_seekerProfileFragment, null))
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerWishListFragment_to_nav_seeker_profile, null))
     }
 
     override fun onCreated(savedInstance: Bundle?) {

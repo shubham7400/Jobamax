@@ -17,27 +17,27 @@ public class FragmentSeekerJobMatchInfoDialogBindingImpl extends FragmentSeekerJ
         sViewsWithIds.put(R.id.relativeLayout, 1);
         sViewsWithIds.put(R.id.iv_back_button, 2);
         sViewsWithIds.put(R.id.civ_user, 3);
-        sViewsWithIds.put(R.id.pcv_match, 4);
+        sViewsWithIds.put(R.id.circular_progress, 4);
         sViewsWithIds.put(R.id.ll_education, 5);
         sViewsWithIds.put(R.id.sb_education, 6);
         sViewsWithIds.put(R.id.tv_education_per, 7);
         sViewsWithIds.put(R.id.tv_education_missing_tag, 8);
-        sViewsWithIds.put(R.id.cg_education, 9);
+        sViewsWithIds.put(R.id.rv_education_missing_tag, 9);
         sViewsWithIds.put(R.id.ll_hard_skill, 10);
         sViewsWithIds.put(R.id.sb_hard_skill, 11);
         sViewsWithIds.put(R.id.tv_hard_skill_per, 12);
         sViewsWithIds.put(R.id.tv_hard_skill_missing_tag, 13);
-        sViewsWithIds.put(R.id.cg_hard_skill, 14);
+        sViewsWithIds.put(R.id.rv_hard_skill_missing_tag, 14);
         sViewsWithIds.put(R.id.ll_soft_skill, 15);
         sViewsWithIds.put(R.id.sb_soft_skill, 16);
         sViewsWithIds.put(R.id.tv_soft_skill_per, 17);
         sViewsWithIds.put(R.id.tv_soft_skill_missing_tag, 18);
-        sViewsWithIds.put(R.id.cg_soft_skill, 19);
+        sViewsWithIds.put(R.id.rv_soft_skill_missing_tag, 19);
         sViewsWithIds.put(R.id.ll_job_title, 20);
         sViewsWithIds.put(R.id.sb_job_title, 21);
         sViewsWithIds.put(R.id.tv_job_title_per, 22);
         sViewsWithIds.put(R.id.tv_job_title_missing_tag, 23);
-        sViewsWithIds.put(R.id.cg_job_title, 24);
+        sViewsWithIds.put(R.id.rv_job_title_missing_tag, 24);
     }
     // views
     @NonNull
@@ -52,18 +52,18 @@ public class FragmentSeekerJobMatchInfoDialogBindingImpl extends FragmentSeekerJ
     }
     private FragmentSeekerJobMatchInfoDialogBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.chip.ChipGroup) bindings[9]
-            , (com.google.android.material.chip.ChipGroup) bindings[14]
-            , (com.google.android.material.chip.ChipGroup) bindings[24]
-            , (com.google.android.material.chip.ChipGroup) bindings[19]
+            , (antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator) bindings[4]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[3]
             , (android.widget.ImageView) bindings[2]
             , (android.widget.LinearLayout) bindings[5]
             , (android.widget.LinearLayout) bindings[10]
             , (android.widget.LinearLayout) bindings[20]
             , (android.widget.LinearLayout) bindings[15]
-            , (com.ramijemli.percentagechartview.PercentageChartView) bindings[4]
             , (android.widget.RelativeLayout) bindings[1]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[9]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[14]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[24]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[19]
             , (android.widget.SeekBar) bindings[6]
             , (android.widget.SeekBar) bindings[11]
             , (android.widget.SeekBar) bindings[21]

@@ -18,16 +18,16 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
     }
     // views
     @NonNull
-    private final android.widget.RelativeLayout mboundView0;
+    private final android.widget.ScrollView mboundView0;
     @NonNull
     private final android.widget.Button mboundView1;
     @NonNull
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback50;
+    private final android.view.View.OnClickListener mCallback49;
     @Nullable
-    private final android.view.View.OnClickListener mCallback51;
+    private final android.view.View.OnClickListener mCallback50;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -39,7 +39,7 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[3]
             );
-        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView1 = (android.widget.Button) bindings[1];
         this.mboundView1.setTag(null);
@@ -47,8 +47,8 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback50 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback51 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback49 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
+        mCallback50 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -110,8 +110,8 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback50);
-            this.mboundView2.setOnClickListener(mCallback51);
+            this.mboundView1.setOnClickListener(mCallback49);
+            this.mboundView2.setOnClickListener(mCallback50);
         }
     }
     // Listener Stub Implementations

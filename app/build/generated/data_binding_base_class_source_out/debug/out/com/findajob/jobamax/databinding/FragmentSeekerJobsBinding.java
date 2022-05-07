@@ -16,10 +16,10 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.ramijemli.percentagechartview.PercentageChartView;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
@@ -84,7 +84,7 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
   public final NestedScrollView nsvCard;
 
   @NonNull
-  public final PercentageChartView pcvMatch;
+  public final CircularProgressIndicator pcvMatch;
 
   @NonNull
   public final RelativeLayout relativeLayout;
@@ -105,7 +105,7 @@ public abstract class FragmentSeekerJobsBinding extends ViewDataBinding {
       FloatingActionButton fabShare, ImageView ivBackButton, ImageView ivFavorite,
       ImageView ivFilterJob, ImageView ivSearchIcon, ItemSeekerJobCardBinding lJob,
       LinearLayout llFloatButtons, LinearLayout llMatchPercent, LinearLayout llRewind,
-      NestedScrollView nsvCard, PercentageChartView pcvMatch, RelativeLayout relativeLayout,
+      NestedScrollView nsvCard, CircularProgressIndicator pcvMatch, RelativeLayout relativeLayout,
       RecyclerView rvJobTypes, View vFilterState) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;

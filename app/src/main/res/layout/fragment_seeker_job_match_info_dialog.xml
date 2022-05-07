@@ -45,7 +45,6 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"
-                    android:visibility="gone"
                     style="@style/circular_image"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/default_user_img" />
@@ -72,29 +71,20 @@
                     android:background="@color/background_blue">
 
 
-                    <com.ramijemli.percentagechartview.PercentageChartView
-                        android:id="@+id/pcv_match"
+
+                    <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+                        android:id="@+id/circular_progress"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginVertical="20dp"
-                        android:minHeight="40dp"
+                        app:direction="clockwise"
+                        app:textColor="@color/black"
+                        app:textSize="50sp"
+                        android:layout_gravity="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:pcv_animDuration="800"
-                        app:pcv_animInterpolator="anticipate_overshoot"
-                        app:pcv_backgroundBarColor="@color/gray"
-                        app:pcv_backgroundBarThickness="8dp"
-                        app:pcv_backgroundColor="@color/transparent"
-                        app:pcv_mode="ring"
-                        app:pcv_orientation="clockwise"
-                        app:pcv_progress="0"
-                        app:pcv_progressBarThickness="8dp"
-                        app:pcv_progressColor="#7800EF"
-                        app:pcv_startAngle="270"
-                        app:pcv_textColor="@color/black"
-                        app:pcv_textSize="60sp"
-                        app:pcv_textStyle="bold" />
+                        app:layout_constraintTop_toTopOf="parent" />
+
 
                     <LinearLayout
                         android:id="@+id/ll_education"
@@ -108,7 +98,7 @@
                         android:paddingVertical="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/pcv_match">
+                        app:layout_constraintTop_toBottomOf="@+id/circular_progress">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -163,12 +153,13 @@
                             android:fontFamily="@font/opensans_regular"
                             android:text="@string/missing_keywords"/>
 
-                        <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/cg_education"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_education_missing_tag"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </com.google.android.material.chip.ChipGroup>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
                     </LinearLayout>
 
@@ -240,10 +231,13 @@
                             android:text="@string/missing_keywords"/>
 
 
-                        <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/cg_hard_skill"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                        <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_hard_skill_missing_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
                     </LinearLayout>
 
@@ -316,10 +310,13 @@
                             android:text="@string/missing_keywords"/>
 
 
-                        <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/cg_soft_skill"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_soft_skill_missing_tag"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
                     </LinearLayout>
 
@@ -393,10 +390,13 @@
                             android:text="@string/missing_keywords"/>
 
 
-                        <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/cg_job_title"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_job_title_missing_tag"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
                     </LinearLayout>
 

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,22 +24,22 @@ public abstract class FragmentSeekerCoachingBinding extends ViewDataBinding {
   public final Button btnContact;
 
   @NonNull
-  public final CircleImageView circleImageView4;
+  public final LinearLayout circleImageView4;
 
   @NonNull
-  public final CircleImageView circleImageViewx4;
+  public final LinearLayout circleImageViewx4;
 
   @NonNull
-  public final CircleImageView circleImagesView4;
+  public final LinearLayout circleImagesView4;
 
   @NonNull
-  public final CircleImageView circleImagxxeView4;
+  public final LinearLayout circleImagxxeView4;
 
   @NonNull
-  public final CircleImageView circleImasgeView4;
+  public final LinearLayout circleImasgeView4;
 
   @NonNull
-  public final CircleImageView circleImdsageView4;
+  public final LinearLayout circleImdsageView4;
 
   @NonNull
   public final CircleImageView civUser;
@@ -53,10 +54,10 @@ public abstract class FragmentSeekerCoachingBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerCoachingBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, Button btnContact, CircleImageView circleImageView4,
-      CircleImageView circleImageViewx4, CircleImageView circleImagesView4,
-      CircleImageView circleImagxxeView4, CircleImageView circleImasgeView4,
-      CircleImageView circleImdsageView4, CircleImageView civUser, ImageView ivBackButton,
+      int _localFieldCount, Button btnContact, LinearLayout circleImageView4,
+      LinearLayout circleImageViewx4, LinearLayout circleImagesView4,
+      LinearLayout circleImagxxeView4, LinearLayout circleImasgeView4,
+      LinearLayout circleImdsageView4, CircleImageView civUser, ImageView ivBackButton,
       RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnContact = btnContact;

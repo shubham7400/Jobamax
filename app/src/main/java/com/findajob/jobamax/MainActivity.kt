@@ -16,7 +16,8 @@ import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.Recruiter
 import com.findajob.jobamax.preference.*
- import com.findajob.jobamax.util.log
+import com.findajob.jobamax.util.JOB_SEEKER_TYPE
+import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
@@ -68,11 +69,9 @@ class MainActivity : AppCompatActivity() {
                         val jobSeekerId = deepLink?.getQueryParameter("jobSeekerId")
                         val path = deepLink?.path!!.substring(1, deepLink!!.path!!.length)
                         when(path){
-                            FirebaseDynamicLinkPath.verifyemail.toString() -> {
-                                if (userType == "2"){
+                            FirebaseDynamicLinkPath.emailVerification.toString() -> {
+                                if (userType == JOB_SEEKER_TYPE){
                                     updateIsEmailVerifiedInJobSeeker(id)
-                                }else if (userType == "1"){
-                                    updateIsEmailVerifiedInRecruiter(id)
                                 }
                             }
                             FirebaseDynamicLinkPath.shareJobOffer.toString() -> {
@@ -95,33 +94,6 @@ class MainActivity : AppCompatActivity() {
                     log("getDynamicLink:onFailure ${e.message.toString()}")
                 }
     }
-
-    private fun updateIsEmailVerifiedInRecruiter(recruiterId: String?) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Recruiter.toString())
-        query.whereEqualTo(ParseTableFields.recruiterId.toString(), recruiterId)
-        query.getFirstInBackground { obj, e ->
-            if (e != null){
-                toast("error "+e.message.toString())
-            }else{
-                obj.put(ParseTableFields.emailVerified.toString(),true)
-                obj.saveInBackground {
-                    if (it == null){
-                        toast("Email has been verified successfully.")
-                        val recruiter = Recruiter(obj)
-                        setUserId(recruiterId!!)
-                        setPhoneNumber(recruiter.phoneNumber)
-                        setLoginType(recruiter.loginType)
-                        setLoggedIn(true)
-                        /*startActivity(Intent(this,  RecruiterHomeActivity::class.java))*/
-                        finishAffinity()
-                    }else{
-                        toast(it.message.toString())
-                    }
-                }
-            }
-        }
-    }
-
 
 
     private fun updateIsEmailVerifiedInJobSeeker(jobSeekerId: String?) {
@@ -160,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }else{
-            setUserType(2)
+            setUserType(JOB_SEEKER_TYPE.toInt())
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
         }

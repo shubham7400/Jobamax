@@ -81,7 +81,7 @@ class SeekerAddPersonalTrackJobFragment : BaseFragmentMain<FragmentSeekerAddPers
          }
 
         binding.ivBackButton.setOnClickListener { requireActivity().onBackPressed() }
-        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerAddPersonalTrackJobFragment_to_seekerProfileFragment, null))
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerAddPersonalTrackJobFragment_to_nav_seeker_profile, null))
     }
 
     override fun onCreated(savedInstance: Bundle?) {

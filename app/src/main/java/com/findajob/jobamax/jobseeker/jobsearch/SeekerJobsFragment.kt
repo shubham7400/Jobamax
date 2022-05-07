@@ -35,7 +35,6 @@ import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.JobSeekerJobFilter
-import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFilterDialogFragment
 import com.findajob.jobamax.model.NewJobOffer
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.getCurrentLatitude
@@ -55,7 +54,6 @@ import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.internal.SynchronizedObject
 import org.json.JSONObject
 
 
@@ -266,6 +264,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             }
         }
 
+        log("fjlksdkl $param")
         progressHud.show()
         ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobSearch.toString(), param, FunctionCallback<ArrayList<Any>> { result, e ->
             progressHud.dismiss()
@@ -310,7 +309,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             }
         }
         if (topJobOffer != null ){
-            binding.pcvMatch.setProgress(topJobOffer.matchesPercentage.toFloat(), true)
+            binding.pcvMatch.setProgress(topJobOffer.matchesPercentage.toDouble(), 100.0)
         }
     }
 
@@ -704,9 +703,8 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             updateJobs()
         }
 
-        binding.civUser.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_seekerJobsFragment_to_seekerProfileFragment)
-        }
+
+        binding.civUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_nav_seeker_profile, null))
 
         binding.ivBackButton.setOnClickListener {
             requireActivity().onBackPressed()
@@ -743,8 +741,11 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             if (topJobOffer == null){
                 toast("Please drag little the top job card.")
             }else{
-                val instance = SeekerJobMatchInfoDialogFragment.newInstance(topJobOffer)
+                val instance = SeekerJobMatchInfoDialogFragment.newInstance(topJobOffer, viewModel.jobSeeker.profilePicUrl)
                 instance.show(childFragmentManager,"dialog")
+                instance.onProfileClick ={
+                    binding.civUser.performClick()
+                }
             }
         }
         binding.ivFavorite.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFragment_to_seekerWishListFragment, null))

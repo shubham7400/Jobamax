@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content" android:tag="layout/item_seeker_preview_hard_skill_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/tv_hard_skill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:text="Prashanti"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5dp"
+             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/sb_hard_skill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:saveEnabled="false"
+            android:maxHeight="6dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/seek_style"
+            android:thumb="@drawable/seek"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hard_skill" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         
