@@ -9,13 +9,17 @@ import android.widget.SeekBar
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.data.pojo.HardSkill
 import com.findajob.jobamax.databinding.FragmentSeekerMySkillBinding
 import com.findajob.jobamax.databinding.ItemSeekerHardSkillBinding
+import com.findajob.jobamax.dialog.MessageDialog
+import com.findajob.jobamax.dialog.YesNoDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
@@ -28,7 +32,7 @@ import org.json.JSONObject
 
 
 
-class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
+class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>(), IOnBackPressed {
 
     override val layoutRes: Int get() = R.layout.fragment_seeker_my_skill
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -90,9 +94,12 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
         adapter = SeekerHardSkillAdapter(ownedHardSkills)
         binding.rvHardSkill.adapter = adapter
         adapter.clickListener = {
-            ownedHardSkills.remove(it)
-            adapter.submitList(ownedHardSkills)
-            adapter.notifyDataSetChanged()
+
+            YesNoDialog(requireActivity(), resources.getString(R.string.are_you_sure),{
+                ownedHardSkills.remove(it)
+                adapter.submitList(ownedHardSkills)
+                adapter.notifyDataSetChanged()
+            },{}).show()
         }
         adapter.skillLevelChangeListener = { hardSkill, skillLevelNewValue ->
             val index = ownedHardSkills.indexOf(hardSkill)
@@ -146,10 +153,8 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
          binding.ivBackButton.setOnClickListener {
              requireActivity().onBackPressed()
          }
+        binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerMySkillFragment_to_seekerProfileFragment, null))
 
-        binding.ivUserProfile.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
         binding.ivHardSkillAddBtn.setOnClickListener {
             if (binding.actvHardSkill.text.isNullOrEmpty()){
                 toast("Please first enter the tag.")
@@ -165,24 +170,6 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
                 addSoftSkill()
             }
         }
-
-        binding.btnSaveInfo.setOnClickListener {
-            val hardSkillJsonObj = JSONObject()
-            ownedHardSkills.forEach {
-                hardSkillJsonObj.put(it.skillName, it.skillLevel)
-            }
-            progressHud.show()
-            viewModel.saveHardSkills(hardSkillJsonObj) {
-                progressHud.dismiss()
-                if(it == null){
-                    saveSoftSkill()
-                }else{
-                    saveSoftSkill()
-                    toast("${it.message.toString()} Something went wrong.")
-                }
-            }
-
-        }
     }
 
     private fun saveSoftSkill() {
@@ -194,7 +181,6 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
         viewModel.saveSoftSkills(softSkillJsonArray){
             progressHud.dismiss()
             if(it == null){
-                toast("Skills Added.")
                 requireActivity().onBackPressed()
             }else{
                 requireActivity().onBackPressed()
@@ -247,6 +233,26 @@ class SeekerMySkillFragment : BaseFragmentMain<FragmentSeekerMySkillBinding>() {
             binding.cgSoftSkill.addView(chip)
             binding.actvSoftSkill.text.clear()
         }
+    }
+
+    override fun onBackPressed(callback: () -> Unit) {
+        val hardSkillJsonObj = JSONObject()
+        ownedHardSkills.forEach {
+            hardSkillJsonObj.put(it.skillName, it.skillLevel)
+        }
+        progressHud.show()
+        viewModel.saveHardSkills(hardSkillJsonObj) {
+            progressHud.dismiss()
+            if(it == null){
+                saveSoftSkill()
+                callback()
+            }else{
+                saveSoftSkill()
+                toast("${it.message.toString()} Something went wrong.")
+                callback()
+            }
+        }
+
     }
 
 

@@ -14,22 +14,18 @@ public class FragmentSeekerDeleteAccountBindingImpl extends FragmentSeekerDelete
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.appBar, 4);
-        sViewsWithIds.put(R.id.tv_toolbar_title, 5);
-        sViewsWithIds.put(R.id.rv_reason, 6);
+        sViewsWithIds.put(R.id.appBar, 3);
+        sViewsWithIds.put(R.id.tv_toolbar_title, 4);
+        sViewsWithIds.put(R.id.rv_reason, 5);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     @NonNull
     private final androidx.appcompat.widget.AppCompatButton mboundView2;
-    @NonNull
-    private final androidx.appcompat.widget.AppCompatButton mboundView3;
     // variables
     @Nullable
     private final android.view.View.OnClickListener mCallback32;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback33;
     @Nullable
     private final android.view.View.OnClickListener mCallback31;
     // values
@@ -37,26 +33,23 @@ public class FragmentSeekerDeleteAccountBindingImpl extends FragmentSeekerDelete
     // Inverse Binding Event Handlers
 
     public FragmentSeekerDeleteAccountBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerDeleteAccountBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.appbar.AppBarLayout) bindings[4]
+            , (com.google.android.material.appbar.AppBarLayout) bindings[3]
             , (androidx.appcompat.widget.AppCompatImageView) bindings[1]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[6]
-            , (androidx.appcompat.widget.AppCompatTextView) bindings[5]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[5]
+            , (androidx.appcompat.widget.AppCompatTextView) bindings[4]
             );
         this.imageView.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (androidx.appcompat.widget.AppCompatButton) bindings[2];
         this.mboundView2.setTag(null);
-        this.mboundView3 = (androidx.appcompat.widget.AppCompatButton) bindings[3];
-        this.mboundView3.setTag(null);
         setRootTag(root);
         // listeners
         mCallback32 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
-        mCallback33 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 3);
         mCallback31 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
@@ -121,7 +114,6 @@ public class FragmentSeekerDeleteAccountBindingImpl extends FragmentSeekerDelete
 
             this.imageView.setOnClickListener(mCallback31);
             this.mboundView2.setOnClickListener(mCallback32);
-            this.mboundView3.setOnClickListener(mCallback33);
         }
     }
     // Listener Stub Implementations
@@ -142,23 +134,6 @@ public class FragmentSeekerDeleteAccountBindingImpl extends FragmentSeekerDelete
 
 
                     handler.onContinue();
-                }
-                break;
-            }
-            case 3: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onSkip();
                 }
                 break;
             }

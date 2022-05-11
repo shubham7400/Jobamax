@@ -19,8 +19,7 @@ public class FragmentSeekerAddPersonalTrackJobBindingImpl extends FragmentSeeker
         sViewsWithIds.put(R.id.et_job_title, 4);
         sViewsWithIds.put(R.id.et_city, 5);
         sViewsWithIds.put(R.id.et_company_name, 6);
-        sViewsWithIds.put(R.id.et_about_job, 7);
-        sViewsWithIds.put(R.id.btn_save_info, 8);
+        sViewsWithIds.put(R.id.btn_save_info, 7);
     }
     // views
     @NonNull
@@ -31,12 +30,11 @@ public class FragmentSeekerAddPersonalTrackJobBindingImpl extends FragmentSeeker
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAddPersonalTrackJobBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAddPersonalTrackJobBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[8]
-            , (android.widget.EditText) bindings[7]
+            , (android.widget.Button) bindings[7]
             , (android.widget.EditText) bindings[5]
             , (android.widget.EditText) bindings[6]
             , (android.widget.EditText) bindings[4]

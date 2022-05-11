@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
@@ -16,9 +15,6 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ItemSeekerPreviewVolunteeringBinding extends ViewDataBinding {
-  @NonNull
-  public final CardView cvImage;
-
   @NonNull
   public final ImageView ivCompany;
 
@@ -32,10 +28,9 @@ public abstract class ItemSeekerPreviewVolunteeringBinding extends ViewDataBindi
   public final TextView tvJob;
 
   protected ItemSeekerPreviewVolunteeringBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, CardView cvImage, ImageView ivCompany, TextView tvCompanyName,
-      TextView tvDateDuration, TextView tvJob) {
+      int _localFieldCount, ImageView ivCompany, TextView tvCompanyName, TextView tvDateDuration,
+      TextView tvJob) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.cvImage = cvImage;
     this.ivCompany = ivCompany;
     this.tvCompanyName = tvCompanyName;
     this.tvDateDuration = tvDateDuration;

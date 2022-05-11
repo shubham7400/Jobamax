@@ -62,11 +62,7 @@ class SeekerAddPersonalTrackJobFragment : BaseFragmentMain<FragmentSeekerAddPers
              }else{
                  pfObject.put(ParseTableFields.companyName.toString(), binding.etCompanyName.text.toString())
              }
-             if (binding.etAboutJob.text.isNullOrEmpty()){
-                 pfObject.put(ParseTableFields.description.toString(), "")
-             }else{
-                 pfObject.put(ParseTableFields.description.toString(), binding.etAboutJob.text.toString())
-             }
+
              pfObject.put("phases", convertCustomObjectToJsonString(PhaseGroup()))
              progressHud.show()
              pfObject.saveInBackground {

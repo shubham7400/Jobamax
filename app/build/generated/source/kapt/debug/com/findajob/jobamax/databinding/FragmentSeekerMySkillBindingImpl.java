@@ -24,7 +24,6 @@ public class FragmentSeekerMySkillBindingImpl extends FragmentSeekerMySkillBindi
         sViewsWithIds.put(R.id.actv_soft_skill, 9);
         sViewsWithIds.put(R.id.iv_soft_skill_add_btn, 10);
         sViewsWithIds.put(R.id.cg_soft_skill, 11);
-        sViewsWithIds.put(R.id.btn_save_info, 12);
     }
     // views
     @NonNull
@@ -35,13 +34,12 @@ public class FragmentSeekerMySkillBindingImpl extends FragmentSeekerMySkillBindi
     // Inverse Binding Event Handlers
 
     public FragmentSeekerMySkillBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerMySkillBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.AutoCompleteTextView) bindings[5]
             , (android.widget.AutoCompleteTextView) bindings[9]
-            , (android.widget.Button) bindings[12]
             , (com.google.android.material.chip.ChipGroup) bindings[11]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[6]

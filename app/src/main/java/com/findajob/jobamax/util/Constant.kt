@@ -21,6 +21,17 @@ const val REQUEST_ALL_PERMISSIONS = 101
 val permissions = arrayOf( Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
 const val JOB_SEEKER_TYPE = "1"
 const val PROFILE_PIC_URL = "profile_pic_url"
+const val FRENCH_LANG_CODE = "fr"
+const val ENGLISH_LANG_CODE = "en"
+val trackingEventMap = hashMapOf(
+    "Online interview" to "Entretien en ligne",
+    "Assesment" to "Évaluation",
+    "Phone call" to "Appel téléphonique",
+    "Interview" to "Entretien",
+    "Hired" to "Embauché",
+    "Refused" to "Refusé",
+    "Added to wishlist" to "Ajouté à la liste de souhaits"
+)
 
 
 const val GOOGLE_LOGIN_TYPE = "google"

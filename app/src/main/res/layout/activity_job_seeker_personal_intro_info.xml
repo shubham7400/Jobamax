@@ -372,15 +372,11 @@
                     <!-- save button -->
                     <Button
                         android:id="@+id/btnSave"
-                        android:background="@drawable/bg_gradient_rounded"
-                        android:textColor="@color/white"
+                        style="@style/button_gradient_rect"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginHorizontal="37dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/et_invitation_code"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
                         android:layout_marginBottom="18sp"
                         android:layout_marginTop="30dp"
                         android:onClick="@{() -> handler.onSubmitClicked()}"

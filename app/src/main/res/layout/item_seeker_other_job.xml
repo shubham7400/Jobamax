@@ -10,16 +10,17 @@
         android:padding="10dp"
         android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/iv_company"
             android:layout_width="50dp"
             android:layout_marginVertical="20dp"
             android:layout_height="50dp"
-            android:src="@drawable/default_user_img"
+            android:src="@drawable/wishlist_dummy"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -85,5 +86,22 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_latest_phase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:padding="2dp"
+            android:layout_marginTop="5dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:fontFamily="@font/opensans_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/acbtn_apply" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

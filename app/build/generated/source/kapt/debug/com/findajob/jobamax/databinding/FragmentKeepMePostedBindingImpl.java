@@ -25,9 +25,9 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
     private final android.widget.TextView mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback49;
+    private final android.view.View.OnClickListener mCallback47;
     @Nullable
-    private final android.view.View.OnClickListener mCallback50;
+    private final android.view.View.OnClickListener mCallback46;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -47,8 +47,8 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback49 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
-        mCallback50 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback47 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 2);
+        mCallback46 = new com.findajob.jobamax.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -110,31 +110,14 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback49);
-            this.mboundView2.setOnClickListener(mCallback50);
+            this.mboundView1.setOnClickListener(mCallback46);
+            this.mboundView2.setOnClickListener(mCallback47);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // handler
-                com.findajob.jobamax.login.KeepMePostedInterface handler = mHandler;
-                // handler != null
-                boolean handlerJavaLangObjectNull = false;
-
-
-
-                handlerJavaLangObjectNull = (handler) != (null);
-                if (handlerJavaLangObjectNull) {
-
-
-                    handler.onNotifiedClicked();
-                }
-                break;
-            }
             case 2: {
                 // localize variables for thread safety
                 // handler
@@ -149,6 +132,23 @@ public class FragmentKeepMePostedBindingImpl extends FragmentKeepMePostedBinding
 
 
                     handler.onNotNowClicked();
+                }
+                break;
+            }
+            case 1: {
+                // localize variables for thread safety
+                // handler
+                com.findajob.jobamax.login.KeepMePostedInterface handler = mHandler;
+                // handler != null
+                boolean handlerJavaLangObjectNull = false;
+
+
+
+                handlerJavaLangObjectNull = (handler) != (null);
+                if (handlerJavaLangObjectNull) {
+
+
+                    handler.onNotifiedClicked();
                 }
                 break;
             }

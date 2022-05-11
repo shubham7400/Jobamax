@@ -14,11 +14,10 @@ public class ItemSeekerPreviewSchoolBindingImpl extends ItemSeekerPreviewSchoolB
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.cv_image, 1);
-        sViewsWithIds.put(R.id.iv_institute, 2);
-        sViewsWithIds.put(R.id.tv_institute_name, 3);
-        sViewsWithIds.put(R.id.tv_program_name, 4);
-        sViewsWithIds.put(R.id.tv_date_duration, 5);
+        sViewsWithIds.put(R.id.iv_institute, 1);
+        sViewsWithIds.put(R.id.tv_institute_name, 2);
+        sViewsWithIds.put(R.id.tv_program_name, 3);
+        sViewsWithIds.put(R.id.tv_date_duration, 4);
     }
     // views
     @NonNull
@@ -29,15 +28,14 @@ public class ItemSeekerPreviewSchoolBindingImpl extends ItemSeekerPreviewSchoolB
     // Inverse Binding Event Handlers
 
     public ItemSeekerPreviewSchoolBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private ItemSeekerPreviewSchoolBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.cardview.widget.CardView) bindings[1]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[3]
+            , (android.widget.ImageView) bindings[1]
             , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[3]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

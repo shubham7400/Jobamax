@@ -6,8 +6,11 @@ import androidx.navigation.fragment.findNavController
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerDeleteAccountBinding
+import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.jobseeker.profile.account.deleteAccount.adapter.LeavingReason
 import com.findajob.jobamax.jobseeker.profile.account.deleteAccount.adapter.LeavingReasonAdapter
+import com.findajob.jobamax.preference.getLanguage
+import com.findajob.jobamax.util.ENGLISH_LANG_CODE
 import com.findajob.jobamax.util.toast
 
 class SeekerDeleteAccountFragment : BaseFragmentMain<FragmentSeekerDeleteAccountBinding>(), SeekerDeleteAccountInterface {
@@ -38,9 +41,7 @@ class SeekerDeleteAccountFragment : BaseFragmentMain<FragmentSeekerDeleteAccount
     }
 
     private fun initRvLeaveReason() {
-        leavingAdapter.collection =
-            resources.getStringArray(R.array.leaving_reason).map { LeavingReason(it, false) }
-
+        leavingAdapter.collection = resources.getStringArray(R.array.leaving_reason).map { LeavingReason(it, false) }
         binding.apply {
             rvReason.adapter = leavingAdapter
         }
@@ -54,7 +55,7 @@ class SeekerDeleteAccountFragment : BaseFragmentMain<FragmentSeekerDeleteAccount
         val reasons = leavingAdapter.fetchLeavingReason()
         val args = Bundle()
         if (reasons.isEmpty()) {
-            toast(getString(R.string.please_select_reason))
+            BasicDialog(requireActivity(), getString(R.string.please_select_reason), false) {}.show()
             return
         }
         args.putString(LeavingReason::class.simpleName, reasons.toString())
@@ -64,7 +65,5 @@ class SeekerDeleteAccountFragment : BaseFragmentMain<FragmentSeekerDeleteAccount
         )
     }
 
-    override fun onSkip() {
-        navController.navigate(R.id.action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment)
-    }
+
 }

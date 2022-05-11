@@ -15,11 +15,10 @@ public class ItemSeekerPreviewExperienceBindingImpl extends ItemSeekerPreviewExp
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.cl_most_parent, 1);
-        sViewsWithIds.put(R.id.cv_image, 2);
-        sViewsWithIds.put(R.id.iv_company, 3);
-        sViewsWithIds.put(R.id.tv_company_name, 4);
-        sViewsWithIds.put(R.id.tv_profession, 5);
-        sViewsWithIds.put(R.id.tv_date_duration, 6);
+        sViewsWithIds.put(R.id.iv_company, 2);
+        sViewsWithIds.put(R.id.tv_company_name, 3);
+        sViewsWithIds.put(R.id.tv_profession, 4);
+        sViewsWithIds.put(R.id.tv_date_duration, 5);
     }
     // views
     @NonNull
@@ -30,16 +29,15 @@ public class ItemSeekerPreviewExperienceBindingImpl extends ItemSeekerPreviewExp
     // Inverse Binding Event Handlers
 
     public ItemSeekerPreviewExperienceBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ItemSeekerPreviewExperienceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
-            , (androidx.cardview.widget.CardView) bindings[2]
-            , (android.widget.ImageView) bindings[3]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[6]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[4]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

@@ -113,17 +113,14 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_gradient_rounded"
+                android:textColor="@color/white"
+                android:paddingHorizontal="5dp"
+                android:textAllCaps="false"
                 android:onClick="@{() -> handler.onContinue()}"
                 android:text="@string/continue_to_account_deletion" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:onClick="@{() -> handler.onSkip()}"
-                android:text="@string/skip"
-                android:textColor="@color/gray"
-                android:textSize="18sp" />
+
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

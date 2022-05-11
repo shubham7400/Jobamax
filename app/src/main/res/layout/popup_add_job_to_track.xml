@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/opensans_regular"
             android:padding="10dp"
-            android:text="Add to tracking"
+            android:text="@string/add_to_tracking"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

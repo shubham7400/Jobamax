@@ -49,7 +49,7 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="delete_my_account">Delete my account</string>
     <string name="log_out">Log out</string>
-    <string name="arg_version">Version 1.0</string>
+    <string name="arg_version">Version 1.0.22</string>
     <string name="gender_with_asterisk">Gender<font fgcolor='#0975FE'>*</font></string>
     <string name="enter_gender_here">Enter gender here</string>
     <string name="submit">Submit</string>
@@ -76,7 +76,7 @@
     <string name="type_of_work">Type of Work</string>
     <string name="job">Job*</string>
     <string name="about_job">About Job</string>
-    <string name="experience">Experiences</string>
+    <string name="experiences">Experiences</string>
     <string name="permanent">Permanent</string>
     <string name="part_time">Part-time</string>
     <string name="full_time">full-time</string>
@@ -99,8 +99,8 @@
     <string name="add_experiences">Add Experience</string>
     <string name="skills">Skills</string>
     <string name="about_me">About Me</string>
-    <string name="enter_company">Enter Company</string>
-    <string name="enter_job">Enter Job</string>
+    <string name="enter_company">Enter organisation name</string>
+    <string name="enter_job">Enter activity name</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
@@ -152,16 +152,18 @@
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete Your account?</string>
     <string name="please_let_us_know">Please let us know the reason you are leaving.</string>
     <string name="continue_to_account_deletion">Continue to Account Deletion</string>
-    <string name="please_select_reason">Please select reason</string>
+    <string name="please_select_reason">Please select any reason why are you leaving</string>
     <string-array name="leaving_reason">
         <item>I found what I was looking for</item>
-        <item>App too expensive</item>
-        <item>I don’t like the quality of the service</item>
-        <item>I got into troubles</item>
-        <item>I just don’t have time for it</item>
+        <item>The coaching services is too expensive</item>
+        <item>I can\'t find the right jobs on the platform</item>
+        <item>There are too many bugs</item>
+        <item>I found a more efficient competing solution</item>
+        <item>Other</item>
     </string-array>
 
-    <string name="education">Educations</string>
+
+    <string name="education">Education</string>
     <string name="click_to_add_location">Click to add location</string>
 
     <string name="enable_push_notifications">Enable push-notifications</string>
@@ -174,9 +176,10 @@
     <string name="two_more">two-more</string>
     <string name="wishlist">Wishlist</string>
     <string name="select_date">Select Date</string>
-    <string name="enter_description">Enter Description</string>
+    <string name="select_date_education">Select Date</string>
+    <string name="enter_description">Start typing here…</string>
     <string name="my_experience">My Experience</string>
-    <string name="add_another">Add Another</string>
+    <string name="add_another">Add</string>
     <string name="go_back_to_my_profile">Go back to my profile</string>
     <string name="new_education">New Education</string>
     <string name="add_your_school">Add your school</string>
@@ -185,9 +188,9 @@
     <string name="save_information">Save Information</string>
     <string name="my_education">My Education</string>
     <string name="add_volunteering">Add Volunteering</string>
-    <string name="activity">Activity*</string>
+    <string name="activity">Activity</string>
     <string name="organization">Organization</string>
-    <string name="my_volunteering">My Volunteering</string>
+    <string name="my_volunteering">Volunteerings</string>
     <string name="my_skills">My Skills</string>
     <string name="hard_skills">Hard Skills</string>
     <string name="soft_skills">Soft Skills</string>
@@ -281,7 +284,7 @@
     <string name="thur">Thur</string>
     <string name="fri">Fri</string>
     <string name="sat">Sat</string>
-    <string name="pictures_1_5">Pictures 1/5</string>
+    <string name="pictures_1_5">Photos 1/5</string>
     <string name="record">Record</string>
     <string name="stop">Stop</string>
     <string name="about_me2">About me</string>
@@ -307,6 +310,38 @@
     <string name="hired_phase">Hired</string>
     <string name="refused_phase">Refused</string>
     <string name="select_deadline">Select Deadline</string>
+    <string name="setting">Settings</string>
+    <string name="newsletter_instruction">Turning this off will prevent receiving any news, update and offer from jobamax</string>
+    <string name="no">No</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="delete_account_information">If you delete your account, you will permanently loose your profile, messages, photos and matches.\n\n This action can not be undone.\n\n Are you sure you want to delete your account?</string>
+    <string name="add_to_tracking">Add to tracking</string>
+    <string name="hard_skills_preview">Hard Skills</string>
+    <string name="job_search_category_row1">Transportation and Material Moving Occupations</string>
+    <string name="job_search_category_row2">Sales and Related Occupations</string>
+    <string name="job_search_category_row3">Office and Administrative Support Occupations</string>
+    <string name="job_search_category_row4">Healthcare Practitioners and Technical Occupations</string>
+    <string name="job_search_category_row5">Management Occupations</string>
+    <string name="job_search_category_row6">Food Preparation and Serving Related Occupations</string>
+    <string name="job_search_category_row7">Computer and Mathematical Occupations</string>
+    <string name="job_search_category_row8">Business and Financial Operations Occupations</string>
+    <string name="job_search_category_row9">Healthcare Support Occupations</string>
+    <string name="job_search_category_row10">Installation, Maintenance, and Repair Occupations</string>
+    <string name="job_search_category_row11">Production Occupations</string>
+    <string name="job_search_category_row12">Educational Instruction and Library Occupations</string>
+    <string name="job_search_category_row13">Personal Care and Service Occupations</string>
+    <string name="job_search_category_row14">Architecture and Engineering Occupations</string>
+    <string name="job_search_category_row15">Community and Social Service Occupations</string>
+    <string name="job_search_category_row16">Construction and Extraction Occupations</string>
+    <string name="job_search_category_row17">Arts, Design, Entertainment, Sports, and Media Occupations</string>
+    <string name="job_search_category_row18">Life, Physical, and Social Science Occupations</string>
+    <string name="job_search_category_row19">Building and Grounds Cleaning and Maintenance Occupations</string>
+    <string name="job_search_category_row20">Protective Service Occupations</string>
+    <string name="job_search_category_row21">Legal Occupations</string>
+    <string name="job_search_category_row22">Farming, Fishing, and Forestry Occupations</string>
+    <string name="job_search_category_row23">Military Specific Occupations</string>
+    <string name="ideal_job_info">Describe your dream job on video, in writing or vocally. You can talk about the type of missions, the team, the training, the work environment, etc.</string>
+    <string name="portfolio_info">Show your pro projects, competitions, team photos, graduation or just talk about your achievements.</string>
 
 
 </resources>

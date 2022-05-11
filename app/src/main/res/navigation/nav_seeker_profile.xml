@@ -122,6 +122,17 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_seekerProfileFragment_to_nav_job_search"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerProfileFragment"
+            app:destination="@id/nav_job_search" />
+
+
     </fragment>
     <fragment
         android:id="@+id/seekerAboutMeFragment"
@@ -160,7 +171,17 @@
         android:id="@+id/seekerMySkillFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerMySkillFragment"
         android:label="fragment_seeker_my_skill"
-        tools:layout="@layout/fragment_seeker_my_skill" />
+        tools:layout="@layout/fragment_seeker_my_skill" >
+        <action
+            android:id="@+id/action_seekerMySkillFragment_to_seekerProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerProfileFragment"
+            app:destination="@id/seekerProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seekerNewEducationFragment"
         android:name="com.findajob.jobamax.jobseeker.profile.SeekerNewEducationFragment"
@@ -284,4 +305,5 @@
         android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioImageFragment"
         android:label="fragment_portfolio_image"
         tools:layout="@layout/fragment_portfolio_image" />
+
 </navigation>

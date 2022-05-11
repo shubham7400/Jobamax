@@ -29,6 +29,9 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ConstraintLayout clEducation;
 
   @NonNull
+  public final ConstraintLayout clHeader;
+
+  @NonNull
   public final ConstraintLayout clImages;
 
   @NonNull
@@ -50,9 +53,6 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final AutoCompleteTextView etIdealWorkspace;
 
   @NonNull
-  public final ImageView imageView11;
-
-  @NonNull
   public final ImageView ivAddIdealWorkspaceBtn;
 
   @NonNull
@@ -71,19 +71,19 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   public final ImageView ivIdealJobAudio;
 
   @NonNull
+  public final ImageView ivIdealJobInfo;
+
+  @NonNull
   public final ImageView ivIdealJobMessage;
 
   @NonNull
   public final ImageView ivIdealJobVideo;
 
   @NonNull
-  public final ImageView ivInfco;
-
-  @NonNull
-  public final ImageView ivInfo;
-
-  @NonNull
   public final ImageView ivJobSearch;
+
+  @NonNull
+  public final ImageView ivPortfolioInfo;
 
   @NonNull
   public final ImageView ivPreview;
@@ -188,14 +188,14 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerProfileBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ChipGroup cgIdealWorkspace, ConstraintLayout clEducation, ConstraintLayout clImages,
-      ConstraintLayout clInterest, ConstraintLayout clJobs, ConstraintLayout clSkills,
-      ConstraintLayout clVolunteering, ConstraintLayout constraintLayout3,
-      AutoCompleteTextView etIdealWorkspace, ImageView imageView11,
+      ChipGroup cgIdealWorkspace, ConstraintLayout clEducation, ConstraintLayout clHeader,
+      ConstraintLayout clImages, ConstraintLayout clInterest, ConstraintLayout clJobs,
+      ConstraintLayout clSkills, ConstraintLayout clVolunteering,
+      ConstraintLayout constraintLayout3, AutoCompleteTextView etIdealWorkspace,
       ImageView ivAddIdealWorkspaceBtn, ImageView ivBackButton, ImageView ivCalender,
       ImageView ivCalendxer, ImageView ivCalvender, ImageView ivIdealJobAudio,
-      ImageView ivIdealJobMessage, ImageView ivIdealJobVideo, ImageView ivInfco, ImageView ivInfo,
-      ImageView ivJobSearch, ImageView ivPreview, CircleImageView ivUser,
+      ImageView ivIdealJobInfo, ImageView ivIdealJobMessage, ImageView ivIdealJobVideo,
+      ImageView ivJobSearch, ImageView ivPortfolioInfo, ImageView ivPreview, CircleImageView ivUser,
       RelativeLayout rlIdealJobAudio, RelativeLayout rlIdealJobMessage,
       RelativeLayout rlIdealJobVideo, RelativeLayout rlPortfolioImage,
       RelativeLayout rlPortfolioMessage, RelativeLayout rlPortfolioVideo, TextView textViedw76,
@@ -209,6 +209,7 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     super(_bindingComponent, _root, _localFieldCount);
     this.cgIdealWorkspace = cgIdealWorkspace;
     this.clEducation = clEducation;
+    this.clHeader = clHeader;
     this.clImages = clImages;
     this.clInterest = clInterest;
     this.clJobs = clJobs;
@@ -216,18 +217,17 @@ public abstract class FragmentSeekerProfileBinding extends ViewDataBinding {
     this.clVolunteering = clVolunteering;
     this.constraintLayout3 = constraintLayout3;
     this.etIdealWorkspace = etIdealWorkspace;
-    this.imageView11 = imageView11;
     this.ivAddIdealWorkspaceBtn = ivAddIdealWorkspaceBtn;
     this.ivBackButton = ivBackButton;
     this.ivCalender = ivCalender;
     this.ivCalendxer = ivCalendxer;
     this.ivCalvender = ivCalvender;
     this.ivIdealJobAudio = ivIdealJobAudio;
+    this.ivIdealJobInfo = ivIdealJobInfo;
     this.ivIdealJobMessage = ivIdealJobMessage;
     this.ivIdealJobVideo = ivIdealJobVideo;
-    this.ivInfco = ivInfco;
-    this.ivInfo = ivInfo;
     this.ivJobSearch = ivJobSearch;
+    this.ivPortfolioInfo = ivPortfolioInfo;
     this.ivPreview = ivPreview;
     this.ivUser = ivUser;
     this.rlIdealJobAudio = rlIdealJobAudio;

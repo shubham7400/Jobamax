@@ -14,7 +14,7 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.imageView11, 3);
+        sViewsWithIds.put(R.id.cl_header, 3);
         sViewsWithIds.put(R.id.iv_back_button, 4);
         sViewsWithIds.put(R.id.iv_job_search, 5);
         sViewsWithIds.put(R.id.iv_preview, 6);
@@ -23,7 +23,7 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
         sViewsWithIds.put(R.id.tv_elevetor_pitch_section, 9);
         sViewsWithIds.put(R.id.tv_about_me_btn, 10);
         sViewsWithIds.put(R.id.tv_ddd, 11);
-        sViewsWithIds.put(R.id.iv_info, 12);
+        sViewsWithIds.put(R.id.iv_ideal_job_info, 12);
         sViewsWithIds.put(R.id.rl_ideal_job_video, 13);
         sViewsWithIds.put(R.id.tv_ideal_job_video_title, 14);
         sViewsWithIds.put(R.id.iv_ideal_job_video, 15);
@@ -53,7 +53,7 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
         sViewsWithIds.put(R.id.textViedwf76, 39);
         sViewsWithIds.put(R.id.textViewx86d, 40);
         sViewsWithIds.put(R.id.tv_dddd, 41);
-        sViewsWithIds.put(R.id.iv_infco, 42);
+        sViewsWithIds.put(R.id.iv_portfolio_info, 42);
         sViewsWithIds.put(R.id.rl_portfolio_video, 43);
         sViewsWithIds.put(R.id.tv_portfolio_video_title, 44);
         sViewsWithIds.put(R.id.iv_calender, 45);
@@ -82,6 +82,7 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
         super(bindingComponent, root, 0
             , (com.google.android.material.chip.ChipGroup) bindings[54]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[23]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[3]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[38]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[35]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[26]
@@ -89,18 +90,17 @@ public class FragmentSeekerProfileBindingImpl extends FragmentSeekerProfileBindi
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[29]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[8]
             , (android.widget.AutoCompleteTextView) bindings[53]
-            , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[52]
             , (android.widget.ImageView) bindings[4]
             , (android.widget.ImageView) bindings[45]
             , (android.widget.ImageView) bindings[51]
             , (android.widget.ImageView) bindings[48]
             , (android.widget.ImageView) bindings[21]
+            , (android.widget.ImageView) bindings[12]
             , (android.widget.ImageView) bindings[18]
             , (android.widget.ImageView) bindings[15]
-            , (android.widget.ImageView) bindings[42]
-            , (android.widget.ImageView) bindings[12]
             , (android.widget.ImageView) bindings[5]
+            , (android.widget.ImageView) bindings[42]
             , (android.widget.ImageView) bindings[6]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[2]
             , (android.widget.RelativeLayout) bindings[19]

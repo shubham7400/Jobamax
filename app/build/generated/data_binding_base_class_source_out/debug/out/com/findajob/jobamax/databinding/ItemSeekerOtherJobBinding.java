@@ -4,6 +4,7 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +13,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -24,7 +24,10 @@ public abstract class ItemSeekerOtherJobBinding extends ViewDataBinding {
   public final ConstraintLayout clParent;
 
   @NonNull
-  public final CircleImageView ivCompany;
+  public final ConstraintLayout constraintLayout2;
+
+  @NonNull
+  public final ImageView ivCompany;
 
   @NonNull
   public final TextView tvCity;
@@ -35,16 +38,22 @@ public abstract class ItemSeekerOtherJobBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvJobTitle;
 
+  @NonNull
+  public final TextView tvLatestPhase;
+
   protected ItemSeekerOtherJobBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton acbtnApply, ConstraintLayout clParent, CircleImageView ivCompany,
-      TextView tvCity, TextView tvCompanyName, TextView tvJobTitle) {
+      AppCompatButton acbtnApply, ConstraintLayout clParent, ConstraintLayout constraintLayout2,
+      ImageView ivCompany, TextView tvCity, TextView tvCompanyName, TextView tvJobTitle,
+      TextView tvLatestPhase) {
     super(_bindingComponent, _root, _localFieldCount);
     this.acbtnApply = acbtnApply;
     this.clParent = clParent;
+    this.constraintLayout2 = constraintLayout2;
     this.ivCompany = ivCompany;
     this.tvCity = tvCity;
     this.tvCompanyName = tvCompanyName;
     this.tvJobTitle = tvJobTitle;
+    this.tvLatestPhase = tvLatestPhase;
   }
 
   @NonNull

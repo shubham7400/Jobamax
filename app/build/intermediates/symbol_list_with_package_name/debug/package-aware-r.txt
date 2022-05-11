@@ -3669,7 +3669,6 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable grad_button
 drawable grad_round_button
-drawable heart
 drawable heart_holo
 drawable ic_archive
 drawable ic_arrow_back
@@ -3696,6 +3695,7 @@ drawable ic_google
 drawable ic_job_type_background
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
+drawable ic_link
 drawable ic_linkedin
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
@@ -3813,6 +3813,7 @@ drawable rounded_purpal_box_trans
 drawable rounded_red_box_trans
 drawable rounded_white_box
 drawable rounded_white_box_50
+drawable rounded_white_box_grey_stroke
 drawable rounded_white_box_sad_white_strok
 drawable school_dummy
 drawable seek
@@ -4010,7 +4011,7 @@ id action_jobSeekerAccountFragment_to_jobSeekerPersonalInformationFragment
 id action_jobSeekerAccountFragment_to_jobSeekerPushNotificationFragment
 id action_jobSeekerAccountFragment_to_nav_seeker_profile
 id action_jobSeekerAccountFragment_to_seekerChangePasswordFragment
-id action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2
+id action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment
 id action_jobSeekerHomeFragment_to_nav_job_search
 id action_jobSeekerHomeFragment_to_nav_job_tracking
 id action_jobSeekerHomeFragment_to_nav_seeker_account
@@ -4040,12 +4041,14 @@ id action_seekerJobsFilterFragment_to_nav_seeker_profile
 id action_seekerJobsFragment_to_nav_seeker_profile
 id action_seekerJobsFragment_to_seekerJobsFilterFragment
 id action_seekerJobsFragment_to_seekerWishListFragment
+id action_seekerMySkillFragment_to_seekerProfileFragment
 id action_seekerNewEducationFragment_to_seekerProfileFragment
 id action_seekerProfileFragment_self
 id action_seekerProfileFragment_to_idealJobAudioFragment
 id action_seekerProfileFragment_to_idealJobDescriptionFragment
 id action_seekerProfileFragment_to_idealJobImagesFragment
 id action_seekerProfileFragment_to_idealJobVideoFragment
+id action_seekerProfileFragment_to_nav_job_search
 id action_seekerProfileFragment_to_portfolioDescriptionFragment
 id action_seekerProfileFragment_to_portfolioImageFragment
 id action_seekerProfileFragment_to_portfolioVideoFragment
@@ -4208,6 +4211,7 @@ id cl_change_language
 id cl_date_cell
 id cl_education
 id cl_end_date
+id cl_header
 id cl_images
 id cl_img1
 id cl_img2
@@ -4330,7 +4334,6 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id et_about_job
 id et_activity
 id et_city
 id et_company_name
@@ -4449,7 +4452,6 @@ id guideline
 id guideline2
 id header
 id header_title
-id hideMeFlag
 id hideable
 id home
 id homeAsUp
@@ -4471,6 +4473,7 @@ id imageView
 id imageView10
 id imageView11
 id imageView12
+id imageView2
 id imageView6
 id imageView7
 id imageView8
@@ -4527,16 +4530,18 @@ id iv_filter_job
 id iv_final
 id iv_hard_skill_add_btn
 id iv_ideal_job_audio
+id iv_ideal_job_info
 id iv_ideal_job_message
 id iv_ideal_job_video
 id iv_image
-id iv_infco
-id iv_info
 id iv_insta
 id iv_instagram
 id iv_institute
 id iv_job_search
 id iv_linkedin
+id iv_my_personal_info
+id iv_newsletter_arrow
+id iv_portfolio_info
 id iv_portfolio_video
 id iv_preview
 id iv_privacy_icon
@@ -4614,6 +4619,7 @@ id ll_float_buttons
 id ll_hard_skill
 id ll_industry
 id ll_job_title
+id ll_links
 id ll_match_percent
 id ll_phone_number_field
 id ll_rewind
@@ -5137,6 +5143,7 @@ id tv_ideal_job_description
 id tv_ideal_job_message_title
 id tv_ideal_job_title
 id tv_ideal_job_video_title
+id tv_ideal_workspace_title
 id tv_import_resume_btn
 id tv_inProgress
 id tv_industry
@@ -5159,9 +5166,11 @@ id tv_location
 id tv_login
 id tv_message
 id tv_name
+id tv_newsletter
 id tv_next_deadline
 id tv_next_interview
 id tv_next_interview_title
+id tv_no_btn
 id tv_no_data
 id tv_other_job
 id tv_overlay_label
@@ -5193,6 +5202,7 @@ id tv_title
 id tv_title_about
 id tv_toolbar_title
 id tv_volunteering_title
+id tv_yes_btn
 id unchecked
 id uniform
 id unknown
@@ -5373,6 +5383,7 @@ layout dialog_registration_successful
 layout dialog_repost_job
 layout dialog_share_jobamax
 layout dialog_work_in_progress
+layout dialog_yes_no
 layout exo_list_divider
 layout exo_player_control_view
 layout exo_player_view
@@ -5444,6 +5455,7 @@ layout item_image
 layout item_job_search_filter_category
 layout item_job_title
 layout item_leaving_reason
+layout item_link
 layout item_portfolio_image
 layout item_portfolio_link
 layout item_search_query_company
@@ -5664,6 +5676,7 @@ string add_another
 string add_experiences
 string add_job_in_tracking
 string add_link
+string add_to_tracking
 string add_volunteering
 string add_your_degree
 string add_your_school
@@ -5677,6 +5690,7 @@ string applied
 string apply
 string apprenticeship
 string archive
+string are_you_sure
 string are_you_sure_you_want_to_delete
 string arg_version
 string assesment_phase
@@ -5768,6 +5782,7 @@ string current_student
 string date_of_birth_with_asterisk
 string default_web_client_id
 string delete_account
+string delete_account_information
 string delete_my_account
 string description
 string dismiss_button_content_description
@@ -5858,7 +5873,7 @@ string exo_track_surround
 string exo_track_surround_5_point_1
 string exo_track_surround_7_point_1
 string exo_track_unknown
-string experience
+string experiences
 string explain_your_career_goals_and_what_can_you_bring_to_a_company
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -5886,6 +5901,7 @@ string google_crash_reporting_api_key
 string google_maps_key
 string google_storage_bucket
 string hard_skills
+string hard_skills_preview
 string help_and_support
 string hide_bottom_view_on_scroll_behavior
 string hide_me
@@ -5895,6 +5911,7 @@ string i_accept
 string i_agree_to_receive_push_notifications_from_jobamax_to_inform_me_about_my_activity_on_the_platform
 string i_want_to_be_notified
 string icon_content_description
+string ideal_job_info
 string images
 string import_my_linkedin_profile
 string import_resume
@@ -5913,6 +5930,29 @@ string invitation_code
 string item_view_role_description
 string job
 string job_description
+string job_search_category_row1
+string job_search_category_row10
+string job_search_category_row11
+string job_search_category_row12
+string job_search_category_row13
+string job_search_category_row14
+string job_search_category_row15
+string job_search_category_row16
+string job_search_category_row17
+string job_search_category_row18
+string job_search_category_row19
+string job_search_category_row2
+string job_search_category_row20
+string job_search_category_row21
+string job_search_category_row22
+string job_search_category_row23
+string job_search_category_row3
+string job_search_category_row4
+string job_search_category_row5
+string job_search_category_row6
+string job_search_category_row7
+string job_search_category_row8
+string job_search_category_row9
 string job_title
 string jobamax_jobs
 string label_month
@@ -6038,8 +6078,10 @@ string new_education
 string new_matches
 string new_password
 string newsletter
+string newsletter_instruction
 string next_deadline
 string next_interview
+string no
 string no_data
 string no_deadline
 string no_interview
@@ -6081,6 +6123,7 @@ string places_search_error
 string places_try_again
 string please_let_us_know
 string please_select_reason
+string portfolio_info
 string postcode_asterisk
 string preview
 string privacy_policy
@@ -6109,10 +6152,12 @@ string see_job_offers
 string see_less
 string select_country
 string select_date
+string select_date_education
 string select_deadline
 string select_phase
 string send_read_receipts
 string send_to_friend
+string setting
 string share
 string share_jobamax
 string skills
@@ -7227,6 +7272,8 @@ style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style account_label
 style account_subheading_seeker
+style button_gradient_rect
+style button_gradient_rect32
 style change_password_field_recruiter
 style change_password_heading_recruiter
 style circular_image
@@ -7248,6 +7295,8 @@ style regular_subtext
 style screen_title
 style seeker_account_menu
 style seeker_account_menu_arrow_right
+style title_bold
+style title_regular
 style tooltip_bubble_text
 style v_divider
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle

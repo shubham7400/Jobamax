@@ -38,17 +38,11 @@
 				app:layout_constraintTop_toTopOf="parent" />
 
 			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				style="@style/button_gradient_rect32"
+				android:layout_marginHorizontal="30dp"
 				android:layout_marginTop="32dp"
-				android:background="@drawable/grad_button"
 				android:onClick="@{() -> handler.onAllowLocationClicked()}"
-				android:paddingLeft="48dp"
-				android:paddingRight="48dp"
 				android:text="@string/allow_location"
-				android:textColor="@color/white"
-				android:textSize="18sp"
-				android:textStyle="bold"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/imageView7" />

@@ -22,6 +22,7 @@ import com.findajob.jobamax.databinding.CalendarCellBindingImpl;
 import com.findajob.jobamax.databinding.DialogAddTrackingJobPhaseBindingImpl;
 import com.findajob.jobamax.databinding.DialogDeleteAccountBindingImpl;
 import com.findajob.jobamax.databinding.DialogRepostJobBindingImpl;
+import com.findajob.jobamax.databinding.DialogYesNoBindingImpl;
 import com.findajob.jobamax.databinding.FragmentIdealJobAudioBindingImpl;
 import com.findajob.jobamax.databinding.FragmentIdealJobDescriptionBindingImpl;
 import com.findajob.jobamax.databinding.FragmentIdealJobImagesBindingImpl;
@@ -80,6 +81,7 @@ import com.findajob.jobamax.databinding.ItemImageBindingImpl;
 import com.findajob.jobamax.databinding.ItemJobSearchFilterCategoryBindingImpl;
 import com.findajob.jobamax.databinding.ItemJobTitleBindingImpl;
 import com.findajob.jobamax.databinding.ItemLeavingReasonBindingImpl;
+import com.findajob.jobamax.databinding.ItemLinkBindingImpl;
 import com.findajob.jobamax.databinding.ItemPortfolioImageBindingImpl;
 import com.findajob.jobamax.databinding.ItemPortfolioLinkBindingImpl;
 import com.findajob.jobamax.databinding.ItemSearchQueryCompanyBindingImpl;
@@ -141,159 +143,163 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_DIALOGREPOSTJOB = 16;
 
-  private static final int LAYOUT_FRAGMENTIDEALJOBAUDIO = 17;
+  private static final int LAYOUT_DIALOGYESNO = 17;
 
-  private static final int LAYOUT_FRAGMENTIDEALJOBDESCRIPTION = 18;
+  private static final int LAYOUT_FRAGMENTIDEALJOBAUDIO = 18;
 
-  private static final int LAYOUT_FRAGMENTIDEALJOBIMAGES = 19;
+  private static final int LAYOUT_FRAGMENTIDEALJOBDESCRIPTION = 19;
 
-  private static final int LAYOUT_FRAGMENTIDEALJOBVIDEO = 20;
+  private static final int LAYOUT_FRAGMENTIDEALJOBIMAGES = 20;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERACCOUNT = 21;
+  private static final int LAYOUT_FRAGMENTIDEALJOBVIDEO = 21;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERCHANGELANGUAGE = 22;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERACCOUNT = 22;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERHOME = 23;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERCHANGELANGUAGE = 23;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERMANAGEREADRECEIPTS = 24;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERHOME = 24;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERNEWSLETTER = 25;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERMANAGEREADRECEIPTS = 25;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERPERSONALINFORMATION = 26;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERNEWSLETTER = 26;
 
-  private static final int LAYOUT_FRAGMENTJOBSEEKERPUSHNOTIFICATION = 27;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERPERSONALINFORMATION = 27;
 
-  private static final int LAYOUT_FRAGMENTKEEPMEPOSTED = 28;
+  private static final int LAYOUT_FRAGMENTJOBSEEKERPUSHNOTIFICATION = 28;
 
-  private static final int LAYOUT_FRAGMENTLOCATIONPERMISSION = 29;
+  private static final int LAYOUT_FRAGMENTKEEPMEPOSTED = 29;
 
-  private static final int LAYOUT_FRAGMENTLOGIN = 30;
+  private static final int LAYOUT_FRAGMENTLOCATIONPERMISSION = 30;
 
-  private static final int LAYOUT_FRAGMENTMEETNEARBYPEOPLE = 31;
+  private static final int LAYOUT_FRAGMENTLOGIN = 31;
 
-  private static final int LAYOUT_FRAGMENTPORTFOLIODESCRIPTION = 32;
+  private static final int LAYOUT_FRAGMENTMEETNEARBYPEOPLE = 32;
 
-  private static final int LAYOUT_FRAGMENTPORTFOLIOIMAGE = 33;
+  private static final int LAYOUT_FRAGMENTPORTFOLIODESCRIPTION = 33;
 
-  private static final int LAYOUT_FRAGMENTPORTFOLIOVIDEO = 34;
+  private static final int LAYOUT_FRAGMENTPORTFOLIOIMAGE = 34;
 
-  private static final int LAYOUT_FRAGMENTREGISTER = 35;
+  private static final int LAYOUT_FRAGMENTPORTFOLIOVIDEO = 35;
 
-  private static final int LAYOUT_FRAGMENTSEEKERABOUTME = 36;
+  private static final int LAYOUT_FRAGMENTREGISTER = 36;
 
-  private static final int LAYOUT_FRAGMENTSEEKERADDEXPERIENCE = 37;
+  private static final int LAYOUT_FRAGMENTSEEKERABOUTME = 37;
 
-  private static final int LAYOUT_FRAGMENTSEEKERADDPERSONALTRACKJOB = 38;
+  private static final int LAYOUT_FRAGMENTSEEKERADDEXPERIENCE = 38;
 
-  private static final int LAYOUT_FRAGMENTSEEKERADDVOLUNTEERING = 39;
+  private static final int LAYOUT_FRAGMENTSEEKERADDPERSONALTRACKJOB = 39;
 
-  private static final int LAYOUT_FRAGMENTSEEKERCALENDER = 40;
+  private static final int LAYOUT_FRAGMENTSEEKERADDVOLUNTEERING = 40;
 
-  private static final int LAYOUT_FRAGMENTSEEKERCHANGEPASSWORD = 41;
+  private static final int LAYOUT_FRAGMENTSEEKERCALENDER = 41;
 
-  private static final int LAYOUT_FRAGMENTSEEKERCOACHING = 42;
+  private static final int LAYOUT_FRAGMENTSEEKERCHANGEPASSWORD = 42;
 
-  private static final int LAYOUT_FRAGMENTSEEKERDELETEACCOUNT = 43;
+  private static final int LAYOUT_FRAGMENTSEEKERCOACHING = 43;
 
-  private static final int LAYOUT_FRAGMENTSEEKERDELETEACCOUNTFINAL = 44;
+  private static final int LAYOUT_FRAGMENTSEEKERDELETEACCOUNT = 44;
 
-  private static final int LAYOUT_FRAGMENTSEEKEREDUCATION = 45;
+  private static final int LAYOUT_FRAGMENTSEEKERDELETEACCOUNTFINAL = 45;
 
-  private static final int LAYOUT_FRAGMENTSEEKEREXPERIENCELIST = 46;
+  private static final int LAYOUT_FRAGMENTSEEKEREDUCATION = 46;
 
-  private static final int LAYOUT_FRAGMENTSEEKERFILTERJOB = 47;
+  private static final int LAYOUT_FRAGMENTSEEKEREXPERIENCELIST = 47;
 
-  private static final int LAYOUT_FRAGMENTSEEKERIMPORTRESUME = 48;
+  private static final int LAYOUT_FRAGMENTSEEKERFILTERJOB = 48;
 
-  private static final int LAYOUT_FRAGMENTSEEKERINTEREST = 49;
+  private static final int LAYOUT_FRAGMENTSEEKERIMPORTRESUME = 49;
 
-  private static final int LAYOUT_FRAGMENTSEEKERJOBMATCHINFODIALOG = 50;
+  private static final int LAYOUT_FRAGMENTSEEKERINTEREST = 50;
 
-  private static final int LAYOUT_FRAGMENTSEEKERJOBSEARCHFILTERCATEGORIESDIALOG = 51;
+  private static final int LAYOUT_FRAGMENTSEEKERJOBMATCHINFODIALOG = 51;
 
-  private static final int LAYOUT_FRAGMENTSEEKERJOBWEBDIALOG = 52;
+  private static final int LAYOUT_FRAGMENTSEEKERJOBSEARCHFILTERCATEGORIESDIALOG = 52;
 
-  private static final int LAYOUT_FRAGMENTSEEKERJOBS = 53;
+  private static final int LAYOUT_FRAGMENTSEEKERJOBWEBDIALOG = 53;
 
-  private static final int LAYOUT_FRAGMENTSEEKERJOBSFILTER = 54;
+  private static final int LAYOUT_FRAGMENTSEEKERJOBS = 54;
 
-  private static final int LAYOUT_FRAGMENTSEEKERMYSKILL = 55;
+  private static final int LAYOUT_FRAGMENTSEEKERJOBSFILTER = 55;
 
-  private static final int LAYOUT_FRAGMENTSEEKERNEWEDUCATION = 56;
+  private static final int LAYOUT_FRAGMENTSEEKERMYSKILL = 56;
 
-  private static final int LAYOUT_FRAGMENTSEEKERPREVIEW = 57;
+  private static final int LAYOUT_FRAGMENTSEEKERNEWEDUCATION = 57;
 
-  private static final int LAYOUT_FRAGMENTSEEKERPROFILE = 58;
+  private static final int LAYOUT_FRAGMENTSEEKERPREVIEW = 58;
 
-  private static final int LAYOUT_FRAGMENTSEEKERSEARCHUNIVERSITYDIALOG = 59;
+  private static final int LAYOUT_FRAGMENTSEEKERPROFILE = 59;
 
-  private static final int LAYOUT_FRAGMENTSEEKERSOCIALMEDIAIDS = 60;
+  private static final int LAYOUT_FRAGMENTSEEKERSEARCHUNIVERSITYDIALOG = 60;
 
-  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOB = 61;
+  private static final int LAYOUT_FRAGMENTSEEKERSOCIALMEDIAIDS = 61;
 
-  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOBDESCRIPTION = 62;
+  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOB = 62;
 
-  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOBDETAILS = 63;
+  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOBDESCRIPTION = 63;
 
-  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOBFILTERDIALOG = 64;
+  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOBDETAILS = 64;
 
-  private static final int LAYOUT_FRAGMENTSEEKERVOLUNTEERINGLIST = 65;
+  private static final int LAYOUT_FRAGMENTSEEKERTRACKINGJOBFILTERDIALOG = 65;
 
-  private static final int LAYOUT_FRAGMENTSEEKERWISHLIST = 66;
+  private static final int LAYOUT_FRAGMENTSEEKERVOLUNTEERINGLIST = 66;
 
-  private static final int LAYOUT_FRAGMENTVALUEPRIVACY = 67;
+  private static final int LAYOUT_FRAGMENTSEEKERWISHLIST = 67;
 
-  private static final int LAYOUT_ITEMCALENDEREVENTCARD = 68;
+  private static final int LAYOUT_FRAGMENTVALUEPRIVACY = 68;
 
-  private static final int LAYOUT_ITEMCATEGORYCHIP = 69;
+  private static final int LAYOUT_ITEMCALENDEREVENTCARD = 69;
 
-  private static final int LAYOUT_ITEMCHEAP = 70;
+  private static final int LAYOUT_ITEMCATEGORYCHIP = 70;
 
-  private static final int LAYOUT_ITEMIMAGE = 71;
+  private static final int LAYOUT_ITEMCHEAP = 71;
 
-  private static final int LAYOUT_ITEMJOBSEARCHFILTERCATEGORY = 72;
+  private static final int LAYOUT_ITEMIMAGE = 72;
 
-  private static final int LAYOUT_ITEMJOBTITLE = 73;
+  private static final int LAYOUT_ITEMJOBSEARCHFILTERCATEGORY = 73;
 
-  private static final int LAYOUT_ITEMLEAVINGREASON = 74;
+  private static final int LAYOUT_ITEMJOBTITLE = 74;
 
-  private static final int LAYOUT_ITEMPORTFOLIOIMAGE = 75;
+  private static final int LAYOUT_ITEMLEAVINGREASON = 75;
 
-  private static final int LAYOUT_ITEMPORTFOLIOLINK = 76;
+  private static final int LAYOUT_ITEMLINK = 76;
 
-  private static final int LAYOUT_ITEMSEARCHQUERYCOMPANY = 77;
+  private static final int LAYOUT_ITEMPORTFOLIOIMAGE = 77;
 
-  private static final int LAYOUT_ITEMSEEKEREDUCATION = 78;
+  private static final int LAYOUT_ITEMPORTFOLIOLINK = 78;
 
-  private static final int LAYOUT_ITEMSEEKEREXPERIENCE = 79;
+  private static final int LAYOUT_ITEMSEARCHQUERYCOMPANY = 79;
 
-  private static final int LAYOUT_ITEMSEEKERHARDSKILL = 80;
+  private static final int LAYOUT_ITEMSEEKEREDUCATION = 80;
 
-  private static final int LAYOUT_ITEMSEEKERJOBCARD = 81;
+  private static final int LAYOUT_ITEMSEEKEREXPERIENCE = 81;
 
-  private static final int LAYOUT_ITEMSEEKEROTHERJOB = 82;
+  private static final int LAYOUT_ITEMSEEKERHARDSKILL = 82;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWEXPERIENCE = 83;
+  private static final int LAYOUT_ITEMSEEKERJOBCARD = 83;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWHARDSKILL = 84;
+  private static final int LAYOUT_ITEMSEEKEROTHERJOB = 84;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWSCHOOL = 85;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWEXPERIENCE = 85;
 
-  private static final int LAYOUT_ITEMSEEKERPREVIEWVOLUNTEERING = 86;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWHARDSKILL = 86;
 
-  private static final int LAYOUT_ITEMSEEKERSEARCHUNIVERSITY = 87;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWSCHOOL = 87;
 
-  private static final int LAYOUT_ITEMSEEKERTRACK = 88;
+  private static final int LAYOUT_ITEMSEEKERPREVIEWVOLUNTEERING = 88;
 
-  private static final int LAYOUT_ITEMSEEKERTRACKINGJOBDETAILCARD = 89;
+  private static final int LAYOUT_ITEMSEEKERSEARCHUNIVERSITY = 89;
 
-  private static final int LAYOUT_ITEMSEEKERVOLUNTEERING = 90;
+  private static final int LAYOUT_ITEMSEEKERTRACK = 90;
 
-  private static final int LAYOUT_ITEMWISHLISTJOB = 91;
+  private static final int LAYOUT_ITEMSEEKERTRACKINGJOBDETAILCARD = 91;
 
-  private static final int LAYOUT_POPUPADDJOBTOTRACK = 92;
+  private static final int LAYOUT_ITEMSEEKERVOLUNTEERING = 92;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(92);
+  private static final int LAYOUT_ITEMWISHLISTJOB = 93;
+
+  private static final int LAYOUT_POPUPADDJOBTOTRACK = 94;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(94);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.activity_job_seeker_home, LAYOUT_ACTIVITYJOBSEEKERHOME);
@@ -312,6 +318,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.dialog_add_tracking_job_phase, LAYOUT_DIALOGADDTRACKINGJOBPHASE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.dialog_delete_account, LAYOUT_DIALOGDELETEACCOUNT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.dialog_repost_job, LAYOUT_DIALOGREPOSTJOB);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.dialog_yes_no, LAYOUT_DIALOGYESNO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.fragment_ideal_job_audio, LAYOUT_FRAGMENTIDEALJOBAUDIO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.fragment_ideal_job_description, LAYOUT_FRAGMENTIDEALJOBDESCRIPTION);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.fragment_ideal_job_images, LAYOUT_FRAGMENTIDEALJOBIMAGES);
@@ -370,6 +377,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_job_search_filter_category, LAYOUT_ITEMJOBSEARCHFILTERCATEGORY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_job_title, LAYOUT_ITEMJOBTITLE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_leaving_reason, LAYOUT_ITEMLEAVINGREASON);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_link, LAYOUT_ITEMLINK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_portfolio_image, LAYOUT_ITEMPORTFOLIOIMAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_portfolio_link, LAYOUT_ITEMPORTFOLIOLINK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.findajob.jobamax.R.layout.item_search_query_company, LAYOUT_ITEMSEARCHQUERYCOMPANY);
@@ -488,6 +496,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new DialogRepostJobBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for dialog_repost_job is invalid. Received: " + tag);
+      }
+      case  LAYOUT_DIALOGYESNO: {
+        if ("layout/dialog_yes_no_0".equals(tag)) {
+          return new DialogYesNoBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for dialog_yes_no is invalid. Received: " + tag);
       }
       case  LAYOUT_FRAGMENTIDEALJOBAUDIO: {
         if ("layout/fragment_ideal_job_audio_0".equals(tag)) {
@@ -687,12 +701,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for fragment_seeker_interest is invalid. Received: " + tag);
       }
-      case  LAYOUT_FRAGMENTSEEKERJOBMATCHINFODIALOG: {
-        if ("layout/fragment_seeker_job_match_info_dialog_0".equals(tag)) {
-          return new FragmentSeekerJobMatchInfoDialogBindingImpl(component, view);
-        }
-        throw new IllegalArgumentException("The tag for fragment_seeker_job_match_info_dialog is invalid. Received: " + tag);
-      }
     }
     return null;
   }
@@ -700,6 +708,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   private final ViewDataBinding internalGetViewDataBinding1(DataBindingComponent component,
       View view, int internalId, Object tag) {
     switch(internalId) {
+      case  LAYOUT_FRAGMENTSEEKERJOBMATCHINFODIALOG: {
+        if ("layout/fragment_seeker_job_match_info_dialog_0".equals(tag)) {
+          return new FragmentSeekerJobMatchInfoDialogBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for fragment_seeker_job_match_info_dialog is invalid. Received: " + tag);
+      }
       case  LAYOUT_FRAGMENTSEEKERJOBSEARCHFILTERCATEGORIESDIALOG: {
         if ("layout/fragment_seeker_job_search_filter_categories_dialog_0".equals(tag)) {
           return new FragmentSeekerJobSearchFilterCategoriesDialogBindingImpl(component, view);
@@ -843,6 +857,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new ItemLeavingReasonBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for item_leaving_reason is invalid. Received: " + tag);
+      }
+      case  LAYOUT_ITEMLINK: {
+        if ("layout/item_link_0".equals(tag)) {
+          return new ItemLinkBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for item_link is invalid. Received: " + tag);
       }
       case  LAYOUT_ITEMPORTFOLIOIMAGE: {
         if ("layout/item_portfolio_image_0".equals(tag)) {
@@ -1031,7 +1051,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(92);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(94);
 
     static {
       sKeys.put("layout/activity_job_seeker_home_0", com.findajob.jobamax.R.layout.activity_job_seeker_home);
@@ -1050,6 +1070,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/dialog_add_tracking_job_phase_0", com.findajob.jobamax.R.layout.dialog_add_tracking_job_phase);
       sKeys.put("layout/dialog_delete_account_0", com.findajob.jobamax.R.layout.dialog_delete_account);
       sKeys.put("layout/dialog_repost_job_0", com.findajob.jobamax.R.layout.dialog_repost_job);
+      sKeys.put("layout/dialog_yes_no_0", com.findajob.jobamax.R.layout.dialog_yes_no);
       sKeys.put("layout/fragment_ideal_job_audio_0", com.findajob.jobamax.R.layout.fragment_ideal_job_audio);
       sKeys.put("layout/fragment_ideal_job_description_0", com.findajob.jobamax.R.layout.fragment_ideal_job_description);
       sKeys.put("layout/fragment_ideal_job_images_0", com.findajob.jobamax.R.layout.fragment_ideal_job_images);
@@ -1108,6 +1129,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/item_job_search_filter_category_0", com.findajob.jobamax.R.layout.item_job_search_filter_category);
       sKeys.put("layout/item_job_title_0", com.findajob.jobamax.R.layout.item_job_title);
       sKeys.put("layout/item_leaving_reason_0", com.findajob.jobamax.R.layout.item_leaving_reason);
+      sKeys.put("layout/item_link_0", com.findajob.jobamax.R.layout.item_link);
       sKeys.put("layout/item_portfolio_image_0", com.findajob.jobamax.R.layout.item_portfolio_image);
       sKeys.put("layout/item_portfolio_link_0", com.findajob.jobamax.R.layout.item_portfolio_link);
       sKeys.put("layout/item_search_query_company_0", com.findajob.jobamax.R.layout.item_search_query_company);

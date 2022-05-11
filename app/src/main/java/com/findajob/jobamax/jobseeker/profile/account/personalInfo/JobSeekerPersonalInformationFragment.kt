@@ -72,6 +72,7 @@ class JobSeekerPersonalInformationFragment : BaseFragmentMain<FragmentJobSeekerP
     override fun onSubmitClicked() {
         addPhoneNumber()
         if (validateFields()) {
+            updateUser()
             progressHud.show()
             viewModel.submitData(personalInfoModel) { e ->
                 progressHud.dismiss()
@@ -82,6 +83,27 @@ class JobSeekerPersonalInformationFragment : BaseFragmentMain<FragmentJobSeekerP
                     toast("Data Successfully Submitted!")
                 }
             }
+        }
+    }
+
+    private fun updateUser() {
+        if (binding.postCodeField.text.isNotEmpty()) {
+            personalInfoModel.postCode = binding.postCodeField.text.toString()
+        }
+        if (binding.dobField.text.isNotEmpty()) {
+            personalInfoModel.dob = binding.dobField.text.toString()
+        }
+        if (binding.etEmailField.text.isNotEmpty()) {
+            personalInfoModel.email = binding.etEmailField.text.toString()
+        }
+        if (binding.firstNameField.text.isNotEmpty()) {
+            personalInfoModel.firstName = binding.firstNameField.text.toString()
+        }
+        if (binding.lastNameField.text.isNotEmpty()) {
+            personalInfoModel.lastName = binding.lastNameField.text.toString()
+        }
+        if (binding.genderLabel.text.isNotEmpty()) {
+            personalInfoModel.gender = binding.genderLabel.text.toString()
         }
     }
 
@@ -132,18 +154,8 @@ class JobSeekerPersonalInformationFragment : BaseFragmentMain<FragmentJobSeekerP
             validateFlag = false
         }
 
-        if (lastNameField.text.isEmpty()) {
-            lastNameField.error = getString(R.string.enter_last_name)
-            validateFlag = false
-        }
-
         if (dobField.text.isEmpty()) {
             dobField.error = getString(R.string.enter_date_of_birth)
-            validateFlag = false
-        }
-
-        if (postCodeField.text.isEmpty()) {
-            postCodeField.error = getString(R.string.enter_postcode)
             validateFlag = false
         }
 

@@ -33,8 +33,7 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
         sViewsWithIds.put(R.id.iv_clear_end_date, 18);
         sViewsWithIds.put(R.id.textViewdd19, 19);
         sViewsWithIds.put(R.id.et_description, 20);
-        sViewsWithIds.put(R.id.btn_add_experience, 21);
-        sViewsWithIds.put(R.id.rv_company_suggestions, 22);
+        sViewsWithIds.put(R.id.rv_company_suggestions, 21);
     }
     // views
     // variables
@@ -43,12 +42,11 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAddExperienceBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAddExperienceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.fragment.app.FragmentContainerView) bindings[10]
-            , (android.widget.Button) bindings[21]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.EditText) bindings[7]
             , (android.widget.EditText) bindings[20]
@@ -60,7 +58,7 @@ public class FragmentSeekerAddExperienceBindingImpl extends FragmentSeekerAddExp
             , (android.widget.LinearLayout) bindings[12]
             , (android.widget.RelativeLayout) bindings[2]
             , (android.widget.RelativeLayout) bindings[8]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[22]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[21]
             , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[13]
             , (android.widget.TextView) bindings[16]

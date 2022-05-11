@@ -32,8 +32,8 @@ public class JobSeekerAccountFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionJobSeekerAccountFragmentToSeekerDeleteAccountFragment2() {
-    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2);
+  public static NavDirections actionJobSeekerAccountFragmentToSeekerDeleteAccountFragment() {
+    return new ActionOnlyNavDirections(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment);
   }
 
   @NonNull

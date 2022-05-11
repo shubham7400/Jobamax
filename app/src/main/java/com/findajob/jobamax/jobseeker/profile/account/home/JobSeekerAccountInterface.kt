@@ -1,7 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile.account.home
 
 interface JobSeekerAccountInterface {
-	fun onBackButtonClicked()
 	fun onPersonalInformationClicked()
 	fun onManageReadReceiptsClicked()
 	fun onPushNotificationsClicked()
@@ -19,6 +18,5 @@ interface JobSeekerAccountInterface {
 	fun onLogoutClicked()
     fun onTemporaryDisableAccountClicked()
     fun onDeleteAccountClicked()
-    fun toggleHideMe(flag: Boolean)
     fun onPasswordClicked()
  }

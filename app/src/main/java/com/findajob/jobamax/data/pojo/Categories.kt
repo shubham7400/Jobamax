@@ -1,99 +1,102 @@
 package com.findajob.jobamax.data.pojo
 
+import android.content.Context
+import com.findajob.jobamax.R
+
 data class Categories(val text: String, var isSelected: Boolean) {
     companion object {
-        fun getJobCategories(): ArrayList<Categories> {
+        fun getJobCategories(context: Context): ArrayList<Categories> {
             return arrayListOf(
                 Categories(
-                    text = "Transportation and Material Moving Occupations",
+                    text = context.getString(R.string.job_search_category_row1),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Sales and Related Occupations",
+                    text = context.getString(R.string.job_search_category_row2),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Office and Administrative Support Occupations",
+                    text = context.getString(R.string.job_search_category_row3),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Healthcare Practitioners and Technical Occupations",
+                    text = context.getString(R.string.job_search_category_row4),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Management Occupations",
+                    text = context.getString(R.string.job_search_category_row5),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Food Preparation and Serving Related Occupations",
+                    text = context.getString(R.string.job_search_category_row6),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Computer and Mathematical Occupations",
+                    text = context.getString(R.string.job_search_category_row7),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Business and Financial Operations Occupations",
+                    text = context.getString(R.string.job_search_category_row8),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Healthcare Support Occupations",
+                    text = context.getString(R.string.job_search_category_row9),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Installation, Maintenance, and Repair Occupations",
+                    text = context.getString(R.string.job_search_category_row10),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Production Occupations",
+                    text = context.getString(R.string.job_search_category_row11),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Educational Instruction and Library Occupations",
+                    text = context.getString(R.string.job_search_category_row12),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Personal Care and Service Occupations",
+                    text = context.getString(R.string.job_search_category_row13),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Architecture and Engineering Occupations",
+                    text = context.getString(R.string.job_search_category_row14),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Community and Social Service Occupations",
+                    text = context.getString(R.string.job_search_category_row15),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Construction and Extraction Occupations",
+                    text = context.getString(R.string.job_search_category_row16),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Arts, Design, Entertainment, Sports, and Media Occupations ",
+                    text = context.getString(R.string.job_search_category_row17),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Life, Physical, and Social Science Occupations",
+                    text = context.getString(R.string.job_search_category_row18),
                     isSelected = false
                 ),
                 Categories(
-                    text = "Building and Grounds Cleaning and Maintenance Occupations",
+                    text = context.getString(R.string.job_search_category_row19),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Protective Service Occupations",
+                    text = context.getString(R.string.job_search_category_row20),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Legal Occupations",
+                    text = context.getString(R.string.job_search_category_row21),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Farming, Fishing, and Forestry Occupations",
+                    text = context.getString(R.string.job_search_category_row22),
                     isSelected = false
                 ),
                 Categories  (
-                    text = "Military Specific Occupations",
+                    text = context.getString(R.string.job_search_category_row23),
                     isSelected = false
                 ),
             )

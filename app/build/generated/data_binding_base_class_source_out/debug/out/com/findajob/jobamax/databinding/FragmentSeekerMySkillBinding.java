@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,9 +27,6 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
 
   @NonNull
   public final AutoCompleteTextView actvSoftSkill;
-
-  @NonNull
-  public final Button btnSaveInfo;
 
   @NonNull
   public final ChipGroup cgSoftSkill;
@@ -63,14 +59,13 @@ public abstract class FragmentSeekerMySkillBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerMySkillBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AutoCompleteTextView actvHardSkill, AutoCompleteTextView actvSoftSkill, Button btnSaveInfo,
-      ChipGroup cgSoftSkill, ImageView ivBackButton, ImageView ivHardSkillAddBtn,
-      ImageView ivSoftSkillAddBtn, CircleImageView ivUserProfile, RelativeLayout relativeLayout,
-      RecyclerView rvHardSkill, TextView tvDdd, TextView tvDddd) {
+      AutoCompleteTextView actvHardSkill, AutoCompleteTextView actvSoftSkill, ChipGroup cgSoftSkill,
+      ImageView ivBackButton, ImageView ivHardSkillAddBtn, ImageView ivSoftSkillAddBtn,
+      CircleImageView ivUserProfile, RelativeLayout relativeLayout, RecyclerView rvHardSkill,
+      TextView tvDdd, TextView tvDddd) {
     super(_bindingComponent, _root, _localFieldCount);
     this.actvHardSkill = actvHardSkill;
     this.actvSoftSkill = actvSoftSkill;
-    this.btnSaveInfo = btnSaveInfo;
     this.cgSoftSkill = cgSoftSkill;
     this.ivBackButton = ivBackButton;
     this.ivHardSkillAddBtn = ivHardSkillAddBtn;

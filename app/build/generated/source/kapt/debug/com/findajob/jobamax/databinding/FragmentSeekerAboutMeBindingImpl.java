@@ -27,7 +27,6 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
         sViewsWithIds.put(R.id.textView10, 17);
         sViewsWithIds.put(R.id.textView140, 18);
         sViewsWithIds.put(R.id.textView11, 19);
-        sViewsWithIds.put(R.id.btn_save_info, 20);
     }
     // views
     @NonNull
@@ -38,11 +37,10 @@ public class FragmentSeekerAboutMeBindingImpl extends FragmentSeekerAboutMeBindi
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAboutMeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 20, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAboutMeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[20]
             , (android.widget.EditText) bindings[6]
             , (android.widget.EditText) bindings[3]
             , (android.widget.EditText) bindings[4]

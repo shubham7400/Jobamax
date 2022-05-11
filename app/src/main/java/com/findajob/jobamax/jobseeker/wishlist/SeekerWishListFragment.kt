@@ -20,6 +20,8 @@ import com.findajob.jobamax.data.pojo.Phase
 import com.findajob.jobamax.data.pojo.PhaseGroup
 import com.findajob.jobamax.databinding.FragmentSeekerWishListBinding
 import com.findajob.jobamax.databinding.ItemWishlistJobBinding
+import com.findajob.jobamax.dialog.YesNoDialog
+import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
@@ -36,6 +38,7 @@ import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.popup_add_job_to_track.view.*
+import kotlinx.coroutines.joinAll
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -103,18 +106,20 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
     }
 
     private fun addToArchived(wishlistJob: WishlistedJob) {
-        wishlistJob.pfObject?.put("isArchived", !wishlistJob.isArchived)
-        wishlistJob.pfObject?.let { it ->
-            progressHud.show()
-            viewModel.updateWishlistJob(it) { exception ->
-                progressHud.dismiss()
-                if (exception != null) {
-                    toast("${exception.message.toString()} Something Went Wrong")
-                } else {
-                    fetchWishlist( )
+        YesNoDialog(requireActivity(), resources.getString(R.string.are_you_sure),{
+            wishlistJob.pfObject?.put("isArchived", !wishlistJob.isArchived)
+            wishlistJob.pfObject?.let { it ->
+                progressHud.show()
+                viewModel.updateWishlistJob(it) { exception ->
+                    progressHud.dismiss()
+                    if (exception != null) {
+                        toast("${exception.message.toString()} Something Went Wrong")
+                    } else {
+                        fetchWishlist( )
+                    }
                 }
             }
-        }
+        }, {}).show()
     }
 
     private fun addToTrackingJobList(wishlistJob: WishlistedJob) {
@@ -190,6 +195,8 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
             wishlistJobs.forEach {
                 if (it.isArchived){
                     archive++
+                }else{
+                    all++
                 }
                 if (it.isFavroite){
                     favorite++
@@ -197,7 +204,6 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
                 if(it.isAddedToTracking && !it.isArchived){
                     inProgress++
                 }
-                all++
             }
             val seekerFilterJobFragment = SeekerFilterJobFragment().newInstance(all, favorite, archive, inProgress, selectedFilter)
             seekerFilterJobFragment.show(childFragmentManager,"dialog")
@@ -296,6 +302,9 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
             when(filter){
                 SeekerWishlistJobFilter.ALL -> {
                     this.llActionButton.visibility = View.VISIBLE
+                    this.ivFavorite.visibility = View.VISIBLE
+                    this.ivAdd.visibility = View.VISIBLE
+                    this.ivArchive.visibility = View.VISIBLE
                     if (!wishlistJob.job?.getString("logo").isNullOrEmpty()){
                         Picasso.get().load(wishlistJob.job?.getString("logo")).into(this.ivCompany)
                     }else{
@@ -306,7 +315,7 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
                         this.ivFavorite.visibility = View.GONE
                     }
                     if (wishlistJob.isFavroite){
-                        this.ivFavorite.setImageResource(R.drawable.heart)
+                        this.ivFavorite.setImageResource(R.drawable.filled_heart)
                     }else{
                         this.ivFavorite.setImageResource(R.drawable.heart_holo)
                     }
@@ -326,6 +335,16 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
                     }
                     this.acbtnApply.setOnClickListener {
                         clickListener(wishlistJob, 4, null)
+                    }
+                }
+                SeekerWishlistJobFilter.ARCHIVE -> {
+                    this.llActionButton.visibility = View.VISIBLE
+                    this.ivFavorite.visibility = View.GONE
+                    this.ivAdd.visibility = View.GONE
+                    this.ivArchive.visibility = View.VISIBLE
+                    this.ivArchive.setImageResource(R.drawable.ic_unarchive)
+                    this.ivArchive.setOnClickListener {
+                        clickListener(wishlistJob, 3, null)
                     }
                 }
                 else -> {

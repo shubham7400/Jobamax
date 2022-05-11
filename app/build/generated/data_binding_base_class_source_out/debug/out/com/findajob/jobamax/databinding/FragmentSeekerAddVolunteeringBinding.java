@@ -4,7 +4,6 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,9 +27,6 @@ import java.lang.Object;
 public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBinding {
   @NonNull
   public final FragmentContainerView autocompleteFragment;
-
-  @NonNull
-  public final Button btnAddVolunteering;
 
   @NonNull
   public final CheckBox cbCurrentStudent;
@@ -99,16 +95,15 @@ public abstract class FragmentSeekerAddVolunteeringBinding extends ViewDataBindi
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerAddVolunteeringBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, FragmentContainerView autocompleteFragment, Button btnAddVolunteering,
-      CheckBox cbCurrentStudent, ConstraintLayout clEndDate, ConstraintLayout clMostParent,
-      EditText etActivity, EditText etDescription, EditText etOrganisation, ImageView ivBackButton,
+      int _localFieldCount, FragmentContainerView autocompleteFragment, CheckBox cbCurrentStudent,
+      ConstraintLayout clEndDate, ConstraintLayout clMostParent, EditText etActivity,
+      EditText etDescription, EditText etOrganisation, ImageView ivBackButton,
       CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
       RelativeLayout relativeLayout4, RecyclerView rvCompanySuggestions, TextView textView139,
       TextView textView144, TextView textView15, TextView textView16, TextView textView19,
       TextView textViewdd19, TextView tvEndDate, TextView tvSelectLocation, TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.autocompleteFragment = autocompleteFragment;
-    this.btnAddVolunteering = btnAddVolunteering;
     this.cbCurrentStudent = cbCurrentStudent;
     this.clEndDate = clEndDate;
     this.clMostParent = clMostParent;

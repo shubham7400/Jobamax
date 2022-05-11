@@ -24,9 +24,6 @@ public abstract class FragmentSeekerAddPersonalTrackJobBinding extends ViewDataB
   public final Button btnSaveInfo;
 
   @NonNull
-  public final EditText etAboutJob;
-
-  @NonNull
   public final EditText etCity;
 
   @NonNull
@@ -48,12 +45,11 @@ public abstract class FragmentSeekerAddPersonalTrackJobBinding extends ViewDataB
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerAddPersonalTrackJobBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, Button btnSaveInfo, EditText etAboutJob, EditText etCity,
-      EditText etCompanyName, EditText etJobTitle, ImageView ivBackButton,
-      CircleImageView ivUserProfile, RelativeLayout relativeLayout) {
+      int _localFieldCount, Button btnSaveInfo, EditText etCity, EditText etCompanyName,
+      EditText etJobTitle, ImageView ivBackButton, CircleImageView ivUserProfile,
+      RelativeLayout relativeLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSaveInfo = btnSaveInfo;
-    this.etAboutJob = etAboutJob;
     this.etCity = etCity;
     this.etCompanyName = etCompanyName;
     this.etJobTitle = etJobTitle;

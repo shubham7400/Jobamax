@@ -83,9 +83,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
-                android:text="At vero eos censes tantas res gessisse sine dubio praeclara sunt, explicabo nemo enim ipsam per se oratio, tua praesertim, qui dolorem aspernari ut de commodis suis cogitarent? at id totum evertitur eo est primum igitur, quid est primum igitur, inquit, modo dixi, constituto, ut.
-At magnum periculum adiit in quo minus id, de utilitatibus, nihil ut ipsi auctori huius disciplinae placet: constituam, quid et molestiae non existimant oportere exquisitis rationibus conquisitis de voluptate et via procedat oratio quaerimus igitur, inquit, modo dixi, constituto, ut ita ruant itaque aiunt hanc.
-."
+                android:text="@string/delete_account_information"
                 android:textColor="@color/gray"
                 android:textSize="16sp" />
 
@@ -103,6 +101,8 @@ At magnum periculum adiit in quo minus id, de utilitatibus, nihil ut ipsi auctor
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:textAllCaps="false"
                 android:background="@android:color/white"
                 android:onClick="@{() -> handler.onDeleteAccount()}"
                 android:text="@string/delete_my_account"

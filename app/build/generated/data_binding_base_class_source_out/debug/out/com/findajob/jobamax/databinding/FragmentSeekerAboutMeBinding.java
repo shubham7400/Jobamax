@@ -4,7 +4,6 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,9 +21,6 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
-  @NonNull
-  public final Button btnSaveInfo;
-
   @NonNull
   public final EditText etDescription;
 
@@ -86,14 +82,12 @@ public abstract class FragmentSeekerAboutMeBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerAboutMeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnSaveInfo, EditText etDescription, EditText etFirstName, EditText etLastName,
-      EditText etProfession, ImageView imageView12, ImageView ivBackButton, ImageView ivBarcode,
-      ImageView ivEdit, ImageView ivInsta, ImageView ivLinkedin, CircleImageView ivProfileUser,
-      ImageView ivTiktok, CircleImageView ivUserProfilePic, LinearLayout llSocialMedia,
-      RelativeLayout relativeLayout, TextView textView10, TextView textView11, TextView textView140,
-      TextView textView9) {
+      EditText etDescription, EditText etFirstName, EditText etLastName, EditText etProfession,
+      ImageView imageView12, ImageView ivBackButton, ImageView ivBarcode, ImageView ivEdit,
+      ImageView ivInsta, ImageView ivLinkedin, CircleImageView ivProfileUser, ImageView ivTiktok,
+      CircleImageView ivUserProfilePic, LinearLayout llSocialMedia, RelativeLayout relativeLayout,
+      TextView textView10, TextView textView11, TextView textView140, TextView textView9) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnSaveInfo = btnSaveInfo;
     this.etDescription = etDescription;
     this.etFirstName = etFirstName;
     this.etLastName = etLastName;

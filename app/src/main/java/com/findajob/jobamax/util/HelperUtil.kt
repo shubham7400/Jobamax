@@ -1,6 +1,5 @@
 package com.findajob.jobamax.util
 
-import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.location.Geocoder
@@ -27,7 +26,6 @@ import com.findajob.jobamax.preference.getJobSearchFilterCategories
 import com.google.gson.Gson
 import com.parse.ParseFile
 import com.parse.SaveCallback
-import kotlinx.android.synthetic.main.dialog_basic.view.*
 import java.io.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.io.InputStream
@@ -168,7 +166,7 @@ fun getAddressByLatLng(lat: Double, lng: Double, requireContext: Context) : Stri
 
 
 fun getJobCategories(requireContext: Context): ArrayList<Categories> = if (requireContext.getJobSearchFilterCategories() == "") {
-    Categories.getJobCategories()
+    Categories.getJobCategories(requireContext)
 } else {
     val categoryGroup = Gson().fromJson(
         requireContext.getJobSearchFilterCategories(),

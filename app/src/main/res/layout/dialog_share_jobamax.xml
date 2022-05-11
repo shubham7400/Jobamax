@@ -68,15 +68,12 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            style="@style/button_gradient_rect32"
             android:id="@+id/shareButton"
             android:layout_marginStart="24dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/round_grad_button_bg"
             android:text="@string/share" />
 
     </LinearLayout>

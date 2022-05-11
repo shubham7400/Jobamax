@@ -34,8 +34,7 @@ public class FragmentSeekerAddVolunteeringBindingImpl extends FragmentSeekerAddV
         sViewsWithIds.put(R.id.tv_end_date, 19);
         sViewsWithIds.put(R.id.textViewdd19, 20);
         sViewsWithIds.put(R.id.et_description, 21);
-        sViewsWithIds.put(R.id.btn_add_volunteering, 22);
-        sViewsWithIds.put(R.id.rv_company_suggestions, 23);
+        sViewsWithIds.put(R.id.rv_company_suggestions, 22);
     }
     // views
     @NonNull
@@ -46,12 +45,11 @@ public class FragmentSeekerAddVolunteeringBindingImpl extends FragmentSeekerAddV
     // Inverse Binding Event Handlers
 
     public FragmentSeekerAddVolunteeringBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 24, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerAddVolunteeringBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.fragment.app.FragmentContainerView) bindings[11]
-            , (android.widget.Button) bindings[22]
             , (android.widget.CheckBox) bindings[13]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[17]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[4]
@@ -63,7 +61,7 @@ public class FragmentSeekerAddVolunteeringBindingImpl extends FragmentSeekerAddV
             , (android.widget.LinearLayout) bindings[14]
             , (android.widget.RelativeLayout) bindings[2]
             , (android.widget.RelativeLayout) bindings[9]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[23]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[22]
             , (android.widget.TextView) bindings[10]
             , (android.widget.TextView) bindings[18]
             , (android.widget.TextView) bindings[15]

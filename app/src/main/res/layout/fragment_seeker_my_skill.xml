@@ -109,7 +109,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="5dp"
-                        android:src="@drawable/add_icon" />
+                        android:src="@drawable/add_blue" />
 
                 </RelativeLayout>
 
@@ -163,7 +163,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="5dp"
-                        android:src="@drawable/add_icon" />
+                        android:src="@drawable/add_blue" />
 
                 </RelativeLayout>
 
@@ -174,20 +174,6 @@
                     android:layout_height="wrap_content">
 
                 </com.google.android.material.chip.ChipGroup>
-
-                <Button
-                    android:id="@+id/btn_save_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/bg_gradient_rounded"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:text="@string/save_information"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18dp" />
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

@@ -5,11 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.findajob.jobamax.R;
@@ -21,7 +21,7 @@ public abstract class ItemSeekerHardSkillBinding extends ViewDataBinding {
   public final ImageView ivRemoveBtn;
 
   @NonNull
-  public final RelativeLayout rlSeekBarLayoudt;
+  public final ConstraintLayout rlSeekBarLayoudt;
 
   @NonNull
   public final SeekBar sbHardSkill;
@@ -30,7 +30,7 @@ public abstract class ItemSeekerHardSkillBinding extends ViewDataBinding {
   public final TextView tvHardSkill;
 
   protected ItemSeekerHardSkillBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView ivRemoveBtn, RelativeLayout rlSeekBarLayoudt, SeekBar sbHardSkill,
+      ImageView ivRemoveBtn, ConstraintLayout rlSeekBarLayoudt, SeekBar sbHardSkill,
       TextView tvHardSkill) {
     super(_bindingComponent, _root, _localFieldCount);
     this.ivRemoveBtn = ivRemoveBtn;

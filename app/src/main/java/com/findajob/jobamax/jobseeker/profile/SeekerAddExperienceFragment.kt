@@ -17,6 +17,7 @@ import com.findajob.jobamax.databinding.FragmentSeekerAddExperienceBinding
 import com.findajob.jobamax.databinding.ItemSearchQueryCompanyBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Experience
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.model.SearchQueryCompany
 import com.findajob.jobamax.network.ApiFetchCompaniesService
 import com.findajob.jobamax.repos.SearchQueryCompanyRepo
@@ -32,7 +33,7 @@ import com.google.android.libraries.places.widget.listener.PlaceSelectionListene
 import com.whiteelephant.monthpicker.MonthPickerDialog
 import java.util.*
 
-class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperienceBinding>() {
+class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperienceBinding>(), IOnBackPressed {
 
     override val layoutRes: Int get() = R.layout.fragment_seeker_add_experience
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -124,9 +125,6 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
         binding.tvSelectLocation.setOnClickListener {
             autocompleteFragment.requireView().findViewById<View>(R.id.places_autocomplete_search_input).performClick()
         }
-         binding.btnAddExperience.setOnClickListener {
-             addExperience()
-         }
 
         binding.etCompanyName.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -161,19 +159,23 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
         }
     }
 
-    private fun addExperience() {
+    private fun addExperience(callback: () -> Unit) {
         when {
             binding.etJob.text.isNullOrEmpty() -> {
                 toast("Please enter job.")
+                callback()
             }
             binding.etCompanyName.text.isNullOrEmpty() -> {
                 toast("Please enter company name.")
+                callback()
             }
             binding.etDescription.text.isNullOrEmpty() -> {
                 toast("Please enter job description.")
+                callback()
             }
             binding.tvSelectStartDate.text.isNullOrEmpty() -> {
                 toast("Please select start date.")
+                callback()
             }
             else -> {
                 val experience = if (experienceOld == null) {
@@ -201,9 +203,10 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
                     progressHud.dismiss()
                     if (it == null) {
                         toast("Experience Added.")
-                        requireActivity().onBackPressed()
+                        callback()
                     } else {
                         toast("${it.message.toString()} Something Went Wrong.")
+                        callback()
                     }
                 }
             }
@@ -233,6 +236,10 @@ class SeekerAddExperienceFragment : BaseFragmentMain<FragmentSeekerAddExperience
             .setTitle("Select")
             .build()
             .show()
+    }
+
+    override fun onBackPressed(callback: () -> Unit) {
+        addExperience { callback()}
     }
 
 }

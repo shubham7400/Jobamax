@@ -30,7 +30,7 @@ public class ItemSeekerHardSkillBindingImpl extends ItemSeekerHardSkillBinding  
     private ItemSeekerHardSkillBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.RelativeLayout) bindings[0]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.SeekBar) bindings[2]
             , (android.widget.TextView) bindings[1]
             );

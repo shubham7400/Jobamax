@@ -19,6 +19,7 @@ import com.findajob.jobamax.dialog.ShareJobamaxDialog
 import com.findajob.jobamax.dialog.WorkInProgressDialog
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
+import com.findajob.jobamax.enums.WebsiteUrls
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.UpdateUserCallback
@@ -42,7 +43,6 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
 
     override fun onCreated(savedInstance: Bundle?) {
         navController = findNavController()
-        binding.hideMeFlag.isChecked = viewModel.jobSeeker.hideMeFlag
         binding.handler = this
         if (viewModel.jobSeekerObject == null){
             getCurrent()
@@ -108,7 +108,6 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
 
 
     override fun onManageReadReceiptsClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment)
-    override fun onBackButtonClicked() {}
 
     override fun onPersonalInformationClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_jobSeekerPersonalInformationFragment)
 
@@ -128,7 +127,7 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
     override fun onShareJobamaxClicked() = ShareJobamaxDialog(requireActivity()).show()
 
 
-    override fun onHelpAndSupportClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/support"))
+    override fun onHelpAndSupportClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, WebsiteUrls.SUPPORT_URL.url))
 
     override fun onEmailUsClicked() {
         val selectorIntent = Intent(Intent.ACTION_SENDTO)
@@ -142,13 +141,13 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
         startActivity(Intent.createChooser(emailIntent, "Send email..."))
     }
 
-    override fun onCommunityGuidelinesClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/community-guidelines"))
+    override fun onCommunityGuidelinesClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, WebsiteUrls.COMMUNITY_GUIDELINES_URL.url))
 
-    override fun onSafetyTipsClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/safety-tips"))
+    override fun onSafetyTipsClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, WebsiteUrls.SAFETY_TIPS_URL.url))
 
-    override fun onPrivacyPolicyClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/privacy"))
+    override fun onPrivacyPolicyClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, WebsiteUrls.PRIVACY_URL.url))
 
-    override fun onTermsOfServiceClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, "https://www.jobamax.com/en/terms"))
+    override fun onTermsOfServiceClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, WebsiteUrls.TERMS_URL.url))
 
     override fun onLicensesClicked() = startActivity(Intent(requireContext(), LicenseActivity::class.java))
 
@@ -181,23 +180,11 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
         }
     }
 
-    override fun onDeleteAccountClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment2)
+    override fun onDeleteAccountClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment)
 
 
     override fun onPasswordClicked() = navController.navigate(R.id.action_jobSeekerAccountFragment_to_seekerChangePasswordFragment)
 
 
-    override fun toggleHideMe(flag: Boolean) {
-        binding.hideMeFlag.isEnabled = false
-        viewModel.updateFlag(flag, "hideMeFlag", object : UpdateUserCallback {
-            override fun onFinish(isSuccessful: Boolean) {
-                if (isResumed) {
-                    binding.hideMeFlag.isEnabled = true
-                    if (!isSuccessful) {
-                        binding.hideMeFlag.isChecked = !flag
-                    }
-                }
-            }
-        })
-    }
+
 }

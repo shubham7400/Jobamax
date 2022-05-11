@@ -27,6 +27,7 @@ import com.google.android.material.chip.Chip
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.item_link.view.*
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
@@ -55,6 +56,7 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
     private val portfolioImageUrlList = arrayListOf<String>()
 
     private var ownedSoftSkills = ArrayList<String>()
+    private var workspaces = listOf<String>()
     var activitiesTags = ArrayList<String>()
 
     private val mSeekbarUpdateHandler: Handler = Handler()
@@ -79,8 +81,8 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         binding.tvSeekerName.text = "${jobSeeker?.firstName} ${jobSeeker?.lastName}"
         binding.tvSeekerProfession.text = jobSeeker?.profession ?: ""
         loadImageFromUrl(binding.civSeeker, jobSeeker?.profilePicUrl)
-        binding.tvSeekerAbout.text = jobSeeker?.aboutMe ?: ""
-        if (jobSeeker?.aboutMe.isNullOrEmpty()) {
+        binding.tvSeekerAbout.text = jobSeeker?.elevatorPitch ?: ""
+        if (jobSeeker?.elevatorPitch.isNullOrEmpty()) {
             binding.tvSeekerAbout.visibility = View.GONE
             binding.tvAboutTitle.visibility = View.GONE
         }else{
@@ -98,11 +100,31 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
         setIdealJobImageAdapter()
         setPortfolioImageAdapter()
         getIdealJobData()
+        getIdealWorkspace()
         getPortfolioData()
         setSoftSkill()
         setActivitiesTags()
         setClickListeners()
         setIdealJobAudio()
+    }
+
+    private fun getIdealWorkspace() {
+        if (viewModel.jobSeeker.workspaces.isNotEmpty()){
+            workspaces =  viewModel.jobSeeker.workspaces
+        }
+        binding.cgIdealWorkspace.removeAllViews()
+        workspaces.forEach {
+            val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgIdealWorkspace, false) as Chip
+            chip.text = it
+            binding.cgIdealWorkspace.addView(chip)
+        }
+        if (workspaces.isEmpty()){
+            binding.tvIdealWorkspaceTitle.visibility = View.GONE
+            binding.cgIdealWorkspace.visibility = View.GONE
+        }else{
+            binding.tvIdealWorkspaceTitle.visibility = View.VISIBLE
+            binding.cgIdealWorkspace.visibility = View.VISIBLE
+        }
     }
 
     private fun setIdealJobAudio() {
@@ -205,8 +227,8 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
     }
 
     private fun setActivitiesTags() {
-       if (viewModel.jobSeeker.activities.isEmpty()){ }else{
-           val activities = JSONArray(viewModel.jobSeeker.activities)
+       if (viewModel.jobSeeker.interests.isEmpty()){ }else{
+           val activities = JSONArray(viewModel.jobSeeker.interests)
            var i = 0
            while (i < activities.length()) {
                activitiesTags.add(activities.getString(i))
@@ -277,6 +299,13 @@ class SeekerPreviewFragment : BaseFragmentMain<FragmentSeekerPreviewBinding>() {
                 binding.tvPortfolioTitle.visibility = View.GONE
             }else{
                 binding.tvPortfolioTitle.visibility = View.VISIBLE
+            }
+
+            val itemLinkView = LayoutInflater.from(requireContext()).inflate(R.layout.item_link, binding.llLinks, false)
+            binding.llLinks.removeAllViews()
+            portfolio?.links?.forEach { link ->
+                itemLinkView.tv_link.text = link
+                binding.llLinks.addView(itemLinkView)
             }
         }
 

@@ -50,12 +50,15 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
         sViewsWithIds.put(R.id.iv_audio_play_btn, 35);
         sViewsWithIds.put(R.id.sb_audio, 36);
         sViewsWithIds.put(R.id.tv_audio_duration, 37);
-        sViewsWithIds.put(R.id.tv_portfolio_title, 38);
-        sViewsWithIds.put(R.id.tv_portfolio_description, 39);
-        sViewsWithIds.put(R.id.cv_portfolio_video, 40);
-        sViewsWithIds.put(R.id.iv_portfolio_video, 41);
-        sViewsWithIds.put(R.id.rv_portfolio_images, 42);
-        sViewsWithIds.put(R.id.cl_portfolio_audio_player, 43);
+        sViewsWithIds.put(R.id.tv_ideal_workspace_title, 38);
+        sViewsWithIds.put(R.id.cg_ideal_workspace, 39);
+        sViewsWithIds.put(R.id.tv_portfolio_title, 40);
+        sViewsWithIds.put(R.id.tv_portfolio_description, 41);
+        sViewsWithIds.put(R.id.cv_portfolio_video, 42);
+        sViewsWithIds.put(R.id.iv_portfolio_video, 43);
+        sViewsWithIds.put(R.id.rv_portfolio_images, 44);
+        sViewsWithIds.put(R.id.cl_portfolio_audio_player, 45);
+        sViewsWithIds.put(R.id.ll_links, 46);
     }
     // views
     @NonNull
@@ -66,35 +69,37 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
     // Inverse Binding Event Handlers
 
     public FragmentSeekerPreviewBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 44, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 47, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerPreviewBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (com.google.android.material.chip.ChipGroup) bindings[28]
+            , (com.google.android.material.chip.ChipGroup) bindings[39]
             , (com.google.android.material.chip.ChipGroup) bindings[24]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[34]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[43]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[45]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
             , (androidx.cardview.widget.CardView) bindings[31]
-            , (androidx.cardview.widget.CardView) bindings[40]
+            , (androidx.cardview.widget.CardView) bindings[42]
             , (android.widget.ImageView) bindings[35]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[32]
             , (android.widget.ImageView) bindings[10]
             , (android.widget.ImageView) bindings[11]
-            , (android.widget.ImageView) bindings[41]
+            , (android.widget.ImageView) bindings[43]
             , (android.widget.ImageView) bindings[19]
             , (android.widget.ImageView) bindings[20]
             , (android.widget.ImageView) bindings[12]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
             , (android.widget.LinearLayout) bindings[9]
             , (androidx.core.widget.NestedScrollView) bindings[4]
+            , (android.widget.LinearLayout) bindings[46]
             , (android.widget.RelativeLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[18]
             , (androidx.recyclerview.widget.RecyclerView) bindings[22]
             , (androidx.recyclerview.widget.RecyclerView) bindings[33]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[42]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[44]
             , (androidx.recyclerview.widget.RecyclerView) bindings[16]
             , (androidx.recyclerview.widget.RecyclerView) bindings[26]
             , (android.widget.SeekBar) bindings[36]
@@ -104,9 +109,10 @@ public class FragmentSeekerPreviewBindingImpl extends FragmentSeekerPreviewBindi
             , (android.widget.TextView) bindings[21]
             , (android.widget.TextView) bindings[30]
             , (android.widget.TextView) bindings[29]
-            , (android.widget.TextView) bindings[27]
-            , (android.widget.TextView) bindings[39]
             , (android.widget.TextView) bindings[38]
+            , (android.widget.TextView) bindings[27]
+            , (android.widget.TextView) bindings[41]
+            , (android.widget.TextView) bindings[40]
             , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[14]
             , (android.widget.TextView) bindings[7]

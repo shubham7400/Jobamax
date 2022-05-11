@@ -30,6 +30,9 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final ChipGroup cgActivities;
 
   @NonNull
+  public final ChipGroup cgIdealWorkspace;
+
+  @NonNull
   public final ChipGroup cgSoftSkill;
 
   @NonNull
@@ -87,6 +90,9 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final NestedScrollView linearLayoutCompat2s;
 
   @NonNull
+  public final LinearLayout llLinks;
+
+  @NonNull
   public final RelativeLayout relativeLayout;
 
   @NonNull
@@ -129,6 +135,9 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   public final TextView tvIdealJobTitle;
 
   @NonNull
+  public final TextView tvIdealWorkspaceTitle;
+
+  @NonNull
   public final TextView tvInterest;
 
   @NonNull
@@ -159,23 +168,25 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerPreviewBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ChipGroup cgActivities, ChipGroup cgSoftSkill, CircleImageView civSeeker,
-      ConstraintLayout clAudioPlayer, ConstraintLayout clPortfolioAudioPlayer,
-      ConstraintLayout constraintLayout12, CardView cvIdealJobVideo, CardView cvPortfolioVideo,
-      ImageView ivAudioPlayBtn, ImageView ivBackButton, ImageView ivIdealJobVideo,
-      ImageView ivInstagram, ImageView ivLinkedin, ImageView ivPortfolioVideo,
-      ImageView ivSeeLessExperience, ImageView ivSeeMoreExperience, ImageView ivTiktok,
-      CircleImageView ivUserProfile, LinearLayout linearLayout7,
-      NestedScrollView linearLayoutCompat2s, RelativeLayout relativeLayout,
-      RecyclerView rvExperience, RecyclerView rvHardSkill, RecyclerView rvIdealJobImages,
-      RecyclerView rvPortfolioImages, RecyclerView rvSchool, RecyclerView rvVolunteering,
-      SeekBar sbAudio, TextView tvAboutTitle, TextView tvAudioDuration, TextView tvExperience,
-      TextView tvHardSkill, TextView tvIdealJobDescription, TextView tvIdealJobTitle,
-      TextView tvInterest, TextView tvPortfolioDescription, TextView tvPortfolioTitle,
-      TextView tvSchool, TextView tvSeekerAbout, TextView tvSeekerName, TextView tvSeekerProfession,
+      ChipGroup cgActivities, ChipGroup cgIdealWorkspace, ChipGroup cgSoftSkill,
+      CircleImageView civSeeker, ConstraintLayout clAudioPlayer,
+      ConstraintLayout clPortfolioAudioPlayer, ConstraintLayout constraintLayout12,
+      CardView cvIdealJobVideo, CardView cvPortfolioVideo, ImageView ivAudioPlayBtn,
+      ImageView ivBackButton, ImageView ivIdealJobVideo, ImageView ivInstagram,
+      ImageView ivLinkedin, ImageView ivPortfolioVideo, ImageView ivSeeLessExperience,
+      ImageView ivSeeMoreExperience, ImageView ivTiktok, CircleImageView ivUserProfile,
+      LinearLayout linearLayout7, NestedScrollView linearLayoutCompat2s, LinearLayout llLinks,
+      RelativeLayout relativeLayout, RecyclerView rvExperience, RecyclerView rvHardSkill,
+      RecyclerView rvIdealJobImages, RecyclerView rvPortfolioImages, RecyclerView rvSchool,
+      RecyclerView rvVolunteering, SeekBar sbAudio, TextView tvAboutTitle, TextView tvAudioDuration,
+      TextView tvExperience, TextView tvHardSkill, TextView tvIdealJobDescription,
+      TextView tvIdealJobTitle, TextView tvIdealWorkspaceTitle, TextView tvInterest,
+      TextView tvPortfolioDescription, TextView tvPortfolioTitle, TextView tvSchool,
+      TextView tvSeekerAbout, TextView tvSeekerName, TextView tvSeekerProfession,
       TextView tvSoftSkill, TextView tvVolunteeringTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cgActivities = cgActivities;
+    this.cgIdealWorkspace = cgIdealWorkspace;
     this.cgSoftSkill = cgSoftSkill;
     this.civSeeker = civSeeker;
     this.clAudioPlayer = clAudioPlayer;
@@ -195,6 +206,7 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
     this.ivUserProfile = ivUserProfile;
     this.linearLayout7 = linearLayout7;
     this.linearLayoutCompat2s = linearLayoutCompat2s;
+    this.llLinks = llLinks;
     this.relativeLayout = relativeLayout;
     this.rvExperience = rvExperience;
     this.rvHardSkill = rvHardSkill;
@@ -209,6 +221,7 @@ public abstract class FragmentSeekerPreviewBinding extends ViewDataBinding {
     this.tvHardSkill = tvHardSkill;
     this.tvIdealJobDescription = tvIdealJobDescription;
     this.tvIdealJobTitle = tvIdealJobTitle;
+    this.tvIdealWorkspaceTitle = tvIdealWorkspaceTitle;
     this.tvInterest = tvInterest;
     this.tvPortfolioDescription = tvPortfolioDescription;
     this.tvPortfolioTitle = tvPortfolioTitle;

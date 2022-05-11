@@ -73,14 +73,10 @@
 
                 <Button
                     android:id="@+id/bt_job_search"
-                    android:layout_width="match_parent"
+                    style="@style/button_gradient_rect"
                     android:layout_height="50dp"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/bg_gradient_rounded"
                     android:text="@string/start_my_job_search"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -345,13 +341,9 @@
 
                 <Button
                     android:id="@+id/btn_coaching"
-                    android:layout_width="match_parent"
+                    style="@style/button_gradient_rect"
                     android:layout_height="50dp"
-                    android:background="@drawable/bg_gradient_rounded"
                     android:text="@string/coaching"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

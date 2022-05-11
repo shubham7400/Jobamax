@@ -72,18 +72,12 @@
 					android:orientation="vertical">
 
 					<Button
-						android:layout_width="match_parent"
+						style="@style/button_gradient_rect32"
 						android:layout_height="45dp"
 						android:layout_marginBottom="4dp"
-						android:background="@drawable/bg_round_button_blue"
-						android:onClick="@{() -> handler.onNotifiedClicked()}"
-						android:paddingLeft="48dp"
-						android:paddingRight="48dp"
+ 						android:onClick="@{() -> handler.onNotifiedClicked()}"
 						android:layout_marginHorizontal="37dp"
-						android:text="@string/i_want_to_be_notified"
-						android:textColor="@color/white"
-						android:textSize="18sp"
-						android:textStyle="bold" />
+						android:text="@string/i_want_to_be_notified" />
 
 					<TextView
 						android:layout_width="wrap_content"

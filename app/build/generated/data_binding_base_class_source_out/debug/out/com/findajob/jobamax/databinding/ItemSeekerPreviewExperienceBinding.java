@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -19,9 +18,6 @@ import java.lang.Object;
 public abstract class ItemSeekerPreviewExperienceBinding extends ViewDataBinding {
   @NonNull
   public final ConstraintLayout clMostParent;
-
-  @NonNull
-  public final CardView cvImage;
 
   @NonNull
   public final ImageView ivCompany;
@@ -36,11 +32,10 @@ public abstract class ItemSeekerPreviewExperienceBinding extends ViewDataBinding
   public final TextView tvProfession;
 
   protected ItemSeekerPreviewExperienceBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ConstraintLayout clMostParent, CardView cvImage, ImageView ivCompany,
+      int _localFieldCount, ConstraintLayout clMostParent, ImageView ivCompany,
       TextView tvCompanyName, TextView tvDateDuration, TextView tvProfession) {
     super(_bindingComponent, _root, _localFieldCount);
     this.clMostParent = clMostParent;
-    this.cvImage = cvImage;
     this.ivCompany = ivCompany;
     this.tvCompanyName = tvCompanyName;
     this.tvDateDuration = tvDateDuration;

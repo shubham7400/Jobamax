@@ -197,7 +197,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:fontFamily="@font/opensans_regular"
-                            android:hint="@string/select_date"
+                            android:hint="@string/select_date_education"
                             android:textColorHint="@color/black"
                             android:layout_marginTop="10dp"
                             android:textColor="@color/black"
@@ -244,7 +244,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:fontFamily="@font/opensans_regular"
-                            android:hint="@string/select_date"
+                            android:hint="@string/select_date_education"
                             android:textColorHint="@color/black"
                             android:textColor="@color/black"
                             android:textSize="18sp"
@@ -290,20 +290,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/textViewdd19"
                     tools:layout_editor_absoluteX="0dp" />
 
-                <Button
-                    android:id="@+id/btn_add_experience"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/bg_gradient_rounded"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:text="@string/save"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_description" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_company_suggestions"

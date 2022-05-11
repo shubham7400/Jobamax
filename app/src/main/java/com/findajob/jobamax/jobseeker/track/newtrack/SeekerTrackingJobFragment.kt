@@ -1,5 +1,6 @@
 package com.findajob.jobamax.jobseeker.track.newtrack
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,15 +22,17 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
 import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.model.TrackingJob
+import com.findajob.jobamax.preference.getLanguage
 import com.findajob.jobamax.preference.getUserId
+import com.findajob.jobamax.util.FRENCH_LANG_CODE
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
+import com.findajob.jobamax.util.trackingEventMap
 import com.google.gson.Gson
 import com.parse.FunctionCallback
 import com.parse.ParseCloud
 import com.parse.ParseObject
 import com.parse.ParseQuery
-import com.pushwoosh.repository.s
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
@@ -128,10 +131,10 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
     }
 
     private fun setAdapter() {
-        jobamaxJobAdapter = SeekerTrackingJobamaxJobAdapter(trackingJobamaxJobList)
+        jobamaxJobAdapter = SeekerTrackingJobamaxJobAdapter(trackingJobamaxJobList, requireContext())
         binding.rvTrackedJob.adapter = jobamaxJobAdapter
 
-        otherJobAdapter = SeekerTrackingOtherJobAdapter(trackingOtherJobList)
+        otherJobAdapter = SeekerTrackingOtherJobAdapter(trackingOtherJobList, requireContext())
         binding.rvTrackedOtherJob.adapter = otherJobAdapter
     }
 
@@ -157,6 +160,8 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
                 selectedFilter = it
                 jobamaxJobAdapter.submitList(trackingJobamaxJobList, selectedFilter)
                 jobamaxJobAdapter.notifyDataSetChanged()
+                otherJobAdapter.submitList(trackingOtherJobList, selectedFilter)
+                otherJobAdapter.notifyDataSetChanged()
             }
         }
         binding.tvJobamaxJob.setOnClickListener {
@@ -201,7 +206,7 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
                     list.forEach {
                         trackingOtherJobList.add(TrackingOtherJob(it))
                     }
-                    otherJobAdapter.submitList(trackingOtherJobList)
+                    otherJobAdapter.submitList(trackingOtherJobList, selectedFilter)
                     otherJobAdapter.notifyDataSetChanged()
                 }
             }
@@ -230,7 +235,7 @@ class SeekerTrackingJobFragment : BaseFragmentMain<FragmentSeekerTrackingJobBind
 
 }
 
-class SeekerTrackingJobamaxJobAdapter(var list: ArrayList<TrackingJob>) : RecyclerView.Adapter<SeekerTrackingJobamaxJobAdapter.ViewHolder>(){
+class SeekerTrackingJobamaxJobAdapter(var list: ArrayList<TrackingJob>, val requireContext: Context) : RecyclerView.Adapter<SeekerTrackingJobamaxJobAdapter.ViewHolder>(){
     var selectedFilter = SeekerTrackingJobFilter.ALL
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemSeekerTrackBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -266,9 +271,29 @@ class SeekerTrackingJobamaxJobAdapter(var list: ArrayList<TrackingJob>) : Recycl
             }
 
             if (lastPhase != null) {
-                this.tvLatestPhase.text = lastPhase!!.name
-            }
+                if (requireContext.getLanguage() == FRENCH_LANG_CODE){
+                    if (trackingEventMap.containsKey(lastPhase!!.name)){
+                        this.tvLatestPhase.text = trackingEventMap[lastPhase!!.name]
+                    }else{
+                        this.tvLatestPhase.text = lastPhase!!.name
+                    }
+                }else{
+                    if (trackingEventMap.containsKey(lastPhase!!.name)){
+                        this.tvLatestPhase.text = lastPhase!!.name
+                    }else{
+                        if (trackingEventMap.containsValue(lastPhase!!.name)){
+                            trackingEventMap.forEach {
+                                if (it.value == lastPhase!!.name){
+                                    this.tvLatestPhase.text = it.key
+                                }
+                            }
+                        }else{
+                            this.tvLatestPhase.text = lastPhase!!.name
+                        }
+                    }
+                }
 
+            }
 
             this.tvJobTitle.text = job.job?.getString("jobTitle") ?: ""
             this.tvCompanyName.text = job.job?.getString("companyName") ?: ""
@@ -370,15 +395,72 @@ class SeekerTrackingJobamaxJobAdapter(var list: ArrayList<TrackingJob>) : Recycl
     class ViewHolder(val binding: ItemSeekerTrackBinding) : RecyclerView.ViewHolder(binding.root)
 }
 
-class SeekerTrackingOtherJobAdapter(var list: ArrayList<TrackingOtherJob>) : RecyclerView.Adapter<SeekerTrackingOtherJobAdapter.ViewHolder>(){
+class SeekerTrackingOtherJobAdapter(var list: ArrayList<TrackingOtherJob>, val requireContext: Context) : RecyclerView.Adapter<SeekerTrackingOtherJobAdapter.ViewHolder>(){
+    var selectedFilter = SeekerTrackingJobFilter.ALL
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(ItemSeekerOtherJobBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val job = list[position]
         holder.binding.apply {
+            val mainObject = Gson().fromJson(job.phases, PhaseGroup::class.java)
+            val phases = ArrayList(mainObject.phases)
+            var lastPhase: Phase? = null
+            var date: Date? = null
+            phases.forEach {
+                var sdf: SimpleDateFormat? = null
+                var date1: Date? = null
+                try {
+                    sdf = SimpleDateFormat("MMM dd, yyyy")
+                    date1 = sdf.parse(it.date)
+                }catch (e: java.lang.Exception){
+                    sdf = SimpleDateFormat("MMM dd, yyyy", Locale.FRANCE)
+                    try {
+                        date1 = sdf.parse(it.date)
+                    }catch (e: java.lang.Exception){}
+                }
+                if (date == null){
+                    date = date1
+                    lastPhase = it
+                }else{
+                    if (date1 != null) {
+                        if (date1.after(date)){
+                            date = date1
+                            lastPhase = it
+                        }
+                    }
+                }
+            }
+
+            if (lastPhase != null) {
+                if (requireContext.getLanguage() == FRENCH_LANG_CODE){
+                    if (trackingEventMap.containsKey(lastPhase!!.name)){
+                        this.tvLatestPhase.text = trackingEventMap[lastPhase!!.name]
+                    }else{
+                        this.tvLatestPhase.text = lastPhase!!.name
+                    }
+                }else{
+                    if (trackingEventMap.containsKey(lastPhase!!.name)){
+                        this.tvLatestPhase.text = lastPhase!!.name
+                    }else{
+                        if (trackingEventMap.containsValue(lastPhase!!.name)){
+                            trackingEventMap.forEach {
+                                if (it.value == lastPhase!!.name){
+                                    this.tvLatestPhase.text = it.key
+                                }
+                            }
+                        }else{
+                            this.tvLatestPhase.text = lastPhase!!.name
+                        }
+                    }
+                }
+            }else{
+                this.tvLatestPhase.text = ""
+            }
+
+
             this.tvJobTitle.text = job.jobTitle
             this.tvCompanyName.text = job.companyName
             this.tvCity.text = job.city
-            this.ivCompany.setImageResource(R.drawable.ic_company)
+            this.ivCompany.setImageResource(R.drawable.wishlist_dummy)
             val bundle = Bundle()
             bundle.putSerializable("trackingOtherJob", job)
             this.clParent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.seekerTrackingJobDetailsFragment, bundle))
@@ -386,8 +468,81 @@ class SeekerTrackingOtherJobAdapter(var list: ArrayList<TrackingOtherJob>) : Rec
         }
     }
     override fun getItemCount(): Int = list.size
-    fun submitList(trackingJobList: ArrayList<TrackingOtherJob>) {
-        list = trackingJobList
+    fun submitList(trackingJobList: ArrayList<TrackingOtherJob>, appliedFilter: SeekerTrackingJobFilter) {
+        this.selectedFilter = appliedFilter
+        val jobs = ArrayList<TrackingOtherJob>()
+        when(selectedFilter) {
+            SeekerTrackingJobFilter.ALL -> {
+                trackingJobList.forEach { job ->
+                    jobs.add(job)
+                }
+            }
+            SeekerTrackingJobFilter.APPLIED -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }            }
+            SeekerTrackingJobFilter.REFUSED -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }            }
+            SeekerTrackingJobFilter.ONLINE_INTERVIEWS -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }            }
+            SeekerTrackingJobFilter.INTERVIEWS -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }            }
+            SeekerTrackingJobFilter.HIRED -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }            }
+            SeekerTrackingJobFilter.ASSESSMENTS -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }            }
+            SeekerTrackingJobFilter.PHONE_CALL -> {
+                trackingJobList.forEach { job ->
+                    val phaseGroup = Gson().fromJson(job.phases, PhaseGroup::class.java)
+                    phaseGroup.phases.forEach {
+                        if (it.name == selectedFilter.filterType){
+                            jobs.add(job)
+                        }
+                    }
+                }
+            }
+        }
+        list = jobs
     }
 
     class ViewHolder(val binding: ItemSeekerOtherJobBinding) : RecyclerView.ViewHolder(binding.root)

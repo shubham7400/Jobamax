@@ -40,12 +40,12 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\education.png"
     },
     {
-        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_rounded_red_box_trans.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\rounded_red_box_trans.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_invite_whatsapp.png.flat",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\filter.png"
     },
     {
-        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_show.xml.flat",
-        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_show.xml"
-    },
-    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_seeker_job_web_dialog.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_job_web_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_show.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_show.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_delete_red_icon.png.flat",
@@ -94,6 +94,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bg_sligthly_rounded_edit_text.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\bg_sligthly_rounded_edit_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_rounded_white_box_grey_stroke.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\rounded_white_box_grey_stroke.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -122,10 +126,6 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_invite_messenger.png.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\invite_messenger.png"
-    },
-    {
-        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_unarchive.xml.flat",
-        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_unarchive.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\font_opensans_semi_bold_italic.ttf.flat",
@@ -160,10 +160,6 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_top_arrow.xml"
     },
     {
-        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_archive.xml.flat",
-        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_archive.xml"
-    },
-    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_whishlist_img2.png.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\whishlist_img2.png"
     },
@@ -178,10 +174,6 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
-    },
-    {
-        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_heart.png.flat",
-        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\heart.png"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_ideal_job_video.xml.flat",
@@ -254,6 +246,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_seeker_import_resume.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\fragment_seeker_import_resume.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_item_link.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_link.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_seeker_search_university_dialog.xml.flat",
@@ -696,6 +692,10 @@
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\filter.png"
     },
     {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_dialog_yes_no.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\dialog_yes_no.xml"
+    },
+    {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_seek_style.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\seek_style.xml"
     },
@@ -930,6 +930,10 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_item_calender_event_card.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\layout\\item_calender_event_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_unarchive.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_unarchive.png"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_activities.png.flat",
@@ -1174,6 +1178,14 @@
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_rounded_blue_box.xml.flat",
         "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\rounded_blue_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_archive.png.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_archive.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_link.xml.flat",
+        "source": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\src\\main\\res\\drawable\\ic_link.xml"
     },
     {
         "merged": "C:\\Users\\pc\\AndroidStudioProjects\\jobamaxandroid\\app\\build\\intermediates\\merged_res\\debug\\layout_item_seeker_preview_school.xml.flat",

@@ -23,9 +23,7 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.model.TrackingOtherJob
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.preference.getLanguage
-import com.findajob.jobamax.util.loadImageFromUrl
-import com.findajob.jobamax.util.log
-import com.findajob.jobamax.util.toast
+import com.findajob.jobamax.util.*
 import com.google.gson.Gson
 
 
@@ -44,7 +42,7 @@ class SeekerTrackingJobDetailsFragment : BaseFragmentMain<FragmentSeekerTracking
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSeekerTrackingJobDetailsBinding.inflate(inflater, container, false)
-        if ( requireContext().getLanguage() == "en"){
+        if ( requireContext().getLanguage() == ENGLISH_LANG_CODE){
             phaseList = arrayListOf("Select Phase", "Online interview" , "Assesment" , "Phone call", "Interview", "Hired" , "Refused")
             phases = phaseList
         }else{

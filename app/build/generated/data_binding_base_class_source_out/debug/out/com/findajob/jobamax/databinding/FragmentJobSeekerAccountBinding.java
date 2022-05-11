@@ -29,13 +29,16 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   public final ConstraintLayout clChangeLanguage;
 
   @NonNull
-  public final SwitchCompat hideMeFlag;
-
-  @NonNull
   public final ImageView ivBackButton;
 
   @NonNull
   public final ImageView ivChangeLanguageArrow;
+
+  @NonNull
+  public final ImageView ivMyPersonalInfo;
+
+  @NonNull
+  public final ImageView ivNewsletterArrow;
 
   @NonNull
   public final RelativeLayout relativeLayout;
@@ -49,6 +52,9 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvCurrentLanguage;
 
+  @NonNull
+  public final TextView tvNewsletter;
+
   @Bindable
   protected JobSeeker mJobSeeker;
 
@@ -57,19 +63,21 @@ public abstract class FragmentJobSeekerAccountBinding extends ViewDataBinding {
 
   protected FragmentJobSeekerAccountBinding(Object _bindingComponent, View _root,
       int _localFieldCount, CircleImageView civUser, ConstraintLayout clChangeLanguage,
-      SwitchCompat hideMeFlag, ImageView ivBackButton, ImageView ivChangeLanguageArrow,
-      RelativeLayout relativeLayout, SwitchCompat sbPushNotification, TextView tvChangeLanguage,
-      TextView tvCurrentLanguage) {
+      ImageView ivBackButton, ImageView ivChangeLanguageArrow, ImageView ivMyPersonalInfo,
+      ImageView ivNewsletterArrow, RelativeLayout relativeLayout, SwitchCompat sbPushNotification,
+      TextView tvChangeLanguage, TextView tvCurrentLanguage, TextView tvNewsletter) {
     super(_bindingComponent, _root, _localFieldCount);
     this.civUser = civUser;
     this.clChangeLanguage = clChangeLanguage;
-    this.hideMeFlag = hideMeFlag;
     this.ivBackButton = ivBackButton;
     this.ivChangeLanguageArrow = ivChangeLanguageArrow;
+    this.ivMyPersonalInfo = ivMyPersonalInfo;
+    this.ivNewsletterArrow = ivNewsletterArrow;
     this.relativeLayout = relativeLayout;
     this.sbPushNotification = sbPushNotification;
     this.tvChangeLanguage = tvChangeLanguage;
     this.tvCurrentLanguage = tvCurrentLanguage;
+    this.tvNewsletter = tvNewsletter;
   }
 
   public abstract void setJobSeeker(@Nullable JobSeeker jobSeeker);

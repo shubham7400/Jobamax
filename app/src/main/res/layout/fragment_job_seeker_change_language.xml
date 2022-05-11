@@ -45,7 +45,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                     android:text="@string/language" />
+                    android:text="@string/language" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"
@@ -72,6 +72,7 @@
                 android:id="@+id/tv_english_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/title_regular"
                 android:drawableEnd="@drawable/ic_done_blue"
                 android:padding="10dp"
                 android:text="en"
@@ -83,6 +84,7 @@
                 android:id="@+id/tv_french_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/title_regular"
                 android:drawableEnd="@drawable/ic_done_blue"
                 android:padding="10dp"
                 android:text="fr"

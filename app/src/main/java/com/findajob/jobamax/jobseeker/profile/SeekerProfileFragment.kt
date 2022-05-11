@@ -20,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import com.findajob.jobamax.data.pojo.IdealJob
 import com.findajob.jobamax.data.pojo.Portfolio
+import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.preference.getUserId
@@ -154,20 +155,21 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             }
 
             if (portfolio.arrImages.isNotEmpty()){
-                binding.tvPortfolioImagesTitle.text = "Images ${portfolio.arrImages.size}/5"
+                binding.tvPortfolioImagesTitle.text = "Photos ${portfolio.arrImages.size}/5"
             }else{
-                binding.tvPortfolioImagesTitle.text = "Images 0/1"
+                binding.tvPortfolioImagesTitle.text = "Photos 0/1"
             }
         }
         if (jobSeeker.elevatorPitch == ""){
             binding.tvElevetorPitchSection.visibility = View.VISIBLE
         }else{
-            binding.tvElevetorPitchSection.visibility = View.INVISIBLE
+            binding.tvElevetorPitchSection.visibility = View.GONE
         }
     }
 
     private fun setClickListeners() {
-        binding.ivInfo.setOnClickListener(this)
+        binding.ivIdealJobInfo.setOnClickListener(this)
+        binding.ivPortfolioInfo.setOnClickListener(this)
         binding.ivBackButton.setOnClickListener(this)
         binding.ivAddIdealWorkspaceBtn.setOnClickListener(this)
         binding.tvAboutMeBtn.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_seekerAboutMeFragment, null))
@@ -189,18 +191,17 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
         binding.rlPortfolioVideo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioVideoFragment, null))
         binding.rlPortfolioMessage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioDescriptionFragment, null))
         binding.rlPortfolioImage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_portfolioImageFragment, null))
-
-
-        binding.ivJobSearch.setOnClickListener {
-            startActivity(Intent(requireContext(), SeekerJobSearchActivity::class.java))
-        }
+        binding.ivJobSearch.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerProfileFragment_to_nav_job_search, null))
     }
 
 
     override fun onClick(view: View?) {
         when(view){
-            binding.ivInfo -> {
-                binding.ivInfo.performLongClick()
+            binding.ivIdealJobInfo -> {
+                BasicDialog(requireActivity(), getString(R.string.ideal_job_info), false){}.show()
+            }
+            binding.ivPortfolioInfo -> {
+                BasicDialog(requireActivity(), getString(R.string.portfolio_info), false){}.show()
             }
             binding.ivBackButton -> {
                 requireActivity().onBackPressed()

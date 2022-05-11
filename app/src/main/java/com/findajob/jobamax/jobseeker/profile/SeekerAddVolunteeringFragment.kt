@@ -15,6 +15,7 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerAddVolunteeringBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.Volunteering
+import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.model.SearchQueryCompany
 import com.findajob.jobamax.network.ApiFetchCompaniesService
 import com.findajob.jobamax.repos.SearchQueryCompanyRepo
@@ -31,7 +32,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 @AndroidEntryPoint
-class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVolunteeringBinding>() {
+class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVolunteeringBinding>(), IOnBackPressed {
 
     override val layoutRes: Int get() = R.layout.fragment_seeker_add_volunteering
     val viewModel: JobSeekerHomeViewModel by activityViewModels()
@@ -76,37 +77,7 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
 
     private fun setClickListeners() {
         binding.ivUserProfile.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerAddVolunteeringFragment_to_seekerProfileFragment, null))
-         binding.btnAddVolunteering.setOnClickListener {
-             if(validate()){
-                 val volunteering = if (volunteeringOld != null){
-                     volunteeringOld
-                 }else{
-                     Volunteering()
-                 }
-                 volunteering!!.job = binding.etActivity.text.toString()
-                 volunteering.company = binding.etOrganisation.text.toString()
-                 volunteering.location = binding.tvSelectLocation.text.toString()
-                 volunteering.startDate = binding.tvStartDate.text.toString()
-                 volunteering.endDate = if (binding.tvEndDate.text.isNullOrEmpty()) "" else binding.tvEndDate.text.toString()
-                 volunteering.description = binding.etDescription.text.toString()
-                 if (binding.cbCurrentStudent.isChecked){
-                     volunteering.endDate =  ""
-                 }else{
-                     volunteering.endDate =  binding.tvEndDate.text.toString()
-                 }
-                 volunteering.logo = selectedCompany?.logo ?: ""
-                 progressHud.show()
-                 viewModel.addOrUpdateVolunteering(volunteering) {
-                     progressHud.dismiss()
-                     if (it == null){
-                         toast("Volunteering Added.")
-                         requireActivity().onBackPressed()
-                     }else{
-                         toast("${it.message.toString()} Something went wrong")
-                     }
-                 }
-             }
-         }
+
         binding.tvStartDate.setOnClickListener {
             onDateClicked(binding.tvStartDate)
         }
@@ -241,6 +212,41 @@ class SeekerAddVolunteeringFragment : BaseFragmentMain<FragmentSeekerAddVoluntee
             }
             override fun onError(status: Status) {}
         })
+    }
+
+    override fun onBackPressed(callback: () -> Unit) {
+        if(validate()){
+            val volunteering = if (volunteeringOld != null){
+                volunteeringOld
+            }else{
+                Volunteering()
+            }
+            volunteering!!.job = binding.etActivity.text.toString()
+            volunteering.company = binding.etOrganisation.text.toString()
+            volunteering.location = binding.tvSelectLocation.text.toString()
+            volunteering.startDate = binding.tvStartDate.text.toString()
+            volunteering.endDate = if (binding.tvEndDate.text.isNullOrEmpty()) "" else binding.tvEndDate.text.toString()
+            volunteering.description = binding.etDescription.text.toString()
+            if (binding.cbCurrentStudent.isChecked){
+                volunteering.endDate =  ""
+            }else{
+                volunteering.endDate =  binding.tvEndDate.text.toString()
+            }
+            volunteering.logo = selectedCompany?.logo ?: ""
+            progressHud.show()
+            viewModel.addOrUpdateVolunteering(volunteering) {
+                progressHud.dismiss()
+                if (it == null){
+                    toast("Volunteering Added.")
+                    callback()
+                }else{
+                    toast("${it.message.toString()} Something went wrong")
+                    callback()
+                }
+            }
+        }else{
+            callback()
+        }
     }
 
 }

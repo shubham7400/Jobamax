@@ -232,15 +232,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
         }
     }
 
-   /* fun updateJobSeeker(firstName: String, lastName: String, profession: String, description: String, callback: (it: ParseException?) -> Unit) {
-        jobSeekerObject!!.put(ParseTableFields.firstName.toString(), firstName)
-        jobSeekerObject!!.put(ParseTableFields.lastName.toString(), lastName)
-        jobSeekerObject!!.put(ParseTableFields.profession.toString(), profession)
-        jobSeekerObject!!.put(ParseTableFields.elevatorPitch.toString(), description)
-        jobSeekerObject!!.saveInBackground {
-            callback(it)
-        }
-    }*/
+
 
     fun addNewOrUpdateEducation(education: Education, callback: (it: ParseException?) -> Unit) {
         val educations = try {

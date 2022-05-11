@@ -59,6 +59,7 @@ class JobSeekerChangeLanguageFragment : BaseFragmentMain<FragmentJobSeekerChange
             requireContext().setLanguage("fr")
             restart()
         }
+        binding.ivBackButton.setOnClickListener { requireActivity().onBackPressed() }
     }
 
     fun restart() {

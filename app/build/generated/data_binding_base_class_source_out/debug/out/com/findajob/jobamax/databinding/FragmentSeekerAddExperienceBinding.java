@@ -4,7 +4,6 @@ package com.findajob.jobamax.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,9 +26,6 @@ import java.lang.Object;
 public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding {
   @NonNull
   public final FragmentContainerView autocompleteFragment;
-
-  @NonNull
-  public final Button btnAddExperience;
 
   @NonNull
   public final ConstraintLayout clMostParent;
@@ -98,7 +94,7 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
   protected JobSeeker mJobSeeker;
 
   protected FragmentSeekerAddExperienceBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, FragmentContainerView autocompleteFragment, Button btnAddExperience,
+      int _localFieldCount, FragmentContainerView autocompleteFragment,
       ConstraintLayout clMostParent, EditText etCompanyName, EditText etDescription, EditText etJob,
       ImageView ivBackButton, ImageView ivClearEndDate, ImageView ivClearStartDate,
       CircleImageView ivUserProfile, LinearLayout linearLayout4, RelativeLayout relativeLayout,
@@ -108,7 +104,6 @@ public abstract class FragmentSeekerAddExperienceBinding extends ViewDataBinding
       TextView tvSelectStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.autocompleteFragment = autocompleteFragment;
-    this.btnAddExperience = btnAddExperience;
     this.clMostParent = clMostParent;
     this.etCompanyName = etCompanyName;
     this.etDescription = etDescription;

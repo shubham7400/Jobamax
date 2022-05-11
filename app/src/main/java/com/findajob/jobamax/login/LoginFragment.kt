@@ -17,8 +17,7 @@ import com.findajob.jobamax.databinding.FragmentLoginBinding
 import com.findajob.jobamax.dialog.ChangePasswordDialog
 import com.findajob.jobamax.dialog.MessageDialog
 import com.findajob.jobamax.enums.LoginType
-import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
-import com.findajob.jobamax.model.UserTempInfo
+ import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.util.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount

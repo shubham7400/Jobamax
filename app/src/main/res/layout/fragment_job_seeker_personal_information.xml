@@ -66,88 +66,77 @@
             android:overScrollMode="never"
             app:layout_constraintTop_toBottomOf="@id/appBar">
 
-            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content">-->
-
-            <!--                <TextView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:textSize="16sp"-->
-            <!--                    app:layout_constraintTop_toTopOf="parent"-->
-            <!--                    app:layout_constraintStart_toStartOf="parent"-->
-            <!--                    android:layout_height="wrap_content"/>-->
-
-            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
                 android:orientation="vertical">
 
+
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2">
-
+                     android:weightSum="2">
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
                         <TextView
-                            style="@style/personal_information_heading_seeker"
+                            style="@style/title_bold"
+                            android:layout_marginBottom="5dp"
                             android:text="@string/first_name_asterisk" />
-
-
                         <EditText
                             android:id="@+id/firstNameField"
-                            style="@style/personal_information_field_seeker"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/enter_first_name"
+                            android:layout_height="40dp"
+                            android:paddingHorizontal="5dp"
+                            android:background="@drawable/rounded_white_box"
                             android:inputType="textCapWords"
                             android:text="@={jobSeeker.firstName}" />
-
                     </androidx.appcompat.widget.LinearLayoutCompat>
-
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"/>
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
                         <TextView
-                            style="@style/personal_information_heading_seeker"
+                            style="@style/title_bold"
+                            android:layout_marginBottom="5dp"
                             android:text="@string/last_name_asterisk" />
-
                         <EditText
                             android:id="@+id/lastNameField"
-                            style="@style/personal_information_field_seeker"
-                            android:hint="@string/enter_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:paddingHorizontal="5dp"
+                            android:background="@drawable/rounded_white_box"
                             android:inputType="textCapWords"
                             android:text="@={jobSeeker.lastName}" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-
                 <TextView
-                    style="@style/personal_information_heading_seeker"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    style="@style/title_bold"
                     android:text="@string/gender_with_asterisk" />
-
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_white_box"
                     android:onClick="@{(v) -> handler.onGenderClicked(v)}">
 
                     <TextView
                         android:id="@+id/genderLabel"
-                        style="@style/personal_information_field_seeker"
-                        android:hint="@string/enter_gender_here" />
-
+                        style="@style/title_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:padding="5dp" />
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
@@ -156,10 +145,10 @@
                         android:layout_marginEnd="16dp"
                         android:src="@drawable/ccp_ic_arrow_drop_down"
                         app:tint="@color/dark_divider" />
-
                 </RelativeLayout>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="2">
@@ -169,90 +158,91 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
-
                         <TextView
-                            style="@style/personal_information_heading_seeker"
-                            android:text="@string/postcode_asterisk" />
-
-
-                        <EditText
-                            android:id="@+id/postCodeField"
-                            style="@style/personal_information_field_seeker"
-                            android:hint="@string/enter_postcode"
-                            android:inputType="numberSigned"
-                            android:text="@={jobSeeker.postCode}" />
-
-
+                            style="@style/title_bold"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/date_of_birth_with_asterisk" />
+                        <TextView
+                            android:id="@+id/dobField"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            style="@style/title_regular"
+                            android:background="@drawable/rounded_white_box"
+                            android:paddingHorizontal="5dp"
+                            android:gravity="center_vertical"
+                            android:onClick="@{() -> handler.onDobClicked()}"
+                            android:text="@{jobSeeker.dob}" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"/>
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
-
                         <TextView
-                            style="@style/personal_information_heading_seeker"
-                            android:text="@string/date_of_birth_with_asterisk" />
-
-
-                        <TextView
-                            android:id="@+id/dobField"
-                            style="@style/personal_information_field_seeker"
-                            android:hint="DD/MM/YY"
-                            android:onClick="@{() -> handler.onDobClicked()}"
-                            android:text="@{jobSeeker.dob}" />
-
-
+                            style="@style/title_bold"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/postcode_asterisk" />
+                        <EditText
+                            android:id="@+id/postCodeField"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:paddingHorizontal="5dp"
+                            android:background="@drawable/rounded_white_box"
+                            android:gravity="center_vertical"
+                            android:inputType="numberSigned"
+                            android:text="@={jobSeeker.postCode}" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <TextView
-                    style="@style/personal_information_heading_seeker"
+                    android:layout_marginTop="20dp"
+                    style="@style/title_bold"
+                    android:layout_marginBottom="5dp"
                     android:text="@string/email_asterisk" />
 
 
                 <EditText
-                    style="@style/personal_information_field_seeker"
-                    android:hint="@string/enter_email"
+                    android:id="@+id/et_email_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_white_box"
+                    android:paddingHorizontal="5dp"
                     android:text="@{jobSeeker.email}"
                     android:textColor="@color/secondary_text" />
 
-
                 <TextView
-                    style="@style/personal_information_heading_seeker"
+                    android:layout_marginTop="20dp"
+                    style="@style/title_bold"
+                    android:layout_marginBottom="5dp"
                     android:text="@string/phone_number_asterisk" />
-
-
                 <LinearLayout
+                    android:background="@drawable/rounded_white_box"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                     <com.hbb20.CountryCodePicker
                         android:id="@+id/ccp"
-                        style="@style/personal_information_field_seeker"
                         android:layout_width="73dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="0dp"
+                        android:layout_height="40dp"
                         android:gravity="center"
-                        android:padding="0dp"
+                        android:layout_gravity="center"
                         app:ccp_countryPreference="US,FR,CA"
                         app:ccp_rememberLastSelection="true"
                         app:ccp_showArrow="false"
                         app:ccp_showFlag="false"
                         app:ccp_showNameCode="false" />
-
                     <EditText
                         android:id="@+id/phoneField"
-                        style="@style/personal_information_field_seeker"
-                        android:hint="@string/enter_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_white_box"
                         android:inputType="phone"
                         android:text="@{jobSeeker.phoneNumber.substring(jobSeeker.phoneNumber.lastIndexOf(` `)+1)}" />
-
                 </LinearLayout>
 
 
@@ -261,15 +251,11 @@
                     android:text="" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
+                    style="@style/button_gradient_rect32"
                     android:layout_marginTop="48dp"
-                    android:layout_marginEnd="48dp"
                     android:layout_marginBottom="72dp"
                     android:onClick="@{() -> handler.onSubmitClicked()}"
-                    android:text="@string/save"
-                    android:textStyle="normal" />
+                    android:text="@string/save" />
 
             </LinearLayout>
         </ScrollView>

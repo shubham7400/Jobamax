@@ -32,6 +32,9 @@ public abstract class FragmentJobSeekerPersonalInformationBinding extends ViewDa
   public final TextView dobField;
 
   @NonNull
+  public final EditText etEmailField;
+
+  @NonNull
   public final EditText firstNameField;
 
   @NonNull
@@ -60,13 +63,14 @@ public abstract class FragmentJobSeekerPersonalInformationBinding extends ViewDa
 
   protected FragmentJobSeekerPersonalInformationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppBarLayout appBar, CountryCodePicker ccp, TextView dobField,
-      EditText firstNameField, TextView genderLabel, AppCompatImageView imageView8,
-      EditText lastNameField, EditText phoneField, EditText postCodeField,
-      AppCompatTextView tvToolbarTitle) {
+      EditText etEmailField, EditText firstNameField, TextView genderLabel,
+      AppCompatImageView imageView8, EditText lastNameField, EditText phoneField,
+      EditText postCodeField, AppCompatTextView tvToolbarTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.appBar = appBar;
     this.ccp = ccp;
     this.dobField = dobField;
+    this.etEmailField = etEmailField;
     this.firstNameField = firstNameField;
     this.genderLabel = genderLabel;
     this.imageView8 = imageView8;
