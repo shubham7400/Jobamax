@@ -6,12 +6,9 @@ import androidx.navigation.fragment.findNavController
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerDeleteAccountBinding
-import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.dialog.BasicDialog
 import com.findajob.jobamax.jobseeker.profile.account.deleteAccount.adapter.LeavingReason
 import com.findajob.jobamax.jobseeker.profile.account.deleteAccount.adapter.LeavingReasonAdapter
-import com.findajob.jobamax.preference.getLanguage
-import com.findajob.jobamax.util.ENGLISH_LANG_CODE
-import com.findajob.jobamax.util.toast
 
 class SeekerDeleteAccountFragment : BaseFragmentMain<FragmentSeekerDeleteAccountBinding>(), SeekerDeleteAccountInterface {
 

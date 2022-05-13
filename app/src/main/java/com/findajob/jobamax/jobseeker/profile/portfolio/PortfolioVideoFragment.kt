@@ -1,5 +1,6 @@
 package com.findajob.jobamax.jobseeker.profile.portfolio
 
+import android.Manifest
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
@@ -27,6 +28,7 @@ import com.findajob.jobamax.databinding.FragmentPortfolioVideoBinding
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
  import com.findajob.jobamax.jobseeker.profile.VideoPlayActivity
+import com.findajob.jobamax.util.checkForPermissions
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.android.gms.tasks.Task
@@ -58,7 +60,7 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
             Portfolio(it)
         }
         if (portfolio == null){
-            val parseObject = ParseObject(ParseTableName.Portfolio.toString())
+            val parseObject = ParseObject(ParseTableName.PORTFOLIO.value)
             portfolio = Portfolio(parseObject)
             portfolio!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("portfolio", it) }
             viewModel.jobSeeker.pfObject?.saveInBackground()
@@ -194,7 +196,9 @@ class PortfolioVideoFragment : BaseFragmentMain<FragmentPortfolioVideoBinding>()
             requireActivity().onBackPressed()
         }
         binding.ivAddVideo.setOnClickListener {
-            dispatchTakeVideoIntent()
+            if (checkForPermissions(arrayOf(Manifest.permission.CAMERA))){
+                dispatchTakeVideoIntent()
+            }
         }
         binding.roundedImageView.setOnClickListener {
             if (videoUrl != ""){

@@ -1,6 +1,5 @@
 package com.findajob.jobamax.jobseeker.profile
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerProfileBinding
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
-import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity
 import com.findajob.jobamax.util.toast
 
 import com.google.android.material.chip.Chip
@@ -20,12 +18,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import com.findajob.jobamax.data.pojo.IdealJob
 import com.findajob.jobamax.data.pojo.Portfolio
-import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.dialog.BasicDialog
+import com.findajob.jobamax.dialog.YesNoDialog
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.preference.getUserId
-import com.findajob.jobamax.util.log
-import kotlinx.coroutines.*
 import com.parse.ParseObject
 import com.parse.ParseQuery
 
@@ -56,8 +53,8 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
     }
 
     private fun getCurrent( ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, context?.getUserId())
         query.include("portfolio")
         query.include("idealJob")
         progressHud.show()
@@ -226,15 +223,17 @@ class SeekerProfileFragment : BaseFragmentMain<FragmentSeekerProfileBinding>(), 
             val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgIdealWorkspace, false) as Chip
             chip.text = binding.etIdealWorkspace.text.toString()
             chip.setOnCloseIconClickListener { c ->
-                ownedWorkSpaces.remove((c as Chip).text)
-                binding.cgIdealWorkspace.removeView(c)
-                progressHud.show()
-                viewModel.addWorkSpace(ownedWorkSpaces){
-                    progressHud.dismiss()
-                    if (it != null){
-                        toast("${it.message.toString()} Something went wrong")
+                YesNoDialog(requireActivity(), resources.getString(R.string.are_you_sure), {
+                    ownedWorkSpaces.remove((c as Chip).text)
+                    binding.cgIdealWorkspace.removeView(c)
+                    progressHud.show()
+                    viewModel.addWorkSpace(ownedWorkSpaces){
+                        progressHud.dismiss()
+                        if (it != null){
+                            toast("${it.message.toString()} Something went wrong")
+                        }
                     }
-                }
+                },{}).show()
             }
             chip.isCloseIconVisible = true
             chip.setCloseIconResource(R.drawable.close_white)

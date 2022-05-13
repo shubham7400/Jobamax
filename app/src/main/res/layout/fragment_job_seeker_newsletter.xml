@@ -105,7 +105,6 @@
 				android:layout_marginBottom="12dp"
 				android:fontFamily="@font/opensans_regular"
 				android:text="@string/newsletter_instruction"
-				android:textAllCaps="true"
 				android:paddingStart="16dp"
 				android:textColor="@color/gray"
 				android:textSize="16sp" />

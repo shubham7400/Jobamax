@@ -11,18 +11,15 @@ import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.data.pojo.IdealJob
 import com.findajob.jobamax.data.pojo.Portfolio
 import com.findajob.jobamax.databinding.FragmentPortfolioDescriptionBinding
 import com.findajob.jobamax.databinding.ItemPortfolioLinkBinding
-import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.parse.ParseObject
-import com.parse.ParseQuery
 
 
 class PortfolioDescriptionFragment : BaseFragmentMain<FragmentPortfolioDescriptionBinding>(), IOnBackPressed {
@@ -85,7 +82,7 @@ class PortfolioDescriptionFragment : BaseFragmentMain<FragmentPortfolioDescripti
             Portfolio(it)
         }
         if (portfolio == null){
-            val parseObject = ParseObject(ParseTableName.Portfolio.toString())
+            val parseObject = ParseObject(ParseTableName.PORTFOLIO.value)
             portfolio = Portfolio(parseObject)
             portfolio!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("portfolio", it) }
             viewModel.jobSeeker.pfObject?.saveInBackground()

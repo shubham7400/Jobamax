@@ -1,21 +1,19 @@
 package com.findajob.jobamax.enums
 
-enum class ParseTableName {
-    User,
-    Activities,
-    Company,
-    Event,
-    Interests,
-    JobSeeker,
-    HardSkill,
-    SoftSkill,
-    University,
-    WishlistedJob,
-    TrackingJob,
-    Portfolio,
-    IdealJob,
-    PersonalTrackJob,
-    Notification,
-    Recruiter,
-    SalesPerson
+enum class ParseTableName(val value: String) {
+    USER("User"),
+    ACTIVITIES("Activities"),
+    EVENT("Event"),
+    INTERESTS("Interests"),
+    JOB_SEEKER("JobSeeker"),
+    HARD_SKILL("HardSkill"),
+    SOFT_SKILL("SoftSkill"),
+    UNIVERSITY("University"),
+    WISHLISTED_JOB("WishlistedJob"),
+    TRACKING_JOB("TrackingJob"),
+    PORTFOLIO("Portfolio"),
+    IDEAL_JOB("IdealJob"),
+    PERSONAL_TRACK_JOB("PersonalTrackJob"),
+    NOTIFICATION("Notification"),
+    SALES_PERSON("SalesPerson")
 }

@@ -1,8 +1,6 @@
 package com.findajob.jobamax
 
 import android.app.Application
-import android.content.res.Configuration
-import android.content.res.Resources
 import androidx.lifecycle.LifecycleObserver
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
@@ -12,7 +10,6 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.parse.*
 import com.pushwoosh.Pushwoosh
  import dagger.hilt.android.HiltAndroidApp
-import java.util.*
 
 
 @HiltAndroidApp
@@ -40,12 +37,12 @@ class BaseApplication : Application(), LifecycleObserver {
     }
 
     private fun updateAppUsage() {
-        val query = ParseQuery<ParseObject>(ParseTableName.Notification.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), getUserId())
+        val query = ParseQuery<ParseObject>(ParseTableName.NOTIFICATION.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, getUserId())
         query.getFirstInBackground { result, e ->
             when{
                 e != null -> {
-                    val notification = ParseObject(ParseTableName.Notification.toString())
+                    val notification = ParseObject(ParseTableName.NOTIFICATION.value)
                     getCurrentJobSeeker{
                         if (it != null) {
                             notification.put("jobSeeker", it)
@@ -71,7 +68,7 @@ class BaseApplication : Application(), LifecycleObserver {
 
     private fun getCurrentJobSeeker(call: (ParseObject?) -> Unit)  {
         var parseObject: ParseObject? = null
-        val query = ParseQuery<ParseObject>(ParseTableName.JobSeeker.toString())
+        val query = ParseQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
         query.whereEqualTo("jobSeekerId", getUserId())
         query.getFirstInBackground { result, e ->
             when{

@@ -69,6 +69,11 @@ fun Date.mm_yy_disp(): String {
     return format.format(this)
 }
 
+fun Date.MMM_d_yyyy(language: String): String {
+    val format = SimpleDateFormat("MMM d, yyyy", if (language == FRENCH_LANG_CODE){Locale.FRENCH}else{ Locale.US})
+    return format.format(this)
+}
+
 fun String.parseDisplayMonthFormat(): String {
     val originalFormat = SimpleDateFormat("MM-yy", Locale.US)
     val displayFormat = SimpleDateFormat("MM/yy", Locale.US)

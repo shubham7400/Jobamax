@@ -13,7 +13,7 @@ class Portfolio(obj: ParseObject) {
     var pfObject: ParseObject? = obj
 
     fun toParseObject(): ParseObject {
-        val portfolio = ParseObject(ParseTableName.Portfolio.toString())
+        val portfolio = ParseObject(ParseTableName.PORTFOLIO.value)
         portfolio.put("text", text)
         portfolio.put("arrImages", arrImages)
         portfolio.put("links", links)

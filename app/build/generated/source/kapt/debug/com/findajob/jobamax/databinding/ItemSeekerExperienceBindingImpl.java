@@ -15,9 +15,9 @@ public class ItemSeekerExperienceBindingImpl extends ItemSeekerExperienceBinding
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.iv_company, 1);
-        sViewsWithIds.put(R.id.tv_job_name, 2);
+        sViewsWithIds.put(R.id.tv_company_name, 2);
         sViewsWithIds.put(R.id.iv_delete_item, 3);
-        sViewsWithIds.put(R.id.tv_company_name, 4);
+        sViewsWithIds.put(R.id.tv_job_name, 4);
         sViewsWithIds.put(R.id.tv_date_duration, 5);
         sViewsWithIds.put(R.id.tv_address, 6);
     }
@@ -36,9 +36,9 @@ public class ItemSeekerExperienceBindingImpl extends ItemSeekerExperienceBinding
             , (android.widget.ImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[0]
             , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[4]
             );
         this.rlParent.setTag(null);
         setRootTag(root);

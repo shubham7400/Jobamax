@@ -43,7 +43,7 @@ public final class ConstantKt {
     @org.jetbrains.annotations.NotNull()
     public static final java.lang.String GOOGLE_LOGIN_TYPE = "google";
     @org.jetbrains.annotations.NotNull()
-    public static final java.lang.String JOBAMAX_DOWNLOAD_URL = "https://jobamax.com/en/download";
+    public static final java.lang.String JOBAMAX_DOWNLOAD_URL = "https://jobamax.page.link/";
     
     @org.jetbrains.annotations.NotNull()
     public static final java.lang.String[] getPermissions() {

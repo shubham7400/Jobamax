@@ -19,9 +19,9 @@ class TrackingOtherJob : Serializable {
     var pfObject: ParseObject? = null
 
     fun toParseObject(): ParseObject {
-        val trackingOtherJob = ParseObject(ParseTableName.PersonalTrackJob.toString())
+        val trackingOtherJob = ParseObject(ParseTableName.PERSONAL_TRACK_JOB.value)
         jobSeeker?.let { trackingOtherJob.put("jobSeeker", it) }
-        trackingOtherJob.put(ParseTableFields.jobSeekerId.toString(), jobSeekerId)
+        trackingOtherJob.put(ParseTableFields.JOB_SEEKER_ID.value, jobSeekerId)
         trackingOtherJob.put("phases", phases)
         trackingOtherJob.put("companyName", companyName)
         trackingOtherJob.put("city", city)

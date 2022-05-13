@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -41,7 +41,7 @@ public abstract class FragmentJobSeekerPersonalInformationBinding extends ViewDa
   public final TextView genderLabel;
 
   @NonNull
-  public final AppCompatImageView imageView8;
+  public final ImageView imageView8;
 
   @NonNull
   public final EditText lastNameField;
@@ -63,9 +63,9 @@ public abstract class FragmentJobSeekerPersonalInformationBinding extends ViewDa
 
   protected FragmentJobSeekerPersonalInformationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, AppBarLayout appBar, CountryCodePicker ccp, TextView dobField,
-      EditText etEmailField, EditText firstNameField, TextView genderLabel,
-      AppCompatImageView imageView8, EditText lastNameField, EditText phoneField,
-      EditText postCodeField, AppCompatTextView tvToolbarTitle) {
+      EditText etEmailField, EditText firstNameField, TextView genderLabel, ImageView imageView8,
+      EditText lastNameField, EditText phoneField, EditText postCodeField,
+      AppCompatTextView tvToolbarTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.appBar = appBar;
     this.ccp = ccp;

@@ -61,10 +61,7 @@ class LoginFragment : BaseFragmentMain<FragmentLoginBinding>(), LoginInterface, 
     private fun initViews() {
         binding.handler = this
         navController = findNavController()
-
-        binding.ivBackButton.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        
 
         if (checkForPermissions(permissions)) {
         }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Jobamax</string>
-    
+
 
     <!-- back4app -->
     <string name="back4app_server_url" translatable="false">https://parseapi.back4app.com/</string>
@@ -13,7 +13,7 @@
 
     <!-- TBL FB App -->
     <string name="facebook_app_id" translatable="false">304727217812972</string>
-    
+
     <!--linked in-->
     <string name="linked_in_client_id" translatable="false">869zzm9vjdjp5h</string>
     <string name="linked_in_client_secret" translatable="false">SFqONJQpLuuy9mBW</string>
@@ -36,7 +36,7 @@
     <string name="push_notifications">Push Notifications</string>
     <string name="newsletter">Newsletter</string>
     <string name="share_jobamax">Share Jobamax</string>
-    <string name="help_and_support">Help &amp; Support</string>
+    <string name="help_and_support">FAQs</string>
     <string name="email_us">Email us</string>
     <string name="contact_us">Contact us</string>
     <string name="community">Community</string>
@@ -50,17 +50,17 @@
     <string name="delete_my_account">Delete my account</string>
     <string name="log_out">Log out</string>
     <string name="arg_version">Version 1.0.22</string>
-    <string name="gender_with_asterisk">Gender<font fgcolor='#0975FE'>*</font></string>
+    <string name="gender_with_asterisk">Gender<font fgcolor='#000000'>*</font></string>
     <string name="enter_gender_here">Enter gender here</string>
     <string name="submit">Submit</string>
     <string name="skip">Skip</string>
-    <string name="first_name_asterisk">First Name<font fgcolor='#0975FE'>*</font></string>
+    <string name="first_name_asterisk">First Name<font fgcolor='#000000'>*</font></string>
     <string name="enter_first_name">First name</string>
     <string name="enter_company_name">Enter company name</string>
     <string name="postcode_asterisk">Zip code</string>
-    <string name="email_asterisk">Email<font fgcolor='#0975FE'>*</font></string>
+    <string name="email_asterisk">Email<font fgcolor='#000000'>*</font></string>
     <string name="enter_email">Enter email</string>
-    <string name="phone_number_asterisk">Phone Number<font fgcolor='#0975FE'>*</font></string>
+    <string name="phone_number_asterisk">Phone Number<font fgcolor='#000000'>*</font></string>
     <string name="enter_phone_number">Enter phone number</string>
     <string name="last_name_asterisk">Last Name</string>
     <string name="enter_last_name">Last name</string>
@@ -89,7 +89,7 @@
     <string name="allow_location">Allow Location</string>
     <string name="tell_me_more">Tell Me More</string>
     <string name="enter_valid_phone_number">Enter valid phone number!</string>7
-    <string name="date_of_birth_with_asterisk">Date of Birth<font fgcolor='#0975FE'>*</font></string>
+    <string name="date_of_birth_with_asterisk">Date of Birth<font fgcolor='#000000'>*</font></string>
     <string name="enter_date_of_birth">Enter date of birth</string>
 
     <string name="educations">Educations</string>
@@ -185,6 +185,7 @@
     <string name="add_your_school">Add your school</string>
     <string name="add_your_degree">Add your degree</string>
     <string name="current_student">Current Student</string>
+    <string name="current_student_education">Current Student</string>
     <string name="save_information">Save Information</string>
     <string name="my_education">My Education</string>
     <string name="add_volunteering">Add Volunteering</string>
@@ -214,7 +215,7 @@
     <string name="next_interview">Next Interview</string>
     <string name="jobamax_jobs">Jobamax Jobs</string>
     <string name="other_jobs">Other Jobs</string>
-    <string name="your_job_application">Your job application</string>
+    <string name="your_job_application">Your job applications</string>
     <string name="add_job_in_tracking">Add Job In Tracking</string>
     <string name="job_title">Job Title</string>
     <string name="enter_title">Enter title</string>
@@ -342,6 +343,15 @@
     <string name="job_search_category_row23">Military Specific Occupations</string>
     <string name="ideal_job_info">Describe your dream job on video, in writing or vocally. You can talk about the type of missions, the team, the training, the work environment, etc.</string>
     <string name="portfolio_info">Show your pro projects, competitions, team photos, graduation or just talk about your achievements.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="do_you_want_to_delete_your_account">Do you want to delete your account?</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="delete">Delete</string>
+    <string name="are_you_selected">Are you selected</string>
+    <string name="share_jobamax_info">Download Jobamax! it\'s a fast, simple and secured app to look for a job! Get it at : </string>
+    <string name="wishlist_job_card_overlay">Wishlist</string>
+    <string name="apply_subtitle">Apply</string>
 
 
 </resources>

@@ -41,14 +41,6 @@
                         android:layout_marginTop="48dp">
 
                         <ImageView
-                            android:id="@+id/iv_back_button"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/back_arrow_blue" />
-
-                        <ImageView
                             android:id="@+id/jobamaxImage"
                             android:layout_width="230dp"
                             android:layout_height="60dp"

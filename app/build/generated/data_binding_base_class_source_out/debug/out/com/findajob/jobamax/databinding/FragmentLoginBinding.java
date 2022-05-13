@@ -25,9 +25,6 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   public final LinearLayout footerLayout;
 
   @NonNull
-  public final ImageView ivBackButton;
-
-  @NonNull
   public final ImageView jobamaxImage;
 
   @NonNull
@@ -49,13 +46,12 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   protected LoginInterface mHandler;
 
   protected FragmentLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      EditText emailField, LinearLayout footerLayout, ImageView ivBackButton,
-      ImageView jobamaxImage, ImageView loginImage, LinearLayout loginLayout,
-      EditText passwordField, ImageView showPasswordButton, LinearLayout socialMediaLayout) {
+      EditText emailField, LinearLayout footerLayout, ImageView jobamaxImage, ImageView loginImage,
+      LinearLayout loginLayout, EditText passwordField, ImageView showPasswordButton,
+      LinearLayout socialMediaLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.emailField = emailField;
     this.footerLayout = footerLayout;
-    this.ivBackButton = ivBackButton;
     this.jobamaxImage = jobamaxImage;
     this.loginImage = loginImage;
     this.loginLayout = loginLayout;

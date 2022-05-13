@@ -15,13 +15,12 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.loginLayout, 7);
-        sViewsWithIds.put(R.id.iv_back_button, 8);
-        sViewsWithIds.put(R.id.jobamaxImage, 9);
-        sViewsWithIds.put(R.id.loginImage, 10);
-        sViewsWithIds.put(R.id.emailField, 11);
-        sViewsWithIds.put(R.id.passwordField, 12);
-        sViewsWithIds.put(R.id.footerLayout, 13);
-        sViewsWithIds.put(R.id.socialMediaLayout, 14);
+        sViewsWithIds.put(R.id.jobamaxImage, 8);
+        sViewsWithIds.put(R.id.loginImage, 9);
+        sViewsWithIds.put(R.id.emailField, 10);
+        sViewsWithIds.put(R.id.passwordField, 11);
+        sViewsWithIds.put(R.id.footerLayout, 12);
+        sViewsWithIds.put(R.id.socialMediaLayout, 13);
     }
     // views
     @NonNull
@@ -54,19 +53,18 @@ public class FragmentLoginBindingImpl extends FragmentLoginBinding implements co
     // Inverse Binding Event Handlers
 
     public FragmentLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
     }
     private FragmentLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.EditText) bindings[11]
-            , (android.widget.LinearLayout) bindings[13]
+            , (android.widget.EditText) bindings[10]
+            , (android.widget.LinearLayout) bindings[12]
             , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[9]
-            , (android.widget.ImageView) bindings[10]
             , (android.widget.LinearLayout) bindings[7]
-            , (android.widget.EditText) bindings[12]
+            , (android.widget.EditText) bindings[11]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[14]
+            , (android.widget.LinearLayout) bindings[13]
             );
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);

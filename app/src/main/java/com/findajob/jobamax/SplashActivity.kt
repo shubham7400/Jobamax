@@ -8,10 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.databinding.ActivitySplashBinding
 import com.findajob.jobamax.extensions.goToActivity
-import com.findajob.jobamax.preference.getLanguage
-import com.findajob.jobamax.util.log
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 
 @AndroidEntryPoint

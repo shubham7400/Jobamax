@@ -84,7 +84,7 @@
                        android:layout_width="100dp"
                        android:layout_height="100dp"
                        android:src="@drawable/default_user_img"
-                       app:layout_constraintBottom_toBottomOf="parent"
+                       style="@style/circular_image"
                        app:layout_constraintStart_toStartOf="parent"
                        app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,7 +101,6 @@
                            android:id="@+id/tv_seeker_name"
                            android:layout_width="0dp"
                            android:layout_height="wrap_content"
-                           android:layout_marginTop="10dp"
                            android:text="Shubham Mogarkar"
                            android:textSize="20sp"
                            android:textColor="@color/black"
@@ -180,7 +179,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/schools"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
 
                <androidx.recyclerview.widget.RecyclerView
@@ -196,7 +195,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/experiences"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
 
                <androidx.recyclerview.widget.RecyclerView
@@ -243,7 +242,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/hard_skills_preview"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
 
                <androidx.recyclerview.widget.RecyclerView
@@ -259,7 +258,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/soft_skills"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
 
                <com.google.android.material.chip.ChipGroup
@@ -276,7 +275,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/volunteering"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
 
                <androidx.recyclerview.widget.RecyclerView
@@ -292,7 +291,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/interest"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
 
                <com.google.android.material.chip.ChipGroup
@@ -309,7 +308,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/my_ideal_job"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
                <TextView
                    android:id="@+id/tv_ideal_job_description"
@@ -346,7 +345,9 @@
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:id="@+id/cl_audio_player"
                    android:layout_width="match_parent"
+                   android:background="@drawable/rounded_white_box_grey_stroke_elevation"
                    android:layout_marginTop="10dp"
+                   android:padding="10dp"
                    android:layout_height="wrap_content">
 
                    <ImageView
@@ -384,6 +385,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/my_ideal_workspace"
+                   android:textSize="18sp"
                    style="@style/title_bold"/>
 
                <com.google.android.material.chip.ChipGroup
@@ -400,7 +402,7 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/my_portfolio"
                    android:textColor="@color/black"
-                   android:textSize="20sp"
+                   android:textSize="18sp"
                    android:layout_marginTop="30dp" />
                <TextView
                    android:id="@+id/tv_portfolio_description"

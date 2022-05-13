@@ -10,7 +10,7 @@
             android:id="@+id/tv_hard_skill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/opensans_bold"
+            android:fontFamily="@font/opensans_regular"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:layout_marginHorizontal="5dp"

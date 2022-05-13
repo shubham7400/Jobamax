@@ -65,10 +65,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_regular"
                 android:text="Ujjain"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:maxLines="1"
                 android:ellipsize="end"
+                style="@style/title_bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

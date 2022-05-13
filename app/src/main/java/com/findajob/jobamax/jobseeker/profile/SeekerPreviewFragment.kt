@@ -14,9 +14,7 @@ import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
-import com.findajob.jobamax.data.pojo.HardSkill
-import com.findajob.jobamax.data.pojo.IdealJob
-import com.findajob.jobamax.data.pojo.Portfolio
+import com.findajob.jobamax.data.pojo.*
 import com.findajob.jobamax.databinding.*
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.jobseeker.profile.cv.model.*

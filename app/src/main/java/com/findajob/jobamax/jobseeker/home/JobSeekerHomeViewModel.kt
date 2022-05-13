@@ -7,13 +7,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.findajob.jobamax.base.BaseAndroidViewModel
+import com.findajob.jobamax.data.pojo.Education
+import com.findajob.jobamax.data.pojo.EducationGroup
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel
  import com.findajob.jobamax.jobseeker.profile.cv.model.*
 
 import com.findajob.jobamax.model.*
-import com.findajob.jobamax.preference.getCurrentLocation
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.preference.setNewMatchPNFlag
 import com.findajob.jobamax.preference.setProfilePicUrl
@@ -61,8 +62,8 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
     fun getJobSeeker() {
         viewModelScope.launch {
-            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-            query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context.getUserId())
+            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+            query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, context.getUserId())
             query.findInBackground { it, e ->
                 val parseObject = it?.firstOrNull()
                 when {
@@ -143,13 +144,13 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
     }
 
     fun submitData(personalInfoModel: JobSeekerPersonalInformationModel, callback: (it: ParseException?) -> Unit) {
-        jobSeekerObject!!.put(ParseTableFields.firstName.toString(), personalInfoModel.firstName)
-        jobSeekerObject!!.put(ParseTableFields.lastName.toString(), personalInfoModel.lastName)
-        jobSeekerObject!!.put(ParseTableFields.gender.toString(), personalInfoModel.gender)
-        jobSeekerObject!!.put(ParseTableFields.postCode.toString(), personalInfoModel.postCode)
-        jobSeekerObject!!.put(ParseTableFields.dob.toString(), personalInfoModel.dob)
-        jobSeekerObject!!.put(ParseTableFields.email.toString(), personalInfoModel.email)
-        jobSeekerObject!!.put(ParseTableFields.phoneNumber.toString(), personalInfoModel.phoneNumber)
+        jobSeekerObject!!.put(ParseTableFields.FIRST_NAME.value, personalInfoModel.firstName)
+        jobSeekerObject!!.put(ParseTableFields.LAST_NAME.value, personalInfoModel.lastName)
+        jobSeekerObject!!.put(ParseTableFields.GENDER.value, personalInfoModel.gender)
+        jobSeekerObject!!.put(ParseTableFields.POST_CODE.value, personalInfoModel.postCode)
+        jobSeekerObject!!.put(ParseTableFields.DOB.value, personalInfoModel.dob)
+        jobSeekerObject!!.put(ParseTableFields.EMAIL.value, personalInfoModel.email)
+        jobSeekerObject!!.put(ParseTableFields.PHONE_NUMBER.value, personalInfoModel.phoneNumber)
 
         jobSeekerObject!!.saveInBackground {
             callback(it)
@@ -226,7 +227,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
 
     fun changePassword(newPassword: String, callback: (it: ParseException?) -> Unit) {
-        jobSeekerObject!!.put(ParseTableFields.password.toString(), newPassword)
+        jobSeekerObject!!.put(ParseTableFields.PASSWORD.value, newPassword)
         jobSeekerObject!!.saveInBackground {
             callback(it)
         }
@@ -259,7 +260,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
             educations.add(education)
         }
         val educationGroup = EducationGroup(educations)
-        jobSeekerObject?.put(ParseTableFields.educations.toString(), Gson().toJson(educationGroup))
+        jobSeekerObject?.put(ParseTableFields.EDUCATIONS.value, Gson().toJson(educationGroup))
         jobSeekerObject!!.saveInBackground {
             callback(it)
             getJobSeeker()
@@ -268,7 +269,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
     fun saveNewEducationList(educations: ArrayList<Education>, callback: (it: ParseException?) -> Unit) {
         val educationGroup = EducationGroup(educations)
-        jobSeekerObject?.put(ParseTableFields.educations.toString(), Gson().toJson(educationGroup))
+        jobSeekerObject?.put(ParseTableFields.EDUCATIONS.value, Gson().toJson(educationGroup))
         jobSeekerObject!!.saveInBackground {
             callback(it)
             getJobSeeker()
@@ -276,21 +277,21 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
     }
 
     fun saveHardSkills(hardSkillJsonObj: JSONObject, callback: (it: ParseException?) -> Unit) {
-        jobSeekerObject?.put(ParseTableFields.hardSkills.toString(), hardSkillJsonObj.toString())
+        jobSeekerObject?.put(ParseTableFields.HARD_SKILLS.value, hardSkillJsonObj.toString())
         jobSeekerObject?.saveInBackground {
            callback(it)
         }
     }
 
     fun saveSoftSkills(softSkillJsonArray: JSONArray, callback: (it: ParseException?) -> Unit) {
-        jobSeekerObject?.put(ParseTableFields.softSkills.toString(), softSkillJsonArray.toString())
+        jobSeekerObject?.put(ParseTableFields.SOFT_SKILLS.value, softSkillJsonArray.toString())
         jobSeekerObject?.saveInBackground {
             callback(it)
         }
     }
 
     fun addWorkSpace(ownedWorkSpaces: ArrayList<String>, callback: (it: ParseException?) -> Unit) {
-        jobSeekerObject?.put( ParseTableFields.workspaces.toString(), ownedWorkSpaces)
+        jobSeekerObject?.put( ParseTableFields.WORKSPACES.value, ownedWorkSpaces)
         jobSeekerObject?.saveInBackground {
             callback(it)
         }
@@ -302,14 +303,14 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
         interestTags.forEach {
             interestTagsJsonArray.put(it)
         }
-         jobSeekerObject?.put(ParseTableFields.interests.toString(), interestTagsJsonArray)
+         jobSeekerObject?.put(ParseTableFields.INTERESTS.value, interestTagsJsonArray)
         jobSeekerObject?.saveInBackground {
             callback(it)
         }
     }
 
     fun addAndUpdateExperience(experience: Experience, callback: (it: ParseException?) -> Unit) {
-        val experiences = ArrayList(Gson().fromJson(jobSeekerObject?.get(ParseTableFields.experiences.toString()).toString(), ExperienceGroup::class.java)?.list ?: listOf())
+        val experiences = ArrayList(Gson().fromJson(jobSeekerObject?.get(ParseTableFields.EXPERIENCES.value).toString(), ExperienceGroup::class.java)?.list ?: listOf())
         var isExperienceExist = false
         for (edu in experiences.iterator()){
             if (edu.id == experience.id){
@@ -327,7 +328,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
             experiences.add(experience)
         }
         val experienceGroup = ExperienceGroup(experiences)
-        jobSeekerObject?.put(ParseTableFields.experiences.toString(), Gson().toJson(experienceGroup))
+        jobSeekerObject?.put(ParseTableFields.EXPERIENCES.value, Gson().toJson(experienceGroup))
         jobSeekerObject!!.saveInBackground {
             callback(it)
             getJobSeeker()
@@ -336,7 +337,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
     fun saveNewExperienceList(experiences: ArrayList<Experience>, callback: (ParseException?) -> Unit) {
         val experienceGroup = ExperienceGroup(experiences)
-        jobSeekerObject?.put(ParseTableFields.experiences.toString(), Gson().toJson(experienceGroup))
+        jobSeekerObject?.put(ParseTableFields.EXPERIENCES.value, Gson().toJson(experienceGroup))
         jobSeekerObject!!.saveInBackground {
             callback(it)
             getJobSeeker()
@@ -344,7 +345,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
     }
 
     fun getExistingHardSkillTags(callback: GetAllUserCallback) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.HardSkill.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.HARD_SKILL.value)
         query.findInBackground { it, e ->
             val jobSeeker = it?.firstOrNull()
             when {
@@ -362,14 +363,14 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
     }
 
     fun saveHardSkillTag(tag: String) {
-        val hardSkillParseObject = ParseObject(ParseTableName.HardSkill.toString())
+        val hardSkillParseObject = ParseObject(ParseTableName.HARD_SKILL.value)
         hardSkillParseObject.put("name", tag)
         hardSkillParseObject.saveInBackground {
         }
     }
 
     fun getExistingSoftSkillTags(callback: GetAllUserCallback) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SoftSkill.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SOFT_SKILL.value)
         query.findInBackground { it, e ->
             val jobSeeker = it?.firstOrNull()
             when {
@@ -387,7 +388,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
     }
 
     fun saveSoftSkillTag(tag: String) {
-        val hardSkillParseObject = ParseObject(ParseTableName.SoftSkill.toString())
+        val hardSkillParseObject = ParseObject(ParseTableName.SOFT_SKILL.value)
         hardSkillParseObject.put("name", tag)
         hardSkillParseObject.saveInBackground {
         }
@@ -395,7 +396,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
 
     fun getExistingActivitiesTags(callback: GetAllUserCallback) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.Interests.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.INTERESTS.value)
         query.findInBackground { it, e ->
             val jobSeeker = it?.firstOrNull()
             when {
@@ -414,7 +415,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
 
     fun saveActivitiesTag(tag: String) {
-        val activitiesParseObject = ParseObject(ParseTableName.Activities.toString())
+        val activitiesParseObject = ParseObject(ParseTableName.ACTIVITIES.value)
         activitiesParseObject.put("name", tag)
         activitiesParseObject.saveInBackground {
         }
@@ -459,8 +460,8 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
 
     fun loadTrackingJob(callback: GetAllUserCallback) {
-         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),context.getUserId())
+         val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TRACKING_JOB.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value,context.getUserId())
         query.include("job")
         query.include("jobSeeker")
         query.findInBackground { list, e ->
@@ -497,7 +498,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
             volunteerings.add(volunteering)
         }
         val volunteeringGroup = VolunteeringGroup(volunteerings)
-        jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), Gson().toJson(volunteeringGroup))
+        jobSeekerObject?.put(ParseTableFields.VOLUNTEERINGS.value, Gson().toJson(volunteeringGroup))
         jobSeekerObject!!.saveInBackground {
             callback(it)
             getJobSeeker()
@@ -506,7 +507,7 @@ class JobSeekerHomeViewModel @Inject constructor(val context: Application) : Bas
 
     fun saveNewVolunteeringList(volunteerings: ArrayList<Volunteering>, callback: (ParseException?) -> Unit) {
         val volunteeringGroup = VolunteeringGroup(volunteerings)
-        jobSeekerObject?.put(ParseTableFields.volunteerings.toString(), Gson().toJson(volunteeringGroup))
+        jobSeekerObject?.put(ParseTableFields.VOLUNTEERINGS.value, Gson().toJson(volunteeringGroup))
         jobSeekerObject!!.saveInBackground {
             callback(it)
             getJobSeeker()

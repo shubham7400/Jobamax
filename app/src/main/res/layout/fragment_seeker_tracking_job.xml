@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".jobseeker.track.newtrack.SeekerTrackingJobFragment">
+    tools:context=".jobseeker.track.SeekerTrackingJobFragment">
 
 
     <data>
@@ -52,7 +52,7 @@
 
                <TextView
                    style="@style/screen_title"
-                   android:layout_width="120dp"
+                   android:layout_width="130dp"
                    android:layout_centerInParent="true"
                    android:gravity="center"
                    android:paddingEnd="10dp"
@@ -60,17 +60,19 @@
 
                <ImageView
                    android:id="@+id/iv_calendar"
-                   android:layout_width="40dp"
-                   android:layout_height="40dp"
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
                    android:layout_centerVertical="true"
-                   android:layout_toStartOf="@id/civ_user"
                    android:layout_marginEnd="10dp"
-                   android:src="@drawable/calender"/>
+                   android:layout_toStartOf="@id/civ_user"
+                   android:src="@drawable/calender" />
 
                <de.hdodenhof.circleimageview.CircleImageView
                    android:id="@+id/civ_user"
                    style="@style/circular_image"
                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                   android:layout_width="40dp"
+                   android:layout_height="40dp"
                    android:layout_alignParentEnd="true"
                    android:src="@drawable/default_user_img" />
            </RelativeLayout>
@@ -97,7 +99,7 @@
                    android:layout_centerVertical="true"
                    android:fontFamily="@font/opensans_regular"
                    android:text="@string/next_deadline"
-                   android:textColor="@color/black"
+                   style="@style/title_bold"
                    android:textSize="20sp"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +114,8 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/no_deadline"
                    android:textColor="@color/new_purple"
-                   android:textSize="20dp"
+                   style="@style/title_bold"
+                   android:textSize="20sp"
                    app:layout_constraintBottom_toBottomOf="parent"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -136,8 +139,8 @@
                    android:layout_centerVertical="true"
                    android:fontFamily="@font/opensans_regular"
                    android:text="@string/next_interview"
-                   android:textColor="@color/black"
-                   android:textSize="20dp"
+                   style="@style/title_bold"
+                   android:textSize="20sp"
                    android:gravity="end"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -153,8 +156,9 @@
                    android:fontFamily="@font/opensans_bold"
                    android:text="@string/no_interview"
                    android:gravity="end"
+                   android:textSize="20sp"
                    android:textColor="@color/new_purple"
-                   android:textSize="20dp"
+                   style="@style/title_bold"
                    app:layout_constraintBottom_toBottomOf="parent"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -228,8 +232,8 @@
                android:layout_centerVertical="true"
                android:fontFamily="@font/opensans_bold"
                android:text="@string/your_job_application"
-               android:textColor="@color/black"
-               android:textSize="20dp"
+               style="@style/title_bold"
+               android:textSize="20sp"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent" />

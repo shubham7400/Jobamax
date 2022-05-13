@@ -53,7 +53,7 @@ class SeekerDeleteAccountFinalFragment : BaseFragmentMain<FragmentSeekerDeleteAc
     override fun onDeleteAccount() {
         val deleteAccountDialog = DeleteAccountDialog(requireActivity()) {
             progressHud.show()
-            ParseCloud.callFunctionInBackground(ParseCloudFunction.deleteUser.toString(), hashMapOf( "jobSeekerId" to requireActivity().getUserId()), FunctionCallback<Any?> { response, e ->
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.DELETE_USER.value, hashMapOf( "jobSeekerId" to requireActivity().getUserId()), FunctionCallback<Any?> { response, e ->
                     progressHud.dismiss()
                     if (e == null) {
                         requireActivity().clearUserPref()

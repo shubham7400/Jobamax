@@ -51,7 +51,7 @@ class PortfolioImageFragment : BaseFragmentMain<FragmentPortfolioImageBinding>()
             Portfolio(it)
         }
         if (portfolio == null){
-            val parseObject = ParseObject(ParseTableName.Portfolio.toString())
+            val parseObject = ParseObject(ParseTableName.PORTFOLIO.value)
             portfolio = Portfolio(parseObject)
             portfolio!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("portfolio", it) }
             viewModel.jobSeeker.pfObject?.saveInBackground()

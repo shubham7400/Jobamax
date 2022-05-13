@@ -23,7 +23,7 @@
     <string name="contact_us">Nous contacter</string>
     <string name="community">Communauté</string>
     <string name="safety_tips">Conseil &amp; Sécurité</string>
-    <string name="community_guidelines">Régles</string>
+    <string name="community_guidelines">Règles</string>
     <string name="legal">Mentions légales</string>
     <string name="privacy_preferences">Préférences de confidentialité</string>
     <string name="licences">Licences</string>
@@ -32,17 +32,17 @@
     <string name="delete_my_account">Supprimer mon compte</string>
     <string name="log_out">Déconnexion</string>
     <string name="arg_version">Version 1.0.22</string>
-    <string name="gender_with_asterisk">Genre<font fgcolor='#0975FE'>*</font></string>
+    <string name="gender_with_asterisk">Genre<font fgcolor='#000000'>*</font></string>
     <string name="enter_gender_here">Enter gender here</string>
     <string name="submit">Soumettre</string>
     <string name="skip">Skip</string>
-    <string name="first_name_asterisk">Prénom<font fgcolor='#0975FE'>*</font></string>
+    <string name="first_name_asterisk">Prénom<font fgcolor='#000000'>*</font></string>
     <string name="enter_first_name">Prénom</string>
     <string name="enter_company_name">Entrez le nom de l\'entreprise</string>
     <string name="postcode_asterisk">Code postal</string>
-    <string name="email_asterisk">Email<font fgcolor='#0975FE'>*</font></string>
+    <string name="email_asterisk">Email<font fgcolor='#000000'>*</font></string>
     <string name="enter_email">Entrez l\'email</string>
-    <string name="phone_number_asterisk">Numéro de téléphone<font fgcolor='#0975FE'>*</font></string>
+    <string name="phone_number_asterisk">Numéro de téléphone<font fgcolor='#000000'>*</font></string>
     <string name="enter_phone_number">Entrez le numéro de téléphone</string>
     <string name="last_name_asterisk">Nom de famille</string>
     <string name="enter_last_name">Nom de famille</string>
@@ -72,14 +72,14 @@
     <string name="allow_location">Permettre l\'emplacement</string>
     <string name="tell_me_more">Dites-m\'en plus</string>
     <string name="enter_valid_phone_number">Entrez un numéro de téléphone valide !</string>7
-    <string name="date_of_birth_with_asterisk">Date de naissance<font fgcolor='#0975FE'>*</font></string>
+    <string name="date_of_birth_with_asterisk">Date de naissance<font fgcolor='#000000'>*</font></string>
     <string name="enter_date_of_birth">Entrez la date de naissance</string>
 
     <string name="educations">Enseignement</string>
     <string name="schools">Écoles</string>
     <string name="start_date">Date de début</string>
     <string name="end_date">Date de fin</string>
-    <string name="add_experiences">AAjouter une expérience</string>
+    <string name="add_experiences">Ajouter</string>
     <string name="skills">Compétences</string>
     <string name="about_me">A propos de moi</string>
     <string name="enter_company">Le nom de I\'organisation</string>
@@ -87,7 +87,7 @@
     <string name="password">Mot de passe</string>
     <string name="confirm_password">Confirmation du mot de passe</string>
     <string name="email">Email</string>
-    <string name="apply">postule</string>
+    <string name="apply">Postule</string>
     <string name="cancel">Annuler</string>
     <string name="in_case_you_forgot_password"><u>Tu as oublié ton mot de passe ?</u></string>
     <string name="description">Description</string>
@@ -114,7 +114,7 @@
 
     // DO NOT TRANSLATE
     <string name="save">Sauvegarder</string>
-    <string name="share">Partager</string>
+    <string name="share">Partage</string>
     <string name="send_to_friend">Envoyer à un ami</string>
     <string name="about_course">À propos de ce cours</string>
     <string name="ok">OK</string>
@@ -155,10 +155,11 @@
     <string name="my_experience">Mon expérience</string>
     <string name="add_another">Ajouter</string>
     <string name="go_back_to_my_profile">Retourner à mon profil</string>
-    <string name="new_education">Éducation nouvelle</string>
-    <string name="add_your_school">Ajoutez votre école</string>
-    <string name="add_your_degree">Ajoutez votre diplôme</string>
+    <string name="new_education">Ajouter</string>
+    <string name="add_your_school">Ajouter mon école</string>
+    <string name="add_your_degree">Ajouter votre diplôme</string>
     <string name="current_student">actuellement membre</string>
+    <string name="current_student_education">statut étudiant</string>
     <string name="save_information">Sauver l\'information</string>
     <string name="my_education">Mon éducation</string>
     <string name="add_volunteering">Ajouter</string>
@@ -184,7 +185,7 @@
     <string name="my_ideal_workspace">Le cadre de travail idéal</string>
     <string name="tracking">Candidatures</string>
     <string name="next_deadline">Prochaine deadline</string>
-    <string name="next_interview">Prochaine entretien</string>
+    <string name="next_interview">Prochain entretien</string>
     <string name="jobamax_jobs">Mes offres d\'emploi</string>
     <string name="other_jobs">Mes candidatures</string>
     <string name="your_job_application">Tes candidatures</string>
@@ -202,7 +203,7 @@
     <string name="my_current_location">Ma position actuelle</string>
     <string name="don_t_wait_to">N’attends plus pour</string>
     <string name="no_data">Pas de données</string>
-    <string name="let_s_find_your_dream_job_together">Decrochons le job de tes reves.</string>
+    <string name="let_s_find_your_dream_job_together">Décrochons le job de tes rêves.</string>
     <string name="calendar">Calendrier</string>
     <string name="start_my_job_search">Recherche de jobs</string>
     <string name="track_my_applications">Suivre mes candidatures</string>
@@ -225,10 +226,10 @@
     <string name="phone_call">Appel téléphonique</string>
     <string name="hired">Embauché</string>
     <string name="go">Allez-y</string>
-    <string name="your_first_name">prénom</string>
-    <string name="your_last_name">nom de famille</string>
+    <string name="your_first_name">Prénom</string>
+    <string name="your_last_name">Nom de famille</string>
     <string name="your_profession">Profession</string>
-    <string name="your_elevator_pitch_240_characters">Bio (240 caractéres)</string>
+    <string name="your_elevator_pitch_240_characters">Bio (240 caractères)</string>
     <string name="language_change_alert_message">Vous devez redémarrer l\'application afin de voir les changements de langue.</string>
     <string name="images">Images</string>
     <string name="job_description">Description du Poste</string>
@@ -284,7 +285,7 @@
     <string name="hired_phase">Embauché</string>
     <string name="refused_phase">Refusé</string>
     <string name="select_deadline">Sélectionner la date limite</string>
-    <string name="setting">Paramétres</string>
+    <string name="setting">Paramètres</string>
     <string name="newsletter_instruction">En désactivant les notifications, tu ne seras pas informé.e des nouveautés de l\'appli, des mises à jour et de nos offres.</string>
     <string name="no">Non</string>
     <string name="are_you_sure">Tu es sûr?</string>
@@ -324,4 +325,11 @@
     </string-array>
     <string name="ideal_job_info">Décris le job de tes rêves en vidéo, par écrit ou vocalement. Tu peux évoquer les types de missions, I\'équipe, les formations, le cadre de travail etc.</string>
     <string name="portfolio_info">Montre tes projets pro, concours, photos d\'équipes, diplomation ou parle tout simplement de tes réalisations.</string>
+    <string name="do_you_want_to_delete_your_account">Voulez-vous supprimer votre compte ?</string>
+    <string name="re_enter_password">Ré-entrer le mot de passe</string>
+    <string name="delete">Supprimer</string>
+    <string name="are_you_selected">Vous êtes sélectionné</string>
+    <string name="share_jobamax_info">Swipe les offres d\'emploi sur Jobamax! C\'est simple et rapide. Télécharge I\'appli ici :</string>
+    <string name="wishlist_job_card_overlay">Wishlist</string>
+    <string name="apply_subtitle">Postuler</string>
 </resources>

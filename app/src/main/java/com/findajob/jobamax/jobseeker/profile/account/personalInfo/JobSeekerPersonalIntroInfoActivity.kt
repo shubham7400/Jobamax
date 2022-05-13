@@ -12,7 +12,7 @@ import com.findajob.jobamax.MainActivity
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.databinding.ActivityJobSeekerPersonalIntroInfoBinding
-import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.dialog.BasicDialog
 import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.enums.ParseTableFields
@@ -192,7 +192,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
     private fun validatePromoCode() {
         progressHud.show()
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SalesPerson.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.SALES_PERSON.value)
         query.whereContains("promoCode", binding.etInvitationCode.toString())
         val result = query.find().firstOrNull()
         progressHud.dismiss()
@@ -245,7 +245,7 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
                     val builder = Uri.Builder()
                     builder.scheme("https")
                         .authority("jobamax.b4a.app")
-                        .appendPath(FirebaseDynamicLinkPath.emailVerification.toString())
+                        .appendPath(FirebaseDynamicLinkPath.EMAIL_VERIFICATION.toString())
                         .appendQueryParameter("userType", JOB_SEEKER_TYPE)
                         .appendQueryParameter("LoginType", LoginType.EMAIL.type)
                         .appendQueryParameter("recruiterId", id)
@@ -291,11 +291,11 @@ class JobSeekerPersonalIntroInfoActivity : BaseActivityMain<ActivityJobSeekerPer
 
     private fun getUserLogin(user: UserTempInfo) {
         progressHud.show()
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.email.toString(), user.email)
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.EMAIL.value, user.email)
         if (user.loginType == LoginType.EMAIL.type){
-            query.whereEqualTo(ParseTableFields.loginType.toString(), user.loginType)
-            query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(user.password))
+            query.whereEqualTo(ParseTableFields.LOGIN_TYPE.value, user.loginType)
+            query.whereEqualTo(ParseTableFields.PASSWORD.value, AESCrypt.encrypt(user.password))
         }
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()

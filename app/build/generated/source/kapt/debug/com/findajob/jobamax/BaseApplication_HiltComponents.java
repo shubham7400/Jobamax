@@ -7,18 +7,18 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity_GeneratedInject
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.about.SeekerAboutMeFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment_GeneratedInjector;
-import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.volunteering.SeekerAddVolunteeringFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.profile.volunteering.SeekerVolunteeringListFragment_GeneratedInjector;
+import com.findajob.jobamax.jobseeker.track.SeekerTrackingJobFragment_GeneratedInjector;
 import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment_GeneratedInjector;
 import com.findajob.jobamax.login.LoginActivity_GeneratedInjector;
 import dagger.Binds;
@@ -234,17 +234,17 @@ public final class BaseApplication_HiltComponents {
   public abstract static class FragmentC implements SeekerCalenderFragment_GeneratedInjector,
       SeekerCoachingFragment_GeneratedInjector,
       SeekerJobsFragment_GeneratedInjector,
-      SeekerAboutMeFragment_GeneratedInjector,
-      SeekerAddVolunteeringFragment_GeneratedInjector,
       SeekerImportResumeFragment_GeneratedInjector,
       SeekerPreviewFragment_GeneratedInjector,
       SeekerProfileFragment_GeneratedInjector,
-      SeekerVolunteeringListFragment_GeneratedInjector,
+      SeekerAboutMeFragment_GeneratedInjector,
       JobSeekerAccountFragment_GeneratedInjector,
       JobSeekerNewsletterFragment_GeneratedInjector,
       JobSeekerPersonalInformationFragment_GeneratedInjector,
       JobSeekerPushNotificationFragment_GeneratedInjector,
       JobSeekerManageReadReceiptsFragment_GeneratedInjector,
+      SeekerAddVolunteeringFragment_GeneratedInjector,
+      SeekerVolunteeringListFragment_GeneratedInjector,
       SeekerTrackingJobFragment_GeneratedInjector,
       SeekerWishListFragment_GeneratedInjector,
       FragmentComponent,

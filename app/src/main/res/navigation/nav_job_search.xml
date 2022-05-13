@@ -56,6 +56,10 @@
             app:popUpToInclusive="true"
             app:popUpTo="@id/seekerJobsFragment"
             app:destination="@id/nav_seeker_profile" />
+        <action
+            android:id="@+id/action_seekerJobsFilterFragment_to_seekerJobSearchFilterCategoriesDialogFragment"
+            app:destination="@id/seekerJobSearchFilterCategoriesDialogFragment" />
+
     </fragment>
 
     <fragment
@@ -75,5 +79,30 @@
     </fragment>
 
     <include app:graph="@navigation/nav_seeker_profile" />
+    <fragment
+        android:id="@+id/seekerJobSearchFilterCategoriesDialogFragment"
+        android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchFilterCategoriesDialogFragment"
+        android:label="fragment_seeker_job_search_filter_categories"
+        tools:layout="@layout/fragment_seeker_job_search_filter_categories" >
+        <action
+            android:id="@+id/action_seekerJobSearchFilterCategoriesDialogFragment_to_nav_seeker_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerJobsFragment"
+            app:destination="@id/nav_seeker_profile" />
+        <action
+            android:id="@+id/action_seekerJobSearchFilterCategoriesDialogFragment_to_seekerJobsFilterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerJobsFilterFragment"
+            app:destination="@id/seekerJobsFilterFragment" />
+    </fragment>
+
 
 </navigation>

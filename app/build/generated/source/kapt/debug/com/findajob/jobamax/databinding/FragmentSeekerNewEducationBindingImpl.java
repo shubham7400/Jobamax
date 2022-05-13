@@ -14,23 +14,25 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.relativeLayout, 2);
-        sViewsWithIds.put(R.id.iv_back_button, 3);
-        sViewsWithIds.put(R.id.textView9, 4);
-        sViewsWithIds.put(R.id.tv_school, 5);
-        sViewsWithIds.put(R.id.textView10, 6);
-        sViewsWithIds.put(R.id.et_program, 7);
-        sViewsWithIds.put(R.id.textView11, 8);
-        sViewsWithIds.put(R.id.et_gpa, 9);
-        sViewsWithIds.put(R.id.cb_current_student, 10);
-        sViewsWithIds.put(R.id.linearLayout, 11);
-        sViewsWithIds.put(R.id.textView15, 12);
-        sViewsWithIds.put(R.id.tv_Start_date, 13);
-        sViewsWithIds.put(R.id.cl_end_date, 14);
-        sViewsWithIds.put(R.id.textView144, 15);
-        sViewsWithIds.put(R.id.tv_end_date, 16);
-        sViewsWithIds.put(R.id.tv_description_title, 17);
-        sViewsWithIds.put(R.id.et_description, 18);
+        sViewsWithIds.put(R.id.cl_most_parent, 2);
+        sViewsWithIds.put(R.id.relativeLayout, 3);
+        sViewsWithIds.put(R.id.iv_back_button, 4);
+        sViewsWithIds.put(R.id.textView9, 5);
+        sViewsWithIds.put(R.id.et_school, 6);
+        sViewsWithIds.put(R.id.textView10, 7);
+        sViewsWithIds.put(R.id.et_program, 8);
+        sViewsWithIds.put(R.id.textView11, 9);
+        sViewsWithIds.put(R.id.et_gpa, 10);
+        sViewsWithIds.put(R.id.cb_current_student, 11);
+        sViewsWithIds.put(R.id.linearLayout, 12);
+        sViewsWithIds.put(R.id.textView15, 13);
+        sViewsWithIds.put(R.id.tv_Start_date, 14);
+        sViewsWithIds.put(R.id.cl_end_date, 15);
+        sViewsWithIds.put(R.id.textView144, 16);
+        sViewsWithIds.put(R.id.tv_end_date, 17);
+        sViewsWithIds.put(R.id.tv_description_title, 18);
+        sViewsWithIds.put(R.id.et_description, 19);
+        sViewsWithIds.put(R.id.rv_universities, 20);
     }
     // views
     @NonNull
@@ -41,28 +43,30 @@ public class FragmentSeekerNewEducationBindingImpl extends FragmentSeekerNewEduc
     // Inverse Binding Event Handlers
 
     public FragmentSeekerNewEducationBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 19, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
     }
     private FragmentSeekerNewEducationBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.CheckBox) bindings[10]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[14]
-            , (android.widget.EditText) bindings[18]
-            , (android.widget.EditText) bindings[9]
-            , (android.widget.EditText) bindings[7]
-            , (android.widget.ImageView) bindings[3]
+            , (android.widget.CheckBox) bindings[11]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[15]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
+            , (android.widget.EditText) bindings[19]
+            , (android.widget.EditText) bindings[10]
+            , (android.widget.EditText) bindings[8]
+            , (android.widget.EditText) bindings[6]
+            , (android.widget.ImageView) bindings[4]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[11]
-            , (android.widget.RelativeLayout) bindings[2]
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[15]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[17]
+            , (android.widget.LinearLayout) bindings[12]
+            , (android.widget.RelativeLayout) bindings[3]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[20]
+            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[16]
-            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[18]
+            , (android.widget.TextView) bindings[17]
+            , (android.widget.TextView) bindings[14]
             );
         this.ivUserProfile.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];

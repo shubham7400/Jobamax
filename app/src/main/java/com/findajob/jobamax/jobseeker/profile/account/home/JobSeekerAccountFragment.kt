@@ -3,9 +3,6 @@ package com.findajob.jobamax.jobseeker.profile.account.home
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
@@ -17,6 +14,7 @@ import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentJobSeekerAccountBinding
 import com.findajob.jobamax.dialog.ShareJobamaxDialog
 import com.findajob.jobamax.dialog.WorkInProgressDialog
+import com.findajob.jobamax.enums.FirebaseDynamicLinkPath
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.enums.WebsiteUrls
@@ -27,6 +25,10 @@ import com.findajob.jobamax.preference.clearUserPref
 import com.findajob.jobamax.preference.getLanguage
 import com.findajob.jobamax.preference.getUserId
 import com.findajob.jobamax.util.*
+import com.google.firebase.dynamiclinks.ktx.androidParameters
+import com.google.firebase.dynamiclinks.ktx.dynamicLink
+import com.google.firebase.dynamiclinks.ktx.dynamicLinks
+import com.google.firebase.ktx.Firebase
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.parse.ParseUser
@@ -82,8 +84,8 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
     }
 
     private fun getCurrent( ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, context?.getUserId())
         query.include("portfolio")
         query.include("idealJob")
         progressHud.show()
@@ -124,7 +126,26 @@ class JobSeekerAccountFragment : BaseFragmentMain<FragmentJobSeekerAccountBindin
     override fun onRestorePurchaseClicked() = WorkInProgressDialog(requireActivity()).show()
 
 
-    override fun onShareJobamaxClicked() = ShareJobamaxDialog(requireActivity()).show()
+    override fun onShareJobamaxClicked() {
+        val builder = Uri.Builder()
+        builder.scheme("https")
+            .authority("www.jobamax.com")
+            .appendPath(FirebaseDynamicLinkPath.JOB_SEEKER.value)
+        val myUrl: String = builder.build().toString()
+        val dynamicLink = Firebase.dynamicLinks.dynamicLink {
+            link = Uri.parse(myUrl)
+            domainUriPrefix = "https://jobamax.page.link/"
+            androidParameters("com.findajob.jobamax") {
+            }
+        }
+
+        val sharingIntent = Intent()
+        sharingIntent.action = Intent.ACTION_SEND
+        sharingIntent.type = "text/plain"
+        sharingIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.share_jobamax_info)+dynamicLink.uri)
+       startActivity(Intent.createChooser(sharingIntent,resources.getString(R.string.share_jobamax_info)+dynamicLink.uri))
+    }
 
 
     override fun onHelpAndSupportClicked() = startActivity(Intent(requireContext(), WebViewActivity::class.java).putExtra(ARG_WEB_URL, WebsiteUrls.SUPPORT_URL.url))

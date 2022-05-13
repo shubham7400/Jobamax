@@ -529,7 +529,6 @@ attr deltaPolarAngle
 attr deltaPolarRadius
 attr deriveConstraintsFrom
 attr destination
-attr dialogActionButtonColor
 attr dialogCornerRadius
 attr dialogPreferredPadding
 attr dialogTheme
@@ -687,11 +686,7 @@ attr graph
 attr guidelineUseRtl
 attr haloColor
 attr haloRadius
-attr headerBgColor
-attr headerFontColorNormal
-attr headerFontColorSelected
 attr headerLayout
-attr headerTitleColor
 attr height
 attr helperText
 attr helperTextEnabled
@@ -951,11 +946,6 @@ attr mock_labelBackgroundColor
 attr mock_labelColor
 attr mock_showDiagonals
 attr mock_showLabel
-attr monthBgColor
-attr monthBgSelectedColor
-attr monthFontColorDisabled
-attr monthFontColorNormal
-attr monthFontColorSelected
 attr motionDebug
 attr motionDurationLong1
 attr motionDurationLong2
@@ -1586,10 +1576,6 @@ color exo_styled_error_message_background
 color exo_white
 color exo_white_opacity_70
 color fcm_test_color
-color fontBlackDisable
-color fontBlackEnable
-color fontWhiteDisable
-color fontWhiteEnable
 color foreground_material_dark
 color foreground_material_light
 color gray
@@ -2562,8 +2548,6 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
-dimen activity_horizontal_margin
-dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
@@ -2595,8 +2579,6 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
-dimen datepicker_view_animator_height
-dimen datepicker_year_label_height
 dimen def_drawer_elevation
 dimen default_dimension
 dimen design_appbar_elevation
@@ -3757,7 +3739,6 @@ drawable message_icon
 drawable message_icon_simple
 drawable minus_blue
 drawable minus_gradient
-drawable month_ripplr
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -3814,6 +3795,7 @@ drawable rounded_red_box_trans
 drawable rounded_white_box
 drawable rounded_white_box_50
 drawable rounded_white_box_grey_stroke
+drawable rounded_white_box_grey_stroke_elevation
 drawable rounded_white_box_sad_white_strok
 drawable school_dummy
 drawable seek
@@ -3946,7 +3928,6 @@ id acb_apply_now
 id acb_see_job_desc
 id acb_see_less_job_desc
 id acbtn_apply
-id acbtn_search
 id accb_apprenticeship
 id accb_internship
 id accb_less_than_one
@@ -3999,7 +3980,6 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
-id action_btn_lay
 id action_container
 id action_context_bar
 id action_divider
@@ -4027,6 +4007,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_seekerAboutMeFragment_to_seekerAboutMeScannerFragment
 id action_seekerAboutMeFragment_to_seekerSocialMediaIdsFragment
 id action_seekerAddExperienceFragment_to_seekerProfileFragment
 id action_seekerAddPersonalTrackJobFragment_to_nav_seeker_profile
@@ -4037,7 +4018,10 @@ id action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment
 id action_seekerEducationFragment_to_seekerNewEducationFragment
 id action_seekerEducationFragment_to_seekerProfileFragment
 id action_seekerExperienceListFragment_to_seekerAddExperienceFragment
+id action_seekerJobSearchFilterCategoriesDialogFragment_to_nav_seeker_profile
+id action_seekerJobSearchFilterCategoriesDialogFragment_to_seekerJobsFilterFragment
 id action_seekerJobsFilterFragment_to_nav_seeker_profile
+id action_seekerJobsFilterFragment_to_seekerJobSearchFilterCategoriesDialogFragment
 id action_seekerJobsFragment_to_nav_seeker_profile
 id action_seekerJobsFragment_to_seekerJobsFilterFragment
 id action_seekerJobsFragment_to_seekerWishListFragment
@@ -4359,7 +4343,7 @@ id et_portfolio_description
 id et_postal_code
 id et_profession
 id et_program
-id et_search_university
+id et_school
 id et_tiktok_link
 id exitUntilCollapsed
 id exo_ad_overlay
@@ -4450,7 +4434,6 @@ id grouping
 id groups
 id guideline
 id guideline2
-id header
 id header_title
 id hideable
 id home
@@ -4474,6 +4457,7 @@ id imageView10
 id imageView11
 id imageView12
 id imageView2
+id imageView3
 id imageView6
 id imageView7
 id imageView8
@@ -4603,7 +4587,6 @@ id linear_flag_holder
 id linkedInWebView
 id listMode
 id list_item
-id listview
 id ll1
 id ll2
 id ll_about_company
@@ -4669,8 +4652,6 @@ id message
 id messageCheck
 id middle
 id mini
-id month
-id monthPicker
 id monthYearTV
 id month_grid
 id month_navigation_bar
@@ -4739,7 +4720,6 @@ id notification_main_column_container
 id nsv_card
 id off
 id okButton
-id ok_action
 id on
 id onAttachStateChangeListener
 id onDateChanged
@@ -4768,7 +4748,6 @@ id pcv_match
 id peekHeight
 id percent
 id phoneField
-id picker_view
 id pin
 id place_autocomplete_clear_button
 id place_autocomplete_powered_by_google
@@ -4900,6 +4879,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id seekerAboutMeFragment
+id seekerAboutMeScannerFragment
 id seekerAddExperienceFragment
 id seekerAddPersonalTrackJobFragment
 id seekerAddVolunteeringFragment
@@ -4912,6 +4892,7 @@ id seekerEducationFragment
 id seekerExperienceListFragment
 id seekerImportResumeFragment
 id seekerInterestFragment
+id seekerJobSearchFilterCategoriesDialogFragment
 id seekerJobsFilterFragment
 id seekerJobsFragment
 id seekerMySkillFragment
@@ -5210,6 +5191,7 @@ id unlabeled
 id up
 id useLogo
 id v_calendar
+id v_devider
 id v_divider
 id v_event_hint
 id v_filter_state
@@ -5241,8 +5223,6 @@ id wrap_content_constrained
 id wv_job_site
 id x_left
 id x_right
-id year
-id yearView
 id zero_corner_chip
 id zoom
 integer abc_config_activityDefaultDur
@@ -5382,6 +5362,7 @@ layout dialog_message
 layout dialog_registration_successful
 layout dialog_repost_job
 layout dialog_share_jobamax
+layout dialog_simple_yes_no
 layout dialog_work_in_progress
 layout dialog_yes_no
 layout exo_list_divider
@@ -5416,6 +5397,7 @@ layout fragment_portfolio_image
 layout fragment_portfolio_video
 layout fragment_register
 layout fragment_seeker_about_me
+layout fragment_seeker_about_me_scanner
 layout fragment_seeker_add_experience
 layout fragment_seeker_add_personal_track_job
 layout fragment_seeker_add_volunteering
@@ -5430,7 +5412,7 @@ layout fragment_seeker_filter_job
 layout fragment_seeker_import_resume
 layout fragment_seeker_interest
 layout fragment_seeker_job_match_info_dialog
-layout fragment_seeker_job_search_filter_categories_dialog
+layout fragment_seeker_job_search_filter_categories
 layout fragment_seeker_job_web_dialog
 layout fragment_seeker_jobs
 layout fragment_seeker_jobs_filter
@@ -5438,7 +5420,6 @@ layout fragment_seeker_my_skill
 layout fragment_seeker_new_education
 layout fragment_seeker_preview
 layout fragment_seeker_profile
-layout fragment_seeker_search_university_dialog
 layout fragment_seeker_social_media_ids
 layout fragment_seeker_tracking_job
 layout fragment_seeker_tracking_job_description
@@ -5498,9 +5479,6 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
-layout month_picker_dialog
-layout month_picker_view
-layout month_view_header
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -5579,7 +5557,6 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
-layout year_label_text_view
 menu crop_image_menu
 menu example_menu
 menu example_menu2
@@ -5688,8 +5665,10 @@ string app_name
 string appbar_scrolling_view_behavior
 string applied
 string apply
+string apply_subtitle
 string apprenticeship
 string archive
+string are_you_selected
 string are_you_sure
 string are_you_sure_you_want_to_delete
 string arg_version
@@ -5779,14 +5758,17 @@ string crop_image_menu_flip_vertically
 string crop_image_menu_rotate_left
 string crop_image_menu_rotate_right
 string current_student
+string current_student_education
 string date_of_birth_with_asterisk
 string default_web_client_id
+string delete
 string delete_account
 string delete_account_information
 string delete_my_account
 string description
 string dismiss_button_content_description
 string distance
+string do_you_want_to_delete_your_account
 string do_you_want_to_disable
 string do_you_want_to_logout
 string don_t_have_an_account
@@ -5955,8 +5937,6 @@ string job_search_category_row8
 string job_search_category_row9
 string job_title
 string jobamax_jobs
-string label_month
-string label_year
 string language
 string language_change_alert_message
 string last_name_asterisk
@@ -6133,6 +6113,7 @@ string profile_url
 string project_id
 string push_notifications
 string pushwoosh_app_id
+string re_enter_password
 string record
 string refuse
 string refused
@@ -6160,6 +6141,7 @@ string send_to_friend
 string setting
 string share
 string share_jobamax
+string share_jobamax_info
 string skills
 string skip
 string social_media
@@ -6199,6 +6181,7 @@ string what_are_you_looking_for
 string what_job_are_looking_for
 string which_company
 string wishlist
+string wishlist_job_card_overlay
 string work_experience
 string yes
 string you_just_got_a_new_match
@@ -6537,7 +6520,6 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
-style MonthPickerDialogStyle
 style PlacesAutocompleteBase
 style PlacesAutocompleteErrorButtonText
 style PlacesAutocompleteErrorMessageText
@@ -7482,7 +7464,6 @@ styleable com_facebook_login_view com_facebook_confirm_logout com_facebook_login
 styleable com_facebook_profile_picture_view com_facebook_is_cropped com_facebook_preset_size
 styleable fastscroll__fastScroller fastscroll__bubbleColor fastscroll__bubbleTextAppearance fastscroll__handleColor
 styleable include constraintSet
-styleable monthPickerDialog dialogActionButtonColor headerBgColor headerFontColorNormal headerFontColorSelected headerTitleColor monthBgColor monthBgSelectedColor monthFontColorDisabled monthFontColorNormal monthFontColorSelected
 xml data_extraction_rules
 xml provider_paths
 xml pw_provider_paths

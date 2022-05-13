@@ -8,7 +8,6 @@ import com.findajob.jobamax.databinding.ActivityJobSeekerHomeBinding
 import com.findajob.jobamax.enums.ParseCloudFunction
 import com.findajob.jobamax.jobseeker.profile.idealjob.IOnBackPressed
 import com.findajob.jobamax.preference.*
-import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.parse.FunctionCallback
 import com.parse.ParseCloud
@@ -51,7 +50,7 @@ class JobSeekerHomeActivity : AppCompatActivity()  {
                 it["leaveTime"] = System.currentTimeMillis() / 1000
                 it["type"] = 2
             }
-            ParseCloud.callFunctionInBackground(ParseCloudFunction.saveSpentTime.toString(), request, FunctionCallback<Any> { result, e ->
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.SAVE_SPENT_TIME.value, request, FunctionCallback<Any> { result, e ->
                 if (e != null) {
                     try {
                         toast(e.message.toString())

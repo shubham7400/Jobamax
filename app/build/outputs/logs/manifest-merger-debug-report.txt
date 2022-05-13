@@ -130,7 +130,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.1] C:\Users\pc\.grad
 MERGED from [com.android.billingclient:billing-ktx:4.1.0] C:\Users\pc\.gradle\caches\transforms-3\e6a482bdd6c14a8cd15d74e1fad2c0af\transformed\jetified-billing-ktx-4.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\pc\.gradle\caches\transforms-3\33aa3976b211e7da42149e27442fa6ac\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.kaopiz:kprogresshud:1.2.0] C:\Users\pc\.gradle\caches\transforms-3\21f05d24ca4006fa11f4f98786a35591\transformed\jetified-kprogresshud-1.2.0\AndroidManifest.xml:2:1-15:12
-MERGED from [com.whiteelephant:monthandyearpicker:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\93fe849adaa72d377ec2a20bf17e8168\transformed\jetified-monthandyearpicker-1.3.0\AndroidManifest.xml:2:1-17:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\pc\.gradle\caches\transforms-3\fe98649974171bf9222fe52aebeac130\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.antonKozyriatskyi:CircularProgressIndicator:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\356608430b10d4749fe8910331bb29b8\transformed\jetified-CircularProgressIndicator-1.3.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.2] C:\Users\pc\.gradle\caches\transforms-3\e1ae6e30f5afd5f9744d2d0b1457a42e\transformed\jetified-transport-backend-cct-3.1.2\AndroidManifest.xml:15:1-38:12
@@ -437,8 +436,6 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\pc\.gradle\cac
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\pc\.gradle\caches\transforms-3\b09e79f74cf40496c53d9c835c168406\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
 MERGED from [com.kaopiz:kprogresshud:1.2.0] C:\Users\pc\.gradle\caches\transforms-3\21f05d24ca4006fa11f4f98786a35591\transformed\jetified-kprogresshud-1.2.0\AndroidManifest.xml:11:5-13:38
 MERGED from [com.kaopiz:kprogresshud:1.2.0] C:\Users\pc\.gradle\caches\transforms-3\21f05d24ca4006fa11f4f98786a35591\transformed\jetified-kprogresshud-1.2.0\AndroidManifest.xml:11:5-13:38
-MERGED from [com.whiteelephant:monthandyearpicker:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\93fe849adaa72d377ec2a20bf17e8168\transformed\jetified-monthandyearpicker-1.3.0\AndroidManifest.xml:11:5-15:38
-MERGED from [com.whiteelephant:monthandyearpicker:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\93fe849adaa72d377ec2a20bf17e8168\transformed\jetified-monthandyearpicker-1.3.0\AndroidManifest.xml:11:5-15:38
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\pc\.gradle\caches\transforms-3\fe98649974171bf9222fe52aebeac130\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\pc\.gradle\caches\transforms-3\fe98649974171bf9222fe52aebeac130\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.2] C:\Users\pc\.gradle\caches\transforms-3\e1ae6e30f5afd5f9744d2d0b1457a42e\transformed\jetified-transport-backend-cct-3.1.2\AndroidManifest.xml:28:5-36:19
@@ -473,7 +470,6 @@ MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\pc\.gradl
 		ADDED from C:\Users\pc\AndroidStudioProjects\jobamaxandroid\app\src\main\AndroidManifest.xml:25:9-36
 		REJECTED from [com.mobstac.circularimageprogress:CircularImageProgressView:0.1.3] C:\Users\pc\.gradle\caches\transforms-3\741be12e07d9d661269aa6d96c5f5434\transformed\jetified-CircularImageProgressView-0.1.3\AndroidManifest.xml:12:9-35
 		REJECTED from [com.kaopiz:kprogresshud:1.2.0] C:\Users\pc\.gradle\caches\transforms-3\21f05d24ca4006fa11f4f98786a35591\transformed\jetified-kprogresshud-1.2.0\AndroidManifest.xml:12:9-35
-		REJECTED from [com.whiteelephant:monthandyearpicker:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\93fe849adaa72d377ec2a20bf17e8168\transformed\jetified-monthandyearpicker-1.3.0\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from C:\Users\pc\AndroidStudioProjects\jobamaxandroid\app\src\main\AndroidManifest.xml:31:9-40
 	tools:replace
@@ -1014,8 +1010,6 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\pc\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\pc\.gradle\caches\transforms-3\33aa3976b211e7da42149e27442fa6ac\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.kaopiz:kprogresshud:1.2.0] C:\Users\pc\.gradle\caches\transforms-3\21f05d24ca4006fa11f4f98786a35591\transformed\jetified-kprogresshud-1.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.kaopiz:kprogresshud:1.2.0] C:\Users\pc\.gradle\caches\transforms-3\21f05d24ca4006fa11f4f98786a35591\transformed\jetified-kprogresshud-1.2.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.whiteelephant:monthandyearpicker:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\93fe849adaa72d377ec2a20bf17e8168\transformed\jetified-monthandyearpicker-1.3.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.whiteelephant:monthandyearpicker:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\93fe849adaa72d377ec2a20bf17e8168\transformed\jetified-monthandyearpicker-1.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\pc\.gradle\caches\transforms-3\fe98649974171bf9222fe52aebeac130\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\pc\.gradle\caches\transforms-3\fe98649974171bf9222fe52aebeac130\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.antonKozyriatskyi:CircularProgressIndicator:1.3.0] C:\Users\pc\.gradle\caches\transforms-3\356608430b10d4749fe8910331bb29b8\transformed\jetified-CircularProgressIndicator-1.3.0\AndroidManifest.xml:7:5-9:41

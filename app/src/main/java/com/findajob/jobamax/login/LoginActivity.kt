@@ -11,20 +11,18 @@ import androidx.navigation.fragment.NavHostFragment
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseActivityMain
 import com.findajob.jobamax.databinding.ActivityLoginBinding
-import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.dialog.BasicDialog
 import com.findajob.jobamax.enums.LoginType
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.model.JobSeeker
-import com.findajob.jobamax.model.Recruiter
 import com.findajob.jobamax.model.UserTempInfo
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.*
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import dagger.hilt.android.AndroidEntryPoint
-import java.security.AllPermission
 
 @AndroidEntryPoint
 class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
@@ -51,8 +49,8 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
 
     fun isEmailAlreadyRegistered(user: UserTempInfo, callback : () -> Unit) {
         progressHud.show()
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereContains(ParseTableFields.email.toString(), user.email)
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereContains(ParseTableFields.EMAIL.value, user.email)
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()
             when{
@@ -91,11 +89,11 @@ class LoginActivity : BaseActivityMain<ActivityLoginBinding>() {
 
     private fun getUserLogin(user: UserTempInfo) {
         progressHud.show()
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.email.toString(), user.email)
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.EMAIL.value, user.email)
         if (user.loginType == LoginType.EMAIL.type){
-            query.whereEqualTo(ParseTableFields.loginType.toString(), user.loginType)
-            query.whereEqualTo(ParseTableFields.password.toString(), AESCrypt.encrypt(user.password))
+            query.whereEqualTo(ParseTableFields.LOGIN_TYPE.value, user.loginType)
+            query.whereEqualTo(ParseTableFields.PASSWORD.value, AESCrypt.encrypt(user.password))
         }
         query.getFirstInBackground { result, e ->
             progressHud.dismiss()

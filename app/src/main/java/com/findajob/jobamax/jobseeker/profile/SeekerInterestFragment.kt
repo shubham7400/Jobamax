@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModel
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentSeekerInterestBinding
+import com.findajob.jobamax.dialog.YesNoDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.model.GetAllUserCallback
 import com.findajob.jobamax.util.log
@@ -74,13 +75,15 @@ class SeekerInterestFragment : BaseFragmentMain<FragmentSeekerInterestBinding>()
             val chip = layoutInflater.inflate(R.layout.item_custom_chip, binding.cgInterests, false) as Chip
             chip.text = str
             chip.setOnCloseIconClickListener { c ->
-                activitiesTags.remove((c as Chip).text)
-                binding.cgInterests.removeView(c)
-                viewModel.addInterestTags(activitiesTags) {
-                    if (it != null) {
-                        toast("${it.message.toString()} Something went wrong")
+                YesNoDialog(requireActivity(), resources.getString(R.string.are_you_sure), {
+                    activitiesTags.remove((c as Chip).text)
+                    binding.cgInterests.removeView(c)
+                    viewModel.addInterestTags(activitiesTags) {
+                        if (it != null) {
+                            toast("${it.message.toString()} Something went wrong")
+                        }
                     }
-                }
+                }, {}).show()
             }
             chip.isCloseIconVisible = true
             chip.setCloseIconResource(R.drawable.close_white)

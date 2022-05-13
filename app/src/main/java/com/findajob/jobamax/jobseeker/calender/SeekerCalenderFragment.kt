@@ -163,7 +163,7 @@ class SeekerCalenderFragment : BaseFragmentMain<FragmentSeekerCalenderBinding>()
     }
 
     private fun getCalendarData(){
-        ParseCloud.callFunctionInBackground("getTrackingList", hashMapOf(ParseTableFields.jobSeekerId.toString() to requireContext().getUserId()), FunctionCallback<Any> { response, e ->
+        ParseCloud.callFunctionInBackground("getTrackingList", hashMapOf(ParseTableFields.JOB_SEEKER_ID.value to requireContext().getUserId()), FunctionCallback<Any> { response, e ->
             when {
                 e != null ->{
                     toast("${e.message.toString()}")

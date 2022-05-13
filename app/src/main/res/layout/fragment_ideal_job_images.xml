@@ -70,7 +70,7 @@
                         android:layout_marginTop="30dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@string/upload_image"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />

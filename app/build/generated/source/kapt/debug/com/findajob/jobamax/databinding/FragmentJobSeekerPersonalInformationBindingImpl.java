@@ -128,7 +128,7 @@ public class FragmentJobSeekerPersonalInformationBindingImpl extends FragmentJob
             , (android.widget.EditText) bindings[7]
             , (android.widget.EditText) bindings[2]
             , (android.widget.TextView) bindings[12]
-            , (androidx.appcompat.widget.AppCompatImageView) bindings[1]
+            , (android.widget.ImageView) bindings[1]
             , (android.widget.EditText) bindings[3]
             , (android.widget.EditText) bindings[8]
             , (android.widget.EditText) bindings[6]

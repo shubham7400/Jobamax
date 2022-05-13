@@ -253,6 +253,8 @@
                             android:layout_marginVertical="10dp"
                             android:maxHeight="6dp"
                             android:progress="100"
+                            android:min="1"
+                            android:max="100"
                             android:progressDrawable="@drawable/seek_style"
                             android:thumb="@drawable/seek" />
                     </LinearLayout>

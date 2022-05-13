@@ -36,7 +36,7 @@ val trackingEventMap = hashMapOf(
 
 const val GOOGLE_LOGIN_TYPE = "google"
 
-const val JOBAMAX_DOWNLOAD_URL = "https://jobamax.com/en/download"
+const val JOBAMAX_DOWNLOAD_URL = "https://jobamax.page.link/"
 
 
 

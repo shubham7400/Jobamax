@@ -21,7 +21,6 @@ import com.findajob.jobamax.data.pojo.PhaseGroup
 import com.findajob.jobamax.databinding.FragmentSeekerWishListBinding
 import com.findajob.jobamax.databinding.ItemWishlistJobBinding
 import com.findajob.jobamax.dialog.YesNoDialog
-import com.findajob.jobamax.dialog.multiChoice.BasicDialog
 import com.findajob.jobamax.enums.ParseTableFields
 import com.findajob.jobamax.enums.ParseTableName
 import com.findajob.jobamax.enums.SeekerWishlistJobFilter
@@ -30,7 +29,6 @@ import com.findajob.jobamax.model.JobSeeker
 import com.findajob.jobamax.model.TrackingJob
 import com.findajob.jobamax.model.WishlistedJob
 import com.findajob.jobamax.preference.getUserId
-import com.findajob.jobamax.util.log
 import com.findajob.jobamax.util.toast
 import com.google.gson.Gson
 import com.parse.ParseObject
@@ -38,7 +36,6 @@ import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.popup_add_job_to_track.view.*
-import kotlinx.coroutines.joinAll
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -95,6 +92,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
         val layout: View = layoutInflater.inflate(R.layout.popup_add_job_to_track, null)
         layout.tv_message.setOnClickListener {
             addToTrackingJobList(wishlistJob)
+            popup.dismiss()
         }
         popup.contentView = layout
         popup.height = WindowManager.LayoutParams.WRAP_CONTENT
@@ -139,7 +137,7 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
             Locale.getDefault()
         ).format(wishlistJob.pfObject?.createdAt)
         trackingJob.phases = Gson().toJson(PhaseGroup(arrayListOf(phase)))
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TrackingJob.toString())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.TRACKING_JOB.value)
         query.whereEqualTo("job", trackingJob.job)
         query.whereEqualTo("jobSeeker", trackingJob.jobSeeker)
         progressHud.show()
@@ -230,8 +228,8 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
     }
 
     private fun getCurrent( ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, context?.getUserId())
         query.include("portfolio")
         query.include("idealJob")
         query.findInBackground { it, e ->
@@ -253,8 +251,8 @@ class SeekerWishListFragment : BaseFragmentMain<FragmentSeekerWishListBinding>()
 
 
     private fun fetchWishlist() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WishlistedJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),requireContext().getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.WISHLISTED_JOB.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value,requireContext().getUserId())
         query.whereLessThan("createdAt", Date(Date().time - 120000))
         query.include("job")
         query.include("jobSeeker")
@@ -298,7 +296,7 @@ class SeekerWishListAdapter(var list: ArrayList<WishlistedJob>) : RecyclerView.A
         holder.binding.apply {
             this.tvJobTitle.text = wishlistJob.job?.getString("jobTitle") ?: ""
             this.tvCompanyName.text = wishlistJob.job?.getString("companyName") ?: ""
-            this.tvLocation.text = wishlistJob.job?.getString("location") ?: ""
+            this.tvLocation.text = wishlistJob.job?.getString("city") ?: ""
             when(filter){
                 SeekerWishlistJobFilter.ALL -> {
                     this.llActionButton.visibility = View.VISIBLE

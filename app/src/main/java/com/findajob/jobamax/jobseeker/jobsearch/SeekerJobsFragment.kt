@@ -139,7 +139,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                 it["leaveTime"] = System.currentTimeMillis() / 1000
                 it["type"] = 1
             }
-            ParseCloud.callFunctionInBackground(ParseCloudFunction.saveSpentTime.toString(), request, FunctionCallback<Any> { result, e ->
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.SAVE_SPENT_TIME.value, request, FunctionCallback<Any> { result, e ->
                 if (e != null) {
                     try {
                         toast(e.message.toString())
@@ -214,8 +214,8 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     }
 
     private fun getCurrent( ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, context?.getUserId())
         query.include("portfolio")
         query.include("idealJob")
         query.findInBackground { it, e ->
@@ -266,7 +266,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 
         log("fjlksdkl $param")
         progressHud.show()
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobSearch.toString(), param, FunctionCallback<ArrayList<Any>> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.GET_JOB_SEARCH.value, param, FunctionCallback<ArrayList<Any>> { result, e ->
             progressHud.dismiss()
             jobOfferId = ""
             when {
@@ -310,6 +310,27 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
         }
         if (topJobOffer != null ){
             binding.pcvMatch.setProgress(topJobOffer.matchesPercentage.toDouble(), 100.0)
+            setPercentageChartViewColor(topJobOffer.matchesPercentage.toInt())
+        }
+    }
+
+    private fun setPercentageChartViewColor(progress: Int) {
+        when(progress){
+            in 0..20 -> {
+                binding.pcvMatch.progressColor = resources.getColor(R.color.red)
+            }
+            in 21..49 -> {
+                binding.pcvMatch.progressColor = resources.getColor(R.color.orange)
+            }
+            in 50..61 -> {
+                binding.pcvMatch.progressColor = resources.getColor(R.color.yellow)
+            }
+            in 62..79 -> {
+                binding.pcvMatch.progressColor = resources.getColor(R.color.dark_green)
+            }
+            in 80..100 -> {
+                binding.pcvMatch.progressColor = resources.getColor(R.color.green)
+            }
         }
     }
 
@@ -498,7 +519,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
                         }
                         Direction.Right -> {
                             overlay.setBackgroundResource(R.drawable.rounded_blue_box_trans)
-                             overlayLabel.text = resources.getString(R.string.wishlist)
+                             overlayLabel.text = resources.getString(R.string.wishlist_job_card_overlay)
                             overlayLabel.rotation = 45F
                         }
                         else -> { overlay.visibility = View.GONE}
@@ -582,7 +603,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     }
 
     private fun saveSwipeCount() {
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.saveSwipeCount.toString(), hashMapOf( "jobSeekerId" to requireContext().getUserId(), "type" to 3), FunctionCallback<Any> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.SAVE_SWIPE_COUNT.value, hashMapOf( "jobSeekerId" to requireContext().getUserId(), "type" to 3), FunctionCallback<Any> { result, e ->
             when {
                 e != null -> {
                     toast("${e.message.toString()}")
@@ -596,7 +617,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     }
 
     private fun removeJobFromRefuse(type: Int) {
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.dropoutActions.toString(), hashMapOf("jobOfferId" to rewindJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId(), "type" to type), FunctionCallback<Any> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.DROPOUT_ACTIONS.value, hashMapOf("jobOfferId" to rewindJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId(), "type" to type), FunctionCallback<Any> { result, e ->
             when {
                 e != null -> {
                     toast("${e.message.toString()}")
@@ -610,7 +631,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     }
 
     private fun removeJobFromWishlist() {
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.removeFromWishlist.toString(), hashMapOf("jobOfferId" to rewindJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId()), FunctionCallback<Any> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.REMOVE_FROM_WISHLIST.value, hashMapOf("jobOfferId" to rewindJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId()), FunctionCallback<Any> { result, e ->
             when {
                 e != null -> {
                     toast("${e.message.toString()}")
@@ -625,7 +646,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 
     private fun addToWishlistJob() {
         wishlistAddedJobsId.add(swipedJobOffer!!.jobOfferId)
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.addJobToWishlist.toString(), hashMapOf("jobOfferId" to swipedJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId()), FunctionCallback<Any> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.ADD_JOB_TO_WISHLIST.value, hashMapOf("jobOfferId" to swipedJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId()), FunctionCallback<Any> { result, e ->
             when {
                 e != null -> {
                     toast("${e.message.toString()}")
@@ -652,7 +673,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
 
     private fun addToRefuseJob(type: Int) {
         refuseJobsId.add(swipedJobOffer!!.jobOfferId)
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.dropoutActions.toString(), hashMapOf("jobOfferId" to swipedJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId(), "type" to type), FunctionCallback<Any> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.DROPOUT_ACTIONS.value, hashMapOf("jobOfferId" to swipedJobOffer!!.jobOfferId, "jobSeekerId" to requireContext().getUserId(), "type" to type), FunctionCallback<Any> { result, e ->
             when {
                 e != null -> {
                     toast("${e.message.toString()}")
@@ -763,7 +784,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     }
 
     private fun addJobTitle() {
-         ParseCloud.callFunctionInBackground(ParseCloudFunction.addJobTitle.toString(), hashMapOf<String, Any>("title" to binding.etJobKeyword.text.toString()), FunctionCallback<Any> { result, e ->
+         ParseCloud.callFunctionInBackground(ParseCloudFunction.ADD_JOB_TITLE.value, hashMapOf<String, Any>("title" to binding.etJobKeyword.text.toString()), FunctionCallback<Any> { result, e ->
              when{
                  e != null -> { toast(e.message.toString()) }
                  result == null -> {}
@@ -773,7 +794,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
     }
 
     private fun getJobTypes() {
-         ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobTitles.toString(), hashMapOf<String, Any>("search" to binding.etJobKeyword.text.toString()), FunctionCallback<ArrayList<String>> { result, e ->
+         ParseCloud.callFunctionInBackground(ParseCloudFunction.GET_JOB_TITLES.value, hashMapOf<String, Any>("search" to binding.etJobKeyword.text.toString()), FunctionCallback<ArrayList<String>> { result, e ->
              when{
                  e != null -> { toast(e.message.toString()) }
                  result == null -> {
@@ -812,7 +833,7 @@ class SeekerJobsFragment : BaseFragmentMain<FragmentSeekerJobsBinding>() {
             val builder = Uri.Builder()
             builder.scheme("https")
                 .authority("jobamax.page.link")
-                .appendPath(FirebaseDynamicLinkPath.shareJobOffer.toString())
+                .appendPath(FirebaseDynamicLinkPath.SHARE_JOB_OFFER.value)
                 .appendQueryParameter("jobOfferId", sharedJobOffer.jobOfferId)
                 .appendQueryParameter("jobSeekerId", requireContext().getUserId())
             val myUrl: String = builder.build().toString()

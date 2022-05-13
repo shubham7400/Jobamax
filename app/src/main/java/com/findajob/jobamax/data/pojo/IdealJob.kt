@@ -12,7 +12,7 @@ class IdealJob(obj: ParseObject) {
     var pfObject: ParseObject? = obj
 
     fun toParseObject(): ParseObject {
-        val idealJob = ParseObject(ParseTableName.IdealJob.toString())
+        val idealJob = ParseObject(ParseTableName.IDEAL_JOB.value)
         idealJob.put("text", text)
         idealJob.put("arrImages", arrImages)
         idealJob.put("audioUrl", audioUrl)

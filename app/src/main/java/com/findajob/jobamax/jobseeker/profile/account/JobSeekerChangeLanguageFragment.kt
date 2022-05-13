@@ -11,7 +11,7 @@ import com.findajob.jobamax.MainActivity
 import com.findajob.jobamax.R
 import com.findajob.jobamax.base.BaseFragmentMain
 import com.findajob.jobamax.databinding.FragmentJobSeekerChangeLanguageBinding
-import com.findajob.jobamax.dialog.multiChoice.BasicDialog
+import com.findajob.jobamax.dialog.BasicDialog
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel
 import com.findajob.jobamax.preference.getLanguage
 import com.findajob.jobamax.preference.setLanguage

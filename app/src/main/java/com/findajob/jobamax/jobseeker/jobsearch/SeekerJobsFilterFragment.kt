@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -151,8 +150,8 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
     }
 
     private fun getCurrent( ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), context?.getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, context?.getUserId())
         query.include("portfolio")
         query.include("idealJob")
         progressHud.show()
@@ -258,14 +257,9 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
-
-        binding.ivAddCategory.setOnClickListener {
-            val instance = SeekerJobSearchFilterCategoriesDialogFragment.newInstance()
-            instance.show(childFragmentManager,"dialog")
-            instance.onDialogDismiss = {
-                setIndustryListRecyclerview()
-            }
-        }
+        val args = Bundle()
+        args.putString(PROFILE_PIC_URL, viewModel.jobSeeker.profilePicUrl)
+        binding.ivAddCategory.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_seekerJobsFilterFragment_to_seekerJobSearchFilterCategoriesDialogFragment, args))
 
         typeOfWorkListeners()
         experienceListener()
@@ -327,7 +321,7 @@ class SeekerJobsFilterFragment : BaseFragmentMain<FragmentSeekerJobsFilterBindin
 
 
     private fun getJobTypes() {
-        ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobTitles.toString(), hashMapOf<String, Any>("search" to binding.etJobKeyword.text.toString()), FunctionCallback<ArrayList<String>> { result, e ->
+        ParseCloud.callFunctionInBackground(ParseCloudFunction.GET_JOB_TITLES.value, hashMapOf<String, Any>("search" to binding.etJobKeyword.text.toString()), FunctionCallback<ArrayList<String>> { result, e ->
             when{
                 e != null -> { toast(e.message.toString()) }
                 result == null -> {

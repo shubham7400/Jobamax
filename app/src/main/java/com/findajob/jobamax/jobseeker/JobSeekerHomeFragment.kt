@@ -29,7 +29,6 @@ import com.parse.FunctionCallback
 import com.parse.ParseCloud
 import com.parse.ParseObject
 import com.parse.ParseQuery
-import com.squareup.picasso.Picasso
 import org.json.JSONObject
 
 class JobSeekerHomeFragment : BaseFragmentMain<FragmentJobSeekerHomeBinding>() {
@@ -63,8 +62,8 @@ class JobSeekerHomeFragment : BaseFragmentMain<FragmentJobSeekerHomeBinding>() {
 
 
     private fun getCurrent( ) {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),  requireContext().getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value,  requireContext().getUserId())
         query.include("portfolio")
         query.include("idealJob")
         progressHud.show()
@@ -101,7 +100,7 @@ class JobSeekerHomeFragment : BaseFragmentMain<FragmentJobSeekerHomeBinding>() {
 
     private fun updateWishlistImages() {
         try {
-            ParseCloud.callFunctionInBackground(ParseCloudFunction.getJobsLogo.toString(), hashMapOf("jobSeekerId" to requireContext().getUserId()), FunctionCallback<Any> { result, e ->
+            ParseCloud.callFunctionInBackground(ParseCloudFunction.GET_JOBS_LOGO.value, hashMapOf("jobSeekerId" to requireContext().getUserId()), FunctionCallback<Any> { result, e ->
                 val jsonArray = JSONObject(Gson().toJson(result)).getJSONArray("urls")
                 for (i in 0 until jsonArray.length()){
                     when(i){

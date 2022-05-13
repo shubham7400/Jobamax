@@ -14,18 +14,18 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel;
 import com.findajob.jobamax.jobseeker.home.JobSeekerHomeViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity;
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment;
-import com.findajob.jobamax.jobseeker.profile.SeekerAboutMeFragment;
-import com.findajob.jobamax.jobseeker.profile.SeekerAddVolunteeringFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment;
 import com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment;
-import com.findajob.jobamax.jobseeker.profile.SeekerVolunteeringListFragment;
+import com.findajob.jobamax.jobseeker.profile.about.SeekerAboutMeFragment;
 import com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment;
 import com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment;
 import com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment;
 import com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment;
 import com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment;
-import com.findajob.jobamax.jobseeker.track.newtrack.SeekerTrackingJobFragment;
+import com.findajob.jobamax.jobseeker.profile.volunteering.SeekerAddVolunteeringFragment;
+import com.findajob.jobamax.jobseeker.profile.volunteering.SeekerVolunteeringListFragment;
+import com.findajob.jobamax.jobseeker.track.SeekerTrackingJobFragment;
 import com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment;
 import com.findajob.jobamax.login.LoginActivity;
 import com.google.common.collect.ImmutableMap;
@@ -350,14 +350,6 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectSeekerAboutMeFragment(SeekerAboutMeFragment arg0) {
-    }
-
-    @Override
-    public void injectSeekerAddVolunteeringFragment(SeekerAddVolunteeringFragment arg0) {
-    }
-
-    @Override
     public void injectSeekerImportResumeFragment(SeekerImportResumeFragment arg0) {
     }
 
@@ -370,7 +362,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
-    public void injectSeekerVolunteeringListFragment(SeekerVolunteeringListFragment arg0) {
+    public void injectSeekerAboutMeFragment(SeekerAboutMeFragment arg0) {
     }
 
     @Override
@@ -393,6 +385,14 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     @Override
     public void injectJobSeekerManageReadReceiptsFragment(
         JobSeekerManageReadReceiptsFragment arg0) {
+    }
+
+    @Override
+    public void injectSeekerAddVolunteeringFragment(SeekerAddVolunteeringFragment arg0) {
+    }
+
+    @Override
+    public void injectSeekerVolunteeringListFragment(SeekerVolunteeringListFragment arg0) {
     }
 
     @Override

@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.findajob.jobamax.R;
 import com.findajob.jobamax.model.JobSeeker;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -30,6 +31,9 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   public final ConstraintLayout clEndDate;
 
   @NonNull
+  public final ConstraintLayout clMostParent;
+
+  @NonNull
   public final EditText etDescription;
 
   @NonNull
@@ -37,6 +41,9 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
 
   @NonNull
   public final EditText etProgram;
+
+  @NonNull
+  public final EditText etSchool;
 
   @NonNull
   public final ImageView ivBackButton;
@@ -49,6 +56,9 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
 
   @NonNull
   public final RelativeLayout relativeLayout;
+
+  @NonNull
+  public final RecyclerView rvUniversities;
 
   @NonNull
   public final TextView textView10;
@@ -72,9 +82,6 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
   public final TextView tvEndDate;
 
   @NonNull
-  public final TextView tvSchool;
-
-  @NonNull
   public final TextView tvStartDate;
 
   @Bindable
@@ -82,21 +89,24 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
 
   protected FragmentSeekerNewEducationBinding(Object _bindingComponent, View _root,
       int _localFieldCount, CheckBox cbCurrentStudent, ConstraintLayout clEndDate,
-      EditText etDescription, EditText etGpa, EditText etProgram, ImageView ivBackButton,
-      CircleImageView ivUserProfile, LinearLayout linearLayout, RelativeLayout relativeLayout,
+      ConstraintLayout clMostParent, EditText etDescription, EditText etGpa, EditText etProgram,
+      EditText etSchool, ImageView ivBackButton, CircleImageView ivUserProfile,
+      LinearLayout linearLayout, RelativeLayout relativeLayout, RecyclerView rvUniversities,
       TextView textView10, TextView textView11, TextView textView144, TextView textView15,
-      TextView textView9, TextView tvDescriptionTitle, TextView tvEndDate, TextView tvSchool,
-      TextView tvStartDate) {
+      TextView textView9, TextView tvDescriptionTitle, TextView tvEndDate, TextView tvStartDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cbCurrentStudent = cbCurrentStudent;
     this.clEndDate = clEndDate;
+    this.clMostParent = clMostParent;
     this.etDescription = etDescription;
     this.etGpa = etGpa;
     this.etProgram = etProgram;
+    this.etSchool = etSchool;
     this.ivBackButton = ivBackButton;
     this.ivUserProfile = ivUserProfile;
     this.linearLayout = linearLayout;
     this.relativeLayout = relativeLayout;
+    this.rvUniversities = rvUniversities;
     this.textView10 = textView10;
     this.textView11 = textView11;
     this.textView144 = textView144;
@@ -104,7 +114,6 @@ public abstract class FragmentSeekerNewEducationBinding extends ViewDataBinding 
     this.textView9 = textView9;
     this.tvDescriptionTitle = tvDescriptionTitle;
     this.tvEndDate = tvEndDate;
-    this.tvSchool = tvSchool;
     this.tvStartDate = tvStartDate;
   }
 

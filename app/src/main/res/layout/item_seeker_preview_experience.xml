@@ -44,7 +44,7 @@
                     android:fontFamily="@font/opensans_bold"
                     android:text="Prashanti"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
                 <TextView
                     android:id="@+id/tv_profession"
                     android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
                     android:text="BE"
                     android:layout_marginVertical="5dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
                 <TextView
                     android:id="@+id/tv_date_duration"
                     android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
                     android:fontFamily="@font/opensans_bold"
                     android:text="2016 - 2020"
                     android:textColor="@color/colorHypeLink"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -54,7 +54,7 @@ class IdealJobDescriptionFragment : BaseFragmentMain<FragmentIdealJobDescription
             IdealJob(it)
         }
         if (idealJob == null){
-            val parseObject = ParseObject(ParseTableName.IdealJob.toString())
+            val parseObject = ParseObject(ParseTableName.IDEAL_JOB.value)
             idealJob = IdealJob(parseObject)
             idealJob!!.pfObject?.let { viewModel.jobSeeker.pfObject?.put("idealJob", it) }
             viewModel.jobSeeker.pfObject?.saveInBackground()

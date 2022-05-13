@@ -344,10 +344,10 @@
             android:background="@drawable/rounded_white_box">
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/acb_see_job_desc"
+                style="@style/button_gradient_rect32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/grad_button"
-                android:paddingHorizontal="20dp"
+                 android:paddingHorizontal="20dp"
                 android:text="@string/see_job_description"
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -372,8 +372,8 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="100dp"
                 android:fontFamily="@font/opensans_bold"
-                android:text="Wishlist"
                 android:rotation="45"
+                android:textAllCaps="true"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="10dp"
                 android:background="@drawable/round_4_outline_1"

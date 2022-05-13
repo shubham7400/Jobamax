@@ -12,7 +12,7 @@ class WishlistedJob {
     var pfObject: ParseObject? = null
 
     fun toParseObject(): ParseObject {
-        val wishlistedJob = ParseObject(ParseTableName.WishlistedJob.toString())
+        val wishlistedJob = ParseObject(ParseTableName.WISHLISTED_JOB.value)
         jobSeeker?.let { wishlistedJob.put("jobSeeker", it) }
         job?.let { wishlistedJob.put("job", it) }
         wishlistedJob.put("isFavroite", isFavroite)

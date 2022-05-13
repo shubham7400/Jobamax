@@ -45,7 +45,7 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
                 toast("Please Enter the link first.")
             }else{
                 progressHud.show()
-                ParseCloud.callFunctionInBackground(ParseCloudFunction.importFromLinkedIn.toString(), hashMapOf("link" to binding.etLink.text.toString().trim(), "jobSeekerId" to requireContext().getUserId()),
+                ParseCloud.callFunctionInBackground(ParseCloudFunction.IMPORT_FROM_LINKEDIN.value, hashMapOf("link" to binding.etLink.text.toString().trim(), "jobSeekerId" to requireContext().getUserId()),
                     FunctionCallback<Any> { result, e ->
                         progressHud.dismiss()
                         when {
@@ -64,8 +64,8 @@ class SeekerImportResumeFragment : BaseFragmentMain<FragmentSeekerImportResumeBi
     }
 
     private fun getCurrent() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-        query.whereEqualTo(ParseTableFields.jobSeekerId.toString(),  requireContext().getUserId())
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value,  requireContext().getUserId())
         query.include("portfolio")
         query.include("idealJob")
         progressHud.show()

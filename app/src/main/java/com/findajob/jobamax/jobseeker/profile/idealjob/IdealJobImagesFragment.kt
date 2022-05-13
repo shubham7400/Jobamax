@@ -24,8 +24,6 @@ import com.findajob.jobamax.util.*
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.squareup.picasso.Picasso
-import jp.wasabeef.picasso.transformations.CropCircleTransformation
-import java.io.File
 import java.util.*
 
 const val ADD_NEW_ITEM = "new item"
@@ -55,8 +53,8 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
     }
 
     private fun getIdealJobData() {
-        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IdealJob.toString())
-        query.whereEqualTo(ParseTableFields.jobSeeker.toString(), viewModel.jobSeeker.pfObject)
+        val query = ParseQuery.getQuery<ParseObject>(ParseTableName.IDEAL_JOB.value)
+        query.whereEqualTo(ParseTableFields.JOB_SEEKER.value, viewModel.jobSeeker.pfObject)
         query.include("jobSeeker")
         progressHud.show()
         query.getFirstInBackground { result, e ->
@@ -110,7 +108,7 @@ class IdealJobImagesFragment : BaseFragmentMain<FragmentIdealJobImagesBinding>()
     private fun saveDataToParse(callback : () -> Unit) {
         idealJobImageUrlList.remove(ADD_NEW_ITEM)
         if (idealJob == null){
-            val portfolioParseObject = ParseObject(ParseTableName.IdealJob.toString())
+            val portfolioParseObject = ParseObject(ParseTableName.IDEAL_JOB.value)
             viewModel.jobSeeker.pfObject?.let { it1 ->
                 portfolioParseObject.put("jobSeeker", it1)
             }

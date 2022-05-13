@@ -14,7 +14,6 @@ import com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity
 import com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity
 import com.findajob.jobamax.login.LoginActivity
 import com.findajob.jobamax.model.JobSeeker
-import com.findajob.jobamax.model.Recruiter
 import com.findajob.jobamax.preference.*
 import com.findajob.jobamax.util.JOB_SEEKER_TYPE
 import com.findajob.jobamax.util.log
@@ -69,12 +68,12 @@ class MainActivity : AppCompatActivity() {
                         val jobSeekerId = deepLink?.getQueryParameter("jobSeekerId")
                         val path = deepLink?.path!!.substring(1, deepLink!!.path!!.length)
                         when(path){
-                            FirebaseDynamicLinkPath.emailVerification.toString() -> {
+                            FirebaseDynamicLinkPath.EMAIL_VERIFICATION.toString() -> {
                                 if (userType == JOB_SEEKER_TYPE){
                                     updateIsEmailVerifiedInJobSeeker(id)
                                 }
                             }
-                            FirebaseDynamicLinkPath.shareJobOffer.toString() -> {
+                            FirebaseDynamicLinkPath.SHARE_JOB_OFFER.value -> {
                                 startActivity(Intent(this, SeekerJobSearchActivity::class.java).also {
                                     it.putExtra("jobOfferId", jobOfferId)
                                     it.putExtra("jobSeekerId", jobSeekerId)
@@ -97,13 +96,13 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun updateIsEmailVerifiedInJobSeeker(jobSeekerId: String?) {
-            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JobSeeker.toString())
-            query.whereEqualTo(ParseTableFields.jobSeekerId.toString(), jobSeekerId)
+            val query = ParseQuery.getQuery<ParseObject>(ParseTableName.JOB_SEEKER.value)
+            query.whereEqualTo(ParseTableFields.JOB_SEEKER_ID.value, jobSeekerId)
             query.getFirstInBackground { obj, e ->
                 if (e != null){
                     toast("error "+e.message.toString())
                 }else{
-                    obj.put(ParseTableFields.emailVerified.toString(),true)
+                    obj.put(ParseTableFields.EMAIL_VERIFIED.value,true)
                     obj.saveInBackground {
                         if (it == null){
                             toast("Email has been verified successfully.")

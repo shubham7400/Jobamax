@@ -65,17 +65,19 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civ_user"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     style="@style/circular_image"
                     loadImageFromUrl="@{jobSeeker.profilePicUrl}"
-                    android:layout_toStartOf="@+id/iv_favorite"
                     android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/iv_favorite"
                     android:src="@drawable/default_user_img"
                     app:civ_border_color="@color/colorPrimary" />
 
                 <ImageView
                     android:id="@+id/iv_favorite"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/filled_heart" />
             </RelativeLayout>
