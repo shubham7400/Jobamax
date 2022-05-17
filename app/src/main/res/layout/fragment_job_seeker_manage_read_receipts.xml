@@ -6,7 +6,7 @@
 		
 		<variable
 			name="handler"
-			type="com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsInterface" />
+			type="com.jobamax.appjobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsInterface" />
 	</data>
 
 	<LinearLayout

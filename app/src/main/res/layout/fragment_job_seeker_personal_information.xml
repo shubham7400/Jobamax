@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface" />
+            type="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationInterface" />
 
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel" />
+            type="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

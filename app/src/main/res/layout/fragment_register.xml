@@ -8,7 +8,7 @@
 
         <variable
             name="handler"
-            type="com.findajob.jobamax.login.RegisterInterface" />
+            type="com.jobamax.appjobamax.login.RegisterInterface" />
     </data>
 
     <ScrollView

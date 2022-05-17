@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.findajob.jobamax.login.LoginFragment"
+        android:name="com.jobamax.appjobamax.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -16,13 +16,13 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.findajob.jobamax.login.RegisterFragment"
+        android:name="com.jobamax.appjobamax.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
 
     <fragment
         android:id="@+id/valuePrivacyFragment"
-        android:name="com.findajob.jobamax.login.ValuePrivacyFragment"
+        android:name="com.jobamax.appjobamax.login.ValuePrivacyFragment"
         android:label="ValuePrivacyFragment"
         tools:layout="@layout/fragment_value_privacy" >
         <action
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/keepMePostedFragment"
-        android:name="com.findajob.jobamax.login.KeepMePostedFragment"
+        android:name="com.jobamax.appjobamax.login.KeepMePostedFragment"
         android:label="KeepMePostedFragment"
         tools:layout="@layout/fragment_keep_me_posted" >
         <action
@@ -50,7 +50,7 @@
 
     <fragment
         android:id="@+id/locationPermissionFragment"
-        android:name="com.findajob.jobamax.login.LocationPermissionFragment"
+        android:name="com.jobamax.appjobamax.login.LocationPermissionFragment"
         android:label="LocationPermissionFragment"
         tools:layout="@layout/fragment_location_permission">
         <argument
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/meetPeopleNearbyFragment"
-        android:name="com.findajob.jobamax.login.MeetPeopleNearbyFragment"
+        android:name="com.jobamax.appjobamax.login.MeetPeopleNearbyFragment"
         android:label="MeetPeopleNearbyFragment"
         tools:layout="@layout/fragment_meet_nearby_people">
     </fragment>

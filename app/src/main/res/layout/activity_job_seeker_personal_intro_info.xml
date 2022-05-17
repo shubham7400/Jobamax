@@ -7,11 +7,11 @@
 
         <variable
             name="handler"
-            type="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoInterface" />
+            type="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoInterface" />
 
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel" />
+            type="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationModel" />
     </data>
 
 

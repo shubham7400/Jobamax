@@ -7,7 +7,7 @@
 
         <variable
             name="handler"
-            type="com.findajob.jobamax.login.LocationPermissionInterface" />
+            type="com.jobamax.appjobamax.login.LocationPermissionInterface" />
     </data>
 
     <ScrollView

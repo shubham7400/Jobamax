@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/seekerProfileFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.SeekerProfileFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerProfileFragment"
         android:label="fragment_seeker_profile"
         tools:layout="@layout/fragment_seeker_profile" >
         <action
@@ -136,7 +136,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerAboutMeFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.about.SeekerAboutMeFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.about.SeekerAboutMeFragment"
         android:label="fragment_seeker_about_me"
         tools:layout="@layout/fragment_seeker_about_me" >
         <action
@@ -152,7 +152,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerEducationFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.education.SeekerEducationFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.education.SeekerEducationFragment"
         android:label="fragment_seeker_education"
         tools:layout="@layout/fragment_seeker_education" >
         <action
@@ -172,7 +172,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerMySkillFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.skill.SeekerMySkillFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.skill.SeekerMySkillFragment"
         android:label="fragment_seeker_my_skill"
         tools:layout="@layout/fragment_seeker_my_skill" >
         <action
@@ -187,12 +187,12 @@
     </fragment>
     <fragment
         android:id="@+id/seekerNewEducationFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.education.SeekerNewEducationFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.education.SeekerNewEducationFragment"
         android:label="fragment_seeker_new_education"
         tools:layout="@layout/fragment_seeker_new_education" >
         <argument
             android:name="education"
-            app:argType="com.findajob.jobamax.data.pojo.Education" />
+            app:argType="com.jobamax.appjobamax.data.pojo.Education" />
         <action
             android:id="@+id/action_seekerNewEducationFragment_to_seekerProfileFragment"
             app:popUpToInclusive="true"
@@ -201,12 +201,12 @@
     </fragment>
     <fragment
         android:id="@+id/seekerInterestFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.SeekerInterestFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerInterestFragment"
         android:label="fragment_volunteering_and_activities"
         tools:layout="@layout/fragment_seeker_interest" />
     <fragment
         android:id="@+id/seekerExperienceListFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.experience.SeekerExperienceListFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.experience.SeekerExperienceListFragment"
         android:label="fragment_seeker_experience_list"
         tools:layout="@layout/fragment_seeker_experience_list" >
         <action
@@ -219,7 +219,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerAddExperienceFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.experience.SeekerAddExperienceFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.experience.SeekerAddExperienceFragment"
         android:label="fragment_seeker_add_experience"
         tools:layout="@layout/fragment_seeker_add_experience" >
         <action
@@ -230,7 +230,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerSocialMediaIdsFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.about.SeekerSocialMediaIdsFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.about.SeekerSocialMediaIdsFragment"
         android:label="fragment_seeker_social_media_ids"
         tools:layout="@layout/fragment_seeker_social_media_ids" >
         <action
@@ -241,17 +241,17 @@
     </fragment>
     <fragment
         android:id="@+id/seekerPreviewFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.SeekerPreviewFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerPreviewFragment"
         android:label="fragment_seeker_preview"
         tools:layout="@layout/fragment_seeker_preview" />
     <fragment
         android:id="@+id/seekerImportResumeFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.SeekerImportResumeFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerImportResumeFragment"
         android:label="fragment_seeker_import_resume"
         tools:layout="@layout/fragment_seeker_import_resume" />
     <fragment
         android:id="@+id/seekerVolunteeringListFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.volunteering.SeekerVolunteeringListFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.volunteering.SeekerVolunteeringListFragment"
         android:label="fragment_seeker_volunteering_list"
         tools:layout="@layout/fragment_seeker_volunteering_list" >
         <action
@@ -264,7 +264,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerAddVolunteeringFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.volunteering.SeekerAddVolunteeringFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.volunteering.SeekerAddVolunteeringFragment"
         android:label="fragment_seeker_add_volunteering"
         tools:layout="@layout/fragment_seeker_add_volunteering" >
         <action
@@ -275,42 +275,42 @@
     </fragment>
     <fragment
         android:id="@+id/idealJobVideoFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobVideoFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.idealjob.IdealJobVideoFragment"
         android:label="fragment_ideal_job_video"
         tools:layout="@layout/fragment_ideal_job_video" />
     <fragment
         android:id="@+id/idealJobDescriptionFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobDescriptionFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.idealjob.IdealJobDescriptionFragment"
         android:label="fragment_ideal_job_description"
         tools:layout="@layout/fragment_ideal_job_description" />
     <fragment
         android:id="@+id/idealJobImagesFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobImagesFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.idealjob.IdealJobImagesFragment"
         android:label="fragment_ideal_job_images"
         tools:layout="@layout/fragment_ideal_job_images" />
     <fragment
         android:id="@+id/idealJobAudioFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.idealjob.IdealJobAudioFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.idealjob.IdealJobAudioFragment"
         android:label="fragment_ideal_job_audio"
         tools:layout="@layout/fragment_ideal_job_audio" />
     <fragment
         android:id="@+id/portfolioVideoFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioVideoFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.portfolio.PortfolioVideoFragment"
         android:label="fragment_portfolio_video"
         tools:layout="@layout/fragment_portfolio_video" />
     <fragment
         android:id="@+id/portfolioDescriptionFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioDescriptionFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.portfolio.PortfolioDescriptionFragment"
         android:label="fragment_portfolio_description"
         tools:layout="@layout/fragment_portfolio_description" />
     <fragment
         android:id="@+id/portfolioImageFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.portfolio.PortfolioImageFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.portfolio.PortfolioImageFragment"
         android:label="fragment_portfolio_image"
         tools:layout="@layout/fragment_portfolio_image" />
     <fragment
         android:id="@+id/seekerAboutMeScannerFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.about.SeekerAboutMeScannerFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.about.SeekerAboutMeScannerFragment"
         android:label="fragment_seeker_about_me_scanner"
         tools:layout="@layout/fragment_seeker_about_me_scanner" />
 

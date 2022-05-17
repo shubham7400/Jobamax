@@ -7,7 +7,7 @@
     <data>
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -199,7 +199,7 @@
                             android:layout_alignParentEnd="true"
                             android:fontFamily="@font/opensans_regular"
                             android:hint="@string/select_date_education"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/colorPrimary"
                             android:layout_marginTop="10dp"
                             android:textColor="@color/black"
                             android:textSize="18sp"
@@ -246,7 +246,7 @@
                             android:layout_alignParentEnd="true"
                             android:fontFamily="@font/opensans_regular"
                             android:hint="@string/select_date_education"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/colorPrimary"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"

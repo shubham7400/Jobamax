@@ -97,7 +97,7 @@
     <string name="instruction_we_value_our_privacy">Chez Jobamax, la protection de votre vie privée est une priorité absolue. Votre vie privée est au cœur de la conception et de la réalisation des services et des produits que vous connaissez et appréciez, afin que vous puissiez leur faire pleinement confiance et vous concentrer sur l\'établissement de relations fructueuses.</string>
     <string name="i_accept">J\'accepte</string>
 
-    <string name="what_are_you_looking_for">Chercher per mots clés</string>
+    <string name="what_are_you_looking_for">Chercher par mots clés</string>
     <string name="title_activity_maps">Carte</string>
     <string name="new_password">Nouveau mot de passe</string>
     <string name="enter_new_password">Entrez le nouveau mot de passe</string>
@@ -123,7 +123,7 @@
     <string name="interview">Entretien</string>
     //LinkedIn SDK Access
 
-    <string name="archive">Archives</string>
+    <string name="archive">Archivés</string>
     <string name="we_value_your_privacy">Nous respectons votre vie privée</string>
     <string name="invitation_code">Code promotionnel (facultatif)</string>
     <string name="company_name">Nom de la société</string>
@@ -234,15 +234,15 @@
     <string name="images">Images</string>
     <string name="job_description">Description du Poste</string>
     <string name="in_progress">En cours</string>
-    <string name="see_less">voir moins</string>
+    <string name="see_less">Voir moins</string>
     <string name="which_company">Quelle entreprise ?</string>
-    <string name="categories">Catégories</string>
+    <string name="categories">Categories</string>
     <string name="matching_results">Résultats de l\'appariement</string>
     <string name="missing_keywords">Mots clés manquants</string>
     <string name="this_section_is_empty">Présente-toi</string>
     <string name="vocal_30_secondes">vocal (30 secondes)</string>
     <string name="import_resume">Importer mon CV</string>
-    <string name="profile_url">profil URL</string>
+    <string name="profile_url">Profil URL</string>
     <string name="enter_file_link">Entre l’URL</string>
     <string name="offers">Offres</string>
     <string name="preview">Aperçu</string>
@@ -297,7 +297,7 @@
     <string name="job_search_category_row3">Personnel de bureau et de soutien administratif</string>
     <string name="job_search_category_row4">Personnel soignant et personnel technique</string>
     <string name="job_search_category_row5">Gestion</string>
-    <string name="job_search_category_row6">Préparation des aliments et service des repa</string>
+    <string name="job_search_category_row6">Préparation des aliments et service des repas</string>
     <string name="job_search_category_row7">Professions en informatique et en mathématiques</string>
     <string name="job_search_category_row8">Professions liées aux affaires et aux opérations financières</string>
     <string name="job_search_category_row9">Personnel de soutien des soins de santé</string>
@@ -332,4 +332,10 @@
     <string name="share_jobamax_info">Swipe les offres d\'emploi sur Jobamax! C\'est simple et rapide. Télécharge I\'appli ici :</string>
     <string name="wishlist_job_card_overlay">Wishlist</string>
     <string name="apply_subtitle">Postuler</string>
+    <string name="add_to_wishlist">Ajouter à wishlist</string>
+    <string name="apply_now">Postulez maintenant</string>
+    <string name="added_successfully_to_wishlist">ajouté avec succès à wishlist.</string>
+    <string name="added_to_tracking_successfully">Ajouté au suivi avec succès</string>
+    <string name="saved_successfully">Sauvegarde réussie</string>
+    <string name="details_saved_successfully">Les détails ont été sauvegardés avec succès</string>
 </resources>

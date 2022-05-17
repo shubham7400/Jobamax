@@ -15,7 +15,7 @@
 
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
 
         <import type="android.view.View" />
     </data>
@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="@{`Hello `+ jobSeeker.firstName+' '+jobSeeker.lastName}"
+                    android:text="@{`Hello `+ jobSeeker.firstName+' '+jobSeeker.lastName+`,`}"
                     android:textColor="@color/black"
                     android:fontFamily="@font/opensans_bold"
                     android:textFontWeight="@integer/material_motion_duration_medium_1"

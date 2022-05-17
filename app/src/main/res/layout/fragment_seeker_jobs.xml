@@ -8,20 +8,20 @@
     <data>
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
     </data>
 
-   <!-- <ScrollView
-        android:layout_width="match_parent"
-        android:fillViewport="true"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <!-- <ScrollView
+         android:layout_width="match_parent"
+         android:fillViewport="true"
+         android:layout_height="match_parent">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>-->
+         </LinearLayout>
+     </ScrollView>-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -288,7 +288,7 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
-                         </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
 

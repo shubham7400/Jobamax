@@ -7,7 +7,7 @@
     <data>
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
     </data>
 
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/jobSeekerAccountFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.home.JobSeekerAccountFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.home.JobSeekerAccountFragment"
         android:label="JobSeekerAccountFragment"
         tools:layout="@layout/fragment_job_seeker_account">
         <action
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerDeleteAccountFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFragment"
         android:label="SeekerDeleteAccountFragment">
         <action
             android:id="@+id/action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment"
@@ -83,38 +83,38 @@
     </fragment>
     <fragment
         android:id="@+id/seekerDeleteAccountFinalFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFinalFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFinalFragment"
         android:label="SeekerDeleteAccountFinalFragment" />
     <fragment
         android:id="@+id/jobSeekerManageReadReceiptsFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment"
         android:label="JobSeekerManageReadReceiptsFragment"
         tools:layout="@layout/fragment_job_seeker_manage_read_receipts" />
 
     <fragment
         android:id="@+id/jobSeekerNewsletterFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment"
         android:label="JobSeekerNewsletterFragment"
         tools:layout="@layout/fragment_job_seeker_newsletter" />
 
     <fragment
         android:id="@+id/jobSeekerPersonalInformationFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment"
         android:label="JobSeekerPersonalInformationFragment"
         tools:layout="@layout/fragment_job_seeker_personal_information" />
     <fragment
         android:id="@+id/jobSeekerPushNotificationFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.pushNotification.JobSeekerPushNotificationFragment"
         android:label="JobSeekerPushNotificationFragment"
         tools:layout="@layout/fragment_job_seeker_push_notification" />
     <fragment
         android:id="@+id/seekerChangePasswordFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.password.SeekerChangePasswordFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.password.SeekerChangePasswordFragment"
         android:label="fragment_seeker_change_password"
         tools:layout="@layout/fragment_seeker_change_password" />
     <fragment
         android:id="@+id/jobSeekerChangeLanguageFragment"
-        android:name="com.findajob.jobamax.jobseeker.profile.account.JobSeekerChangeLanguageFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.JobSeekerChangeLanguageFragment"
         android:label="fragment_job_seeker_change_language"
         tools:layout="@layout/fragment_job_seeker_change_language" />
     <include app:graph="@navigation/nav_seeker_profile" />

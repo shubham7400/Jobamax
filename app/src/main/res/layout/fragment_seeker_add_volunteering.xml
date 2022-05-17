@@ -7,7 +7,7 @@
     <data>
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -212,6 +212,15 @@
                                 android:textColorHint="@color/colorHypeLink"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                            <ImageView
+                                android:id="@+id/iv_clear_start_date"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/close_black"
+                                android:layout_marginBottom="15dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_Start_date"
+                                app:layout_constraintStart_toEndOf="@+id/tv_Start_date" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <View
@@ -246,6 +255,15 @@
                                 android:textColorHint="@color/colorHypeLink"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView144" />
+
+                            <ImageView
+                                android:id="@+id/iv_clear_end_date"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/close_black"
+                                android:layout_marginBottom="15dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_end_date"
+                                app:layout_constraintStart_toEndOf="@+id/tv_end_date" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </LinearLayout>

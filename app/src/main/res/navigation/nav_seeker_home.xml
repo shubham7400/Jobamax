@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/jobSeekerHomeFragment"
-        android:name="com.findajob.jobamax.jobseeker.JobSeekerHomeFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.JobSeekerHomeFragment"
         tools:layout="@layout/fragment_job_seeker_home"
         android:label="JobSeekerHomeFragment" >
         <action
@@ -73,7 +73,7 @@
     <include app:graph="@navigation/nav_seeker_account" />
     <fragment
         android:id="@+id/seekerCalenderFragment"
-        android:name="com.findajob.jobamax.jobseeker.calender.SeekerCalenderFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.calender.SeekerCalenderFragment"
         android:label="fragment_seeker_calender"
         tools:layout="@layout/fragment_seeker_calender" >
         <action
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/seekerCoachingFragment"
-        android:name="com.findajob.jobamax.jobseeker.coaching.SeekerCoachingFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.coaching.SeekerCoachingFragment"
         android:label="fragment_seeker_coaching"
         tools:layout="@layout/fragment_seeker_coaching" >
         <action
@@ -104,7 +104,7 @@
 
     <fragment
         android:id="@+id/seekerWishListFragment"
-        android:name="com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.wishlist.SeekerWishListFragment"
         android:label="fragment_seeker_wish_list"
         tools:layout="@layout/fragment_seeker_wish_list">
         <action

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/seekerJobsFragment"
-        android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.jobsearch.SeekerJobsFragment"
         android:label="fragment_seeker_jobs"
         tools:layout="@layout/fragment_seeker_jobs" >
         <action
@@ -41,10 +41,10 @@
             app:popUpToInclusive="true"
             app:popUpTo="@id/seekerJobsFragment"
             app:destination="@id/nav_seeker_profile" />
-    </fragment>
+     </fragment>
     <fragment
         android:id="@+id/seekerJobsFilterFragment"
-        android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobsFilterFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.jobsearch.SeekerJobsFilterFragment"
         android:label="fragment_seeker_jobs_filter"
         tools:layout="@layout/fragment_seeker_jobs_filter" >
         <action
@@ -58,13 +58,26 @@
             app:destination="@id/nav_seeker_profile" />
         <action
             android:id="@+id/action_seekerJobsFilterFragment_to_seekerJobSearchFilterCategoriesDialogFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:destination="@id/seekerJobSearchFilterCategoriesDialogFragment" />
+        <action
+            android:id="@+id/action_seekerJobsFilterFragment_to_seekerJobsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/seekerJobsFragment"
+            app:destination="@id/seekerJobsFragment" />
 
     </fragment>
 
     <fragment
         android:id="@+id/seekerWishListFragment"
-        android:name="com.findajob.jobamax.jobseeker.wishlist.SeekerWishListFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.wishlist.SeekerWishListFragment"
         android:label="fragment_seeker_wish_list"
         tools:layout="@layout/fragment_seeker_wish_list" >
         <action
@@ -81,7 +94,7 @@
     <include app:graph="@navigation/nav_seeker_profile" />
     <fragment
         android:id="@+id/seekerJobSearchFilterCategoriesDialogFragment"
-        android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchFilterCategoriesDialogFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.jobsearch.SeekerJobSearchFilterCategoriesDialogFragment"
         android:label="fragment_seeker_job_search_filter_categories"
         tools:layout="@layout/fragment_seeker_job_search_filter_categories" >
         <action

@@ -7,7 +7,7 @@
     <data>
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,10 +67,9 @@
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_bold"
-                android:text="@string/profile_url"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                 android:text="@string/profile_url"
+                android:textColor="@color/colorPrimary"
+                 style="@style/title_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

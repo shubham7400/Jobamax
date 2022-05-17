@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.findajob.jobamax"
-    android:versionCode="11"
-    android:versionName="1.9" >
+    package="com.jobamax.appjobamax"
+    android:versionCode="12"
+    android:versionName="2.0" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -58,7 +58,7 @@
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
-        android:name="com.findajob.jobamax.BaseApplication"
+        android:name="com.jobamax.appjobamax.BaseApplication"
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -70,15 +70,20 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.findajob.jobamax.jobseeker.jobsearch.SeekerJobSearchActivity"
+            android:name="com.jobamax.appjobamax.jobseeker.jobsearch.SeekerJobSearchActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.findajob.jobamax.jobseeker.profile.VideoPlayActivity"
+            android:name="com.jobamax.appjobamax.jobseeker.jobsearch.SeekerJobWebActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.jobamax.appjobamax.jobseeker.profile.VideoPlayActivity"
             android:exported="false" />
         <activity
-            android:name="com.findajob.jobamax.SplashActivity"
+            android:name="com.jobamax.appjobamax.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -88,48 +93,48 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.findajob.jobamax.LicenseActivity"
+            android:name="com.jobamax.appjobamax.LicenseActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.PrivacyPreferenceActivity"
+            android:name="com.jobamax.appjobamax.PrivacyPreferenceActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.jobseeker.profile.account.password.JobSeekerPasswordActivity"
+            android:name="com.jobamax.appjobamax.jobseeker.profile.account.password.JobSeekerPasswordActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.MapsActivity"
+            android:name="com.jobamax.appjobamax.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.WebViewActivity"
+            android:name="com.jobamax.appjobamax.WebViewActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity"
+            android:name="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalIntroInfoActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.login.LoginActivity"
+            android:name="com.jobamax.appjobamax.login.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.findajob.jobamax.jobseeker.home.JobSeekerHomeActivity"
+            android:name="com.jobamax.appjobamax.jobseeker.home.JobSeekerHomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.findajob.jobamax.MainActivity"
+            android:name="com.jobamax.appjobamax.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -146,7 +151,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.findajob.jobamax.cropper.CropImageActivity"
+            android:name="com.jobamax.appjobamax.cropper.CropImageActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Base.Theme.AppCompat"
@@ -176,17 +181,13 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.findajob.jobamax.provider"
+            android:authorities="com.jobamax.appjobamax.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider> <!-- FB Dev -->
-        <provider
-            android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider304727217812972"
-            android:exported="true" />
 
         <meta-data
             android:name="com.pushwoosh.appid"
@@ -196,14 +197,14 @@
             android:value="@string/fcm_sender_id" />
 
         <service
-            android:name="com.findajob.jobamax.jobseeker.profile.FirebaseMessageService"
+            android:name="com.jobamax.appjobamax.services.FirebaseMessageService"
             android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
         <service
-            android:name="com.findajob.jobamax.services.LocationService"
+            android:name="com.jobamax.appjobamax.services.LocationService"
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="true" />
@@ -220,7 +221,7 @@
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.findajob.jobamax.com.squareup.picasso"
+            android:authorities="com.jobamax.appjobamax.com.squareup.picasso"
             android:exported="false" />
 
         <activity
@@ -342,7 +343,7 @@
 
         <provider
             android:name="com.pushwoosh.firebase.FirebaseInitProvider"
-            android:authorities="com.findajob.jobamax.firebasepushwooshinitprovider"
+            android:authorities="com.jobamax.appjobamax.firebasepushwooshinitprovider"
             android:enabled="true"
             android:exported="false"
             android:initOrder="54" />
@@ -386,13 +387,13 @@
         <receiver android:name="com.pushwoosh.notification.LocalNotificationReceiver" /> <!-- uses applicationId -->
         <provider
             android:name="com.pushwoosh.PushwooshInitProvider"
-            android:authorities="com.findajob.jobamax.pushwooshinitprovider"
+            android:authorities="com.jobamax.appjobamax.pushwooshinitprovider"
             android:enabled="true"
             android:exported="false"
             android:initOrder="50" /> <!-- uses applicationId end -->
         <provider
             android:name="com.pushwoosh.PushwooshSharedDataProvider"
-            android:authorities="com.findajob.jobamax.PushwooshSharedDataProvider"
+            android:authorities="com.jobamax.appjobamax.PushwooshSharedDataProvider"
             android:enabled="true"
             android:exported="true"
             android:initOrder="60" />
@@ -404,7 +405,7 @@
 
         <provider
             android:name="com.pushwoosh.internal.fileprovider.PWFileProvider"
-            android:authorities="com.findajob.jobamax.provider"
+            android:authorities="com.jobamax.appjobamax.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -427,7 +428,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cct.com.findajob.jobamax"
+                    android:host="cct.com.jobamax.appjobamax"
                     android:scheme="fbconnect" />
             </intent-filter>
         </activity> <!-- Needs to be explicitly declared on P+ -->
@@ -473,7 +474,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.findajob.jobamax.firebaseinitprovider"
+            android:authorities="com.jobamax.appjobamax.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -492,7 +493,7 @@
         -->
         <provider
             android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.findajob.jobamax.FacebookInitProvider"
+            android:authorities="com.jobamax.appjobamax.FacebookInitProvider"
             android:exported="false" />
 
         <receiver
@@ -505,7 +506,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.findajob.jobamax.androidx-startup"
+            android:authorities="com.jobamax.appjobamax.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

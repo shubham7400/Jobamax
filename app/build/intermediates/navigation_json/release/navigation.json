@@ -1,0 +1,43 @@
+[
+  {
+    "name": "nav_job_search",
+    "navigationXmlIds": [
+      "nav_seeker_profile"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_job_tracking",
+    "navigationXmlIds": [
+      "nav_seeker_profile"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_new_login",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_account",
+    "navigationXmlIds": [
+      "nav_seeker_profile"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_home",
+    "navigationXmlIds": [
+      "nav_seeker_profile",
+      "nav_job_tracking",
+      "nav_job_search",
+      "nav_seeker_account"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_profile",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  }
+]

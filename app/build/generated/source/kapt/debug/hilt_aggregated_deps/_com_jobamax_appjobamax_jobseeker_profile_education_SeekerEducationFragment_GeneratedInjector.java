@@ -1,0 +1,13 @@
+package hilt_aggregated_deps;
+
+import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
+
+/**
+ * This class should only be referenced by generated code!This class aggregates information across multiple compilations.
+ */
+@AggregatedDeps(
+    components = "dagger.hilt.android.components.FragmentComponent",
+    entryPoints = "com.jobamax.appjobamax.jobseeker.profile.education.SeekerEducationFragment_GeneratedInjector"
+)
+public class _com_jobamax_appjobamax_jobseeker_profile_education_SeekerEducationFragment_GeneratedInjector {
+}

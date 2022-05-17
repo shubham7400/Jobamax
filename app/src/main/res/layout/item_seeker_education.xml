@@ -12,10 +12,11 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_white_box">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_user"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            style="@style/circular_image"
             android:layout_alignParentStart="true"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="20dp" />
@@ -36,10 +37,11 @@
                     android:layout_width="0dp"
                     android:layout_marginEnd="5dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_bold"
                     android:text="UCLA"
-                    android:textColor="@color/black"
                     android:textSize="15sp"
+                    style="@style/title_bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/iv_delete_item"
                     app:layout_constraintHorizontal_bias="0.54"

@@ -7,7 +7,7 @@
 		
 		<variable
 			name="handler"
-			type="com.findajob.jobamax.login.MeetPeopleNearbyInterface" />
+			type="com.jobamax.appjobamax.login.MeetPeopleNearbyInterface" />
 	</data>
 	
 	<androidx.constraintlayout.widget.ConstraintLayout

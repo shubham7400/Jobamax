@@ -5,7 +5,7 @@
 		
 		<variable
 			name="handler"
-			type="com.findajob.jobamax.login.KeepMePostedInterface" />
+			type="com.jobamax.appjobamax.login.KeepMePostedInterface" />
 	</data>
 
 	<ScrollView

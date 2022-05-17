@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:916226274147:android:5fbafbb40b4d11b0b61956",
+        "mobilesdk_app_id": "1:916226274147:android:63d5c42d599d64fdb61956",
         "android_client_info": {
-          "package_name": "com.findajob.jobamax"
+          "package_name": "com.jobamax.appjobamax"
         }
       },
       "oauth_client": [
         {
-          "client_id": "916226274147-r3ssg46t0dk81nl08qiv9a20740ikbud.apps.googleusercontent.com",
+          "client_id": "916226274147-ju3nvoe8jv1gk1j0ri8oqc3c5ui9dc01.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.findajob.jobamax",
+            "package_name": "com.jobamax.appjobamax",
             "certificate_hash": "54e788b7d4f7855d7aece98085641401a900d365"
           }
         },

@@ -352,6 +352,12 @@
     <string name="share_jobamax_info">Download Jobamax! it\'s a fast, simple and secured app to look for a job! Get it at : </string>
     <string name="wishlist_job_card_overlay">Wishlist</string>
     <string name="apply_subtitle">Apply</string>
+    <string name="add_to_wishlist">Add to wishlist</string>
+    <string name="apply_now">Apply now</string>
+    <string name="added_successfully_to_wishlist">Added successfully to wishlist.</string>
+    <string name="added_to_tracking_successfully">Added to tracking successfully</string>
+    <string name="saved_successfully">Saved successfully</string>
+    <string name="details_saved_successfully">Details saved successfully</string>
 
 
 </resources>

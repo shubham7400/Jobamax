@@ -3,5 +3,5 @@
     <size
         android:width="24sp"
         android:height="24sp" />
-    <solid android:color="@color/com_facebook_blue" />
+    <solid android:color="@color/colorPrimary" />
 </shape>

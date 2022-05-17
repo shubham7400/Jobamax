@@ -7,7 +7,7 @@
     <data>
         <variable
             name="jobSeeker"
-            type="com.findajob.jobamax.model.JobSeeker" />
+            type="com.jobamax.appjobamax.model.JobSeeker" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -69,8 +69,8 @@
 
                             <TextView
                                 android:id="@+id/tv_page_title"
-                                android:layout_centerInParent="true"
                                 style="@style/screen_title"
+                                android:layout_centerInParent="true"
                                 android:text="Macdonals"
                                 android:textColor="#7800EF" />
 
@@ -137,6 +137,8 @@
                         android:backgroundTint="@color/new_purple"
                         android:paddingHorizontal="20dp"
                         android:text="@string/see_job_offers"
+                        style="@style/button_gradient_rect32"
+                        android:textSize="16sp"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

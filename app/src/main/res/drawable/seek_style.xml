@@ -19,7 +19,7 @@
                 <gradient
                     android:angle="180"
                     android:endColor="@color/purple"
-                    android:startColor="@color/com_facebook_blue" />
+                    android:startColor="@color/colorPrimary" />
             </shape>
         </clip>
     </item>
