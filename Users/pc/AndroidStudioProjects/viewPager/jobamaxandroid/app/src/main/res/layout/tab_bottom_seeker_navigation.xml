@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_search_navi_blue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_favorite"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_favorite_navi_blue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_chat"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_message_navi_blue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_profile_navi_blue"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

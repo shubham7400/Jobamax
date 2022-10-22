@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/rounded_white_box_gradient_border_50">
+        <shape android:shape="rectangle" >
+            <corners android:radius="50dp"/>
+        </shape>
+    </item>
+
+    <item >
+        <shape android:shape="rectangle">
+            <corners android:radius="50dp"/>
+            <gradient
+                android:angle="270"
+                android:startColor="#402E68FF"
+                android:centerColor="#405332CC"
+                android:endColor="#407404F0"/>
+        </shape>
+    </item>
+
+
+
+
+</layer-list>

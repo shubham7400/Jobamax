@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:padding="20dp"
+        style="@style/DialogSlideAnim"
+        android:background="@drawable/rounded_white_box"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/navi_blue"
+            android:text="https://"/>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_add_link"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Ajouter"
+                android:textColor="@color/navi_blue"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:background="@drawable/rounded_white_box_stroke_navi_blue"/>
+            <androidx.legacy.widget.Space
+                android:layout_width="50dp"
+                android:layout_height="1dp"/>
+            <TextView
+                android:id="@+id/tv_dismiss"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Annuler"
+                android:textColor="@color/red"
+                android:paddingVertical="10dp"
+                android:gravity="center"
+                android:background="@drawable/rounded_white_box_stroke_navi_blue"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

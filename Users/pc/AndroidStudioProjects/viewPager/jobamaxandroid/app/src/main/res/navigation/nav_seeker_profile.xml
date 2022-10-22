@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_seeker_new_profile"
+    app:startDestination="@id/seekerDownloadCVFragment">
+
+    <fragment
+        android:id="@+id/seekerCoachingFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerCoachingFragment"
+        android:label="fragment_seeker_coaching"
+        tools:layout="@layout/fragment_seeker_coaching">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/seekerDownloadCVFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerDownloadCVFragment"
+        android:label="fragment_seeker_download_cv"
+        tools:layout="@layout/fragment_seeker_download_cv" >
+        <action
+            android:id="@+id/action_seekerDownloadCVFragment_to_modifyCVFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/modifyCVFragment" />
+        <action
+            android:id="@+id/action_seekerDownloadCVFragment_to_nav_seeker_account"
+            app:destination="@id/nav_seeker_account" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifyCVFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.ModifyCVFragment"
+        android:label="fragment_modify_c_v"
+        tools:layout="@layout/fragment_modify_c_v">
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addNewEducationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addNewEducationFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addNewExperienceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addNewExperienceFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addNewVolunteeringFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addNewVolunteeringFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addHardSkillFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addHardSkillFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addSoftSkillsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addSoftSkillsFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addAreaOfInterestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addAreaOfInterestFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_addWorkSpaceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addWorkSpaceFragment" />
+
+        <action
+            android:id="@+id/action_modifyCVFragment_to_videoDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/videoDemoFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_audioDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/audioDemoFragment" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_importProfileFromLinkedIn"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"
+            app:destination="@id/importProfileFromLinkedIn" />
+        <action
+            android:id="@+id/action_modifyCVFragment_to_seekerFormatCvFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/seekerFormatCvFragment" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/importProfileFromLinkedIn"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.ImportProfileFromLinkedIn"
+        android:label="fragment_import_profile_from_linked_in"
+        tools:layout="@layout/fragment_import_profile_from_linked_in" >
+        <action
+            android:id="@+id/action_importProfileFromLinkedIn_to_profilePreviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/createCVFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/profilePreviewFragment" />
+    </fragment>
+
+     <fragment
+        android:id="@+id/addNewEducationFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddNewEducationFragment"
+        android:label="fragment_add_new_education"
+        tools:layout="@layout/fragment_add_new_education" />
+    <fragment
+        android:id="@+id/addNewExperienceFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddNewExperienceFragment"
+        android:label="fragment_add_new_experience"
+        tools:layout="@layout/fragment_add_new_experience" />
+    <fragment
+        android:id="@+id/addNewVolunteeringFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddNewVolunteeringFragment"
+        android:label="fragment_add_new_volunteering"
+        tools:layout="@layout/fragment_add_new_volunteering" />
+    <fragment
+        android:id="@+id/addHardSkillFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddHardSkillFragment"
+        android:label="fragment_add_hard_skill"
+        tools:layout="@layout/fragment_add_hard_skill" />
+    <fragment
+        android:id="@+id/addSoftSkillsFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddSoftSkillsFragment"
+        android:label="fragment_add_soft_skills"
+        tools:layout="@layout/fragment_add_soft_skills" />
+    <fragment
+        android:id="@+id/addAreaOfInterestFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddAreaOfInterestFragment"
+        android:label="fragment_add_area_of_interest"
+        tools:layout="@layout/fragment_add_area_of_interest" />
+    <fragment
+        android:id="@+id/addWorkSpaceFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddWorkSpaceFragment"
+        android:label="fragment_add_work_space"
+        tools:layout="@layout/fragment_add_work_space" />
+    <fragment
+        android:id="@+id/addAudioFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddAudioFragment"
+        android:label="fragment_add_audio"
+        tools:layout="@layout/fragment_add_audio" >
+
+
+        <action
+            android:id="@+id/action_addAudioFragment_to_audioDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/audioDemoFragment"
+            app:destination="@id/audioDemoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVideoFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AddVideoFragment"
+        android:label="fragment_add_video"
+        tools:layout="@layout/fragment_add_video" >
+        <action
+            android:id="@+id/action_addVideoFragment_to_pickVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/addVideoFragment"
+            app:destination="@id/pickVideoFragment" />
+        <action
+            android:id="@+id/action_addVideoFragment_to_videoDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/videoDemoFragment"
+            app:destination="@id/videoDemoFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/videoDemoFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.VideoDemoFragment"
+        android:label="fragment_video_demo"
+        tools:layout="@layout/fragment_video_demo" >
+        <action
+            android:id="@+id/action_videoDemoFragment_to_audioDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/videoDemoFragment"
+            app:destination="@id/audioDemoFragment" />
+        <action
+            android:id="@+id/action_videoDemoFragment_to_pickVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/pickVideoFragment" />
+        <action
+            android:id="@+id/action_videoDemoFragment_to_addVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addVideoFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/audioDemoFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.AudioDemoFragment"
+        android:label="fragment_audio_demo"
+        tools:layout="@layout/fragment_audio_demo" >
+        <action
+            android:id="@+id/action_audioDemoFragment_to_videoDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/audioDemoFragment"
+            app:destination="@id/videoDemoFragment" />
+        <action
+            android:id="@+id/action_audioDemoFragment_to_pickAudioFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/pickAudioFragment" />
+        <action
+            android:id="@+id/action_audioDemoFragment_to_addAudioFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addAudioFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/pickAudioFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.PickAudioFragment"
+        android:label="fragment_pick_audio"
+        tools:layout="@layout/fragment_pick_audio" >
+        <action
+            android:id="@+id/action_pickAudioFragment_to_addAudioFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/addAudioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickVideoFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.build_profile.PickVideoFragment"
+        android:label="fragment_pick_video"
+        tools:layout="@layout/fragment_pick_video" >
+        <action
+            android:id="@+id/action_pickVideoFragment_to_addVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/pickVideoFragment"
+            app:destination="@id/addVideoFragment" />
+    </fragment>
+    <include app:graph="@navigation/nav_seeker_setting" />
+    <fragment
+        android:id="@+id/seekerFormatCvFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.SeekerFormatCvFragment"
+        android:label="fragment_seeker_format_cv"
+        tools:layout="@layout/fragment_seeker_format_cv" >
+        <action
+            android:id="@+id/action_seekerFormatCvFragment_to_modifyCVFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/modifyCVFragment"
+            app:destination="@id/modifyCVFragment" />
+    </fragment>
+</navigation>
+

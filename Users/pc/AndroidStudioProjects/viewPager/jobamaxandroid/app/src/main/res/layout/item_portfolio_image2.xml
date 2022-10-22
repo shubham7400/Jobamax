@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:background="@drawable/rounded_light_blue_box"
+        android:gravity="center">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_portfolio"
+            app:shapeAppearanceOverlay="@style/shapableImageView"
+            android:layout_width="wrap_content"
+            android:minWidth="150dp"
+            android:layout_height="150dp" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:minWidth="150dp"
+            android:layout_height="150dp"
+            android:maxWidth="200dp"
+            android:visibility="gone"
+            style="@style/title_regular"
+            android:singleLine="false"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Tu peux ajouter des photos pour montrer ta personnalité et tes projets en cliquant sur “modifier mon CV” ;)"/>
+
+    </LinearLayout>
+
+</layout>

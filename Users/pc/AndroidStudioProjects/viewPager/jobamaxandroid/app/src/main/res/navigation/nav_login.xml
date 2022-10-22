@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/userRoleFragment">
+
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.jobamax.appjobamax.login.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/loginRegistrationOptionFragment"
+        android:name="com.jobamax.appjobamax.login.LoginRegistrationOptionFragment"
+        android:label="fragment_login_registration_option"
+        tools:layout="@layout/fragment_login_registration_option" >
+        <action
+            android:id="@+id/action_loginRegistrationOptionFragment_to_userLocationPermissionFragment"
+            app:destination="@id/userLocationPermissionFragment" />
+        <action
+            android:id="@+id/action_loginRegistrationOptionFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.jobamax.appjobamax.login.PrivacyPolicyFragment"
+        android:label="fragment_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" >
+        <action
+            android:id="@+id/action_privacyPolicyFragment_to_takeEmailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/takeEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMessagePermissionFragment"
+        android:name="com.jobamax.appjobamax.login.SendMessagePermissionFragment"
+        android:label="fragment_send_message_permission"
+        tools:layout="@layout/fragment_send_message_permission" >
+        <action
+            android:id="@+id/action_sendMessagePermissionFragment_to_privacyPolicyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/privacyPolicyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeAgeFragment"
+        android:name="com.jobamax.appjobamax.login.TakeAgeFragment"
+        android:label="fragment_take_age"
+        tools:layout="@layout/fragment_take_age" >
+        <action
+            android:id="@+id/action_takeAgeFragment_to_takeUniversityFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/takeUniversityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeEmailFragment"
+        android:name="com.jobamax.appjobamax.login.TakeEmailFragment"
+        android:label="fragment_take_email"
+        tools:layout="@layout/fragment_take_email" >
+        <action
+            android:id="@+id/action_takeEmailFragment_to_takePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/takePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeNameFragment"
+        android:name="com.jobamax.appjobamax.login.TakeNameFragment"
+        android:label="fragment_take_name"
+        tools:layout="@layout/fragment_take_name" >
+
+        <action
+            android:id="@+id/action_takeNameFragment_to_takeAgeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/takeAgeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takePasswordFragment"
+        android:name="com.jobamax.appjobamax.login.TakePasswordFragment"
+        android:label="fragment_take_password"
+        tools:layout="@layout/fragment_take_password" >
+        <action
+            android:id="@+id/action_takePasswordFragment_to_takeNameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/takeNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeUniversityFragment"
+        android:name="com.jobamax.appjobamax.login.TakeUniversityFragment"
+        android:label="fragment_take_university"
+        tools:layout="@layout/fragment_take_university" >
+        <action
+            android:id="@+id/action_takeUniversityFragment_to_takeWorkExperienceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/takeWorkExperienceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeWorkExperienceFragment"
+        android:name="com.jobamax.appjobamax.login.TakeWorkExperienceFragment"
+        android:label="fragment_take_work_experience"
+        tools:layout="@layout/fragment_take_work_experience" />
+    <fragment
+        android:id="@+id/userLocationPermissionFragment"
+        android:name="com.jobamax.appjobamax.login.UserLocationPermissionFragment"
+        android:label="fragment_user_location_permission"
+        tools:layout="@layout/fragment_user_location_permission" >
+        <action
+            android:id="@+id/action_userLocationPermissionFragment_to_sendMessagePermissionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/sendMessagePermissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userLoginFragment"
+        android:name="com.jobamax.appjobamax.login.UserLoginFragment"
+        android:label="fragment_user_login"
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_userLoginFragment_to_forgetPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/forgetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userRoleFragment"
+        android:name="com.jobamax.appjobamax.login.UserRoleFragment"
+        android:label="fragment_user_role"
+        tools:layout="@layout/fragment_user_role" >
+        <action
+            android:id="@+id/action_userRoleFragment_to_loginRegistrationOptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/loginRegistrationOptionFragment" />
+        <action
+            android:id="@+id/action_userRoleFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment" />
+    </fragment>
+</navigation>

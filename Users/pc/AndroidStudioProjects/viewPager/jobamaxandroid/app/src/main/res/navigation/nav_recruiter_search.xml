@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_recruiter_search"
+    app:startDestination="@id/recruiterSearchFragment">
+
+    <fragment
+        android:id="@+id/recruiterSearchFragment"
+        android:name="com.jobamax.appjobamax.recruiter.search.RecruiterSearchFragment"
+        android:label="fragment_recruiter_search"
+        tools:layout="@layout/fragment_recruiter_search" >
+        <action
+            android:id="@+id/action_recruiterSearchFragment_to_recruiterJobSourcingFragment"
+            app:destination="@id/recruiterJobSourcingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruiterJobSourcingFragment"
+        android:name="com.jobamax.appjobamax.recruiter.search.RecruiterAddJobSourcingCriteriaDialogFragment"
+        android:label="fragment_recruiter_job_sourcing"
+        tools:layout="@layout/fragment_recruiter_add_job_sourcing_criteria" />
+</navigation>

@@ -1,0 +1,334 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+    </style>
+
+    <style name="ActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="splash_activity" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="regular_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="regular_heading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="regular_multiline_label" parent="regular_label">
+        <item name="android:maxLines">100</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="regular_multiline_subtext" parent="regular_multiline_label">
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="regular_subtext" parent="regular_label">
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="account_label" parent="regular_label">
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+    <style name="v_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+
+    <style name="account_subheading_seeker" parent="regular_label">
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@color/screen_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+
+    <style name="circular_image">
+        <item name="civ_border_color">@color/new_purple</item>
+        <item name="civ_border_width">2dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="screen_title">
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:textSize">20sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/opensans_bold</item>
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="title_bold">
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/opensans_bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="title_regular">
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="title_light">
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/opensans_light</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="button_gradient_rect">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_gradient_rounded</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="button_gradient_rect32">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_gradient_rounded</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="button_gradient_rect50">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_bottom_purple_top_blue_50</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="button_gradient_rect10">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_bottom_purple_top_blue_10</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="button_grey_rect50">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:background">@drawable/rounded_grey_box_50</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="button_grey_rect10">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:background">@drawable/rounded_grey_box_10</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="button_rounded_white_blue_border">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:background">@drawable/rounded_blue_border_white_box_50</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="back_btn">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:src">@drawable/back_arrow_blue</item>
+    </style>
+    
+    <style name="edit_text_white_navi_blue_border">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColorHint">@color/navi_blue</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:background">@drawable/rounded_white_box_stroke_navi_blue</item>
+        <item name="android:textColor">@color/navi_blue</item>
+        <item name="android:paddingHorizontal">10dp</item>
+    </style>
+
+    <style name="_wishlist_menu">
+        <item name="android:textColor"> @color/navi_blue</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="wishlist_menu" parent="AppTheme">
+        <item name="android:itemTextAppearance">@style/_wishlist_menu</item>
+    </style>
+
+    // profile page theme
+    <style name="theme_blue" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_blue</item>
+        <item name="gradientSecondColor">@color/theme_dark_blue</item>
+    </style>
+    <style name="theme_red" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_red</item>
+        <item name="gradientSecondColor">@color/theme_dark_red</item>
+    </style>
+    <style name="theme_green" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_green</item>
+        <item name="gradientSecondColor">@color/theme_dark_green</item>
+    </style>
+    <style name="theme_grey" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_grey</item>
+        <item name="gradientSecondColor">@color/theme_dark_grey</item>
+    </style>
+    <style name="theme_yellow" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_yellow</item>
+        <item name="gradientSecondColor">@color/theme_dark_yellow</item>
+    </style>
+    <style name="theme_normal" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_blue</item>
+        <item name="gradientSecondColor">@color/theme_dark_blue</item>
+    </style>
+    <style name="theme_aquamarine" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_aquamarine</item>
+        <item name="gradientSecondColor">@color/theme_dark_aquamarine</item>
+    </style>
+    <style name="theme_salmon" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_salmon</item>
+        <item name="gradientSecondColor">@color/theme_dark_salmon</item>
+    </style>
+    <style name="theme_light_salmon" parent="AppTheme">
+        <item name="gradientFirstColor">@color/theme_light_light_salmon</item>
+        <item name="gradientSecondColor">@color/theme_dark_light_salmon</item>
+    </style>
+
+
+    <style name="DialogAnimationFromCenter">
+        <item name="android:windowEnterAnimation">@anim/anim_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_scale_out</item>
+    </style>
+
+    <style name="DialogSlideAnimFromCenter" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimationFromCenter</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="DialogAnimationFromTop">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
+
+    <style name="DialogSlideAnimFromTop" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimationFromTop</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down_dialog</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="DialogFragmentSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="DialogTopEndPosition" parent="@android:style/Theme.Dialog">
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">50dp</item>
+    </style>
+
+    <style name="shapableImageView">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="shapableImageView50">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="shapableImageView3">
+        <item name="cornerSize">3%</item>
+    </style>
+
+</resources>

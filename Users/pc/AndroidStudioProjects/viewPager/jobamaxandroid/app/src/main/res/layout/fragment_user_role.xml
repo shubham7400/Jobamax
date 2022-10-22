@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".login.UserRoleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="100dp"
+        android:paddingHorizontal="20dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="120dp"
+            android:src="@drawable/jobamax_logo_gradient" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_recruiter"
+            style="@style/button_rounded_white_blue_border"
+            android:text="JE RECRUTE"
+            android:layout_marginBottom="20dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_job_seeker"
+            style="@style/button_rounded_white_blue_border"
+            android:text="JE SUIS CANDIDAT.E" />
+    </LinearLayout>
+
+</layout>
