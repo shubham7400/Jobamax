@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="jobSeeker"
+            type="com.jobamax.appjobamax.model.JobSeeker" />
+
+        <variable
+            name="handler"
+            type="com.jobamax.appjobamax.jobseeker.profile.account.home.JobSeekerAccountInterface" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_light_purple_blue"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back_arrow_blue" />
+
+                <TextView
+                    style="@style/screen_title"
+                    android:textColor="@color/navi_blue"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/setting" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user"
+                    style="@style/circular_image"
+                    android:visibility="gone"
+                    loadImageFromUrl="@{jobSeeker.profilePicUrl}"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/default_user_img" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:clipToPadding="false"
+            android:isScrollContainer="true"
+            android:scrollbars="none"
+            android:paddingBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayout">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <TextView
+                    style="@style/title_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rounded_white_box"
+                    android:drawableEnd="@drawable/ic_arrow_forward_grey"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onPersonalInformationClicked()}"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/my_personal_information" />
+
+                <TextView
+                    android:layout_marginVertical="10dp"
+                    style="@style/title_bold"
+                    android:text="Sécurité"/>
+                <TextView
+                    android:id="@+id/tv_change_password"
+                    style="@style/title_regular"
+                    android:background="@drawable/rounded_white_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:drawableEnd="@drawable/ic_arrow_forward_grey"
+                    android:text="Mot de passe" />
+
+
+                <TextView
+                    android:layout_marginVertical="10dp"
+                    style="@style/title_bold"
+                    android:text="@string/notifications" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/rounded_white_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+
+                        <TextView
+                            style="@style/title_regular"
+                            android:layout_width="0dp"
+                            android:paddingHorizontal="10dp"
+                            android:text="@string/push_notifications"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/sb_push_notification"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/sb_push_notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:track="@drawable/selector_switch_track"
+                            android:thumb="@drawable/selector_switch_thumb"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_newsletter"
+                        android:background="@drawable/rounded_white_box"
+                        style="@style/title_regular"
+                        android:drawableEnd="@drawable/ic_arrow_forward_grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="@{() -> handler.onNewsletterClicked()}"
+                        android:text="@string/newsletter" />
+                </LinearLayout>
+
+
+
+                <TextView
+                    style="@style/title_regular"
+                    android:background="@drawable/rounded_white_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onShareJobamaxClicked()}"
+                    android:text="Partage Jobamax" />
+
+
+                <TextView
+                    style="@style/title_bold"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="Nous contacter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/title_regular"
+                        android:layout_width="match_parent"
+                        android:paddingHorizontal="10dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onHelpAndSupportClicked()}"
+                        android:text="@string/help_and_support" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"/>
+
+                    <TextView
+                        style="@style/title_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onEmailUsClicked()}"
+                        android:paddingHorizontal="10dp"
+                        android:text="Nous envoyer un email" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_marginVertical="10dp"
+                    style="@style/title_bold"
+                    android:text="Communauté" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/title_regular"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onCommunityGuidelinesClicked()}"
+                        android:text="@string/community_guidelines" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"/>
+
+                    <TextView
+                        style="@style/title_regular"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onSafetyTipsClicked()}"
+                        android:text="@string/safety_tips" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_marginVertical="10dp"
+                    style="@style/title_bold"
+                    android:text="Mentions légales" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/title_regular"
+                        android:paddingHorizontal="10dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onPrivacyPolicyClicked()}"
+                        android:text="@string/privacy_policy" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"/>
+
+                    <TextView
+                        style="@style/title_regular"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_white_box"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onTermsOfServiceClicked()}"
+                        android:text="@string/terms_of_service" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="150dp"
+                        android:layout_height="39dp"
+                        android:src="@drawable/jobamax_logo_gradient" />
+
+                    <TextView
+                        style="@style/regular_subtext"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/arg_version" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/rounded_white_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+
+                        <TextView
+                            style="@style/title_regular"
+                            android:layout_width="0dp"
+                            android:paddingHorizontal="10dp"
+                            android:text="Masquer mon profil"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/sc_hide_profile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:track="@drawable/selector_switch_track"
+                            android:thumb="@drawable/selector_switch_thumb"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"/>
+
+
+                    <TextView
+                        style="@style/title_regular"
+                        android:background="@drawable/rounded_white_box"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onLogoutClicked()}"
+                        android:text="@string/log_out" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"/>
+
+                    <TextView
+                        style="@style/title_regular"
+                        android:background="@drawable/rounded_white_box"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:drawableEnd="@drawable/ic_arrow_forward_grey"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> handler.onDeleteAccountClicked()}"
+                        android:text="@string/delete_my_account" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

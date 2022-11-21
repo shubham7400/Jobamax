@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_recruiter_profile"
+    app:startDestination="@id/recruiterSettingFragment">
+
+
+    <fragment
+        android:id="@+id/recruiterSettingFragment"
+        android:name="com.jobamax.appjobamax.recruiter.profile.setting.RecruiterSettingFragment"
+        android:label="fragment_recruiter_setting"
+        tools:layout="@layout/fragment_recruiter_setting" >
+        <action
+            android:id="@+id/action_recruiterSettingFragment_to_recruiterPersonalInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/recruiterPersonalInfoFragment" />
+        <action
+            android:id="@+id/action_recruiterSettingFragment_to_recruiterChangePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/recruiterChangePasswordFragment" />
+        <action
+            android:id="@+id/action_recruiterSettingFragment_to_recruiterNewsLatterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/recruiterNewsLatterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruiterPersonalInfoFragment"
+        android:name="com.jobamax.appjobamax.recruiter.profile.setting.RecruiterPersonalInfoFragment"
+        android:label="fragment_recruiter_personal_info"
+        tools:layout="@layout/fragment_recruiter_personal_info" />
+    <fragment
+        android:id="@+id/recruiterChangePasswordFragment"
+        android:name="com.jobamax.appjobamax.recruiter.profile.setting.RecruiterChangePasswordFragment"
+        android:label="fragment_recruiter_change_password"
+        tools:layout="@layout/fragment_recruiter_change_password" />
+    <fragment
+        android:id="@+id/recruiterNewsLatterFragment"
+        android:name="com.jobamax.appjobamax.recruiter.profile.setting.RecruiterNewsLatterFragment"
+        android:label="fragment_recruiter_news_latter"
+        tools:layout="@layout/fragment_recruiter_news_latter" />
+</navigation>

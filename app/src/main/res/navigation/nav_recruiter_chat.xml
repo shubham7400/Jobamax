@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_recruiter_chat"
+    app:startDestination="@id/recruiterChatListFragment">
+
+    <fragment
+        android:id="@+id/recruiterChatListFragment"
+        android:name="com.jobamax.appjobamax.recruiter.message.RecruiterChatListFragment"
+        android:label="fragment_recruiter_chat_list"
+        tools:layout="@layout/fragment_recruiter_chat_list" >
+        <action
+            android:id="@+id/action_recruiterChatListFragment_to_recruiterChatBoardFragment"
+            app:destination="@id/recruiterChatBoardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recruiterChatBoardFragment"
+        android:name="com.jobamax.appjobamax.recruiter.message.RecruiterChatBoardFragment"
+        android:label="fragment_recruiter_chat_board"
+        tools:layout="@layout/fragment_recruiter_chat_board" />
+</navigation>

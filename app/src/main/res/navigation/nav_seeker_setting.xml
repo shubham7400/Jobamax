@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_seeker_account"
+    app:startDestination="@id/jobSeekerAccountFragment">
+
+    <fragment
+        android:id="@+id/jobSeekerAccountFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.home.JobSeekerAccountFragment"
+        android:label="JobSeekerAccountFragment"
+        tools:layout="@layout/fragment_job_seeker_account">
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerPersonalInformationFragment"
+            app:destination="@id/jobSeekerPersonalInformationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerManageReadReceiptsFragment"
+            app:destination="@id/jobSeekerManageReadReceiptsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_jobSeekerNewsletterFragment"
+            app:destination="@id/jobSeekerNewsletterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_seekerDeleteAccountFragment"
+            app:destination="@id/seekerDeleteAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_jobSeekerAccountFragment_to_seekerChangePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/seekerChangePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerDeleteAccountFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFragment"
+        android:label="SeekerDeleteAccountFragment">
+        <action
+            android:id="@+id/action_seekerDeleteAccountFragment_to_seekerDeleteAccountFinalFragment"
+            app:destination="@id/seekerDeleteAccountFinalFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerDeleteAccountFinalFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.deleteAccount.SeekerDeleteAccountFinalFragment"
+        android:label="SeekerDeleteAccountFinalFragment" />
+    <fragment
+        android:id="@+id/jobSeekerManageReadReceiptsFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.readReceipts.JobSeekerManageReadReceiptsFragment"
+        android:label="JobSeekerManageReadReceiptsFragment"
+        tools:layout="@layout/fragment_job_seeker_manage_read_receipts" />
+
+    <fragment
+        android:id="@+id/jobSeekerNewsletterFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.newsletter.JobSeekerNewsletterFragment"
+        android:label="JobSeekerNewsletterFragment"
+        tools:layout="@layout/fragment_job_seeker_newsletter" />
+
+    <fragment
+        android:id="@+id/jobSeekerPersonalInformationFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.personalInfo.JobSeekerPersonalInformationFragment"
+        android:label="JobSeekerPersonalInformationFragment"
+        tools:layout="@layout/fragment_job_seeker_personal_information" />
+
+    <fragment
+        android:id="@+id/seekerChangePasswordFragment"
+        android:name="com.jobamax.appjobamax.jobseeker.profile.account.SeekerChangePasswordFragment"
+        android:label="fragment_seeker_change_password"
+        tools:layout="@layout/fragment_seeker_change_password" />
+</navigation>

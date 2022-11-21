@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_text"
+    android:layout_width="match_parent"
+    android:maxWidth="200dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/rounded_white_box"
+    android:paddingVertical="5dp"
+    android:paddingHorizontal="10dp"
+    android:ellipsize="end"
+    android:textSize="18sp"
+    android:drawableEnd="@drawable/ic_arrow_down_gradient"
+    style="@style/title_regular"
+    android:layout_height="wrap_content"/>

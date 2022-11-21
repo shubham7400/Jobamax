@@ -1,0 +1,1638 @@
+[
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_light_salmon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_light_salmon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_thumb_gradient_seek_bar.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\thumb_gradient_seek_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_create_profile_option.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_create_profile_option.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_favorite_navi_blue_filled.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_favorite_navi_blue_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_add_job_sourcing_criteria.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_add_job_sourcing_criteria.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_modify_c_v.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_modify_c_v.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_login_flow.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_login_flow.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_take_email.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_pick_video.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_pick_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_round_4_outline_1.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\round_4_outline_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_red_box_trans.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_red_box_trans.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable-xhdpi_audio_wave.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable-xhdpi\\audio_wave.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_create_c_v.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_create_c_v.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_invite_linkedin.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\invite_linkedin.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_profile.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_minus_gradient_holo.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_minus_gradient_holo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_education.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_education.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_loading2.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\loading2.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_audio_symbol.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\audio_symbol.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_seek_style.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\seek_style.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_circle_up.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_circle_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_layer_list_linked_in.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\layer_list_linked_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_blue_border_white_box_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_blue_border_white_box_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_video_demo.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_video_demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_profile_tab.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_profile_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_import_linkedin_text.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\import_linkedin_text.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_semi_bold_italic.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_semi_bold_italic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_work_experience.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_work_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_student_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_student_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_news_latter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_news_latter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_bottom_purple_top_blue_10.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_bottom_purple_top_blue_10.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_jobamax_logo_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\jobamax_logo_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_play.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_recruiter_home.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_recruiter_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_heart_holo.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\heart_holo.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_black_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_black_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_import_seeker_to_qualifying_step_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_import_seeker_to_qualifying_step_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_invite_facebook.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\invite_facebook.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_job_filter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_job_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_add_new_experience.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_new_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_dark_grey_border_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_dark_grey_border_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_invite_whatsapp.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\invite_whatsapp.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_seeker_coaching.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_coaching.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_new_wishlist.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_new_wishlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_border_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_border_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_add_icon_image_holder.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\add_icon_image_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_personalize_filter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_personalize_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_close_blue.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\close_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_login.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_jobamax_text.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\jobamax_text.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_recruiter_setting.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_recruiter_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_coaching_raw3.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\coaching_raw3.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_take_name.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_personal_info.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_personal_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_info_gradient_volunteering.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_info_gradient_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_medium.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_work_type.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_work_type.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_back_blue_ios.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_back_blue_ios.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_delete_account.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_delete_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_leaving_reason.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_leaving_reason.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_edit_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_edit_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_in_top.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_job_filter_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_job_filter_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_light.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_light.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_close_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_close_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_search.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_soft_skill_logo_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_soft_skill_logo_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_tab_bottom_recruiter_navigation.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\tab_bottom_recruiter_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_gallery.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_play_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_play_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_bottom_nav_icon_color_selector.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\bottom_nav_icon_color_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\xml_provider_paths.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_seek.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\seek.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_extra_bold_italic.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_extra_bold_italic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_recruiter_setting.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_recruiter_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_seeker_folder.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_seeker_folder.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_link_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_link_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_add_blue.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\add_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_message_icon_simple.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\message_icon_simple.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_close_black.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\close_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_loading4.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\loading4.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_delete_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_delete_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_normal.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_student_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_student_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_volunteering_dummy.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\volunteering_dummy.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_delete_account_final.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_delete_account_final.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_info_gradient_skill.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_info_gradient_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_eye_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_eye_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_recruiter_home.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_recruiter_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_manual_filter_main.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_manual_filter_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_forget_password.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_forget_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_user_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_user_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_gradient_unchecked_toggle_thumb.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_gradient_unchecked_toggle_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_gallery_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_gallery_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_learn_job_card_swiping.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_learn_job_card_swiping.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_bio.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_bio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_selector_job_search_switch_thumb.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\selector_job_search_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_logo_gmail.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\logo_gmail.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_layer_list_switch_thumb_false.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\layer_list_switch_thumb_false.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_blue_border_white_box_10.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_blue_border_white_box_10.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_eye_open_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_eye_open_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_coaching_raw5.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\coaching_raw5.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_job_seeker_chat_list.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_job_seeker_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_audio_video.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_audio_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_add_video.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable-xxhdpi_logo_jobamax_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable-xxhdpi\\logo_jobamax_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_selector_switch_track.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\selector_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_eye_post.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\eye_post.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_forward.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_forward.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_info_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_info_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_eye_close_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_eye_close_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_background_light_purple_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\background_light_purple_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_skill_suggestion.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_skill_suggestion.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_manual_filter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_manual_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_add_new_volunteering.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_new_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_basic_2.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_basic_2.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_archive_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_archive_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_regular.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_aquamarine_blue_gradient_border.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_aquamarine_blue_gradient_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_coaching_raw6.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\coaching_raw6.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_filled_heart.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\filled_heart.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_back_arrow_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_back_arrow_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_forward_grey.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_forward_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_info_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\info_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_coaching_raw4.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\coaching_raw4.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_checkbox_fill_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_checkbox_fill_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_yes_no_simple.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_yes_no_simple.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_privacy_policy.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_privacy_policy.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_purpal_box_trans.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_purpal_box_trans.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_chip_white_box_gradient_border.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_chip_white_box_gradient_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_gradient_checked_toggle_thumb.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_gradient_checked_toggle_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_experience.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_coaching_row2.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\coaching_row2.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_blue_box_trans.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_blue_box_trans.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_modify_profile.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_modify_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_unfill_checkbox_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_unfill_checkbox_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_message_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_message_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_import_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_import_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_play_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_play_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_medium_italic.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_medium_italic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_up_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_up_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_user_role.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_user_role.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_filter_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_filter_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_interest.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_interest.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_coaching_row1.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\coaching_row1.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_job_matched_back.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\job_matched_back.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_pick_audio.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_pick_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_company_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_company_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_add_document.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_document.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_navi_blue_holo.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_navi_blue_holo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_in_left.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_in_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_setting_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_setting_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_jobamax_logo_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\jobamax_logo_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_reject.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_reject.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_seeker_setting.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_seeker_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_user_login.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_user_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_selector_switch_thumb.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\selector_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_location_pin_gradient_15_20.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\location_pin_gradient_15_20.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_learn_swipe_a.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_learn_swipe_a.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_audio_gradient_filled.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_audio_gradient_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_bg_gradient_rounded.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\bg_gradient_rounded.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_invite_messenger.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\invite_messenger.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_bag_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_bag_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_message_grey.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_message_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_graph_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_graph_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_close_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\close_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_seeker_create_cv.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_create_cv.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_home.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_add_link.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_link.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_back_arrow_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_back_arrow_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_close_background_red.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\close_background_red.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_selector_checkbox_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\selector_checkbox_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_green_box_trans.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_green_box_trans.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_yes_no.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_yes_no.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_report.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_loading1.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\loading1.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_import_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_import_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_applicant_select.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_applicant_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_chat_select.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_chat_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_circled_mic.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_circled_mic.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_forward_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_forward_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_add_to_folder_or_offer.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_to_folder_or_offer.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_chat_unselect.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_chat_unselect.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_close_blue_white_background.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\close_blue_white_background.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_learn_job_card_swiping_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_learn_job_card_swiping_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_search_university.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_search_university.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_title_message.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_title_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_search_query_company.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_search_query_company.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_company.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_company.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_invite_twitter.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\invite_twitter.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_profile.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_anim_scale_out.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\anim_scale_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_loading3.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\loading3.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_experience.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_build_profile_suggestion.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_build_profile_suggestion.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_like_unselect.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_like_unselect.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_bold_italic.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_bold_italic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_seeker_chat.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_seeker_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_back_arrow.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_back_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_background_gradient_bottom_purple_top_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\background_gradient_bottom_purple_top_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_circle_down.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_circle_down.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_take_work_experience.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_work_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_online.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_online.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_format_cv.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_format_cv.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_recruiter_chat_list.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_recruiter_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_light_italic.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_light_italic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_school_dummy.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\school_dummy.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_baseline_arrow_back_ios_24.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_baseline_arrow_back_ios_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_up_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_up_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_basic.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_basic.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_custom_chip.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_custom_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_job_seeker_home.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_job_seeker_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_selector_heart_checkbox_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\selector_heart_checkbox_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_volunteering.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_education.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_education.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_hard_skill.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_hard_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_aquamarine.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_aquamarine.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_job_seeker_newsletter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_newsletter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_repost_job.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_repost_job.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_round_16.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\round_16.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_btn_gradient_rounded.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\btn_gradient_rounded.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_clock_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_clock_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_manual_and_personalize.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_manual_and_personalize.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_animation_loading_import_resume.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\animation_loading_import_resume.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_out_right.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_out_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_job_contract.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_job_contract.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_italic.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_italic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_calender_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_calender_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_simple_message.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_simple_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_add_audio.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_personalize_filter_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_personalize_filter_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_audio_symbol_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\audio_symbol_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_seeker_job_card.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_job_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_profile_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_profile_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_anim_scale_in.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\anim_scale_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_chip_white_box_gradient_border_close_icon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_chip_white_box_gradient_border_close_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_red.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_red.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_default_user_img.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\default_user_img.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\menu_menu_gender.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\menu\\menu_gender.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_volunteering.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_job_seeker_manage_read_receipts.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_manage_read_receipts.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_add_or_take_video.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_or_take_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_doc.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_doc.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_bg_rounded_layout.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\bg_rounded_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_wishlist.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_wishlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_company_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_company_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_download_cv.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_download_cv.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_layer_list_gradient_search_icon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\layer_list_gradient_search_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_out_top.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dailog_change_university.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dailog_change_university.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_experience_dummy.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\experience_dummy.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_message_image.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_message_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_grey.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_gradient_border_10.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_gradient_border_10.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_like_select.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_like_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_change_password.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_chat_list.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_in_bottom.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_selector_job_search_switch_track.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\selector_job_search_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_out_down_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_out_down_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_job_seeker_personal_information.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_personal_information.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_new_splash.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_new_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_chat_filled_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_chat_filled_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_light_blue_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_light_blue_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\anim_slide_up_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\anim\\slide_up_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_bold.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_audio_demo.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_audio_demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_wave_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_wave_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_experience_clock.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_experience_clock.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_take_age.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_age.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_ideal_workspace.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_ideal_workspace.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_job_seeker_thread_filter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_job_seeker_thread_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_login_registration_option.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_login_registration_option.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_privacy_grey.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_privacy_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_tab_bottom_seeker_navigation.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\tab_bottom_seeker_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_qualifying_step.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_qualifying_step.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_yellow.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_yellow.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_layer_list_switch_thumb_true.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\layer_list_switch_thumb_true.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_gradient_border_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_gradient_border_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_favorite_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_favorite_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_portfolio.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_portfolio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_take_university.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_university.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_build_profile.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_build_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_folder_seeker.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_folder_seeker.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_filter_job_search_tag.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_filter_job_search_tag.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_layer_list_personalize_icon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\layer_list_personalize_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_forword_black.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_forword_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_grey_box_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_grey_box_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_textview.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_textview.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_change_password.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_import_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_import_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_linked_in_share_info.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\linked_in_share_info.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_stroke_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_stroke_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_portfolio_image2.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_portfolio_image2.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_back_arrow_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\back_arrow_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_seeker_chat_board.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_chat_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_blue_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_blue_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_job_criteria_category.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_job_criteria_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_message_text.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_message_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_video_play.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_video_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_add_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_add_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_simple_yes_no.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_simple_yes_no.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_rewind.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_rewind.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_delete_account.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_delete_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_share.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_share.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_load_yellow.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_load_yellow.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dailog_wishlist_filter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dailog_wishlist_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_portfolio_link.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_portfolio_link.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_logo_jobamax.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\logo_jobamax.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_pause.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_pause.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_baseline_insert_photo_24.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_baseline_insert_photo_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_location_pin_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_location_pin_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_grey_stroke.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_grey_stroke.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_seeker_setting.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_seeker_favorite.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_seeker_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_job_seeker_account.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_top_white_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_top_white_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_circle_grey_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\circle_grey_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_edit_underline_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_edit_underline_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_tab_manual_filter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\tab_manual_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_education_adapter.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_education_adapter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_personalize_icon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_personalize_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_chat_select.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\chat_select.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_images.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_images.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_camera_icon_gradient_filled.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_camera_icon_gradient_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_mic_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_mic_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_message.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_green.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_recruitment_seeker_profile_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_recruitment_seeker_profile_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_circle_green.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_circle_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_chat_left_background.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_chat_left_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_recruiter_chat_board.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_recruiter_chat_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_job_match_info_dialog.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_match_info_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_sad_white_strok.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_sad_white_strok.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_location_grey.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_location_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_delete_red_icon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\delete_red_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_semi_bold.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_semi_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_bottom_purple_top_blue_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_bottom_purple_top_blue_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_photo.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_down_navi_blue.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_down_navi_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_add_gradient_holo.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_add_gradient_holo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_trans_gradient_gradient_border.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_trans_gradient_gradient_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_theme_icon_salmon.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_theme_icon_salmon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_profile_preview.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_profile_preview.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_filter_job_role_wise.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_filter_job_role_wise.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_change_password.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_pdf.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_pdf.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_layout_image_picker.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\layout_image_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ovel_white_box_gradient_border.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ovel_white_box_gradient_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_recruiter_job_card.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_recruiter_job_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_recruiter_chat.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_recruiter_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_select.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\font_opensans_extra_bold.ttf.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\font\\opensans_extra_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_chat_list.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_seeker_job_search.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_seeker_job_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_take_password.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_add_new_education.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_new_education.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_recruiter_setting.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_seeker_search_job.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_search_job.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_work_in_progress.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_work_in_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_applicant_unselect.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_applicant_unselect.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_fragment_import_profile_from_linked_in.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_import_profile_from_linked_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_grey_box_10.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_grey_box_10.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_education.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_education.xml"
+    },
+    {
+        "merged": "com.jobamax.appjobamax.app-merged_res-81:/layout_fragment_take_age.xml.flat",
+        "source": "com.jobamax.appjobamax.app-main-83:/layout/fragment_take_age.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_image.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_job_matched.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_job_matched.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_linkedin.png.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\linkedin.png"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_activity_web_view.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_web_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_arrow_down_gradient.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_arrow_down_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_send_white.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_send_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_recruiter_search.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_recruiter_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_profile_skill.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_search_unselect.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_search_unselect.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_ic_info_gradient_interest.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\ic_info_gradient_interest.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_seeker_profile.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_seeker_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_white_box_nav_blue_border_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_white_box_nav_blue_border_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_item_message_audio.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_message_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_grey_box.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_grey_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\drawable_rounded_gradient_aquamarine_50.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\drawable\\rounded_gradient_aquamarine_50.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\navigation_nav_seeker_build_profile.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\navigation\\nav_seeker_build_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-merged_res-81:\\layout_dialog_see_post_job_offer_info.xml.flat",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_see_post_job_offer_info.xml"
+    }
+]

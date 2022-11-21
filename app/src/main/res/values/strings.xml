@@ -1,0 +1,160 @@
+<resources>
+    <string name="app_name">Jobamax</string>
+
+
+    <!-- back4app -->
+    <string name="back4app_server_url" translatable="false">https://jobamax.b4a.io/</string>
+    <string name="back4app_app_id" translatable="false">s3gwYWzFlAYgtfSLTNWZVp6wpTQwj5ISs5XgF7lL</string>
+    <string name="back4app_client_key" translatable="false">scOjnd7zjtRTrqblPRg6iFcsJTSLS2phmd48OE0E</string>
+
+    <!-- Pushwoosh -->
+    <string name="pushwoosh_app_id" translatable="false">46BF6-FA55C</string>
+    <string name="fcm_sender_id" translatable="false">916226274147</string>
+
+    <!-- TBL FB App -->
+    <string name="facebook_app_id" translatable="false">304727217812972</string>
+
+    <!--linked in-->
+    <string name="linked_in_client_id" translatable="false">869zzm9vjdjp5h</string>
+    <string name="linked_in_client_secret" translatable="false">SFqONJQpLuuy9mBW</string>
+    <string name="linked_in_redirect_url" translatable="false">https://jobamax.com/</string>
+
+
+    <string name="refuse">Refuse</string>
+    <string name="account">Account</string>
+    <string name="my_personal_information">Mes informations personnelles</string>
+    <string name="notifications">Notifications</string>
+    <string name="push_notifications">Notifications push</string>
+    <string name="newsletter">Newsletter</string>
+    <string name="share_jobamax">Partage Jobamax</string>
+    <string name="help_and_support">FAQs</string>
+    <string name="email_us">Email us</string>
+    <string name="contact_us">Contact us</string>
+    <string name="community">Communauté</string>
+    <string name="safety_tips">Conseil &amp; Sécurité</string>
+    <string name="community_guidelines">Règles</string>
+    <string name="legal">Mentions Légales</string>
+    <string name="terms_of_service">Conditions d\'utilisation</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="delete_my_account">Supprimer mon compte</string>
+    <string name="log_out">Déconnexion</string>
+    <string name="arg_version">Version 2.0.1</string>
+    <string name="gender_with_asterisk">Genre</string>
+    <string name="enter_gender_here">Enter gender here</string>
+    <string name="first_name_asterisk">Prénom<font fgcolor='#000000'>*</font></string>
+    <string name="enter_first_name">First name</string>
+    <string name="postcode_asterisk">Code Postal</string>
+    <string name="email_asterisk">Email<font fgcolor='#000000'>*</font></string>
+    <string name="last_name_asterisk">Nom de famille</string>
+    <string name="send_read_receipts">Send Read Receipts</string>
+    <string name="manage_read_receipts">Manage Read Receipts</string>
+    <string name="instruction_manage_read_receipts">En désactivant cette option, vous empêcherez toute correspondance d\'activer la lecture des accusés de réception dans votre conversation à partir de ce moment.</string>
+    <string name="you_just_got_a_new_match">You just got a new match</string>
+    <string name="someone_sent_you_a_new_message">Someone sent you a new message</string>
+    <string name="new_matches">New Matches</string>
+    <string name="instruction_enable_location">You\'ll need to enable your location in order to use Jobamax</string>
+    7
+    <string name="date_of_birth_with_asterisk">Date of Birth<font fgcolor='#000000'>*</font></string>
+    <string name="enter_date_of_birth">Enter date of birth</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="instruction_we_value_our_privacy">Chez Jobamax, la protection de votre vie privée est une priorité absolue. Votre vie privée est au cœur de la conception et de la réalisation des services et des produits que vous connaissez et appréciez, afin que vous puissiez leur faire pleinement confiance et vous concentrer sur l\'établissement de relations fructueuses.</string>
+
+    // DO NOT TRANSLATE
+    <string name="save">Save</string>
+    <string name="share">PARTAGE</string>
+    <string name="send_to_friend">Send to Friend</string>
+    <string name="about_course">About this Course</string>
+    <string name="ok">OK</string>
+    <string name="text_photos">Gallery</string>
+    <string name="text_camera">Camera</string>
+    //LinkedIn SDK Access
+    <string name="back">Back</string>
+    <string name="do_you_want_to_logout">Do you want to log out</string>
+    <string name="yes">Yes</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete Your account?</string>
+    <string name="please_let_us_know">Please let us know the reason you are leaving.</string>
+    <string name="continue_to_account_deletion">Continue to Account Deletion</string>
+    <string name="please_select_reason">Please select any reason why are you leaving</string>
+    <string-array name="leaving_reason">
+        <item>J\'ai trouvé ce que je cherchais</item>
+        <item>Le service de coaching coûte trop chere</item>
+        <item>Je ne trouve pas les bons jobs sur la plateforme</item>
+        <item>Il y a trop de bugs</item>
+        <item>J\’ai trouvé une solution concurrente plus efficace</item>
+        <item>Autre</item>
+    </string-array>
+
+
+    <string name="i_agree_to_receive_push_notifications_from_jobamax_to_inform_me_about_my_activity_on_the_platform">I agree to receive push notifications from Jobamax to inform me about my activity on the platform.</string>
+
+    <string name="current_student_education">Current Student</string>
+    <string name="hard_skills">Hard Skills</string>
+    <string name="soft_skills">Soft Skills</string>
+    <string name="interest">Interests</string>
+    <string name="coaching">Coaching</string>
+    <string name="language">Language</string>
+    <string name="retake">Retake</string>
+    <string name="vocal_30_secondes">vocal (30 secondes)</string>
+    <string name="no_jobs_available">No Jobs Available</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="coaching_row1">Administrer des tests de personnalité et de carrière pour évaluer les clients, leurs aptitudes et leurs intérêts professionnels.</string>
+    <string name="coaching_raw2">Identifier les possibilités de carrière et informer les clients de ces options.</string>
+    <string name="coaching_raw3">Fournir des recommandations à la collectivité, telles que les possibilités de formation professionnelle et les programmes éducatifs.</string>
+    <string name="coaching_raw4">Aider les clients à identifier les offres d\'emploi et les possibilités de stage à proximité.</string>
+    <string name="coaching_raw5">Aider les clients à créer des CV et des lettres de motivation.</string>
+    <string name="coaching_raw6">Enseigner aux clients des techniques d\'entretien efficaces et organiser des simulations d\'entretien.</string>
+    <string name="contact_a_coach_for_free">Contact a coach for free!</string>
+    <string name="select_deadline">Select Deadline</string>
+    <string name="setting">Paramètres</string>
+    <string name="newsletter_instruction">Turning this off will prevent receiving any news, update and offer from jobamax</string>
+    <string name="no">No</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="delete_account_information">If you delete your account, you will permanently loose your profile, messages, photos and matches.\n\n This action can not be undone.\n\n Are you sure you want to delete your account?</string>
+    <string name="job_search_category_row1">Transportation and Material Moving Occupations</string>
+    <string name="job_search_category_row2">Sales and Related Occupations</string>
+    <string name="job_search_category_row3">Office and Administrative Support Occupations</string>
+    <string name="job_search_category_row4">Healthcare Practitioners and Technical Occupations</string>
+    <string name="job_search_category_row5">Management Occupations</string>
+    <string name="job_search_category_row6">Food Preparation and Serving Related Occupations</string>
+    <string name="job_search_category_row7">Computer and Mathematical Occupations</string>
+    <string name="job_search_category_row8">Business and Financial Operations Occupations</string>
+    <string name="job_search_category_row9">Healthcare Support Occupations</string>
+    <string name="job_search_category_row10">Installation, Maintenance, and Repair Occupations</string>
+    <string name="job_search_category_row11">Production Occupations</string>
+    <string name="job_search_category_row12">Educational Instruction and Library Occupations</string>
+    <string name="job_search_category_row13">Personal Care and Service Occupations</string>
+    <string name="job_search_category_row14">Architecture and Engineering Occupations</string>
+    <string name="job_search_category_row15">Community and Social Service Occupations</string>
+    <string name="job_search_category_row16">Construction and Extraction Occupations</string>
+    <string name="job_search_category_row17">Arts, Design, Entertainment, Sports, and Media Occupations</string>
+    <string name="job_search_category_row18">Life, Physical, and Social Science Occupations</string>
+    <string name="job_search_category_row19">Building and Grounds Cleaning and Maintenance Occupations</string>
+    <string name="job_search_category_row20">Protective Service Occupations</string>
+    <string name="job_search_category_row21">Legal Occupations</string>
+    <string name="job_search_category_row22">Farming, Fishing, and Forestry Occupations</string>
+    <string name="job_search_category_row23">Military Specific Occupations</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="do_you_want_to_delete_your_account">Do you want to delete your account?</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="delete">Delete</string>
+    <string name="are_you_selected">Are you selected</string>
+    <string name="share_jobamax_info">Téléchargez Jobamax ! C\'est une application rapide, simple et sécurisée pour rechercher un emploi ! Télécharge-la sur : </string>
+    <string name="wishlist_job_card_overlay">Wishlist</string>
+    <string name="added_successfully_to_wishlist">Added successfully to wishlist.</string>
+    <string name="details_saved_successfully">Details saved successfully</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="current_password">Mot de passe actuel*</string>
+    <string name="new_password">Nouveau mot de passe*</string>
+    <string name="current_confirm_password">Confirmer le mot de passe*</string>
+    <string name="submit">Sauvegarder</string>
+    <string name="shortlist_job_card_overlay">SHORTLIST</string>
+    <string name="apply">APPLY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+</resources>

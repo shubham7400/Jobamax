@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".recruiter.message.RecruiterRecruitmentSeekerProfileDialogFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+                <LinearLayout
+                    android:id="@+id/ll_most_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/close_black"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_profile_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/ovel_white_box_gradient_border"
+                        android:padding="5dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/circleImageView"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/default_user_img"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_matched_per"
+                            style="@style/title_regular"
+                            android:background="@drawable/rounded_bottom_purple_top_blue_50"
+                            android:paddingHorizontal="5dp"
+                            android:text="10%"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/circleImageView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tv_seeker_name"
+                        style="@style/title_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:hint="Company Name"
+                        android:textColor="@color/navi_blue"
+                        android:textColorHint="@color/navi_blue"
+                        android:textSize="25sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_university"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="start|top"
+                            android:layout_marginTop="4dp"
+                            android:theme="@style/theme_blue"
+                            android:src="@drawable/ic_education"/>
+                        <TextView
+                            android:id="@+id/tv_university_name"
+                            style="@style/title_bold"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:hint="MIT"
+                            android:textColorHint="@color/navi_blue"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_job_title"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="start|top"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="10dp"
+                            android:theme="@style/theme_blue"
+                            android:src="@drawable/ic_bag_gradient"/>
+
+                        <TextView
+                            android:id="@+id/tv_job_name"
+                            style="@style/title_regular"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:hint="Développeur"
+                            android:textColorHint="@color/navi_blue" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_work_type"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="start|top"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="10dp"
+                            android:theme="@style/theme_blue"
+                            android:src="@drawable/ic_search_gradient"/>
+                        <TextView
+                            android:id="@+id/tv_work_types"
+                            style="@style/title_regular"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:hint="CDI"
+                            android:textColorHint="@color/navi_blue"/>
+                    </LinearLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_job_location"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/iv_location_point"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginTop="4dp"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:theme="@style/theme_blue"
+                            android:src="@drawable/ic_location"/>
+                        <TextView
+                            android:id="@+id/tv_job_location"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/iv_location_point"
+                            android:layout_marginStart="10dp"
+                            style="@style/title_regular"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:hint="Paris"
+                            android:textColorHint="@color/navi_blue"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_education"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="start|top"
+                            android:layout_marginTop="4dp"
+                            android:theme="@style/theme_blue"
+                            android:src="@drawable/ic_student_gradient"/>
+                        <TextView
+                            android:id="@+id/tv_education"
+                            style="@style/title_regular"
+                            android:gravity="center"
+                            android:hint="etudiant"
+                            android:textSize="16sp"
+                            android:textColorHint="@color/navi_blue"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_full_des"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bio"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <TextView
+                                android:id="@+id/tv_bio"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:hint="Hello, je suis passionné"
+                                android:textColorHint="@color/navi_blue"
+                                android:textSize="15sp"
+                                android:textColor="@color/navi_blue"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:text="Éducations"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_education"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:text="Expériences"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_experience"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Compétences"
+                                android:drawablePadding="10dp"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="Hard skills"
+                                    style="@style/title_bold"
+                                    android:drawableStart="@drawable/ic_graph_navi_blue"
+                                    android:drawablePadding="10dp"
+                                    android:textColor="@color/navi_blue"
+                                    android:textSize="20sp"/>
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_hard_skill"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:itemCount="3"
+                                    android:paddingHorizontal="10dp"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:listitem="@layout/item_seeker_hard_skill" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:drawablePadding="10dp"
+                                    android:drawableStart="@drawable/ic_soft_skill_logo_navi_blue"
+                                    android:text="Soft skills"
+                                    style="@style/title_bold"
+                                    android:textColor="@color/navi_blue"
+                                    android:textSize="20sp"/>
+                                <com.google.android.material.chip.ChipGroup
+                                    android:id="@+id/cg_soft_skill_tags"
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:text="Bénévolats"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_volunteering"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Centres d’intérêt"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/cg_interests"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mon portfolio"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_portfolio_doc_link"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_portfolio_link"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_portfolio_images"
+                                android:layout_marginVertical="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mon cadre de travail idéal"
+                                style="@style/title_bold"
+                                android:textColor="@color/navi_blue"
+                                android:textSize="20sp"/>
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/cg_workspace"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

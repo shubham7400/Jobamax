@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_white_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/et_university"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entrez le nom de l'université"
+            android:textColorHint="@color/navi_blue"
+            android:backgroundTint="@color/navi_blue"
+            android:drawableEnd="@drawable/ic_arrow_down_navi_blue"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_universities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+           android:paddingVertical="10dp"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cb_is_current"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:button="@android:color/transparent"
+                android:background="@drawable/selector_checkbox_navi_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Je suis actuellement etudiant.e"
+                style="@style/title_regular"
+                android:textSize="12sp"
+                android:textColor="@color/navi_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cb_is_current"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            style="@style/v_divider"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_done"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                style="@style/title_regular"
+                android:textSize="18sp"
+                android:text="Terminé"/>
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                style="@style/title_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Annuler"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

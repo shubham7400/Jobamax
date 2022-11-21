@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:background="@drawable/rounded_white_box"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="30dp"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_gravity="end"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_close_gradient"/>
+
+        <TextView
+            android:id="@+id/tv_message1"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Hard skills ?\nSoft skills ? 👀"
+            style="@style/title_bold"/>
+
+        <TextView
+            android:id="@+id/tv_message2"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ceci est primordial pour assurer le bon fonctionnement de notre algorithme :)\n\n
+Hard skills = compétences techniques
+ex : Excel, Python, Powerpoint, etc.\n\n
+Soft skills = compétences relationnelles et intelligence émotionnelle
+ex: travail en équipe, organisé.e, résilience etc."
+            android:textSize="20sp"
+            style="@style/title_semi_bold"/>
+    </LinearLayout>
+
+</layout>

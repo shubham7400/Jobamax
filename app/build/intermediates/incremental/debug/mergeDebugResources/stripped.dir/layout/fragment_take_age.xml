@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                  
+                                                       
+                                           
+
+    <ScrollView
+        android:fillViewport="true"
+        android:isScrollContainer="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" android:tag="layout/fragment_take_age_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" tools:context=".login.TakeAgeFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_most_parent"
+                android:paddingVertical="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_back_button"
+                        style="@style/back_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inscription"
+                        android:textColor="@color/navi_blue"
+                        android:textSize="16sp"
+                        style="@style/title_bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    style="@style/title_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Mon âge"
+                    android:layout_marginTop="40dp"
+                    android:textColor="@color/navi_blue"
+                    android:textSize="35sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9" />
+
+                <LinearLayout
+                    android:id="@+id/constraintLayout14"
+                    android:layout_marginTop="150dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@color/transparent"
+                    android:elevation="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView12"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/et_age1"
+                        android:background="@drawable/rounded_white_box_stroke_navi_blue"
+                        android:layout_marginEnd="20dp"
+                        android:textSize="30sp"
+                        android:maxLength="1"
+                        android:inputType="number"
+                        android:gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+                    <EditText
+                        android:id="@+id/et_age2"
+                        android:background="@drawable/rounded_white_box_stroke_navi_blue"
+                        android:layout_width="40dp"
+                        android:textSize="30sp"
+                        android:maxLength="1"
+                        android:inputType="number"
+                        android:gravity="center"
+                        android:layout_height="40dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_age_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/red"
+                    style="@style/title_regular"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/textView13"
+                    android:text="L'âge doit être supérieur à 16 ans"/>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    style="@style/title_regular"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="(cette information restera confidentielle)"
+                    android:textSize="16sp"
+                    android:textColor="@color/navi_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/constraintLayout14" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_continue"
+                    style="@style/button_grey_rect50"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="120dp"
+                    android:layout_height="50dp"
+                    android:text="CONTINUER"
+                    android:enabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="60dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_continue" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="60dp"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary" />
+                    <SeekBar
+                        android:id="@+id/sb_education"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:progress="60"
+                        android:progressDrawable="@drawable/seek_style"
+                        android:progressBackgroundTint="@color/white"
+                        android:splitTrack="false"
+                        android:thumb="@color/transparent" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:src="@drawable/jobamax_logo_gradient"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+         

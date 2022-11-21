@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:background="@drawable/rounded_white_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_gallery"
+            android:padding="10dp"
+            android:drawablePadding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/title_semi_bold"
+            android:drawableStart="@drawable/ic_gallery_gradient"
+            android:text="Ajouter une vidéo"/>
+        <View
+            style="@style/v_divider"/>
+        <TextView
+            android:id="@+id/tv_camera"
+            android:padding="10dp"
+            android:drawablePadding="20dp"
+            style="@style/title_semi_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_camera_icon_gradient_filled"
+            android:text="Prendre une vidéo"/>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,578 @@
+[
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_custom_chip.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_custom_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_add_new_education.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_new_education.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_login_registration_option.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_login_registration_option.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_video_play.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_video_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_add_to_folder_or_offer.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_to_folder_or_offer.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_education.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_education.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_basic_2.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_basic_2.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_create_profile_option.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_create_profile_option.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_profile.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_search_query_company.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_search_query_company.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_add_link.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_link.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_learn_job_card_swiping_dialog.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_learn_job_card_swiping_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_skill.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_search_job.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_search_job.xml"
+    },
+    {
+        "merged": "com.jobamax.appjobamax.app-mergeDebugResources-80:/layout/fragment_take_age.xml",
+        "source": "com.jobamax.appjobamax.app-main-83:/layout/fragment_take_age.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_report.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_manual_filter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_manual_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_add_or_take_video.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_or_take_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_search.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_bio.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_bio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_wishlist.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_wishlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_build_profile.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_build_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_add_new_volunteering.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_new_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_delete_account_final.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_delete_account_final.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_portfolio_image2.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_portfolio_image2.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_filter_job_search_tag.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_filter_job_search_tag.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_job_card.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_job_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_login_flow.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_login_flow.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\tab_bottom_seeker_navigation.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\tab_bottom_seeker_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_new_wishlist.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_new_wishlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_add_job_sourcing_criteria.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_add_job_sourcing_criteria.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_profile_preview.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_profile_preview.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_job_seeker_personal_information.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_personal_information.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_format_cv.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_format_cv.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dailog_wishlist_filter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dailog_wishlist_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_seeker_coaching.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_coaching.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_simple_yes_no.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_simple_yes_no.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_add_new_experience.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_new_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_pick_video.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_pick_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_search_university.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_search_university.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_learn_job_card_swiping.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_learn_job_card_swiping.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\tab_bottom_recruiter_navigation.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\tab_bottom_recruiter_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_chip_white_box_gradient_border_close_icon.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_chip_white_box_gradient_border_close_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_download_cv.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_download_cv.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_message_text.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_message_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_modify_profile.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_modify_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_job_seeker_newsletter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_newsletter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_leaving_reason.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_leaving_reason.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_delete_account.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_delete_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_profile_tab.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_profile_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_privacy_policy.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_privacy_policy.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_yes_no.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_yes_no.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_hard_skill.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_hard_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_job_seeker_chat_list.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_job_seeker_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_message.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_manual_and_personalize.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_manual_and_personalize.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_modify_c_v.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_modify_c_v.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_job_seeker_account.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_audio_video.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_audio_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_add_video.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_ideal_workspace.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_ideal_workspace.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_skill_suggestion.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_skill_suggestion.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\tab_manual_filter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\tab_manual_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_portfolio_link.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_portfolio_link.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_change_password.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_work_in_progress.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_work_in_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_message_audio.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_message_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_see_post_job_offer_info.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_see_post_job_offer_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_recruiter_job_card.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_recruiter_job_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_personal_info.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_personal_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_interest.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_interest.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_seeker_folder.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_seeker_folder.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_new_splash.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_new_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_chat_list.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_photo.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_seeker_setting.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_job_criteria_category.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_job_criteria_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_job_seeker_home.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_job_seeker_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_experience.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_job_seeker_thread_filter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_job_seeker_thread_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_pick_audio.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_pick_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_take_age.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_age.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_chip_white_box_gradient_border.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_chip_white_box_gradient_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_news_latter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_news_latter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dailog_change_university.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dailog_change_university.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_repost_job.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_repost_job.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\layout_image_picker.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\layout_image_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_volunteering.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_change_password.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_add_audio.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_add_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_create_c_v.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_create_c_v.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_yes_no_simple.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_yes_no_simple.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_setting.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_work_type.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_work_type.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_message_image.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_message_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_personalize_filter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_personalize_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_import_seeker_to_qualifying_step_dialog.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_import_seeker_to_qualifying_step_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_job_match_info_dialog.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_match_info_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_work_experience.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_work_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_take_university.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_university.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_recruiter_chat_list.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_recruiter_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_job_seeker_manage_read_receipts.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_job_seeker_manage_read_receipts.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_profile.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_take_name.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_recruiter_chat_board.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_recruiter_chat_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_filter_job_role_wise.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_filter_job_role_wise.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_job_matched.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_job_matched.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_education.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_education.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_user_login.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_user_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_image.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_chat_list.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_audio_demo.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_audio_demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_images.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_images.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_change_password.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_take_work_experience.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_work_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_forget_password.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_forget_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_web_view.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_web_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_profile_portfolio.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_profile_portfolio.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_home.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_take_password.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_video_demo.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_video_demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_recruiter_recruitment_seeker_profile_dialog.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_recruiter_recruitment_seeker_profile_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_textview.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_textview.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_learn_swipe_a.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_learn_swipe_a.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_qualifying_step.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_qualifying_step.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_folder_seeker.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_folder_seeker.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_title_message.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_title_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_volunteering.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_volunteering.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_basic.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_basic.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_personalize_filter_dialog.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_personalize_filter_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_manual_filter_main.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_manual_filter_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_build_profile_suggestion.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_build_profile_suggestion.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_import_profile_from_linked_in.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_import_profile_from_linked_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_recruiter_home.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_recruiter_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_simple_message.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_simple_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_recruiter_setting.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_recruiter_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\dialog_add_document.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\dialog_add_document.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_education_adapter.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_education_adapter.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_seeker_chat_board.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_chat_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\activity_seeker_create_cv.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\activity_seeker_create_cv.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_take_email.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_take_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_user_role.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_user_role.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\item_seeker_experience.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\item_seeker_experience.xml"
+    },
+    {
+        "merged": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-mergeDebugResources-80:\\layout\\fragment_seeker_delete_account.xml",
+        "source": "C:\\Users\\pc\\.gradle\\daemon\\7.4\\com.jobamax.appjobamax.app-main-83:\\layout\\fragment_seeker_delete_account.xml"
+    }
+]

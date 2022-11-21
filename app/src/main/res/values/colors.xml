@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2E68FF</color>
+    <!--<color name="colorPrimaryDark">#3700B3</color>-->
+    <color name="colorAccent">#0975FE</color>
+    <color name="transBlue">#aa0975FE</color>
+    <color name="green_trans">#aa69DF4B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="greyishWhite">#e2e2f2</color>
+    <color name="transparent">#00000000</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#303030</color>
+    <color name="grey">#aaaaaa</color>
+    <color name="divider">#DDDDDD</color>
+    <color name="dark_divider">#BDBDBD</color>
+    <color name="heading_background">#F3F2F8</color>
+    <color name="screen_background">#F7F7F7</color>
+
+    <color name="colorGray">#D6D6D6</color>
+    <color name="colorLightGray">#C3ECECEC</color>
+    <color name="trans_red">#77D32F2F</color>
+    <color name="trans_purple">#77673AB7</color>
+
+    <color name="light_blue_color">#80E2E7FF</color>
+    <color name="light_bluessada_color">#7AF2F4FA</color>
+
+
+    <color name="colorHypeLink">#1073C0</color>
+    <color name="black">#000000</color>
+    <color name="red">#FE4C4C</color>
+    <color name="yellow">#FDCB19</color>
+    <color name="deep_blue">#2e336a</color>
+    <color name="gray">#B9B9B9</color>
+    <color name="background_blue">#E8EBF8</color>
+
+
+    <color name="new_purple">#7800EF</color>
+    <color name="new_purple_trans">#307800EF</color>
+    <color name="light_blue">#095998</color>
+
+    <color name="navi_blue">#0D3354</color>
+    <color name="light_navi_blue">#800D3354</color>
+
+
+    <color name="theme_light_salmon">#FE8F8F</color>
+    <color name="theme_dark_salmon">#8B3434</color>
+    <color name="theme_light_blue">#2E68FF</color>
+    <color name="theme_dark_blue">#7800EF</color>
+    <color name="theme_light_aquamarine">#7BFF98</color>
+    <color name="theme_dark_aquamarine">#0ACEC2</color>
+    <color name="theme_light_light_salmon">#DF7D7D</color>
+    <color name="theme_dark_light_salmon">#FFECBB</color>
+    <color name="theme_light_green">#B9DF4B</color>
+    <color name="theme_dark_green">#69DF4B</color>
+    <color name="theme_light_yellow">#FAC12E</color>
+    <color name="theme_dark_yellow">#F6FA2E</color>
+    <color name="theme_light_red">#ED3024</color>
+    <color name="theme_dark_red">#ED5424</color>
+    <color name="theme_light_grey">#C4C4C4</color>
+    <color name="theme_dark_grey">#625A5A</color>
+
+
+    <color name="background_salmon">#F3ECEC</color>
+    <color name="background_light_blue">#E7EAF1</color>
+    <color name="background_aquamarine">#EEF4F4</color>
+    <color name="background_light_salmon">#EDE6E6</color>
+    <color name="background_green">#EBF4EB</color>
+    <color name="background_yellow">#F4F2EB</color>
+    <color name="background_red">#F1E9E9</color>
+    <color name="background_grey">#D5D0D0</color>
+
+
+
+
+</resources>

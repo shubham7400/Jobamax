@@ -1,0 +1,59 @@
+[
+  {
+    "name": "nav_login",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_recruiter_chat",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_recruiter_home",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_recruiter_search",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_recruiter_setting",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_build_profile",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_chat",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_favorite",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_job_search",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_profile",
+    "navigationXmlIds": [
+      "nav_seeker_setting"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_seeker_setting",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  }
+]
